@@ -1,101 +1,247 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <title>Wordpress网站迁移 // 蔡振威的博客</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.107.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
     
-    <meta name="twitter:card" content="summary"/>
+  
+
+  <title>Wordpress网站迁移 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="博客原本部署在阿里云虚拟主机上，今年双11，购买了一台阿里云ECS服务器，现在开始做迁移
+一、备份网站空间及数据库二、阿里云ECS部署LNMP环境#安装nginx和mariadb [root@ecs]# yum -y install nginx mariadb mariadb-server [root@ecs]# systemctl start nginx mariadb [root@ecs]# systemctl enable nginx mariadb
+#EPEL源的php版本较低，安装第三方源 [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+[root@ecs]# yum -y install php56w php56w-fpm php56w-mysql php56w-gd [root@ecs]# systemctl start php-fpm [root@ecs]# systemctl enable php-fpm
+#把nginx主配置文件的server段注释掉 [root@ecs]# vim /etc/nginx/nginx.conf
+server {listen 80 default_server;listen [::]:80 default_server;server_name _;root /usr/share/nginx/html;# Load configuration files for the default server block.include /etc/nginx/default.d/*.conf;location / {}&hellip;&hellip;.}} #配置nginx虚拟主机 [root@ecs]# vim /etc/nginx/conf.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Wordpress网站迁移"/>
 <meta name="twitter:description" content="博客原本部署在阿里云虚拟主机上，今年双11，购买了一台阿里云ECS服务器，现在开始做迁移
-一、备份网站空间及数据库 二、阿里云ECS部署LNMP环境 #安装nginx和mariadb [root@ecs]# yum -y install nginx mariadb mariadb-server [root@ecs]# systemctl start nginx mariadb [root@ecs]# systemctl enable nginx mariadb
+一、备份网站空间及数据库二、阿里云ECS部署LNMP环境#安装nginx和mariadb [root@ecs]# yum -y install nginx mariadb mariadb-server [root@ecs]# systemctl start nginx mariadb [root@ecs]# systemctl enable nginx mariadb
 #EPEL源的php版本较低，安装第三方源 [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 [root@ecs]# yum -y install php56w php56w-fpm php56w-mysql php56w-gd [root@ecs]# systemctl start php-fpm [root@ecs]# systemctl enable php-fpm
 #把nginx主配置文件的server段注释掉 [root@ecs]# vim /etc/nginx/nginx.conf
-server { listen 80 default_server; listen [::]:80 default_server; server_name _; root /usr/share/nginx/html; # Load configuration files for the default server block."/>
+server {listen 80 default_server;listen [::]:80 default_server;server_name _;root /usr/share/nginx/html;# Load configuration files for the default server block.include /etc/nginx/default.d/*.conf;location / {}&hellip;&hellip;.}} #配置nginx虚拟主机 [root@ecs]# vim /etc/nginx/conf."/>
 
-    <meta property="og:title" content="Wordpress网站迁移" />
+  <meta property="og:title" content="Wordpress网站迁移" />
 <meta property="og:description" content="博客原本部署在阿里云虚拟主机上，今年双11，购买了一台阿里云ECS服务器，现在开始做迁移
-一、备份网站空间及数据库 二、阿里云ECS部署LNMP环境 #安装nginx和mariadb [root@ecs]# yum -y install nginx mariadb mariadb-server [root@ecs]# systemctl start nginx mariadb [root@ecs]# systemctl enable nginx mariadb
+一、备份网站空间及数据库二、阿里云ECS部署LNMP环境#安装nginx和mariadb [root@ecs]# yum -y install nginx mariadb mariadb-server [root@ecs]# systemctl start nginx mariadb [root@ecs]# systemctl enable nginx mariadb
 #EPEL源的php版本较低，安装第三方源 [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 [root@ecs]# yum -y install php56w php56w-fpm php56w-mysql php56w-gd [root@ecs]# systemctl start php-fpm [root@ecs]# systemctl enable php-fpm
 #把nginx主配置文件的server段注释掉 [root@ecs]# vim /etc/nginx/nginx.conf
-server { listen 80 default_server; listen [::]:80 default_server; server_name _; root /usr/share/nginx/html; # Load configuration files for the default server block." />
+server {listen 80 default_server;listen [::]:80 default_server;server_name _;root /usr/share/nginx/html;# Load configuration files for the default server block.include /etc/nginx/default.d/*.conf;location / {}&hellip;&hellip;.}} #配置nginx虚拟主机 [root@ecs]# vim /etc/nginx/conf." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://water711.github.io/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://example.org/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-12-21T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-12-21T00:00:00+00:00" />
 
 
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
-      <span class="app-header-title">蔡振威的博客</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
-    </header>
-    <main class="app-container">
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">Wordpress网站迁移</h1>
-      <div class="post-meta">
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Dec 21, 2019
-        </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          2 min read
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>Wordpress网站迁移</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Sat, Dec 21, 2019
+          </span>
         </div>
       </div>
-    </header>
-    <div class="post-content">
-      <p>博客原本部署在阿里云虚拟主机上，今年双11，购买了一台阿里云ECS服务器，现在开始做迁移</p>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>博客原本部署在阿里云虚拟主机上，今年双11，购买了一台阿里云ECS服务器，现在开始做迁移</p>
 <p> </p>
-<h2 id="一备份网站空间及数据库">一、备份网站空间及数据库</h2>
-<h2 id="二阿里云ecs部署lnmp环境">二、阿里云ECS部署LNMP环境</h2>
-<p>#安装nginx和mariadb
+<h2 id="一备份网站空间及数据库">一、备份网站空间及数据库<a class="anchorjs-link" href="#%e4%b8%80%e5%a4%87%e4%bb%bd%e7%bd%91%e7%ab%99%e7%a9%ba%e9%97%b4%e5%8f%8a%e6%95%b0%e6%8d%ae%e5%ba%93"></a></h2><h2 id="二阿里云ecs部署lnmp环境">二、阿里云ECS部署LNMP环境<a class="anchorjs-link" href="#%e4%ba%8c%e9%98%bf%e9%87%8c%e4%ba%91ecs%e9%83%a8%e7%bd%b2lnmp%e7%8e%af%e5%a2%83"></a></h2><p>#安装nginx和mariadb
 [root@ecs]# yum -y install nginx mariadb mariadb-server
 [root@ecs]# systemctl start nginx mariadb
 [root@ecs]# systemctl enable nginx mariadb</p>
 <p>#EPEL源的php版本较低，安装第三方源
-[root@ecs]# rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/epel-release.rpm">https://mirror.webtatic.com/yum/el7/epel-release.rpm</a>
-[root@ecs]# rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/webtatic-release.rpm">https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</a></p>
+[root@ecs]# rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/epel-release.rpm" target="_blank">https://mirror.webtatic.com/yum/el7/epel-release.rpm</a>
+[root@ecs]# rpm -Uvh <a href="https://mirror.webtatic.com/yum/el7/webtatic-release.rpm" target="_blank">https://mirror.webtatic.com/yum/el7/webtatic-release.rpm</a></p>
 <p>[root@ecs]# yum -y install php56w php56w-fpm php56w-mysql php56w-gd
 [root@ecs]# systemctl start php-fpm
 [root@ecs]# systemctl enable php-fpm</p>
 <p> </p>
 <p>#把nginx主配置文件的server段注释掉
 [root@ecs]# vim /etc/nginx/nginx.conf</p>
-<h1 id="server-">server {</h1>
-<h1 id="listen-------80-default_server">listen       80 default_server;</h1>
-<h1 id="listen-------80-default_server-1">listen       [::]:80 default_server;</h1>
-<h1 id="server_name--_">server_name  _;</h1>
-<h1 id="root---------usrsharenginxhtml">root         /usr/share/nginx/html;</h1>
-<h1 id="heading"></h1>
-<h1 id="-load-configuration-files-for-the-default-server-block"># Load configuration files for the default server block.</h1>
-<h1 id="include-etcnginxdefaultdconf">include /etc/nginx/default.d/*.conf;</h1>
-<h1 id="heading-1"></h1>
-<h1 id="location--">location / {</h1>
-<h1 id="heading-2">}</h1>
-<h1 id="heading-3">&hellip;&hellip;.</h1>
-<h1 id="heading-4">}</h1>
-<h1 id="heading-5">}</h1>
-<p> </p>
+<h1 id="server-">server {<a class="anchorjs-link" href="#server-"></a></h1><h1 id="listen-------80-default_server">listen       80 default_server;<a class="anchorjs-link" href="#listen-------80-default_server"></a></h1><h1 id="listen-------80-default_server-1">listen       [::]:80 default_server;<a class="anchorjs-link" href="#listen-------80-default_server-1"></a></h1><h1 id="server_name--_">server_name  _;<a class="anchorjs-link" href="#server_name--_"></a></h1><h1 id="root---------usrsharenginxhtml">root         /usr/share/nginx/html;<a class="anchorjs-link" href="#root---------usrsharenginxhtml"></a></h1><h1 id="heading"><a class="anchorjs-link" href="#heading"></a></h1><h1 id="-load-configuration-files-for-the-default-server-block"># Load configuration files for the default server block.<a class="anchorjs-link" href="#-load-configuration-files-for-the-default-server-block"></a></h1><h1 id="include-etcnginxdefaultdconf">include /etc/nginx/default.d/*.conf;<a class="anchorjs-link" href="#include-etcnginxdefaultdconf"></a></h1><h1 id="heading-1"><a class="anchorjs-link" href="#heading-1"></a></h1><h1 id="location--">location / {<a class="anchorjs-link" href="#location--"></a></h1><h1 id="heading-2">}<a class="anchorjs-link" href="#heading-2"></a></h1><h1 id="heading-3">&hellip;&hellip;.<a class="anchorjs-link" href="#heading-3"></a></h1><h1 id="heading-4">}<a class="anchorjs-link" href="#heading-4"></a></h1><h1 id="heading-5">}<a class="anchorjs-link" href="#heading-5"></a></h1><p> </p>
 <p>#配置nginx虚拟主机
 [root@ecs]# vim /etc/nginx/conf.d/caizhenwei.conf</p>
 <p>upstream php {
@@ -123,8 +269,7 @@ index index.php;</p>
     }
 </code></pre>
 <p>}</p>
-<h2 id="三导入网站及数据库">三、导入网站及数据库</h2>
-<p>#导入网站
+<h2 id="三导入网站及数据库">三、导入网站及数据库<a class="anchorjs-link" href="#%e4%b8%89%e5%af%bc%e5%85%a5%e7%bd%91%e7%ab%99%e5%8f%8a%e6%95%b0%e6%8d%ae%e5%ba%93"></a></h2><p>#导入网站
 [root@ecs]# unzip -d /usr/share/nginx/wordpress web_bakcup.zip  #解压备份好的网站，到指定目录
 [root@ecs]# chown -R nginx:nginx /usr/share/nginx/wordpress  #修改网站目录属主和属组</p>
 <p>#修改php-fpm运行的用户和组（因为使用这个源安装的php，默认是以apache用户运行的，如果不修改为nginx用户，会因为权限问题无法上传文件）
@@ -139,8 +284,7 @@ MariaDB [(none)]&gt; source /tmp/backup.sql  #导入数据库</p>
 <p>MariaDB [(none)]&gt; grant all on wordpress.* to &lsquo;user&rsquo;@&rsquo;localhost&rsquo; identified by &lsquo;123456&rsquo;;  #授权数据库用户
 MariaDB [(none)]&gt; flush privileges;  #刷新授权表</p>
 <p> </p>
-<h2 id="四修改wordpress配置文件">四、修改wordpress配置文件</h2>
-<p>[root@ecs]# vim wordpress/wp-config.php</p>
+<h2 id="四修改wordpress配置文件">四、修改wordpress配置文件<a class="anchorjs-link" href="#%e5%9b%9b%e4%bf%ae%e6%94%b9wordpress%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6"></a></h2><p>[root@ecs]# vim wordpress/wp-config.php</p>
 <p>/** WordPress数据库的名称 */
 define(&lsquo;DB_NAME&rsquo;, &lsquo;wordpress&rsquo;);</p>
 <p>/** MySQL数据库用户名 */
@@ -148,24 +292,26 @@ define(&lsquo;DB_USER&rsquo;, &lsquo;user&rsquo;);</p>
 <p>/** MySQL数据库密码 */
 define(&lsquo;DB_PASSWORD&rsquo;, &lsquo;123456&rsquo;);</p>
 <p> </p>
-<h2 id="五将域名解析到新服务器ip地址至此wordpress迁移完成">五、将域名解析到新服务器IP地址，至此，wordpress迁移完成</h2>
-<h2 id="六升级wordpress最新版">六、升级wordpress最新版</h2>
-<p>由于近段时间，国内无法正常访问wordpress官网，所以不能通过wordpress后台更新，只能手动下载wordpress更新</p>
+<h2 id="五将域名解析到新服务器ip地址至此wordpress迁移完成">五、将域名解析到新服务器IP地址，至此，wordpress迁移完成<a class="anchorjs-link" href="#%e4%ba%94%e5%b0%86%e5%9f%9f%e5%90%8d%e8%a7%a3%e6%9e%90%e5%88%b0%e6%96%b0%e6%9c%8d%e5%8a%a1%e5%99%a8ip%e5%9c%b0%e5%9d%80%e8%87%b3%e6%ad%a4wordpress%e8%bf%81%e7%a7%bb%e5%ae%8c%e6%88%90"></a></h2><h2 id="六升级wordpress最新版">六、升级wordpress最新版<a class="anchorjs-link" href="#%e5%85%ad%e5%8d%87%e7%ba%a7wordpress%e6%9c%80%e6%96%b0%e7%89%88"></a></h2><p>由于近段时间，国内无法正常访问wordpress官网，所以不能通过wordpress后台更新，只能手动下载wordpress更新</p>
 <p>步骤：</p>
 <p>1、备份网站，下载最新版wordpress</p>
 <p>2、删除网站根目录下的wp-includes和wp-admin文件夹</p>
 <p>3、解压最新版的WordPress，删除里面的wp-content文件夹，把新版wordpress上传并覆盖到网站目录</p>
-<p>[root@ecs]# wget <a href="https://wordpress.org/wordpress-5.3.1-zh">https://wordpress.org/wordpress-5.3.1-zh</a>_CN.zip
+<p>[root@ecs]# wget <a href="https://wordpress.org/wordpress-5.3.1-zh" target="_blank">https://wordpress.org/wordpress-5.3.1-zh</a>_CN.zip
 [root@ecs]# unzip wordpress-5.3.1-zh_CN.zip  #解压
 [root@ecs]# rm -rf ./wordpress-5.3.1/wp-content/  #解压后删除里面的wp-content目录</p>
 <p>[root@ecs]# cd /usr/share/nginx/wordpress/  #进入网站目录
 [root@ecs]# rm -rf ./wordpress/wp-includes/ ./wordpress/wp-admin/  #删除网站wp-includes、wp-admin目录
 [root@ecs]# /bin/cp -rf /root/wordpress/* /usr/share/nginx/wordpress/  #把新版wordpress上传并覆盖到博客网站目录</p>
 <p>浏览器访问：http://域名/wp-admin/upgrade.php</p>
-<p><img src="http://hugo.caizhenwei.top//415c565042647ccb10a712dcd0f31d57.png" alt=""></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//415c565042647ccb10a712dcd0f31d57.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p> </p>
-<h2 id="七搭建ftp服务用于方便上传或下载网站文件">七、搭建FTP服务，用于方便上传或下载网站文件</h2>
-<p>#安装并配置ftp
+<h2 id="七搭建ftp服务用于方便上传或下载网站文件">七、搭建FTP服务，用于方便上传或下载网站文件<a class="anchorjs-link" href="#%e4%b8%83%e6%90%ad%e5%bb%baftp%e6%9c%8d%e5%8a%a1%e7%94%a8%e4%ba%8e%e6%96%b9%e4%be%bf%e4%b8%8a%e4%bc%a0%e6%88%96%e4%b8%8b%e8%bd%bd%e7%bd%91%e7%ab%99%e6%96%87%e4%bb%b6"></a></h2><p>#安装并配置ftp
 [root@ecs]# yum -y install vsftpd
 [root@ecs]# vim /etc/vsftpd/vsftpd.conf
 anonymous_enable=NO #关闭匿名访问
@@ -188,12 +334,129 @@ chroot_local_user=YES  #限制用户只能访问为其配置的目录（用户�
 [root@ecs]# systemctl restart vsftpd.service
 [root@ecs]# systemctl enable vsftpd.service</p>
 
-    </div>
-    <div class="post-footer">
-      
-    </div>
-  </article>
 
-    </main>
-  </body>
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/" data-toggle="tooltip" data-placement="top" title="python 从文件读取IP地址 并实现多线程扫描">
+              Previous<br>
+              <span>python 从文件读取IP地址 并实现多线程扫描</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/" data-toggle="tooltip" data-placement="top" title="使用PXE网络引导安装Linux和windows系统">
+              Next<br>
+              <span>使用PXE网络引导安装Linux和windows系统</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
 </html>

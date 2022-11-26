@@ -1,95 +1,260 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <title>python&#43;selenium 批量配置华为S1720交换机 // 蔡振威的博客</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.107.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="python&#43;selenium 批量配置华为S1720交换机"/>
-<meta name="twitter:description" content="**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
-准备工作 1、安装Python
+  
+
+  <title>python&#43;selenium 批量配置华为S1720交换机 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
+准备工作1、安装Python
 2、安装谷歌浏览器
 3、下载chromedriver驱动，放到脚本所在目录
 4、新建IP.txt，保存所有交换机IP，放到脚本所在目录
-一、批量修改密码 # -*- coding : utf-8 -*-
+一、批量修改密码# -*- coding : utf-8 -*-
+from selenium import webdriver from selenium.webdriver.support.ui import WebDriverWait import time
+UserName = &lsquo;admin&rsquo; OldPassword = &lsquo;admin@huawei.com&rsquo; NewPassword = &rsquo;newpassword123&#39;
+def open_broswer(): #新建options options = webdriver.ChromeOptions()
+#添加选项，禁止在控制台打印日志 options.add\_experimental\_option(&#39;excludeSwitches&#39;, \[&#39;enable-logging&#39;\]) #添加选项，忽略网站SSL证书错误 options.add\_argument(&#39;--ignore-certificate-errors&#39;) #载入options并启动浏览器 driver=webdriver.Chrome(options=options) return driver def alert_confirm(): &rsquo;&rsquo;&#39; 解决以下页面弹框提示 Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器 &rsquo;&rsquo;&#39; try: alert = driver.switch_to.alert #切换到弹框窗口 alert.text driver.switch_to.alert.accept() #确认弹框 except: pass
+def change_password(ip): print(ip) driver.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python&#43;selenium 批量配置华为S1720交换机"/>
+<meta name="twitter:description" content="**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
+准备工作1、安装Python
+2、安装谷歌浏览器
+3、下载chromedriver驱动，放到脚本所在目录
+4、新建IP.txt，保存所有交换机IP，放到脚本所在目录
+一、批量修改密码# -*- coding : utf-8 -*-
 from selenium import webdriver from selenium.webdriver.support.ui import WebDriverWait import time
 UserName = &lsquo;admin&rsquo; OldPassword = &lsquo;admin@huawei.com&rsquo; NewPassword = &rsquo;newpassword123&#39;
 def open_broswer(): #新建options options = webdriver.ChromeOptions()
 #添加选项，禁止在控制台打印日志 options.add\_experimental\_option(&#39;excludeSwitches&#39;, \[&#39;enable-logging&#39;\]) #添加选项，忽略网站SSL证书错误 options.add\_argument(&#39;--ignore-certificate-errors&#39;) #载入options并启动浏览器 driver=webdriver.Chrome(options=options) return driver def alert_confirm(): &rsquo;&rsquo;&#39; 解决以下页面弹框提示 Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器 &rsquo;&rsquo;&#39; try: alert = driver.switch_to.alert #切换到弹框窗口 alert.text driver.switch_to.alert.accept() #确认弹框 except: pass
 def change_password(ip): print(ip) driver."/>
 
-    <meta property="og:title" content="python&#43;selenium 批量配置华为S1720交换机" />
+  <meta property="og:title" content="python&#43;selenium 批量配置华为S1720交换机" />
 <meta property="og:description" content="**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
-准备工作 1、安装Python
+准备工作1、安装Python
 2、安装谷歌浏览器
 3、下载chromedriver驱动，放到脚本所在目录
 4、新建IP.txt，保存所有交换机IP，放到脚本所在目录
-一、批量修改密码 # -*- coding : utf-8 -*-
+一、批量修改密码# -*- coding : utf-8 -*-
 from selenium import webdriver from selenium.webdriver.support.ui import WebDriverWait import time
 UserName = &lsquo;admin&rsquo; OldPassword = &lsquo;admin@huawei.com&rsquo; NewPassword = &rsquo;newpassword123&#39;
 def open_broswer(): #新建options options = webdriver.ChromeOptions()
 #添加选项，禁止在控制台打印日志 options.add\_experimental\_option(&#39;excludeSwitches&#39;, \[&#39;enable-logging&#39;\]) #添加选项，忽略网站SSL证书错误 options.add\_argument(&#39;--ignore-certificate-errors&#39;) #载入options并启动浏览器 driver=webdriver.Chrome(options=options) return driver def alert_confirm(): &rsquo;&rsquo;&#39; 解决以下页面弹框提示 Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器 &rsquo;&rsquo;&#39; try: alert = driver.switch_to.alert #切换到弹框窗口 alert.text driver.switch_to.alert.accept() #确认弹框 except: pass
 def change_password(ip): print(ip) driver." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://water711.github.io/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://example.org/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-09T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-09T00:00:00+00:00" />
 
 
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
-      <span class="app-header-title">蔡振威的博客</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
-    </header>
-    <main class="app-container">
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">python&#43;selenium 批量配置华为S1720交换机</h1>
-      <div class="post-meta">
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Oct 9, 2020
-        </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          4 min read
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>python&#43;selenium 批量配置华为S1720交换机</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Fri, Oct 9, 2020
+          </span>
         </div>
       </div>
-    </header>
-    <div class="post-content">
-      <p> </p>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p> </p>
 <p>**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**<strong>为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。</strong></p>
 <p> </p>
-<h2 id="准备工作">准备工作</h2>
-<p>1、安装Python</p>
+<h2 id="准备工作">准备工作<a class="anchorjs-link" href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c"></a></h2><p>1、安装Python</p>
 <p>2、安装谷歌浏览器</p>
-<p>3、<a href="http://npm.taobao.org/mirrors/chromedriver/">下载chromedriver驱动</a>，放到脚本所在目录</p>
+<p>3、<a href="http://npm.taobao.org/mirrors/chromedriver/" target="_blank">下载chromedriver驱动</a>，放到脚本所在目录</p>
 <p>4、新建IP.txt，保存所有交换机IP，放到脚本所在目录</p>
 <p> </p>
-<h2 id="一批量修改密码">一、批量修改密码</h2>
-<p># -*- coding : utf-8 -*-</p>
+<h2 id="一批量修改密码">一、批量修改密码<a class="anchorjs-link" href="#%e4%b8%80%e6%89%b9%e9%87%8f%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81"></a></h2><p># -*- coding : utf-8 -*-</p>
 <p>from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import time</p>
 <p>UserName = &lsquo;admin&rsquo;
-OldPassword = &lsquo;<a href="mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;
+OldPassword = &lsquo;<a href="/mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;
 NewPassword = &rsquo;newpassword123'</p>
 <p>def open_broswer():
 #新建options
@@ -182,13 +347,12 @@ if not ip:
 break
 change_password(ip)  #执行函数，修改交换机密码</p>
 <p> </p>
-<h2 id="二批量保存交换机配置">二、批量保存交换机配置</h2>
-<p># -*- coding : utf-8 -*-</p>
+<h2 id="二批量保存交换机配置">二、批量保存交换机配置<a class="anchorjs-link" href="#%e4%ba%8c%e6%89%b9%e9%87%8f%e4%bf%9d%e5%ad%98%e4%ba%a4%e6%8d%a2%e6%9c%ba%e9%85%8d%e7%bd%ae"></a></h2><p># -*- coding : utf-8 -*-</p>
 <p>from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import time,datetime</p>
 <p>UserName = &lsquo;admin&rsquo;
-Password = &lsquo;<a href="mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;</p>
+Password = &lsquo;<a href="/mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;</p>
 <p>def open_broswer():
 #新建options
 options = webdriver.ChromeOptions()</p>
@@ -263,15 +427,14 @@ if not ip:
 break
 save_config(ip)   #执行函数，保存交换机配置</p>
 <p> </p>
-<h2 id="三批量导出交换机配置">三、批量导出交换机配置</h2>
-<p># -*- coding : utf-8 -*-</p>
+<h2 id="三批量导出交换机配置">三、批量导出交换机配置<a class="anchorjs-link" href="#%e4%b8%89%e6%89%b9%e9%87%8f%e5%af%bc%e5%87%ba%e4%ba%a4%e6%8d%a2%e6%9c%ba%e9%85%8d%e7%bd%ae"></a></h2><p># -*- coding : utf-8 -*-</p>
 <p>from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 import time</p>
 <p>UserName = &lsquo;admin&rsquo;
-Password = &lsquo;<a href="mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;</p>
+Password = &lsquo;<a href="/mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;</p>
 <p>def open_browser(ip):
 #新建options
 options = webdriver.ChromeOptions()</p>
@@ -359,15 +522,14 @@ break
 driver = open_browser(ip)
 export_config(ip,driver)</p>
 <p> </p>
-<h2 id="四批量添加交换机日志主机">四、批量添加交换机日志主机</h2>
-<p># -*- coding : utf-8 -*-</p>
+<h2 id="四批量添加交换机日志主机">四、批量添加交换机日志主机<a class="anchorjs-link" href="#%e5%9b%9b%e6%89%b9%e9%87%8f%e6%b7%bb%e5%8a%a0%e4%ba%a4%e6%8d%a2%e6%9c%ba%e6%97%a5%e5%bf%97%e4%b8%bb%e6%9c%ba"></a></h2><p># -*- coding : utf-8 -*-</p>
 <p>from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 import time</p>
 <p>UserName = &lsquo;admin&rsquo;
-Password = &lsquo;<a href="mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;
+Password = &lsquo;<a href="/mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;
 log_host_ip = &lsquo;192.168.1.225&rsquo;  #日志主机IP</p>
 <p>def open_broswer():
 #新建options
@@ -474,12 +636,129 @@ if not ip:
 break
 add_log_host(ip)</p>
 
-    </div>
-    <div class="post-footer">
-      
-    </div>
-  </article>
 
-    </main>
-  </body>
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/" data-toggle="tooltip" data-placement="top" title="Centos7部署FTP服务">
+              Previous<br>
+              <span>Centos7部署FTP服务</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" data-toggle="tooltip" data-placement="top" title="Zabbix调优不完全指南">
+              Next<br>
+              <span>Zabbix调优不完全指南</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
 </html>

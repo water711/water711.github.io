@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>zabbix on 蔡振威的博客</title>
-    <link>https://water711.github.io/categories/zabbix/</link>
+    <link>http://example.org/categories/zabbix/</link>
     <description>Recent content in zabbix on 蔡振威的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://water711.github.io/categories/zabbix/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/categories/zabbix/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zabbix调优不完全指南</title>
-      <link>https://water711.github.io/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+      <link>http://example.org/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
       <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
-      <description>问题一、Zabbix server内存溢出，无法启动 问题原因：
+      <guid>http://example.org/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>问题一、Zabbix server内存溢出，无法启动问题原因：
 这是由于zabbix默认的缓存配置只有8M，当你zabbix正常运行一段时间后，大批量添加一些被监控设备就会出现这种情况。
 解决方法：
 打开zabbix_server.conf文件，将CacheSize改一个较大的值，我现在给自己配的是1024M。
@@ -24,7 +24,7 @@ vim /etc/zabbix/zabbix_server.conf CacheSize=1024M #第385行
 解决方法：
 这里需要调整两个参数，一个是清理时间间隔、一个是清理的最大删除量。
 vim /etc/zabbix/zabbix_server.conf HousekeepingFrequency=12 #原值是每一小时清理一次，建议改为12或24小时清理一次。第363行 MaxHousekeeperDelete=100000 #原值为每次清理5000条，建议改为上限100000条。 第376行
-问题三、Zabbix poller processes more than 75% busy 问题原因：
+问题三、Zabbix poller processes more than 75% busy问题原因：
 这里可能有如下两个原因：
 1、通过Zabbix agent采集数据的设备死机或其他原因导致zabbix agent死掉server获取不到数据。
 2、server向agent获取数据时时间过长，超过了server设置的timeout时间。
@@ -32,81 +32,82 @@ vim /etc/zabbix/zabbix_server.conf HousekeepingFrequency=12 #原值是每一小�
 1、增加zabbix server启动时初始化的进程数量：
 vim /etc/zabbix/zabbix_server.conf StartPollers=12 #第165行，视自己服务器性能改，上限是1000，如果改完发现启不起来可以改小一点。
 2、修改模板自动发现规则中的保留失去的资源期间为0。
-问题四：Zabbix discoverer processes more than 75% busy 问题原因：
+问题四：Zabbix discoverer processes more than 75% busy问题原因：
 看问题报警字面意思是自动发现进程忙碌数超过75%，这是因为我们用的监控模版中带着大量自动发现项，每一个自动发现项都会产生一个进程，所以一般我们添加多台被监控设备时就会出现这样的报错。
 解决办法：
 修改自动发现进程数。
 vim /etc/zabbix/zabbix_server.conf StartDiscoverers=10 #第219行，取掉#号，默认为1，改为10，上限为250请视自己的需求和服务器配置而定
 其次还可以通过执行定期重启server脚本来清理进程，释放内存。
-[root@m01 ~]# grep &amp;lsquo;StartDiscoverers&amp;rsquo; /etc/zabbix/zabbix_server.</description>
+[root@m01 ~]# grep &amp;lsquo;StartDiscoverers&amp;rsquo; /etc/zabbix/zabbix_server.conf2 3 ### Option: StartDiscoverers4 5 StartDiscoverers=56 7 [root@m01 ~]# systemctl restart zabbix-server.</description>
     </item>
     
     <item>
       <title>Zabbix之使用微信公众号告警</title>
-      <link>https://water711.github.io/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</link>
+      <link>http://example.org/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</guid>
-      <description>效果展示 实现方式 服务号 订阅号 -》 测试号（本文使用测试号演示） 一、注册微信公众号 服务号需要是企业身份，并进行微信认证
+      <guid>http://example.org/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</guid>
+      <description>效果展示实现方式 服务号 订阅号 -》 测试号（本文使用测试号演示） 一、注册微信公众号服务号需要是企业身份，并进行微信认证
 个人可以申请订阅号后，开启测试号获取模板消息接口来进行测试
-二、开通模板消息并设置告警模板 服务号：公众号后台-》添加功能-》模板消息
+二、开通模板消息并设置告警模板服务号：公众号后台-》添加功能-》模板消息
 测试号：
-三、编写Python脚本 #!/usr/local/python3/bin/python3
+三、编写Python脚本#!/usr/local/python3/bin/python3
 import requests import json import sys
 def get_token(appid, secret): url = &amp;ldquo;https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;amp;appid=&amp;rdquo; + appid + &amp;ldquo;&amp;amp;secret=&amp;rdquo; + secret response = requests.get(url) ret = response.json() return ret[&amp;lsquo;access_token&amp;rsquo;]
-def send_message(token): url = &amp;ldquo;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=&amp;rdquo; + token data = { &amp;ldquo;touser&amp;rdquo;:to_user, &amp;ldquo;template_id&amp;rdquo;:template_id, &amp;ldquo;data&amp;rdquo;:{ &amp;ldquo;keyword1&amp;rdquo;:{ &amp;ldquo;value&amp;rdquo;:event_time, &amp;ldquo;color&amp;rdquo;:&amp;quot;#993399&amp;quot; }, &amp;ldquo;keyword2&amp;rdquo;: { &amp;ldquo;value&amp;rdquo;:host_name, &amp;ldquo;color&amp;rdquo;:&amp;quot;#0099CC&amp;quot; }, &amp;ldquo;keyword3&amp;rdquo;: { &amp;ldquo;value&amp;rdquo;:event_name, &amp;ldquo;color&amp;rdquo;:&amp;quot;#FF0000&amp;quot; } } } data = json.</description>
+def send_message(token): url = &amp;ldquo;https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=&amp;rdquo; + token data = { &amp;ldquo;touser&amp;rdquo;:to_user, &amp;ldquo;template_id&amp;rdquo;:template_id, &amp;ldquo;data&amp;rdquo;:{ &amp;ldquo;keyword1&amp;rdquo;:{ &amp;ldquo;value&amp;rdquo;:event_time, &amp;ldquo;color&amp;rdquo;:&amp;quot;#993399&amp;quot; }, &amp;ldquo;keyword2&amp;rdquo;: { &amp;ldquo;value&amp;rdquo;:host_name, &amp;ldquo;color&amp;rdquo;:&amp;quot;#0099CC&amp;quot; }, &amp;ldquo;keyword3&amp;rdquo;: { &amp;ldquo;value&amp;rdquo;:event_name, &amp;ldquo;color&amp;rdquo;:&amp;quot;#FF0000&amp;quot; } } } data = json.dumps(data) response = requests.</description>
     </item>
     
     <item>
       <title>Zabbix使用腾讯云短信进行告警</title>
-      <link>https://water711.github.io/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</link>
+      <link>http://example.org/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</guid>
-      <description>一、开通腾讯云短信服务（需要实名认证） 官方文档：https://cloud.tencent.com/document/product/382/18071
-二、创建短信模板 短信模板内容中：{1}{2}{3}为发送信息时，需要传递的参数内容
-三、编写发送短信的Shell脚本 官方API接口文档：https://cloud.tencent.com/document/product/382/5976
+      <guid>http://example.org/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</guid>
+      <description>一、开通腾讯云短信服务（需要实名认证）官方文档：https://cloud.tencent.com/document/product/382/18071
+二、创建短信模板短信模板内容中：{1}{2}{3}为发送信息时，需要传递的参数内容
+三、编写发送短信的Shell脚本官方API接口文档：https://cloud.tencent.com/document/product/382/5976
 #!/bin/sh
 time=`date +%s` appkey=bada123234534590d23403
 appid=123456789 random=$(($RANDOM*$RANDOM)) tem_id=123456 #模板ID
 mobile=$1 #手机号，从zabbix传入的第一个参数 message=$2 #告警信息，从zabbix传入的第二个参数 IFS=&amp;rsquo;;&amp;rsquo; #定义内部分隔符 arr=($message) #将message转化为数组，按;号分隔 event_time=${arr[0]} host_name=${arr[1]} event_name=${arr[2]}
 str=&amp;ldquo;appkey=$appkey&amp;amp;random=$random&amp;amp;time=$time&amp;amp;mobile=$mobile&amp;rdquo; #腾讯定义的sig字段格式 sig=`echo -n $str | sha256sum | awk &amp;lsquo;{print $1}&amp;rsquo;` #加密后的sig字段
-curl -i -X POST -H &amp;ldquo;&amp;lsquo;Content-type&amp;rsquo;:&amp;lsquo;application/json&amp;rsquo;&amp;rdquo; \ -d &amp;lsquo;{ &amp;ldquo;ext&amp;rdquo;: &amp;ldquo;&amp;rdquo;, &amp;ldquo;extend&amp;rdquo;: &amp;ldquo;&amp;rdquo;, &amp;ldquo;params&amp;rdquo;: [&amp;quot;&amp;rsquo;$event_time&amp;rsquo;&amp;quot;, &amp;ldquo;&amp;rsquo;$host_name&amp;rsquo;&amp;rdquo;, &amp;ldquo;&amp;rsquo;$event_name&amp;rsquo;&amp;rdquo;], &amp;ldquo;sig&amp;rdquo;: &amp;ldquo;&amp;rsquo;$sig&amp;rsquo;&amp;rdquo;, &amp;ldquo;sign&amp;rdquo;: &amp;ldquo;xx公司&amp;rdquo;, &amp;ldquo;tel&amp;rdquo;: {&amp;ldquo;mobile&amp;rdquo;: &amp;ldquo;&amp;rsquo;$mobile&amp;rsquo;&amp;rdquo;, &amp;ldquo;nationcode&amp;rdquo;: &amp;ldquo;86&amp;rdquo;}, &amp;ldquo;time&amp;rdquo;: &amp;lsquo;$time&amp;rsquo;, &amp;ldquo;tpl_id&amp;rdquo;: &amp;lsquo;$tem_id&amp;rsquo; }&amp;rsquo; \ https://yun.</description>
+curl -i -X POST -H &amp;ldquo;&amp;lsquo;Content-type&amp;rsquo;:&amp;lsquo;application/json&amp;rsquo;&amp;rdquo; \ -d &amp;lsquo;{ &amp;ldquo;ext&amp;rdquo;: &amp;ldquo;&amp;rdquo;, &amp;ldquo;extend&amp;rdquo;: &amp;ldquo;&amp;rdquo;, &amp;ldquo;params&amp;rdquo;: [&amp;quot;&amp;rsquo;$event_time&amp;rsquo;&amp;quot;, &amp;ldquo;&amp;rsquo;$host_name&amp;rsquo;&amp;rdquo;, &amp;ldquo;&amp;rsquo;$event_name&amp;rsquo;&amp;rdquo;], &amp;ldquo;sig&amp;rdquo;: &amp;ldquo;&amp;rsquo;$sig&amp;rsquo;&amp;rdquo;, &amp;ldquo;sign&amp;rdquo;: &amp;ldquo;xx公司&amp;rdquo;, &amp;ldquo;tel&amp;rdquo;: {&amp;ldquo;mobile&amp;rdquo;: &amp;ldquo;&amp;rsquo;$mobile&amp;rsquo;&amp;rdquo;, &amp;ldquo;nationcode&amp;rdquo;: &amp;ldquo;86&amp;rdquo;}, &amp;ldquo;time&amp;rdquo;: &amp;lsquo;$time&amp;rsquo;, &amp;ldquo;tpl_id&amp;rdquo;: &amp;lsquo;$tem_id&amp;rsquo; }&amp;rsquo; \ https://yun.tim.qq.com/v5/tlssmssvr/sendsms?sdkappid=$appid&#39;&amp;&#39;random=$random
+测试运行</description>
     </item>
     
     <item>
       <title>Zabbix监控windows日志</title>
-      <link>https://water711.github.io/posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97/</link>
+      <link>http://example.org/posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97/</guid>
-      <description>一、Zabbix服务端添加主机 #zabbix客户端在主动模式下，服务端接收数据需要开放10051端口 [root@zabbix1 ~]# firewall-cmd &amp;ndash;zone=public &amp;ndash;add-port=10051/tcp &amp;ndash;permanent success [root@zabbix1 ~]# firewall-cmd &amp;ndash;reload success
-二、安装 zabbix客户端 1、查看zabbix服务端版本
+      <guid>http://example.org/posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97/</guid>
+      <description>一、Zabbix服务端添加主机#zabbix客户端在主动模式下，服务端接收数据需要开放10051端口 [root@zabbix1 ~]# firewall-cmd &amp;ndash;zone=public &amp;ndash;add-port=10051/tcp &amp;ndash;permanent success [root@zabbix1 ~]# firewall-cmd &amp;ndash;reload success
+二、安装 zabbix客户端1、查看zabbix服务端版本
 [root@zabbix1 ~]# zabbix_server -V zabbix_server (Zabbix) 4.2.6
 2、官网下载zabbix客户端并解压（和服务端版本一致）
 地址：https://www.zabbix.com/cn/download_agents#tab:42
 3、修改zabbix客户端配置文件
-./conf/zabbix_agentd.conf LogFile=D:\Program Files\zabbix_agents-4.2.6\zabbix_agentd.log #指定日志文件路径 Server=192.168.1.250 #zabbix服务端IP ListenPort=10250 #监听端口，默认为10050 ServerActive=192.168.1.250 #主动模式的ServerIP地址(agent主动上报数据到该服务器) 4、启动zabbix客户端
+./conf/zabbix_agentd.confLogFile=D:\Program Files\zabbix_agents-4.2.6\zabbix_agentd.log #指定日志文件路径 Server=192.168.1.250 #zabbix服务端IP ListenPort=10250 #监听端口，默认为10050 ServerActive=192.168.1.250 #主动模式的ServerIP地址(agent主动上报数据到该服务器) 4、启动zabbix客户端
 &amp;gt; D:
 cd D:\Program Files\zabbix_agents-4.2.6\bin #进入agents\bin目录
 zabbix_agentd.exe -f -c &amp;ldquo;D:\Program Files\zabbix_agents-4.2.6\conf\zabbix_agentd.conf&amp;rdquo; #-f 前台运行 -c 指定配置文件 Starting Zabbix Agent [test]. Zabbix 4.2.6 (revision d3bb18bbc4). Press Ctrl+C to exit.
 服务端查看主机agent是否连接成功
 5、将zabbix客户端添加为系统服务
 &amp;gt; D:
-cd D:\Program Files\zabbix_agents-4.</description>
+cd D:\Program Files\zabbix_agents-4.2.6\bin #进入agents\bin目录</description>
     </item>
     
     <item>
       <title>Zabbix_配置snmptrap监控交换机</title>
-      <link>https://water711.github.io/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</link>
+      <link>http://example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</link>
       <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</guid>
-      <description>一、安装配置snmptrapd [root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
+      <guid>http://example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</guid>
+      <description>一、安装配置snmptrapd[root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
 [root@zabbix1 ~]# systemctl start snmptrapd [root@zabbix1 ~]# systemctl enable snmptrapd
 #防火墙开放snmp trap端口 [root@zabbix1 ~]# firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=162/udp [root@zabbix1 ~]# firewall-cmd &amp;ndash;reload
 #测试 设备打开snmptrap，设置接收主机IP和团体名,手动触发告警,查看是否接收到告警信息 [root@zabbix1 ~]# tail -F /var/log/messages
-二、更改snmptrapd日志路径 snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放
+二、更改snmptrapd日志路径snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放
 -L：日志选项。支持的输出方式有标准错误（e），标准输出（o），文件（f），syslog（s）。
 -Ls：输出到系统日志文件
 -Lf：输出到指定文件
@@ -117,15 +118,15 @@ cd D:\Program Files\zabbix_agents-4.</description>
     
     <item>
       <title>Zabbix_配置snmptrap监控交换机</title>
-      <link>https://water711.github.io/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrapnull/</link>
+      <link>http://example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrapnull/</link>
       <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrapnull/</guid>
-      <description>一、安装配置snmptrapd [root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
+      <guid>http://example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrapnull/</guid>
+      <description>一、安装配置snmptrapd[root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
 [root@zabbix1 ~]# systemctl start snmptrapd [root@zabbix1 ~]# systemctl enable snmptrapd
 #防火墙开放snmp trap端口 [root@zabbix1 ~]# firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=162/udp [root@zabbix1 ~]# firewall-cmd &amp;ndash;reload
 #测试 设备打开snmptrap，设置接收主机IP和团体名,手动触发告警,查看是否接收到告警信息 [root@zabbix1 ~]# tail -F /var/log/messages
-二、更改snmptrapd日志路径 snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放
+二、更改snmptrapd日志路径snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放
 -L：日志选项。支持的输出方式有标准错误（e），标准输出（o），文件（f），syslog（s）。
 -Ls：输出到系统日志文件
 -Lf：输出到指定文件
@@ -136,25 +137,25 @@ cd D:\Program Files\zabbix_agents-4.</description>
     
     <item>
       <title>搭建Zabbix高可用架构</title>
-      <link>https://water711.github.io/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</link>
+      <link>http://example.org/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</guid>
-      <description>环境： zabbix1：192.168.1.241（Master）
+      <guid>http://example.org/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</guid>
+      <description>环境：zabbix1：192.168.1.241（Master）
 zabbix2：192.168.1.242（Slave）
 zabbix：192.168.1.240（虚拟IP）
-配置hosts文件 [root@Zabbix1 ~]# vim /etc/hosts 192.168.1.241 zabbix1 192.168.1.242 zabbix2 192.168.1.240 zabbix
-一、安装Zabbix #安装Zabbix仓库 [root@Zabbix1 ~]# rpm -Uvh https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-2.el7.noarch.rpm [root@Zabbix1 ~]# yum clean all
+配置hosts文件[root@Zabbix1 ~]# vim /etc/hosts 192.168.1.241 zabbix1 192.168.1.242 zabbix2 192.168.1.240 zabbix
+一、安装Zabbix#安装Zabbix仓库 [root@Zabbix1 ~]# rpm -Uvh https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-2.el7.noarch.rpm [root@Zabbix1 ~]# yum clean all
 #安装Zabbix server，Web前端，agent，数据库 [root@Zabbix1 ~]# yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent mariadb mariadb-server
 #初始化并创建数据库 [root@Zabbix1 ~]# systemctl enable mariadb [root@Zabbix1 ~]# systemctl start mariadb [root@Zabbix1 ~]# mysql_secure_installation [root@Zabbix1 ~]# mysql -uroot -p MariaDB [(none)]&amp;gt; create database zabbix character set utf8 collate utf8_bin; MariaDB [(none)]&amp;gt; grant all privileges on zabbix.</description>
     </item>
     
     <item>
       <title>使用Python调用Zabbix API</title>
-      <link>https://water711.github.io/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</link>
+      <link>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</link>
       <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</guid>
+      <guid>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</guid>
       <description>Zabbix API官方文档： https://www.zabbix.com/documentation/4.0/zh/manual/api
 1、向 api_jsonrpc.php 发送HTTP_POST 登录请求，获取身份验证令牌
 # -*- coding:utf-8 -*- import json import requests
@@ -168,10 +169,10 @@ url = &amp;lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;rsquo; post_heade
     
     <item>
       <title>使用Python调用Zabbix API</title>
-      <link>https://water711.github.io/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</link>
+      <link>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</link>
       <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</guid>
+      <guid>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</guid>
       <description>Zabbix API官方文档： https://www.zabbix.com/documentation/4.0/zh/manual/api
 1、向 api_jsonrpc.php 发送HTTP_POST 登录请求，获取身份验证令牌
 # -*- coding:utf-8 -*- import json import requests
@@ -185,10 +186,10 @@ url = &amp;lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;rsquo; post_heade
     
     <item>
       <title>zabbix利用SNMPTrap接收交换机主动告警</title>
-      <link>https://water711.github.io/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6/</link>
+      <link>http://example.org/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6/</guid>
+      <guid>http://example.org/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6/</guid>
       <description>zabbix接收trap的工作流程：
 snmptrapd 收到trap snmptrapd将trap传递给SNMPTT或调用Perl接收器 SNMPTT或Perl trap接收器解析，格式化并将trap写入文件 Zabbix SNMP trap读取并解析trap文件 对于每个trap，Zabbix发现主机接口与接收的trap地址匹配的所有“SNMP trap”监控项。请注意，在匹配期间只使用主机接口中选定的“IP”或“DNS”。 对于每个找到的监控项，将trap与“snmptrap[regexp]”中的regexp进行比较。 trap设置为all匹配项的值。如果没有找到匹配的监控项，并且有一个“snmptrap.fallback”监控项，则将trap设置为该值。 如果trap未设置为任何监控项的值，Zabbix默认记录不匹配的trap。（这由管理 - &amp;gt;常规 - &amp;gt;其它中的“记录不匹配的SNMP trap（Log unmatched SNMP traps）”配置。） 一、安装配置snmptrapd
 1、yum install -y net-snmp net-snmp-utils net-snmp-perl #安装net-snmp及相关工具（里面包含SNMPTrapd）
@@ -206,10 +207,10 @@ traphandle default /usr/sbin/snmptthandler #指定snmptt为trap接收器，此�
     
     <item>
       <title>zabbix监控交换机状态</title>
-      <link>https://water711.github.io/posts/2019-03-04-zabbix%E7%9B%91%E6%8E%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%8A%B6%E6%80%81/</link>
+      <link>http://example.org/posts/2019-03-04-zabbix%E7%9B%91%E6%8E%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%8A%B6%E6%80%81/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-03-04-zabbix%E7%9B%91%E6%8E%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%8A%B6%E6%80%81/</guid>
+      <guid>http://example.org/posts/2019-03-04-zabbix%E7%9B%91%E6%8E%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%8A%B6%E6%80%81/</guid>
       <description>1、在Zabbix中添加主机
 输入名称、群组和交换机IP（交换机要开启snmp）
 2、创建监控项
@@ -221,10 +222,10 @@ OID获取方法可查看上一篇文章：https://www.cnblogs.com/zhenwei66/p/10
     
     <item>
       <title>zabbix配置邮件告警</title>
-      <link>https://water711.github.io/posts/2019-03-04-zabbix%E9%85%8D%E7%BD%AE%E9%82%AE%E4%BB%B6%E5%91%8A%E8%AD%A6/</link>
+      <link>http://example.org/posts/2019-03-04-zabbix%E9%85%8D%E7%BD%AE%E9%82%AE%E4%BB%B6%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-03-04-zabbix%E9%85%8D%E7%BD%AE%E9%82%AE%E4%BB%B6%E5%91%8A%E8%AD%A6/</guid>
+      <guid>http://example.org/posts/2019-03-04-zabbix%E9%85%8D%E7%BD%AE%E9%82%AE%E4%BB%B6%E5%91%8A%E8%AD%A6/</guid>
       <description>1、安装邮件服务
 yum -y install mailx echo &amp;ldquo;我是内容&amp;rdquo; | mail -s &amp;ldquo;邮件测试&amp;rdquo; 894548465@qq.com #发邮件测试
 2、添加报警媒介
@@ -243,10 +244,10 @@ PS：如果收不到，有可能是被过滤到垃圾箱</description>
     
     <item>
       <title>下载华为交换机MIB参考文件并使用snmpwalk获取OID信息</title>
-      <link>https://water711.github.io/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/</link>
+      <link>http://example.org/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/</guid>
+      <guid>http://example.org/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/</guid>
       <description>1、下载交换机MIB参考文件 访问 https://support.huawei.com/enterprise/zh/index.html，搜索交换机型号，点击案例库，选择MIB参考
 2、交换机下启用snmp，并设置团体名 图形界面：
 命令行：
@@ -268,10 +269,10 @@ snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.6710887
     
     <item>
       <title>RHEL7/CentOS7 安装Zabbix</title>
-      <link>https://water711.github.io/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix/</link>
+      <link>http://example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix/</link>
       <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix/</guid>
+      <guid>http://example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix/</guid>
       <description>1、添加 Zabbix 软件仓库
 rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
 2、启用可选 rpms 的软件仓库
@@ -292,10 +293,10 @@ vim /etc/zabbix/zabbix_server.conf DBPassword=zabbix</description>
     
     <item>
       <title>RHEL7/CentOS7 安装Zabbix</title>
-      <link>https://water711.github.io/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/</link>
+      <link>http://example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/</link>
       <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://water711.github.io/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/</guid>
+      <guid>http://example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/</guid>
       <description>1、添加 Zabbix 软件仓库
 rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
 2、启用可选 rpms 的软件仓库

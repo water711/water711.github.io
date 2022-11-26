@@ -1,19 +1,33 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <title>Centos7部署ELK日志收集系统 // 蔡振威的博客</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.107.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
     
-    <meta name="twitter:card" content="summary"/>
+  
+
+  <title>Centos7部署ELK日志收集系统 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="一、安装Elasticsearch1、下载安装包并解压
+[root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/
+2、创建用户和用户组
+elasticsearch默认不允许使用root用户运行，如果要强行使用root运行，要加上该参数 ./bin/elasticsearch -Des.insecure.allow.root=true
+[root@ELK ~]# useradd es [root@ELK ~]# passwd es [root@ELK ~]# chown -R es:es /usr/local/elasticsearch-7.9.2/
+3、启动elasticsearch
+[root@ELK ~]# su - es [es@ELK ~]# cd /usr/local/elasticsearch-7.9.2/ [es@ELK elasticsearch-7.9.2]$ ./bin/elasticsearch [root@ELK ~]# curl http://127.0.0.1:9200 #测试启动是否成功
+启动出错
+[root@ELK ~]# tail -f /var/log/messages #需要设置es用户的最大打开文件数和最大进程数 [1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Centos7部署ELK日志收集系统"/>
-<meta name="twitter:description" content="一、安装Elasticsearch 1、下载安装包并解压
+<meta name="twitter:description" content="一、安装Elasticsearch1、下载安装包并解压
 [root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/
 2、创建用户和用户组
 elasticsearch默认不允许使用root用户运行，如果要强行使用root运行，要加上该参数 ./bin/elasticsearch -Des.insecure.allow.root=true
@@ -23,8 +37,8 @@ elasticsearch默认不允许使用root用户运行，如果要强行使用root�
 启动出错
 [root@ELK ~]# tail -f /var/log/messages #需要设置es用户的最大打开文件数和最大进程数 [1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]"/>
 
-    <meta property="og:title" content="Centos7部署ELK日志收集系统" />
-<meta property="og:description" content="一、安装Elasticsearch 1、下载安装包并解压
+  <meta property="og:title" content="Centos7部署ELK日志收集系统" />
+<meta property="og:description" content="一、安装Elasticsearch1、下载安装包并解压
 [root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/
 2、创建用户和用户组
 elasticsearch默认不允许使用root用户运行，如果要强行使用root运行，要加上该参数 ./bin/elasticsearch -Des.insecure.allow.root=true
@@ -34,46 +48,196 @@ elasticsearch默认不允许使用root用户运行，如果要强行使用root�
 启动出错
 [root@ELK ~]# tail -f /var/log/messages #需要设置es用户的最大打开文件数和最大进程数 [1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://water711.github.io/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://example.org/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-17T00:00:00+00:00" />
 
 
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
-      <span class="app-header-title">蔡振威的博客</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
-    </header>
-    <main class="app-container">
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">Centos7部署ELK日志收集系统</h1>
-      <div class="post-meta">
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Oct 17, 2020
-        </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          4 min read
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>Centos7部署ELK日志收集系统</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Sat, Oct 17, 2020
+          </span>
         </div>
       </div>
-    </header>
-    <div class="post-content">
-      <p> </p>
-<h2 id="一安装elasticsearch">一、安装Elasticsearch</h2>
-<p>1、下载安装包并解压</p>
-<p>[root@ELK ~]# wget <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86</a>_64.tar.gz
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p> </p>
+<h2 id="一安装elasticsearch">一、安装Elasticsearch<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85elasticsearch"></a></h2><p>1、下载安装包并解压</p>
+<p>[root@ELK ~]# wget <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86" target="_blank">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86</a>_64.tar.gz
 [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/</p>
 <p>2、创建用户和用户组</p>
 <p>elasticsearch默认不允许使用root用户运行，如果要强行使用root运行，要加上该参数 ./bin/elasticsearch -Des.insecure.allow.root=true</p>
@@ -131,10 +295,9 @@ WantedBy=multi-user.target</p>
 <p>启动</p>
 <p>[root@ELK ~]# systemctl enable elasticsearch
 [root@ELK ~]# systemctl start elasticsearch</p>
-<h2 id="二安装插件elasticsearch-head">二、安装插件elasticsearch-head</h2>
-<p>1、安装git和nodejs（nodejs需要9.0或以上版本）</p>
+<h2 id="二安装插件elasticsearch-head">二、安装插件elasticsearch-head<a class="anchorjs-link" href="#%e4%ba%8c%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6elasticsearch-head"></a></h2><p>1、安装git和nodejs（nodejs需要9.0或以上版本）</p>
 <p>[root@ELK ~]# yum -y install git
-[root@ELK ~]# wget <a href="https://npm.taobao.org/mirrors/node/v14.13.1/node-v14.13.1-linux-x64.tar.xz">https://npm.taobao.org/mirrors/node/v14.13.1/node-v14.13.1-linux-x64.tar.xz</a>
+[root@ELK ~]# wget <a href="https://npm.taobao.org/mirrors/node/v14.13.1/node-v14.13.1-linux-x64.tar.xz" target="_blank">https://npm.taobao.org/mirrors/node/v14.13.1/node-v14.13.1-linux-x64.tar.xz</a>
 [root@ELK ~]# tar xf node-v14.13.1-linux-x64.tar.xz -C /usr/local/
 [root@ELK ~]# mv /usr/local/node-v14.13.1-linux-x64/ /usr/local/nodejs
 [root@ELK ~]# ln -sv /usr/local/nodejs/bin/npm /usr/local/bin/
@@ -145,15 +308,15 @@ WantedBy=multi-user.target</p>
 [root@ELK local]# cd elasticsearch-head/
 [root@ELK elasticsearch-head]# npm install</p>
 <p>#npm默认源安装较慢，更换淘宝源加快安装速度
-[root@ELK ~]# npm config set registry <a href="https://registry.npmjs.org/">https://registry.npmjs.org/</a>  #配置官方的源
-[root@ELK ~]# npm config set registry <a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a> #配置淘宝的源
+[root@ELK ~]# npm config set registry <a href="https://registry.npmjs.org/" target="_blank">https://registry.npmjs.org/</a>  #配置官方的源
+[root@ELK ~]# npm config set registry <a href="https://registry.npm.taobao.org" target="_blank">https://registry.npm.taobao.org</a> #配置淘宝的源
 [root@ELK ~]# npm config get registry   #查看当前注册的源</p>
 <p>npm install出错，查看npm日志</p>
 <p>[root@ELK elasticsearch-head]# less /root/.npm/_logs/2020-10-03T17_03_29_020Z-debug.log
 &hellip;&hellip;..
-Failed at the <a href="mailto:phantomjs-prebuilt@2.1.16">phantomjs-prebuilt@2.1.16</a> install script.</p>
+Failed at the <a href="/mailto:phantomjs-prebuilt@2.1.16">phantomjs-prebuilt@2.1.16</a> install script.</p>
 <p>解决方法，单独安装phantomjs：</p>
-<p>[root@ELK elasticsearch-head]# npm install <a href="mailto:phantomjs-prebuilt@2.1.14">phantomjs-prebuilt@2.1.14</a> &ndash;ignore-scripts</p>
+<p>[root@ELK elasticsearch-head]# npm install <a href="/mailto:phantomjs-prebuilt@2.1.14">phantomjs-prebuilt@2.1.14</a> &ndash;ignore-scripts</p>
 <p>3、配置elasticsearch允许跨域访问</p>
 <p>[root@ELK ~]# vim /usr/local/elasticsearch-7.9.2/config/elasticsearch.yml</p>
 <p>//在文件末尾追加下面两行代码
@@ -171,10 +334,8 @@ this.base_uri = this.config.base_uri || this.prefs.get(&ldquo;app-base_uri&rdquo
 #!/bin/sh
 #chkconfig: 2345 80 05
 #description: elasticsearch-head</p>
-<h1 id="elasticsearch-head-的路径">elasticsearch-head 的路径</h1>
-<h2 id="nohup-npm-run-start-usrlocalelasticsearch-headnohupout-21-">cd /usr/local/elasticsearch-head
-nohup npm run start &gt;/usr/local/elasticsearch-head/nohup.out 2&gt;&amp;1 &amp;</h2>
-<p>[root@ELK ~]# chmod +x /etc/init.d/elasticsearch-head
+<h1 id="elasticsearch-head-的路径">elasticsearch-head 的路径<a class="anchorjs-link" href="#elasticsearch-head-%e7%9a%84%e8%b7%af%e5%be%84"></a></h1><h2 id="nohup-npm-run-start-usrlocalelasticsearch-headnohupout-21-">cd /usr/local/elasticsearch-head
+nohup npm run start &gt;/usr/local/elasticsearch-head/nohup.out 2&gt;&amp;1 &amp;<a class="anchorjs-link" href="#nohup-npm-run-start-usrlocalelasticsearch-headnohupout-21-"></a></h2><p>[root@ELK ~]# chmod +x /etc/init.d/elasticsearch-head
 [root@ELK ~]# chkconfig &ndash;add elasticsearch-head</p>
 <p>方法二：配置开机启动脚本</p>
 <p>[root@ELK ~]# vim /etc/rc.local
@@ -188,8 +349,7 @@ cd /usr/local/elasticsearch-head/node_modules/grunt/bin/
 {&ldquo;acknowledged&rdquo;:true}</p>
 <p>方法二、将es部署为集群</p>
 <p> </p>
-<h2 id="三安装logstash">三、安装Logstash</h2>
-<p>1、安装JAVA</p>
+<h2 id="三安装logstash">三、安装Logstash<a class="anchorjs-link" href="#%e4%b8%89%e5%ae%89%e8%a3%85logstash"></a></h2><p>1、安装JAVA</p>
 <p>官网下载Java：https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html</p>
 <p>[root@ELK ~]# tar xvf jdk-8u261-linux-x64.tar.gz -C /usr/local/
 [root@ELK ~]# mv /usr/local/jdk1.8.0_261/ /usr/local/java</p>
@@ -201,7 +361,7 @@ export PATH=${JAVA_HOME}/bin:$PATH</p>
 [root@ELK ~]# java -version  #测试</p>
 <p>2、安装logstash</p>
 <p>官网下载：https://www.elastic.co/cn/downloads/logstash</p>
-<p>[root@ELK ~]# wget <a href="https://artifacts.elastic.co/downloads/logstash/logstash-7.9.2.tar.gz">https://artifacts.elastic.co/downloads/logstash/logstash-7.9.2.tar.gz</a>
+<p>[root@ELK ~]# wget <a href="https://artifacts.elastic.co/downloads/logstash/logstash-7.9.2.tar.gz" target="_blank">https://artifacts.elastic.co/downloads/logstash/logstash-7.9.2.tar.gz</a>
 [root@ELK ~]# tar xvf logstash-7.9.2.tar.gz -C /usr/local/
 [root@ELK ~]# chown -R root:root /usr/local/logstash-7.9.2/
 [root@ELK ~]# cd /usr/local/logstash-7.9.2/
@@ -242,10 +402,9 @@ LS_GROUP=root</p>
 [root@ELK ~]# systemctl enable logstash
 [root@ELK ~]# systemctl start logstash</p>
 <p>注意：使用logstash收集syslog日志并监听514端口时，必须使用root用户启动Logstash，因为Linux系统中对1024以下端口需要root权限</p>
-<h2 id="四安装kibana">四、安装Kibana</h2>
-<p>1、安装kibana</p>
+<h2 id="四安装kibana">四、安装Kibana<a class="anchorjs-link" href="#%e5%9b%9b%e5%ae%89%e8%a3%85kibana"></a></h2><p>1、安装kibana</p>
 <p>官网：https://www.elastic.co/cn/downloads/kibana</p>
-<p>[root@ELK ~]# wget <a href="https://artifacts.elastic.co/downloads/kibana/kibana-7.9.2-linux-x86">https://artifacts.elastic.co/downloads/kibana/kibana-7.9.2-linux-x86</a>_64.tar.gz
+<p>[root@ELK ~]# wget <a href="https://artifacts.elastic.co/downloads/kibana/kibana-7.9.2-linux-x86" target="_blank">https://artifacts.elastic.co/downloads/kibana/kibana-7.9.2-linux-x86</a>_64.tar.gz
 [root@ELK ~]# tar -xvf kibana-7.9.2-linux-x86_64.tar.gz -C /usr/local/
 [root@ELK ~]# mv /usr/local/kibana-7.9.2-linux-x86_64/ /usr/local/kibana-7.9.2</p>
 <p>2、配置Kibana</p>
@@ -279,12 +438,129 @@ WantedBy=default.target</p>
 <p>[root@ELK ~]# systemctl enable kibana.service
 [root@ELK ~]# systemctl start kibana.service</p>
 
-    </div>
-    <div class="post-footer">
-      
-    </div>
-  </article>
 
-    </main>
-  </body>
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" data-toggle="tooltip" data-placement="top" title="Zabbix调优不完全指南">
+              Previous<br>
+              <span>Zabbix调优不完全指南</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2020-12-03-%E6%89%B9%E5%A4%84%E7%90%86%E4%B9%8Bforfiles%E5%91%BD%E4%BB%A4/" data-toggle="tooltip" data-placement="top" title="批处理之forfiles命令">
+              Next<br>
+              <span>批处理之forfiles命令</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
 </html>

@@ -1,21 +1,22 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <title>JAVA使用opencv通过RTSP流打开摄像头 // 蔡振威的博客</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.107.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="JAVA使用opencv通过RTSP流打开摄像头"/>
-<meta name="twitter:description" content="一、安装OpenCV 打开OpenCV官网，下载对应系统的opencv，并解压到任意位置
+  
+
+  <title>JAVA使用opencv通过RTSP流打开摄像头 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="一、安装OpenCV打开OpenCV官网，下载对应系统的opencv，并解压到任意位置
 解压./opencv/build/java目录下有以下文件
-二、Eclipse加载OpenCV库 官方配置文档：https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html
+二、Eclipse加载OpenCV库官方配置文档：https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html
 1、启动eclipse并从菜单中选择 Window –&gt; Preferences
 在左边导航窗口选择 Java –&gt; Build Path –&gt; User Libraries，点击New，并为你的library输入一个名称，例如：OpenCV-4.1.1
 2、选中新建的user libraries，点击 Add External JARs&hellip;
@@ -23,17 +24,37 @@
 3、选中 Native library location，点击Edit
 4、选择对应opencv库文件所在文件夹，32位系统选择X86，64位系统选择X64
 现在已经配置好opencv了，下面新建一个java项目，测试一下opencv是否能正常使用
-三、新建项目测试OpenCV Eclipse新建项目后，右键项目，点击 Build Path–&gt;Add Libraries&hellip;
+三、新建项目测试OpenCVEclipse新建项目后，右键项目，点击 Build Path–&gt;Add Libraries&hellip;
+选择User Library
+勾选opencv
+创建一个新的Java文件，使用以下代码运行测试：
+import org.opencv.core.Core; import org.opencv.core.CvType; import org.opencv.core.Mat;
+public class opencvTest { public static void main( String[] args ) { System.loadLibrary( Core.NATIVE_LIBRARY_NAME ); Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 ); System.out.println( &ldquo;mat = &quot; &#43; mat.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JAVA使用opencv通过RTSP流打开摄像头"/>
+<meta name="twitter:description" content="一、安装OpenCV打开OpenCV官网，下载对应系统的opencv，并解压到任意位置
+解压./opencv/build/java目录下有以下文件
+二、Eclipse加载OpenCV库官方配置文档：https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html
+1、启动eclipse并从菜单中选择 Window –&gt; Preferences
+在左边导航窗口选择 Java –&gt; Build Path –&gt; User Libraries，点击New，并为你的library输入一个名称，例如：OpenCV-4.1.1
+2、选中新建的user libraries，点击 Add External JARs&hellip;
+选择opencv的jar包
+3、选中 Native library location，点击Edit
+4、选择对应opencv库文件所在文件夹，32位系统选择X86，64位系统选择X64
+现在已经配置好opencv了，下面新建一个java项目，测试一下opencv是否能正常使用
+三、新建项目测试OpenCVEclipse新建项目后，右键项目，点击 Build Path–&gt;Add Libraries&hellip;
 选择User Library
 勾选opencv
 创建一个新的Java文件，使用以下代码运行测试：
 import org.opencv.core.Core; import org.opencv.core.CvType; import org.opencv.core.Mat;
 public class opencvTest { public static void main( String[] args ) { System.loadLibrary( Core.NATIVE_LIBRARY_NAME ); Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 ); System.out.println( &ldquo;mat = &quot; &#43; mat."/>
 
-    <meta property="og:title" content="JAVA使用opencv通过RTSP流打开摄像头" />
-<meta property="og:description" content="一、安装OpenCV 打开OpenCV官网，下载对应系统的opencv，并解压到任意位置
+  <meta property="og:title" content="JAVA使用opencv通过RTSP流打开摄像头" />
+<meta property="og:description" content="一、安装OpenCV打开OpenCV官网，下载对应系统的opencv，并解压到任意位置
 解压./opencv/build/java目录下有以下文件
-二、Eclipse加载OpenCV库 官方配置文档：https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html
+二、Eclipse加载OpenCV库官方配置文档：https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html
 1、启动eclipse并从菜单中选择 Window –&gt; Preferences
 在左边导航窗口选择 Java –&gt; Build Path –&gt; User Libraries，点击New，并为你的library输入一个名称，例如：OpenCV-4.1.1
 2、选中新建的user libraries，点击 Add External JARs&hellip;
@@ -41,80 +62,283 @@ public class opencvTest { public static void main( String[] args ) { System.load
 3、选中 Native library location，点击Edit
 4、选择对应opencv库文件所在文件夹，32位系统选择X86，64位系统选择X64
 现在已经配置好opencv了，下面新建一个java项目，测试一下opencv是否能正常使用
-三、新建项目测试OpenCV Eclipse新建项目后，右键项目，点击 Build Path–&gt;Add Libraries&hellip;
+三、新建项目测试OpenCVEclipse新建项目后，右键项目，点击 Build Path–&gt;Add Libraries&hellip;
 选择User Library
 勾选opencv
 创建一个新的Java文件，使用以下代码运行测试：
 import org.opencv.core.Core; import org.opencv.core.CvType; import org.opencv.core.Mat;
 public class opencvTest { public static void main( String[] args ) { System.loadLibrary( Core.NATIVE_LIBRARY_NAME ); Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 ); System.out.println( &ldquo;mat = &quot; &#43; mat." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://water711.github.io/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://example.org/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-10-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-10-29T00:00:00+00:00" />
 
 
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
-      <span class="app-header-title">蔡振威的博客</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
-    </header>
-    <main class="app-container">
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">JAVA使用opencv通过RTSP流打开摄像头</h1>
-      <div class="post-meta">
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Oct 29, 2019
-        </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          2 min read
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>JAVA使用opencv通过RTSP流打开摄像头</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Tue, Oct 29, 2019
+          </span>
         </div>
       </div>
-    </header>
-    <div class="post-content">
-      <p> </p>
-<h2 id="一安装opencv">一、安装OpenCV</h2>
-<p>打开OpenCV官网，下载对应系统的opencv，并解压到任意位置</p>
-<p><img src="http://hugo.caizhenwei.top//58f9831ac6df95c9000c4a10b0502bb0.png" alt=""></p>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p> </p>
+<h2 id="一安装opencv">一、安装OpenCV<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85opencv"></a></h2><p>打开OpenCV官网，下载对应系统的opencv，并解压到任意位置</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//58f9831ac6df95c9000c4a10b0502bb0.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p>解压./opencv/build/java目录下有以下文件</p>
-<p><img src="http://hugo.caizhenwei.top//6cd026400c0b5914cb6038b84390f5d3.png" alt=""></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//6cd026400c0b5914cb6038b84390f5d3.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p> </p>
-<h2 id="二eclipse加载opencv库">二、Eclipse加载OpenCV库</h2>
-<p>官方配置文档：<a href="https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html">https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html</a></p>
+<h2 id="二eclipse加载opencv库">二、Eclipse加载OpenCV库<a class="anchorjs-link" href="#%e4%ba%8ceclipse%e5%8a%a0%e8%bd%bdopencv%e5%ba%93"></a></h2><p>官方配置文档：<a href="https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html" target="_blank">https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html</a></p>
 <p>1、启动eclipse并从菜单中选择 Window –&gt; Preferences</p>
 <p>在左边导航窗口选择  Java –&gt; Build Path –&gt; User Libraries，点击New，并为你的library输入一个名称，例如：<code>OpenCV-4.1.1</code></p>
-<p><img src="http://hugo.caizhenwei.top//9e9da7cc66b2cfc7c3acaee7dcfe8f05.png" alt=""></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//9e9da7cc66b2cfc7c3acaee7dcfe8f05.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p>2、选中新建的user libraries，点击 Add External JARs&hellip;</p>
-<p><img src="http://hugo.caizhenwei.top//3b438337bfceffd09d1e49afb9639813.png" alt=""></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//3b438337bfceffd09d1e49afb9639813.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p>选择opencv的jar包</p>
-<p><img src="http://hugo.caizhenwei.top//60b04099a4a163a0d24fffbec261c2e7.png" alt=""></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//60b04099a4a163a0d24fffbec261c2e7.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p>3、选中 Native library location，点击Edit</p>
-<p><img src="http://hugo.caizhenwei.top//b422c17fdd27e66a837f3aec4e73d0e6.png" alt=""></p>
-<p><img src="http://hugo.caizhenwei.top//29cb4fbb4c6ce276a118e083f1271248.png" alt=""></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//b422c17fdd27e66a837f3aec4e73d0e6.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//29cb4fbb4c6ce276a118e083f1271248.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p>4、选择对应opencv库文件所在文件夹，32位系统选择X86，64位系统选择X64</p>
-<p><img src="http://hugo.caizhenwei.top//161e59e6d0dada3a3a7f5114f7c95d4e.png" alt=""></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//161e59e6d0dada3a3a7f5114f7c95d4e.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p>现在已经配置好opencv了，下面新建一个java项目，测试一下opencv是否能正常使用</p>
 <p> </p>
 <p> </p>
-<h2 id="三新建项目测试opencv">三、新建项目测试OpenCV</h2>
-<p>Eclipse新建项目后，右键项目，点击 Build Path–&gt;Add Libraries&hellip;</p>
-<p><img src="http://hugo.caizhenwei.top//8b0b83c2b4444fbbe3b1709de85efa47.png" alt=""></p>
+<h2 id="三新建项目测试opencv">三、新建项目测试OpenCV<a class="anchorjs-link" href="#%e4%b8%89%e6%96%b0%e5%bb%ba%e9%a1%b9%e7%9b%ae%e6%b5%8b%e8%af%95opencv"></a></h2><p>Eclipse新建项目后，右键项目，点击 Build Path–&gt;Add Libraries&hellip;</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//8b0b83c2b4444fbbe3b1709de85efa47.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p>选择User Library</p>
-<p><img src="http://hugo.caizhenwei.top//94dca5906ffe93b58f31260e1d561b48.png" alt=""></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//94dca5906ffe93b58f31260e1d561b48.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p>勾选opencv</p>
-<p><img src="http://hugo.caizhenwei.top//66d44deaa8008076973f67c4ca7a9fb6.png" alt=""></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//66d44deaa8008076973f67c4ca7a9fb6.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
 <p>创建一个新的Java文件，使用以下代码运行测试：</p>
 <p>import org.opencv.core.Core;
 import org.opencv.core.CvType;
@@ -133,8 +357,7 @@ System.out.println( &ldquo;mat = &quot; + mat.dump() );
 0,   1,   0;
 0,   0,   1]</p>
 <p> </p>
-<h2 id="四打开摄像头按原分辨率显示">四、打开摄像头，按原分辨率显示</h2>
-<p>使用RTSP流媒体打开摄像头</p>
+<h2 id="四打开摄像头按原分辨率显示">四、打开摄像头，按原分辨率显示<a class="anchorjs-link" href="#%e5%9b%9b%e6%89%93%e5%bc%80%e6%91%84%e5%83%8f%e5%a4%b4%e6%8c%89%e5%8e%9f%e5%88%86%e8%be%a8%e7%8e%87%e6%98%be%e7%a4%ba"></a></h2><p>使用RTSP流媒体打开摄像头</p>
 <p>import org.opencv.core.Mat;
 import org.opencv.core.Core;
 import org.opencv.highgui.HighGui;
@@ -163,8 +386,7 @@ System.load(&quot;D:/Program Files/opencv/build/bin/opencv\_videoio\_ffmpeg411\_
 <p>}
 }</p>
 <p> </p>
-<h2 id="五打开摄像头显示在固定大小的窗口">五、打开摄像头，显示在固定大小的窗口</h2>
-<p> </p>
+<h2 id="五打开摄像头显示在固定大小的窗口">五、打开摄像头，显示在固定大小的窗口<a class="anchorjs-link" href="#%e4%ba%94%e6%89%93%e5%bc%80%e6%91%84%e5%83%8f%e5%a4%b4%e6%98%be%e7%a4%ba%e5%9c%a8%e5%9b%ba%e5%ae%9a%e5%a4%a7%e5%b0%8f%e7%9a%84%e7%aa%97%e5%8f%a3"></a></h2><p> </p>
 <p>import org.opencv.core.Mat;
 import org.opencv.core.Core;
 import org.opencv.videoio.VideoCapture;
@@ -199,8 +421,7 @@ public static void main(String\[\] args) {
 </code></pre>
 <p>}</p>
 <p> </p>
-<h2 id="六打开摄像头并截取一帧画面">六、打开摄像头并截取一帧画面</h2>
-<p> </p>
+<h2 id="六打开摄像头并截取一帧画面">六、打开摄像头并截取一帧画面<a class="anchorjs-link" href="#%e5%85%ad%e6%89%93%e5%bc%80%e6%91%84%e5%83%8f%e5%a4%b4%e5%b9%b6%e6%88%aa%e5%8f%96%e4%b8%80%e5%b8%a7%e7%94%bb%e9%9d%a2"></a></h2><p> </p>
 <p>import org.opencv.core.Mat;
 import org.opencv.core.Core;
 import org.opencv.imgcodecs.Imgcodecs;
@@ -224,8 +445,7 @@ camera.release();
 </code></pre>
 <p>}</p>
 <p> </p>
-<h2 id="七判断摄像头是否黑屏">七、判断摄像头是否黑屏</h2>
-<p> </p>
+<h2 id="七判断摄像头是否黑屏">七、判断摄像头是否黑屏<a class="anchorjs-link" href="#%e4%b8%83%e5%88%a4%e6%96%ad%e6%91%84%e5%83%8f%e5%a4%b4%e6%98%af%e5%90%a6%e9%bb%91%e5%b1%8f"></a></h2><p> </p>
 <p>import org.opencv.core.Mat;
 import java.io.File;
 import org.opencv.core.Core;
@@ -261,12 +481,129 @@ public static void main(String\[\] args) {
 </code></pre>
 <p>}</p>
 
-    </div>
-    <div class="post-footer">
-      
-    </div>
-  </article>
 
-    </main>
-  </body>
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2019-10-24-eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8jar%E5%8C%85/" data-toggle="tooltip" data-placement="top" title="Eclipse中使用jar包">
+              Previous<br>
+              <span>Eclipse中使用jar包</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/" data-toggle="tooltip" data-placement="top" title="windows下使用pip安装包失败，提示Could not install packages due to an EnvironmentError: [Errno 0] Error">
+              Next<br>
+              <span>windows下使用pip安装包失败，提示Could not install packages due to an EnvironmentError: [Errno 0] Error</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
 </html>

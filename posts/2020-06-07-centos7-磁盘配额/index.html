@@ -1,99 +1,263 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <title>Centos7 磁盘配额 // 蔡振威的博客</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.107.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Centos7 磁盘配额"/>
-<meta name="twitter:description" content="参考文档：http://c.biancheng.net/view/908.html
-磁盘配额概述 1、磁盘配额限制只能作用于普通用户和用户组，超级用户 root 不能做磁盘配额；
+  
+
+  <title>Centos7 磁盘配额 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="参考文档：http://c.biancheng.net/view/908.html
+磁盘配额概述1、磁盘配额限制只能作用于普通用户和用户组，超级用户 root 不能做磁盘配额；
 2、磁盘配额限制只能针对分区，不能针对目录，即仅能针对文件系统进行限制，例如 /dev/sda1 挂载到 /home，那么在 /home下的所有目录都会受到磁盘配额的限制；
 3、磁盘配额可以限制用户占用的磁盘容量大小（block），也能限制用户允许占用的文件个数（inode）。
-磁盘配额使用条件 1、内核必须支持磁盘配额。Centos 6.x和7.x 版本，默认支持磁盘配额，否则就要重新编译内核，加入 quota supper 功能
+磁盘配额使用条件1、内核必须支持磁盘配额。Centos 6.x和7.x 版本，默认支持磁盘配额，否则就要重新编译内核，加入 quota supper 功能
 [root@web ~]# grep CONFIG_QUOTA /boot/config-* CONFIG_QUOTA=y CONFIG_QUOTA_NETLINK_INTERFACE=y
-CONFIG_QUOTA_DEBUG is not set CONFIG_QUOTA_TREE=y CONFIG_QUOTACTL=y CONFIG_QUOTACTL_COMPAT=y
+CONFIG_QUOTA_DEBUG is not setCONFIG_QUOTA_TREE=y CONFIG_QUOTACTL=y CONFIG_QUOTACTL_COMPAT=y
 2、如果是分区的文件系统为xfs，则可以使用系统自带的xfs_quota工具来设置，如果为其它文件系统，则需要安装quota
-一、磁盘配额设置（xfs分区） 对home目录进行磁盘配额设置
+一、磁盘配额设置（xfs分区）对home目录进行磁盘配额设置
+1、检查/home目录是否为独立的文件系统
+#情况一：下面/home 是独立的文件系统，因此可以直接对其进行限制。但如果/home 不是独立的文件系统，则可能就要针对根目录做磁盘配额了，但不建议大家这样做。 [root@test ~]# df -H Filesystem Size Used Avail Use% Mounted on /dev/mapper/centos-root 19G 1.8G 17G 10% / /dev/sda1 1.1G 171M 894M 16% /boot /dev/sda2 20G 1G 894M 5% /home &hellip;&hellip;
+#情况二：如果home目录，不是独立的文件系统，建议重新分一个区，挂载到home目录下 [root@test ~]# df -H Filesystem Size Used Avail Use% Mounted on /dev/mapper/centos-root 19G 1.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Centos7 磁盘配额"/>
+<meta name="twitter:description" content="参考文档：http://c.biancheng.net/view/908.html
+磁盘配额概述1、磁盘配额限制只能作用于普通用户和用户组，超级用户 root 不能做磁盘配额；
+2、磁盘配额限制只能针对分区，不能针对目录，即仅能针对文件系统进行限制，例如 /dev/sda1 挂载到 /home，那么在 /home下的所有目录都会受到磁盘配额的限制；
+3、磁盘配额可以限制用户占用的磁盘容量大小（block），也能限制用户允许占用的文件个数（inode）。
+磁盘配额使用条件1、内核必须支持磁盘配额。Centos 6.x和7.x 版本，默认支持磁盘配额，否则就要重新编译内核，加入 quota supper 功能
+[root@web ~]# grep CONFIG_QUOTA /boot/config-* CONFIG_QUOTA=y CONFIG_QUOTA_NETLINK_INTERFACE=y
+CONFIG_QUOTA_DEBUG is not setCONFIG_QUOTA_TREE=y CONFIG_QUOTACTL=y CONFIG_QUOTACTL_COMPAT=y
+2、如果是分区的文件系统为xfs，则可以使用系统自带的xfs_quota工具来设置，如果为其它文件系统，则需要安装quota
+一、磁盘配额设置（xfs分区）对home目录进行磁盘配额设置
 1、检查/home目录是否为独立的文件系统
 #情况一：下面/home 是独立的文件系统，因此可以直接对其进行限制。但如果/home 不是独立的文件系统，则可能就要针对根目录做磁盘配额了，但不建议大家这样做。 [root@test ~]# df -H Filesystem Size Used Avail Use% Mounted on /dev/mapper/centos-root 19G 1.8G 17G 10% / /dev/sda1 1.1G 171M 894M 16% /boot /dev/sda2 20G 1G 894M 5% /home &hellip;&hellip;
 #情况二：如果home目录，不是独立的文件系统，建议重新分一个区，挂载到home目录下 [root@test ~]# df -H Filesystem Size Used Avail Use% Mounted on /dev/mapper/centos-root 19G 1."/>
 
-    <meta property="og:title" content="Centos7 磁盘配额" />
+  <meta property="og:title" content="Centos7 磁盘配额" />
 <meta property="og:description" content="参考文档：http://c.biancheng.net/view/908.html
-磁盘配额概述 1、磁盘配额限制只能作用于普通用户和用户组，超级用户 root 不能做磁盘配额；
+磁盘配额概述1、磁盘配额限制只能作用于普通用户和用户组，超级用户 root 不能做磁盘配额；
 2、磁盘配额限制只能针对分区，不能针对目录，即仅能针对文件系统进行限制，例如 /dev/sda1 挂载到 /home，那么在 /home下的所有目录都会受到磁盘配额的限制；
 3、磁盘配额可以限制用户占用的磁盘容量大小（block），也能限制用户允许占用的文件个数（inode）。
-磁盘配额使用条件 1、内核必须支持磁盘配额。Centos 6.x和7.x 版本，默认支持磁盘配额，否则就要重新编译内核，加入 quota supper 功能
+磁盘配额使用条件1、内核必须支持磁盘配额。Centos 6.x和7.x 版本，默认支持磁盘配额，否则就要重新编译内核，加入 quota supper 功能
 [root@web ~]# grep CONFIG_QUOTA /boot/config-* CONFIG_QUOTA=y CONFIG_QUOTA_NETLINK_INTERFACE=y
-CONFIG_QUOTA_DEBUG is not set CONFIG_QUOTA_TREE=y CONFIG_QUOTACTL=y CONFIG_QUOTACTL_COMPAT=y
+CONFIG_QUOTA_DEBUG is not setCONFIG_QUOTA_TREE=y CONFIG_QUOTACTL=y CONFIG_QUOTACTL_COMPAT=y
 2、如果是分区的文件系统为xfs，则可以使用系统自带的xfs_quota工具来设置，如果为其它文件系统，则需要安装quota
-一、磁盘配额设置（xfs分区） 对home目录进行磁盘配额设置
+一、磁盘配额设置（xfs分区）对home目录进行磁盘配额设置
 1、检查/home目录是否为独立的文件系统
 #情况一：下面/home 是独立的文件系统，因此可以直接对其进行限制。但如果/home 不是独立的文件系统，则可能就要针对根目录做磁盘配额了，但不建议大家这样做。 [root@test ~]# df -H Filesystem Size Used Avail Use% Mounted on /dev/mapper/centos-root 19G 1.8G 17G 10% / /dev/sda1 1.1G 171M 894M 16% /boot /dev/sda2 20G 1G 894M 5% /home &hellip;&hellip;
 #情况二：如果home目录，不是独立的文件系统，建议重新分一个区，挂载到home目录下 [root@test ~]# df -H Filesystem Size Used Avail Use% Mounted on /dev/mapper/centos-root 19G 1." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://water711.github.io/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://example.org/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-07T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-07T00:00:00+00:00" />
 
 
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
-      <span class="app-header-title">蔡振威的博客</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
-    </header>
-    <main class="app-container">
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">Centos7 磁盘配额</h1>
-      <div class="post-meta">
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Jun 7, 2020
-        </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          3 min read
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>Centos7 磁盘配额</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Sun, Jun 7, 2020
+          </span>
         </div>
       </div>
-    </header>
-    <div class="post-content">
-      <p><strong>参考文档：<a href="http://c.biancheng.net/view/908.html">http://c.biancheng.net/view/908.html</a></strong></p>
-<h2 id="磁盘配额概述">磁盘配额概述</h2>
-<p>1、磁盘配额限制只能作用于普通用户和用户组，超级用户 root 不能做磁盘配额；</p>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p><strong>参考文档：<a href="http://c.biancheng.net/view/908.html" target="_blank">http://c.biancheng.net/view/908.html</a></strong></p>
+<h2 id="磁盘配额概述">磁盘配额概述<a class="anchorjs-link" href="#%e7%a3%81%e7%9b%98%e9%85%8d%e9%a2%9d%e6%a6%82%e8%bf%b0"></a></h2><p>1、磁盘配额限制只能作用于普通用户和用户组，超级用户 root 不能做磁盘配额；</p>
 <p>2、磁盘配额限制只能针对分区，不能针对目录，即仅能针对文件系统进行限制，例如 /dev/sda1 挂载到 /home，那么在 /home下的所有目录都会受到磁盘配额的限制；</p>
 <p>3、磁盘配额可以限制用户占用的磁盘容量大小（block），也能限制用户允许占用的文件个数（inode）。</p>
-<h2 id="磁盘配额使用条件">磁盘配额使用条件</h2>
-<p>1、内核必须支持磁盘配额。Centos 6.x和7.x 版本，默认支持磁盘配额，否则就要重新编译内核，加入 quota supper 功能</p>
+<h2 id="磁盘配额使用条件">磁盘配额使用条件<a class="anchorjs-link" href="#%e7%a3%81%e7%9b%98%e9%85%8d%e9%a2%9d%e4%bd%bf%e7%94%a8%e6%9d%a1%e4%bb%b6"></a></h2><p>1、内核必须支持磁盘配额。Centos 6.x和7.x 版本，默认支持磁盘配额，否则就要重新编译内核，加入 quota supper 功能</p>
 <p>[root@web ~]# grep CONFIG_QUOTA /boot/config-*
 CONFIG_QUOTA=y
 CONFIG_QUOTA_NETLINK_INTERFACE=y</p>
-<h1 id="config_quota_debug-is-not-set">CONFIG_QUOTA_DEBUG is not set</h1>
-<p>CONFIG_QUOTA_TREE=y
+<h1 id="config_quota_debug-is-not-set">CONFIG_QUOTA_DEBUG is not set<a class="anchorjs-link" href="#config_quota_debug-is-not-set"></a></h1><p>CONFIG_QUOTA_TREE=y
 CONFIG_QUOTACTL=y
 CONFIG_QUOTACTL_COMPAT=y</p>
 <p>2、如果是分区的文件系统为xfs，则可以使用系统自带的xfs_quota工具来设置，如果为其它文件系统，则需要安装quota</p>
 <p> </p>
-<h2 id="一磁盘配额设置xfs分区">一、磁盘配额设置（xfs分区）</h2>
-<p>对home目录进行磁盘配额设置</p>
+<h2 id="一磁盘配额设置xfs分区">一、磁盘配额设置（xfs分区）<a class="anchorjs-link" href="#%e4%b8%80%e7%a3%81%e7%9b%98%e9%85%8d%e9%a2%9d%e8%ae%be%e7%bd%aexfs%e5%88%86%e5%8c%ba"></a></h2><p>对home目录进行磁盘配额设置</p>
 <p><strong>1、检查/home目录是否为独立的文件系统</strong></p>
 <p>#情况一：下面/home 是独立的文件系统，因此可以直接对其进行限制。但如果/home 不是独立的文件系统，则可能就要针对根目录做磁盘配额了，但不建议大家这样做。
 [root@test ~]# df -H
@@ -139,8 +303,7 @@ w 写入分区表并退出</p>
 [tom@test ~]$ touch file2 file3 file4
 提示：touch: cannot touch ‘file4’: Disk quota exceeded</p>
 <p>[tom@test ~]$ ls -a</p>
-<h2 id="二磁盘配额设置ext4分区">二、磁盘配额设置（ext4分区）</h2>
-<p>对home目录进行磁盘配额设置</p>
+<h2 id="二磁盘配额设置ext4分区">二、磁盘配额设置（ext4分区）<a class="anchorjs-link" href="#%e4%ba%8c%e7%a3%81%e7%9b%98%e9%85%8d%e9%a2%9d%e8%ae%be%e7%bd%aeext4%e5%88%86%e5%8c%ba"></a></h2><p>对home目录进行磁盘配额设置</p>
 <p><strong>1、检查/home目录是否为独立的文件系统</strong></p>
 <p>#情况一：下面/home 是独立的文件系统，因此可以直接对其进行限制。但如果/home 不是独立的文件系统，则可能就要针对根目录做磁盘配额了，但不建议大家这样做。
 [root@test ~]# df -H
@@ -177,12 +340,12 @@ w 写入分区表并退出</p>
 [root@test ~]# yum install -y quota</p>
 <p>#扫描文件系统（必须含有挂载参数 usrquota 和 grpquota），加 -fM 参数可强制扫描
 [root@test ~]# quotacheck -avug
-quotacheck: Scanning /dev/sdb1 [/home] done<!-- raw HTML omitted -->    quotacheck: Checked 3 directories and 2 files<!-- raw HTML omitted --></p>
+quotacheck: Scanning /dev/sdb1 [/home] done<br>    quotacheck: Checked 3 directories and 2 files<br></p>
 <p>#使用quota扫描后，在/home目录下建立了 Quota 记录文件
-[root@test ~]# ls -a /home<!-- raw HTML omitted -->.  ..  aquota.group  aquota.user</p>
+[root@test ~]# ls -a /home<br>.  ..  aquota.group  aquota.user</p>
 <p>#开启磁盘配额限制(quotaon开启，quotaoff关闭)
 [root@test ~]# quotaon -auvg
-/dev/sdb1 [/home]: group quotas turned on<!-- raw HTML omitted -->   /dev/sdb1 [/home]: user quotas turned on<!-- raw HTML omitted --></p>
+/dev/sdb1 [/home]: group quotas turned on<br>   /dev/sdb1 [/home]: user quotas turned on<br></p>
 <p>#交互式修改磁盘配额，限制tom用户和tom组，磁盘容量软限制30m，硬限制50m，文件数量软限制6个，硬限制7个
 [root@test ~]# edquota -u tom
 Disk quotas for user tom (uid 1001):
@@ -207,12 +370,129 @@ setquota -u 用户名 容量软限制 容量硬限制 个数软限制 个数硬�
 提示：touch: cannot touch ‘file4’: Disk quota exceeded</p>
 <p>[tom@test ~]$ ls -a</p>
 
-    </div>
-    <div class="post-footer">
-      
-    </div>
-  </article>
 
-    </main>
-  </body>
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc/" data-toggle="tooltip" data-placement="top" title="跨公网远程网络唤醒PC">
+              Previous<br>
+              <span>跨公网远程网络唤醒PC</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/" data-toggle="tooltip" data-placement="top" title="Python使用讯飞API进行语音转文字">
+              Next<br>
+              <span>Python使用讯飞API进行语音转文字</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
 </html>

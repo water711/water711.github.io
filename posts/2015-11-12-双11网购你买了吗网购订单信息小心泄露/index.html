@@ -1,23 +1,70 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <title>双11网购，你买了吗？网购订单信息小心泄露！ // 蔡振威的博客</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.107.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="John Doe" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="双11网购，你买了吗？网购订单信息小心泄露！"/>
-<meta name="twitter:description" content="****
+  
+
+  <title>双11网购，你买了吗？网购订单信息小心泄露！ | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="**mai.jpg**
 今天是一年一度的电商“双11”购物狂欢节。相信不少“剁手党”已经开始血拼了，购物的同时，你们也要小心订单信息的泄露哦。
 相信很多人都曾面临过自己的订单信息泄露引起的诈骗或者骚扰电话、典型的机票改签骗局、订单退款骗局等等。每次大家都很愤怒的认为电商平台在出卖自己的信息，然而事实上是怎样，我想从我负责订单信息泄露两年的实际经历来谈谈我的看法。
 要了解订单究竟从哪里泄露的，要看整个产业的流转情况。我们下单买一个东西，大体上要经过商家、电商平台、物流、最后到达用户手中，所以这四个环节都有可能产生订单信息泄露的问题。我从自己的事件库里拉出来我们自己的一个分析，每家情况可能不一样，仅作参考。
-一、商家环节
+1.png一、商家环节
+商家和电商平台在有些时候是一个，但在中国是有很多第三方卖家的。例如你在某宝买充气女朋友，某宝是平台，而卖家可能是福建一个批发街上的小铺子。也就是自营和第三方商家的区别，一般来说我们认为自营的安全性比较高，而第三方商家则参差不齐，存在较大的风险。
+在实际工作中，我们也统计过案例，实际上看到的数据，商家确实是订单泄露最主要的原因。但这只是基于我们自己的数据来看。商家信息泄露表现比较突出的有五种原因：
+**1、内部倒卖。**内部员工倒卖订单数据分为两种情况，一种是内部员工行为，另一种则是黑产打入的行为。先说内部员工行为，一个小型商家对员工的录用，大家可想而之是个什么情况。不在乎学历，不在乎背景，只要有点经验即可，而且待遇也比较低，员工流动也大，因此面对一些诱惑，很容易去倒卖数据，卖了几批数据后就跑路换个其他公司接着做。还有一种是黑产打入，黑产直接派一些人去应聘，然后拿数据，也是干一阵就跑。
+对付这种倒卖行为，要求商家去加强员工入职管理和权限管理，但对于这么小的商家，可能只有三五个人的商家，很难谈得上什么管理，更谈不上所谓的权限控制。一个大的平台，可能会有几百上千万大大小小的商家，这个管理难度不亚于治理一个国家了。一个稍微可行的办法是，要求所有商家的员工入职前统一上传身份证照片，然后建一个库，对发现这种行为的打上标记，禁止进入，只不过，这仍然取决与商家的管理水平，你可以想象得到，商家会随便应付一下。但至少比没有要好一些，能形成一些震慑力。
+**2、木马病毒。**商家的员工有时候会接待一些声称有大订单的人物，订单包括多种需求，所以会需要员工接收订单文件，又或者发给员工一个链接，而木马病毒就在这里了。木马和病毒会潜伏下来监控员工电脑操作，获取订单软件系统信息的帐号密码。之前我们也反复教育过商户，不要使用QQ、邮箱之类的接收来历不明的文件，但是面对这个群体，你能想到这种教育的效果。我们也曾经考虑过，给商户的电脑统一安装我们自己开发的杀毒软件，但这是一个很大的工程，木马病毒又会不断变形产生对抗，等于要成立个防毒软件公司了，。
+**3、三方工具后门。**在线销售会需要一些系统的支撑，比如仓库管理、订单管理、面单打印等，市面上也有各种公司提供这一类软件，这种软件水平也参差不齐。有的直接就是黑产这种人开发的，目的就是窃取订单信息。还有的属于安全能力薄弱，有一些漏洞可以被利用，但是单一的某个软件漏洞还不够可怕，现在很多公司为商家提供一揽子服务，订单系统的服务器都在云上，一旦突破就是一个大群体订单泄露。所以针对这个情况，我们做了两件事，一是要求所有的软件系统都必须经过我们的安全测试，否则不给接口，在这一关做一层控制，但这也还不够，因为有些比如快递打印系统，是不需要直接调用我们的接口的，另外即使做了代码的检查，也仅仅是软件级的，出现事件后无法追溯到底哪个环节出了问题。所以我们又建了个云服务器区，建议商家和软件提供商迁移到这里来，这样一旦出了状况，我们能通过日志分析查找根源。
+例如曾经有段时间比较流行的某订单打印软件，按正常功能，应该是能够同步我们的平台和物流公司。但在出问题的那几周，物流公司反馈无法同步到订单打印信息，而欺诈分子就会利用这个时间进行电话欺诈。根据这个疑点，我们停用订单打印软件后，这家店铺的客户订单欺诈明显消失。
+**4、弱口令。**我们会给商户提供一个在线的订单管理平台，再加上商户自己用的平台，都会存在弱口令问题。所谓弱口令并非是指123456这种，而是由于商户员工的流动性，离职后密码没有修改造成订单信息被窃取。我们也曾考虑过做短信校验，但短信校验码就需要绑定手机，给一个公司的人绑定手机存在着实际的操作困难。后来我们采用了证书机制。但这也只是解决了自有平台的问题，商户自用平台还是存在口令泄漏。在排除法上，一旦出现订单信息泄露反馈，立刻修改密码，由此来判断是否是由于口令问题引起。
+**5、无线与监听问题。**很多公司都用的是小型家用无线路由器，这种路由器一是默认密码不修改，二是自身有漏洞。这样黑客就可以采用DNS中间人、网络监听流量等手段获取网络流量信息。这种情况下，改系统密码、上云服务其实都没有用处，但最重要的问题是难以发现。商户完全不具备这种被攻击的发现能力，除非我们做一款硬件安全路由分发给商户。
+商户这端的风险，主要是由于商户IT水平、管理水平较低造成，另外分散在全国甚至海外。所以如果要完全解决商户端的风险，就几乎意味着我们要替商户包办一切，从软件系统到杀毒软件，从无线路由再到人员管理，事实上对于一家电商公司来说，是几乎不可能完成的任务。
+二、用户环节
+用户自身的问题属于第二个比较突出的问题。能在这里看这篇文章的，对自身的安全都有防范意识，但对于小白用户，这就是一个比较突出的问题。而且订单信息泄露最终的受害者也是用户，如果安抚不好处理不当，就会吃官司。
+用户这里比较突出的是问题：账号被盗、木马病毒、钓鱼、无线。
+**1、 账号被盗。**这个很容易理解，不解释了，值得一提的是目前主要是撞库。撞库这个事情，稍微有点技术实力的电商都会用各种手段来防御，比如设备指纹、IP判定等防扫号。
+**2、 木马病毒。**主要是手机端的比较突出，去年下半年一段时间，我们发现接近70%的订单信息泄露是手机用户。我们密集调研了受害用户，发现在手机上确实存在安卓远控类软件，但种类十分繁多。所以我们在APP上增加了一些安全的功能，对其中一些数据做了特殊加密，对启动环境进行了判断。
+**3、 钓鱼，伪基站钓鱼是一种。**另外是社工类的钓鱼，冒充客服打电话、兼职招聘收集用户信息等，其目的也主要是为了得到账号。
+4、 无线，主要是伪热点收集信息。
+用户这的问题都比较容易理解，但对用户端问题的解决则是一个很大的工程。这些问题的解决分为我们可以掌控的和不能掌控的。对于账号被盗、木马病毒，基本上我们还可以提供对应的解决方案。但对于钓鱼问题，整体上已经完全绕过了我们的平台，钓鱼问题的打击，又可以专门写一篇文章来说了，一般是快速发现、合作关闭、宣传教育。
+但是，通常用户不会理解这里的问题，总是将责任归于电商平台。会产生投诉，甚者会产生司法纠纷。所以对用户的投诉处理要慎重对待，某些特殊用户可能要先行赔偿，出现危机要有公关处理。
+三、物流环节
+物流端其实也和商户一样，但是结构上会简单一些。主要风险两个：
+**1、 内部倒卖。**有倒卖系统数据的，但更多的是倒卖物流面单，倒卖物流订单的特点是地域化比较集中，通常是某个门店，所以很容易归类发现。而且主要集中在一些代理加盟的物流点，管理比较松散。
+**2、 系统漏洞。**关于系统漏洞大家见得就多了，我印象中几个大的物流公司都有出过问题，攻击者可以直接从系统上捞取物流信息。
+对物流公司的泄露，一是宣传教育，二是专项打击，配合公安几轮打下来，他们就会引以为鉴。这里有一个判断因子，有些情况下，订单还没有到物流侧，用户就接到了诈骗电话，所以在调查的时候要问清楚。
+四、电商平台
+从电商自己来说，泄露订单完全没有意义—我是指正规电商，不是那种骗了钱就跑的。买卖这些订单其实赚不了什么钱，还会对形象造成重大打击，带来无穷的麻烦和官司，完全得不偿失。所以从根本上就不会想通过这种方法赚钱。
+平台端我碰到的问题主要分为两类，内鬼和系统漏洞。但内鬼里面最突出的问题是外包，所以我单拿出来说这种问题。
+**1、 内部员工作案。**一个电商的业务系统，能够接触到用户订单的人实在太多，从客服到技术，到数据平台，前端等都有机会接触。内部员工的管控相对比较容易，一个是匿名化处理，所谓匿名化处理，就是对关键用户信息进行匿名或模糊处理，即使员工接触到也无法联系对方，或必须通过系统联系对方。再一个是操作监控，如果要偷拿订单信息，必然是批量化，而不是个别单一订单，从统计上就可以做一些规则预警。还有一个是加强警示教育，一旦发现，从重处理绝不姑息。内部员工作案的几率比较低，但一旦出事就是大事，所以这部分能够在自己掌控的地方要处理好。
+**2、 外包员工。**外包员工的作案大家在媒体上也屡见不鲜，外包的应用系统开发、基础架构的维护、客服是这里需要重点看的问题。安全部门要介入外包管理，从最开始的立项就要保证外包无法接触到敏感数据。我们对外包除了在立项阶段，还进行现场调研，确定外包公司的环境能够满足我们对安全的要求，并且不定期抽查，抽查一定会让你有惊喜。
+**3、 自身的系统漏洞。**这里我要提的几个点，一是主要漏洞：防扫号、SQL注入、越权/遍历问题、搜索引擎爬取，对这一类漏洞的防范，就看企业的基本功了，生产新上线的系统有没有经过代码审计、渗透和扫描。另一个要说的是，其实主站问题大家都比较重视，但有很多后台支撑系统，各种问题五花八门，当企业做大以后，后台支撑系统出的问题不比主站少，这就要清理回收支撑系统，该放在内网的收到内网，该关的关，该改的改。
+总结
+1、 订单信息泄露的渠道多样，有很多渠道不在电商安全人员的掌控之内，原则上是自己能够把控的环境，一定要控制好。
+2、 控制不到的地方，要想办法延伸服务，国内三方商家的发展也刚刚开始，不可能做到十分规范化的操作。这时候安全人员要从技术上做一些辅助工具来协助三方商家，而不是一味地指责。在这种延伸过程中，可以壮大安全部门，提高安全人员的能力，做得好，还有可能赚一些服务费。
+3、 重视日志、环境数据的收集。在应急的时候，日志是泄露量判断的主要来源，也是攻击手法判断的主要来源，没有这个，丢人都不知道丢多大。再一个环境数据是指用户侧、三方商家侧，用了哪些软件、地域信息、商品类目、与谁合作都需要纳入，因为很多事件不是在短期内能够判断清楚的，把一定量的用户或商家订单泄露归并起来，就能从环境数据上找到共同点，从而重点突破。
+4、 排除法。短期内要判断问题，可以从排除法下手，一个软件一个软件的停，然后看效果。
+5、 综合解决方案。所有的订单信息泄露引起的诈骗，有一个点至关重要，就是用户的联系方式，没有联系方式诈骗就无法进行。但在商家、物流与客户的交易中，联系方式又至关重要。去年看到某电商对联系方式做了匿名化处理，我个人觉得是一个比较好的切入方式，当然工程量也很庞大，需要打通上下游一堆环节。但如果能够彻底实现，黑市的订单信息价格就会一落千丈。
+原来本自REEBUF.com">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="双11网购，你买了吗？网购订单信息小心泄露！"/>
+<meta name="twitter:description" content="**mai.jpg**
+今天是一年一度的电商“双11”购物狂欢节。相信不少“剁手党”已经开始血拼了，购物的同时，你们也要小心订单信息的泄露哦。
+相信很多人都曾面临过自己的订单信息泄露引起的诈骗或者骚扰电话、典型的机票改签骗局、订单退款骗局等等。每次大家都很愤怒的认为电商平台在出卖自己的信息，然而事实上是怎样，我想从我负责订单信息泄露两年的实际经历来谈谈我的看法。
+要了解订单究竟从哪里泄露的，要看整个产业的流转情况。我们下单买一个东西，大体上要经过商家、电商平台、物流、最后到达用户手中，所以这四个环节都有可能产生订单信息泄露的问题。我从自己的事件库里拉出来我们自己的一个分析，每家情况可能不一样，仅作参考。
+1.png一、商家环节
 商家和电商平台在有些时候是一个，但在中国是有很多第三方卖家的。例如你在某宝买充气女朋友，某宝是平台，而卖家可能是福建一个批发街上的小铺子。也就是自营和第三方商家的区别，一般来说我们认为自营的安全性比较高，而第三方商家则参差不齐，存在较大的风险。
 在实际工作中，我们也统计过案例，实际上看到的数据，商家确实是订单泄露最主要的原因。但这只是基于我们自己的数据来看。商家信息泄露表现比较突出的有五种原因：
 **1、内部倒卖。**内部员工倒卖订单数据分为两种情况，一种是内部员工行为，另一种则是黑产打入的行为。先说内部员工行为，一个小型商家对员工的录用，大家可想而之是个什么情况。不在乎学历，不在乎背景，只要有点经验即可，而且待遇也比较低，员工流动也大，因此面对一些诱惑，很容易去倒卖数据，卖了几批数据后就跑路换个其他公司接着做。还有一种是黑产打入，黑产直接派一些人去应聘，然后拿数据，也是干一阵就跑。
@@ -56,12 +103,12 @@
 5、 综合解决方案。所有的订单信息泄露引起的诈骗，有一个点至关重要，就是用户的联系方式，没有联系方式诈骗就无法进行。但在商家、物流与客户的交易中，联系方式又至关重要。去年看到某电商对联系方式做了匿名化处理，我个人觉得是一个比较好的切入方式，当然工程量也很庞大，需要打通上下游一堆环节。但如果能够彻底实现，黑市的订单信息价格就会一落千丈。
 原来本自REEBUF.com"/>
 
-    <meta property="og:title" content="双11网购，你买了吗？网购订单信息小心泄露！" />
-<meta property="og:description" content="****
+  <meta property="og:title" content="双11网购，你买了吗？网购订单信息小心泄露！" />
+<meta property="og:description" content="**mai.jpg**
 今天是一年一度的电商“双11”购物狂欢节。相信不少“剁手党”已经开始血拼了，购物的同时，你们也要小心订单信息的泄露哦。
 相信很多人都曾面临过自己的订单信息泄露引起的诈骗或者骚扰电话、典型的机票改签骗局、订单退款骗局等等。每次大家都很愤怒的认为电商平台在出卖自己的信息，然而事实上是怎样，我想从我负责订单信息泄露两年的实际经历来谈谈我的看法。
 要了解订单究竟从哪里泄露的，要看整个产业的流转情况。我们下单买一个东西，大体上要经过商家、电商平台、物流、最后到达用户手中，所以这四个环节都有可能产生订单信息泄露的问题。我从自己的事件库里拉出来我们自己的一个分析，每家情况可能不一样，仅作参考。
-一、商家环节
+1.png一、商家环节
 商家和电商平台在有些时候是一个，但在中国是有很多第三方卖家的。例如你在某宝买充气女朋友，某宝是平台，而卖家可能是福建一个批发街上的小铺子。也就是自营和第三方商家的区别，一般来说我们认为自营的安全性比较高，而第三方商家则参差不齐，存在较大的风险。
 在实际工作中，我们也统计过案例，实际上看到的数据，商家确实是订单泄露最主要的原因。但这只是基于我们自己的数据来看。商家信息泄露表现比较突出的有五种原因：
 **1、内部倒卖。**内部员工倒卖订单数据分为两种情况，一种是内部员工行为，另一种则是黑产打入的行为。先说内部员工行为，一个小型商家对员工的录用，大家可想而之是个什么情况。不在乎学历，不在乎背景，只要有点经验即可，而且待遇也比较低，员工流动也大，因此面对一些诱惑，很容易去倒卖数据，卖了几批数据后就跑路换个其他公司接着做。还有一种是黑产打入，黑产直接派一些人去应聘，然后拿数据，也是干一阵就跑。
@@ -100,47 +147,212 @@
 5、 综合解决方案。所有的订单信息泄露引起的诈骗，有一个点至关重要，就是用户的联系方式，没有联系方式诈骗就无法进行。但在商家、物流与客户的交易中，联系方式又至关重要。去年看到某电商对联系方式做了匿名化处理，我个人觉得是一个比较好的切入方式，当然工程量也很庞大，需要打通上下游一堆环节。但如果能够彻底实现，黑市的订单信息价格就会一落千丈。
 原来本自REEBUF.com" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://water711.github.io/posts/2015-11-12-%E5%8F%8C11%E7%BD%91%E8%B4%AD%E4%BD%A0%E4%B9%B0%E4%BA%86%E5%90%97%E7%BD%91%E8%B4%AD%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF%E5%B0%8F%E5%BF%83%E6%B3%84%E9%9C%B2/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://example.org/posts/2015-11-12-%E5%8F%8C11%E7%BD%91%E8%B4%AD%E4%BD%A0%E4%B9%B0%E4%BA%86%E5%90%97%E7%BD%91%E8%B4%AD%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF%E5%B0%8F%E5%BF%83%E6%B3%84%E9%9C%B2/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-11-12T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-11-12T00:00:00+00:00" />
 
 
 
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
-      <span class="app-header-title">蔡振威的博客</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
-    </header>
-    <main class="app-container">
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">双11网购，你买了吗？网购订单信息小心泄露！</h1>
-      <div class="post-meta">
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Nov 12, 2015
-        </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          1 min read
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>双11网购，你买了吗？网购订单信息小心泄露！</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Thu, Nov 12, 2015
+          </span>
         </div>
       </div>
-    </header>
-    <div class="post-content">
-      <p>**<a href="http://hugo.caizhenwei.top//14430676507848.jpg"><img src="http://hugo.caizhenwei.top//14430676507848.jpg!small" alt="" title="mai.jpg"></a>**</p>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>**<a href="http://hugo.caizhenwei.top//14430676507848.jpg" target="_blank"><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//14430676507848.jpg!small" data-action="zoom" alt=""  title="mai.jpg" class="lazyload">
+  </a>
+  
+  <figcaption class="image-caption">mai.jpg</figcaption>
+  
+</figure></a>**</p>
 <p><strong>今天是一年一度的电商“双11”购物狂欢节。相信不少“剁手党”已经开始血拼了，购物的同时，你们也要小心订单信息的泄露哦。</strong></p>
 <p>相信很多人都曾面临过自己的订单信息泄露引起的诈骗或者骚扰电话、典型的机票改签骗局、订单退款骗局等等。每次大家都很愤怒的认为电商平台在出卖自己的信息，然而事实上是怎样，我想从我负责订单信息泄露两年的实际经历来谈谈我的看法。</p>
 <p>要了解订单究竟从哪里泄露的，要看整个产业的流转情况。我们下单买一个东西，大体上要经过商家、电商平台、物流、最后到达用户手中，所以这四个环节都有可能产生订单信息泄露的问题。我从自己的事件库里拉出来我们自己的一个分析，每家情况可能不一样，仅作参考。</p>
-<p><a href="http://hugo.caizhenwei.top//14429916156860.png"><img src="http://hugo.caizhenwei.top//14429916156860.png!small" alt="" title="1.png"></a></p>
+<p><a href="http://hugo.caizhenwei.top//14429916156860.png" target="_blank"><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//14429916156860.png!small" data-action="zoom" alt=""  title="1.png" class="lazyload">
+  </a>
+  
+  <figcaption class="image-caption">1.png</figcaption>
+  
+</figure></a></p>
 <p><strong>一、商家环节</strong></p>
 <p>商家和电商平台在有些时候是一个，但在中国是有很多第三方卖家的。例如你在某宝买充气女朋友，某宝是平台，而卖家可能是福建一个批发街上的小铺子。也就是自营和第三方商家的区别，一般来说我们认为自营的安全性比较高，而第三方商家则参差不齐，存在较大的风险。</p>
 <p><strong>在实际工作中，我们也统计过案例，实际上看到的数据，商家确实是订单泄露最主要的原因。但这只是基于我们自己的数据来看。商家信息泄露表现比较突出的有五种原因：</strong></p>
@@ -179,14 +391,131 @@
 <p>4、 排除法。短期内要判断问题，可以从排除法下手，一个软件一个软件的停，然后看效果。</p>
 <p>5、 综合解决方案。所有的订单信息泄露引起的诈骗，有一个点至关重要，就是用户的联系方式，没有联系方式诈骗就无法进行。但在商家、物流与客户的交易中，联系方式又至关重要。去年看到某电商对联系方式做了匿名化处理，我个人觉得是一个比较好的切入方式，当然工程量也很庞大，需要打通上下游一堆环节。但如果能够彻底实现，黑市的订单信息价格就会一落千丈。</p>
 <hr>
-<p><a href="http://www.freebuf.com/articles/database/79513.html">原来本自REEBUF.com</a></p>
+<p><a href="http://www.freebuf.com/articles/database/79513.html" target="_blank">原来本自REEBUF.com</a></p>
 
-    </div>
-    <div class="post-footer">
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2015-11-11-%E6%B5%81%E9%87%8F%E5%8A%AB%E6%8C%81%E9%A6%96%E5%88%A4%E7%8A%AF%E7%BD%AA%E4%BB%8A%E5%90%8E%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%98%E6%95%A2%E9%9A%8F%E4%BE%BF%E5%8A%AB%E6%8C%81%E4%B9%88/" data-toggle="tooltip" data-placement="top" title="流量劫持首判犯罪，今后运营商还敢随便劫持么？">
+              Previous<br>
+              <span>流量劫持首判犯罪，今后运营商还敢随便劫持么？</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2015-11-13-%E6%B2%A1%E6%83%B3%E5%88%B0%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%9F%E4%BC%9A%E6%B3%84%E5%AF%86/" data-toggle="tooltip" data-placement="top" title="没想到，打印机也会泄密？？？">
+              Next<br>
+              <span>没想到，打印机也会泄密？？？</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
       
-    </div>
-  </article>
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
 
-    </main>
-  </body>
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
 </html>
