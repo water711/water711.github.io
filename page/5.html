@@ -206,6 +206,26 @@
 
 
    <div class="post-preview">
+  <a href="../posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html">
+      <h2 class="post-title">Zabbix调优不完全指南</h2>
+      
+      <div class="post-content-preview">
+        
+        问题一、Zabbix server内存溢出，无法启动问题原因：
+这是由于zabbix默认的缓存配置只有8M，当你zabbix正常运行一段时间后，大批量添加一些被监控设备就会出现这种情况。
+解决方法：
+打开zabbix_server.conf文件，将CacheSize改一个较大的值，我现在给自己配的是1024M。
+vim …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Fri, Oct 16, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
   <a href="../posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA.html">
       <h2 class="post-title">python&#43;selenium 批量配置华为S1720交换机</h2>
       
@@ -373,26 +393,6 @@ from datetime import datetime,timedelta
   </a>
   <p class="post-meta">
       Posted by    on Fri, Jul 3, 2020
-  </p>
-</div>
-<hr>
-
-   <div class="post-preview">
-  <a href="../posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB.html">
-      <h2 class="post-title">使用Python&#43;OpenCV实现手势识别</h2>
-      
-      <div class="post-content-preview">
-        
-        来源某国外视频：https://www.bilibili.com/video/BV1E4411f7Q1
-环境Python：3.7.0
-OpenCV：3.4.3.18
-# -*- coding:utf-8 -*-
-import cv2 import numpy as np import math cap = cv2.VideoCapture(0) …
-         
-      </div>
-  </a>
-  <p class="post-meta">
-      Posted by    on Wed, Jun 17, 2020
   </p>
 </div>
 <hr>
