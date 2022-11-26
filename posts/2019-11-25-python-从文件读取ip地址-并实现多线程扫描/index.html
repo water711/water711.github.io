@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>python 从文件读取IP地址 并实现多线程扫描 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="Python代码：# -*- coding:utf-8 -*-
+import threading import subprocess import time from queue import Queue import xlrd import msvcrt
+定义工作线程WORD_THREAD = 50
+将从excel表中读取ip并加入队列IP_QUEUE = Queue() workbook = xlrd.open_workbook(&ldquo;IP.xls&rdquo;) table = workbook.sheets()[0]
+for row in range(1, table.nrows): ip = table.cell(row, 0).value name = table.cell(row, 1).value IP_QUEUE.put([ip,name])
+定义一个执行 ping 的函数def ping_ip(): while not IP_QUEUE.empty(): ip = IP_QUEUE.get() res = subprocess.call(&lsquo;ping -n 2 -w 5 %s&rsquo; % ip[0],stdout=subprocess.PIPE) # linux 系统将 &lsquo;-n&rsquo; 替换成 &lsquo;-c&rsquo; # 打印运行结果 # print(ip[0],True if res == 0 else False) if res == 0: print(ip[0],ip[1],&ldquo;有响应&rdquo;) else: print(ip[0],ip[1],&ldquo;无响应&rdquo;) ip.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python 从文件读取IP地址 并实现多线程扫描"/>
+<meta name="twitter:description" content="Python代码：# -*- coding:utf-8 -*-
+import threading import subprocess import time from queue import Queue import xlrd import msvcrt
+定义工作线程WORD_THREAD = 50
+将从excel表中读取ip并加入队列IP_QUEUE = Queue() workbook = xlrd.open_workbook(&ldquo;IP.xls&rdquo;) table = workbook.sheets()[0]
+for row in range(1, table.nrows): ip = table.cell(row, 0).value name = table.cell(row, 1).value IP_QUEUE.put([ip,name])
+定义一个执行 ping 的函数def ping_ip(): while not IP_QUEUE.empty(): ip = IP_QUEUE.get() res = subprocess.call(&lsquo;ping -n 2 -w 5 %s&rsquo; % ip[0],stdout=subprocess.PIPE) # linux 系统将 &lsquo;-n&rsquo; 替换成 &lsquo;-c&rsquo; # 打印运行结果 # print(ip[0],True if res == 0 else False) if res == 0: print(ip[0],ip[1],&ldquo;有响应&rdquo;) else: print(ip[0],ip[1],&ldquo;无响应&rdquo;) ip."/>
+
+  <meta property="og:title" content="python 从文件读取IP地址 并实现多线程扫描" />
+<meta property="og:description" content="Python代码：# -*- coding:utf-8 -*-
+import threading import subprocess import time from queue import Queue import xlrd import msvcrt
+定义工作线程WORD_THREAD = 50
+将从excel表中读取ip并加入队列IP_QUEUE = Queue() workbook = xlrd.open_workbook(&ldquo;IP.xls&rdquo;) table = workbook.sheets()[0]
+for row in range(1, table.nrows): ip = table.cell(row, 0).value name = table.cell(row, 1).value IP_QUEUE.put([ip,name])
+定义一个执行 ping 的函数def ping_ip(): while not IP_QUEUE.empty(): ip = IP_QUEUE.get() res = subprocess.call(&lsquo;ping -n 2 -w 5 %s&rsquo; % ip[0],stdout=subprocess.PIPE) # linux 系统将 &lsquo;-n&rsquo; 替换成 &lsquo;-c&rsquo; # 打印运行结果 # print(ip[0],True if res == 0 else False) if res == 0: print(ip[0],ip[1],&ldquo;有响应&rdquo;) else: print(ip[0],ip[1],&ldquo;无响应&rdquo;) ip." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-11-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-11-25T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>python 从文件读取IP地址 并实现多线程扫描</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Mon, Nov 25, 2019
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <h2 id="python代码">Python代码：<a class="anchorjs-link" href="#python%e4%bb%a3%e7%a0%81"></a></h2><p># -*- coding:utf-8 -*-</p>
+<p>import threading
+import subprocess
+import time
+from queue import Queue
+import xlrd
+import msvcrt</p>
+<h1 id="定义工作线程">定义工作线程<a class="anchorjs-link" href="#%e5%ae%9a%e4%b9%89%e5%b7%a5%e4%bd%9c%e7%ba%bf%e7%a8%8b"></a></h1><p>WORD_THREAD = 50</p>
+<h1 id="将从excel表中读取ip并加入队列">将从excel表中读取ip并加入队列<a class="anchorjs-link" href="#%e5%b0%86%e4%bb%8eexcel%e8%a1%a8%e4%b8%ad%e8%af%bb%e5%8f%96ip%e5%b9%b6%e5%8a%a0%e5%85%a5%e9%98%9f%e5%88%97"></a></h1><p>IP_QUEUE = Queue()
+workbook = xlrd.open_workbook(&ldquo;IP.xls&rdquo;)
+table = workbook.sheets()[0]</p>
+<p>for row in range(1, table.nrows):
+ip = table.cell(row, 0).value
+name = table.cell(row, 1).value
+IP_QUEUE.put([ip,name])</p>
+<h1 id="定义一个执行-ping-的函数">定义一个执行 ping 的函数<a class="anchorjs-link" href="#%e5%ae%9a%e4%b9%89%e4%b8%80%e4%b8%aa%e6%89%a7%e8%a1%8c-ping-%e7%9a%84%e5%87%bd%e6%95%b0"></a></h1><p>def ping_ip():
+while not IP_QUEUE.empty():
+ip = IP_QUEUE.get()
+res = subprocess.call(&lsquo;ping -n 2 -w 5 %s&rsquo; % ip[0],stdout=subprocess.PIPE)  # linux 系统将 &lsquo;-n&rsquo; 替换成 &lsquo;-c&rsquo;
+# 打印运行结果
+# print(ip[0],True if res == 0 else False)
+if res == 0:
+print(ip[0],ip[1],&ldquo;有响应&rdquo;)
+else:
+print(ip[0],ip[1],&ldquo;无响应&rdquo;)
+ip.append(&ldquo;不通&rdquo;)
+result.append(ip)</p>
+<p>if __name__ == &lsquo;__main__&rsquo;:
+print(&ldquo;从文件读取&rdquo;,table.nrows-1,&ldquo;个IP地址&rdquo;)</p>
+<pre><code>threads = \[\]
+result = \[\]
+start\_time = time.time()
+for i in range(WORD\_THREAD):
+    thread = threading.Thread(target=ping\_ip)
+    thread.start()
+    threads.append(thread)
+
+for thread in threads:
+    thread.join()
+
+print(&quot;--------------------------------------&quot;)
+print(&quot;-------检测结果(只显示fail设备)--------&quot;)
+print(&quot;--------------------------------------&quot;) 
+
+if len(result) != 0:
+    for i in result:
+        print(i)
+
+print('\\n')
+print('程序运行耗时：%s' % (time.time() - start\_time),'秒')
+
+while True:
+ if ord(msvcrt.getch()) in \[113, 81\]:    #按键盘q退出循环
+  break
+</code></pre>
+<p> </p>
+<h2 id="excel文件模板">excel文件模板：<a class="anchorjs-link" href="#excel%e6%96%87%e4%bb%b6%e6%a8%a1%e6%9d%bf"></a></h2><p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//fbc525a9b758740b9aea4911d9aead33.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/" data-toggle="tooltip" data-placement="top" title="windows下使用pip安装包失败，提示Could not install packages due to an EnvironmentError: [Errno 0] Error">
+              Previous<br>
+              <span>windows下使用pip安装包失败，提示Could not install packages due to an EnvironmentError: [Errno 0] Error</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/" data-toggle="tooltip" data-placement="top" title="Wordpress网站迁移">
+              Next<br>
+              <span>Wordpress网站迁移</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

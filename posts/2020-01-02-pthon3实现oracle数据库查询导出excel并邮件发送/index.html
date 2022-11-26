@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>pthon3实现oracle数据库查询、导出EXCEL并邮件发送 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="一、准备环境1、安装Oracle 客户端（python、oracle客户端的位数要一致）
+2、安装Python第三方模块
+pip3 install cx_Oracle xlsxwriter
+**cx_Oracle模块：**一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
+**xlsxwriter模块：**编写Excel 2007&#43;XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。
+二、编写代码# -*- coding: utf-8 -*-
+import time import smtplib import cx_Oracle import xlsxwriter from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.application import MIMEApplication
+def send_mail(): from_addr = &ldquo;12345678@qq.com&rdquo; #发件人 pwd = &ldquo;zjjeiuwpaynojhgsdf&rdquo; #授权码/密码 to_addr = &ldquo;87654321@qq.com&rdquo; #收件人
+msg = MIMEMultipart() #实例化对象 msg\[&quot;Subject&quot;\] = &quot;销售报表&quot; #主题 msg\[&quot;From&quot;\] = from\_addr msg\[&quot;To&quot;\] = to\_addr part1 = MIMEText(&quot;这里是邮件内容&quot;) msg.attach(part1) # 添加附件 part2 = MIMEApplication(open(date &#43; &quot;.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="pthon3实现oracle数据库查询、导出EXCEL并邮件发送"/>
+<meta name="twitter:description" content="一、准备环境1、安装Oracle 客户端（python、oracle客户端的位数要一致）
+2、安装Python第三方模块
+pip3 install cx_Oracle xlsxwriter
+**cx_Oracle模块：**一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
+**xlsxwriter模块：**编写Excel 2007&#43;XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。
+二、编写代码# -*- coding: utf-8 -*-
+import time import smtplib import cx_Oracle import xlsxwriter from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.application import MIMEApplication
+def send_mail(): from_addr = &ldquo;12345678@qq.com&rdquo; #发件人 pwd = &ldquo;zjjeiuwpaynojhgsdf&rdquo; #授权码/密码 to_addr = &ldquo;87654321@qq.com&rdquo; #收件人
+msg = MIMEMultipart() #实例化对象 msg\[&quot;Subject&quot;\] = &quot;销售报表&quot; #主题 msg\[&quot;From&quot;\] = from\_addr msg\[&quot;To&quot;\] = to\_addr part1 = MIMEText(&quot;这里是邮件内容&quot;) msg.attach(part1) # 添加附件 part2 = MIMEApplication(open(date &#43; &quot;."/>
+
+  <meta property="og:title" content="pthon3实现oracle数据库查询、导出EXCEL并邮件发送" />
+<meta property="og:description" content="一、准备环境1、安装Oracle 客户端（python、oracle客户端的位数要一致）
+2、安装Python第三方模块
+pip3 install cx_Oracle xlsxwriter
+**cx_Oracle模块：**一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
+**xlsxwriter模块：**编写Excel 2007&#43;XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。
+二、编写代码# -*- coding: utf-8 -*-
+import time import smtplib import cx_Oracle import xlsxwriter from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.application import MIMEApplication
+def send_mail(): from_addr = &ldquo;12345678@qq.com&rdquo; #发件人 pwd = &ldquo;zjjeiuwpaynojhgsdf&rdquo; #授权码/密码 to_addr = &ldquo;87654321@qq.com&rdquo; #收件人
+msg = MIMEMultipart() #实例化对象 msg\[&quot;Subject&quot;\] = &quot;销售报表&quot; #主题 msg\[&quot;From&quot;\] = from\_addr msg\[&quot;To&quot;\] = to\_addr part1 = MIMEText(&quot;这里是邮件内容&quot;) msg.attach(part1) # 添加附件 part2 = MIMEApplication(open(date &#43; &quot;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-01-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-02T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>pthon3实现oracle数据库查询、导出EXCEL并邮件发送</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Thu, Jan 2, 2020
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p> </p>
+<h2 id="一准备环境">一、准备环境<a class="anchorjs-link" href="#%e4%b8%80%e5%87%86%e5%a4%87%e7%8e%af%e5%a2%83"></a></h2><p>1、安装Oracle 客户端（python、oracle客户端的位数要一致）</p>
+<p>2、安装Python第三方模块</p>
+<p>pip3 install cx_Oracle xlsxwriter</p>
+<p>**cx_Oracle模块：**一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。</p>
+<p>**xlsxwriter模块：**编写Excel 2007+XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。</p>
+<p> </p>
+<h2 id="二编写代码">二、编写代码<a class="anchorjs-link" href="#%e4%ba%8c%e7%bc%96%e5%86%99%e4%bb%a3%e7%a0%81"></a></h2><p># -*- coding: utf-8 -*-</p>
+<p>import time
+import smtplib
+import cx_Oracle
+import xlsxwriter
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication</p>
+<p>def send_mail():
+from_addr = &ldquo;<a href="/mailto:12345678@qq.com">12345678@qq.com</a>&rdquo;  #发件人
+pwd = &ldquo;zjjeiuwpaynojhgsdf&rdquo;     #授权码/密码
+to_addr = &ldquo;<a href="/mailto:87654321@qq.com">87654321@qq.com</a>&rdquo;    #收件人</p>
+<pre><code>msg = MIMEMultipart()    #实例化对象
+msg\[&quot;Subject&quot;\] = &quot;销售报表&quot;    #主题
+msg\[&quot;From&quot;\] = from\_addr  
+msg\[&quot;To&quot;\] = to\_addr
+
+part1 = MIMEText(&quot;这里是邮件内容&quot;)
+msg.attach(part1)
+
+# 添加附件
+part2 = MIMEApplication(open(date + &quot;.xlsx&quot;, 'rb').read())
+part2.add\_header('Content-Disposition', 'attachment', filename=date + &quot;.xlsx&quot;)
+msg.attach(part2)
+
+# 连接smtp服务器，登录服务器并发送文本
+smtp\_server = &quot;smtp.qq.com&quot;
+server = smtplib.SMTP(smtp\_server,25)
+server.login(from\_addr,pwd)
+server.sendmail(from\_addr,to\_addr,msg.as\_string()) # as\_string（）把MIMEText变成一个str
+server.close()
+</code></pre>
+<p>def write_xls(ret):
+workbook = xlsxwriter.Workbook(date + &lsquo;.xlsx&rsquo;)
+format_1 = workbook.add_format({&lsquo;bold&rsquo;: True, &lsquo;font_size&rsquo;: 16, &lsquo;align&rsquo;: &lsquo;center&rsquo;})  #添加样式1，格式为加粗、字体16号、居中
+format_2 = workbook.add_format({&lsquo;font_size&rsquo;: 14, &lsquo;align&rsquo;: &lsquo;center&rsquo;})   #添加样式2，字体14号、居中
+format_3 = workbook.add_format({&lsquo;font_size&rsquo;: 14, &lsquo;align&rsquo;: &lsquo;center&rsquo;, &rsquo;num_format&rsquo;: &lsquo;yyyy-mm-dd hh:mm:ss&rsquo;})  #添加样式3，字体14号、居中、格式化为时间日期</p>
+<pre><code>worksheet = workbook.add\_worksheet(&quot;sheet1&quot;)  #添加工作表
+worksheet.set\_column('A:B', 30)  #将A到B列的宽度设为30
+worksheet.set\_column('C:D', 40)  #将C到D列的宽度设为40
+
+#写入标题行 write(单元格，内容，样式)
+worksheet.write('A1', '会员手机号',format\_1) 
+worksheet.write('B1','商品名称',format\_1)
+worksheet.write('C1','商品单价',format\_1)
+worksheet.write('D1','购买时间',format\_1)
+
+row = 1  #从第2行开始写入
+col = 0  #从第1列开始写入
+for record in ret:  
+	for s in record:
+
+		#如果循环到第4列，将内容设置成样式3（日期格式）
+		if col == 3:
+			worksheet.write(row, col, s, format\_3)
+			continue
+
+		#将内容写入到第row行，第col列,格式为样式2
+		worksheet.write(row, col, s, format\_2)
+		col+=1
+
+	row += 1  #行数加1
+	col = 0   #列数归0
+
+workbook.close()
+</code></pre>
+<p>date = time.strftime(&rsquo;%Y-%m-%d&rsquo;,time.localtime())  #获取当前日期，用于文件命名</p>
+<p>username=&ldquo;test&rdquo;
+userpwd=&ldquo;123456&rdquo;
+host=&ldquo;172.16.1.1&rdquo;
+port=1521
+dbname=&ldquo;WEB&rdquo;</p>
+<p>dsn=cx_Oracle.makedsn(host, port, dbname)
+connection=cx_Oracle.connect(username, userpwd, dsn, encoding = &ldquo;UTF-8&rdquo;, nencoding = &ldquo;UTF-8&rdquo;)
+cursor=connection.cursor()</p>
+<p>sql=&lsquo;select * from sale&rsquo;
+cursor.execute(sql)</p>
+<p>result=cursor.fetchall()
+count=cursor.rowcount</p>
+<p>print(&ldquo;共查询到&rdquo;, count, &ldquo;记录&rdquo;)
+print(&quot;=====================&quot;)</p>
+<p>#打印出查询结果
+for row in result:
+print(row)</p>
+<p>cursor.close()
+connection.close()</p>
+<p>write_xls(result)  #将查询结果写入Excel文件
+send_mail()  #发送邮件</p>
+<p> </p>
+<h2 id="三可能遇到的问题">三、可能遇到的问题<a class="anchorjs-link" href="#%e4%b8%89%e5%8f%af%e8%83%bd%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98"></a></h2><p>A、运行报错 cx_Oracle.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library:</p>
+<p>Traceback (most recent call last):
+File &ldquo;C:\Users\Administrator\Desktop\movic_report.py&rdquo;, line 78, in <!-- raw HTML omitted -->
+connection=cx_Oracle.connect(username, userpwd, dsn&quot;)
+cx_Oracle.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library: &ldquo;The specified module could not be found&rdquo;.</p>
+<p>原因：</p>
+<p>1、oracle客户端和python 位数不一致</p>
+<p>2、oracle客户端的bin目录没有加入系统环境变量中，导致找不到oracle相关库文件</p>
+<p>解决方法：</p>
+<p>1、安装相同位数的oracle客户端和python（同为32位或64位）</p>
+<p>2、将oracle客户端的bin目录加入到环境变量（或者 将 oci.dll，oraocci11.dll和oraociei11.dll库文件拷贝到python目录下lib-&gt;site-packages里面）</p>
+<p> </p>
+<p>B、查询结果包含中文，报下面编码错误</p>
+<p>Traceback (most recent call last):
+File &ldquo;E:\oracle.py&rdquo;, line 33, in <!-- raw HTML omitted -->
+cursor.execute(sql)
+UnicodeEncodeError: &lsquo;ascii&rsquo; codec can&rsquo;t encode characters in position 35-39: ordinal not in range(128)</p>
+<p>解决方法：</p>
+<p>查看系统编码：
+import sys<br>
+print(sys.getdefaultencoding())  #输出utf8</p>
+<p>查看oracle数据库编码：
+select userenv(&rsquo;language&rsquo;) from dual; #结果为CHINESE_CHINA.AL32UTF8</p>
+<p>方法一：
+手机设置系统环境变量NLS_LANG的值：
+windows下：右键计算机属性-&gt;高级系统设置-&gt;高级-&gt;环境变量-&gt;在系统变量下新建变量名：NLS_LANG，值为CHINESE_CHINA.AL32UTF8
+Linux下：在/etc/profile文件末尾增加一行，export NLS_LANG=CHINESE_CHINA.AL32UTF8</p>
+<p>方法二：
+conn = cx_Oracle.connect(connectString, encoding = &ldquo;UTF-8&rdquo;, nencoding = &ldquo;UTF-8&rdquo;)</p>
+<p> </p>
+<p>C、查询的sql语句中，如果别名使用单引号，会报错，提示未找到要求的 FROM 关键字，但是where语句中，条件的值又只能使用单引号，不然会报错，提示 标识符无效</p>
+<p>sql = “SELECT USERID AS &lsquo;列名&rsquo; FROM EB_LOG WHERE USERID = &lsquo;admin&rsquo; ”  #别名使用单引号，报错</p>
+<p>Traceback (most recent call last):
+File &ldquo;E:\oracle.py&rdquo;, line 34, in <!-- raw HTML omitted -->
+cursor.execute(sql)
+cx_Oracle.DatabaseError: ORA-00923: 未找到要求的 FROM 关键字</p>
+<p>sql = &lsquo;SELECT USERID AS &ldquo;列名&rdquo; FROM EB_LOG WHERE USERID = &ldquo;admin&rdquo;&rsquo;  #where条件的值使用双引号，报错</p>
+<p>Traceback (most recent call last):
+File &ldquo;E:\oracle.py&rdquo;, line 33, in <!-- raw HTML omitted -->
+cursor.execute(sql)
+cx_Oracle.DatabaseError: ORA-00904: &ldquo;U&rdquo;: 标识符无效</p>
+<p>解决方法：</p>
+<p>#sql语句整体使用单引号，别名使用双引号，where条件的值使用单引号，并用反斜杠转义
+sql = &lsquo;SELECT EB_USERID AS &ldquo;列名&rdquo; from EB_LOG WHERE EB_USERID = \&lsquo;admin\&rsquo; '</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80/" data-toggle="tooltip" data-placement="top" title="windows计划任务，执行程序后，生成的文件不在程序所在目录">
+              Previous<br>
+              <span>windows计划任务，执行程序后，生成的文件不在程序所在目录</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2020-01-03-%E5%BE%AE%E8%BD%AFremote-app%E5%AE%9E%E7%8E%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%99%9A%E6%8B%9F%E5%8C%96/" data-toggle="tooltip" data-placement="top" title="微软Remote App实现应用程序虚拟化">
+              Next<br>
+              <span>微软Remote App实现应用程序虚拟化</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

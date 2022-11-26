@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.107.0">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+
+  <title>蔡振威的博客</title>
+
+  
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="蔡振威的博客"/>
+<meta name="twitter:description" content=""/>
+
+  <meta property="og:title" content="蔡振威的博客" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://water711.github.io/" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  <link rel="alternate" type="application/rss+xml" href="/index.xml" title="蔡振威的博客" />
+  <link rel="alternate" type="application/json" href="/index.json" title="蔡振威的博客" />
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+<header class="intro-header style-text">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="site-heading">
+        
+          <h1>蔡振威的博客</h1>
+          
+          
+          
+          
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+  
+  <div class="container">
+    <div class="row">
+      
+      
+      
+      <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12
+      col-xs-12 postlist-container">
+        
+
+
+   <div class="post-preview">
+  <a href="/posts/2021-02-10-telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%A4%8D%E8%AF%BB%E5%8A%9F%E8%83%BD/">
+      <h2 class="post-title">Telegram机器人编程，实现复读功能</h2>
+      
+      <div class="post-content-preview">
+        
+        一、新建谷歌脚本1、打开Google Apps Script，点击Start Scripting，新建项目
+https://www.google.com/script/start/
+2、粘贴以下代码，并修改机器人token（api.telegram.org/bot后面这串字符）
+function doGet(e){ return …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Wed, Feb 10, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/">
+      <h2 class="post-title">手机端实现一键发送命令到NAS主机</h2>
+      
+      <div class="post-content-preview">
+        
+        NAS操作系统：Centos7
+实现原理：通过访问网页，执行含有shell命令的php代码
+1、安装apache和phpyum install -y httpd php
+2、启动apache、关闭selinuxsystemctl start httpd systemctl enable httpd
+#临时关闭selinux setenforce 0
+#永久关 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Wed, Feb 10, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/">
+      <h2 class="post-title">Docker可视化工具--Portainer安装</h2>
+      
+      <div class="post-content-preview">
+        
+        官网/安装文档：https://www.portainer.io/
+https://www.portainer.io/installation/
+https://portainer.readthedocs.io/en/stable/deployment.html
+Portainer是Docker的可视化管理工具，提供状态显示面板、应用模板快速部署、容器镜像网 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Feb 9, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/">
+      <h2 class="post-title">Centos7 部署Samba服务</h2>
+      
+      <div class="post-content-preview">
+        
+        1、安装软件包yum -y install samba
+2、建立访问用户useradd test smbpasswd -a test
+3、配置samba共享[data] path = /mnt/data write list = test
+其它参数
+valid users = name #只允许该用户访问，其它用户可见但无法访问 hosts allow = …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Feb 8, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/">
+      <h2 class="post-title">Docker部署开源摄像头录制软件shinobi</h2>
+      
+      <div class="post-content-preview">
+        
+        官方文档：https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/dev/Docker
+一、安装shinobi方法1、使用脚本自动安装（存储路径默认在$HOME目录下）
+curl -o …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Feb 8, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/">
+      <h2 class="post-title">Docker部署开源摄像头录制软件shinobi</h2>
+      
+      <div class="post-content-preview">
+        
+        官方文档：https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/dev/Docker
+一、安装shinobi方法1、使用脚本自动安装（存储路径默认在$HOME目录下）
+curl -o …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Feb 8, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">
+      <h2 class="post-title">Centos7 修改Docker默认存储位置</h2>
+      
+      <div class="post-content-preview">
+        
+        1、查看docker默认目录docker info | grep &amp;ldquo;Docker Root Dir&amp;rdquo;
+2、新建或者编辑 daemon.json 文件vim /etc/docker/daemon.json
+{ &amp;ldquo;graph&amp;rdquo;: &amp;ldquo;/mnt/docker&amp;rdquo; }
+3、重启docker服 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Sun, Feb 7, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85docker/">
+      <h2 class="post-title">Windows Server 2012 R2安装docker</h2>
+      
+      <div class="post-content-preview">
+        
+        一、下载安装Docker Toolboxhttps://github.com/docker/toolbox/releases
+二、安装Docker Quickstart Terminal注意：安装完成之后，先不要打开Docker Quickstart Terminal
+三、添加环境变量，替换默认docker machine的存储位置如果不修改，则docker …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Feb 2, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85dockernull/">
+      <h2 class="post-title">Windows Server 2012 R2安装docker</h2>
+      
+      <div class="post-content-preview">
+        
+        一、下载安装Docker Toolboxhttps://github.com/docker/toolbox/releases
+二、安装Docker Quickstart Terminal注意：安装完成之后，先不要打开Docker Quickstart Terminal
+三、添加环境变量，替换默认docker machine的存储位置如果不修改，则docker …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Feb 2, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-02-01-%E4%BD%BF%E7%94%A8working-copy%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BDgithub%E4%BB%93%E5%BA%93/">
+      <h2 class="post-title">使用Working Copy远程挂载github仓库</h2>
+      
+      <div class="post-content-preview">
+        
+        一、手机上新建目录，用于存放github仓库文件二、打开Working Copy，点击右上角加号，选择Setup synced directory三、选中第1步新建的目录，点击完成，在弹出的界面中点击左上角的Done四、点击Repository-》Create Repository，输入仓库URL地址，取消Allow Push，点击右上角保存五、点击 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Feb 1, 2021
+  </p>
+</div>
+<hr>
+
+
+
+<ul class="pager">
+  
+  <li class="previous">
+      <a href="/">&larr; Newer Posts</a>
+  </li>
+  
+  
+  <li class="next">
+      <a href="/page/3/">Older Posts &rarr;</a>
+  </li>
+  
+</ul>
+
+
+      </div>
+      
+      <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12
+      col-xs-12 sidebar-container">
+
+        
+        <section>
+  
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+        
+<section class="visible-md visible-lg">
+  <hr>
+  
+  <h5>ABOUT ME</h5>
+  
+
+  
+  <div class="short-about">
+    
+    
+    
+    
+
+
+<ul class="list-inline">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+  </div>
+</section>
+
+        
+        
+
+
+      </div>
+      
+
+    </div>
+  </div>
+
+  
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

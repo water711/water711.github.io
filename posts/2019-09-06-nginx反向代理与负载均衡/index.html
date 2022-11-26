@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>Nginx反向代理与负载均衡 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="正向代理和反向代理的区别：正向代理：代理服务器为客户端去收发请求，隐藏真实客户端
+反向代理：代理服务器为服务端收发请求，隐藏真实服务端
+需求一：隐藏真实网站服务器，由代理服务器去访问内部网站服务器，提高了内部服务器安全性1、安装nginx
+[root@server1 ~]# yum -y install epel-release //安装EPEL源 [root@server1 ~]# yum -y install nginx [root@server1 ~]# systemctl start nginx [root@server1 ~]# systemctl enable nginx
+2、配置防火墙
+[root@server1 ~]# firewall-cmd &ndash;permanent &ndash;add-service=http success [root@server1 ~]# firewall-cmd &ndash;reload success
+3、配置反向代理
+[root@server1 ~]# vim /etc/nginx/nginx.conf
+注释掉默认主机server {listen 80 default_server;listen [::]:80 default_server;server_name _;root /usr/share/nginx/html;# Load configuration files for the default server block.include /etc/nginx/default.d/*.conf;location / {}error_page 404 /404.html;location = /40x.html {}error_page 500 502 503 504 /50x.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nginx反向代理与负载均衡"/>
+<meta name="twitter:description" content="正向代理和反向代理的区别：正向代理：代理服务器为客户端去收发请求，隐藏真实客户端
+反向代理：代理服务器为服务端收发请求，隐藏真实服务端
+需求一：隐藏真实网站服务器，由代理服务器去访问内部网站服务器，提高了内部服务器安全性1、安装nginx
+[root@server1 ~]# yum -y install epel-release //安装EPEL源 [root@server1 ~]# yum -y install nginx [root@server1 ~]# systemctl start nginx [root@server1 ~]# systemctl enable nginx
+2、配置防火墙
+[root@server1 ~]# firewall-cmd &ndash;permanent &ndash;add-service=http success [root@server1 ~]# firewall-cmd &ndash;reload success
+3、配置反向代理
+[root@server1 ~]# vim /etc/nginx/nginx.conf
+注释掉默认主机server {listen 80 default_server;listen [::]:80 default_server;server_name _;root /usr/share/nginx/html;# Load configuration files for the default server block.include /etc/nginx/default.d/*.conf;location / {}error_page 404 /404.html;location = /40x.html {}error_page 500 502 503 504 /50x."/>
+
+  <meta property="og:title" content="Nginx反向代理与负载均衡" />
+<meta property="og:description" content="正向代理和反向代理的区别：正向代理：代理服务器为客户端去收发请求，隐藏真实客户端
+反向代理：代理服务器为服务端收发请求，隐藏真实服务端
+需求一：隐藏真实网站服务器，由代理服务器去访问内部网站服务器，提高了内部服务器安全性1、安装nginx
+[root@server1 ~]# yum -y install epel-release //安装EPEL源 [root@server1 ~]# yum -y install nginx [root@server1 ~]# systemctl start nginx [root@server1 ~]# systemctl enable nginx
+2、配置防火墙
+[root@server1 ~]# firewall-cmd &ndash;permanent &ndash;add-service=http success [root@server1 ~]# firewall-cmd &ndash;reload success
+3、配置反向代理
+[root@server1 ~]# vim /etc/nginx/nginx.conf
+注释掉默认主机server {listen 80 default_server;listen [::]:80 default_server;server_name _;root /usr/share/nginx/html;# Load configuration files for the default server block.include /etc/nginx/default.d/*.conf;location / {}error_page 404 /404.html;location = /40x.html {}error_page 500 502 503 504 /50x." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-06T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>Nginx反向代理与负载均衡</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Fri, Sep 6, 2019
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <h2 id="正向代理和反向代理的区别">正向代理和反向代理的区别：<a class="anchorjs-link" href="#%e6%ad%a3%e5%90%91%e4%bb%a3%e7%90%86%e5%92%8c%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86%e7%9a%84%e5%8c%ba%e5%88%ab"></a></h2><p>正向代理：代理服务器为客户端去收发请求，隐藏真实客户端</p>
+<p>反向代理：代理服务器为服务端收发请求，隐藏真实服务端</p>
+<h2 id="需求一隐藏真实网站服务器由代理服务器去访问内部网站服务器提高了内部服务器安全性">需求一：隐藏真实网站服务器，由代理服务器去访问内部网站服务器，提高了内部服务器安全性<a class="anchorjs-link" href="#%e9%9c%80%e6%b1%82%e4%b8%80%e9%9a%90%e8%97%8f%e7%9c%9f%e5%ae%9e%e7%bd%91%e7%ab%99%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%94%b1%e4%bb%a3%e7%90%86%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%8e%bb%e8%ae%bf%e9%97%ae%e5%86%85%e9%83%a8%e7%bd%91%e7%ab%99%e6%9c%8d%e5%8a%a1%e5%99%a8%e6%8f%90%e9%ab%98%e4%ba%86%e5%86%85%e9%83%a8%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%ae%89%e5%85%a8%e6%80%a7"></a></h2><p>1、安装nginx</p>
+<p>[root@server1 ~]# yum  -y install epel-release  //安装EPEL源
+[root@server1 ~]# yum -y install nginx
+[root@server1 ~]# systemctl start nginx
+[root@server1 ~]# systemctl enable nginx</p>
+<p>2、配置防火墙</p>
+<p>[root@server1 ~]# firewall-cmd &ndash;permanent &ndash;add-service=http
+success
+[root@server1 ~]# firewall-cmd &ndash;reload
+success</p>
+<p>3、配置反向代理</p>
+<p>[root@server1 ~]# vim /etc/nginx/nginx.conf</p>
+<h1 id="注释掉默认主机">注释掉默认主机<a class="anchorjs-link" href="#%e6%b3%a8%e9%87%8a%e6%8e%89%e9%bb%98%e8%ae%a4%e4%b8%bb%e6%9c%ba"></a></h1><h1 id="server-">server {<a class="anchorjs-link" href="#server-"></a></h1><h1 id="listen-------80-default_server">listen       80 default_server;<a class="anchorjs-link" href="#listen-------80-default_server"></a></h1><h1 id="listen-------80-default_server-1">listen       [::]:80 default_server;<a class="anchorjs-link" href="#listen-------80-default_server-1"></a></h1><h1 id="server_name--_">server_name  _;<a class="anchorjs-link" href="#server_name--_"></a></h1><h1 id="root---------usrsharenginxhtml">root         /usr/share/nginx/html;<a class="anchorjs-link" href="#root---------usrsharenginxhtml"></a></h1><h1 id="-load-configuration-files-for-the-default-server-block"># Load configuration files for the default server block.<a class="anchorjs-link" href="#-load-configuration-files-for-the-default-server-block"></a></h1><h1 id="include-etcnginxdefaultdconf">include /etc/nginx/default.d/*.conf;<a class="anchorjs-link" href="#include-etcnginxdefaultdconf"></a></h1><h1 id="location--">location / {<a class="anchorjs-link" href="#location--"></a></h1><h1 id="heading">}<a class="anchorjs-link" href="#heading"></a></h1><h1 id="error_page-404-404html">error_page 404 /404.html;<a class="anchorjs-link" href="#error_page-404-404html"></a></h1><h1 id="location--40xhtml-">location = /40x.html {<a class="anchorjs-link" href="#location--40xhtml-"></a></h1><h1 id="heading-1">}<a class="anchorjs-link" href="#heading-1"></a></h1><h1 id="error_page-500-502-503-504-50xhtml">error_page 500 502 503 504 /50x.html;<a class="anchorjs-link" href="#error_page-500-502-503-504-50xhtml"></a></h1><h1 id="location--50xhtml-">location = /50x.html {<a class="anchorjs-link" href="#location--50xhtml-"></a></h1><h1 id="heading-2">}<a class="anchorjs-link" href="#heading-2"></a></h1><h1 id="heading-3">}<a class="anchorjs-link" href="#heading-3"></a></h1><p>[root@server1 ~]# vim /etc/nginx/conf.d/proxy.conf</p>
+<h1 id="新建代理主机">新建代理主机<a class="anchorjs-link" href="#%e6%96%b0%e5%bb%ba%e4%bb%a3%e7%90%86%e4%b8%bb%e6%9c%ba"></a></h1><p>server {
+listen 80;
+index index.html index.php;</p>
+<p>location / {
+proxy_pass http://192.168.1.248 //指定被代理的主机IP
+include proxy_params; //包含代理参数文件
+}
+}</p>
+<p>[root@server1 ~]# vim /etc/nginx/proxy_params</p>
+<h1 id="配置代理参数">配置代理参数<a class="anchorjs-link" href="#%e9%85%8d%e7%bd%ae%e4%bb%a3%e7%90%86%e5%8f%82%e6%95%b0"></a></h1><p>proxy_redirect default;
+proxy_set_header Host $http_host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</p>
+<p>proxy_connect_timeout 30;
+proxy_send_timeout 60;
+proxy_read_timeout 60;</p>
+<p>proxy_buffer_size 32k;
+proxy_buffering on;
+proxy_buffers 4 128k;
+proxy_busy_buffers_size 256k;
+proxy_max_temp_file_size 256k;</p>
+<p>[root@server1 ~]# systemctl reload nginx</p>
+<p> </p>
+<h2 id="需求二实现负载均衡由代理服务器去随机访问后端服务器">需求二：实现负载均衡，由代理服务器去随机访问后端服务器<a class="anchorjs-link" href="#%e9%9c%80%e6%b1%82%e4%ba%8c%e5%ae%9e%e7%8e%b0%e8%b4%9f%e8%bd%bd%e5%9d%87%e8%a1%a1%e7%94%b1%e4%bb%a3%e7%90%86%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%8e%bb%e9%9a%8f%e6%9c%ba%e8%ae%bf%e9%97%ae%e5%90%8e%e7%ab%af%e6%9c%8d%e5%8a%a1%e5%99%a8"></a></h2><p>1、模拟后端多台服务器</p>
+<p>#模拟三个站点，为了显示负载均衡效果，网站内容各不相同
+[root@server1]# mkdir /usr/share/nginx/html/{node1,node2,node3}
+[root@server1]# echo &ldquo;this is node1&rdquo; &gt; /usr/share/nginx/html/node1/index.html
+[root@server1]# echo &ldquo;this is node2&rdquo; &gt; /usr/share/nginx/html/node2/index.html
+[root@server1]# echo &ldquo;this is node3&rdquo; &gt; /usr/share/nginx/html/node3/index.html</p>
+<p>#配置虚拟主机
+[root@server1 ]# vim /etc/nginx/conf.d/site.conf
+server {
+listen 81;
+index index.html;
+root /usr/share/nginx/html/node1/;
+}
+server{
+listen 82;
+index index.html;
+root /usr/share/nginx/html/node2/;
+}
+server{
+listen 83;
+index index.html;
+root /usr/share/nginx/html/node3/;
+}</p>
+<p>2、配置防火墙和selinux</p>
+<p>#防火墙放行81，82，83端口
+[root@server1 conf.d]# firewall-cmd &ndash;permanent &ndash;add-port=81/tcp
+success
+[root@server1 conf.d]# firewall-cmd &ndash;permanent &ndash;add-port=82/tcp
+success
+[root@server1 conf.d]# firewall-cmd &ndash;permanent &ndash;add-port=83/tcp
+success
+[root@server1 conf.d]# firewall-cmd &ndash;reload</p>
+<p>#关闭selinux安全子系统，因为nginx使用80以外的端口会被selinux拒绝
+[root@server1 ]# setenforce 0</p>
+<p>3、配置反向代理实现负载均衡</p>
+<p>[root@server1 ~]# vim /etc/nginx/nginx.conf</p>
+<h1 id="注释掉默认主机-1">注释掉默认主机<a class="anchorjs-link" href="#%e6%b3%a8%e9%87%8a%e6%8e%89%e9%bb%98%e8%ae%a4%e4%b8%bb%e6%9c%ba-1"></a></h1><h1 id="server--1">server {<a class="anchorjs-link" href="#server--1"></a></h1><h1 id="listen-------80-default_server-2">listen       80 default_server;<a class="anchorjs-link" href="#listen-------80-default_server-2"></a></h1><h1 id="listen-------80-default_server-3">listen       [::]:80 default_server;<a class="anchorjs-link" href="#listen-------80-default_server-3"></a></h1><h1 id="server_name--_-1">server_name  _;<a class="anchorjs-link" href="#server_name--_-1"></a></h1><h1 id="root---------usrsharenginxhtml-1">root         /usr/share/nginx/html;<a class="anchorjs-link" href="#root---------usrsharenginxhtml-1"></a></h1><h1 id="-load-configuration-files-for-the-default-server-block-1"># Load configuration files for the default server block.<a class="anchorjs-link" href="#-load-configuration-files-for-the-default-server-block-1"></a></h1><h1 id="include-etcnginxdefaultdconf-1">include /etc/nginx/default.d/*.conf;<a class="anchorjs-link" href="#include-etcnginxdefaultdconf-1"></a></h1><h1 id="location---1">location / {<a class="anchorjs-link" href="#location---1"></a></h1><h1 id="heading-4">}<a class="anchorjs-link" href="#heading-4"></a></h1><h1 id="error_page-404-404html-1">error_page 404 /404.html;<a class="anchorjs-link" href="#error_page-404-404html-1"></a></h1><h1 id="location--40xhtml--1">location = /40x.html {<a class="anchorjs-link" href="#location--40xhtml--1"></a></h1><h1 id="heading-5">}<a class="anchorjs-link" href="#heading-5"></a></h1><h1 id="error_page-500-502-503-504-50xhtml-1">error_page 500 502 503 504 /50x.html;<a class="anchorjs-link" href="#error_page-500-502-503-504-50xhtml-1"></a></h1><h1 id="location--50xhtml--1">location = /50x.html {<a class="anchorjs-link" href="#location--50xhtml--1"></a></h1><h1 id="heading-6">}<a class="anchorjs-link" href="#heading-6"></a></h1><h1 id="heading-7">}<a class="anchorjs-link" href="#heading-7"></a></h1><p>[root@server1 ~]# vim /etc/nginx/conf.d/proxy.conf
+#新建upstream虚拟服务池，里面包含负载均衡使用到的所有主机
+upstream node{
+server 192.168.200.20:81;
+server 192.168.200.20:82;
+server 192.168.200.20:83;
+}</p>
+<p>server {
+listen 80;</p>
+<pre><code>location / {
+proxy\_pass http://node;   //代理指向upstream虚拟服务池
+include proxy\_params;
+}
+</code></pre>
+<p>}</p>
+<p>[root@server1 ~]# vim /etc/nginx/proxy_params</p>
+<h1 id="配置代理参数-1">配置代理参数<a class="anchorjs-link" href="#%e9%85%8d%e7%bd%ae%e4%bb%a3%e7%90%86%e5%8f%82%e6%95%b0-1"></a></h1><p>proxy_redirect default;
+proxy_set_header Host $http_host;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</p>
+<p>proxy_connect_timeout 30;
+proxy_send_timeout 60;
+proxy_read_timeout 60;</p>
+<p>proxy_buffer_size 32k;
+proxy_buffering on;
+proxy_buffers 4 128k;
+proxy_busy_buffers_size 256k;
+proxy_max_temp_file_size 256k;</p>
+<p>[root@server1 ~]# systemctl reload nginx</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/" data-toggle="tooltip" data-placement="top" title="内网环境搭建YUM仓库">
+              Previous<br>
+              <span>内网环境搭建YUM仓库</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/" data-toggle="tooltip" data-placement="top" title="keepalived入门-实现httpd高可用">
+              Next<br>
+              <span>keepalived入门-实现httpd高可用</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

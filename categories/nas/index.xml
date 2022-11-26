@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nas on 蔡振威的博客</title>
+    <link>https://water711.github.io/categories/nas/</link>
+    <description>Recent content in nas on 蔡振威的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://water711.github.io/categories/nas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>centos7安装transmission</title>
+      <link>https://water711.github.io/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission/</guid>
+      <description>一、使用docker安装docker hub仓库地址：https://hub.docker.com/r/linuxserver/transmission
+1、下载镜像
+docker pull linuxserver/transmission
+2、运行容器
+docker run -d \ &amp;ndash;name=transmission \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Asia/Shanghai \ -e TRANSMISSION_WEB_HOME=/transmission-web-control/ `#optional` \ -e USER=username `#optional` \ -e PASS=password `#optional` \ -p 9091:9091 \ -p 51413:51413 \ -p 51413:51413/udp \ -v /mnt/transmission/config:/config \ -v /mnt/transmission/downloads:/downloads \ -v /mnt/transmission/watch:/watch \ &amp;ndash;restart unless-stopped \ linuxserver/transmission
+3、配置文件地址
+vim /mnt/transmission/config/settings.json
+二、使用yum安装1、安装
+yum -y install epel-release yum install tranmission transmission-daemon systemctl start transmission-daemon.</description>
+    </item>
+    
+    <item>
+      <title>使用docker快速搭建L2TP服务器</title>
+      <link>https://water711.github.io/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>使用 Docker 镜像快速搭建 IPsec VPN 服务器。支持 IPsec/L2TP，Cisco IPsec 和 IKEv2 协议。
+作者github地址：https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-zh.md
+一、下载镜像并运行docker run \ &amp;ndash;name ipsec-vpn-server \ &amp;ndash;restart=always \ -v ikev2-vpn-data:/etc/ipsec.d \ -v /lib/modules:/lib/modules:ro \ -p 500:500/udp \ -p 4500:4500/udp \ -d &amp;ndash;privileged \ hwdsl2/ipsec-vpn-server
+二、获取 VPN 登录信息docker logs ipsec-vpn-server
+在命令输出中查找下面这些行：
+Server IP: 你的VPN服务器IP IPsec PSK: 你的IPsec预共享密钥 Username: 你的VPN用户名 Password: 你的VPN密码
+三、配置 IPsec/L2TP VPN 客户端https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/clients-zh.md
+四、取消所有流量走VPN1、禁止PPTP、L2TP 修改本机缺省路由
+点击桌面右下角网络图标，右键点击VPN，选择属性，点击网络-》属性-》高级-》取消“在远程网络上使用默认网关”
+设置后重新连接VPN
+2、设置静态路由，用于访问VPN内网
+route add 192.168.100.0 mask 255.255.255.0 192.168.42.1</description>
+    </item>
+    
+    <item>
+      <title>Linux安装使用clash网络代理工具</title>
+      <link>https://water711.github.io/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
+      <description>一、下载解压运行各平台clash安装包链接：https://github.com/Dreamacro/clash/releases
+mkdir clash #创建目录 cd clash #进入目录 wget http://xxxxxxclash-linux-amd64-v1.3.5.gz #下载clash gunzip clash-linux-amd64-v1.3.5.gz #解压 mv clash-linux-amd64-v1.3.5 clash #重命名 chmod +x clash #添加可执行权限
+./clash #前台运行clashINFO[0000] Can&amp;rsquo;t find config, create a initial config file INFO[0000] Can&amp;rsquo;t find MMDB, start download INFO[0205] HTTP proxy listening at: 127.0.0.1:7890
+第一次启动会在用户目录下 ~/.config/clash 自动生成Config.yaml 和Country.mmdb两个文件
+生成的Config.yaml文件只一行 port: 7890，需要后续配置自己的代理信息
+二、关于配置文件有些机场商家会提供相应的yaml文件，复制进clash配置文件目录即可，如果提供的文件类型为yml类型，直接修改为yaml类型即可
+如运行clash时，出现“FATA[0000] Parse config error: yaml: unmarshal errors”，则需要转换订阅为clash，再重新下载配置
+cd ~/.config/clash wget -O config.yaml http://xxxx.com/link/f?clash=1&amp;log-level=info
+./clash #前台运行INFO[0000] Start initial compatible provider Proxy INFO[0000] Start initial compatible provider Domestic</description>
+    </item>
+    
+    <item>
+      <title>手机端实现一键发送命令到NAS主机</title>
+      <link>https://water711.github.io/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</link>
+      <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</guid>
+      <description>NAS操作系统：Centos7
+实现原理：通过访问网页，执行含有shell命令的php代码
+1、安装apache和phpyum install -y httpd php
+2、启动apache、关闭selinuxsystemctl start httpd systemctl enable httpd
+#临时关闭selinux setenforce 0
+#永久关闭selinux vim /etc/selinux/config SELINUX=disabled
+3、修改Web端口和目录（可选）vim /etc/httpd/conf/httpd.confListen 1234 &amp;hellip; DocumentRoot &amp;ldquo;/mnt/html&amp;rdquo; &amp;hellip;. &amp;lt;Directory &amp;ldquo;/mnt/html&amp;rdquo;&amp;gt;systemctl restart httpd
+4、测试vim /mnt/html/test.php 浏览器运行：http:IP:端口/test.php
+5、为apache用户提权apache用户权限非常低，大部分命令仍然不能运行
+vim /etc/sudoersroot ALL=(ALL) ALL apache ALL=(ALL) NOPASSWD:ALL #添加这一行6、测试vim /mnt/html/test1.php 7、网站安全配置，只允许指定IP访问vim /etc/httpd/conf/httpd.conf&amp;lt;Directory &amp;ldquo;/mnt/html&amp;rdquo;&amp;gt; AllowOverride None Require all granted Deny From all Allow From 127.0.0.1 10.0.0.3 #只允许指定IP访问 8、手机端收藏网页，发送到桌面</description>
+    </item>
+    
+    <item>
+      <title>Docker可视化工具--Portainer安装</title>
+      <link>https://water711.github.io/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</guid>
+      <description>官网/安装文档：https://www.portainer.io/
+https://www.portainer.io/installation/
+https://portainer.readthedocs.io/en/stable/deployment.html
+Portainer是Docker的可视化管理工具，提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像，创建容器等操作）、事件日志显示、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。
+一、拉取portainer镜像docker pull portainer/portainer
+二、启动portainerdocker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &amp;ndash;name portainer &amp;ndash;restart=always portainer/portainer
+三、浏览器访问http://服务器IP地址:9000
+1、设置密码
+2、选择Local，连接本地主机docker
+3、查看本地所有容器
+4、查看容器的日志、inspect、占用的硬件资源、执行命令</description>
+    </item>
+    
+    <item>
+      <title>Centos7 部署Samba服务</title>
+      <link>https://water711.github.io/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</guid>
+      <description>1、安装软件包yum -y install samba
+2、建立访问用户useradd test smbpasswd -a test
+3、配置samba共享[data] path = /mnt/data write list = test
+其它参数
+valid users = name #只允许该用户访问，其它用户可见但无法访问 hosts allow = 192.168.1. #只允许该网段访问 ;前面加分号为注释，等号两边要加空格
+4、启动samba服务systemctl restart smb nmb systemctl enable smb nmb
+5、配置防火墙firewall-cmd &amp;ndash;permanent &amp;ndash;add-service=samba firewall-cmd &amp;ndash;permanent &amp;ndash;add-service=samba-client firewall-cmd &amp;ndash;permanent &amp;ndash;add-service=mouted firewall-cmd &amp;ndash;reload
+6、通过子配置文件，让目录只对有权限的用户可见新建子配置文件
+vim /etc/samba/test1.smb.conf[share11] path = /data/aa valid users = test1
+新建子配置文件
+vim /etc/samba/test2.smb.conf[share12] path = /data/aa valid users = test2
+引用子配置文件
+vim /etc/samba/smb.</description>
+    </item>
+    
+    <item>
+      <title>Docker部署开源摄像头录制软件shinobi</title>
+      <link>https://water711.github.io/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</guid>
+      <description>官方文档：https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/dev/Docker
+一、安装shinobi方法1、使用脚本自动安装（存储路径默认在$HOME目录下）
+curl -o https://gitlab.com/Shinobi-Systems/Shinobi-Installer/raw/master/shinobi-docker.sh
+方法2、手动安装运行
+安装Shinobi
+docker run -d &amp;ndash;name=&amp;lsquo;Shinobi&amp;rsquo; -p &amp;lsquo;8080:8080/tcp&amp;rsquo; -v &amp;ldquo;/dev/shm/Shinobi/streams&amp;rdquo;:&amp;rsquo;/dev/shm/streams&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/config&amp;rdquo;:&amp;rsquo;/config&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/customAutoLoad&amp;rdquo;:&amp;rsquo;/home/Shinobi/libs/customAutoLoad&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/database&amp;rdquo;:&amp;rsquo;/var/lib/mysql&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/videos&amp;rdquo;:&amp;rsquo;/home/Shinobi/videos&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/plugins&amp;rdquo;:&amp;rsquo;/home/Shinobi/plugins&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;lsquo;/etc/localtime&amp;rsquo;:&amp;rsquo;/etc/localtime&amp;rsquo;:&amp;lsquo;ro&amp;rsquo; shinobisystems/shinobi:dev
+安装对象检测（可选）
+docker run -d &amp;ndash;name=&amp;lsquo;shinobi-tensorflow&amp;rsquo; -e PLUGIN_HOST=&amp;lsquo;10.1.103.113&amp;rsquo; -e PLUGIN_PORT=&amp;lsquo;8080&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/docker-plugins/tensorflow&amp;rdquo;:&amp;rsquo;/config&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; shinobisystems/shinobi-tensorflow:latest
+二、添加摄像头1、查看超级用户和密码
+docker logs ShinobiDefault Superuser : admin@shinobi.video Default Password : admin Log in at http://HOST_IP:SHINOBI_PORT/super
+2、用超级用户登录后台，创建普通用户
+http://HOST_IP:SHINOBI_PORT/super
+3、登录普通用户，添加摄像头
+点击左上角加号
+三、Shinobi手机端下载链接：https://cdn.shinobi.video/installers/ShinobiMobile/
+以苹果手机端操作为例
+1、点击Connectto a Shinobi或右下角图标连接Shinobi
+2、输入IP地址、账号和密码，点击Login登录
+3、点击右上角刷新按钮，会出现添加过的摄像头
+4、右击右上角复选框，可全选摄像头，或点击摄像头复选框，选择某个摄像头
+5、点击右上角“小电视”图标，可实时预览所有选中的摄像头，或点击某个摄像头“小电视”图标，预览单个摄像头
+四、修改时区在使用过程中，发现回放的时间和实际时间有差异，比如今天16号，但回放列表显示今天日期是17号
+[root@nas ~]# docker exec -it Shinobi /bin/bash</description>
+    </item>
+    
+    <item>
+      <title>Docker部署开源摄像头录制软件shinobi</title>
+      <link>https://water711.github.io/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/</guid>
+      <description>官方文档：https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/dev/Docker
+一、安装shinobi方法1、使用脚本自动安装（存储路径默认在$HOME目录下）
+curl -o https://gitlab.com/Shinobi-Systems/Shinobi-Installer/raw/master/shinobi-docker.sh
+方法2、手动安装运行
+安装Shinobi
+docker run -d &amp;ndash;name=&amp;lsquo;Shinobi&amp;rsquo; -p &amp;lsquo;8080:8080/tcp&amp;rsquo; -v &amp;ldquo;/dev/shm/Shinobi/streams&amp;rdquo;:&amp;rsquo;/dev/shm/streams&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/config&amp;rdquo;:&amp;rsquo;/config&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/customAutoLoad&amp;rdquo;:&amp;rsquo;/home/Shinobi/libs/customAutoLoad&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/database&amp;rdquo;:&amp;rsquo;/var/lib/mysql&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/videos&amp;rdquo;:&amp;rsquo;/home/Shinobi/videos&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/plugins&amp;rdquo;:&amp;rsquo;/home/Shinobi/plugins&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; -v &amp;lsquo;/etc/localtime&amp;rsquo;:&amp;rsquo;/etc/localtime&amp;rsquo;:&amp;lsquo;ro&amp;rsquo; shinobisystems/shinobi:dev
+安装对象检测（可选）
+docker run -d &amp;ndash;name=&amp;lsquo;shinobi-tensorflow&amp;rsquo; -e PLUGIN_HOST=&amp;lsquo;10.1.103.113&amp;rsquo; -e PLUGIN_PORT=&amp;lsquo;8080&amp;rsquo; -v &amp;ldquo;$HOME/Shinobi/docker-plugins/tensorflow&amp;rdquo;:&amp;rsquo;/config&amp;rsquo;:&amp;lsquo;rw&amp;rsquo; shinobisystems/shinobi-tensorflow:latest
+二、添加摄像头1、查看超级用户和密码
+docker logs ShinobiDefault Superuser : admin@shinobi.video Default Password : admin Log in at http://HOST_IP:SHINOBI_PORT/super
+2、用超级用户登录后台，创建普通用户
+http://HOST_IP:SHINOBI_PORT/super
+3、登录普通用户，添加摄像头
+点击左上角加号
+三、Shinobi手机端下载链接：https://cdn.shinobi.video/installers/ShinobiMobile/
+以苹果手机端操作为例
+1、点击Connectto a Shinobi或右下角图标连接Shinobi
+2、输入IP地址、账号和密码，点击Login登录
+3、点击右上角刷新按钮，会出现添加过的摄像头
+4、右击右上角复选框，可全选摄像头，或点击摄像头复选框，选择某个摄像头
+5、点击右上角“小电视”图标，可实时预览所有选中的摄像头，或点击某个摄像头“小电视”图标，预览单个摄像头
+四、修改时区在使用过程中，发现回放的时间和实际时间有差异，比如今天16号，但回放列表显示今天日期是17号
+[root@nas ~]# docker exec -it Shinobi /bin/bash</description>
+    </item>
+    
+    <item>
+      <title>Centos7 修改Docker默认存储位置</title>
+      <link>https://water711.github.io/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</guid>
+      <description>1、查看docker默认目录docker info | grep &amp;ldquo;Docker Root Dir&amp;rdquo;
+2、新建或者编辑 daemon.json 文件vim /etc/docker/daemon.json
+{ &amp;ldquo;graph&amp;rdquo;: &amp;ldquo;/mnt/docker&amp;rdquo; }
+3、重启docker服务systemctl restart docker
+4、查看docker目录文件ls /mnt/docker</description>
+    </item>
+    
+  </channel>
+</rss>

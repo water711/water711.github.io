@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>Python开发【第八篇】：网络编程 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="socket通常也称作&quot;套接字&quot;，用于描述IP地址和端口，是一个通信链的句柄，应用程序通常通过&quot;套接字&quot;向网络发出请求或者应答网络请求。
+socket起源于Unix，而Unix/Linux基本哲学之一就是“一切皆文件”，对于文件用【打开】【读写】【关闭】模式来操作。socket就是该模式的一个实现，socket即是一种特殊的文件，一些socket函数就是对其进行的操作（读/写IO、打开、关闭）
+socket和file的区别：
+file模块是针对某个指定文件进行【打开】【读写】【关闭】 socket模块是针对 服务器端 和 客户端Socket 进行【打开】【读写】【关闭】 #!/usr/bin/env python # -*- coding:utf-8 -*-
+import socket
+ip_port = (&lsquo;127.0.0.1&rsquo;,9999)
+sk = socket.socket() sk.bind(ip_port) sk.listen(5) while True: print &lsquo;server waiting&hellip;&rsquo; conn,addr = sk.accept()
+client\_data \= conn.recv(1024) print client\_data conn.sendall(&#39;不要回答,不要回答,不要回答&#39;) conn.close() socket server
+#!/usr/bin/env python # -*- coding:utf-8 -*- import socket ip_port = (&lsquo;127.0.0.1&rsquo;,9999)
+sk = socket.socket() sk.connect(ip_port)
+sk.sendall(&lsquo;请求占领地球&rsquo;)
+server_reply = sk.recv(1024) print server_reply
+sk.close()
+socket client
+WEB服务应用：
+#!/usr/bin/env python #coding:utf-8 import socket">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python开发【第八篇】：网络编程"/>
+<meta name="twitter:description" content="socket通常也称作&quot;套接字&quot;，用于描述IP地址和端口，是一个通信链的句柄，应用程序通常通过&quot;套接字&quot;向网络发出请求或者应答网络请求。
+socket起源于Unix，而Unix/Linux基本哲学之一就是“一切皆文件”，对于文件用【打开】【读写】【关闭】模式来操作。socket就是该模式的一个实现，socket即是一种特殊的文件，一些socket函数就是对其进行的操作（读/写IO、打开、关闭）
+socket和file的区别：
+file模块是针对某个指定文件进行【打开】【读写】【关闭】 socket模块是针对 服务器端 和 客户端Socket 进行【打开】【读写】【关闭】 #!/usr/bin/env python # -*- coding:utf-8 -*-
+import socket
+ip_port = (&lsquo;127.0.0.1&rsquo;,9999)
+sk = socket.socket() sk.bind(ip_port) sk.listen(5) while True: print &lsquo;server waiting&hellip;&rsquo; conn,addr = sk.accept()
+client\_data \= conn.recv(1024) print client\_data conn.sendall(&#39;不要回答,不要回答,不要回答&#39;) conn.close() socket server
+#!/usr/bin/env python # -*- coding:utf-8 -*- import socket ip_port = (&lsquo;127.0.0.1&rsquo;,9999)
+sk = socket.socket() sk.connect(ip_port)
+sk.sendall(&lsquo;请求占领地球&rsquo;)
+server_reply = sk.recv(1024) print server_reply
+sk.close()
+socket client
+WEB服务应用：
+#!/usr/bin/env python #coding:utf-8 import socket"/>
+
+  <meta property="og:title" content="Python开发【第八篇】：网络编程" />
+<meta property="og:description" content="socket通常也称作&quot;套接字&quot;，用于描述IP地址和端口，是一个通信链的句柄，应用程序通常通过&quot;套接字&quot;向网络发出请求或者应答网络请求。
+socket起源于Unix，而Unix/Linux基本哲学之一就是“一切皆文件”，对于文件用【打开】【读写】【关闭】模式来操作。socket就是该模式的一个实现，socket即是一种特殊的文件，一些socket函数就是对其进行的操作（读/写IO、打开、关闭）
+socket和file的区别：
+file模块是针对某个指定文件进行【打开】【读写】【关闭】 socket模块是针对 服务器端 和 客户端Socket 进行【打开】【读写】【关闭】 #!/usr/bin/env python # -*- coding:utf-8 -*-
+import socket
+ip_port = (&lsquo;127.0.0.1&rsquo;,9999)
+sk = socket.socket() sk.bind(ip_port) sk.listen(5) while True: print &lsquo;server waiting&hellip;&rsquo; conn,addr = sk.accept()
+client\_data \= conn.recv(1024) print client\_data conn.sendall(&#39;不要回答,不要回答,不要回答&#39;) conn.close() socket server
+#!/usr/bin/env python # -*- coding:utf-8 -*- import socket ip_port = (&lsquo;127.0.0.1&rsquo;,9999)
+sk = socket.socket() sk.connect(ip_port)
+sk.sendall(&lsquo;请求占领地球&rsquo;)
+server_reply = sk.recv(1024) print server_reply
+sk.close()
+socket client
+WEB服务应用：
+#!/usr/bin/env python #coding:utf-8 import socket" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-04-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-04-11T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>Python开发【第八篇】：网络编程</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Tue, Apr 11, 2017
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>socket通常也称作&quot;套接字&quot;，用于描述IP地址和端口，是一个通信链的句柄，应用程序通常通过&quot;套接字&quot;向网络发出请求或者应答网络请求。</p>
+<p>socket起源于Unix，而Unix/Linux基本哲学之一就是“一切皆文件”，对于文件用【打开】【读写】【关闭】模式来操作。socket就是该模式的一个实现，socket即是一种特殊的文件，一些socket函数就是对其进行的操作（读/写IO、打开、关闭）</p>
+<p>socket和file的区别：</p>
+<ul>
+<li>file模块是针对某个指定文件进行【打开】【读写】【关闭】</li>
+<li>socket模块是针对 服务器端 和 客户端Socket 进行【打开】【读写】【关闭】</li>
+</ul>
+<p> <figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//425762-20151212160019653-1079393936.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>import socket</p>
+<p>ip_port = (&lsquo;127.0.0.1&rsquo;,9999)</p>
+<p>sk = socket.socket()
+sk.bind(ip_port)
+sk.listen(5) while True: print &lsquo;server waiting&hellip;&rsquo; conn,addr = sk.accept()</p>
+<pre><code>client\_data \= conn.recv(1024) print client\_data
+conn.sendall('不要回答,不要回答,不要回答')
+
+conn.close()
+</code></pre>
+<p>socket server</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-
+import socket
+ip_port = (&lsquo;127.0.0.1&rsquo;,9999)</p>
+<p>sk = socket.socket()
+sk.connect(ip_port)</p>
+<p>sk.sendall(&lsquo;请求占领地球&rsquo;)</p>
+<p>server_reply = sk.recv(1024) print server_reply</p>
+<p>sk.close()</p>
+<p>socket client</p>
+<p>WEB服务应用：</p>
+<p>#!/usr/bin/env python
+#coding:utf-8
+import socket</p>
+<p>def handle_request(client):
+buf = client.recv(1024)
+client.send(&ldquo;HTTP/1.1 200 OK\r\n\r\n&rdquo;)
+client.send(&ldquo;Hello, World&rdquo;)</p>
+<p>def main():
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.bind((&rsquo;localhost&rsquo;,8080))
+sock.listen(5)</p>
+<pre><code>while True:
+    connection, address = sock.accept()
+    handle\_request(connection)
+    connection.close()
+</code></pre>
+<p>if __name__ == &lsquo;__main__&rsquo;:
+main()</p>
+<p><strong>更多功能</strong></p>
+<p><strong>sk = socket.socket(socket.AF_INET,socket.SOCK_STREAM,0)</strong></p>
+<blockquote>
+<p>参数一：地址簇</p>
+<p>　　socket.AF_INET IPv4（默认）<br>
+　　socket.AF_INET6 IPv6</p>
+<p>　　socket.AF_UNIX 只能够用于单一的Unix系统进程间通信</p>
+<p>参数二：类型</p>
+<p>　　socket.SOCK_STREAM　　流式socket , for TCP （默认）<br>
+　　socket.SOCK_DGRAM　　 数据报式socket , for UDP</p>
+<p>　　socket.SOCK_RAW 原始套接字，普通的套接字无法处理ICMP、IGMP等网络报文，而SOCK_RAW可以；其次，SOCK_RAW也可以处理特殊的IPv4报文；此外，利用原始套接字，可以通过IP_HDRINCL套接字选项由用户构造IP头。<br>
+　　socket.SOCK_RDM 是一种可靠的UDP形式，即保证交付数据报但不保证顺序。SOCK_RAM用来提供对原始协议的低级访问，在需要执行某些特殊操作时使用，如发送ICMP报文。SOCK_RAM通常仅限于高级用户或管理员运行的程序使用。<br>
+　　socket.SOCK_SEQPACKET 可靠的连续数据包服务</p>
+<p>参数三：协议</p>
+<p>　　0　　（默认）与特定的地址家族相关的协议,如果是 0 ，则系统就会根据地址格式和套接类别,自动选择一个合适的协议</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>import socket
+ip_port = (&lsquo;127.0.0.1&rsquo;,9999)
+sk = socket.socket(socket.AF_INET,socket.SOCK_DGRAM,0)
+sk.bind(ip_port) while True:
+data = sk.recv(1024) print data import socket
+ip_port = (&lsquo;127.0.0.1&rsquo;,9999)</p>
+<p>sk = socket.socket(socket.AF_INET,socket.SOCK_DGRAM,0) while True:
+inp = raw_input(&lsquo;数据：&rsquo;).strip() if inp == &rsquo;exit&rsquo;: break sk.sendto(inp,ip_port)</p>
+<p>sk.close()</p>
+<p>UDP Demo</p>
+</blockquote>
+<p><strong>sk.bind(address)</strong></p>
+<p>　　s.bind(address) 将套接字绑定到地址。address地址的格式取决于地址族。在AF_INET下，以元组（host,port）的形式表示地址。</p>
+<p><strong>sk.listen(backlog)</strong></p>
+<p>　　开始监听传入连接。backlog指定在拒绝连接之前，可以挂起的最大连接数量。</p>
+<p>      backlog等于5，表示内核已经接到了连接请求，但服务器还没有调用accept进行处理的连接个数最大为5<br>
+      这个值不能无限大，因为要在内核中维护连接队列</p>
+<p><strong>sk.setblocking(bool)</strong></p>
+<p>　　是否阻塞（默认True），如果设置False，那么accept和recv时一旦无数据，则报错。</p>
+<p><strong>sk.accept()</strong></p>
+<p>　　接受连接并返回（conn,address）,其中conn是新的套接字对象，可以用来接收和发送数据。address是连接客户端的地址。</p>
+<p>　　接收TCP 客户的连接（阻塞式）等待连接的到来</p>
+<p><strong>sk.connect(address)</strong></p>
+<p>　　连接到address处的套接字。一般，address的格式为元组（hostname,port）,如果连接出错，返回socket.error错误。</p>
+<p><strong>sk.connect_ex(address)</strong></p>
+<p>　　同上，只不过会有返回值，连接成功时返回 0 ，连接失败时候返回编码，例如：10061</p>
+<p><strong>sk.close()</strong></p>
+<p>　　关闭套接字</p>
+<p><strong>sk.recv(bufsize[,flag])</strong></p>
+<p>　　接受套接字的数据。数据以字符串形式返回，bufsize指定<strong>最多</strong>可以接收的数量。flag提供有关消息的其他信息，通常可以忽略。</p>
+<p><strong>sk.recvfrom(bufsize[.flag])</strong></p>
+<p>　　与recv()类似，但返回值是（data,address）。其中data是包含接收数据的字符串，address是发送数据的套接字地址。</p>
+<p><strong>sk.send(string[,flag])</strong></p>
+<p>　　将string中的数据发送到连接的套接字。返回值是要发送的字节数量，该数量可能小于string的字节大小。即：可能未将指定内容全部发送。</p>
+<p><strong>sk.sendall(string[,flag])</strong></p>
+<p>　　将string中的数据发送到连接的套接字，但在返回之前会尝试发送所有数据。成功返回None，失败则抛出异常。</p>
+<p>      内部通过递归调用send，将所有内容发送出去。</p>
+<p><strong>sk.sendto(string[,flag],address)</strong></p>
+<p>　　将数据发送到套接字，address是形式为（ipaddr，port）的元组，指定远程地址。返回值是发送的字节数。该函数主要用于UDP协议。</p>
+<p><strong>sk.settimeout(timeout)</strong></p>
+<p>　　设置套接字操作的超时期，timeout是一个浮点数，单位是秒。值为None表示没有超时期。一般，超时期应该在刚创建套接字时设置，因为它们可能用于连接的操作（如 client 连接最多等待5s ）</p>
+<p><strong>sk.getpeername()</strong></p>
+<p>　　返回连接套接字的远程地址。返回值通常是元组（ipaddr,port）。</p>
+<p><strong>sk.getsockname()</strong></p>
+<p>　　返回套接字自己的地址。通常是一个元组(ipaddr,port)</p>
+<p><strong>sk.fileno()</strong></p>
+<p>　　套接字的文件描述符</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h1 id="服务端">服务端<a class="anchorjs-link" href="#%e6%9c%8d%e5%8a%a1%e7%ab%af"></a></h1><p>import socket
+ip_port = (&lsquo;127.0.0.1&rsquo;,9999)
+sk = socket.socket(socket.AF_INET,socket.SOCK_DGRAM,0)
+sk.bind(ip_port) while True:
+data,(host,port) = sk.recvfrom(1024) print(data,host,port)
+sk.sendto(bytes(&lsquo;ok&rsquo;, encoding=&lsquo;utf-8&rsquo;), (host,port)) #客户端
+import socket
+ip_port = (&lsquo;127.0.0.1&rsquo;,9999)</p>
+<p>sk = socket.socket(socket.AF_INET,socket.SOCK_DGRAM,0) while True:
+inp = input(&lsquo;数据：&rsquo;).strip() if inp == &rsquo;exit&rsquo;: break sk.sendto(bytes(inp, encoding=&lsquo;utf-8&rsquo;),ip_port)
+data = sk.recvfrom(1024) print(data)</p>
+<p>sk.close()</p>
+<p>UDP</p>
+<p>**实例：**智能机器人</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>import socket</p>
+<p>ip_port = (&lsquo;127.0.0.1&rsquo;,8888)
+sk = socket.socket()
+sk.bind(ip_port)
+sk.listen(5) while True:
+conn,address = sk.accept()
+conn.sendall(&lsquo;欢迎致电 10086，请输入1xxx,0转人工服务.&rsquo;)
+Flag = True while Flag:
+data = conn.recv(1024) if data == &rsquo;exit&rsquo;:
+Flag = False elif data == &lsquo;0&rsquo;:
+conn.sendall(&lsquo;通过可能会被录音.balabala一大推&rsquo;) else:
+conn.sendall(&lsquo;请重新输入.&rsquo;)
+conn.close()</p>
+<p>服务端</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>import socket</p>
+<p>ip_port = (&lsquo;127.0.0.1&rsquo;,8005)
+sk = socket.socket()
+sk.connect(ip_port)
+sk.settimeout(5) while True:
+data = sk.recv(1024) print &lsquo;receive:&rsquo;,data
+inp = raw_input(&lsquo;please input:&rsquo;)
+sk.sendall(inp) if inp == &rsquo;exit&rsquo;: break sk.close()</p>
+<p>客户端</p>
+<h3 id="io多路复用">IO多路复用<a class="anchorjs-link" href="#io%e5%a4%9a%e8%b7%af%e5%a4%8d%e7%94%a8"></a></h3><p>I/O多路复用指：通过一种机制，可以<strong>监视多个描述符</strong>，一旦某个描述符就绪（一般是读就绪或者写就绪），能够通知程序进行相应的读写操作。</p>
+<p><strong>Linux</strong></p>
+<p>Linux中的 select，poll，epoll 都是IO多路复用的机制。</p>
+<p>select</p>
+<p>select最早于1983年出现在4.2BSD中，它通过一个select()系统调用来监视多个文件描述符的数组，当select()返回后，该数组中就绪的文件描述符便会被内核修改标志位，使得进程可以获得这些文件描述符从而进行后续的读写操作。
+select目前几乎在所有的平台上支持，其良好跨平台支持也是它的一个优点，事实上从现在看来，这也是它所剩不多的优点之一。
+select的一个缺点在于单个进程能够监视的文件描述符的数量存在最大限制，在Linux上一般为1024，不过可以通过修改宏定义甚至重新编译内核的方式提升这一限制。
+另外，select()所维护的存储大量文件描述符的数据结构，随着文件描述符数量的增大，其复制的开销也线性增长。同时，由于网络响应时间的延迟使得大量TCP连接处于非活跃状态，但调用select()会对所有socket进行一次线性扫描，所以这也浪费了一定的开销。</p>
+<p>poll</p>
+<p>poll在1986年诞生于System V Release 3，它和select在本质上没有多大差别，但是poll没有最大文件描述符数量的限制。
+poll和select同样存在一个缺点就是，包含大量文件描述符的数组被整体复制于用户态和内核的地址空间之间，而不论这些文件描述符是否就绪，它的开销随着文件描述符数量的增加而线性增大。
+另外，select()和poll()将就绪的文件描述符告诉进程后，如果进程没有对其进行IO操作，那么下次调用select()和poll()的时候将再次报告这些文件描述符，所以它们一般不会丢失就绪的消息，这种方式称为水平触发（Level Triggered）。</p>
+<p>epoll</p>
+<p>直到Linux2.6才出现了由内核直接支持的实现方法，那就是epoll，它几乎具备了之前所说的一切优点，被公认为Linux2.6下性能最好的多路I/O就绪通知方法。
+epoll可以同时支持水平触发和边缘触发（Edge Triggered，只告诉进程哪些文件描述符刚刚变为就绪状态，它只说一遍，如果我们没有采取行动，那么它将不会再次告知，这种方式称为边缘触发），理论上边缘触发的性能要更高一些，但是代码实现相当复杂。
+epoll同样只告知那些就绪的文件描述符，而且当我们调用epoll_wait()获得就绪文件描述符时，返回的不是实际的描述符，而是一个代表就绪描述符数量的值，你只需要去epoll指定的一个数组中依次取得相应数量的文件描述符即可，这里也使用了内存映射（mmap）技术，这样便彻底省掉了这些文件描述符在系统调用时复制的开销。
+另一个本质的改进在于epoll采用基于事件的就绪通知方式。在select/poll中，进程只有在调用一定的方法后，内核才对所有监视的文件描述符进行扫描，而epoll事先通过epoll_ctl()来注册一个文件描述符，一旦基于某个文件描述符就绪时，内核会采用类似callback的回调机制，迅速激活这个文件描述符，当进程调用epoll_wait()时便得到通知。</p>
+<p><strong>Python</strong></p>
+<p>Python中有一个select模块，其中提供了：select、poll、epoll三个方法，分别调用系统的 select，poll，epoll 从而实现IO多路复用。</p>
+<p>Windows Python：
+提供： select
+Mac Python：
+提供： select
+Linux Python：
+提供： select、poll、epoll</p>
+<p><em>注意：网络操作、文件操作、终端操作等均属于IO操作，对于windows只支持Socket操作，其他系统支持其他IO操作，但是无法检测 普通文件操作 自动上次读取是否已经变化。</em></p>
+<p>对于select方法：</p>
+<p>句柄列表11, 句柄列表22, 句柄列表33 = select.select(句柄序列1, 句柄序列2, 句柄序列3, 超时时间)</p>
+<p>参数： 可接受四个参数（前三个必须）
+返回值：三个列表</p>
+<p>select方法用来监视文件句柄，如果句柄发生变化，则获取该句柄。
+1、当 参数1 序列中的句柄发生可读时（accetp和read），则获取发生变化的句柄并添加到 返回值1 序列中
+2、当 参数2 序列中含有句柄时，则将该序列中所有的句柄添加到 返回值2 序列中
+3、当 参数3 序列中的句柄发生错误时，则将该发生错误的句柄添加到 返回值3 序列中
+4、当 超时时间 未设置，则select会一直阻塞，直到监听的句柄发生变化
+当 超时时间 ＝ 1时，那么如果监听的句柄均无任何变化，则select会阻塞 1 秒，之后返回三个空列表，如果监听的句柄有变化，则直接执行。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>import select import threading import sys while True:
+readable, writeable, error = select.select([sys.stdin,],[],[],1) if sys.stdin in readable: print &lsquo;select get stdin&rsquo;,sys.stdin.readline()</p>
+<p>利用select监听终端操作实例</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>import socket import select</p>
+<p>sk1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sk1.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+sk1.bind((&lsquo;127.0.0.1&rsquo;,8002))
+sk1.listen(5)
+sk1.setblocking(0)</p>
+<p>inputs = [sk1,] while True:
+readable_list, writeable_list, error_list = select.select(inputs, [], inputs, 1) for r in readable_list: # 当客户端第一次连接服务端时
+if sk1 == r: print &lsquo;accept&rsquo; request, address = r.accept()
+request.setblocking(0)
+inputs.append(request) # 当客户端连接上服务端之后，再次发送数据时
+else:
+received = r.recv(1024) # 当正常接收客户端发送的数据时
+if received: print &lsquo;received data:&rsquo;, received # 当客户端关闭程序时
+else:
+inputs.remove(r)</p>
+<p>sk1.close()</p>
+<p>利用select实现伪同时处理多个Socket客户端请求：服务端</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-
+import socket</p>
+<p>ip_port = (&lsquo;127.0.0.1&rsquo;,8002)
+sk = socket.socket()
+sk.connect(ip_port) while True:
+inp = raw_input(&lsquo;please input:&rsquo;)
+sk.sendall(inp)
+sk.close()</p>
+<p>利用select实现伪同时处理多个Socket客户端请求：客户端</p>
+<p>此处的Socket服务端相比与原生的Socket，他支持当某一个请求不再发送数据时，服务器端不会等待而是可以去处理其他请求的数据。但是，如果每个请求的耗时比较长时，select版本的服务器端也无法完成同时操作。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python #coding:utf8</p>
+<p>&rsquo;&rsquo;&rsquo; 服务器的实现 采用select的方式 &rsquo;&rsquo;&rsquo;</p>
+<p>import select import socket import sys import Queue #创建套接字并设置该套接字为非阻塞模式
+server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.setblocking(0) #绑定套接字
+server_address = (&rsquo;localhost&rsquo;,10000) print &raquo;sys.stderr,&lsquo;starting up on %s port %s&rsquo;% server_address
+server.bind(server_address) #将该socket变成服务模式 #backlog等于5，表示内核已经接到了连接请求，但服务器还没有调用accept进行处理的连接个数最大为5 #这个值不能无限大，因为要在内核中维护连接队列
+server.listen(5) #初始化读取数据的监听列表,最开始时希望从server这个套接字上读取数据
+inputs = [server] #初始化写入数据的监听列表，最开始并没有客户端连接进来，所以列表为空
+outputs = [] #要发往客户端的数据
+message_queues = {} while inputs: print &raquo;sys.stderr,&lsquo;waiting for the next event&rsquo;
+#调用select监听所有监听列表中的套接字，并将准备好的套接字加入到对应的列表中
+readable,writable,exceptional = select.select(inputs,outputs,inputs)#列表中的socket 套接字  如果是文件呢？
+#监控文件句柄有某一处发生了变化 可写 可读  异常属于Linux中的网络编程
+#属于同步I/O操作，属于I/O复用模型的一种
+#rlist&ndash;等待到准备好读
+#wlist&ndash;等待到准备好写
+#xlist&ndash;等待到一种异常
+#处理可读取的套接字</p>
+<pre><code>''' 如果server这个套接字可读，则说明有新链接到来
+    此时在server套接字上调用accept,生成一个与客户端通讯的套接字
+    并将与客户端通讯的套接字加入inputs列表，下一次可以通过select检查连接是否可读
+    然后在发往客户端的缓冲中加入一项，键名为:与客户端通讯的套接字，键值为空队列
+    select系统调用是用来让我们的程序监视多个文件句柄(file descrīptor)的状态变化的。程序会停在select这里等待，
+    直到被监视的文件句柄有某一个或多个发生了状态改变 '''
+
+''' 若可读的套接字不是server套接字,有两种情况:一种是有数据到来，另一种是链接断开
+    如果有数据到来,先接收数据,然后将收到的数据填入往客户端的缓存区中的对应位置，最后
+    将于客户端通讯的套接字加入到写数据的监听列表:
+    如果套接字可读.但没有接收到数据，则说明客户端已经断开。这时需要关闭与客户端连接的套接字
+    进行资源清理 '''
+    
+for s in readable: if s is server:
+        connection,client\_address \= s.accept() print &gt;&gt;sys.stderr,'connection from',client\_address
+        connection.setblocking(0)#设置非阻塞
+</code></pre>
+<p>inputs.append(connection)
+message_queues[connection] = Queue.Queue() else:
+data = s.recv(1024) if data: print &raquo;sys.stderr,&lsquo;received &ldquo;%s&rdquo; from %s&rsquo;% \
+(data,s.getpeername())
+message_queues[s].put(data) if s not in outputs:
+outputs.append(s) else: print &raquo;sys.stderr,&lsquo;closing&rsquo;,client_address if s in outputs:
+outputs.remove(s)
+inputs.remove(s)
+s.close() del message_queues[s] #处理可写的套接字
+&rsquo;&rsquo;&rsquo; 在发送缓冲区中取出响应的数据，发往客户端。
+如果没有数据需要写，则将套接字从发送队列中移除，select中不再监视 &rsquo;&rsquo;&rsquo;</p>
+<pre><code>for s in writable: try:
+        next\_msg \= message\_queues\[s\].get\_nowait() except Queue.Empty: print &gt;&gt;sys.stderr,'  ',s,getpeername(),'queue empty' outputs.remove(s) else: print &gt;&gt;sys.stderr,'sending &quot;%s&quot; to %s'% \\
+        (next\_msg,s.getpeername())
+        s.send(next\_msg) #处理异常情况
+
+for s in exceptional: for s in exceptional: print &gt;&gt;sys.stderr,'exception condition on',s.getpeername()
+        inputs.remove(s) if s in outputs:
+            outputs.remove(s)
+        s.close() del message\_queues\[s\]
+</code></pre>
+<p>基于select实现socket服务端</p>
+<h3 id="socketserver模块">SocketServer模块<a class="anchorjs-link" href="#socketserver%e6%a8%a1%e5%9d%97"></a></h3><p>SocketServer内部使用 IO多路复用 以及 “多线程” 和 “多进程” ，从而实现并发处理多个客户端请求的Socket服务端。即：每个客户端请求连接到服务器时，Socket服务端都会在服务器是创建一个“线程”或者“进程” 专门负责处理当前客户端的所有请求。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//425762-20151226114322968-1230975336.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><strong>ThreadingTCPServer</strong></p>
+<p>ThreadingTCPServer实现的Soket服务器内部会为每个client创建一个 “<strong>线程</strong>”，该线程用来和客户端进行交互。</p>
+<p>**1、**ThreadingTCPServer基础</p>
+<p>使用ThreadingTCPServer:</p>
+<ul>
+<li>创建一个继承自 SocketServer.BaseRequestHandler 的类</li>
+<li>类中必须定义一个名称为 handle 的方法</li>
+<li>启动ThreadingTCPServer</li>
+</ul>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-
+import SocketServer class MyServer(SocketServer.BaseRequestHandler): def handle(self): # print self.request,self.client_address,self.server
+conn = self.request
+conn.sendall(&lsquo;欢迎致电 10086，请输入1xxx,0转人工服务.&rsquo;)
+Flag = True while Flag:
+data = conn.recv(1024) if data == &rsquo;exit&rsquo;:
+Flag = False elif data == &lsquo;0&rsquo;:
+conn.sendall(&lsquo;通过可能会被录音.balabala一大推&rsquo;) else:
+conn.sendall(&lsquo;请重新输入.&rsquo;) if __name__ == &lsquo;__main__&rsquo;:
+server = SocketServer.ThreadingTCPServer((&lsquo;127.0.0.1&rsquo;,8009),MyServer)
+server.serve_forever()</p>
+<p>SocketServer实现服务器</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>import socket</p>
+<p>ip_port = (&lsquo;127.0.0.1&rsquo;,8009)
+sk = socket.socket()
+sk.connect(ip_port)
+sk.settimeout(5) while True:
+data = sk.recv(1024) print &lsquo;receive:&rsquo;,data
+inp = raw_input(&lsquo;please input:&rsquo;)
+sk.sendall(inp) if inp == &rsquo;exit&rsquo;: break sk.close()</p>
+<p>客户端</p>
+<p>**2、**ThreadingTCPServer源码剖析</p>
+<p>ThreadingTCPServer的类图关系如下：</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//425762-20151226133025359-790393993.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure> </p>
+<p>内部调用流程为：</p>
+<ul>
+<li>启动服务端程序</li>
+<li>执行 TCPServer.__init__ 方法，创建服务端Socket对象并绑定 IP 和 端口</li>
+<li>执行 BaseServer.__init__ 方法，将自定义的继承自SocketServer.BaseRequestHandler 的类 MyRequestHandle赋值给 self.RequestHandlerClass</li>
+<li>执行 BaseServer.server_forever 方法，While 循环一直监听是否有客户端请求到达 &hellip;</li>
+<li>当客户端连接到达服务器</li>
+<li>执行 ThreadingMixIn.process_request 方法，创建一个 “线程” 用来处理请求</li>
+<li>执行 ThreadingMixIn.process_request_thread 方法</li>
+<li>执行 BaseServer.finish_request 方法，执行 self.RequestHandlerClass()  即：执行 自定义 MyRequestHandler 的构造方法（自动调用基类BaseRequestHandler的构造方法，在该构造方法中又会调用 MyRequestHandler的handle方法）</li>
+</ul>
+<p>ThreadingTCPServer相关源码：</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>class BaseServer: &ldquo;&ldquo;&ldquo;Base class for server classes.</p>
+<pre><code>Methods for the caller:
+
+- \_\_init\_\_(server\_address, RequestHandlerClass)
+- serve\_forever(poll\_interval=0.5)
+- shutdown()
+- handle\_request()  # if you do not use serve\_forever()
+- fileno() -&gt; int   # for select()
+
+Methods that may be overridden:
+
+- server\_bind()
+- server\_activate()
+- get\_request() -&gt; request, client\_address
+- handle\_timeout()
+- verify\_request(request, client\_address)
+- server\_close()
+- process\_request(request, client\_address)
+- shutdown\_request(request)
+- close\_request(request)
+- handle\_error()
+
+Methods for derived classes:
+
+- finish\_request(request, client\_address)
+
+Class variables that may be overridden by derived classes or
+instances:
+
+- timeout
+- address\_family
+- socket\_type
+- allow\_reuse\_address
+
+Instance variables:
+
+- RequestHandlerClass
+- socket &quot;&quot;&quot; timeout \= None def \_\_init\_\_(self, server\_address, RequestHandlerClass): &quot;&quot;&quot;Constructor.  May be extended, do not override.&quot;&quot;&quot; self.server\_address \= server\_address
+    self.RequestHandlerClass \= RequestHandlerClass
+    self.\_\_is\_shut\_down = threading.Event()
+    self.\_\_shutdown\_request = False def server\_activate(self): &quot;&quot;&quot;Called by constructor to activate the server.
+
+    May be overridden. &quot;&quot;&quot;
+    pass
+
+def serve\_forever(self, poll\_interval=0.5): &quot;&quot;&quot;Handle one request at a time until shutdown.
+
+    Polls for shutdown every poll\_interval seconds. Ignores
+    self.timeout. If you need to do periodic tasks, do them in
+    another thread. &quot;&quot;&quot; self.\_\_is\_shut\_down.clear() try: while not self.\_\_shutdown\_request: # XXX: Consider using another file descriptor or
+            # connecting to the socket to wake this up instead of
+            # polling. Polling reduces our responsiveness to a
+            # shutdown request and wastes cpu at all other times.
+            r, w, e = \_eintr\_retry(select.select, \[self\], \[\], \[\],
+                                   poll\_interval) if self in r:
+                self.\_handle\_request\_noblock() finally:
+        self.\_\_shutdown\_request = False
+        self.\_\_is\_shut\_down.set() def shutdown(self): &quot;&quot;&quot;Stops the serve\_forever loop.
+
+    Blocks until the loop has finished. This must be called while
+    serve\_forever() is running in another thread, or it will
+    deadlock. &quot;&quot;&quot; self.\_\_shutdown\_request = True
+    self.\_\_is\_shut\_down.wait() # The distinction between handling, getting, processing and
+# finishing a request is fairly arbitrary.  Remember:
+#
+# - handle\_request() is the top-level call.  It calls
+# select, get\_request(), verify\_request() and process\_request()
+# - get\_request() is different for stream or datagram sockets
+# - process\_request() is the place that may fork a new process
+# or create a new thread to finish the request
+# - finish\_request() instantiates the request handler class;
+# this constructor will handle the request all by itself
+
+def handle\_request(self): &quot;&quot;&quot;Handle one request, possibly blocking.
+
+    Respects self.timeout. &quot;&quot;&quot;
+    # Support people who used socket.settimeout() to escape
+    # handle\_request before self.timeout was available.
+    timeout = self.socket.gettimeout() if timeout is None:
+        timeout \= self.timeout elif self.timeout is not None:
+        timeout \= min(timeout, self.timeout)
+    fd\_sets \= \_eintr\_retry(select.select, \[self\], \[\], \[\], timeout) if not fd\_sets\[0\]:
+        self.handle\_timeout() return self.\_handle\_request\_noblock() def \_handle\_request\_noblock(self): &quot;&quot;&quot;Handle one request, without blocking.
+
+    I assume that select.select has returned that the socket is
+    readable before this function was called, so there should be
+    no risk of blocking in get\_request(). &quot;&quot;&quot;
+    try:
+        request, client\_address \= self.get\_request() except socket.error: return
+    if self.verify\_request(request, client\_address): try:
+            self.process\_request(request, client\_address) except:
+            self.handle\_error(request, client\_address)
+            self.shutdown\_request(request) def handle\_timeout(self): &quot;&quot;&quot;Called if no new request arrives within self.timeout.
+
+    Overridden by ForkingMixIn. &quot;&quot;&quot;
+    pass
+
+def verify\_request(self, request, client\_address): &quot;&quot;&quot;Verify the request.  May be overridden.
+
+    Return True if we should proceed with this request. &quot;&quot;&quot;
+    return True def process\_request(self, request, client\_address): &quot;&quot;&quot;Call finish\_request.
+
+    Overridden by ForkingMixIn and ThreadingMixIn. &quot;&quot;&quot; self.finish\_request(request, client\_address)
+    self.shutdown\_request(request) def server\_close(self): &quot;&quot;&quot;Called to clean-up the server.
+
+    May be overridden. &quot;&quot;&quot;
+    pass
+
+def finish\_request(self, request, client\_address): &quot;&quot;&quot;Finish one request by instantiating RequestHandlerClass.&quot;&quot;&quot; self.RequestHandlerClass(request, client\_address, self) def shutdown\_request(self, request): &quot;&quot;&quot;Called to shutdown and close an individual request.&quot;&quot;&quot; self.close\_request(request) def close\_request(self, request): &quot;&quot;&quot;Called to clean up an individual request.&quot;&quot;&quot;
+    pass
+
+def handle\_error(self, request, client\_address): &quot;&quot;&quot;Handle an error gracefully.  May be overridden.
+
+    The default is to print a traceback and continue. &quot;&quot;&quot;
+    print '\-'\*40
+    print 'Exception happened during processing of request from', print client\_address import traceback
+    traceback.print\_exc() # XXX But this goes to stderr!
+    print '\-'\*40
+</code></pre>
+<p>BaseServer</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>class TCPServer(BaseServer): &ldquo;&ldquo;&ldquo;Base class for various socket-based server classes.</p>
+<pre><code>Defaults to synchronous IP stream (i.e., TCP).
+
+Methods for the caller:
+
+- \_\_init\_\_(server\_address, RequestHandlerClass, bind\_and\_activate=True)
+- serve\_forever(poll\_interval=0.5)
+- shutdown()
+- handle\_request()  # if you don't use serve\_forever()
+- fileno() -&gt; int   # for select()
+
+Methods that may be overridden:
+
+- server\_bind()
+- server\_activate()
+- get\_request() -&gt; request, client\_address
+- handle\_timeout()
+- verify\_request(request, client\_address)
+- process\_request(request, client\_address)
+- shutdown\_request(request)
+- close\_request(request)
+- handle\_error()
+
+Methods for derived classes:
+
+- finish\_request(request, client\_address)
+
+Class variables that may be overridden by derived classes or
+instances:
+
+- timeout
+- address\_family
+- socket\_type
+- request\_queue\_size (only for stream sockets)
+- allow\_reuse\_address
+
+Instance variables:
+
+- server\_address
+- RequestHandlerClass
+- socket &quot;&quot;&quot; address\_family \= socket.AF\_INET
+
+socket\_type \= socket.SOCK\_STREAM
+
+request\_queue\_size \= 5 allow\_reuse\_address \= False def \_\_init\_\_(self, server\_address, RequestHandlerClass, bind\_and\_activate=True): &quot;&quot;&quot;Constructor.  May be extended, do not override.&quot;&quot;&quot; BaseServer.\_\_init\_\_(self, server\_address, RequestHandlerClass)
+    self.socket \= socket.socket(self.address\_family,
+                                self.socket\_type) if bind\_and\_activate: try:
+            self.server\_bind()
+            self.server\_activate() except:
+            self.server\_close() raise
+
+def server\_bind(self): &quot;&quot;&quot;Called by constructor to bind the socket.
+
+    May be overridden. &quot;&quot;&quot;
+    if self.allow\_reuse\_address:
+        self.socket.setsockopt(socket.SOL\_SOCKET, socket.SO\_REUSEADDR, 1)
+    self.socket.bind(self.server\_address)
+    self.server\_address \= self.socket.getsockname() def server\_activate(self): &quot;&quot;&quot;Called by constructor to activate the server.
+
+    May be overridden. &quot;&quot;&quot; self.socket.listen(self.request\_queue\_size) def server\_close(self): &quot;&quot;&quot;Called to clean-up the server.
+
+    May be overridden. &quot;&quot;&quot; self.socket.close() def fileno(self): &quot;&quot;&quot;Return socket file number.
+
+    Interface required by select(). &quot;&quot;&quot;
+    return self.socket.fileno() def get\_request(self): &quot;&quot;&quot;Get the request and client address from the socket.
+
+    May be overridden. &quot;&quot;&quot;
+    return self.socket.accept() def shutdown\_request(self, request): &quot;&quot;&quot;Called to shutdown and close an individual request.&quot;&quot;&quot;
+    try: #explicitly shutdown.  socket.close() merely releases
+        #the socket and waits for GC to perform the actual close.
+</code></pre>
+<p>request.shutdown(socket.SHUT_WR) except socket.error: pass #some platforms may raise ENOTCONN here
+self.close_request(request) def close_request(self, request): &ldquo;&ldquo;&ldquo;Called to clean up an individual request.&rdquo;&rdquo;&rdquo; request.close()</p>
+<p>TCPServer</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>class ThreadingMixIn: &ldquo;&ldquo;&ldquo;Mix-in class to handle each request in a new thread.&rdquo;&rdquo;&rdquo;</p>
+<pre><code># Decides how threads will act upon termination of the
+# main process
+daemon\_threads = False def process\_request\_thread(self, request, client\_address): &quot;&quot;&quot;Same as in BaseServer but as a thread.
+
+    In addition, exception handling is done here. &quot;&quot;&quot;
+    try:
+        self.finish\_request(request, client\_address)
+        self.shutdown\_request(request) except:
+        self.handle\_error(request, client\_address)
+        self.shutdown\_request(request) def process\_request(self, request, client\_address): &quot;&quot;&quot;Start a new thread to process the request.&quot;&quot;&quot; t \= threading.Thread(target = self.process\_request\_thread,
+                         args \= (request, client\_address))
+    t.daemon \= self.daemon\_threads
+    t.start()
+</code></pre>
+<p>ThreadingMixIn</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>class ThreadingTCPServer(ThreadingMixIn, TCPServer): pass</p>
+<p>ThreadingTCPServer</p>
+<p>RequestHandler相关源码</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>class BaseRequestHandler: &ldquo;&ldquo;&ldquo;Base class for request handler classes.</p>
+<pre><code>This class is instantiated for each request to be handled.  The
+constructor sets the instance variables request, client\_address
+and server, and then calls the handle() method.  To implement a
+specific service, all you need to do is to derive a class which
+defines a handle() method.
+
+The handle() method can find the request as self.request, the
+client address as self.client\_address, and the server (in case it
+needs access to per-server information) as self.server.  Since a
+separate instance is created for each request, the handle() method
+can define arbitrary other instance variariables. &quot;&quot;&quot;
+
+def \_\_init\_\_(self, request, client\_address, server):
+    self.request \= request
+    self.client\_address \= client\_address
+    self.server \= server
+    self.setup() try:
+        self.handle() finally:
+        self.finish() def setup(self): pass
+
+def handle(self): pass
+
+def finish(self): pass
+</code></pre>
+<p>SocketServer.BaseRequestHandler</p>
+<p>实例：</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-
+import SocketServer class MyServer(SocketServer.BaseRequestHandler): def handle(self): # print self.request,self.client_address,self.server
+conn = self.request
+conn.sendall(&lsquo;欢迎致电 10086，请输入1xxx,0转人工服务.&rsquo;)
+Flag = True while Flag:
+data = conn.recv(1024) if data == &rsquo;exit&rsquo;:
+Flag = False elif data == &lsquo;0&rsquo;:
+conn.sendall(&lsquo;通过可能会被录音.balabala一大推&rsquo;) else:
+conn.sendall(&lsquo;请重新输入.&rsquo;) if __name__ == &lsquo;__main__&rsquo;:
+server = SocketServer.ThreadingTCPServer((&lsquo;127.0.0.1&rsquo;,8009),MyServer)
+server.serve_forever()</p>
+<p>服务端</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>import socket</p>
+<p>ip_port = (&lsquo;127.0.0.1&rsquo;,8009)
+sk = socket.socket()
+sk.connect(ip_port)
+sk.settimeout(5) while True:
+data = sk.recv(1024) print &lsquo;receive:&rsquo;,data
+inp = raw_input(&lsquo;please input:&rsquo;)
+sk.sendall(inp) if inp == &rsquo;exit&rsquo;: break sk.close()</p>
+<p>客户端</p>
+<p>源码精简：</p>
+<p>import socket import threading import select def process(request, client_address): print request,client_address
+conn = request
+conn.sendall(&lsquo;欢迎致电 10086，请输入1xxx,0转人工服务.&rsquo;)
+flag = True while flag:
+data = conn.recv(1024) if data == &rsquo;exit&rsquo;:
+flag = False elif data == &lsquo;0&rsquo;:
+conn.sendall(&lsquo;通过可能会被录音.balabala一大推&rsquo;) else:
+conn.sendall(&lsquo;请重新输入.&rsquo;)</p>
+<p>sk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sk.bind((&lsquo;127.0.0.1&rsquo;,8002))
+sk.listen(5) while True:
+r, w, e = select.select([sk,],[],[],1) print &rsquo;looping&rsquo;
+if sk in r: print &lsquo;get request&rsquo; request, client_address = sk.accept()
+t = threading.Thread(target=process, args=(request, client_address))
+t.daemon = False
+t.start()</p>
+<p>sk.close()</p>
+<p>如精简代码可以看出，SocketServer的ThreadingTCPServer之所以可以同时处理请求得益于 <strong>select</strong> 和 <strong>Threading</strong> 两个东西，其实本质上就是在服务器端为每一个客户端创建一个线程，当前线程用来处理对应客户端的请求，所以，可以支持同时n个客户端链接（长连接）。</p>
+<p><strong>ForkingTCPServer</strong></p>
+<p>ForkingTCPServer和ThreadingTCPServer的使用和执行流程基本一致，只不过在内部分别为请求者建立 “线程”  和 “进程”。</p>
+<p>基本使用：</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-
+import SocketServer class MyServer(SocketServer.BaseRequestHandler): def handle(self): # print self.request,self.client_address,self.server
+conn = self.request
+conn.sendall(&lsquo;欢迎致电 10086，请输入1xxx,0转人工服务.&rsquo;)
+Flag = True while Flag:
+data = conn.recv(1024) if data == &rsquo;exit&rsquo;:
+Flag = False elif data == &lsquo;0&rsquo;:
+conn.sendall(&lsquo;通过可能会被录音.balabala一大推&rsquo;) else:
+conn.sendall(&lsquo;请重新输入.&rsquo;) if __name__ == &lsquo;__main__&rsquo;:
+server = SocketServer.ForkingTCPServer((&lsquo;127.0.0.1&rsquo;,8009),MyServer)
+server.serve_forever()</p>
+<p>服务端</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>import socket</p>
+<p>ip_port = (&lsquo;127.0.0.1&rsquo;,8009)
+sk = socket.socket()
+sk.connect(ip_port)
+sk.settimeout(5) while True:
+data = sk.recv(1024) print &lsquo;receive:&rsquo;,data
+inp = raw_input(&lsquo;please input:&rsquo;)
+sk.sendall(inp) if inp == &rsquo;exit&rsquo;: break sk.close()</p>
+<p>客户端</p>
+<p>以上ForkingTCPServer只是将 ThreadingTCPServer 实例中的代码：</p>
+<p>server = SocketServer.ThreadingTCPServer((&lsquo;127.0.0.1&rsquo;,8009),MyRequestHandler)
+变更为：
+server = SocketServer.ForkingTCPServer((&lsquo;127.0.0.1&rsquo;,8009),MyRequestHandler)</p>
+<p>SocketServer的ThreadingTCPServer之所以可以同时处理请求得益于 <strong>select</strong> 和 <strong>os.fork</strong> 两个东西，其实本质上就是在服务器端为每一个客户端创建一个进程，当前新创建的进程用来处理对应客户端的请求，所以，可以支持同时n个客户端链接（长连接）。</p>
+<p>源码剖析参考 ThreadingTCPServer</p>
+<h3 id="twisted">Twisted<a class="anchorjs-link" href="#twisted"></a></h3><p>Twisted是一个事件驱动的网络框架，其中包含了诸多功能，例如：网络协议、线程、数据库管理、网络操作、电子邮件等。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//425762-20151227041644859-201636592.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><strong>事件驱动</strong></p>
+<p>简而言之，事件驱动分为二个部分：第一，注册事件；第二，触发事件。</p>
+<p>自定义事件驱动框架，命名为：“弑君者”：</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<h1 id="event_drivepy">event_drive.py<a class="anchorjs-link" href="#event_drivepy"></a></h1><p>event_list = [] def run(): for event in event_list:
+obj = event()
+obj.execute() class BaseHandler(object): &quot;&rdquo;&rdquo; 用户必须继承该类，从而规范所有类的方法（类似于接口的功能） &quot;&rdquo;&rdquo;
+def execute(self): raise Exception(&lsquo;you must overwrite execute&rsquo;)</p>
+<p>最牛逼的事件驱动框架</p>
+<p>程序员使用“弑君者框架”：</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>from source import event_drive class MyHandler(event_drive.BaseHandler): def execute(self): print &rsquo;event-drive execute MyHandler&rsquo; event_drive.event_list.append(MyHandler)
+event_drive.run()</p>
+<p>View Code</p>
+<p>如上述代码，事件驱动只不过是框架规定了执行顺序，程序员在使用框架时，可以向原执行顺序中注册“事件”，从而在框架执行时可以出发已注册的“事件”。</p>
+<p><strong>基于事件驱动Socket</strong></p>
+<p>#!/usr/bin/env python</p>
+<h1 id="---codingutf-8---">-*- coding:utf-8 -*-<a class="anchorjs-link" href="#---codingutf-8---"></a></h1><p>from twisted.internet import protocol
+from twisted.internet import reactor</p>
+<p>class Echo(protocol.Protocol):
+def dataReceived(self, data):
+self.transport.write(data)</p>
+<p>def main():
+factory = protocol.ServerFactory()
+factory.protocol = Echo</p>
+<pre><code>reactor.listenTCP(8000,factory)
+reactor.run()
+</code></pre>
+<p>if __name__ == &lsquo;__main__&rsquo;:
+main()</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//425762-20151227053909609-1479492031.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>程序执行流程：</p>
+<ul>
+<li>运行服务端程序</li>
+<li>创建Protocol的派生类Echo</li>
+<li>创建ServerFactory对象，并将Echo类封装到其protocol字段中</li>
+<li>执行reactor的 listenTCP 方法，内部使用 tcp.Port 创建socket server对象，并将该对象添加到了 reactor的set类型的字段 _read 中</li>
+<li>执行reactor的 run 方法，内部执行 while 循环，并通过 select 来监视 _read 中文件描述符是否有变化，循环中&hellip;</li>
+<li>客户端请求到达</li>
+<li>执行reactor的 _doReadOrWrite 方法，其内部通过反射调用 tcp.Port 类的 doRead 方法，内部 accept 客户端连接并创建Server对象实例（用于封装客户端socket信息）和 创建 Echo 对象实例（用于处理请求） ，然后调用 Echo 对象实例的 makeConnection 方法，创建连接。</li>
+<li>执行 tcp.Server 类的 doRead 方法，读取数据，</li>
+<li>执行 tcp.Server 类的 _dataReceived 方法，如果读取数据内容为空（关闭链接），否则，出发 Echo 的 dataReceived 方法</li>
+<li>执行 Echo 的 dataReceived 方法</li>
+</ul>
+<p>从源码可以看出，上述实例本质上使用了事件驱动的方法 和 IO多路复用的机制来进行Socket的处理。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>from twisted.internet import reactor, protocol from twisted.web.client import getPage from twisted.internet import reactor import time class Echo(protocol.Protocol): def dataReceived(self, data):
+deferred1 = getPage(&lsquo;<a href="http://cnblogs.com" target="_blank">http://cnblogs.com</a>&rsquo;)
+deferred1.addCallback(self.printContents)</p>
+<pre><code>    deferred2 \= getPage('http://baidu.com')
+    deferred2.addCallback(self.printContents) for i in range(2):
+        time.sleep(1) print 'execute ',i def execute(self,data):
+    self.transport.write(data) def printContents(self,content): print len(content),content\[0:100\],time.time() def main():
+
+factory \= protocol.ServerFactory()
+factory.protocol \= Echo
+
+reactor.listenTCP(8000,factory)
+reactor.run() if \_\_name\_\_ == '\_\_main\_\_':
+main()
+</code></pre>
+<p>异步IO操作</p>
+<p>更多请见：</p>
+<p>　　https://twistedmatrix.com/trac<br>
+　　http://twistedmatrix.com/documents/current/api/</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/" data-toggle="tooltip" data-placement="top" title="Python开发【第四篇】：Python基础之函数">
+              Previous<br>
+              <span>Python开发【第四篇】：Python基础之函数</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/" data-toggle="tooltip" data-placement="top" title="Python开发【第五篇】：Python基础之杂货铺">
+              Next<br>
+              <span>Python开发【第五篇】：Python基础之杂货铺</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

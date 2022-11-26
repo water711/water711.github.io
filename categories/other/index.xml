@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>other on 蔡振威的博客</title>
+    <link>https://water711.github.io/categories/other/</link>
+    <description>Recent content in other on 蔡振威的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://water711.github.io/categories/other/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Win7下查看NVIDIA显卡的GPU使用率</title>
+      <link>https://water711.github.io/posts/2021-05-29-win7%E4%B8%8B%E6%9F%A5%E7%9C%8Bnvidia%E6%98%BE%E5%8D%A1%E7%9A%84gpu%E4%BD%BF%E7%94%A8%E7%8E%87/</link>
+      <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-05-29-win7%E4%B8%8B%E6%9F%A5%E7%9C%8Bnvidia%E6%98%BE%E5%8D%A1%E7%9A%84gpu%E4%BD%BF%E7%94%A8%E7%8E%87/</guid>
+      <description>在做图形渲染的时候，想了解GPU的使用情况，但是win7的任务管理器没有GPU的信息，还好NVIDIA提供了相关的命令
+进入cmd命令行
+cd C:\Program Files\NVIDIA Corporation\NVSMI #如果该目录加入了环境变量，可忽略 nvidia-smi.exe -h 查看帮助 nvidia-smi.exe -l 3 查看GPU使用率，每3秒刷新一次</description>
+    </item>
+    
+    <item>
+      <title>Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式</title>
+      <link>https://water711.github.io/posts/2021-03-20-hyper-v%E7%9A%84vhdx%E6%A0%BC%E5%BC%8F%E7%A3%81%E7%9B%98%E9%95%9C%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAvirtualbox%E6%94%AF%E6%8C%81%E7%9A%84vhd%E6%A0%BC%E5%BC%8F/</link>
+      <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-03-20-hyper-v%E7%9A%84vhdx%E6%A0%BC%E5%BC%8F%E7%A3%81%E7%9B%98%E9%95%9C%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAvirtualbox%E6%94%AF%E6%8C%81%E7%9A%84vhd%E6%A0%BC%E5%BC%8F/</guid>
+      <description>.vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。
+在已经开启了hyper-v的电脑上进行镜像转换：1、以管理员权限打开powershell
+Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径
+例如： Convert-VHD -Path c:\Ubuntu.vhdx -DestinationPath d:\Ubuntu_vhd.vhd
+PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。
+2、转换完成后，用VirtualBox新建虚拟机（不创建硬盘），并加载转换后的硬盘镜像，启动</description>
+    </item>
+    
+    <item>
+      <title>通过TG机器人发送通知到手机</title>
+      <link>https://water711.github.io/posts/2021-02-15-%E9%80%9A%E8%BF%87tg%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E9%80%9A%E7%9F%A5%E5%88%B0%E6%89%8B%E6%9C%BA/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-15-%E9%80%9A%E8%BF%87tg%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E9%80%9A%E7%9F%A5%E5%88%B0%E6%89%8B%E6%9C%BA/</guid>
+      <description>一、创建TG机器人1、打开botfather聊天窗口
+手机端：打开TG，点击底部Chats，上方搜索 @botfather ，进行聊天窗口，点击Start
+电脑端：https://telegram.me/BotFather
+2、发送/newbot命令，创建一个机器人
+3、为机器人设置一个呢称，
+4、为机器人设置用户名，以 _bot 结尾，例如： tom_bot
+5、记下botfather机器人发过来的token
+二、获取Chat_id（聊天ID）1、获取自己的Chat_id：搜索@getidsbot，发送 /start 获取
+2、获取群组的Chat_id：
+a、将机器人加入到组中
+b、发送任意带斜杆的消息到组中，例如：/hello
+c、获取机器人的更新列表：
+https://api.telegram.org/bot这里填入机器人token/getUpdates
+d、在返回的json中，寻找群组的Chat_id，title为组名
+&amp;quot;ok&amp;quot;: true, &amp;quot;result&amp;quot;: \[ ...... &amp;quot;chat&amp;quot;: { &amp;quot;id&amp;quot;: -524790023, &amp;quot;title&amp;quot;: &amp;quot;test&amp;quot;, &amp;quot;type&amp;quot;: &amp;quot;group&amp;quot;, &amp;quot;all\_members\_are\_administrators&amp;quot;: true }, &amp;quot;date&amp;quot;: 1613358222, &amp;quot;text&amp;quot;: &amp;quot;/hello&amp;quot;, 三、将机器人或群组设为Unmute（取消静音）1、打开telegram，点击底部Chats
+2、找到机器人或群组，左划，点击Unmute
+四、发送通知在浏览器中发送
+https://api.telegram.org/bot这里填入机器人token/sendMessage?chat_id=这里填入聊天ID&amp;amp;text=这里填写要发送的消息内容
+在Linux中发送
+curl -X POST &amp;ldquo;https://api.telegram.org/bot这里填入机器人token/sendMessage&amp;rdquo; -d &amp;ldquo;chat_id=这里填入聊天ID&amp;amp;text=这里填写要发送的消息内容&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Telegram机器人编程，实现复读功能</title>
+      <link>https://water711.github.io/posts/2021-02-10-telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%A4%8D%E8%AF%BB%E5%8A%9F%E8%83%BD/</link>
+      <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-10-telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%A4%8D%E8%AF%BB%E5%8A%9F%E8%83%BD/</guid>
+      <description>一、新建谷歌脚本1、打开Google Apps Script，点击Start Scripting，新建项目
+https://www.google.com/script/start/
+2、粘贴以下代码，并修改机器人token（api.telegram.org/bot后面这串字符）
+function doGet(e){ return HtmlService.createHtmlOutput(&amp;ldquo;Hello World!! No, this link should be hidden!!!&amp;rdquo;); }
+function doPost(e){ var dataFromTelegram = { &amp;ldquo;method&amp;rdquo;: &amp;ldquo;post&amp;rdquo;, &amp;ldquo;payload&amp;rdquo;: e.postData.contents } var body = JSON.parse(e.postData.contents);
+body.message.chat.id = body.message.chat.id + &amp;lsquo;&amp;rsquo;;
+var payload = preparePayload(body); var data = { &amp;ldquo;method&amp;rdquo;: &amp;ldquo;post&amp;rdquo;, &amp;ldquo;payload&amp;rdquo;: payload }
+var dataToTelegram = { &amp;ldquo;method&amp;rdquo;: &amp;ldquo;post&amp;rdquo;, &amp;ldquo;payload&amp;rdquo;: payload }
+UrlFetchApp.fetch(&amp;ldquo;https://api.telegram.org/bot15234456452:AAFMK1UtlJk82pweww2a3gPcu-4YbfE/&#34;, data); } function preparePayload(body){ var payload;
+if (body.message.text){ payload = { &amp;ldquo;method&amp;rdquo;: &amp;ldquo;sendMessage&amp;rdquo;, &amp;ldquo;chat_id&amp;rdquo;: body.</description>
+    </item>
+    
+    <item>
+      <title>Windows Server 2012 R2安装docker</title>
+      <link>https://water711.github.io/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85docker/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85docker/</guid>
+      <description>一、下载安装Docker Toolboxhttps://github.com/docker/toolbox/releases
+二、安装Docker Quickstart Terminal注意：安装完成之后，先不要打开Docker Quickstart Terminal
+三、添加环境变量，替换默认docker machine的存储位置如果不修改，则docker会把镜像默认下载到C盘，导致以后系统盘空间变小
+变量名为：MACHINE_STORAGE_PATH
+如果已安装了default docker虚拟机，需要先删除原来的，再安装到指定位置。参考这篇文章：https://www.cnblogs.com/ginponson/p/8601320.html
+四、打开Docker Quickstart Terminal，初始化环境Running pre-create checks&amp;hellip; (default) Unable to get the latest Boot2Docker ISO release version: Get https:/ /api.github.com/repos/boot2docker/boot2docker/releases/latest: read tcp 172.16.1 00.4:49835-&amp;gt;192.30.255.117:443: wsarecv: An existing connection was forcibly clo sed by the remote host. Creating machine&amp;hellip; (default) Unable to get the latest Boot2Docker ISO release version: Get https:/ /api.github.com/repos/boot2docker/boot2docker/releases/latest: read tcp 172.16.1 00.4:49836-&amp;gt;192.30.255.117:443: wsarecv: An existing connection was forcibly clo sed by the remote host.</description>
+    </item>
+    
+    <item>
+      <title>Windows Server 2012 R2安装docker</title>
+      <link>https://water711.github.io/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85dockernull/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85dockernull/</guid>
+      <description>一、下载安装Docker Toolboxhttps://github.com/docker/toolbox/releases
+二、安装Docker Quickstart Terminal注意：安装完成之后，先不要打开Docker Quickstart Terminal
+三、添加环境变量，替换默认docker machine的存储位置如果不修改，则docker会把镜像默认下载到C盘，导致以后系统盘空间变小
+变量名为：MACHINE_STORAGE_PATH
+如果已安装了default docker虚拟机，需要先删除原来的，再安装到指定位置。参考这篇文章：https://www.cnblogs.com/ginponson/p/8601320.html
+四、打开Docker Quickstart Terminal，初始化环境Running pre-create checks&amp;hellip; (default) Unable to get the latest Boot2Docker ISO release version: Get https:/ /api.github.com/repos/boot2docker/boot2docker/releases/latest: read tcp 172.16.1 00.4:49835-&amp;gt;192.30.255.117:443: wsarecv: An existing connection was forcibly clo sed by the remote host. Creating machine&amp;hellip; (default) Unable to get the latest Boot2Docker ISO release version: Get https:/ /api.github.com/repos/boot2docker/boot2docker/releases/latest: read tcp 172.16.1 00.4:49836-&amp;gt;192.30.255.117:443: wsarecv: An existing connection was forcibly clo sed by the remote host.</description>
+    </item>
+    
+    <item>
+      <title>使用Working Copy远程挂载github仓库</title>
+      <link>https://water711.github.io/posts/2021-02-01-%E4%BD%BF%E7%94%A8working-copy%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BDgithub%E4%BB%93%E5%BA%93/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-02-01-%E4%BD%BF%E7%94%A8working-copy%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BDgithub%E4%BB%93%E5%BA%93/</guid>
+      <description>一、手机上新建目录，用于存放github仓库文件二、打开Working Copy，点击右上角加号，选择Setup synced directory三、选中第1步新建的目录，点击完成，在弹出的界面中点击左上角的Done四、点击Repository-》Create Repository，输入仓库URL地址，取消Allow Push，点击右上角保存五、点击右下角指纹按钮，在弹出页面中，点击Fetch，同步仓库文件到本地（第一次可能会失败）六、如果同步失败，退出软件，重新打开，进入该仓库，点击Branch，查看分支七、选择分支，点击Checkout可以看到该分支下所有目录和文件</description>
+    </item>
+    
+    <item>
+      <title>解决raw.github无法访问的问题</title>
+      <link>https://water711.github.io/posts/2021-01-28-%E8%A7%A3%E5%86%B3raw-github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-01-28-%E8%A7%A3%E5%86%B3raw-github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>域名被DNS污染，手动在hosts文件中添加解析
+199.232.4.133 raw.githubusercontent.com</description>
+    </item>
+    
+    <item>
+      <title>Windows Server 2012/2016 任务管理器增加磁盘监控</title>
+      <link>https://water711.github.io/posts/2021-01-26-windows-server-2012-2016-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E7%9B%91%E6%8E%A7/</link>
+      <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-01-26-windows-server-2012-2016-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E7%9B%91%E6%8E%A7/</guid>
+      <description>命令行中输入：diskperf -y</description>
+    </item>
+    
+    <item>
+      <title>Win7搭建Openwrt插件库</title>
+      <link>https://water711.github.io/posts/2021-01-16-win7%E6%90%AD%E5%BB%BAopenwrt%E6%8F%92%E4%BB%B6%E5%BA%93/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-01-16-win7%E6%90%AD%E5%BB%BAopenwrt%E6%8F%92%E4%BB%B6%E5%BA%93/</guid>
+      <description>Win7环境搭建openwrt插件库一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录）
+/lede/bin/packages/mips_24kc /lede/bin/targets/ar71xx/generic/packages
+我这边拷贝到 F盘openwrt_package文件夹
+二、开启IIS信息服务
+运行中输入 appwiz.cpl，打开程序和功能，点击左上角“打开或关闭Windows功能”
+三、配置网站
+1、运行中输入 inetmgr，打开IIS，点击展开默认网站-》管理网站-》高级设置
+2、修改物理路径为插件库所有目录
+3、启用目录浏览
+4、添加MIME类型
+PS：如果不添加MIME类型，则无法通过网站访问和下载sig和ipk文件，我们也可以将文件扩展名指定为 * 号，允许访问所有类型文件
+5、浏览器访问测试
+https://本机IP地址
+6、右键复制mips_24kc和packages目录链接地址，粘贴到文本文档中备用
+http://192.168.1.92/packages/ http://192.168.1.92/mips_24kc/
+四、配置openwrt
+1、登录openwrt，进入 系统-》软件包-》配置
+将发行版软件源中的代码注释掉，在每行中添加#号，点击提交
+# src/gz openwrt_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/ar71xx/generic/packages
+src/gz openwrt_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/basesrc/gz openwrt_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/freifunksrc/gz openwrt_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/mips_24kc/lucisrc/gz openwrt_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/packagessrc/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/routingsrc/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/telephony将“发行版软件源”的代码拷贝文本文档，将后面链接替换为自己搭建网站的链接
+将替换后代码，拷贝到“自定义软件源”，点击提交
+src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192.168.1.92/mips_24kc/ base src/gz openwrt_freifunk http://192.168.1.92/mips_24kc/ freifunk src/gz openwrt_luci http://192.168.1.92/mips_24kc/ luci src/gz openwrt_packages http://192.168.1.92/mips_24kc/ packages src/gz openwrt_routing http://192.168.1.92/mips_24kc/ routing src/gz openwrt_telephony http://192.168.1.92/mips_24kc/ telephony</description>
+    </item>
+    
+    <item>
+      <title>Mysql临时开启查询日志</title>
+      <link>https://water711.github.io/posts/2021-01-15-mysql%E4%B8%B4%E6%97%B6%E5%BC%80%E5%90%AF%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-01-15-mysql%E4%B8%B4%E6%97%B6%E5%BC%80%E5%90%AF%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97/</guid>
+      <description>查询当前是否开启了查询日志mysql&amp;gt; show global variables like &amp;lsquo;%general_log%&amp;rsquo;; +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+ | Variable_name | Value | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+ | general_log | OFF | | general_log_file | D:\mysql\data\LENOVO-LA0X1198.log | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+
+开启查询日志mysql&amp;gt; SET GLOBAL general_log = &amp;lsquo;ON&amp;rsquo;;
+关闭查询日志mysql&amp;gt; SET GLOBAL general_log = &amp;lsquo;OFF&amp;rsquo;;</description>
+    </item>
+    
+    <item>
+      <title>Win7实现多用户同时远程登录</title>
+      <link>https://water711.github.io/posts/2021-01-14-win7%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%94%A8%E6%88%B7%E5%90%8C%E6%97%B6%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
+      <pubDate>Thu, 14 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-01-14-win7%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%94%A8%E6%88%B7%E5%90%8C%E6%97%B6%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
+      <description>有时候服务器是Win7系统的时候，远程登录桌面时，即使登录的是不同的管理账号，还是会把远程登录的人给踢下来。即不同的账号只能同时存在一个会话窗。下面教大家如果设置Win7让两个账号的两会话同时存在，且相互之间不冲突。
+下载一个universal termsrv.dll patch。
+链接：http://pan.baidu.com/s/1kV9hirt 密码：jqg2
+第三方工具。解压到文件夹。打开UniversalTermsrvPatch文件夹&amp;mdash;&amp;gt;管理员身份运行UniversalTermsrvPatch-x86.exe文件。
+点击破解，重启后生效，如果重启后还不能多用户登录，则按照原文链接，进行本地组策略设置。
+原文链接：http://www.wuwenhui.cn/4312.html</description>
+    </item>
+    
+    <item>
+      <title>GitHub访问太慢，git clone太慢的9种解决办法</title>
+      <link>https://water711.github.io/posts/2021-01-06-github%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2git-clone%E5%A4%AA%E6%85%A2%E7%9A%849%E7%A7%8D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2021-01-06-github%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2git-clone%E5%A4%AA%E6%85%A2%E7%9A%849%E7%A7%8D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <description>一、GitHub 镜像访问最常见GitHub镜像地址：
+https://hub.fastgit.org/ https://github.com.cnpmjs.org/ 访问上面的镜像网站，网站的内容跟GitHub是完整同步的镜像，然后在这个网站里面进行下载克隆等操作。
+二、GitHub 文件加速使用非常简单，内有提示！
+gh-proxy开源项目示例演示 听海演示 三、Github 加速下载 Code ZIP GitHub加速下载在线工具：http://toolwa.com/github/ 使用方法： 进入 GitHub 某一项目主页
+点击右侧的绿色按钮 “Code” &amp;gt; “Download ZIP”
+等浏览器弹出下载框后复制下载框中的链接地址并粘贴到以上输入框
+点击加速下载
+四、加速链接 GithubGitHub加速链接生成在线工具：https://github.zhlh6.cn/
+使用方法：
+输入Github仓库地址，使用生成的地址进行git ssh操作即可， 如：git clone 仓库的ssh地址 原理：利用ucloud提供的GlobalSSH功能，对ssh端口协议数据进行加速
+五、谷歌浏览器GitHub加速插件(推荐)插件直接下载安装
+六、GitHub raw 链接加速GitHub raw=raw.githubusercontent.com
+将 raw.githubusercontent.com 替换为 raw.staticdn.net 即可加速。
+七、GitHub + JsDelivrJsDelivr CDN只能加速仓库的静态文件
+参考
+PicGo教程①，GitHub建立属于自己的免费图床 PicGo教程②，配合Typora使用，自动返回远程图床链接 八、通过Gitee中转fork仓库下载1、访问gitee网站： https://gitee.com/ 并登录，在右上角顶部选择“从GitHub/GitLab导入仓库”
+2、在导入页面中粘贴你的Github仓库地址，点击导入即可
+3、等待导入操作完成，然后在导入的仓库中下载浏览对应的该GitHub仓库代码，你也可以点击仓库顶部的“刷新”按钮进行Github代码仓库的同步。
+九、通过修改HOSTS文件进行加速1、手动把CDNip和域名地址绑定。
+访问：http://github.global.ssl.fastly.net.ipaddress.com/#ipinfo 获取CDNip和域名
+eg：199.232.69.194 https://github.global.ssl.fastly.net
+访问：https://github.com.ipaddress.com/#ipinfo 获取CDNip和域名
+eg：140.82.114.4 http://github.com
+2、修改本地host文件映射上面查找到的IP
+①. 修改C:WindowsSystem32driversetchosts文件的权限，指定可写入：
+右击-&amp;gt;hosts-&amp;gt;属性-&amp;gt;安全-&amp;gt;编辑-&amp;gt;点击Users-&amp;gt;在Users的权限“写入”后面打勾。
+②. 右击-&amp;gt;hosts-&amp;gt;打开方式-&amp;gt;选定记事本（或者你喜欢的编辑器）-&amp;gt;在末尾处添加以下内容：</description>
+    </item>
+    
+    <item>
+      <title>访问共享文件和连接远程桌面时，CSR蓝牙驱动引起的资源管理器崩溃</title>
+      <link>https://water711.github.io/posts/2020-12-19-%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%92%8C%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%97%B6csr%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7/</link>
+      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-12-19-%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%92%8C%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%97%B6csr%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7/</guid>
+      <description>解决方法：1.进入CSR蓝牙驱动的安装目录，默认是：C:\Program Files\CSR\CSR Harmony Wireless Software Stack；
+2.找到“BLEtokenCredentialProvider.dll”将其删除或重命名即可。
+原文链接：https://blog.csdn.net/guangguang210/article/details/79051550</description>
+    </item>
+    
+    <item>
+      <title>ASUS华硕路由器开启Openvpn，使用苹果手机连接OpenVPN</title>
+      <link>https://water711.github.io/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpn/</link>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpn/</guid>
+      <description>一、ASUS华硕路由器开启Openvpn二、苹果手机连接OpenVPN1、使用美区APPLE ID登录APP store，搜索OpenVPN，下载应用
+2、将ASUS导出的OpenVPN配置文件，发送到手机，并使用OpenVPN应用打开文件
+3、点击ADD导入配置
+4、输入VPN账号密码
+5、连接成功
+三、PC端连接OpenVPN1、下载安装OpenVPN客户端
+https://www.techspot.com/downloads/5182-openvpn.html
+2、打开OpenVPN，在右下角系统托盘，右键导入OpenVPN配置文件
+3、点击连接，输入VPN账号密码
+四、OpenVPN自定义路由方法一：修改客户端配置文件
+route-nopull # 不从服务端获取路由 route 192.168.1.0 255.255.255.0 net_gateway # 192.168.1.0/24网段，不走vpn网关 route 192.168.2.0 255.255.255.0 vpn_gateway # 192.168.2.0/24网段，走vpn网关
+方法二：修改服务端配置文件
+# 将该以下路由推送到客户端 push &amp;ldquo;route 192.168.1.0 255.255.255.0 net_gateway&amp;rdquo; push &amp;ldquo;route 192.168.2.0 255.255.255.0 vpn_gateway&amp;rdquo;
+PS：如果配置中有 redirect-gateway ，则需要注释掉</description>
+    </item>
+    
+    <item>
+      <title>ASUS华硕路由器开启Openvpn，使用苹果手机连接OpenVPN</title>
+      <link>https://water711.github.io/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpnnull/</link>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpnnull/</guid>
+      <description>一、ASUS华硕路由器开启Openvpn二、苹果手机连接OpenVPN1、使用美区APPLE ID登录APP store，搜索OpenVPN，下载应用
+2、将ASUS导出的OpenVPN配置文件，发送到手机，并使用OpenVPN应用打开文件
+3、点击ADD导入配置
+4、输入VPN账号密码
+5、连接成功
+三、PC端连接OpenVPN1、下载安装OpenVPN客户端
+https://www.techspot.com/downloads/5182-openvpn.html
+2、打开OpenVPN，在右下角系统托盘，右键导入OpenVPN配置文件
+3、点击连接，输入VPN账号密码
+四、OpenVPN自定义路由方法一：修改客户端配置文件
+route-nopull # 不从服务端获取路由 route 192.168.1.0 255.255.255.0 net_gateway # 192.168.1.0/24网段，不走vpn网关 route 192.168.2.0 255.255.255.0 vpn_gateway # 192.168.2.0/24网段，走vpn网关
+方法二：修改服务端配置文件
+# 将该以下路由推送到客户端 push &amp;ldquo;route 192.168.1.0 255.255.255.0 net_gateway&amp;rdquo; push &amp;ldquo;route 192.168.2.0 255.255.255.0 vpn_gateway&amp;rdquo;
+PS：如果配置中有 redirect-gateway ，则需要注释掉</description>
+    </item>
+    
+    <item>
+      <title>批处理之forfiles命令</title>
+      <link>https://water711.github.io/posts/2020-12-03-%E6%89%B9%E5%A4%84%E7%90%86%E4%B9%8Bforfiles%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-12-03-%E6%89%B9%E5%A4%84%E7%90%86%E4%B9%8Bforfiles%E5%91%BD%E4%BB%A4/</guid>
+      <description> 官方文档：https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles
+forfiles命令：按照通配符或修改日期进行文件搜索，并将搜索结果传给另一个命令进行文件操作
+案例：
+#搜索source目录下，7天以前的avi视频文件，移动到共享目录backup forfiles /p D:\source /S /M &amp;ldquo;*.avi&amp;rdquo; /d -7 /c &amp;ldquo;cmd /c move @path \\192.168.1.10\backup&amp;rdquo;
+#删除当前目录下，15天前的日志文件 forfiles /p &amp;ldquo;.&amp;rdquo; /s /m *.log /d -15 /c &amp;ldquo;cmd /c del @path&amp;rdquo;
+上面案例用到的参数（不区分大小写）：
+/P pathname 表示开始搜索的路径。默认文件夹是当前工作的目录 (.)。 /M searchmask 根据搜索掩码搜索文件。默认搜索掩码是 &#39;\*&#39;。 /S 指导 forfiles 递归到子目录。像 &amp;quot;DIR /S&amp;quot;。 /D date 选择文件，其上一次修改日期大于或等于 (+)，或者小于或等于 (-) 用 &amp;quot;yyyy-MM-dd&amp;quot; 格式指定的日期; 或选择文件，其上一次修改日期大于或等于 (+) 当前日期加 &amp;quot;dd&amp;quot; 天，或者小于或等于 (-) 当前 日期减 &amp;quot;dd&amp;quot; 天。有效的 &amp;quot;dd&amp;quot; 天数可以是 0 - 32768 范围内的任何数字。如果没有指定，&amp;quot;+&amp;quot; 被当作默认符号。 /C command 表示为每个文件执行的命令。命令字符串应该用双引号括起来。 默认命令是 &amp;quot;cmd /c echo @file&amp;quot;。下列变量 可以用在命令字符串中: @path - 返回文件的完整路径。 </description>
+    </item>
+    
+    <item>
+      <title>windows事件查看器 连接多台服务器查看日志</title>
+      <link>https://water711.github.io/posts/2020-10-05-windows%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8-%E8%BF%9E%E6%8E%A5%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-10-05-windows%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8-%E8%BF%9E%E6%8E%A5%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97/</guid>
+      <description>一、打开事件查看器
+点击 控制面板-&amp;gt; 管理工具 -&amp;gt; 事件查看器，或者在cmd命令行下输入 eventvwr
+二、连接服务器查看日志
+1、菜单栏 -&amp;gt; 操作 -&amp;gt; 连接到另一台计算机
+2、输入服务器IP和账号密码（该账号需要有日志查看权限）
+注意：用户名前面的计算机名称要保留，计算机名称任意即可，
+如果删掉前面计算机名称，确认后会自动带上本机的计算机名称和用户名，导致登录失败
+三、创建自定义视图
+1、在**“操作”菜单上，单击“创建自定义视图”**
+2、选择需要查看的“**日志类型”**和“事件级别”
+3、输入自定义视图名称
+四、重复前面三步，连接服务器并创建视图</description>
+    </item>
+    
+    <item>
+      <title>win7访问共享文件，提示&#34;登录失败：禁用当前用户&#34;</title>
+      <link>https://water711.github.io/posts/2020-09-22-win7%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%E7%A6%81%E7%94%A8%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-09-22-win7%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%E7%A6%81%E7%94%A8%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7/</guid>
+      <description>可能出现原因：服务端机器，禁用了默认管理员和来宾账户
+例如： 客户端机器当前使用的是administrator账户，访问服务端时，默认是用这个账户来作为用户名登录，但是由于服务端的administrator账号是禁用状态，服务器返回这个账户禁止，客户端不再提示用户输入用户名和密码，直接终止共享访问
+解决办法：方法1：本机建立一个新账户，再通过新账户而不是同名的administrator账户去访问共享服务端就不会出现“登录失败:禁用的当前账户”，会直接提示输入密码 方法2：修改服务器端的访问模式，让everyone都能访问，并启用来宾账户，客户端以guest登录 方法3：客户端打开cmd命令提示符，输入net use \\ip\共享文件夹 /user:用户名，回车后输入密码，再通过\\ip就能访问共享文件夹了</description>
+    </item>
+    
+    <item>
+      <title>解决PotPlayer不支持S/W HEVC(H265)解码</title>
+      <link>https://water711.github.io/posts/2020-07-03-%E8%A7%A3%E5%86%B3potplayer%E4%B8%8D%E6%94%AF%E6%8C%81s-w-hevch265%E8%A7%A3%E7%A0%81/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-07-03-%E8%A7%A3%E5%86%B3potplayer%E4%B8%8D%E6%94%AF%E6%8C%81s-w-hevch265%E8%A7%A3%E7%A0%81/</guid>
+      <description>1、播放器右键-》选项-》3D视频-》点击安装（H.264 MVC解码）自动打开网页进行下载
+2、安装完解码器后，点击选项-》滤镜-》视频解码器-》选择 FFmpeg.dll</description>
+    </item>
+    
+    <item>
+      <title>跨公网远程网络唤醒PC</title>
+      <link>https://water711.github.io/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc/</guid>
+      <description>1、主板BISO开启网络唤醒不同的主板，开启的位置可能有所不同
+2、操作系统中网卡开启网络唤醒Windows系统下：
+Linux系统下：
+https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
+查看网卡是否支持网络唤醒
+[root@NAS ~]# ethtool eth0 Supports Wake-on: pumbg //支持唤醒的方式 Wake-on: d //d为关闭唤醒，g为开启唤醒（但是我在真机下，d也能进行网络唤醒）
+[root@NAS ~]# man ethtool p Wake on PHY activity u Wake on unicast messages m Wake on multicast messages b Wake on broadcast messages a Wake on ARP g Wake on MagicPacket™ s Enable SecureOn™ password for MagicPacket™ d Disable (wake on nothing). This option clears all previous options.
+开启网络唤醒
+[root@NAS ~]# ethtool -s eth0 wol g</description>
+    </item>
+    
+    <item>
+      <title>跨公网远程网络唤醒PC</title>
+      <link>https://water711.github.io/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pcnull/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pcnull/</guid>
+      <description>1、主板BISO开启网络唤醒不同的主板，开启的位置可能有所不同
+2、操作系统中网卡开启网络唤醒Windows系统下：
+Linux系统下：
+https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
+查看网卡是否支持网络唤醒
+[root@NAS ~]# ethtool eth0 Supports Wake-on: pumbg //支持唤醒的方式 Wake-on: d //d为关闭唤醒，g为开启唤醒（但是我在真机下，d也能进行网络唤醒）
+[root@NAS ~]# man ethtool p Wake on PHY activity u Wake on unicast messages m Wake on multicast messages b Wake on broadcast messages a Wake on ARP g Wake on MagicPacket™ s Enable SecureOn™ password for MagicPacket™ d Disable (wake on nothing). This option clears all previous options.
+开启网络唤醒
+[root@NAS ~]# ethtool -s eth0 wol g</description>
+    </item>
+    
+    <item>
+      <title>老毛桃PE以ISO镜像模式安装CentOS7</title>
+      <link>https://water711.github.io/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</guid>
+      <description>参考文章链接：https://www.cnblogs.com/sun51586/p/10497538.html
+准备：
+一个u盘，并制作老毛桃winpe启动盘
+下载centos7 mini版本。（注意：因为dvd版本大于4g，一般fat格式的u盘无法存放，如果格式化为NTFS，则centos镜像无法识别）
+安装中常见错误 ，如下图：
+1，Warning: /dev/root does not exist!
+2，Warning: no suitable images
+还有一些其它错误 ，不知是何原因，遇到时请重试几次。不知是老毛桃制作的启动盘有问题，还是u盘有问题，还是电脑有问题。总之多试几次是可以的。
+-
+安装步骤：
+1、制作老毛桃PE启动U盘，将下载centos7的iso文件复制到u盘的/LMT目录
+2、从u盘启动电脑，选择“启动自定义ISO/IMG文件”
+3、选择“自动搜索并列出LMT目录下所有文件”
+4、选中镜像文件，回车
+5、选中“Install CentOS 7”，按Tab键，修改启动命令后，回车
+&amp;gt; vmlinuz initrd=initrd.img linux dd quiet
+6、出现下图界面面，找到vfat文件格式的设备，记下设备名称（我这里是sdb1）
+7、重启电脑，按前面步骤回到第5步界面，选中“Install CentOS 7”,按Tab键，修改启动命令后，回车
+PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
+&amp;gt; vmlinuz initrd=initrd.img inst.stage2=hd:/dev/sdb1:/LMT/ quiet
+8、完成上述步骤后，就能进入系统安装界面</description>
+    </item>
+    
+    <item>
+      <title>老毛桃PE以ISO镜像模式安装CentOS7</title>
+      <link>https://water711.github.io/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7null/</link>
+      <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7null/</guid>
+      <description>参考文章链接：https://www.cnblogs.com/sun51586/p/10497538.html
+准备：
+一个u盘，并制作老毛桃winpe启动盘
+下载centos7 mini版本。（注意：因为dvd版本大于4g，一般fat格式的u盘无法存放，如果格式化为NTFS，则centos镜像无法识别）
+安装中常见错误 ，如下图：
+1，Warning: /dev/root does not exist!
+2，Warning: no suitable images
+还有一些其它错误 ，不知是何原因，遇到时请重试几次。不知是老毛桃制作的启动盘有问题，还是u盘有问题，还是电脑有问题。总之多试几次是可以的。
+-
+安装步骤：
+1、制作老毛桃PE启动U盘，将下载centos7的iso文件复制到u盘的/LMT目录
+2、从u盘启动电脑，选择“启动自定义ISO/IMG文件”
+3、选择“自动搜索并列出LMT目录下所有文件”
+4、选中镜像文件，回车
+5、选中“Install CentOS 7”，按Tab键，修改启动命令后，回车
+&amp;gt; vmlinuz initrd=initrd.img linux dd quiet
+6、出现下图界面面，找到vfat文件格式的设备，记下设备名称（我这里是sdb1）
+7、重启电脑，按前面步骤回到第5步界面，选中“Install CentOS 7”,按Tab键，修改启动命令后，回车
+PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
+&amp;gt; vmlinuz initrd=initrd.img inst.stage2=hd:/dev/sdb1:/LMT/ quiet
+8、完成上述步骤后，就能进入系统安装界面</description>
+    </item>
+    
+    <item>
+      <title>VMware 虚拟机设置启动U盘PE</title>
+      <link>https://water711.github.io/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98pe/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98pe/</guid>
+      <description>参考：https://blog.51cto.com/oyang/1107753
+1、打开虚拟机，选择“编辑虚拟机设置”
+2、弹出“虚拟机设置”窗口，点击“添加”
+3、弹出“添加硬件向导”，选择“硬盘”，点击“下一步”
+4、选择需要添加的磁盘，点击“下一步”
+5、选择添加U盘的序号，点击“下一步”
+注：如果不清楚哪个序号为U盘，可以通过“我的电脑”-&amp;gt;“管理”-&amp;gt;“磁盘管理”来查看序号
+6、点击“完成”
+7、选择“完成”后，可查看添加的信息是否准备，最后点击“确定”
+8、启动虚拟机并进入BIOS
+9、选择“BOOT”，在Hard Drive处回车，通过“-/+”移动新添加硬盘到最前面，按F10保存
+10、自动重启后，从U盘启动PE系统</description>
+    </item>
+    
+    <item>
+      <title>VMware 虚拟机设置启动U盘PE</title>
+      <link>https://water711.github.io/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98penull/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98penull/</guid>
+      <description>参考：https://blog.51cto.com/oyang/1107753
+1、打开虚拟机，选择“编辑虚拟机设置”
+2、弹出“虚拟机设置”窗口，点击“添加”
+3、弹出“添加硬件向导”，选择“硬盘”，点击“下一步”
+4、选择需要添加的磁盘，点击“下一步”
+5、选择添加U盘的序号，点击“下一步”
+注：如果不清楚哪个序号为U盘，可以通过“我的电脑”-&amp;gt;“管理”-&amp;gt;“磁盘管理”来查看序号
+6、点击“完成”
+7、选择“完成”后，可查看添加的信息是否准备，最后点击“确定”
+8、启动虚拟机并进入BIOS
+9、选择“BOOT”，在Hard Drive处回车，通过“-/+”移动新添加硬盘到最前面，按F10保存
+10、自动重启后，从U盘启动PE系统</description>
+    </item>
+    
+    <item>
+      <title>微信小程序动态修改样式</title>
+      <link>https://water711.github.io/posts/2020-05-22-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F/</link>
+      <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-05-22-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F/</guid>
+      <description>**场景：**适配不同的手机屏幕尺寸，让元素始终位于屏幕中央
+效果图：
+一、index.wxml 二、index.wxss.container{ display:flex; justify-content: center; align-items: center; }
+.box{ height:80px; width:80px; background-color:blue; }
+三、index.js/** * 生命周期函数&amp;ndash;监听页面加载 */ onLoad: function(options) { var that = this; wx.getSystemInfo({ success(res) { console.log(&amp;lsquo;可使用窗口高度:&amp;rsquo;, res.windowHeight) that.setData({ windowHeight: res.windowHeight }) } }) },</description>
+    </item>
+    
+    <item>
+      <title>配置Fiddler实现苹果手机抓包</title>
+      <link>https://water711.github.io/posts/2020-03-23-%E9%85%8D%E7%BD%AEfiddler%E5%AE%9E%E7%8E%B0%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85/</link>
+      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-03-23-%E9%85%8D%E7%BD%AEfiddler%E5%AE%9E%E7%8E%B0%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85/</guid>
+      <description>一、配置Fiddler允许远端设备连接Tools-&amp;gt; Options-&amp;gt;Connections，勾选&amp;quot;Allow remote computers to connect&amp;quot; （修改后需重启Fiddler）
+二、配置抓取https请求Tools-&amp;gt; Options-&amp;gt;Connections，勾选&amp;quot;Capture HTTPS CONNECTs&amp;quot;、&amp;ldquo;Decrypt HTTPS traffic&amp;rdquo;
+三、手机设置代理IPIP和端口号为Fiddler所在电脑的IP和Fiddler端口号
+四、手机安装根证书1、苹果手机使用自带Safari浏览器，打开http://IP:8888
+五、手机设置信任证书设置-&amp;gt;通用-&amp;gt;关于本机-&amp;gt;证书信任设置</description>
+    </item>
+    
+    <item>
+      <title>阿里云ECS搭建NPS内网穿透服务</title>
+      <link>https://water711.github.io/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</guid>
+      <description>环境：服务端操作系统：Centos7
+客户端操作系统：Centos7、Win7
+一、NPS介绍nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。目前支持tcp、udp流量转发，可支持任何tcp、udp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还支持内网http代理、内网socks5代理、p2p等，并带有功能强大的web管理端。
+github文档：https://github.com/ehang-io/nps/blob/master/README_zh.md
+二、阿里云ECS安装NPS服务端1、下载对应系统的软件压缩包
+github地址：https://github.com/ehang-io/nps/releases
+[root@ECS ~]# wget https://github.com/cnlh/nps/releases/download/v0.25.3/linux_amd64_server.tar.gz [root@ECS ~]# tar xvf linux_amd64_server.tar.gz -C nps_server/
+2、修改NPS配置文件
+[root@ECS ~]# vim nps_server/conf/nps.conf appname = nps runmode = dev bridge_type=tcp
+bridge_port=8074 #服务端客户端通信端口 bridge_ip=0.0.0.0 public_vkey=123 #客户端以配置文件模式启动时的密钥 log_level=7 web_username=admin #web界面管理账号 web_password=aassdd #web界面管理密码 web_port = 8811 #web管理端口 web_ip=0.0.0.0
+官方配置参数详细说明：https://ehang-io.github.io/nps/#/server_config
+3、安装并启动服务端
+首先前台启动，查看是否能正常运行
+./nps start
+前台运行成功后（ctrl+C 关闭），执行安装操作
+./nps install #安装后，web前端和配置文件位于/etc/nps/目录下,主程序在/usr/bin/nps
+4、阿里云ECS配置安全组策略（端口放行）
+放行NPS通信端口
+放行web管理端口
+三、配置windows客户端转发3389端口流量1、浏览器访问NPS前端页面：http://域名或IP : 端口
+2、新增客户端
+点击客户端列表前面的+号，展开详细内容，查看客户端连接命令
+3、下载nps客户端软件 ，解压后进入cmd命令行，运行连接命令
+下载地址：https://github.com/ehang-io/nps/releases（注意版本要与服务端一致，否则可能会连接失败）
+4、注册到系统服务，开机自动启动
+npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp</description>
+    </item>
+    
+    <item>
+      <title>华为防火墙多运营商出口智能选路</title>
+      <link>https://water711.github.io/posts/2020-02-10-%E4%BD%BF%E7%94%A8ensp%E6%A8%A1%E6%8B%9F%E5%A4%9A%E8%BF%90%E8%90%A5%E5%95%86%E5%87%BA%E5%8F%A3%E6%99%BA%E8%83%BD%E9%80%89%E8%B7%AF/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-02-10-%E4%BD%BF%E7%94%A8ensp%E6%A8%A1%E6%8B%9F%E5%A4%9A%E8%BF%90%E8%90%A5%E5%95%86%E5%87%BA%E5%8F%A3%E6%99%BA%E8%83%BD%E9%80%89%E8%B7%AF/</guid>
+      <description>一、准备实验环境1、安装ENSP模拟器 v1.3.00.100
+2、物理机安装环回接口/网卡（运行：hdwwiz，运行硬件向导，环回网卡IP设置为192.168.0.10/24）
+https://jingyan.baidu.com/article/046a7b3eef6d69f9c27fa9ea.html
+3、ENSP连接物理机环回网卡
+https://jingyan.baidu.com/article/6f2f55a10ff227b5b93e6c02.html
+二、实验配置1、添加防火墙USG6000，修改防火墙默认密码（原密码Admin@123，修改后admin@123）
+Username:admin Password:Admin@123 The password needs to be changed. Change now? [Y/N]: y Please enter old password: Admin@123 Please enter new password: admin@123 Please confirm new password: admin@123
+2、防火墙管理接口开放ping、http、https访问
+#防火墙1管理接口开放ping、http、https [FW1]interface g0/0/0 [FW1-GigabitEthernet0/0/0]service-manage http permit [FW1-GigabitEthernet0/0/0]service-manage https permit [FW1-GigabitEthernet0/0/0]service-manage ping permit
+3、ENSP添加Cloud，Cloud绑定物理机环回接口，并连接防火墙g0/0/0接口
+使用浏览器访问防火墙管理页面：https://192.168.0.1:8443/
+4、添加两台路由器，模拟运营商网络
+#电信路由器 [china telecom]interface g0/0/0 [china telecom-GigabitEthernet0/0/0]ip address 101.1.1.1 30
+#联通路由器 [china unicom]interface g0/0/0 [china unicom-GigabitEthernet0/0/0]ip address 202.1.1.1 30
+5、配置外网IP地址（这里模拟接入两个运营商专线，GE1/0/6连接电信，GE1/0/5连接联通）</description>
+    </item>
+    
+    <item>
+      <title>有道云笔记修改笔记背景</title>
+      <link>https://water711.github.io/posts/2020-01-15-%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%BF%AE%E6%94%B9%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF/</link>
+      <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-01-15-%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%BF%AE%E6%94%B9%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF/</guid>
+      <description>1、打开以下目录（win7系统）C:\Users\admin\AppData\Local\Youdao\YNote\bgImage-10
+2、复制v开头的图片，修改文件名为c-xx.png也可使用画图工具或PS，自定义图片颜色，拷贝到该目录，修改文件名为c-xx.png
+3、打开有道云笔记，在视图中选择纸张背景</description>
+    </item>
+    
+    <item>
+      <title>微软Remote App实现应用程序虚拟化</title>
+      <link>https://water711.github.io/posts/2020-01-03-%E5%BE%AE%E8%BD%AFremote-app%E5%AE%9E%E7%8E%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-01-03-%E5%BE%AE%E8%BD%AFremote-app%E5%AE%9E%E7%8E%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
+      <description>域服务器：192.168.1.130
+Remote App服务器：192.168.1.130
+服务器操作系统：Windows Server 2012 R2
+一、搭建域环境1、安装域服务（添加角色和功能-&amp;gt;勾选 Active Directory域服务器）
+2、安装完成后，点击“将此服务器提升为域控制器”
+3、添加新林
+4、输入目录服务还原密码（需要满足密码复杂度要求）
+5、提示无法创建DNS委派，忽略，下一步
+6、默认，下一步
+7、指定AD DS数据库、日志和SYSVOL存放路径
+8、点击安装
+二、安装远程桌面服务1、添加角色和功能-&amp;gt;勾选“远程桌面服务安装”
+2、选择快速启动（正式环境会选择标准部署，将RD连接代理、RDWeb访问以及RD会话主机部署在不同服务器上）
+3、选择基于会话的桌面部署
+4、钩选 允许自动重新服务器，点击部署
+远程桌面服务安装完成后，默认有120天的试用时间
+三、为Remote App添加程序1、点击“远程桌面服务”
+2、点击QuickSessionCollection-&amp;gt;任务-&amp;gt;发布RemoteApp程序
+3、勾选你要发布到RemoteApp的程序
+四、远程访问RemoteApp的程序1、客户端机器修改hosts文件，将域控制器的根域名、和FQDN完全限定域名（主机名+域名）和解析到域服务器/RemoteApp服务器IP地址
+#win7 hosts文件路径 C:\Windows\System32\drivers\etc\hosts 192.168.1.130 test.com 192.168.1.130 WIN-71CA1NGO1FG.test.com
+2、客户端机器使用浏览器访问 https://192.168.1.130/RDWeb，输入域用户和密码
+3、登录后，点击需要使用的应用，输入域用户和密码
+启动服务器程序成功</description>
+    </item>
+    
+    <item>
+      <title>windows计划任务，执行程序后，生成的文件不在程序所在目录</title>
+      <link>https://water711.github.io/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80/</link>
+      <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80/</guid>
+      <description>场景：通过windows计划任务，执行数据库备份脚本（批处理文件），每天定时备份数据库问题：手动执行备份脚本，数据库是备份到脚本所在目录，但是通过计划任务执行脚本，数据库备份到了C:\Windows\System32目录下解决方法：在计划任务执行程序或脚本下面，超始于（可选）选项中，指定程序所在目录</description>
+    </item>
+    
+    <item>
+      <title>oracle安装、授权、备份和恢复</title>
+      <link>https://water711.github.io/posts/2019-12-31-oracle%E5%AE%89%E8%A3%85%E6%8E%88%E6%9D%83%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</link>
+      <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2019-12-31-oracle%E5%AE%89%E8%A3%85%E6%8E%88%E6%9D%83%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</guid>
+      <description>一、下载并安装Oracle Database官网地址：https://www.oracle.com/technetwork/cn/database/enterprise-edition/downloads/index.html
+1、下载解压后，右键setup.exe，以管理员身份运行
+2、电子邮件可不填
+3、这里跳过软件更新
+4、我这里选择仅安装数据库软件（安装后再手动配置数据库），也可以选第一项在安装时创建数据库
+5、选择 单实例数据库安装
+6、选择语言
+7、我这里选择标准版
+8、输入安装目录
+9、执行安装
+10、安装完成
+二、创建数据库1、在D盘下创建oradata和orats目录
+2、进行D:\app\Administrator\product\11.2.0\dbhome_1\BIN\目录，右键以管理员身份运行dbca.bat
+3、默认选择“创建数据库”
+4、默认选择“一般用途或事务处理”
+5、输入数据库名和SID
+6、取消勾选“配置Enterprise Manager”，下一步
+7、输入管理口令
+8、选择数据库文件存放位置
+9、取消勾选“指定快速恢复区”
+10、默认不勾选“示例方案”，下一步
+11、指定分配给该数据库的内存大小
+12、调整最大连接进程数
+13、选择Unicode字符集
+14、修改日志大小和日志成员
+15、点击完成
+16、核对概要信息后，点击确定，开始创建
+三、配置Oracle Net Services1、进行D:\app\Administrator\product\11.2.0\dbhome_1\BIN\目录，右键以管理员身份运行netca.bat
+2、默认选择”监听程序配置“
+3、监听程序名，默认即可
+4、网络协议，默认TCP
+5、监听的端口号，默认1521
+6、是否配置另一个监听程序，选择“否”
+7、完成配置
+8、查看监听程序状态
+C:\Users\Administrator&amp;gt;lsnrctl status
+正在连接到 (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=WIN-71CA1NGO1FG)(PORT=1521))) LISTENER 的 STATUS别名 LISTENER 版本 TNSLSNR for 64-bit Windows: Version 11.2.0.4.0 - Production 启动日期 30-12月-2019 21:41:23 正常运行时间 0 天 0 小时 59 分 1 秒 跟踪级别 off 安全性 ON: Local OS Authentication SNMP OFF 监听程序参数文件 D:\app\Administrator\product\11.</description>
+    </item>
+    
+    <item>
+      <title>JAVA使用opencv通过RTSP流打开摄像头</title>
+      <link>https://water711.github.io/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4/</link>
+      <pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4/</guid>
+      <description>一、安装OpenCV打开OpenCV官网，下载对应系统的opencv，并解压到任意位置
+解压./opencv/build/java目录下有以下文件
+二、Eclipse加载OpenCV库官方配置文档：https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html
+1、启动eclipse并从菜单中选择 Window –&amp;gt; Preferences
+在左边导航窗口选择 Java –&amp;gt; Build Path –&amp;gt; User Libraries，点击New，并为你的library输入一个名称，例如：OpenCV-4.1.1
+2、选中新建的user libraries，点击 Add External JARs&amp;hellip;
+选择opencv的jar包
+3、选中 Native library location，点击Edit
+4、选择对应opencv库文件所在文件夹，32位系统选择X86，64位系统选择X64
+现在已经配置好opencv了，下面新建一个java项目，测试一下opencv是否能正常使用
+三、新建项目测试OpenCVEclipse新建项目后，右键项目，点击 Build Path–&amp;gt;Add Libraries&amp;hellip;
+选择User Library
+勾选opencv
+创建一个新的Java文件，使用以下代码运行测试：
+import org.opencv.core.Core; import org.opencv.core.CvType; import org.opencv.core.Mat;
+public class opencvTest { public static void main( String[] args ) { System.loadLibrary( Core.NATIVE_LIBRARY_NAME ); Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 ); System.out.println( &amp;ldquo;mat = &amp;quot; + mat.</description>
+    </item>
+    
+    <item>
+      <title>Eclipse中使用jar包</title>
+      <link>https://water711.github.io/posts/2019-10-24-eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8jar%E5%8C%85/</link>
+      <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2019-10-24-eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8jar%E5%8C%85/</guid>
+      <description>一、什么是jar包jar包就是别人已经写好的一些类，然后将这些类进行打包，你可以将这些jar包引入你的项目中，然后就可以直接使用这些jar包中的类和属性以及方法。
+二、如何下载jar包 包所在的官网下载 百度或谷歌，搜索包名 第三方jar包仓库下载（例如：https://mvnrepository.com/） 三、Eclipse如何使用jar包1、在项目下，新建lib目录，把jar包拷贝到该目录
+2、选择项目，右键点击jar包 -&amp;gt; Build Path -&amp;gt; Add to Build Path</description>
+    </item>
+    
+    <item>
+      <title>WordPress编辑器栏增加字体和大小</title>
+      <link>https://water711.github.io/posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://water711.github.io/posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F/</guid>
+      <description>在主题的functions.php文件最后面添加以下代码//编辑器增加字体格式和字体大小按钮 function add_editor_buttons($buttons) { $buttons[] = &amp;lsquo;fontselect&amp;rsquo;; $buttons[] = &amp;lsquo;fontsizeselect&amp;rsquo;; return $buttons; } add_filter(&amp;ldquo;mce_buttons_2&amp;rdquo;, &amp;ldquo;add_editor_buttons&amp;rdquo;);
+//自定义字体格式 function custum_fontfamily($initArray){ $initArray[&amp;lsquo;font_formats&amp;rsquo;] = &amp;ldquo;微软雅黑=&amp;lsquo;微软雅黑&amp;rsquo;;宋体=&amp;lsquo;宋体&amp;rsquo;;黑体=&amp;lsquo;黑体&amp;rsquo;;仿宋=&amp;lsquo;仿宋&amp;rsquo;;楷体=&amp;lsquo;楷体&amp;rsquo;;隶书=&amp;lsquo;隶书&amp;rsquo;;幼圆=&amp;lsquo;幼圆&amp;rsquo;;Arial=&amp;lsquo;Arial&amp;rsquo;;&amp;rdquo;; return $initArray; } add_filter(&amp;rsquo;tiny_mce_before_init&amp;rsquo;, &amp;lsquo;custum_fontfamily&amp;rsquo;);
+编辑器其它功能按钮剪切（cut） 复制（copy） 粘贴（paste） 撤销（undo） 重做（redo） 居中（justifycenter） 加粗（bold） 斜体（italic） 左对齐（justifyleft） 右对齐（justfyright） 两端对齐（justfyfull） 插入超链接（link） 取消超链接（unlink） 插入图片（image） 清除格式（removeformat） 下划线（underline） 删除线（strikethrough） 锚文本（anchor） 新建文本（newdocument） 字体颜色（forecolor） 字体背景色（backcolor） 格式选择（formmatselect） 字体选择（fontselect） 字号选择（fontsizeselect） 样式选择（styleselect） 无序列表（bullist） 编号列表（numlist） 减少缩进（outdent） 缩进（indent） 帮助（wp_help） 打开HTML代码编辑器（code） 水平线（hr） 清除冗余代码（cleanup） 上标（sub） 下标（sup） 特殊符号（charmap） 插入more标签（wp_more） 插入分页标签（wp_page） 隐藏按钮显示开关（wp_adv） 隐藏按钮区起始部分（wp_adv_start） 隐藏按钮区结束部分（wp_adv_end） 拼写检查（spellchecker）
+//编辑器增加按钮方法：在主题的functions.php文件最后面添加以下代码（如果已有add_editor_buttons函数，直接在函数体内增加按钮） function add_editor_buttons($buttons) { $buttons[] = &amp;lsquo;fontselect&amp;rsquo;; //增加字体按钮 $buttons[] = &amp;lsquo;bold&amp;rsquo;; //增加加粗按钮 return $buttons; } add_filter(&amp;ldquo;mce_buttons_2&amp;rdquo;, &amp;ldquo;add_editor_buttons&amp;rdquo;); //mce_buttons_2表示在编辑器第二行增加按钮</description>
+    </item>
+    
+  </channel>
+</rss>

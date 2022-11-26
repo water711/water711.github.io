@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>python&#43;selenium 批量配置华为S1720交换机 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
+准备工作1、安装Python
+2、安装谷歌浏览器
+3、下载chromedriver驱动，放到脚本所在目录
+4、新建IP.txt，保存所有交换机IP，放到脚本所在目录
+一、批量修改密码# -*- coding : utf-8 -*-
+from selenium import webdriver from selenium.webdriver.support.ui import WebDriverWait import time
+UserName = &lsquo;admin&rsquo; OldPassword = &lsquo;admin@huawei.com&rsquo; NewPassword = &rsquo;newpassword123&#39;
+def open_broswer(): #新建options options = webdriver.ChromeOptions()
+#添加选项，禁止在控制台打印日志 options.add\_experimental\_option(&#39;excludeSwitches&#39;, \[&#39;enable-logging&#39;\]) #添加选项，忽略网站SSL证书错误 options.add\_argument(&#39;--ignore-certificate-errors&#39;) #载入options并启动浏览器 driver=webdriver.Chrome(options=options) return driver def alert_confirm(): &rsquo;&rsquo;&#39; 解决以下页面弹框提示 Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器 &rsquo;&rsquo;&#39; try: alert = driver.switch_to.alert #切换到弹框窗口 alert.text driver.switch_to.alert.accept() #确认弹框 except: pass
+def change_password(ip): print(ip) driver.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python&#43;selenium 批量配置华为S1720交换机"/>
+<meta name="twitter:description" content="**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
+准备工作1、安装Python
+2、安装谷歌浏览器
+3、下载chromedriver驱动，放到脚本所在目录
+4、新建IP.txt，保存所有交换机IP，放到脚本所在目录
+一、批量修改密码# -*- coding : utf-8 -*-
+from selenium import webdriver from selenium.webdriver.support.ui import WebDriverWait import time
+UserName = &lsquo;admin&rsquo; OldPassword = &lsquo;admin@huawei.com&rsquo; NewPassword = &rsquo;newpassword123&#39;
+def open_broswer(): #新建options options = webdriver.ChromeOptions()
+#添加选项，禁止在控制台打印日志 options.add\_experimental\_option(&#39;excludeSwitches&#39;, \[&#39;enable-logging&#39;\]) #添加选项，忽略网站SSL证书错误 options.add\_argument(&#39;--ignore-certificate-errors&#39;) #载入options并启动浏览器 driver=webdriver.Chrome(options=options) return driver def alert_confirm(): &rsquo;&rsquo;&#39; 解决以下页面弹框提示 Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器 &rsquo;&rsquo;&#39; try: alert = driver.switch_to.alert #切换到弹框窗口 alert.text driver.switch_to.alert.accept() #确认弹框 except: pass
+def change_password(ip): print(ip) driver."/>
+
+  <meta property="og:title" content="python&#43;selenium 批量配置华为S1720交换机" />
+<meta property="og:description" content="**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
+准备工作1、安装Python
+2、安装谷歌浏览器
+3、下载chromedriver驱动，放到脚本所在目录
+4、新建IP.txt，保存所有交换机IP，放到脚本所在目录
+一、批量修改密码# -*- coding : utf-8 -*-
+from selenium import webdriver from selenium.webdriver.support.ui import WebDriverWait import time
+UserName = &lsquo;admin&rsquo; OldPassword = &lsquo;admin@huawei.com&rsquo; NewPassword = &rsquo;newpassword123&#39;
+def open_broswer(): #新建options options = webdriver.ChromeOptions()
+#添加选项，禁止在控制台打印日志 options.add\_experimental\_option(&#39;excludeSwitches&#39;, \[&#39;enable-logging&#39;\]) #添加选项，忽略网站SSL证书错误 options.add\_argument(&#39;--ignore-certificate-errors&#39;) #载入options并启动浏览器 driver=webdriver.Chrome(options=options) return driver def alert_confirm(): &rsquo;&rsquo;&#39; 解决以下页面弹框提示 Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器 &rsquo;&rsquo;&#39; try: alert = driver.switch_to.alert #切换到弹框窗口 alert.text driver.switch_to.alert.accept() #确认弹框 except: pass
+def change_password(ip): print(ip) driver." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-10-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-09T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>python&#43;selenium 批量配置华为S1720交换机</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Fri, Oct 9, 2020
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p> </p>
+<p>**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**<strong>为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。</strong></p>
+<p> </p>
+<h2 id="准备工作">准备工作<a class="anchorjs-link" href="#%e5%87%86%e5%a4%87%e5%b7%a5%e4%bd%9c"></a></h2><p>1、安装Python</p>
+<p>2、安装谷歌浏览器</p>
+<p>3、<a href="http://npm.taobao.org/mirrors/chromedriver/" target="_blank">下载chromedriver驱动</a>，放到脚本所在目录</p>
+<p>4、新建IP.txt，保存所有交换机IP，放到脚本所在目录</p>
+<p> </p>
+<h2 id="一批量修改密码">一、批量修改密码<a class="anchorjs-link" href="#%e4%b8%80%e6%89%b9%e9%87%8f%e4%bf%ae%e6%94%b9%e5%af%86%e7%a0%81"></a></h2><p># -*- coding : utf-8 -*-</p>
+<p>from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+import time</p>
+<p>UserName = &lsquo;admin&rsquo;
+OldPassword = &lsquo;<a href="/mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;
+NewPassword = &rsquo;newpassword123'</p>
+<p>def open_broswer():
+#新建options
+options = webdriver.ChromeOptions()</p>
+<pre><code>#添加选项，禁止在控制台打印日志
+options.add\_experimental\_option('excludeSwitches', \['enable-logging'\])
+#添加选项，忽略网站SSL证书错误
+options.add\_argument('--ignore-certificate-errors')
+
+#载入options并启动浏览器
+driver=webdriver.Chrome(options=options)
+return driver
+</code></pre>
+<p>def alert_confirm():
+&rsquo;&rsquo;'
+解决以下页面弹框提示
+Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器
+&rsquo;&rsquo;'
+try:
+alert = driver.switch_to.alert   #切换到弹框窗口
+alert.text
+driver.switch_to.alert.accept()  #确认弹框
+except:
+pass</p>
+<p>def change_password(ip):
+print(ip)
+driver.get(&ldquo;http://&rdquo; + ip)</p>
+<pre><code>alert\_confirm()  #确认弹框
+
+#窗口最大化
+driver.maximize\_window() 
+
+#输入账号
+username = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('UserName'))
+username.send\_keys(UserName)
+
+#输入密码
+pwd = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('userPassword'))
+pwd.send\_keys(OldPassword)
+
+#点击登录
+submit = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('goBtn'))
+submit.click()
+
+time.sleep(6)
+
+#点击维护
+maintenance = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('maintenance'))
+maintenance.click()
+
+time.sleep(6)
+
+#点击管理员
+lswUser = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('lswUser'))
+lswUser.click()
+
+time.sleep(2)
+
+#点击第1个账号
+tableTDContentuserName\_0 = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('tableTDContentuserName\_0'))
+tableTDContentuserName\_0.click()
+
+time.sleep(2)
+
+#输入旧密码
+uinp\_oldPassword = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('uinp\_oldPassword'))
+uinp\_oldPassword.send\_keys(OldPassword)
+
+#输入新密码
+uinp\_newPassword = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('uinp\_newPassword'))
+uinp\_newPassword.send\_keys(NewPassword)
+
+#再次输入新密码
+uinp\_confirmPassword = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('uinp\_confirmPassword'))
+uinp\_confirmPassword.send\_keys(NewPassword)
+
+#保存密码修改
+btn\_okDiv\_uBtn = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('btn\_okDiv\_uBtn'))
+btn\_okDiv\_uBtn.click()
+
+time.sleep(1)
+</code></pre>
+<p>#打开浏览器
+driver = open_broswer()</p>
+<p>#遍历txt文件的ip地址
+with open(&lsquo;ip.txt&rsquo;,&lsquo;r&rsquo;) as f:
+while 1:
+ip = f.readline().strip(&rsquo;\n&rsquo;)
+if not ip:
+break
+change_password(ip)  #执行函数，修改交换机密码</p>
+<p> </p>
+<h2 id="二批量保存交换机配置">二、批量保存交换机配置<a class="anchorjs-link" href="#%e4%ba%8c%e6%89%b9%e9%87%8f%e4%bf%9d%e5%ad%98%e4%ba%a4%e6%8d%a2%e6%9c%ba%e9%85%8d%e7%bd%ae"></a></h2><p># -*- coding : utf-8 -*-</p>
+<p>from selenium import webdriver
+from selenium.webdriver.support.ui import WebDriverWait
+import time,datetime</p>
+<p>UserName = &lsquo;admin&rsquo;
+Password = &lsquo;<a href="/mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;</p>
+<p>def open_broswer():
+#新建options
+options = webdriver.ChromeOptions()</p>
+<pre><code>#添加选项，禁止在控制台打印日志
+options.add\_experimental\_option('excludeSwitches', \['enable-logging'\])
+#添加选项，忽略网站SSL证书错误
+options.add\_argument('--ignore-certificate-errors')
+
+#载入options并启动浏览器
+driver=webdriver.Chrome(options=options)
+return driver
+</code></pre>
+<p>def alert_confirm():
+&rsquo;&rsquo;&rsquo;
+解决以下页面弹框提示
+Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器
+&rsquo;&rsquo;&rsquo;
+try:
+alert = driver.switch_to.alert   #切换到弹框窗口
+alert.text
+driver.switch_to.alert.accept()  #确认弹框
+except:
+pass</p>
+<p>def save_config(ip):
+print(ip)
+driver.get(&ldquo;http://&rdquo; + ip)</p>
+<pre><code>alert\_confirm()  #确认弹框
+
+driver.maximize\_window() #窗口最大化
+
+#输入账号
+username = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('UserName'))
+username.send\_keys(UserName)
+
+#输入密码
+pwd = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('userPassword'))
+pwd.send\_keys(Password)
+
+#点击登录
+submit = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('goBtn'))
+submit.click()
+
+time.sleep(10)   #登录完成后，需要等待7-8秒，才能保存，否则会提示系统正在加载，请稍后再试
+
+#点击保存配置(交接机系统有两个版本，保存按钮的id不同，使用异常处理兼容两个版本)
+try:
+    save = WebDriverWait(driver,3).until(lambda driver: driver.find\_element\_by\_id('save'))
+    save.click()
+except:
+    sysSaveDiv\_uBtn = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('sysSaveDiv\_uBtn'))
+    sysSaveDiv\_uBtn.click()
+
+time.sleep(1)
+
+#点击确认保存配置
+wconfirmBtn = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('wconfirmBtn'))
+wconfirmBtn.click()
+
+#等待保存完成
+wconfirmBtn = WebDriverWait(driver,9999).until(lambda driver: driver.find\_element\_by\_id('tipBtn'))
+wconfirmBtn.click()
+
+print(&quot;保存成功&quot;)
+</code></pre>
+<p>#打开浏览器
+driver = open_broswer()</p>
+<p>#遍历txt文件的ip地址
+with open(&lsquo;ip.txt&rsquo;,&lsquo;r&rsquo;) as f:
+while 1:
+ip = f.readline().strip(&rsquo;\n&rsquo;)
+if not ip:
+break
+save_config(ip)   #执行函数，保存交换机配置</p>
+<p> </p>
+<h2 id="三批量导出交换机配置">三、批量导出交换机配置<a class="anchorjs-link" href="#%e4%b8%89%e6%89%b9%e9%87%8f%e5%af%bc%e5%87%ba%e4%ba%a4%e6%8d%a2%e6%9c%ba%e9%85%8d%e7%bd%ae"></a></h2><p># -*- coding : utf-8 -*-</p>
+<p>from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
+import time</p>
+<p>UserName = &lsquo;admin&rsquo;
+Password = &lsquo;<a href="/mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;</p>
+<p>def open_browser(ip):
+#新建options
+options = webdriver.ChromeOptions()</p>
+<pre><code>#添加选项，禁止在控制台打印日志
+options.add\_experimental\_option('excludeSwitches', \['enable-logging'\])
+#添加选项，忽略网站SSL证书错误
+options.add\_argument('--ignore-certificate-errors')
+
+#设置浏览器下载文件默认保存路径
+path = 'F:\\\\config\\\\' + ip
+prefs = {'profile.default\_content\_settings.popups': 0, 'download.default\_directory': path}
+options.add\_experimental\_option('prefs', prefs)
+
+#载入options并启动浏览器
+driver=webdriver.Chrome(options=options)
+return driver
+</code></pre>
+<p>def alert_confirm():
+&rsquo;&rsquo;&rsquo;
+解决以下页面弹框提示
+Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器
+&rsquo;&rsquo;&rsquo;
+try:
+alert = driver.switch_to.alert   #切换到弹框窗口
+alert.text
+driver.switch_to.alert.accept()  #确认弹框
+except:
+pass</p>
+<p>def export_config(ip,driver):
+print(ip)
+driver.get(&ldquo;http://&rdquo; + ip)</p>
+<pre><code>alert\_confirm()  #确认弹框
+
+driver.maximize\_window() #窗口最大化
+
+#输入账号
+username = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('UserName'))
+username.send\_keys(UserName)
+
+#输入密码
+pwd = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('userPassword'))
+pwd.send\_keys(Password)
+
+#输入密码
+submit = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('goBtn'))
+submit.click()
+
+time.sleep(7)
+
+#点击维护
+maintenance = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('maintenance'))
+maintenance.click()
+
+time.sleep(7)
+
+#点击系统管理
+lswSysManager = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('lswSysManager'))
+lswSysManager.click()
+
+time.sleep(9)
+
+#搜索文件
+uinp\_searchFileComboInput = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('uinp\_searchFileComboInput'))
+uinp\_searchFileComboInput.send\_keys(&quot;vrpcfg&quot;)
+
+#模拟键盘回车按键
+ActionChains(driver).send\_keys(Keys.ENTER).perform()
+
+time.sleep(1)
+
+#点击下载
+tableTDContentfileOperate\_0 = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_xpath('//\*\[@id=&quot;tableTDContentfileOperate\_0&quot;\]/img'))
+tableTDContentfileOperate\_0.click()
+
+time.sleep(3)
+
+print(&quot;保存成功&quot;)
+driver.quit()
+</code></pre>
+<p>with open(&lsquo;ip.txt&rsquo;,&lsquo;r&rsquo;) as f:
+while 1:
+ip = f.readline().strip(&rsquo;\n&rsquo;)
+if not ip:
+break
+driver = open_browser(ip)
+export_config(ip,driver)</p>
+<p> </p>
+<h2 id="四批量添加交换机日志主机">四、批量添加交换机日志主机<a class="anchorjs-link" href="#%e5%9b%9b%e6%89%b9%e9%87%8f%e6%b7%bb%e5%8a%a0%e4%ba%a4%e6%8d%a2%e6%9c%ba%e6%97%a5%e5%bf%97%e4%b8%bb%e6%9c%ba"></a></h2><p># -*- coding : utf-8 -*-</p>
+<p>from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
+import time</p>
+<p>UserName = &lsquo;admin&rsquo;
+Password = &lsquo;<a href="/mailto:admin@huawei.com">admin@huawei.com</a>&rsquo;
+log_host_ip = &lsquo;192.168.1.225&rsquo;  #日志主机IP</p>
+<p>def open_broswer():
+#新建options
+options = webdriver.ChromeOptions()</p>
+<pre><code>#添加选项，禁止在控制台打印日志
+options.add\_experimental\_option('excludeSwitches', \['enable-logging'\])
+#添加选项，忽略网站SSL证书错误
+options.add\_argument('--ignore-certificate-errors')
+
+#载入options并启动浏览器
+driver=webdriver.Chrome(options=options)
+return driver
+</code></pre>
+<p>def alert_confirm():
+&rsquo;&rsquo;&rsquo;
+解决以下页面弹框提示
+Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器
+&rsquo;&rsquo;&rsquo;
+try:
+alert = driver.switch_to.alert   #切换到弹框窗口
+alert.text
+driver.switch_to.alert.accept()  #确认弹框
+except:
+pass</p>
+<p>def add_log_host(ip):
+print(ip)
+driver.get(&ldquo;http://&rdquo; + ip)</p>
+<pre><code>alert\_confirm()  #确认弹框
+
+driver.maximize\_window() #窗口最大化
+
+#输入账号
+username = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('UserName'))
+username.send\_keys(UserName)
+
+#输入密码
+pwd = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('userPassword'))
+pwd.send\_keys(Password)
+
+#点击登录
+submit = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('goBtn'))
+submit.click()
+
+time.sleep(7)
+
+#点击维护
+maintenance = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('maintenance'))
+maintenance.click()
+
+time.sleep(5)
+
+#点击日志
+lswLogManager = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('lswLogManager'))
+lswLogManager.click()
+
+time.sleep(2)
+
+#点击参数配置
+parameterConfig\_tab = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('parameterConfig\_tab'))
+parameterConfig\_tab.click()
+
+#点击添加日志主机
+add\_btn\_uBtn = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('add\_btn\_uBtn'))
+add\_btn\_uBtn.click()
+
+time.sleep(1)
+ActionChains(driver).send\_keys(log\_host\_ip).perform()
+
+#点击确定
+btnObj\_1 = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('btnObj\_1'))
+btnObj\_1.click()
+
+time.sleep(1)
+
+#再次点击确定
+tipBtn = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('tipBtn'))
+tipBtn.click()
+
+time.sleep(1)
+
+#点击保存配置
+try:
+    save = WebDriverWait(driver,3).until(lambda driver: driver.find\_element\_by\_id('save'))
+    save.click()
+except:
+    sysSaveDiv\_uBtn = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('sysSaveDiv\_uBtn'))
+    sysSaveDiv\_uBtn.click()
+
+time.sleep(1)
+
+#确认保存配置
+wconfirmBtn = WebDriverWait(driver,999).until(lambda driver: driver.find\_element\_by\_id('wconfirmBtn'))
+wconfirmBtn.click()
+
+time.sleep(3)
+</code></pre>
+<p>#打开浏览器
+driver = open_broswer()</p>
+<p>#遍历txt文件的ip地址
+with open(&lsquo;ip.txt&rsquo;,&lsquo;r&rsquo;) as f:
+while 1:
+ip = f.readline().strip(&rsquo;\n&rsquo;)
+if not ip:
+break
+add_log_host(ip)</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/" data-toggle="tooltip" data-placement="top" title="Centos7部署FTP服务">
+              Previous<br>
+              <span>Centos7部署FTP服务</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" data-toggle="tooltip" data-placement="top" title="Zabbix调优不完全指南">
+              Next<br>
+              <span>Zabbix调优不完全指南</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

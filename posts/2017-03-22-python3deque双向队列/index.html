@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>python3 deque（双向队列） | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="创建双向队列
+import collections d = collections.deque()
+append(往右边添加一个元素)
+import collections d = collections.deque() d.append(1) d.append(2) print(d) #输出：deque([1, 2])
+appendleft（往左边添加一个元素）
+import collections d = collections.deque() d.append(1) d.appendleft(2) print(d) #输出：deque([2, 1])
+clear(清空队列)
+import collections d = collections.deque() d.append(1) d.clear() print(d) #输出：deque([])
+copy(浅拷贝)
+import collections d = collections.deque() d.append(1) new_d = d.copy() print(new_d) #输出：deque([1])
+count(返回指定元素的出现次数)
+import collections d = collections.deque() d.append(1) d.append(1) print(d.count(1)) #输出：2
+extend(从队列右边扩展一个列表的元素)
+import collections d = collections.deque() d.append(1) d.extend([3,4,5]) print(d) #输出：deque([1, 3, 4, 5])">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python3 deque（双向队列）"/>
+<meta name="twitter:description" content="创建双向队列
+import collections d = collections.deque()
+append(往右边添加一个元素)
+import collections d = collections.deque() d.append(1) d.append(2) print(d) #输出：deque([1, 2])
+appendleft（往左边添加一个元素）
+import collections d = collections.deque() d.append(1) d.appendleft(2) print(d) #输出：deque([2, 1])
+clear(清空队列)
+import collections d = collections.deque() d.append(1) d.clear() print(d) #输出：deque([])
+copy(浅拷贝)
+import collections d = collections.deque() d.append(1) new_d = d.copy() print(new_d) #输出：deque([1])
+count(返回指定元素的出现次数)
+import collections d = collections.deque() d.append(1) d.append(1) print(d.count(1)) #输出：2
+extend(从队列右边扩展一个列表的元素)
+import collections d = collections.deque() d.append(1) d.extend([3,4,5]) print(d) #输出：deque([1, 3, 4, 5])"/>
+
+  <meta property="og:title" content="python3 deque（双向队列）" />
+<meta property="og:description" content="创建双向队列
+import collections d = collections.deque()
+append(往右边添加一个元素)
+import collections d = collections.deque() d.append(1) d.append(2) print(d) #输出：deque([1, 2])
+appendleft（往左边添加一个元素）
+import collections d = collections.deque() d.append(1) d.appendleft(2) print(d) #输出：deque([2, 1])
+clear(清空队列)
+import collections d = collections.deque() d.append(1) d.clear() print(d) #输出：deque([])
+copy(浅拷贝)
+import collections d = collections.deque() d.append(1) new_d = d.copy() print(new_d) #输出：deque([1])
+count(返回指定元素的出现次数)
+import collections d = collections.deque() d.append(1) d.append(1) print(d.count(1)) #输出：2
+extend(从队列右边扩展一个列表的元素)
+import collections d = collections.deque() d.append(1) d.extend([3,4,5]) print(d) #输出：deque([1, 3, 4, 5])" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-03-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-03-22T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>python3 deque（双向队列）</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Wed, Mar 22, 2017
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>创建双向队列</p>
+<p>import collections
+d = collections.deque()</p>
+<p>append(往右边添加一个元素)</p>
+<p>import collections
+d = collections.deque()
+d.append(1)
+d.append(2) print(d) #输出：deque([1, 2])</p>
+<p>appendleft（往左边添加一个元素）</p>
+<p>import collections
+d = collections.deque()
+d.append(1)
+d.appendleft(2) print(d) #输出：deque([2, 1])</p>
+<p>clear(清空队列)</p>
+<p>import collections
+d = collections.deque()
+d.append(1)
+d.clear() print(d) #输出：deque([])</p>
+<p>copy(浅拷贝)</p>
+<p>import collections
+d = collections.deque()
+d.append(1)
+new_d = d.copy() print(new_d) #输出：deque([1])</p>
+<p>count(返回指定元素的出现次数)</p>
+<p>import collections
+d = collections.deque()
+d.append(1)
+d.append(1) print(d.count(1)) #输出：2</p>
+<p>extend(从队列右边扩展一个列表的元素)</p>
+<p>import collections
+d = collections.deque()
+d.append(1)
+d.extend([3,4,5]) print(d) #输出：deque([1, 3, 4, 5])</p>
+<p>extendleft(从队列左边扩展一个列表的元素)</p>
+<p>import collections
+d = collections.deque()
+d.append(1)
+d.extendleft([3,4,5]) print(d) #</p>
+<h1 id="输出deque5-4-3-1">#输出：deque([5, 4, 3, 1])<a class="anchorjs-link" href="#%e8%be%93%e5%87%badeque5-4-3-1"></a></h1><p>index（查找某个元素的索引位置）</p>
+<p>import collections
+d = collections.deque()
+d.extend([&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;,&rsquo;e&rsquo;]) print(d) print(d.index(&rsquo;e&rsquo;)) print(d.index(&lsquo;c&rsquo;,0,3))  #指定查找区间</p>
+<p>#输出：deque([&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;]) # 4 #  2</p>
+<p>insert（在指定位置插入元素）</p>
+<p>import collections
+d = collections.deque()
+d.extend([&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;,&rsquo;e&rsquo;])
+d.insert(2,&lsquo;z&rsquo;) print(d) #输出：deque([&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;z&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;])</p>
+<p>pop（获取最右边一个元素，并在队列中删除）</p>
+<p>import collections
+d = collections.deque()
+d.extend([&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;,&rsquo;e&rsquo;])
+x = d.pop() print(x,d) #输出：e deque([&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;])</p>
+<p>popleft（获取最左边一个元素，并在队列中删除）</p>
+<p>import collections
+d = collections.deque()
+d.extend([&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;,&rsquo;e&rsquo;])
+x = d.popleft() print(x,d) #输出：a deque([&lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;])</p>
+<p>remove（删除指定元素）</p>
+<p>import collections
+d = collections.deque()
+d.extend([&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;,&rsquo;e&rsquo;])
+d.remove(&lsquo;c&rsquo;) print(d) #输出：deque([&lsquo;a&rsquo;, &lsquo;b&rsquo;, &rsquo;d&rsquo;, &rsquo;e&rsquo;])</p>
+<p>reverse（队列反转）</p>
+<p>import collections
+d = collections.deque()
+d.extend([&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;,&rsquo;e&rsquo;])
+d.reverse() print(d) #输出：deque([&rsquo;e&rsquo;, &rsquo;d&rsquo;, &lsquo;c&rsquo;, &lsquo;b&rsquo;, &lsquo;a&rsquo;])</p>
+<p>rotate（把右边元素放到左边）</p>
+<p>import collections
+d = collections.deque()
+d.extend([&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;,&rsquo;e&rsquo;])
+d.rotate(2)   #指定次数，默认1次
+print(d) #输出：deque([&rsquo;d&rsquo;, &rsquo;e&rsquo;, &lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;])</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97/" data-toggle="tooltip" data-placement="top" title="python3 Queue（单向队列）">
+              Previous<br>
+              <span>python3 Queue（单向队列）</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" data-toggle="tooltip" data-placement="top" title="python 内置函数">
+              Next<br>
+              <span>python 内置函数</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

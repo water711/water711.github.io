@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>Python&#43;Selenium 使用cookie实现自动登录网站 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="Python版本：3.7
+浏览器：Chrome 79.0.3
+一、下载Selenium浏览器驱动（WebDriver）下载地址：http://npm.taobao.org/mirrors/chromedriver/
+（下载与浏览器版本对应的驱动，并将驱动放到python程序所在目录）
+二、获取网站cookie1、chrome浏览器安装第三方扩展EditThisCookie
+2、手动输入账号密码登录网站，使用EditThisCookie导出cookies
+3、将cookie（列表）转换成json文件
+# -*- coding : utf-8 -*- import json
+cookies = [ { &ldquo;domain&rdquo;: &ldquo;.51cto.com&rdquo;, &ldquo;name&rdquo;: &ldquo;gr_user_id&rdquo;, &ldquo;value&rdquo;: &ldquo;ea0dbdab-1233-4454-a237-1ba0bd7c406e&rdquo;, &ldquo;id&rdquo;: 1 }, { &ldquo;domain&rdquo;: &ldquo;.51cto.com&rdquo;, &ldquo;name&rdquo;: &ldquo;Hm_lpvt_110fc9b2e1cae4d110b7959ee4f27e3b&rdquo;, &ldquo;value&rdquo;: &ldquo;168979366982&rdquo;, &ldquo;id&rdquo;: 2 }, &hellip;&hellip; ]
+with open(&ldquo;cookie.json&rdquo;, &ldquo;w&rdquo;) as f: json.dump(cookies,f) print(&ldquo;已保存为json文件&hellip;&rdquo;)
+三、使用cookie自动登录网站from selenium import webdriver import json
+#打开浏览器 driver = webdriver.Chrome()
+#访问网址 driver.get(&ldquo;https://www.51cto.com/&#34;)
+#最大化浏览器窗口 driver.maximize_window()
+#从json文件中载入cookie,并转换回列表 with open(&lsquo;cookie.json&rsquo;, &lsquo;r&rsquo;) as f: cookies = json.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python&#43;Selenium 使用cookie实现自动登录网站"/>
+<meta name="twitter:description" content="Python版本：3.7
+浏览器：Chrome 79.0.3
+一、下载Selenium浏览器驱动（WebDriver）下载地址：http://npm.taobao.org/mirrors/chromedriver/
+（下载与浏览器版本对应的驱动，并将驱动放到python程序所在目录）
+二、获取网站cookie1、chrome浏览器安装第三方扩展EditThisCookie
+2、手动输入账号密码登录网站，使用EditThisCookie导出cookies
+3、将cookie（列表）转换成json文件
+# -*- coding : utf-8 -*- import json
+cookies = [ { &ldquo;domain&rdquo;: &ldquo;.51cto.com&rdquo;, &ldquo;name&rdquo;: &ldquo;gr_user_id&rdquo;, &ldquo;value&rdquo;: &ldquo;ea0dbdab-1233-4454-a237-1ba0bd7c406e&rdquo;, &ldquo;id&rdquo;: 1 }, { &ldquo;domain&rdquo;: &ldquo;.51cto.com&rdquo;, &ldquo;name&rdquo;: &ldquo;Hm_lpvt_110fc9b2e1cae4d110b7959ee4f27e3b&rdquo;, &ldquo;value&rdquo;: &ldquo;168979366982&rdquo;, &ldquo;id&rdquo;: 2 }, &hellip;&hellip; ]
+with open(&ldquo;cookie.json&rdquo;, &ldquo;w&rdquo;) as f: json.dump(cookies,f) print(&ldquo;已保存为json文件&hellip;&rdquo;)
+三、使用cookie自动登录网站from selenium import webdriver import json
+#打开浏览器 driver = webdriver.Chrome()
+#访问网址 driver.get(&ldquo;https://www.51cto.com/&#34;)
+#最大化浏览器窗口 driver.maximize_window()
+#从json文件中载入cookie,并转换回列表 with open(&lsquo;cookie.json&rsquo;, &lsquo;r&rsquo;) as f: cookies = json."/>
+
+  <meta property="og:title" content="Python&#43;Selenium 使用cookie实现自动登录网站" />
+<meta property="og:description" content="Python版本：3.7
+浏览器：Chrome 79.0.3
+一、下载Selenium浏览器驱动（WebDriver）下载地址：http://npm.taobao.org/mirrors/chromedriver/
+（下载与浏览器版本对应的驱动，并将驱动放到python程序所在目录）
+二、获取网站cookie1、chrome浏览器安装第三方扩展EditThisCookie
+2、手动输入账号密码登录网站，使用EditThisCookie导出cookies
+3、将cookie（列表）转换成json文件
+# -*- coding : utf-8 -*- import json
+cookies = [ { &ldquo;domain&rdquo;: &ldquo;.51cto.com&rdquo;, &ldquo;name&rdquo;: &ldquo;gr_user_id&rdquo;, &ldquo;value&rdquo;: &ldquo;ea0dbdab-1233-4454-a237-1ba0bd7c406e&rdquo;, &ldquo;id&rdquo;: 1 }, { &ldquo;domain&rdquo;: &ldquo;.51cto.com&rdquo;, &ldquo;name&rdquo;: &ldquo;Hm_lpvt_110fc9b2e1cae4d110b7959ee4f27e3b&rdquo;, &ldquo;value&rdquo;: &ldquo;168979366982&rdquo;, &ldquo;id&rdquo;: 2 }, &hellip;&hellip; ]
+with open(&ldquo;cookie.json&rdquo;, &ldquo;w&rdquo;) as f: json.dump(cookies,f) print(&ldquo;已保存为json文件&hellip;&rdquo;)
+三、使用cookie自动登录网站from selenium import webdriver import json
+#打开浏览器 driver = webdriver.Chrome()
+#访问网址 driver.get(&ldquo;https://www.51cto.com/&#34;)
+#最大化浏览器窗口 driver.maximize_window()
+#从json文件中载入cookie,并转换回列表 with open(&lsquo;cookie.json&rsquo;, &lsquo;r&rsquo;) as f: cookies = json." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-03-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-29T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>Python&#43;Selenium 使用cookie实现自动登录网站</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Sun, Mar 29, 2020
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p><strong>Python版本：3.7</strong></p>
+<p><strong>浏览器：Chrome 79.0.3</strong></p>
+<p> </p>
+<h2 id="一下载selenium浏览器驱动webdriver">一、下载Selenium浏览器驱动（WebDriver）<a class="anchorjs-link" href="#%e4%b8%80%e4%b8%8b%e8%bd%bdselenium%e6%b5%8f%e8%a7%88%e5%99%a8%e9%a9%b1%e5%8a%a8webdriver"></a></h2><p>下载地址：<a href="http://npm.taobao.org/mirrors/chromedriver/" target="_blank">http://npm.taobao.org/mirrors/chromedriver/</a></p>
+<p>（下载与浏览器版本对应的驱动，并将驱动放到python程序所在目录）</p>
+<p> </p>
+<h2 id="二获取网站cookie">二、获取网站cookie<a class="anchorjs-link" href="#%e4%ba%8c%e8%8e%b7%e5%8f%96%e7%bd%91%e7%ab%99cookie"></a></h2><p>1、chrome浏览器安装第三方扩展EditThisCookie</p>
+<p>2、手动输入账号密码登录网站，使用EditThisCookie导出cookies</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//2d68f4dbfc571481406ec7a6e12e3b17.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>3、将cookie（列表）转换成json文件</p>
+<p># -*- coding : utf-8 -*-
+import json</p>
+<p>cookies = [
+{
+&ldquo;domain&rdquo;: &ldquo;.51cto.com&rdquo;,
+&ldquo;name&rdquo;: &ldquo;gr_user_id&rdquo;,
+&ldquo;value&rdquo;: &ldquo;ea0dbdab-1233-4454-a237-1ba0bd7c406e&rdquo;,
+&ldquo;id&rdquo;: 1
+},
+{
+&ldquo;domain&rdquo;: &ldquo;.51cto.com&rdquo;,
+&ldquo;name&rdquo;: &ldquo;Hm_lpvt_110fc9b2e1cae4d110b7959ee4f27e3b&rdquo;,
+&ldquo;value&rdquo;: &ldquo;168979366982&rdquo;,
+&ldquo;id&rdquo;: 2
+},
+&hellip;&hellip;
+]</p>
+<p>with open(&ldquo;cookie.json&rdquo;, &ldquo;w&rdquo;) as f:
+json.dump(cookies,f)
+print(&ldquo;已保存为json文件&hellip;&rdquo;)</p>
+<p> </p>
+<h2 id="三使用cookie自动登录网站">三、使用cookie自动登录网站<a class="anchorjs-link" href="#%e4%b8%89%e4%bd%bf%e7%94%a8cookie%e8%87%aa%e5%8a%a8%e7%99%bb%e5%bd%95%e7%bd%91%e7%ab%99"></a></h2><p>from selenium import webdriver
+import json</p>
+<p>#打开浏览器
+driver = webdriver.Chrome()</p>
+<p>#访问网址
+driver.get(&ldquo;<a href="https://www.51cto.com/%22" target="_blank">https://www.51cto.com/"</a>)</p>
+<p>#最大化浏览器窗口
+driver.maximize_window()</p>
+<p>#从json文件中载入cookie,并转换回列表
+with open(&lsquo;cookie.json&rsquo;, &lsquo;r&rsquo;) as f:
+cookies = json.load(f)</p>
+<p>#添加cookies到当前浏览器
+for cookie in cookies:
+driver.add_cookie(cookie)</p>
+<p>#刷新当前网页
+driver.refresh()</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2020-03-23-%E9%85%8D%E7%BD%AEfiddler%E5%AE%9E%E7%8E%B0%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85/" data-toggle="tooltip" data-placement="top" title="配置Fiddler实现苹果手机抓包">
+              Previous<br>
+              <span>配置Fiddler实现苹果手机抓包</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/" data-toggle="tooltip" data-placement="top" title="window使用pipenv install出现UnicodeDecodeError">
+              Next<br>
+              <span>window使用pipenv install出现UnicodeDecodeError</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>Telegram机器人编程，实现复读功能 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="一、新建谷歌脚本1、打开Google Apps Script，点击Start Scripting，新建项目
+https://www.google.com/script/start/
+2、粘贴以下代码，并修改机器人token（api.telegram.org/bot后面这串字符）
+function doGet(e){ return HtmlService.createHtmlOutput(&ldquo;Hello World!! No, this link should be hidden!!!&rdquo;); }
+function doPost(e){ var dataFromTelegram = { &ldquo;method&rdquo;: &ldquo;post&rdquo;, &ldquo;payload&rdquo;: e.postData.contents } var body = JSON.parse(e.postData.contents);
+body.message.chat.id = body.message.chat.id &#43; &lsquo;&rsquo;;
+var payload = preparePayload(body); var data = { &ldquo;method&rdquo;: &ldquo;post&rdquo;, &ldquo;payload&rdquo;: payload }
+var dataToTelegram = { &ldquo;method&rdquo;: &ldquo;post&rdquo;, &ldquo;payload&rdquo;: payload }
+UrlFetchApp.fetch(&ldquo;https://api.telegram.org/bot15234456452:AAFMK1UtlJk82pweww2a3gPcu-4YbfE/&#34;, data); } function preparePayload(body){ var payload;
+if (body.message.text){ payload = { &ldquo;method&rdquo;: &ldquo;sendMessage&rdquo;, &ldquo;chat_id&rdquo;: body.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Telegram机器人编程，实现复读功能"/>
+<meta name="twitter:description" content="一、新建谷歌脚本1、打开Google Apps Script，点击Start Scripting，新建项目
+https://www.google.com/script/start/
+2、粘贴以下代码，并修改机器人token（api.telegram.org/bot后面这串字符）
+function doGet(e){ return HtmlService.createHtmlOutput(&ldquo;Hello World!! No, this link should be hidden!!!&rdquo;); }
+function doPost(e){ var dataFromTelegram = { &ldquo;method&rdquo;: &ldquo;post&rdquo;, &ldquo;payload&rdquo;: e.postData.contents } var body = JSON.parse(e.postData.contents);
+body.message.chat.id = body.message.chat.id &#43; &lsquo;&rsquo;;
+var payload = preparePayload(body); var data = { &ldquo;method&rdquo;: &ldquo;post&rdquo;, &ldquo;payload&rdquo;: payload }
+var dataToTelegram = { &ldquo;method&rdquo;: &ldquo;post&rdquo;, &ldquo;payload&rdquo;: payload }
+UrlFetchApp.fetch(&ldquo;https://api.telegram.org/bot15234456452:AAFMK1UtlJk82pweww2a3gPcu-4YbfE/&#34;, data); } function preparePayload(body){ var payload;
+if (body.message.text){ payload = { &ldquo;method&rdquo;: &ldquo;sendMessage&rdquo;, &ldquo;chat_id&rdquo;: body."/>
+
+  <meta property="og:title" content="Telegram机器人编程，实现复读功能" />
+<meta property="og:description" content="一、新建谷歌脚本1、打开Google Apps Script，点击Start Scripting，新建项目
+https://www.google.com/script/start/
+2、粘贴以下代码，并修改机器人token（api.telegram.org/bot后面这串字符）
+function doGet(e){ return HtmlService.createHtmlOutput(&ldquo;Hello World!! No, this link should be hidden!!!&rdquo;); }
+function doPost(e){ var dataFromTelegram = { &ldquo;method&rdquo;: &ldquo;post&rdquo;, &ldquo;payload&rdquo;: e.postData.contents } var body = JSON.parse(e.postData.contents);
+body.message.chat.id = body.message.chat.id &#43; &lsquo;&rsquo;;
+var payload = preparePayload(body); var data = { &ldquo;method&rdquo;: &ldquo;post&rdquo;, &ldquo;payload&rdquo;: payload }
+var dataToTelegram = { &ldquo;method&rdquo;: &ldquo;post&rdquo;, &ldquo;payload&rdquo;: payload }
+UrlFetchApp.fetch(&ldquo;https://api.telegram.org/bot15234456452:AAFMK1UtlJk82pweww2a3gPcu-4YbfE/&#34;, data); } function preparePayload(body){ var payload;
+if (body.message.text){ payload = { &ldquo;method&rdquo;: &ldquo;sendMessage&rdquo;, &ldquo;chat_id&rdquo;: body." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2021-02-10-telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%A4%8D%E8%AF%BB%E5%8A%9F%E8%83%BD/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-10T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>Telegram机器人编程，实现复读功能</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Wed, Feb 10, 2021
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p> </p>
+<h2 id="一新建谷歌脚本">一、新建谷歌脚本<a class="anchorjs-link" href="#%e4%b8%80%e6%96%b0%e5%bb%ba%e8%b0%b7%e6%ad%8c%e8%84%9a%e6%9c%ac"></a></h2><p>1、打开Google Apps Script，点击Start Scripting，新建项目</p>
+<p><a href="https://www.google.com/script/start/" target="_blank">https://www.google.com/script/start/</a></p>
+<p>2、粘贴以下代码，并修改机器人token（api.telegram.org/bot后面这串字符）</p>
+<p>function doGet(e){
+return HtmlService.createHtmlOutput(&ldquo;Hello World!! No, this link should be hidden!!!&rdquo;);
+}</p>
+<p>function doPost(e){
+var dataFromTelegram = {
+&ldquo;method&rdquo;: &ldquo;post&rdquo;,
+&ldquo;payload&rdquo;: e.postData.contents
+}
+var body = JSON.parse(e.postData.contents);</p>
+<p>body.message.chat.id = body.message.chat.id + &lsquo;&rsquo;;</p>
+<p>var payload = preparePayload(body);
+var data = {
+&ldquo;method&rdquo;: &ldquo;post&rdquo;,
+&ldquo;payload&rdquo;: payload
+}</p>
+<p>var dataToTelegram = {
+&ldquo;method&rdquo;: &ldquo;post&rdquo;,
+&ldquo;payload&rdquo;: payload
+}</p>
+<p>UrlFetchApp.fetch(&ldquo;<a href="https://api.telegram.org/bot15234456452:AAFMK1UtlJk82pweww2a3gPcu-4YbfE/%22" target="_blank">https://api.telegram.org/bot15234456452:AAFMK1UtlJk82pweww2a3gPcu-4YbfE/"</a>, data);
+}
+function preparePayload(body){
+var payload;</p>
+<p>if (body.message.text){
+payload = {
+&ldquo;method&rdquo;: &ldquo;sendMessage&rdquo;,
+&ldquo;chat_id&rdquo;: body.message.chat.id,
+&ldquo;text&rdquo;: body.message.text,
+}</p>
+<p>}
+else if (body.message.sticker){
+payload = {
+&ldquo;method&rdquo;: &ldquo;sendSticker&rdquo;,
+&ldquo;chat_id&rdquo;: body.message.chat.id,
+&ldquo;sticker&rdquo;: body.message.sticker.file_id
+}
+}
+else if (body.message.photo){
+array = body.message.photo;
+text = array[1];
+payload = {
+&ldquo;method&rdquo;: &ldquo;sendPhoto&rdquo;,
+&ldquo;chat_id&rdquo;: body.message.chat.id,
+&ldquo;photo&rdquo;: text.file_id
+}
+}
+else {
+payload = {
+&ldquo;method&rdquo;: &ldquo;sendMessage&rdquo;,
+&ldquo;chat_id&rdquo;: body.message.chat.id,
+&ldquo;text&rdquo;: &ldquo;Try other stuff&rdquo;
+}
+}
+return payload
+}</p>
+<h2 id="二发布应用">二、发布应用<a class="anchorjs-link" href="#%e4%ba%8c%e5%8f%91%e5%b8%83%e5%ba%94%e7%94%a8"></a></h2><p>1、点击菜单栏“发布”-》“部署为网络应用”</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//2d0b62072795acc66ce3aab00ffe5390.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>2、Who has access to the app，选择 Anyone,even anonymous，再点击Deploy</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//394c9820ad66e23bedb8119696f158ba.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>3、点击查看权限</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//0e314957bf51bbb2f81c19c9c45f37b3.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>4、选择允许</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//e5b744366f1e25ab8eaf5b9abc9f2530.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h2 id="三将机器人连接到google脚本上">三、将机器人连接到google脚本上<a class="anchorjs-link" href="#%e4%b8%89%e5%b0%86%e6%9c%ba%e5%99%a8%e4%ba%ba%e8%bf%9e%e6%8e%a5%e5%88%b0google%e8%84%9a%e6%9c%ac%e4%b8%8a"></a></h2><p>1、点击菜单栏“发布”-》“部署为网络应用”，复制应用链接</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//2d0b62072795acc66ce3aab00ffe5390.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//675a8f58d97175be6b0872b5a73790fb.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>2、打开url编码页面，将应用链接进行编码</p>
+<p><a href="http://tool.chinaz.com/tools/urlencode.aspx" target="_blank">http://tool.chinaz.com/tools/urlencode.aspx</a></p>
+<p>3、将编码后的链接和机器人teken替换到下方链接</p>
+<p><a href="https://api.telegram.org/bot" target="_blank">https://api.telegram.org/bot</a>这里放机器人的token/setWebhook?url=这里放编码后的谷歌应用链接</p>
+<p>4、使用浏览器打开上方链接，出现下图结果则配置成功</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//d2cfd2e73f0587ddbc09f419d5dc284d.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>5、打开Telegram机器人聊天窗口，发送消息测试</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//b39023e81056291047cbfa716cadd364.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><strong>视频链接：</strong><a href="https://www.youtube.com/watch?v=SxwsGWlMfP4&amp;t=70s" target="_blank">https://www.youtube.com/watch?v=SxwsGWlMfP4&amp;t=70s</a></p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/" data-toggle="tooltip" data-placement="top" title="手机端实现一键发送命令到NAS主机">
+              Previous<br>
+              <span>手机端实现一键发送命令到NAS主机</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2021-02-15-%E9%80%9A%E8%BF%87tg%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E9%80%9A%E7%9F%A5%E5%88%B0%E6%89%8B%E6%9C%BA/" data-toggle="tooltip" data-placement="top" title="通过TG机器人发送通知到手机">
+              Next<br>
+              <span>通过TG机器人发送通知到手机</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

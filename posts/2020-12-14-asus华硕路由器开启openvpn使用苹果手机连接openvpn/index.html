@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>ASUS华硕路由器开启Openvpn，使用苹果手机连接OpenVPN | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="一、ASUS华硕路由器开启Openvpn二、苹果手机连接OpenVPN1、使用美区APPLE ID登录APP store，搜索OpenVPN，下载应用
+2、将ASUS导出的OpenVPN配置文件，发送到手机，并使用OpenVPN应用打开文件
+3、点击ADD导入配置
+4、输入VPN账号密码
+5、连接成功
+三、PC端连接OpenVPN1、下载安装OpenVPN客户端
+https://www.techspot.com/downloads/5182-openvpn.html
+2、打开OpenVPN，在右下角系统托盘，右键导入OpenVPN配置文件
+3、点击连接，输入VPN账号密码
+四、OpenVPN自定义路由方法一：修改客户端配置文件
+route-nopull # 不从服务端获取路由 route 192.168.1.0 255.255.255.0 net_gateway # 192.168.1.0/24网段，不走vpn网关 route 192.168.2.0 255.255.255.0 vpn_gateway # 192.168.2.0/24网段，走vpn网关
+方法二：修改服务端配置文件
+# 将该以下路由推送到客户端 push &ldquo;route 192.168.1.0 255.255.255.0 net_gateway&rdquo; push &ldquo;route 192.168.2.0 255.255.255.0 vpn_gateway&rdquo;
+PS：如果配置中有 redirect-gateway ，则需要注释掉">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ASUS华硕路由器开启Openvpn，使用苹果手机连接OpenVPN"/>
+<meta name="twitter:description" content="一、ASUS华硕路由器开启Openvpn二、苹果手机连接OpenVPN1、使用美区APPLE ID登录APP store，搜索OpenVPN，下载应用
+2、将ASUS导出的OpenVPN配置文件，发送到手机，并使用OpenVPN应用打开文件
+3、点击ADD导入配置
+4、输入VPN账号密码
+5、连接成功
+三、PC端连接OpenVPN1、下载安装OpenVPN客户端
+https://www.techspot.com/downloads/5182-openvpn.html
+2、打开OpenVPN，在右下角系统托盘，右键导入OpenVPN配置文件
+3、点击连接，输入VPN账号密码
+四、OpenVPN自定义路由方法一：修改客户端配置文件
+route-nopull # 不从服务端获取路由 route 192.168.1.0 255.255.255.0 net_gateway # 192.168.1.0/24网段，不走vpn网关 route 192.168.2.0 255.255.255.0 vpn_gateway # 192.168.2.0/24网段，走vpn网关
+方法二：修改服务端配置文件
+# 将该以下路由推送到客户端 push &ldquo;route 192.168.1.0 255.255.255.0 net_gateway&rdquo; push &ldquo;route 192.168.2.0 255.255.255.0 vpn_gateway&rdquo;
+PS：如果配置中有 redirect-gateway ，则需要注释掉"/>
+
+  <meta property="og:title" content="ASUS华硕路由器开启Openvpn，使用苹果手机连接OpenVPN" />
+<meta property="og:description" content="一、ASUS华硕路由器开启Openvpn二、苹果手机连接OpenVPN1、使用美区APPLE ID登录APP store，搜索OpenVPN，下载应用
+2、将ASUS导出的OpenVPN配置文件，发送到手机，并使用OpenVPN应用打开文件
+3、点击ADD导入配置
+4、输入VPN账号密码
+5、连接成功
+三、PC端连接OpenVPN1、下载安装OpenVPN客户端
+https://www.techspot.com/downloads/5182-openvpn.html
+2、打开OpenVPN，在右下角系统托盘，右键导入OpenVPN配置文件
+3、点击连接，输入VPN账号密码
+四、OpenVPN自定义路由方法一：修改客户端配置文件
+route-nopull # 不从服务端获取路由 route 192.168.1.0 255.255.255.0 net_gateway # 192.168.1.0/24网段，不走vpn网关 route 192.168.2.0 255.255.255.0 vpn_gateway # 192.168.2.0/24网段，走vpn网关
+方法二：修改服务端配置文件
+# 将该以下路由推送到客户端 push &ldquo;route 192.168.1.0 255.255.255.0 net_gateway&rdquo; push &ldquo;route 192.168.2.0 255.255.255.0 vpn_gateway&rdquo;
+PS：如果配置中有 redirect-gateway ，则需要注释掉" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpn/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-12-14T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>ASUS华硕路由器开启Openvpn，使用苹果手机连接OpenVPN</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Mon, Dec 14, 2020
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <h2 id="一asus华硕路由器开启openvpn"><strong>一、ASUS华硕路由器开启Openvpn</strong><a class="anchorjs-link" href="#%e4%b8%80asus%e5%8d%8e%e7%a1%95%e8%b7%af%e7%94%b1%e5%99%a8%e5%bc%80%e5%90%afopenvpn"></a></h2><p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//79f49b8b759c8060c8081d3a8ff33b17.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p> </p>
+<h2 id="二苹果手机连接openvpn"><strong>二、苹果手机连接OpenVPN</strong><a class="anchorjs-link" href="#%e4%ba%8c%e8%8b%b9%e6%9e%9c%e6%89%8b%e6%9c%ba%e8%bf%9e%e6%8e%a5openvpn"></a></h2><p>1、使用美区APPLE ID登录APP store，搜索<strong>OpenVPN</strong>，下载应用</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//9e49b42b725bf371c10c6cf2e4731610.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>2、将ASUS导出的OpenVPN配置文件，发送到手机，并使用<strong>OpenVPN</strong>应用打开文件</p>
+<p>3、点击ADD导入配置</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//5b7f7b74623417db4999d3708339f9c7.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>4、输入VPN账号密码</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//1645994cc6e4847434ea3faa5e5217a3.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>5、连接成功</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//12c46360cc54cd1a7026e6530d75f209.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h2 id="三pc端连接openvpn"><strong>三、PC端连接OpenVPN</strong><a class="anchorjs-link" href="#%e4%b8%89pc%e7%ab%af%e8%bf%9e%e6%8e%a5openvpn"></a></h2><p>1、下载安装<strong>OpenVPN</strong>客户端</p>
+<p><a href="https://www.techspot.com/downloads/5182-openvpn.html" target="_blank">https://www.techspot.com/downloads/5182-openvpn.html</a></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//80b234613c369eab6c61944992797cc4.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>2、打开OpenVPN，在右下角系统托盘，右键导入OpenVPN配置文件</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//615a4ba6d4ee761f824c1a17b74058bf.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>3、点击连接，输入VPN账号密码</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//30aa3cf03856570b481a46df01c796bb.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h2 id="四openvpn自定义路由">四、OpenVPN自定义路由<a class="anchorjs-link" href="#%e5%9b%9bopenvpn%e8%87%aa%e5%ae%9a%e4%b9%89%e8%b7%af%e7%94%b1"></a></h2><p>方法一：修改客户端配置文件</p>
+<p>route-nopull # 不从服务端获取路由
+route 192.168.1.0 255.255.255.0 net_gateway # 192.168.1.0/24网段，不走vpn网关
+route 192.168.2.0 255.255.255.0 vpn_gateway # 192.168.2.0/24网段，走vpn网关</p>
+<p>方法二：修改服务端配置文件</p>
+<p># 将该以下路由推送到客户端
+push &ldquo;route 192.168.1.0 255.255.255.0 net_gateway&rdquo;
+push &ldquo;route 192.168.2.0 255.255.255.0 vpn_gateway&rdquo;</p>
+<p>PS：如果配置中有 <code>redirect-gateway</code>  ，则需要注释掉</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpnnull/" data-toggle="tooltip" data-placement="top" title="ASUS华硕路由器开启Openvpn，使用苹果手机连接OpenVPN">
+              Previous<br>
+              <span>ASUS华硕路由器开启Openvpn，使用苹果手机连接OpenVPN</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2020-12-19-%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%92%8C%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%97%B6csr%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7/" data-toggle="tooltip" data-placement="top" title="访问共享文件和连接远程桌面时，CSR蓝牙驱动引起的资源管理器崩溃">
+              Next<br>
+              <span>访问共享文件和连接远程桌面时，CSR蓝牙驱动引起的资源管理器崩溃</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

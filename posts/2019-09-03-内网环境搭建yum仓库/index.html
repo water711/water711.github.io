@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>内网环境搭建YUM仓库 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="需求：内网环境下，无法访问外网，如何更新系统以及安装项目所需软件？ 一、找一台可以联网的机器，安装操作系统（一般最小化安装，和内网机器一致）缓存所需软件包1、开启yum缓存
+[root@host1 ~]# vim /etc/yum.conf [main] cachedir=/var/cache/yum/$basearch/$releasever //此处为缓存路径 keepcache=1 //设为1，则开启yum缓存 [root@host1 ~]# yum clean all
+2、更新系统（缓存更新包）
+[root@host1 ~]# yum -y update
+3、缓存制作yum仓库所需软件
+[root@host1 ~]# yum -y install createrepo vsftpd
+4、缓存项目所需要的软件包
+[root@host1 ~]# yum -y install ncurses ncurses-devel openssl-devel bison gcc gcc-c&#43;&#43; make
+5、插入U盘或移动硬盘，把yum缓存下来的软件包，拷贝出来
+[root@host1 ~]# dmesg //查看U盘设备名称 [root@host1 ~]# mount /dev/sdb /mnt/usb //挂载 [root@host1 ~]# mkdir /mnt/usb/repo [root@host1 ~]# find /var/cache/yum/ -name &ldquo;*.rpm&rdquo; -exec cp -rf {} /mnt/usb/repo \; //搜索rpm包并复制到U盘">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="内网环境搭建YUM仓库"/>
+<meta name="twitter:description" content="需求：内网环境下，无法访问外网，如何更新系统以及安装项目所需软件？ 一、找一台可以联网的机器，安装操作系统（一般最小化安装，和内网机器一致）缓存所需软件包1、开启yum缓存
+[root@host1 ~]# vim /etc/yum.conf [main] cachedir=/var/cache/yum/$basearch/$releasever //此处为缓存路径 keepcache=1 //设为1，则开启yum缓存 [root@host1 ~]# yum clean all
+2、更新系统（缓存更新包）
+[root@host1 ~]# yum -y update
+3、缓存制作yum仓库所需软件
+[root@host1 ~]# yum -y install createrepo vsftpd
+4、缓存项目所需要的软件包
+[root@host1 ~]# yum -y install ncurses ncurses-devel openssl-devel bison gcc gcc-c&#43;&#43; make
+5、插入U盘或移动硬盘，把yum缓存下来的软件包，拷贝出来
+[root@host1 ~]# dmesg //查看U盘设备名称 [root@host1 ~]# mount /dev/sdb /mnt/usb //挂载 [root@host1 ~]# mkdir /mnt/usb/repo [root@host1 ~]# find /var/cache/yum/ -name &ldquo;*.rpm&rdquo; -exec cp -rf {} /mnt/usb/repo \; //搜索rpm包并复制到U盘"/>
+
+  <meta property="og:title" content="内网环境搭建YUM仓库" />
+<meta property="og:description" content="需求：内网环境下，无法访问外网，如何更新系统以及安装项目所需软件？ 一、找一台可以联网的机器，安装操作系统（一般最小化安装，和内网机器一致）缓存所需软件包1、开启yum缓存
+[root@host1 ~]# vim /etc/yum.conf [main] cachedir=/var/cache/yum/$basearch/$releasever //此处为缓存路径 keepcache=1 //设为1，则开启yum缓存 [root@host1 ~]# yum clean all
+2、更新系统（缓存更新包）
+[root@host1 ~]# yum -y update
+3、缓存制作yum仓库所需软件
+[root@host1 ~]# yum -y install createrepo vsftpd
+4、缓存项目所需要的软件包
+[root@host1 ~]# yum -y install ncurses ncurses-devel openssl-devel bison gcc gcc-c&#43;&#43; make
+5、插入U盘或移动硬盘，把yum缓存下来的软件包，拷贝出来
+[root@host1 ~]# dmesg //查看U盘设备名称 [root@host1 ~]# mount /dev/sdb /mnt/usb //挂载 [root@host1 ~]# mkdir /mnt/usb/repo [root@host1 ~]# find /var/cache/yum/ -name &ldquo;*.rpm&rdquo; -exec cp -rf {} /mnt/usb/repo \; //搜索rpm包并复制到U盘" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-03T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>内网环境搭建YUM仓库</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Tue, Sep 3, 2019
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <h1 id="需求内网环境下无法访问外网如何更新系统以及安装项目所需软件">需求：内网环境下，无法访问外网，如何更新系统以及安装项目所需软件？<a class="anchorjs-link" href="#%e9%9c%80%e6%b1%82%e5%86%85%e7%bd%91%e7%8e%af%e5%a2%83%e4%b8%8b%e6%97%a0%e6%b3%95%e8%ae%bf%e9%97%ae%e5%a4%96%e7%bd%91%e5%a6%82%e4%bd%95%e6%9b%b4%e6%96%b0%e7%b3%bb%e7%bb%9f%e4%bb%a5%e5%8f%8a%e5%ae%89%e8%a3%85%e9%a1%b9%e7%9b%ae%e6%89%80%e9%9c%80%e8%bd%af%e4%bb%b6"></a></h1><hr>
+<h2 id="一找一台可以联网的机器安装操作系统一般最小化安装和内网机器一致缓存所需软件包">一、找一台可以联网的机器，安装操作系统（一般最小化安装，和内网机器一致）缓存所需软件包<a class="anchorjs-link" href="#%e4%b8%80%e6%89%be%e4%b8%80%e5%8f%b0%e5%8f%af%e4%bb%a5%e8%81%94%e7%bd%91%e7%9a%84%e6%9c%ba%e5%99%a8%e5%ae%89%e8%a3%85%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e4%b8%80%e8%88%ac%e6%9c%80%e5%b0%8f%e5%8c%96%e5%ae%89%e8%a3%85%e5%92%8c%e5%86%85%e7%bd%91%e6%9c%ba%e5%99%a8%e4%b8%80%e8%87%b4%e7%bc%93%e5%ad%98%e6%89%80%e9%9c%80%e8%bd%af%e4%bb%b6%e5%8c%85"></a></h2><p>1、开启yum缓存</p>
+<p>[root@host1 ~]# vim /etc/yum.conf
+[main]
+cachedir=/var/cache/yum/$basearch/$releasever  //此处为缓存路径
+keepcache=1   //设为1，则开启yum缓存
+[root@host1 ~]# yum clean all</p>
+<p>2、更新系统（缓存更新包）</p>
+<p>[root@host1 ~]# yum -y update</p>
+<p>3、缓存制作yum仓库所需软件</p>
+<p>[root@host1 ~]# yum -y install createrepo vsftpd</p>
+<p>4、缓存项目所需要的软件包</p>
+<p>[root@host1 ~]#  yum -y install ncurses ncurses-devel openssl-devel bison gcc gcc-c++ make</p>
+<p>5、插入U盘或移动硬盘，把yum缓存下来的软件包，拷贝出来</p>
+<p>[root@host1 ~]# dmesg   //查看U盘设备名称
+[root@host1 ~]# mount /dev/sdb /mnt/usb   //挂载
+[root@host1 ~]# mkdir /mnt/usb/repo
+[root@host1 ~]# find /var/cache/yum/ -name &ldquo;*.rpm&rdquo; -exec cp -rf {} /mnt/usb/repo \;   //搜索rpm包并复制到U盘</p>
+<h2 id="二内网环境下部署yum仓库">二、内网环境下，部署yum仓库<a class="anchorjs-link" href="#%e4%ba%8c%e5%86%85%e7%bd%91%e7%8e%af%e5%a2%83%e4%b8%8b%e9%83%a8%e7%bd%b2yum%e4%bb%93%e5%ba%93"></a></h2><p>1、安装vsftpd，把软件包拷贝到/var/ftp目录下</p>
+<p>[root@repo ~]# rpm -ivh vsftpd-3.0.2-25.el7.x86_64.rpm
+[root@repo ~]# cp -rf /mnt/usb/repo /var/ftp/
+[root@repo ~]# systemctl start vsftpd
+[root@repo ~]# systemctl enable vsftpd</p>
+<p>2、安装repodata，并创建repodata索引文件</p>
+<p>[root@repo ~]# rpm -ivh createrepo-0.9.9-28.el7.noarch.rpm
+[root@repo ~]# createrepo /var/ftp/repo</p>
+<h2 id="三内网环境找一台机器测试">三、内网环境，找一台机器测试<a class="anchorjs-link" href="#%e4%b8%89%e5%86%85%e7%bd%91%e7%8e%af%e5%a2%83%e6%89%be%e4%b8%80%e5%8f%b0%e6%9c%ba%e5%99%a8%e6%b5%8b%e8%af%95"></a></h2><p>1、备份原有仓库文件，配置私有yum仓库</p>
+<p>[root@test ~]# mv /etc/yum.repos.d/{*.repo,bak/}   //备份repo文件
+[root@test ~]# vi /etc/yum.repos.d/private.repo
+[myrepo]
+name=private_repo
+baseurl=ftp://192.168.1.90
+gpgcheck=0
+enable=1
+[root@test ~]# yum clean all
+[root@test ~]# yum repolist</p>
+<p>2、更新系统并安装软件</p>
+<p>[root@test ~]#  yum -y update
+[root@test ~]#  yum -y install ncurses ncurses-devel openssl-devel bison gcc gcc-c++ make</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/" data-toggle="tooltip" data-placement="top" title="使用Python调用Zabbix API">
+              Previous<br>
+              <span>使用Python调用Zabbix API</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/" data-toggle="tooltip" data-placement="top" title="Nginx反向代理与负载均衡">
+              Next<br>
+              <span>Nginx反向代理与负载均衡</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

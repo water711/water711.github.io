@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>windows计划任务，执行程序后，生成的文件不在程序所在目录 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="场景：通过windows计划任务，执行数据库备份脚本（批处理文件），每天定时备份数据库问题：手动执行备份脚本，数据库是备份到脚本所在目录，但是通过计划任务执行脚本，数据库备份到了C:\Windows\System32目录下解决方法：在计划任务执行程序或脚本下面，超始于（可选）选项中，指定程序所在目录">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="windows计划任务，执行程序后，生成的文件不在程序所在目录"/>
+<meta name="twitter:description" content="场景：通过windows计划任务，执行数据库备份脚本（批处理文件），每天定时备份数据库问题：手动执行备份脚本，数据库是备份到脚本所在目录，但是通过计划任务执行脚本，数据库备份到了C:\Windows\System32目录下解决方法：在计划任务执行程序或脚本下面，超始于（可选）选项中，指定程序所在目录"/>
+
+  <meta property="og:title" content="windows计划任务，执行程序后，生成的文件不在程序所在目录" />
+<meta property="og:description" content="场景：通过windows计划任务，执行数据库备份脚本（批处理文件），每天定时备份数据库问题：手动执行备份脚本，数据库是备份到脚本所在目录，但是通过计划任务执行脚本，数据库备份到了C:\Windows\System32目录下解决方法：在计划任务执行程序或脚本下面，超始于（可选）选项中，指定程序所在目录" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://water711.github.io/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-01-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-02T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>windows计划任务，执行程序后，生成的文件不在程序所在目录</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Thu, Jan 2, 2020
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <h2 id="场景通过windows计划任务执行数据库备份脚本批处理文件每天定时备份数据库">场景：通过windows计划任务，执行数据库备份脚本（批处理文件），每天定时备份数据库<a class="anchorjs-link" href="#%e5%9c%ba%e6%99%af%e9%80%9a%e8%bf%87windows%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e6%89%a7%e8%a1%8c%e6%95%b0%e6%8d%ae%e5%ba%93%e5%a4%87%e4%bb%bd%e8%84%9a%e6%9c%ac%e6%89%b9%e5%a4%84%e7%90%86%e6%96%87%e4%bb%b6%e6%af%8f%e5%a4%a9%e5%ae%9a%e6%97%b6%e5%a4%87%e4%bb%bd%e6%95%b0%e6%8d%ae%e5%ba%93"></a></h2><h2 id="问题手动执行备份脚本数据库是备份到脚本所在目录但是通过计划任务执行脚本数据库备份到了cwindowssystem32目录下">问题：手动执行备份脚本，数据库是备份到脚本所在目录，但是通过计划任务执行脚本，数据库备份到了C:\Windows\System32目录下<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e6%89%8b%e5%8a%a8%e6%89%a7%e8%a1%8c%e5%a4%87%e4%bb%bd%e8%84%9a%e6%9c%ac%e6%95%b0%e6%8d%ae%e5%ba%93%e6%98%af%e5%a4%87%e4%bb%bd%e5%88%b0%e8%84%9a%e6%9c%ac%e6%89%80%e5%9c%a8%e7%9b%ae%e5%bd%95%e4%bd%86%e6%98%af%e9%80%9a%e8%bf%87%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1%e6%89%a7%e8%a1%8c%e8%84%9a%e6%9c%ac%e6%95%b0%e6%8d%ae%e5%ba%93%e5%a4%87%e4%bb%bd%e5%88%b0%e4%ba%86cwindowssystem32%e7%9b%ae%e5%bd%95%e4%b8%8b"></a></h2><h2 id="解决方法">解决方法：<a class="anchorjs-link" href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"></a></h2><p>在计划任务执行程序或脚本下面，超始于（可选）选项中，指定程序所在目录</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//10fe4db95d92d2e26c3a527a0321d64e.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2019-12-31-oracle%E5%AE%89%E8%A3%85%E6%8E%88%E6%9D%83%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/" data-toggle="tooltip" data-placement="top" title="oracle安装、授权、备份和恢复">
+              Previous<br>
+              <span>oracle安装、授权、备份和恢复</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/" data-toggle="tooltip" data-placement="top" title="pthon3实现oracle数据库查询、导出EXCEL并邮件发送">
+              Next<br>
+              <span>pthon3实现oracle数据库查询、导出EXCEL并邮件发送</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>
