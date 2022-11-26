@@ -1,34 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>跨公网远程网络唤醒PC // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>跨公网远程网络唤醒PC | 蔡振威的博客</title>
-
-  
-  <meta name="description" content="1、主板BISO开启网络唤醒不同的主板，开启的位置可能有所不同
-2、操作系统中网卡开启网络唤醒Windows系统下：
-Linux系统下：
-https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
-查看网卡是否支持网络唤醒
-[root@NAS ~]# ethtool eth0 Supports Wake-on: pumbg //支持唤醒的方式 Wake-on: d //d为关闭唤醒，g为开启唤醒（但是我在真机下，d也能进行网络唤醒）
-[root@NAS ~]# man ethtool p Wake on PHY activity u Wake on unicast messages m Wake on multicast messages b Wake on broadcast messages a Wake on ARP g Wake on MagicPacket™ s Enable SecureOn™ password for MagicPacket™ d Disable (wake on nothing). This option clears all previous options.
-开启网络唤醒
-[root@NAS ~]# ethtool -s eth0 wol g">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="跨公网远程网络唤醒PC"/>
-<meta name="twitter:description" content="1、主板BISO开启网络唤醒不同的主板，开启的位置可能有所不同
-2、操作系统中网卡开启网络唤醒Windows系统下：
+<meta name="twitter:description" content="1、主板BISO开启网络唤醒 不同的主板，开启的位置可能有所不同
+2、操作系统中网卡开启网络唤醒 Windows系统下：
 Linux系统下：
 https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
 查看网卡是否支持网络唤醒
@@ -37,9 +23,9 @@ https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
 开启网络唤醒
 [root@NAS ~]# ethtool -s eth0 wol g"/>
 
-  <meta property="og:title" content="跨公网远程网络唤醒PC" />
-<meta property="og:description" content="1、主板BISO开启网络唤醒不同的主板，开启的位置可能有所不同
-2、操作系统中网卡开启网络唤醒Windows系统下：
+    <meta property="og:title" content="跨公网远程网络唤醒PC" />
+<meta property="og:description" content="1、主板BISO开启网络唤醒 不同的主板，开启的位置可能有所不同
+2、操作系统中网卡开启网络唤醒 Windows系统下：
 Linux系统下：
 https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
 查看网卡是否支持网络唤醒
@@ -54,204 +40,45 @@ https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>跨公网远程网络唤醒PC</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Sat, Jun 6, 2020
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">跨公网远程网络唤醒PC</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jun 6, 2020
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <h2 id="1主板biso开启网络唤醒">1、主板BISO开启网络唤醒<a class="anchorjs-link" href="#1%e4%b8%bb%e6%9d%bfbiso%e5%bc%80%e5%90%af%e7%bd%91%e7%bb%9c%e5%94%a4%e9%86%92"></a></h2><p>不同的主板，开启的位置可能有所不同</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//b66098164687fc19cc898ee966c7de95.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<h2 id="2操作系统中网卡开启网络唤醒">2、操作系统中网卡开启网络唤醒<a class="anchorjs-link" href="#2%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%bd%91%e5%8d%a1%e5%bc%80%e5%90%af%e7%bd%91%e7%bb%9c%e5%94%a4%e9%86%92"></a></h2><p><strong>Windows系统下：</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//99c1b46456d7efc558ae2c4b21e1a9f8.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+    </header>
+    <div class="post-content">
+      <h2 id="1主板biso开启网络唤醒">1、主板BISO开启网络唤醒</h2>
+<p>不同的主板，开启的位置可能有所不同</p>
+<p><img src="http://hugo.caizhenwei.top//b66098164687fc19cc898ee966c7de95.png" alt=""></p>
+<h2 id="2操作系统中网卡开启网络唤醒">2、操作系统中网卡开启网络唤醒</h2>
+<p><strong>Windows系统下：</strong></p>
+<p><img src="http://hugo.caizhenwei.top//99c1b46456d7efc558ae2c4b21e1a9f8.png" alt=""></p>
 <p> </p>
 <p><strong>Linux系统下：</strong></p>
-<p><a href="https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html" target="_blank">https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html</a></p>
+<p><a href="https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html">https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html</a></p>
 <p>查看网卡是否支持网络唤醒</p>
 <p>[root@NAS ~]# ethtool eth0
 Supports Wake-on: pumbg  //支持唤醒的方式
@@ -275,142 +102,17 @@ clears all previous options.</p>
 <p>方法二
 [root@NAS ~]# vim /etc/sysconfig/network-scripts/ifcfg-eth0
 ETHTOOL_OPTS=&ldquo;wol g&rdquo;</p>
-<h2 id="3路由器上将端口映射到外网">3、路由器上将端口映射到外网<a class="anchorjs-link" href="#3%e8%b7%af%e7%94%b1%e5%99%a8%e4%b8%8a%e5%b0%86%e7%ab%af%e5%8f%a3%e6%98%a0%e5%b0%84%e5%88%b0%e5%a4%96%e7%bd%91"></a></h2><p>也可以使用已经映射的其它端口 <figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//05b9888d0981a0b46816043413e57154.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<h2 id="4使用wake-on-lan进行唤醒">4、使用Wake On Lan进行唤醒<a class="anchorjs-link" href="#4%e4%bd%bf%e7%94%a8wake-on-lan%e8%bf%9b%e8%a1%8c%e5%94%a4%e9%86%92"></a></h2><p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//54c685a4e6b5ade7cede6ff7df7b6998.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<h2 id="3路由器上将端口映射到外网">3、路由器上将端口映射到外网</h2>
+<p>也可以使用已经映射的其它端口 <img src="http://hugo.caizhenwei.top//05b9888d0981a0b46816043413e57154.png" alt=""></p>
+<h2 id="4使用wake-on-lan进行唤醒">4、使用Wake On Lan进行唤醒</h2>
+<p><img src="http://hugo.caizhenwei.top//54c685a4e6b5ade7cede6ff7df7b6998.png" alt=""></p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pcnull/" data-toggle="tooltip" data-placement="top" title="跨公网远程网络唤醒PC">
-              Previous<br>
-              <span>跨公网远程网络唤醒PC</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/" data-toggle="tooltip" data-placement="top" title="Centos7 磁盘配额">
-              Next<br>
-              <span>Centos7 磁盘配额</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>

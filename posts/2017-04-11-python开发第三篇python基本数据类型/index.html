@@ -1,53 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Python开发【第三篇】：Python基本数据类型 // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>Python开发【第三篇】：Python基本数据类型 | 蔡振威的博客</title>
-
-  
-  <meta name="description" content="运算符1、算数运算：
-2、比较运算：
-3、赋值运算：
-4、逻辑运算：
-5、成员运算：
-基本数据类型1、数字
-int（整型）
-在32位机器上，整数的位数为32位，取值范围为-2**31～2**31-1，即-2147483648～2147483647
-在64位系统上，整数的位数为64位，取值范围为-2**63～2**63-1，即-9223372036854775808～9223372036854775807
-class int(object): &quot;&quot;&quot; int(x=0) -&gt; int or long int(x, base=10) -&gt; int or long
-Convert a number or string to an integer, or return 0 if no arguments are given. If x is floating point, the conversion truncates towards zero. If x is outside the integer range, the function returns a long instead. If x is not a number or if base is given, then x must be a string or Unicode object representing an integer literal in the given base.">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python开发【第三篇】：Python基本数据类型"/>
-<meta name="twitter:description" content="运算符1、算数运算：
+<meta name="twitter:description" content="运算符 1、算数运算：
 2、比较运算：
 3、赋值运算：
 4、逻辑运算：
 5、成员运算：
-基本数据类型1、数字
+基本数据类型 1、数字
 int（整型）
 在32位机器上，整数的位数为32位，取值范围为-2**31～2**31-1，即-2147483648～2147483647
 在64位系统上，整数的位数为64位，取值范围为-2**63～2**63-1，即-9223372036854775808～9223372036854775807
 class int(object): &quot;&quot;&quot; int(x=0) -&gt; int or long int(x, base=10) -&gt; int or long
 Convert a number or string to an integer, or return 0 if no arguments are given. If x is floating point, the conversion truncates towards zero. If x is outside the integer range, the function returns a long instead. If x is not a number or if base is given, then x must be a string or Unicode object representing an integer literal in the given base."/>
 
-  <meta property="og:title" content="Python开发【第三篇】：Python基本数据类型" />
-<meta property="og:description" content="运算符1、算数运算：
+    <meta property="og:title" content="Python开发【第三篇】：Python基本数据类型" />
+<meta property="og:description" content="运算符 1、算数运算：
 2、比较运算：
 3、赋值运算：
 4、逻辑运算：
 5、成员运算：
-基本数据类型1、数字
+基本数据类型 1、数字
 int（整型）
 在32位机器上，整数的位数为32位，取值范围为-2**31～2**31-1，即-2147483648～2147483647
 在64位系统上，整数的位数为64位，取值范围为-2**63～2**63-1，即-9223372036854775808～9223372036854775807
@@ -60,237 +44,53 @@ Convert a number or string to an integer, or return 0 if no arguments are given.
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>Python开发【第三篇】：Python基本数据类型</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Tue, Apr 11, 2017
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Python开发【第三篇】：Python基本数据类型</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 11, 2017
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          25 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <h3 id="运算符">运算符<a class="anchorjs-link" href="#%e8%bf%90%e7%ae%97%e7%ac%a6"></a></h3><p><strong>1、算数运算：</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20151025004451692-544714036.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+    </header>
+    <div class="post-content">
+      <h3 id="运算符">运算符</h3>
+<p><strong>1、算数运算：</strong></p>
+<p><img src="http://hugo.caizhenwei.top//425762-20151025004451692-544714036.png" alt=""></p>
 <p><strong>2、比较运算：</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20151025004535395-2018056438.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//425762-20151025004535395-2018056438.png" alt=""></p>
 <p><strong>3、赋值运算：</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20151025004625020-515390534.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//425762-20151025004625020-515390534.png" alt=""></p>
 <p><strong>4、逻辑运算：</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20151025004829864-1676917934.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//425762-20151025004829864-1676917934.png" alt=""></p>
 <p><strong>5、成员运算：</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20151025004934286-1134210223.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<h3 id="基本数据类型">基本数据类型<a class="anchorjs-link" href="#%e5%9f%ba%e6%9c%ac%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b"></a></h3><p><strong>1、数字</strong></p>
+<p><img src="http://hugo.caizhenwei.top//425762-20151025004934286-1134210223.png" alt=""></p>
+<h3 id="基本数据类型">基本数据类型</h3>
+<p><strong>1、数字</strong></p>
 <p>int（整型）</p>
 <p>　　在32位机器上，整数的位数为32位，取值范围为-2**31～2**31-1，即-2147483648～2147483647<br>
 　　在64位系统上，整数的位数为64位，取值范围为-2**63～2**63-1，即-9223372036854775808～9223372036854775807</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>class int(object): &quot;&quot;&quot; int(x=0) -&gt; int or long
 int(x, base=10) -&gt; int or long</p>
 <pre><code>Convert a number or string to an integer, or return 0 if no arguments
@@ -521,17 +321,7 @@ def \_\_xor\_\_(self, y): &quot;&quot;&quot; x.\_\_xor\_\_(y) &lt;==&gt; x^y &qu
 <li>索引</li>
 <li>切片</li>
 </ul>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>class str(basestring): &quot;&quot;&quot; str(object=&rsquo;&rsquo;) -&gt; string</p>
 <pre><code>Return a nice string representation of the object.
 If the argument is a string, the return value is the same object. &quot;&quot;&quot;
@@ -855,17 +645,7 @@ name_list ＝ list([&lsquo;alex&rsquo;, &lsquo;seven&rsquo;, &rsquo;eric&rsquo;]
 <li>循环</li>
 <li>包含</li>
 </ul>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>class list(object): &quot;&quot;&quot; list() -&gt; new empty list
 list(iterable) -&gt; new list initialized from iterable&rsquo;s items &quot;&quot;&quot;
 def append(self, p_object): # real signature unknown; restored from __doc__
@@ -1030,17 +810,7 @@ ages = tuple((11, 22, 33, 44, 55))</p>
 <li>长度</li>
 <li>包含</li>
 </ul>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>lass tuple(object): &quot;&quot;&quot; tuple() -&gt; empty tuple
 tuple(iterable) -&gt; tuple initialized from iterable&rsquo;s items</p>
 <pre><code>If the argument is a tuple, the return value is the same object. &quot;&quot;&quot;
@@ -1152,17 +922,7 @@ person = dict({&ldquo;name&rdquo;: &ldquo;mr.wu&rdquo;, &lsquo;age&rsquo;: 18})<
 <li>循环</li>
 <li>长度</li>
 </ul>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>class dict(object): &quot;&quot;&quot; dict() -&gt; new empty dictionary
 dict(mapping) -&gt; new dictionary initialized from a mapping object&rsquo;s
 (key, value) pairs
@@ -1340,7 +1100,8 @@ def \_\_sizeof\_\_(self): # real signature unknown; restored from \_\_doc\_\_
 </code></pre>
 <p>dict</p>
 <p>PS：循环，range，continue 和 break</p>
-<h3 id="其他">其他<a class="anchorjs-link" href="#%e5%85%b6%e4%bb%96"></a></h3><p><strong>1、for循环</strong></p>
+<h3 id="其他">其他</h3>
+<p><strong>1、for循环</strong></p>
 <p>用户按照顺序循环可迭代对象中的内容，</p>
 <p>PS：break、continue</p>
 <p>li = [11,22,33,44]
@@ -1354,9 +1115,13 @@ print(k,v)</p>
 <p><strong>3、range和xrange</strong></p>
 <p>指定范围，生成指定的数字</p>
 <p>print range(1, 10)</p>
-<h1 id="结果1-2-3-4-5-6-7-8-9">结果：[1, 2, 3, 4, 5, 6, 7, 8, 9]<a class="anchorjs-link" href="#%e7%bb%93%e6%9e%9c1-2-3-4-5-6-7-8-9"></a></h1><p>print range(1, 10, 2)</p>
-<h1 id="结果1-3-5-7-9">结果：[1, 3, 5, 7, 9]<a class="anchorjs-link" href="#%e7%bb%93%e6%9e%9c1-3-5-7-9"></a></h1><p>print range(30, 0, -2)</p>
-<h1 id="结果30-28-26-24-22-20-18-16-14-12-10-8-6-4-2">结果：[30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2]　　<a class="anchorjs-link" href="#%e7%bb%93%e6%9e%9c30-28-26-24-22-20-18-16-14-12-10-8-6-4-2"></a></h1><h3 id="练习题">练习题<a class="anchorjs-link" href="#%e7%bb%83%e4%b9%a0%e9%a2%98"></a></h3><p><strong>一、元素分类</strong></p>
+<h1 id="结果1-2-3-4-5-6-7-8-9">结果：[1, 2, 3, 4, 5, 6, 7, 8, 9]</h1>
+<p>print range(1, 10, 2)</p>
+<h1 id="结果1-3-5-7-9">结果：[1, 3, 5, 7, 9]</h1>
+<p>print range(30, 0, -2)</p>
+<h1 id="结果30-28-26-24-22-20-18-16-14-12-10-8-6-4-2">结果：[30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2]　　</h1>
+<h3 id="练习题">练习题</h3>
+<p><strong>一、元素分类</strong></p>
 <p>有如下值集合 [11,22,33,44,55,66,77,88,99,90&hellip;]，将所有大于 66 的值保存至字典的第一个key中，将小于 66 的值保存至第二个key的值中。<br>
 即： {&lsquo;k1&rsquo;: 大于66的所有值, &lsquo;k2&rsquo;: 小于66的所有值}</p>
 <p><strong>二、查找</strong></p>
@@ -1394,129 +1159,12 @@ print(k,v)</p>
 }</p>
 <p>}</p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/" data-toggle="tooltip" data-placement="top" title="Python开发【第五篇】：Python基础之杂货铺">
-              Previous<br>
-              <span>Python开发【第五篇】：Python基础之杂货铺</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" data-toggle="tooltip" data-placement="top" title="Python开发【第七篇】：面向对象">
-              Next<br>
-              <span>Python开发【第七篇】：面向对象</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>

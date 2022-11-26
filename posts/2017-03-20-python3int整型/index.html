@@ -1,50 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>python3 int（整型） // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>python3 int（整型） | 蔡振威的博客</title>
-
-  
-  <meta name="description" content="__abs__(返回绝对值)
-n = -5 print(n.__abs__()) #输出：5
-__add__(相加，运算符：&#43;)
-n = 3 print(n.__add__(5)) #输出：8
-__and__（按位与运算，运算符：&amp;）
-n = 5 print(n.__and__(7)) #输出：5 # 00000110 #与运算
-00000111 #等于 00000110__bool__
-#占位
-__ceil__（返回自身）
-n = 1234 print(n.__ceil__()) #输出：1234
-__divmod__(返回除数和余数)
-n = 13 print(n.__divmod__(5)) #输出：(2, 3)
-__eq__（判断两数是否相等，运算符：==）
-n = 5 print(n.__eq__(3)) #输出：False
-__float__（转换成浮点型）
-n = 5 print(n.__float__()) #输出：5.0
-__floordiv__（取整除，返回商的整数部分，运算符：//）
-n = 9 print(n.__floordiv__(4)) #输出：2
-__floor__
-#占位
-__format__
-#占位
-__getattribute__
-#占位
-__getnewargs__
-#占位
-__ge__(判断是否 &gt;=)
-n = 5 print(n.__ge__(3)) #输出：True">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python3 int（整型）"/>
 <meta name="twitter:description" content="__abs__(返回绝对值)
 n = -5 print(n.__abs__()) #输出：5
@@ -52,7 +19,7 @@ __add__(相加，运算符：&#43;)
 n = 3 print(n.__add__(5)) #输出：8
 __and__（按位与运算，运算符：&amp;）
 n = 5 print(n.__and__(7)) #输出：5 # 00000110 #与运算
-00000111 #等于 00000110__bool__
+00000111 #等于 00000110 __bool__
 #占位
 __ceil__（返回自身）
 n = 1234 print(n.__ceil__()) #输出：1234
@@ -73,16 +40,16 @@ __getattribute__
 __getnewargs__
 #占位
 __ge__(判断是否 &gt;=)
-n = 5 print(n.__ge__(3)) #输出：True"/>
+n = 5 print(n."/>
 
-  <meta property="og:title" content="python3 int（整型）" />
+    <meta property="og:title" content="python3 int（整型）" />
 <meta property="og:description" content="__abs__(返回绝对值)
 n = -5 print(n.__abs__()) #输出：5
 __add__(相加，运算符：&#43;)
 n = 3 print(n.__add__(5)) #输出：8
 __and__（按位与运算，运算符：&amp;）
 n = 5 print(n.__and__(7)) #输出：5 # 00000110 #与运算
-00000111 #等于 00000110__bool__
+00000111 #等于 00000110 __bool__
 #占位
 __ceil__（返回自身）
 n = 1234 print(n.__ceil__()) #输出：1234
@@ -103,7 +70,7 @@ __getattribute__
 __getnewargs__
 #占位
 __ge__(判断是否 &gt;=)
-n = 5 print(n.__ge__(3)) #输出：True" />
+n = 5 print(n." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://water711.github.io/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-03-20T00:00:00+00:00" />
@@ -111,188 +78,37 @@ n = 5 print(n.__ge__(3)) #输出：True" />
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>python3 int（整型）</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Mon, Mar 20, 2017
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">python3 int（整型）</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 20, 2017
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <p>__abs__(返回绝对值)</p>
+    </header>
+    <div class="post-content">
+      <p>__abs__(返回绝对值)</p>
 <p>n = -5
 print(n.__abs__()) #输出：5</p>
 <p>__add__(相加，运算符：+)</p>
@@ -301,7 +117,8 @@ print(n.__add__(5)) #输出：8</p>
 <p>__and__（按位与运算，运算符：&amp;）</p>
 <p>n = 5
 print(n.__and__(7)) #输出：5 # 00000110 #与运算</p>
-<h1 id="00000111-等于---00000110">00000111 #等于   00000110<a class="anchorjs-link" href="#00000111-%e7%ad%89%e4%ba%8e---00000110"></a></h1><p>__bool__</p>
+<h1 id="00000111-等于---00000110">00000111 #等于   00000110</h1>
+<p>__bool__</p>
 <p>#占位</p>
 <p>__ceil__（返回自身）</p>
 <p>n = 1234
@@ -366,7 +183,8 @@ print(n.__ne__(3)) #输出：True</p>
 <p>n = 3
 print(n.__or__(5)) #输出：7 # # 00000011 # #或 # # 00000110 # # 00000111</p>
 <p>__pos__</p>
-<h1 id="-self---不知道有啥意义">&quot;&quot;&quot; +self &quot;&quot;&quot;  （不知道有啥意义）<a class="anchorjs-link" href="#-self---%e4%b8%8d%e7%9f%a5%e9%81%93%e6%9c%89%e5%95%a5%e6%84%8f%e4%b9%89"></a></h1><p>__pow__(返回 xy [x的y次方] 的值)</p>
+<h1 id="-self---不知道有啥意义">&quot;&quot;&quot; +self &quot;&quot;&quot;  （不知道有啥意义）</h1>
+<p>__pow__(返回 xy [x的y次方] 的值)</p>
 <p>n = 2
 print(n.__pow__(3)) #输出：8</p>
 <p>__radd__(相加，运算符：+)</p>
@@ -431,129 +249,12 @@ print(n.__rpow__(2)) #输出：8</p>
 <p>to_bytes</p>
 <p>#占位</p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-toggle="tooltip" data-placement="top" title="python3 str（字符串）">
-              Previous<br>
-              <span>python3 str（字符串）</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2017-03-21-python3set%E9%9B%86%E5%90%88/" data-toggle="tooltip" data-placement="top" title="python3 set（集合）">
-              Next<br>
-              <span>python3 set（集合）</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>

@@ -1,39 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式 // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式 | 蔡振威的博客</title>
-
-  
-  <meta name="description" content=".vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。
-在已经开启了hyper-v的电脑上进行镜像转换：1、以管理员权限打开powershell
-Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径
-例如： Convert-VHD -Path c:\Ubuntu.vhdx -DestinationPath d:\Ubuntu_vhd.vhd
-PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。
-2、转换完成后，用VirtualBox新建虚拟机（不创建硬盘），并加载转换后的硬盘镜像，启动">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式"/>
 <meta name="twitter:description" content=".vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。
-在已经开启了hyper-v的电脑上进行镜像转换：1、以管理员权限打开powershell
+在已经开启了hyper-v的电脑上进行镜像转换： 1、以管理员权限打开powershell
 Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径
 例如： Convert-VHD -Path c:\Ubuntu.vhdx -DestinationPath d:\Ubuntu_vhd.vhd
 PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。
 2、转换完成后，用VirtualBox新建虚拟机（不创建硬盘），并加载转换后的硬盘镜像，启动"/>
 
-  <meta property="og:title" content="Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式" />
+    <meta property="og:title" content="Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式" />
 <meta property="og:description" content=".vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。
-在已经开启了hyper-v的电脑上进行镜像转换：1、以管理员权限打开powershell
+在已经开启了hyper-v的电脑上进行镜像转换： 1、以管理员权限打开powershell
 Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径
 例如： Convert-VHD -Path c:\Ubuntu.vhdx -DestinationPath d:\Ubuntu_vhd.vhd
 PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。
@@ -45,191 +34,41 @@ PS：注意两个路径都要带后缀，文件名中如果存在空格则需要
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Sat, Mar 20, 2021
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 20, 2021
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <p> </p>
+    </header>
+    <div class="post-content">
+      <p> </p>
 <p>.vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。</p>
 <p> </p>
-<h2 id="在已经开启了hyper-v的电脑上进行镜像转换">在已经开启了hyper-v的电脑上进行镜像转换：<a class="anchorjs-link" href="#%e5%9c%a8%e5%b7%b2%e7%bb%8f%e5%bc%80%e5%90%af%e4%ba%86hyper-v%e7%9a%84%e7%94%b5%e8%84%91%e4%b8%8a%e8%bf%9b%e8%a1%8c%e9%95%9c%e5%83%8f%e8%bd%ac%e6%8d%a2"></a></h2><p><strong>1、以管理员权限打开powershell</strong></p>
+<h2 id="在已经开启了hyper-v的电脑上进行镜像转换">在已经开启了hyper-v的电脑上进行镜像转换：</h2>
+<p><strong>1、以管理员权限打开powershell</strong></p>
 <p>Convert-VHD –Path hyper镜像路径 –DestinationPath  转换成镜像路径</p>
 <p>例如：
 Convert-VHD -Path c:\Ubuntu.vhdx -DestinationPath d:\Ubuntu_vhd.vhd</p>
@@ -237,129 +76,12 @@ Convert-VHD -Path c:\Ubuntu.vhdx -DestinationPath d:\Ubuntu_vhd.vhd</p>
 <p> </p>
 <p><strong>2、转换完成后，用VirtualBox新建虚拟机（不创建硬盘），并加载转换后的硬盘镜像，启动</strong></p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/" data-toggle="tooltip" data-placement="top" title="Linux安装使用clash网络代理工具">
-              Previous<br>
-              <span>Linux安装使用clash网络代理工具</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="crond任务没有正常执行的排查方法">
-              Next<br>
-              <span>crond任务没有正常执行的排查方法</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>

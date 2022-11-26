@@ -1,43 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Python开发【第四篇】：Python基础之函数 // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>Python开发【第四篇】：Python基础之函数 | 蔡振威的博客</title>
-
-  
-  <meta name="description" content="三元运算三元运算（三目运算），是对简单的条件语句的缩写。
-# 书写格式
-result = 值1 if 条件 else 值2
-如果条件成立，那么将 “值1” 赋值给result变量，否则，将“值2”赋值给result变量基本数据类型补充set
-set集合，是一个无序且不重复的元素集合
-class set(object): &quot;&quot;&quot; set() -&gt; new empty set object set(iterable) -&gt; new set object
-Build an unordered collection of unique elements. &quot;&quot;&quot; def add(self, \*args, \*\*kwargs): # real signature unknown &quot;&quot;&quot; Add an element to a set，添加元素 This has no effect if the element is already present. &quot;&quot;&quot; pass def clear(self, \*args, \*\*kwargs): # real signature unknown &quot;&quot;&quot; Remove all elements from this set.">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python开发【第四篇】：Python基础之函数"/>
-<meta name="twitter:description" content="三元运算三元运算（三目运算），是对简单的条件语句的缩写。
+<meta name="twitter:description" content="三元运算 三元运算（三目运算），是对简单的条件语句的缩写。
 # 书写格式
 result = 值1 if 条件 else 值2
-如果条件成立，那么将 “值1” 赋值给result变量，否则，将“值2”赋值给result变量基本数据类型补充set
+如果条件成立，那么将 “值1” 赋值给result变量，否则，将“值2”赋值给result变量 基本数据类型补充 set
 set集合，是一个无序且不重复的元素集合
 class set(object): &quot;&quot;&quot; set() -&gt; new empty set object set(iterable) -&gt; new set object
 Build an unordered collection of unique elements. &quot;&quot;&quot; def add(self, \*args, \*\*kwargs): # real signature unknown &quot;&quot;&quot; Add an element to a set，添加元素 This has no effect if the element is already present. &quot;&quot;&quot; pass def clear(self, \*args, \*\*kwargs): # real signature unknown &quot;&quot;&quot; Remove all elements from this set."/>
 
-  <meta property="og:title" content="Python开发【第四篇】：Python基础之函数" />
-<meta property="og:description" content="三元运算三元运算（三目运算），是对简单的条件语句的缩写。
+    <meta property="og:title" content="Python开发【第四篇】：Python基础之函数" />
+<meta property="og:description" content="三元运算 三元运算（三目运算），是对简单的条件语句的缩写。
 # 书写格式
 result = 值1 if 条件 else 值2
-如果条件成立，那么将 “值1” 赋值给result变量，否则，将“值2”赋值给result变量基本数据类型补充set
+如果条件成立，那么将 “值1” 赋值给result变量，否则，将“值2”赋值给result变量 基本数据类型补充 set
 set集合，是一个无序且不重复的元素集合
 class set(object): &quot;&quot;&quot; set() -&gt; new empty set object set(iterable) -&gt; new set object
 Build an unordered collection of unique elements. &quot;&quot;&quot; def add(self, \*args, \*\*kwargs): # real signature unknown &quot;&quot;&quot; Add an element to a set，添加元素 This has no effect if the element is already present. &quot;&quot;&quot; pass def clear(self, \*args, \*\*kwargs): # real signature unknown &quot;&quot;&quot; Remove all elements from this set." />
@@ -48,191 +36,43 @@ Build an unordered collection of unique elements. &quot;&quot;&quot; def add(sel
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>Python开发【第四篇】：Python基础之函数</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Tue, Apr 11, 2017
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Python开发【第四篇】：Python基础之函数</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 11, 2017
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          11 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <h3 id="三元运算">三元运算<a class="anchorjs-link" href="#%e4%b8%89%e5%85%83%e8%bf%90%e7%ae%97"></a></h3><p>三元运算（三目运算），是对简单的条件语句的缩写。</p>
+    </header>
+    <div class="post-content">
+      <h3 id="三元运算">三元运算</h3>
+<p>三元运算（三目运算），是对简单的条件语句的缩写。</p>
 <p># 书写格式</p>
 <p>result = 值1 if 条件 else 值2</p>
-<h1 id="如果条件成立那么将-值1-赋值给result变量否则将值2赋值给result变量">如果条件成立，那么将 “值1” 赋值给result变量，否则，将“值2”赋值给result变量<a class="anchorjs-link" href="#%e5%a6%82%e6%9e%9c%e6%9d%a1%e4%bb%b6%e6%88%90%e7%ab%8b%e9%82%a3%e4%b9%88%e5%b0%86-%e5%80%bc1-%e8%b5%8b%e5%80%bc%e7%bb%99result%e5%8f%98%e9%87%8f%e5%90%a6%e5%88%99%e5%b0%86%e5%80%bc2%e8%b5%8b%e5%80%bc%e7%bb%99result%e5%8f%98%e9%87%8f"></a></h1><h3 id="基本数据类型补充">基本数据类型补充<a class="anchorjs-link" href="#%e5%9f%ba%e6%9c%ac%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e8%a1%a5%e5%85%85"></a></h3><p><strong>set</strong></p>
+<h1 id="如果条件成立那么将-值1-赋值给result变量否则将值2赋值给result变量">如果条件成立，那么将 “值1” 赋值给result变量，否则，将“值2”赋值给result变量</h1>
+<h3 id="基本数据类型补充">基本数据类型补充</h3>
+<p><strong>set</strong></p>
 <p>set集合，是一个无序且不重复的元素集合</p>
 <p>class set(object):
 &quot;&quot;&quot;
@@ -346,64 +186,52 @@ old_dict = {
 &ldquo;#2&rdquo;:{ &lsquo;hostname&rsquo;:c1, &lsquo;cpu_count&rsquo;: 2, &lsquo;mem_capicity&rsquo;: 80 }
 &ldquo;#3&rdquo;:{ &lsquo;hostname&rsquo;:c1, &lsquo;cpu_count&rsquo;: 2, &lsquo;mem_capicity&rsquo;: 80 }
 }</p>
-<h1 id="cmdb-新汇报的数据">cmdb 新汇报的数据<a class="anchorjs-link" href="#cmdb-%e6%96%b0%e6%b1%87%e6%8a%a5%e7%9a%84%e6%95%b0%e6%8d%ae"></a></h1><p>new_dict = {
+<h1 id="cmdb-新汇报的数据">cmdb 新汇报的数据</h1>
+<p>new_dict = {
 &ldquo;#1&rdquo;:{ &lsquo;hostname&rsquo;:c1, &lsquo;cpu_count&rsquo;: 2, &lsquo;mem_capicity&rsquo;: 800 },
 &ldquo;#3&rdquo;:{ &lsquo;hostname&rsquo;:c1, &lsquo;cpu_count&rsquo;: 2, &lsquo;mem_capicity&rsquo;: 80 }
 &ldquo;#4&rdquo;:{ &lsquo;hostname&rsquo;:c2, &lsquo;cpu_count&rsquo;: 2, &lsquo;mem_capicity&rsquo;: 80 }
 }</p>
 <p><code>需要删除：？   ``需要新建：？   ``需要更新：？   注意：无需考虑内部元素是否改变，只要原来存在，新汇报也存在，就是需要更新</code></p>
-<h3 id="深浅拷贝">深浅拷贝<a class="anchorjs-link" href="#%e6%b7%b1%e6%b5%85%e6%8b%b7%e8%b4%9d"></a></h3><p><strong>一、数字和字符串</strong></p>
+<h3 id="深浅拷贝">深浅拷贝</h3>
+<p><strong>一、数字和字符串</strong></p>
 <p>对于 数字 和 字符串 而言，赋值、浅拷贝和深拷贝无意义，因为其永远指向同一个内存地址。</p>
 <p>import copy</p>
-<h1 id="-数字字符串">######### 数字、字符串<a class="anchorjs-link" href="#-%e6%95%b0%e5%ad%97%e5%ad%97%e7%ac%a6%e4%b8%b2"></a></h1><p>n1 = 123</p>
-<h1 id="n1--i-am-alex-age-10">n1 = &ldquo;i am alex age 10&rdquo;<a class="anchorjs-link" href="#n1--i-am-alex-age-10"></a></h1><p>print(id(n1))</p>
-<h1 id="-赋值">## 赋值<a class="anchorjs-link" href="#-%e8%b5%8b%e5%80%bc"></a></h1><p>n2 = n1
+<h1 id="-数字字符串">######### 数字、字符串</h1>
+<p>n1 = 123</p>
+<h1 id="n1--i-am-alex-age-10">n1 = &ldquo;i am alex age 10&rdquo;</h1>
+<p>print(id(n1))</p>
+<h1 id="-赋值">## 赋值</h1>
+<p>n2 = n1
 print(id(n2))</p>
-<h1 id="-浅拷贝">## 浅拷贝<a class="anchorjs-link" href="#-%e6%b5%85%e6%8b%b7%e8%b4%9d"></a></h1><p>n2 = copy.copy(n1)
+<h1 id="-浅拷贝">## 浅拷贝</h1>
+<p>n2 = copy.copy(n1)
 print(id(n2))</p>
-<h1 id="-深拷贝">## 深拷贝<a class="anchorjs-link" href="#-%e6%b7%b1%e6%8b%b7%e8%b4%9d"></a></h1><p>n3 = copy.deepcopy(n1)
+<h1 id="-深拷贝">## 深拷贝</h1>
+<p>n3 = copy.deepcopy(n1)
 print(id(n3))</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20160115223330382-1298317428.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//425762-20160115223330382-1298317428.png" alt=""></p>
 <p><strong>二、其他基本数据类型</strong></p>
 <p>对于字典、元祖、列表 而言，进行赋值、浅拷贝和深拷贝时，其内存地址的变化是不同的。</p>
 <p>1、赋值</p>
 <p><strong>赋值</strong>，只是创建一个变量，该变量指向原来内存地址，如：</p>
 <p>n1 = {&ldquo;k1&rdquo;: &ldquo;wu&rdquo;, &ldquo;k2&rdquo;: 123, &ldquo;k3&rdquo;: [&ldquo;alex&rdquo;, 456]}</p>
 <p>n2 = n1</p>
-<p>　　<figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20160115225752366-1852942198.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p>　　<img src="http://hugo.caizhenwei.top//425762-20160115225752366-1852942198.png" alt=""></p>
 <p>2、浅拷贝</p>
 <p><strong>浅拷贝</strong>，在内存中只额外创建第一层数据</p>
 <p>import copy</p>
 <p>n1 = {&ldquo;k1&rdquo;: &ldquo;wu&rdquo;, &ldquo;k2&rdquo;: 123, &ldquo;k3&rdquo;: [&ldquo;alex&rdquo;, 456]}</p>
 <p>n3 = copy.copy(n1)</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20160115230038772-549220231.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//425762-20160115230038772-549220231.png" alt=""></p>
 <p>3、深拷贝</p>
 <p><strong>深拷贝</strong>，在内存中将所有的数据重新创建一份（排除最后一层，即：python内部对字符串和数字的优化）</p>
 <p>import copy</p>
 <p>n1 = {&ldquo;k1&rdquo;: &ldquo;wu&rdquo;, &ldquo;k2&rdquo;: 123, &ldquo;k3&rdquo;: [&ldquo;alex&rdquo;, 456]}</p>
 <p>n4 = copy.deepcopy(n1)</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20160115230309272-1357770402.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<h3 id="函数">函数<a class="anchorjs-link" href="#%e5%87%bd%e6%95%b0"></a></h3><p><strong>一、背景</strong></p>
+<p><img src="http://hugo.caizhenwei.top//425762-20160115230309272-1357770402.png" alt=""></p>
+<h3 id="函数">函数</h3>
+<p><strong>一、背景</strong></p>
 <p>在学习函数之前，一直遵循：面向过程编程，即：根据业务逻辑从上到下实现功能，其往往用一长段代码来实现指定功能，开发过程中最常见的操作就是粘贴复制，也就是将之前实现的代码块复制到现需功能处，如下：</p>
 <p>while True：
 if cpu利用率 &gt; 90%:
@@ -480,17 +308,7 @@ if result == False:
 </code></pre>
 <p><strong>2、参数</strong></p>
 <p>为什么要有参数？</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>def CPU报警邮件() #发送邮件提醒
 连接邮箱服务器
 发送邮件
@@ -505,17 +323,7 @@ CPU报警邮件（） if 硬盘使用空间 &gt; 90%:
 硬盘报警邮件（） if 内存占用 &gt; 80%:
 内存报警邮件（）</p>
 <p>无参数实现</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>def 发送邮件(邮件内容) #发送邮件提醒
 连接邮箱服务器
 发送邮件
@@ -530,109 +338,48 @@ CPU报警邮件（） if 硬盘使用空间 &gt; 90%:
 <li>默认参数</li>
 <li>动态参数</li>
 </ul>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<h1 id="-定义函数">######### 定义函数<a class="anchorjs-link" href="#-%e5%ae%9a%e4%b9%89%e5%87%bd%e6%95%b0"></a></h1><h1 id="name-叫做函数func的形式参数简称形参">name 叫做函数func的形式参数，简称：形参<a class="anchorjs-link" href="#name-%e5%8f%ab%e5%81%9a%e5%87%bd%e6%95%b0func%e7%9a%84%e5%bd%a2%e5%bc%8f%e5%8f%82%e6%95%b0%e7%ae%80%e7%a7%b0%e5%bd%a2%e5%8f%82"></a></h1><p>def func(name): print name # ######### 执行函数 #########</p>
-<h1 id="wupeiqi-叫做函数func的实际参数简称实参">&lsquo;wupeiqi&rsquo; 叫做函数func的实际参数，简称：实参<a class="anchorjs-link" href="#wupeiqi-%e5%8f%ab%e5%81%9a%e5%87%bd%e6%95%b0func%e7%9a%84%e5%ae%9e%e9%99%85%e5%8f%82%e6%95%b0%e7%ae%80%e7%a7%b0%e5%ae%9e%e5%8f%82"></a></h1><p>func(&lsquo;wupeiqi&rsquo;)</p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
+<h1 id="-定义函数">######### 定义函数</h1>
+<h1 id="name-叫做函数func的形式参数简称形参">name 叫做函数func的形式参数，简称：形参</h1>
+<p>def func(name): print name # ######### 执行函数 #########</p>
+<h1 id="wupeiqi-叫做函数func的实际参数简称实参">&lsquo;wupeiqi&rsquo; 叫做函数func的实际参数，简称：实参</h1>
+<p>func(&lsquo;wupeiqi&rsquo;)</p>
 <p>普通参数</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>def func(name, age = 18): print &ldquo;%s:%s&rdquo; %(name,age) # 指定参数
 func(&lsquo;wupeiqi&rsquo;, 19) # 使用默认参数
 func(&lsquo;alex&rsquo;)</p>
 <p>注：默认参数需要放在参数列表最后</p>
 <p>默认参数</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>def func(*args): print args # 执行方式一
 func(11,33,4,4454,5) # 执行方式二
 li = [11,2,2,3,3,4,54]
 func(*li)</p>
 <p>动态参数</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>def func(**kwargs): print args # 执行方式一
 func(name＝&rsquo;wupeiqi&rsquo;,age=18) # 执行方式二
 li = {&rsquo;name&rsquo;:&lsquo;wupeiqi&rsquo;, age:18, &lsquo;gender&rsquo;:&lsquo;male&rsquo;}
 func(**li)</p>
 <p>动态参数</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>def func(*args, **kwargs): print args print kwargs</p>
 <p>动态参数</p>
 <p>扩展：发送邮件实例</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import smtplib from email.mime.text import MIMEText from email.utils import formataddr</p>
 <p>msg = MIMEText(&lsquo;邮件内容&rsquo;, &lsquo;plain&rsquo;, &lsquo;utf-8&rsquo;)
-msg[&lsquo;From&rsquo;] = formataddr([&ldquo;武沛齐&rdquo;,&lsquo;<a href="/mailto:wptawy@126.com">wptawy@126.com</a>&rsquo;])
-msg[&lsquo;To&rsquo;] = formataddr([&ldquo;走人&rdquo;,&lsquo;<a href="/mailto:424662508@qq.com">424662508@qq.com</a>&rsquo;])
+msg[&lsquo;From&rsquo;] = formataddr([&ldquo;武沛齐&rdquo;,&lsquo;<a href="mailto:wptawy@126.com">wptawy@126.com</a>&rsquo;])
+msg[&lsquo;To&rsquo;] = formataddr([&ldquo;走人&rdquo;,&lsquo;<a href="mailto:424662508@qq.com">424662508@qq.com</a>&rsquo;])
 msg[&lsquo;Subject&rsquo;] = &ldquo;主题&rdquo; server = smtplib.SMTP(&ldquo;smtp.126.com&rdquo;, 25)
-server.login(&ldquo;<a href="/mailto:wptawy@126.com">wptawy@126.com</a>&rdquo;, &ldquo;邮箱密码&rdquo;)
-server.sendmail(&lsquo;<a href="/mailto:wptawy@126.com">wptawy@126.com</a>&rsquo;, [&lsquo;<a href="/mailto:424662508@qq.com">424662508@qq.com</a>&rsquo;,], msg.as_string())
+server.login(&ldquo;<a href="mailto:wptawy@126.com">wptawy@126.com</a>&rdquo;, &ldquo;邮箱密码&rdquo;)
+server.sendmail(&lsquo;<a href="mailto:wptawy@126.com">wptawy@126.com</a>&rsquo;, [&lsquo;<a href="mailto:424662508@qq.com">424662508@qq.com</a>&rsquo;,], msg.as_string())
 server.quit()</p>
 <p>发送邮件实例</p>
-<h3 id="内置函数">内置函数<a class="anchorjs-link" href="#%e5%86%85%e7%bd%ae%e5%87%bd%e6%95%b0"></a></h3><p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20160115210339553-378378117.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure>　　</p>
-<p>注：查看详细<a href="https://docs.python.org/3/library/functions.html#next" target="_blank">猛击这里</a></p>
+<h3 id="内置函数">内置函数</h3>
+<p><img src="http://hugo.caizhenwei.top//425762-20160115210339553-378378117.png" alt="">　　</p>
+<p>注：查看详细<a href="https://docs.python.org/3/library/functions.html#next">猛击这里</a></p>
 <p><strong>open函数</strong>，该函数用于文件处理</p>
 <p>操作文件时，一般需要经历如下步骤：</p>
 <ul>
@@ -665,17 +412,7 @@ server.quit()</p>
 </ul>
 <p> 注：以b方式打开时，读取到的内容是字节类型，写入时也需要提供字节类型</p>
 <p>二、操作</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>class file(object) def close(self): # real signature unknown; restored from __doc__
 关闭文件 &quot;&rdquo;&quot; close() -&gt; None or (perhaps) an integer.  Close the file.</p>
 <pre><code>    Sets data attribute .closed to True.  A closed file cannot be used for
@@ -768,17 +505,7 @@ def xreadlines(self): # real signature unknown; restored from \_\_doc\_\_
     pass
 </code></pre>
 <p>2.x</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>class TextIOWrapper(_TextIOBase): &quot;&quot;&quot; Character and line based layer over a BufferedIOBase object, buffer.</p>
 <pre><code>encoding gives the name of the encoding that the stream will be
 decoded or encoded with. It defaults to locale.getpreferredencoding(False).
@@ -880,21 +607,29 @@ _finalizing = property(lambda self: object(), lambda self, v: None, lambda self:
 <p>在Python 2.7 及以后，with又支持同时对多个文件的上下文进行管理，即：</p>
 <p>with open(&rsquo;log1&rsquo;) as obj1, open(&rsquo;log2&rsquo;) as obj2:
 pass</p>
-<h3 id="lambda表达式">lambda表达式<a class="anchorjs-link" href="#lambda%e8%a1%a8%e8%be%be%e5%bc%8f"></a></h3><p>学习条件运算时，对于简单的 if else 语句，可以使用三元运算来表示，即：</p>
+<h3 id="lambda表达式">lambda表达式</h3>
+<p>学习条件运算时，对于简单的 if else 语句，可以使用三元运算来表示，即：</p>
 <p># 普通条件语句
 if 1 == 1:
 name = &lsquo;wupeiqi&rsquo;
 else:
 name = &lsquo;alex&rsquo;</p>
-<h1 id="三元运算-1">三元运算<a class="anchorjs-link" href="#%e4%b8%89%e5%85%83%e8%bf%90%e7%ae%97-1"></a></h1><p>name = &lsquo;wupeiqi&rsquo; if 1 == 1 else &lsquo;alex&rsquo;</p>
+<h1 id="三元运算-1">三元运算</h1>
+<p>name = &lsquo;wupeiqi&rsquo; if 1 == 1 else &lsquo;alex&rsquo;</p>
 <p>对于简单的函数，也存在一种简便的表示方式，即：lambda表达式</p>
 <p># ###################### 普通函数 ######################</p>
-<h1 id="定义函数普通方式">定义函数（普通方式）<a class="anchorjs-link" href="#%e5%ae%9a%e4%b9%89%e5%87%bd%e6%95%b0%e6%99%ae%e9%80%9a%e6%96%b9%e5%bc%8f"></a></h1><p>def func(arg):
+<h1 id="定义函数普通方式">定义函数（普通方式）</h1>
+<p>def func(arg):
 return arg + 1</p>
-<h1 id="执行函数">执行函数<a class="anchorjs-link" href="#%e6%89%a7%e8%a1%8c%e5%87%bd%e6%95%b0"></a></h1><p>result = func(123)</p>
-<h1 id="-lambda">###################### lambda<a class="anchorjs-link" href="#-lambda"></a></h1><h1 id="定义函数lambda表达式">定义函数（lambda表达式）<a class="anchorjs-link" href="#%e5%ae%9a%e4%b9%89%e5%87%bd%e6%95%b0lambda%e8%a1%a8%e8%be%be%e5%bc%8f"></a></h1><p>my_lambda = lambda arg : arg + 1</p>
-<h1 id="执行函数-1">执行函数<a class="anchorjs-link" href="#%e6%89%a7%e8%a1%8c%e5%87%bd%e6%95%b0-1"></a></h1><p>result = my_lambda(123)</p>
-<h3 id="递归">递归<a class="anchorjs-link" href="#%e9%80%92%e5%bd%92"></a></h3><p>利用函数编写如下数列：</p>
+<h1 id="执行函数">执行函数</h1>
+<p>result = func(123)</p>
+<h1 id="-lambda">###################### lambda</h1>
+<h1 id="定义函数lambda表达式">定义函数（lambda表达式）</h1>
+<p>my_lambda = lambda arg : arg + 1</p>
+<h1 id="执行函数-1">执行函数</h1>
+<p>result = my_lambda(123)</p>
+<h3 id="递归">递归</h3>
+<p>利用函数编写如下数列：</p>
 <p>斐波那契数列指的是这样一个数列 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233，377，610，987，1597，2584，4181，6765，10946，17711，28657，46368&hellip;</p>
 <p>def func(arg1,arg2):
 if arg1 == 0:
@@ -903,7 +638,8 @@ arg3 = arg1 + arg2
 print arg3
 func(arg2, arg3)</p>
 <p>func(0,1)</p>
-<h3 id="练习题">练习题<a class="anchorjs-link" href="#%e7%bb%83%e4%b9%a0%e9%a2%98"></a></h3><p>1、简述普通参数、指定参数、默认参数、动态参数的区别</p>
+<h3 id="练习题">练习题</h3>
+<p>1、简述普通参数、指定参数、默认参数、动态参数的区别</p>
 <p>2、写函数，计算传入字符串中【数字】、【字母】、【空格] 以及 【其他】的个数</p>
 <p>3、写函数，判断用户传入的对象（字符串、列表、元组）长度是否大于5。</p>
 <p>4、写函数，检查用户传入的对象（字符串、列表、元组）的每一个元素是否含有空内容。</p>
@@ -914,129 +650,12 @@ func(arg2, arg3)</p>
 <p>PS:字典中的value只能是字符串或列表</p>
 <p>8、写函数，利用递归获取斐波那契数列中的第 10 个数，并将该值返回给调用者。</p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/" data-toggle="tooltip" data-placement="top" title="Python开发【第六篇】：模块">
-              Previous<br>
-              <span>Python开发【第六篇】：模块</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" data-toggle="tooltip" data-placement="top" title="Python开发【第八篇】：网络编程">
-              Next<br>
-              <span>Python开发【第八篇】：网络编程</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>

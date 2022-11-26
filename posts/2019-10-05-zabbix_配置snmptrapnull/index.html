@@ -1,39 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Zabbix_配置snmptrap监控交换机 // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>Zabbix_配置snmptrap监控交换机 | 蔡振威的博客</title>
-
-  
-  <meta name="description" content="一、安装配置snmptrapd[root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
-[root@zabbix1 ~]# systemctl start snmptrapd [root@zabbix1 ~]# systemctl enable snmptrapd
-#防火墙开放snmp trap端口 [root@zabbix1 ~]# firewall-cmd &ndash;permanent &ndash;add-port=162/udp [root@zabbix1 ~]# firewall-cmd &ndash;reload
-#测试 设备打开snmptrap，设置接收主机IP和团体名,手动触发告警,查看是否接收到告警信息 [root@zabbix1 ~]# tail -F /var/log/messages
-二、更改snmptrapd日志路径snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放
--L：日志选项。支持的输出方式有标准错误（e），标准输出（o），文件（f），syslog（s）。
--Ls：输出到系统日志文件
--Lf：输出到指定文件
-#新建日志文件存放目录 [root@zabbix1 ~]# mkdir /var/log/snmptrap/
-#修改systemd服务文件 [root@zabbix1 ~]# vim /usr/lib/systemd/system/snmptrapd.service
-[Service] Type=notify #Environment=OPTIONS=&quot;-Lsd&quot; #注释该行 EnvironmentFile=-/etc/sysconfig/snmptrapd #ExecStart=/usr/sbin/snmptrapd $OPTIONS -f">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Zabbix_配置snmptrap监控交换机"/>
-<meta name="twitter:description" content="一、安装配置snmptrapd[root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
+<meta name="twitter:description" content="一、安装配置snmptrapd [root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
 [root@zabbix1 ~]# systemctl start snmptrapd [root@zabbix1 ~]# systemctl enable snmptrapd
 #防火墙开放snmp trap端口 [root@zabbix1 ~]# firewall-cmd &ndash;permanent &ndash;add-port=162/udp [root@zabbix1 ~]# firewall-cmd &ndash;reload
 #测试 设备打开snmptrap，设置接收主机IP和团体名,手动触发告警,查看是否接收到告警信息 [root@zabbix1 ~]# tail -F /var/log/messages
-二、更改snmptrapd日志路径snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放
+二、更改snmptrapd日志路径 snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放
 -L：日志选项。支持的输出方式有标准错误（e），标准输出（o），文件（f），syslog（s）。
 -Ls：输出到系统日志文件
 -Lf：输出到指定文件
@@ -41,12 +25,12 @@
 #修改systemd服务文件 [root@zabbix1 ~]# vim /usr/lib/systemd/system/snmptrapd.service
 [Service] Type=notify #Environment=OPTIONS=&quot;-Lsd&quot; #注释该行 EnvironmentFile=-/etc/sysconfig/snmptrapd #ExecStart=/usr/sbin/snmptrapd $OPTIONS -f"/>
 
-  <meta property="og:title" content="Zabbix_配置snmptrap监控交换机" />
-<meta property="og:description" content="一、安装配置snmptrapd[root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
+    <meta property="og:title" content="Zabbix_配置snmptrap监控交换机" />
+<meta property="og:description" content="一、安装配置snmptrapd [root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
 [root@zabbix1 ~]# systemctl start snmptrapd [root@zabbix1 ~]# systemctl enable snmptrapd
 #防火墙开放snmp trap端口 [root@zabbix1 ~]# firewall-cmd &ndash;permanent &ndash;add-port=162/udp [root@zabbix1 ~]# firewall-cmd &ndash;reload
 #测试 设备打开snmptrap，设置接收主机IP和团体名,手动触发告警,查看是否接收到告警信息 [root@zabbix1 ~]# tail -F /var/log/messages
-二、更改snmptrapd日志路径snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放
+二、更改snmptrapd日志路径 snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放
 -L：日志选项。支持的输出方式有标准错误（e），标准输出（o），文件（f），syslog（s）。
 -Ls：输出到系统日志文件
 -Lf：输出到指定文件
@@ -60,188 +44,38 @@
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>Zabbix_配置snmptrap监控交换机</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Sat, Oct 5, 2019
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Zabbix_配置snmptrap监控交换机</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Oct 5, 2019
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <h2 id="一安装配置snmptrapd">一、安装配置snmptrapd<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aesnmptrapd"></a></h2><p>[root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl
+    </header>
+    <div class="post-content">
+      <h2 id="一安装配置snmptrapd">一、安装配置snmptrapd</h2>
+<p>[root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl
 [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf
 authCommunity   log,execute,net public    #设置团体名
 traphandle default /usr/sbin/snmptthandler  #设置snmptt为trap接收器，此时还没安装snmptt</p>
@@ -254,7 +88,8 @@ traphandle default /usr/sbin/snmptthandler  #设置snmptt为trap接收器，此�
 设备打开snmptrap，设置接收主机IP和团体名,手动触发告警,查看是否接收到告警信息
 [root@zabbix1 ~]# tail -F /var/log/messages</p>
 <p> </p>
-<h2 id="二更改snmptrapd日志路径">二、更改snmptrapd日志路径<a class="anchorjs-link" href="#%e4%ba%8c%e6%9b%b4%e6%94%b9snmptrapd%e6%97%a5%e5%bf%97%e8%b7%af%e5%be%84"></a></h2><p>snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放</p>
+<h2 id="二更改snmptrapd日志路径">二、更改snmptrapd日志路径</h2>
+<p>snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放</p>
 <p>-L：日志选项。支持的输出方式有标准错误（e），标准输出（o），文件（f），syslog（s）。</p>
 <p>-Ls：输出到系统日志文件</p>
 <p>-Lf：输出到指定文件</p>
@@ -273,7 +108,8 @@ ExecReload=/bin/kill -HUP $MAINPID</p>
 <p>[root@zabbix1 ~]# systemctl daemon-reload   #修改systemd文件后，要重新加载
 [root@zabbix1 ~]# systemctl restart snmptrapd.service</p>
 <p> </p>
-<h2 id="三安装配置snmptt">三、安装配置snmptt<a class="anchorjs-link" href="#%e4%b8%89%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aesnmptt"></a></h2><p>[root@zabbix1 ~]# yum -y install epel-release
+<h2 id="三安装配置snmptt">三、安装配置snmptt</h2>
+<p>[root@zabbix1 ~]# yum -y install epel-release
 [root@zabbix1 ~]# yum -y install perl-Sys-Syslog snmptt  //snmptt需要Perl Syslog module支持</p>
 <p>[root@zabbix1 ~]# vim /etc/snmp/snmptt.ini
 date_time_format=  %Y/%m/%d %H:%M:%S
@@ -293,180 +129,35 @@ FORMAT ZBXTRAP $aA $1</p>
 <p>[root@zabbix1 ~]# systemctl restart snmptt
 [root@zabbix1 ~]# tail -F /var/log/snmptt/snmptt.log</p>
 <p> </p>
-<h2 id="四zabbix上配置snmp监控">四、Zabbix上配置SNMP监控<a class="anchorjs-link" href="#%e5%9b%9bzabbix%e4%b8%8a%e9%85%8d%e7%bd%aesnmp%e7%9b%91%e6%8e%a7"></a></h2><p>[root@zabbix1 ~]# vim /etc/zabbix/zabbix_server.conf
+<h2 id="四zabbix上配置snmp监控">四、Zabbix上配置SNMP监控</h2>
+<p>[root@zabbix1 ~]# vim /etc/zabbix/zabbix_server.conf
 StartSNMPTrapper=1   #Zabbix开启SNMPTrapper
 SNMPTrapperFile=/var/log/snmptt/snmptt.log  #修改SNMPTrapper文件路径</p>
 <p>[root@zabbix1 ~]# systemctl restart zabbix-server</p>
 <p> </p>
 <p><strong>添加一台主机</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/8e23aea671c9a621513d852b100ff4d3.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/8e23aea671c9a621513d852b100ff4d3.png" alt=""></p>
 <p> </p>
 <p><strong>添加一个ITEM，匹配包含关键字“LinkDown”的SNMP trap日志信息（Key格式为SNMPTrap[regexp]）</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/a287b04ed54dd7be0856667e3f57300a.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/a287b04ed54dd7be0856667e3f57300a.png" alt=""></p>
 <p> </p>
 <p><strong>添加另一个ITEM，所有未被SNMPTrap[regexp]匹配到的，都匹配到该ITEM</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/73991a1be5c40bc7e19ce32306eb420f.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/73991a1be5c40bc7e19ce32306eb420f.png" alt=""></p>
 <p> </p>
-<h2 id="五使用zabbix自带模板监控华为交换机">五、使用Zabbix自带模板，监控华为交换机<a class="anchorjs-link" href="#%e4%ba%94%e4%bd%bf%e7%94%a8zabbix%e8%87%aa%e5%b8%a6%e6%a8%a1%e6%9d%bf%e7%9b%91%e6%8e%a7%e5%8d%8e%e4%b8%ba%e4%ba%a4%e6%8d%a2%e6%9c%ba"></a></h2><p><strong>新建主机，并设置主机SNMP团体名（添加一个宏，{$SNMP_COMMUNITY} -&gt; public）</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/8cad06df68a84ba995f5703e2c9524bf.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<h2 id="五使用zabbix自带模板监控华为交换机">五、使用Zabbix自带模板，监控华为交换机</h2>
+<p><strong>新建主机，并设置主机SNMP团体名（添加一个宏，{$SNMP_COMMUNITY} -&gt; public）</strong></p>
+<p><img src="images/8cad06df68a84ba995f5703e2c9524bf.png" alt=""></p>
 <p><strong>为主机添加一个模板</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/9fbb38cf1b9bdf175860b8f57f8f535c.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/9fbb38cf1b9bdf175860b8f57f8f535c.png" alt=""></p>
 <p><strong>添加模板后自动生成相关ITEM</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/927b1437f73700a9c1cc716e5db11f3a.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/927b1437f73700a9c1cc716e5db11f3a.png" alt=""></p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/" data-toggle="tooltip" data-placement="top" title="tcpdump常用参数及使用案例">
-              Previous<br>
-              <span>tcpdump常用参数及使用案例</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/" data-toggle="tooltip" data-placement="top" title="Zabbix_配置snmptrap监控交换机">
-              Next<br>
-              <span>Zabbix_配置snmptrap监控交换机</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>

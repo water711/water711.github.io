@@ -1,46 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>使用uWSGI和Nginx来部署基于Django的Web服务器 // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>使用uWSGI和Nginx来部署基于Django的Web服务器 | 蔡振威的博客</title>
-
-  
-  <meta name="description" content="1、安装python、nginx、django和uwsgi[root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0
-[root@liyu ~]# python3 -V Python 3.6.8 [root@liyu ~]# yum install python36-devel //安装对应Python版本的devel，编译uwsgi需要的依赖
-[root@server ~]# pip3 install uwsgi
-2、创建django项目[root@server ~]# mkdir /web/ [root@server ~]# cd /web/ [root@server ~]# django-admin startproject test_project
-#允许所有主机访问 [root@server ~]# cd test_project/ [root@server test_project]# vim test_project/settings.py ALLOWED_HOSTS = [&rsquo;*&rsquo;]
-#开发环境下，可以直接使用下面命令来运行项目 [root@server ~]# python3 manage.py runserver 0.0.0.0:8000
-3、使用uwsgi启动django项目#uwsgi命令行方式直接启动（测试） [root@web test_project]# uwsgi &ndash;http :8000 &ndash;module test_project.wsgi //test_project.">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用uWSGI和Nginx来部署基于Django的Web服务器"/>
-<meta name="twitter:description" content="1、安装python、nginx、django和uwsgi[root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0
+<meta name="twitter:description" content="1、安装python、nginx、django和uwsgi [root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0
 [root@liyu ~]# python3 -V Python 3.6.8 [root@liyu ~]# yum install python36-devel //安装对应Python版本的devel，编译uwsgi需要的依赖
 [root@server ~]# pip3 install uwsgi
-2、创建django项目[root@server ~]# mkdir /web/ [root@server ~]# cd /web/ [root@server ~]# django-admin startproject test_project
+2、创建django项目 [root@server ~]# mkdir /web/ [root@server ~]# cd /web/ [root@server ~]# django-admin startproject test_project
 #允许所有主机访问 [root@server ~]# cd test_project/ [root@server test_project]# vim test_project/settings.py ALLOWED_HOSTS = [&rsquo;*&rsquo;]
 #开发环境下，可以直接使用下面命令来运行项目 [root@server ~]# python3 manage.py runserver 0.0.0.0:8000
-3、使用uwsgi启动django项目#uwsgi命令行方式直接启动（测试） [root@web test_project]# uwsgi &ndash;http :8000 &ndash;module test_project.wsgi //test_project."/>
+3、使用uwsgi启动django项目 #uwsgi命令行方式直接启动（测试） [root@web test_project]# uwsgi &ndash;http :8000 &ndash;module test_project."/>
 
-  <meta property="og:title" content="使用uWSGI和Nginx来部署基于Django的Web服务器" />
-<meta property="og:description" content="1、安装python、nginx、django和uwsgi[root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0
+    <meta property="og:title" content="使用uWSGI和Nginx来部署基于Django的Web服务器" />
+<meta property="og:description" content="1、安装python、nginx、django和uwsgi [root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0
 [root@liyu ~]# python3 -V Python 3.6.8 [root@liyu ~]# yum install python36-devel //安装对应Python版本的devel，编译uwsgi需要的依赖
 [root@server ~]# pip3 install uwsgi
-2、创建django项目[root@server ~]# mkdir /web/ [root@server ~]# cd /web/ [root@server ~]# django-admin startproject test_project
+2、创建django项目 [root@server ~]# mkdir /web/ [root@server ~]# cd /web/ [root@server ~]# django-admin startproject test_project
 #允许所有主机访问 [root@server ~]# cd test_project/ [root@server test_project]# vim test_project/settings.py ALLOWED_HOSTS = [&rsquo;*&rsquo;]
 #开发环境下，可以直接使用下面命令来运行项目 [root@server ~]# python3 manage.py runserver 0.0.0.0:8000
-3、使用uwsgi启动django项目#uwsgi命令行方式直接启动（测试） [root@web test_project]# uwsgi &ndash;http :8000 &ndash;module test_project.wsgi //test_project." />
+3、使用uwsgi启动django项目 #uwsgi命令行方式直接启动（测试） [root@web test_project]# uwsgi &ndash;http :8000 &ndash;module test_project." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://water711.github.io/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-09T00:00:00+00:00" />
@@ -48,194 +36,45 @@
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>使用uWSGI和Nginx来部署基于Django的Web服务器</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Sat, May 9, 2020
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">使用uWSGI和Nginx来部署基于Django的Web服务器</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 9, 2020
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <h2 id="1安装pythonnginxdjango和uwsgi">1、安装python、nginx、django和uwsgi<a class="anchorjs-link" href="#1%e5%ae%89%e8%a3%85pythonnginxdjango%e5%92%8cuwsgi"></a></h2><p>[root@server ~]# yum -y install python3 nginx gcc
+    </header>
+    <div class="post-content">
+      <h2 id="1安装pythonnginxdjango和uwsgi">1、安装python、nginx、django和uwsgi</h2>
+<p>[root@server ~]# yum -y install python3 nginx gcc
 [root@server ~]# pip3 install django==2.0</p>
 <p>[root@liyu ~]# python3 -V
 Python 3.6.8
 [root@liyu ~]# yum install python36-devel  //安装对应Python版本的devel，编译uwsgi需要的依赖</p>
 <p>[root@server ~]# pip3 install uwsgi</p>
-<h2 id="2创建django项目">2、创建django项目<a class="anchorjs-link" href="#2%e5%88%9b%e5%bb%badjango%e9%a1%b9%e7%9b%ae"></a></h2><p>[root@server ~]# mkdir /web/
+<h2 id="2创建django项目">2、创建django项目</h2>
+<p>[root@server ~]# mkdir /web/
 [root@server ~]# cd /web/
 [root@server ~]# django-admin startproject test_project</p>
 <p>#允许所有主机访问
@@ -244,10 +83,12 @@ Python 3.6.8
 ALLOWED_HOSTS = [&rsquo;*&rsquo;]</p>
 <p>#开发环境下，可以直接使用下面命令来运行项目
 [root@server ~]# python3 manage.py runserver 0.0.0.0:8000</p>
-<h2 id="3使用uwsgi启动django项目">3、使用uwsgi启动django项目<a class="anchorjs-link" href="#3%e4%bd%bf%e7%94%a8uwsgi%e5%90%af%e5%8a%a8django%e9%a1%b9%e7%9b%ae"></a></h2><p>#uwsgi命令行方式直接启动（测试）
+<h2 id="3使用uwsgi启动django项目">3、使用uwsgi启动django项目</h2>
+<p>#uwsgi命令行方式直接启动（测试）
 [root@web test_project]# uwsgi &ndash;http :8000 &ndash;module test_project.wsgi    //test_project.wsgi表示test_project目录下的wsgi.py文件</p>
 <h2 id="rootweb-test_project-vim-django-uwsgiini">#uwsgi使用配置文件方式启动django项目
-[root@web test_project]# vim django-uwsgi.ini<a class="anchorjs-link" href="#rootweb-test_project-vim-django-uwsgiini"></a></h2><p>[uwsgi]</p>
+[root@web test_project]# vim django-uwsgi.ini</h2>
+<p>[uwsgi]</p>
 <p>chdir       = /web/test_project
 module      = test_project.wsgi
 http-socket = :8000
@@ -255,14 +96,18 @@ master      = True
 processes   = 4
 threads     = 1
 vacuum      = true</p>
-<h1 id="backend-run-uwsgi">backend run uwsgi<a class="anchorjs-link" href="#backend-run-uwsgi"></a></h1><h2 id="pidfile------chdirpiduwsgi-8000pid">daemonize   = %(chdir)/log/uwsgi-8000.log
+<h1 id="backend-run-uwsgi">backend run uwsgi</h1>
+<h2 id="pidfile------chdirpiduwsgi-8000pid">daemonize   = %(chdir)/log/uwsgi-8000.log
 log-maxsize = 1024000000
-pidfile     = %(chdir)/pid/uwsgi-8000.pid<a class="anchorjs-link" href="#pidfile------chdirpiduwsgi-8000pid"></a></h2><p>[root@web test_project]# mkdir log pid   #创建日志和pid目录
+pidfile     = %(chdir)/pid/uwsgi-8000.pid</h2>
+<p>[root@web test_project]# mkdir log pid   #创建日志和pid目录
 [root@web test_project]# uwsgi &ndash;ini django-uwsgi.ini  #uwsgi读取配置文件并启动
 [root@web ~]# ss -lanp | grep 8000  #查看端口是否正常监听
 [root@web ~]# cat pid/uwsgi-8000.pid  #查看进程号</p>
-<h2 id="4配置nginx实现反向代理">4、配置nginx，实现反向代理<a class="anchorjs-link" href="#4%e9%85%8d%e7%bd%aenginx%e5%ae%9e%e7%8e%b0%e5%8f%8d%e5%90%91%e4%bb%a3%e7%90%86"></a></h2><h2 id="rootweb--vim-etcnginxnginxconf">[root@web ~]# cp /etc/nginx/nginx.conf{,bak}  #备份nginx配置文件
-[root@web ~]# vim /etc/nginx/nginx.conf<a class="anchorjs-link" href="#rootweb--vim-etcnginxnginxconf"></a></h2><p>http {
+<h2 id="4配置nginx实现反向代理">4、配置nginx，实现反向代理</h2>
+<h2 id="rootweb--vim-etcnginxnginxconf">[root@web ~]# cp /etc/nginx/nginx.conf{,bak}  #备份nginx配置文件
+[root@web ~]# vim /etc/nginx/nginx.conf</h2>
+<p>http {
 &hellip;&hellip;
 upstream uwsgi {
 server 127.0.0.1:8000;
@@ -279,142 +124,32 @@ server 127.0.0.1:8000;
     }
 </code></pre>
 <h2 id="heading">}
-}<a class="anchorjs-link" href="#heading"></a></h2><p>[root@web ~]# systemctl restart nginx</p>
-<h2 id="5收集django项目中的静态文件">5、收集django项目中的静态文件<a class="anchorjs-link" href="#5%e6%94%b6%e9%9b%86django%e9%a1%b9%e7%9b%ae%e4%b8%ad%e7%9a%84%e9%9d%99%e6%80%81%e6%96%87%e4%bb%b6"></a></h2><h2 id="rootweb-test_project-vim-test_projectsettingspy">[root@web test_project]# vim test_project/settings.py<a class="anchorjs-link" href="#rootweb-test_project-vim-test_projectsettingspy"></a></h2><h2 id="static_root--ospathjoinbase_dir-static">#指定静态文件存放路径
-STATIC_ROOT = os.path.join(BASE_DIR, &lsquo;static/&rsquo;)<a class="anchorjs-link" href="#static_root--ospathjoinbase_dir-static"></a></h2><p>#把静态文件收集到STATIC_ROOT
+}</h2>
+<p>[root@web ~]# systemctl restart nginx</p>
+<h2 id="5收集django项目中的静态文件">5、收集django项目中的静态文件</h2>
+<h2 id="rootweb-test_project-vim-test_projectsettingspy">[root@web test_project]# vim test_project/settings.py</h2>
+<h2 id="static_root--ospathjoinbase_dir-static">#指定静态文件存放路径
+STATIC_ROOT = os.path.join(BASE_DIR, &lsquo;static/&rsquo;)</h2>
+<p>#把静态文件收集到STATIC_ROOT
 [root@web test_project]# python3 manage.py collectstatic</p>
-<h2 id="6nginx配置静态文件路由">6、nginx配置静态文件路由<a class="anchorjs-link" href="#6nginx%e9%85%8d%e7%bd%ae%e9%9d%99%e6%80%81%e6%96%87%e4%bb%b6%e8%b7%af%e7%94%b1"></a></h2><h2 id="rootserver--vim-etcnginxnginxconf">[root@server ~]# vim /etc/nginx/nginx.conf<a class="anchorjs-link" href="#rootserver--vim-etcnginxnginxconf"></a></h2><pre><code>server {
+<h2 id="6nginx配置静态文件路由">6、nginx配置静态文件路由</h2>
+<h2 id="rootserver--vim-etcnginxnginxconf">[root@server ~]# vim /etc/nginx/nginx.conf</h2>
+<pre><code>server {
     listen 80;
     ......
     location /static {
           alias /web/test\_project/static;
     }
 </code></pre>
-<h2 id="heading-1">}<a class="anchorjs-link" href="#heading-1"></a></h2><p>[root@server ~]# systemctl restart nginx</p>
+<h2 id="heading-1">}</h2>
+<p>[root@server ~]# systemctl restart nginx</p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/" data-toggle="tooltip" data-placement="top" title="Centos7源码安装python3">
-              Previous<br>
-              <span>Centos7源码安装python3</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2020-05-22-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F/" data-toggle="tooltip" data-placement="top" title="微信小程序动态修改样式">
-              Next<br>
-              <span>微信小程序动态修改样式</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>

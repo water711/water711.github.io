@@ -1,44 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Python开发【第六篇】：模块 // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>Python开发【第六篇】：模块 | 蔡振威的博客</title>
-
-  
-  <meta name="description" content="模块，用一砣代码实现了某个功能的代码集合。
-类似于函数式编程和面向过程编程，函数式编程则完成一个功能，其他代码用来调用即可，提供了代码的重用性和代码间的耦合。而对于一个复杂的功能来，可能需要多个函数才能完成（函数又可以在不同的.py文件中），n个 .py 文件组成的代码集合就称为模块。
-如：os 是系统相关的模块；file是文件操作相关的模块
-模块分为三种：
-自定义模块 第三方模块 内置模块 自定义模块1、定义模块
-情景一：
-情景二：
-情景三：
-2、导入模块
-Python之所以应用越来越广泛，在一定程度上也依赖于其为程序员提供了大量的模块以供使用，如果想要使用模块，则需要导入。导入模块有一下几种方法：
-import module from module.xx.xx import xx from module.xx.xx import xx as rename
-from module.xx.xx import *
-导入模块其实就是告诉Python解释器去解释那个py文件
-导入一个py文件，解释器解释该py文件 导入一个包，解释器解释该包下的 __init__.py 文件 【py2.7】 那么问题来了，导入模块时是根据那个路径作为基准来进行的呢？即：sys.path
-import sys print sys.path
-结果： [&rsquo;/Users/wupeiqi/PycharmProjects/calculator/p1/pp1&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/setuptools-15.2-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/distribute-0.6.28-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlutils-1.7.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlwt-1.0.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlrd-0.9.3-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/tornado-4.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/backports.ssl_match_hostname-3.4.0.2-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/certifi-2015.4.28-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pyOpenSSL-0.15.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/six-1.9.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/cryptography-0.9.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/cffi-1.1.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/ipaddress-1.0.7-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/enum34-1.0.4-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pyasn1-0.1.7-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/idna-2.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pycparser-2.13-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/Django-1.7.8-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/gevent-1.0.2-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/greenlet-0.4.7-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/Users/wupeiqi/PycharmProjects/calculator&rsquo;, &lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python27.zip&rsquo;, &lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7&rsquo;, &lsquo;/usr/local/Cellar/python/2.">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python开发【第六篇】：模块"/>
 <meta name="twitter:description" content="模块，用一砣代码实现了某个功能的代码集合。
 类似于函数式编程和面向过程编程，函数式编程则完成一个功能，其他代码用来调用即可，提供了代码的重用性和代码间的耦合。而对于一个复杂的功能来，可能需要多个函数才能完成（函数又可以在不同的.py文件中），n个 .py 文件组成的代码集合就称为模块。
 如：os 是系统相关的模块；file是文件操作相关的模块
 模块分为三种：
-自定义模块 第三方模块 内置模块 自定义模块1、定义模块
+自定义模块 第三方模块 内置模块 自定义模块 1、定义模块
 情景一：
 情景二：
 情景三：
@@ -49,14 +28,14 @@ from module.xx.xx import *
 导入模块其实就是告诉Python解释器去解释那个py文件
 导入一个py文件，解释器解释该py文件 导入一个包，解释器解释该包下的 __init__.py 文件 【py2.7】 那么问题来了，导入模块时是根据那个路径作为基准来进行的呢？即：sys.path
 import sys print sys.path
-结果： [&rsquo;/Users/wupeiqi/PycharmProjects/calculator/p1/pp1&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/setuptools-15.2-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/distribute-0.6.28-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlutils-1.7.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlwt-1.0.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlrd-0.9.3-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/tornado-4.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/backports.ssl_match_hostname-3.4.0.2-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/certifi-2015.4.28-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pyOpenSSL-0.15.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/six-1.9.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/cryptography-0.9.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/cffi-1.1.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/ipaddress-1.0.7-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/enum34-1.0.4-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pyasn1-0.1.7-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/idna-2.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pycparser-2.13-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/Django-1.7.8-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/gevent-1.0.2-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/greenlet-0.4.7-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/Users/wupeiqi/PycharmProjects/calculator&rsquo;, &lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python27.zip&rsquo;, &lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7&rsquo;, &lsquo;/usr/local/Cellar/python/2."/>
+结果： [&rsquo;/Users/wupeiqi/PycharmProjects/calculator/p1/pp1&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/setuptools-15.2-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/distribute-0.6.28-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlutils-1.7.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlwt-1.0.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlrd-0.9.3-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/tornado-4.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/backports.ssl_match_hostname-3.4.0.2-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/certifi-2015.4.28-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pyOpenSSL-0.15.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/six-1.9.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/cryptography-0.9.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/cffi-1.1.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/ipaddress-1.0.7-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/enum34-1.0.4-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pyasn1-0.1.7-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/idna-2.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pycparser-2.13-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/Django-1.7.8-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/gevent-1.0.2-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/greenlet-0.4.7-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/Users/wupeiqi/PycharmProjects/calculator&rsquo;, &lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python27.zip&rsquo;, &lsquo;/usr/local/Cellar/python/2."/>
 
-  <meta property="og:title" content="Python开发【第六篇】：模块" />
+    <meta property="og:title" content="Python开发【第六篇】：模块" />
 <meta property="og:description" content="模块，用一砣代码实现了某个功能的代码集合。
 类似于函数式编程和面向过程编程，函数式编程则完成一个功能，其他代码用来调用即可，提供了代码的重用性和代码间的耦合。而对于一个复杂的功能来，可能需要多个函数才能完成（函数又可以在不同的.py文件中），n个 .py 文件组成的代码集合就称为模块。
 如：os 是系统相关的模块；file是文件操作相关的模块
 模块分为三种：
-自定义模块 第三方模块 内置模块 自定义模块1、定义模块
+自定义模块 第三方模块 内置模块 自定义模块 1、定义模块
 情景一：
 情景二：
 情景三：
@@ -67,7 +46,7 @@ from module.xx.xx import *
 导入模块其实就是告诉Python解释器去解释那个py文件
 导入一个py文件，解释器解释该py文件 导入一个包，解释器解释该包下的 __init__.py 文件 【py2.7】 那么问题来了，导入模块时是根据那个路径作为基准来进行的呢？即：sys.path
 import sys print sys.path
-结果： [&rsquo;/Users/wupeiqi/PycharmProjects/calculator/p1/pp1&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/setuptools-15.2-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/distribute-0.6.28-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlutils-1.7.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlwt-1.0.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlrd-0.9.3-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/tornado-4.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/backports.ssl_match_hostname-3.4.0.2-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/certifi-2015.4.28-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pyOpenSSL-0.15.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/six-1.9.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/cryptography-0.9.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/cffi-1.1.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/ipaddress-1.0.7-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/enum34-1.0.4-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pyasn1-0.1.7-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/idna-2.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pycparser-2.13-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/Django-1.7.8-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/gevent-1.0.2-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/greenlet-0.4.7-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/Users/wupeiqi/PycharmProjects/calculator&rsquo;, &lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python27.zip&rsquo;, &lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7&rsquo;, &lsquo;/usr/local/Cellar/python/2." />
+结果： [&rsquo;/Users/wupeiqi/PycharmProjects/calculator/p1/pp1&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/setuptools-15.2-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/distribute-0.6.28-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlutils-1.7.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlwt-1.0.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/xlrd-0.9.3-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/tornado-4.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/backports.ssl_match_hostname-3.4.0.2-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/certifi-2015.4.28-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pyOpenSSL-0.15.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/six-1.9.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/cryptography-0.9.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/cffi-1.1.1-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/ipaddress-1.0.7-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/enum34-1.0.4-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pyasn1-0.1.7-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/idna-2.0-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/pycparser-2.13-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/Django-1.7.8-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/gevent-1.0.2-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/usr/local/lib/python2.7/site-packages/greenlet-0.4.7-py2.7-macosx-10.10-x86_64.egg&rsquo;, &lsquo;/Users/wupeiqi/PycharmProjects/calculator&rsquo;, &lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python27.zip&rsquo;, &lsquo;/usr/local/Cellar/python/2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://water711.github.io/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-04-10T00:00:00+00:00" />
@@ -75,188 +54,37 @@ import sys print sys.path
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>Python开发【第六篇】：模块</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Mon, Apr 10, 2017
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Python开发【第六篇】：模块</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 10, 2017
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          18 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <p>模块，用一砣代码实现了某个功能的代码集合。</p>
+    </header>
+    <div class="post-content">
+      <p>模块，用一砣代码实现了某个功能的代码集合。</p>
 <p>类似于函数式编程和面向过程编程，函数式编程则完成一个功能，其他代码用来调用即可，提供了代码的重用性和代码间的耦合。而对于一个复杂的功能来，可能需要多个函数才能完成（函数又可以在不同的.py文件中），n个 .py 文件组成的代码集合就称为模块。</p>
 <p>如：os 是系统相关的模块；file是文件操作相关的模块</p>
 <p>模块分为三种：</p>
@@ -265,28 +93,14 @@ import sys print sys.path
 <li>第三方模块</li>
 <li>内置模块</li>
 </ul>
-<h3 id="自定义模块">自定义模块<a class="anchorjs-link" href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%a8%a1%e5%9d%97"></a></h3><p><strong>1、定义模块</strong></p>
+<h3 id="自定义模块">自定义模块</h3>
+<p><strong>1、定义模块</strong></p>
 <p><strong>情景一：</strong></p>
-<p>　　<figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20151120210254796-391850912.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p>　　<img src="http://hugo.caizhenwei.top//425762-20151120210254796-391850912.png" alt=""></p>
 <p><strong>情景二：</strong></p>
-<p>　　<figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20151120204455296-1485426970.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p>　　<img src="http://hugo.caizhenwei.top//425762-20151120204455296-1485426970.png" alt=""></p>
 <p><strong>情景三：</strong></p>
-<p>　　<figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20151120204617843-2002471507.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p>　　<img src="http://hugo.caizhenwei.top//425762-20151120204617843-2002471507.png" alt=""></p>
 <p><strong>2、导入模块</strong></p>
 <p>Python之所以应用越来越广泛，在一定程度上也依赖于其为程序员提供了大量的模块以供使用，如果想要使用模块，则需要导入。导入模块有一下几种方法：</p>
 <p>import module
@@ -308,8 +122,10 @@ print sys.path</p>
 import os
 project_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_path)</p>
-<h3 id="模块">模块<a class="anchorjs-link" href="#%e6%a8%a1%e5%9d%97"></a></h3><p>内置模块是Python自带的功能，在使用内置模块相应的功能时，需要【先导入】再【使用】</p>
-<h2 id="一sys"><strong>一、sys</strong><a class="anchorjs-link" href="#%e4%b8%80sys"></a></h2><p>用于提供对Python解释器相关的操作：</p>
+<h3 id="模块">模块</h3>
+<p>内置模块是Python自带的功能，在使用内置模块相应的功能时，需要【先导入】再【使用】</p>
+<h2 id="一sys"><strong>一、sys</strong></h2>
+<p>用于提供对Python解释器相关的操作：</p>
 <p>sys.argv           命令行参数List，第一个元素是程序本身路径
 sys.exit(n)        退出程序，正常退出时exit(0)
 sys.version        获取Python解释程序的版本信息
@@ -319,17 +135,7 @@ sys.platform       返回操作系统平台名称
 sys.stdin          输入相关
 sys.stdout         输出相关
 sys.stderror       错误相关</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import sys import time def view_bar(num, total):
 rate = float(num) / float(total)
 rate_num = int(rate * 100)
@@ -339,7 +145,8 @@ sys.stdout.flush() if __name__ == &lsquo;__main__&rsquo;: for i in range(0, 100)
 time.sleep(0.1)
 view_bar(i, 100)</p>
 <p>进度百分比</p>
-<h2 id="二os"><strong>二、os</strong><a class="anchorjs-link" href="#%e4%ba%8cos"></a></h2><p>用于提供系统级别的操作：</p>
+<h2 id="二os"><strong>二、os</strong></h2>
+<p>用于提供系统级别的操作：</p>
 <p>os.getcwd()                 获取当前工作目录，即当前python脚本工作的目录路径
 os.chdir(&ldquo;dirname&rdquo;)         改变当前脚本工作目录；相当于shell下cd
 os.curdir                   返回当前目录: (&rsquo;.&rsquo;)
@@ -369,28 +176,35 @@ os.path.isdir(path)         如果path是一个存在的目录，则返回True�
 os.path.join(path1[, path2[, &hellip;]])  将多个路径组合后返回，第一个绝对路径之前的参数将被忽略
 os.path.getatime(path)      返回path所指向的文件或者目录的最后存取时间
 os.path.getmtime(path)      返回path所指向的文件或者目录的最后修改时间</p>
-<h2 id="三hashlib"><strong>三、hashlib</strong><a class="anchorjs-link" href="#%e4%b8%89hashlib"></a></h2><p>用于加密相关的操作，代替了md5模块和sha模块，主要提供 SHA1, SHA224, SHA256, SHA384, SHA512 ，MD5 算法</p>
+<h2 id="三hashlib"><strong>三、hashlib</strong></h2>
+<p>用于加密相关的操作，代替了md5模块和sha模块，主要提供 SHA1, SHA224, SHA256, SHA384, SHA512 ，MD5 算法</p>
 <p>import hashlib</p>
-<h1 id="-md5">######## md5<a class="anchorjs-link" href="#-md5"></a></h1><p>hash = hashlib.md5()</p>
-<h1 id="helphashupdate">help(hash.update)<a class="anchorjs-link" href="#helphashupdate"></a></h1><p>hash.update(bytes(&lsquo;admin&rsquo;, encoding=&lsquo;utf-8&rsquo;))
+<h1 id="-md5">######## md5</h1>
+<p>hash = hashlib.md5()</p>
+<h1 id="helphashupdate">help(hash.update)</h1>
+<p>hash.update(bytes(&lsquo;admin&rsquo;, encoding=&lsquo;utf-8&rsquo;))
 print(hash.hexdigest())
 print(hash.digest())</p>
 <p>######## sha1 ########</p>
 <p>hash = hashlib.sha1()
 hash.update(bytes(&lsquo;admin&rsquo;, encoding=&lsquo;utf-8&rsquo;))
 print(hash.hexdigest())</p>
-<h1 id="-sha256">######## sha256<a class="anchorjs-link" href="#-sha256"></a></h1><p>hash = hashlib.sha256()
+<h1 id="-sha256">######## sha256</h1>
+<p>hash = hashlib.sha256()
 hash.update(bytes(&lsquo;admin&rsquo;, encoding=&lsquo;utf-8&rsquo;))
 print(hash.hexdigest())</p>
-<h1 id="-sha384">######## sha384<a class="anchorjs-link" href="#-sha384"></a></h1><p>hash = hashlib.sha384()
+<h1 id="-sha384">######## sha384</h1>
+<p>hash = hashlib.sha384()
 hash.update(bytes(&lsquo;admin&rsquo;, encoding=&lsquo;utf-8&rsquo;))
 print(hash.hexdigest())</p>
-<h1 id="-sha512">######## sha512<a class="anchorjs-link" href="#-sha512"></a></h1><p>hash = hashlib.sha512()
+<h1 id="-sha512">######## sha512</h1>
+<p>hash = hashlib.sha512()
 hash.update(bytes(&lsquo;admin&rsquo;, encoding=&lsquo;utf-8&rsquo;))
 print(hash.hexdigest())</p>
 <p>以上加密算法虽然依然非常厉害，但时候存在缺陷，即：通过撞库可以反解。所以，有必要对加密算法中添加自定义key再来做加密。</p>
 <p>import hashlib</p>
-<h1 id="-md5-1">######## md5<a class="anchorjs-link" href="#-md5-1"></a></h1><p>hash = hashlib.md5(bytes(&lsquo;898oaFs09f&rsquo;,encoding=&ldquo;utf-8&rdquo;))
+<h1 id="-md5-1">######## md5</h1>
+<p>hash = hashlib.md5(bytes(&lsquo;898oaFs09f&rsquo;,encoding=&ldquo;utf-8&rdquo;))
 hash.update(bytes(&lsquo;admin&rsquo;,encoding=&ldquo;utf-8&rdquo;))
 print(hash.hexdigest())</p>
 <p>python内置还有一个 hmac 模块，它内部对我们创建 key 和 内容 进行进一步的处理然后再加密</p>
@@ -398,21 +212,12 @@ print(hash.hexdigest())</p>
 <p>h = hmac.new(bytes(&lsquo;898oaFs09f&rsquo;,encoding=&ldquo;utf-8&rdquo;))
 h.update(bytes(&lsquo;admin&rsquo;,encoding=&ldquo;utf-8&rdquo;))
 print(h.hexdigest())</p>
-<h2 id="四random"><strong>四、random</strong><a class="anchorjs-link" href="#%e5%9b%9brandom"></a></h2><p>import random</p>
+<h2 id="四random"><strong>四、random</strong></h2>
+<p>import random</p>
 <p>print(random.random())
 print(random.randint(1, 2))
 print(random.randrange(1, 10))</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import random
 checkcode = &rsquo;&rsquo;
 for i in range(4):
@@ -421,7 +226,8 @@ temp = chr(random.randint(65,90)) else:
 temp = random.randint(0,9)
 checkcode += str(temp) print checkcode</p>
 <p>随机验证码</p>
-<h2 id="五re">五、re<a class="anchorjs-link" href="#%e4%ba%94re"></a></h2><p>python中re模块提供了正则表达式相关操作</p>
+<h2 id="五re">五、re</h2>
+<p>python中re模块提供了正则表达式相关操作</p>
 <p>字符：</p>
 <p>　　. 匹配除换行符以外的任意字符<br>
 　　\w 匹配字母或数字或下划线或汉字<br>
@@ -463,17 +269,7 @@ checkcode += str(temp) print checkcode</p>
         U  UNICODE     For compatibility only. Ignored for string patterns (it
                        is the default), and forbidden for bytes patterns.
 </code></pre>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <pre><code>    # 无分组
     r = re.match(&quot;h\\w+&quot;, origin) print(r.group())     # 获取匹配到的所有结果
     print(r.groups())    # 获取模型中匹配到的分组结果
@@ -489,17 +285,8 @@ print(r.groupdict()) # 获取模型中匹配到的分组中所有执行了key的
 <p>Demo</p>
 <p>search</p>
 <p># search,浏览整个字符串去匹配第一个，未匹配成功返回None</p>
-<h1 id="searchpattern-string-flags0">search(pattern, string, flags=0)<a class="anchorjs-link" href="#searchpattern-string-flags0"></a></h1><p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<h1 id="searchpattern-string-flags0">search(pattern, string, flags=0)</h1>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <pre><code>    # 无分组
 </code></pre>
 <p>r = re.search(&ldquo;a\w+&rdquo;, origin) print(r.group())     # 获取匹配到的所有结果
@@ -516,17 +303,7 @@ print(r.groupdict()) # 获取模型中匹配到的分组中所有执行了key的
     # 空的匹配也会包含在结果中
     #findall(pattern, string, flags=0)
 </code></pre>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <pre><code>    # 无分组
     r = re.findall(&quot;a\\w+&quot;,origin) print(r) # 有分组
     origin = &quot;hello alex bcd abcd lge acd 19&quot; r \= re.findall(&quot;a((\\w\*)c)(d)&quot;, origin) print(r)
@@ -542,17 +319,7 @@ print(r.groupdict()) # 获取模型中匹配到的分组中所有执行了key的
     # count  ： 指定匹配个数
     # flags  ： 匹配模式
 </code></pre>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <pre><code>    # 与分组无关
 </code></pre>
 <p>origin = &ldquo;hello alex bcd alex lge alex acd 19&rdquo; r = re.sub(&ldquo;a\w+&rdquo;, &ldquo;999&rdquo;, origin, 2) print(r)</p>
@@ -566,64 +333,31 @@ print(r.groupdict()) # 获取模型中匹配到的分组中所有执行了key的
     # maxsplit：指定分割个数
     # flags  ： 匹配模式
 </code></pre>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <pre><code>    # 无分组
     origin = &quot;hello alex bcd alex lge alex acd 19&quot; r \= re.split(&quot;alex&quot;, origin, 1) print(r) # 有分组
 </code></pre>
 <p>origin = &ldquo;hello alex bcd alex lge alex acd 19&rdquo; r1 = re.split(&quot;(alex)&quot;, origin, 1) print(r1)
 r2 = re.split(&quot;(al(ex))&quot;, origin, 1) print(r2)</p>
 <p>Demo</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>IP： ^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$
 手机号： ^1[3|4|5|8][0-9]\d{8}$
 邮箱：
 [a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+</p>
 <p>常用正则表达式</p>
-<h2 id="六序列化">六、序列化<a class="anchorjs-link" href="#%e5%85%ad%e5%ba%8f%e5%88%97%e5%8c%96"></a></h2><p>Python中用于序列化的两个模块</p>
+<h2 id="六序列化">六、序列化</h2>
+<p>Python中用于序列化的两个模块</p>
 <ul>
 <li>json     用于【字符串】和 【python基本数据类型】 间进行转换</li>
 <li>pickle   用于【python特有的类型】 和 【python基本数据类型】间进行转换</li>
 </ul>
 <p>Json模块提供了四个功能：dumps、dump、loads、load</p>
 <p>pickle模块提供了四个功能：dumps、dump、loads、load</p>
-<p> <figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20151114231017087-842020084.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<h2 id="七configparser">七、configparser<a class="anchorjs-link" href="#%e4%b8%83configparser"></a></h2><p>configparser用于处理特定格式的文件，其本质上是利用open来操作文件。</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p> <img src="http://hugo.caizhenwei.top//425762-20151114231017087-842020084.png" alt=""></p>
+<h2 id="七configparser">七、configparser</h2>
+<p>configparser用于处理特定格式的文件，其本质上是利用open来操作文件。</p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p># 注释1 ; 注释2</p>
 <p>[section1] # 节点
 k1 = v1    # 值
@@ -653,28 +387,38 @@ print(ret)</p>
 <p>config = configparser.ConfigParser()
 config.read(&lsquo;xxxooo&rsquo;, encoding=&lsquo;utf-8&rsquo;)</p>
 <p>v = config.get(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)</p>
-<h1 id="v--configgetintsection1-k1">v = config.getint(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)<a class="anchorjs-link" href="#v--configgetintsection1-k1"></a></h1><h1 id="v--configgetfloatsection1-k1">v = config.getfloat(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)<a class="anchorjs-link" href="#v--configgetfloatsection1-k1"></a></h1><h1 id="v--configgetbooleansection1-k1">v = config.getboolean(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)<a class="anchorjs-link" href="#v--configgetbooleansection1-k1"></a></h1><p>print(v)</p>
+<h1 id="v--configgetintsection1-k1">v = config.getint(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)</h1>
+<h1 id="v--configgetfloatsection1-k1">v = config.getfloat(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)</h1>
+<h1 id="v--configgetbooleansection1-k1">v = config.getboolean(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)</h1>
+<p>print(v)</p>
 <p>5、检查、删除、添加节点</p>
 <p>import configparser</p>
 <p>config = configparser.ConfigParser()
 config.read(&lsquo;xxxooo&rsquo;, encoding=&lsquo;utf-8&rsquo;)</p>
-<h1 id="检查">检查<a class="anchorjs-link" href="#%e6%a3%80%e6%9f%a5"></a></h1><p>has_sec = config.has_section(&lsquo;section1&rsquo;)
+<h1 id="检查">检查</h1>
+<p>has_sec = config.has_section(&lsquo;section1&rsquo;)
 print(has_sec)</p>
-<h1 id="添加节点">添加节点<a class="anchorjs-link" href="#%e6%b7%bb%e5%8a%a0%e8%8a%82%e7%82%b9"></a></h1><p>config.add_section(&ldquo;SEC_1&rdquo;)
+<h1 id="添加节点">添加节点</h1>
+<p>config.add_section(&ldquo;SEC_1&rdquo;)
 config.write(open(&lsquo;xxxooo&rsquo;, &lsquo;w&rsquo;))</p>
-<h1 id="删除节点">删除节点<a class="anchorjs-link" href="#%e5%88%a0%e9%99%a4%e8%8a%82%e7%82%b9"></a></h1><p>config.remove_section(&ldquo;SEC_1&rdquo;)
+<h1 id="删除节点">删除节点</h1>
+<p>config.remove_section(&ldquo;SEC_1&rdquo;)
 config.write(open(&lsquo;xxxooo&rsquo;, &lsquo;w&rsquo;))</p>
 <p>6、检查、删除、设置指定组内的键值对</p>
 <p>import configparser</p>
 <p>config = configparser.ConfigParser()
 config.read(&lsquo;xxxooo&rsquo;, encoding=&lsquo;utf-8&rsquo;)</p>
-<h1 id="检查-1">检查<a class="anchorjs-link" href="#%e6%a3%80%e6%9f%a5-1"></a></h1><p>has_opt = config.has_option(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)
+<h1 id="检查-1">检查</h1>
+<p>has_opt = config.has_option(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)
 print(has_opt)</p>
-<h1 id="删除">删除<a class="anchorjs-link" href="#%e5%88%a0%e9%99%a4"></a></h1><p>config.remove_option(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)
+<h1 id="删除">删除</h1>
+<p>config.remove_option(&lsquo;section1&rsquo;, &lsquo;k1&rsquo;)
 config.write(open(&lsquo;xxxooo&rsquo;, &lsquo;w&rsquo;))</p>
-<h1 id="设置">设置<a class="anchorjs-link" href="#%e8%ae%be%e7%bd%ae"></a></h1><p>config.set(&lsquo;section1&rsquo;, &lsquo;k10&rsquo;, &ldquo;123&rdquo;)
+<h1 id="设置">设置</h1>
+<p>config.set(&lsquo;section1&rsquo;, &lsquo;k10&rsquo;, &ldquo;123&rdquo;)
 config.write(open(&lsquo;xxxooo&rsquo;, &lsquo;w&rsquo;))</p>
-<h2 id="八xml">八、XML<a class="anchorjs-link" href="#%e5%85%abxml"></a></h2><p>XML是实现不同语言或程序之间进行数据交换的协议，XML文件格式如下：</p>
+<h2 id="八xml">八、XML</h2>
+<p>XML是实现不同语言或程序之间进行数据交换的协议，XML文件格式如下：</p>
 <p>&lt;data&gt;
 &lt;country name=&ldquo;Liechtenstein&rdquo;&gt;
 &lt;rank updated=&ldquo;yes&rdquo;&gt;2rank&gt;
@@ -698,49 +442,19 @@ country&gt;
 country&gt;
 data&gt;</p>
 <p><strong>1、解析XML</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET # 打开文件，读取XML内容
 str_xml = open(&lsquo;xo.xml&rsquo;, &lsquo;r&rsquo;).read() # 将字符串解析成xml特殊对象，root代指xml文件的根节点
 root = ET.XML(str_xml)</p>
 <p>利用ElementTree.XML将字符串解析成xml对象</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET # 直接解析xml文件
 tree = ET.parse(&ldquo;xo.xml&rdquo;) # 获取xml文件的根节点
 root = tree.getroot()</p>
 <p>利用ElementTree.parse将文件直接解析成xml对象</p>
 <p><strong>2、操作XML</strong></p>
 <p>XML格式类型是节点嵌套节点，对于每一个节点均有以下功能，以便对当前节点进行操作：</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>class Element: &ldquo;&ldquo;&ldquo;An XML element.</p>
 <pre><code>This class is the reference implementation of the Element interface.
 
@@ -920,70 +634,48 @@ PendingDeprecationWarning, stacklevel=2 ) return list(self.iter(tag)) def iterte
 <blockquote>
 <p>由于 每个节点 都具有以上的方法，并且在上一步骤中解析时均得到了root（xml文件的根节点），so   可以利用以上方法进行操作xml文件。</p>
 <p>a. 遍历XML文档的所有内容</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET ############ 解析方式一 ############
 &quot;&rdquo;&rdquo; # 打开文件，读取XML内容
 str_xml = open(&lsquo;xo.xml&rsquo;, &lsquo;r&rsquo;).read()</p>
-<h1 id="将字符串解析成xml特殊对象root代指xml文件的根节点">将字符串解析成xml特殊对象，root代指xml文件的根节点<a class="anchorjs-link" href="#%e5%b0%86%e5%ad%97%e7%ac%a6%e4%b8%b2%e8%a7%a3%e6%9e%90%e6%88%90xml%e7%89%b9%e6%ae%8a%e5%af%b9%e8%b1%a1root%e4%bb%a3%e6%8c%87xml%e6%96%87%e4%bb%b6%e7%9a%84%e6%a0%b9%e8%8a%82%e7%82%b9"></a></h1><p>root = ET.XML(str_xml) &quot;&rdquo;&rdquo;
+<h1 id="将字符串解析成xml特殊对象root代指xml文件的根节点">将字符串解析成xml特殊对象，root代指xml文件的根节点</h1>
+<p>root = ET.XML(str_xml) &quot;&rdquo;&rdquo;
 ############ 解析方式二 ############</p>
-<h1 id="直接解析xml文件">直接解析xml文件<a class="anchorjs-link" href="#%e7%9b%b4%e6%8e%a5%e8%a7%a3%e6%9e%90xml%e6%96%87%e4%bb%b6"></a></h1><p>tree = ET.parse(&ldquo;xo.xml&rdquo;) # 获取xml文件的根节点
+<h1 id="直接解析xml文件">直接解析xml文件</h1>
+<p>tree = ET.parse(&ldquo;xo.xml&rdquo;) # 获取xml文件的根节点
 root = tree.getroot() ### 操作</p>
-<h1 id="顶层标签">顶层标签<a class="anchorjs-link" href="#%e9%a1%b6%e5%b1%82%e6%a0%87%e7%ad%be"></a></h1><p>print(root.tag) # 遍历XML文档的第二层
+<h1 id="顶层标签">顶层标签</h1>
+<p>print(root.tag) # 遍历XML文档的第二层
 for child in root: # 第二层节点的标签名称和标签属性
 print(child.tag, child.attrib) # 遍历XML文档的第三层
 for i in child: # 第二层节点的标签名称和内容
 print(i.tag,i.text)</p>
 <p>View Code</p>
 <p>b、遍历XML中指定的节点</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET ############ 解析方式一 ############
 &quot;&rdquo;&rdquo; # 打开文件，读取XML内容
 str_xml = open(&lsquo;xo.xml&rsquo;, &lsquo;r&rsquo;).read()</p>
-<h1 id="将字符串解析成xml特殊对象root代指xml文件的根节点-1">将字符串解析成xml特殊对象，root代指xml文件的根节点<a class="anchorjs-link" href="#%e5%b0%86%e5%ad%97%e7%ac%a6%e4%b8%b2%e8%a7%a3%e6%9e%90%e6%88%90xml%e7%89%b9%e6%ae%8a%e5%af%b9%e8%b1%a1root%e4%bb%a3%e6%8c%87xml%e6%96%87%e4%bb%b6%e7%9a%84%e6%a0%b9%e8%8a%82%e7%82%b9-1"></a></h1><p>root = ET.XML(str_xml) &quot;&rdquo;&quot;
+<h1 id="将字符串解析成xml特殊对象root代指xml文件的根节点-1">将字符串解析成xml特殊对象，root代指xml文件的根节点</h1>
+<p>root = ET.XML(str_xml) &quot;&rdquo;&quot;
 ############ 解析方式二 ############</p>
-<h1 id="直接解析xml文件-1">直接解析xml文件<a class="anchorjs-link" href="#%e7%9b%b4%e6%8e%a5%e8%a7%a3%e6%9e%90xml%e6%96%87%e4%bb%b6-1"></a></h1><p>tree = ET.parse(&ldquo;xo.xml&rdquo;) # 获取xml文件的根节点
+<h1 id="直接解析xml文件-1">直接解析xml文件</h1>
+<p>tree = ET.parse(&ldquo;xo.xml&rdquo;) # 获取xml文件的根节点
 root = tree.getroot() ### 操作</p>
-<h1 id="顶层标签-1">顶层标签<a class="anchorjs-link" href="#%e9%a1%b6%e5%b1%82%e6%a0%87%e7%ad%be-1"></a></h1><p>print(root.tag) # 遍历XML中所有的year节点
+<h1 id="顶层标签-1">顶层标签</h1>
+<p>print(root.tag) # 遍历XML中所有的year节点
 for node in root.iter(&lsquo;year&rsquo;): # 节点的标签名称和内容
 print(node.tag, node.text)</p>
 <p>View Code</p>
 <p>c、修改节点内容</p>
 <p>由于修改的节点时，均是在内存中进行，其不会影响文件中的内容。所以，如果想要修改，则需要重新将内存中的内容写到文件。</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET ############ 解析方式一 ############</p>
-<h1 id="打开文件读取xml内容">打开文件，读取XML内容<a class="anchorjs-link" href="#%e6%89%93%e5%bc%80%e6%96%87%e4%bb%b6%e8%af%bb%e5%8f%96xml%e5%86%85%e5%ae%b9"></a></h1><p>str_xml = open(&lsquo;xo.xml&rsquo;, &lsquo;r&rsquo;).read() # 将字符串解析成xml特殊对象，root代指xml文件的根节点
+<h1 id="打开文件读取xml内容">打开文件，读取XML内容</h1>
+<p>str_xml = open(&lsquo;xo.xml&rsquo;, &lsquo;r&rsquo;).read() # 将字符串解析成xml特殊对象，root代指xml文件的根节点
 root = ET.XML(str_xml) ############ 操作 ############</p>
-<h1 id="顶层标签-2">顶层标签<a class="anchorjs-link" href="#%e9%a1%b6%e5%b1%82%e6%a0%87%e7%ad%be-2"></a></h1><p>print(root.tag) # 循环所有的year节点
+<h1 id="顶层标签-2">顶层标签</h1>
+<p>print(root.tag) # 循环所有的year节点
 for node in root.iter(&lsquo;year&rsquo;): # 将year节点中的内容自增一
 new_year = int(node.text) + 1 node.text = str(new_year) # 设置属性
 node.set(&rsquo;name&rsquo;, &lsquo;alex&rsquo;)
@@ -992,21 +684,13 @@ del node.attrib[&rsquo;name&rsquo;] ############ 保存文件 ############
 tree = ET.ElementTree(root)
 tree.write(&ldquo;newnew.xml&rdquo;, encoding=&lsquo;utf-8&rsquo;)</p>
 <p>解析字符串方式，修改，保存</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET ############ 解析方式二 ############</p>
-<h1 id="直接解析xml文件-2">直接解析xml文件<a class="anchorjs-link" href="#%e7%9b%b4%e6%8e%a5%e8%a7%a3%e6%9e%90xml%e6%96%87%e4%bb%b6-2"></a></h1><p>tree = ET.parse(&ldquo;xo.xml&rdquo;) # 获取xml文件的根节点
+<h1 id="直接解析xml文件-2">直接解析xml文件</h1>
+<p>tree = ET.parse(&ldquo;xo.xml&rdquo;) # 获取xml文件的根节点
 root = tree.getroot() ############ 操作 ############</p>
-<h1 id="顶层标签-3">顶层标签<a class="anchorjs-link" href="#%e9%a1%b6%e5%b1%82%e6%a0%87%e7%ad%be-3"></a></h1><p>print(root.tag) # 循环所有的year节点
+<h1 id="顶层标签-3">顶层标签</h1>
+<p>print(root.tag) # 循环所有的year节点
 for node in root.iter(&lsquo;year&rsquo;): # 将year节点中的内容自增一
 new_year = int(node.text) + 1 node.text = str(new_year) # 设置属性
 node.set(&rsquo;name&rsquo;, &lsquo;alex&rsquo;)
@@ -1015,42 +699,26 @@ del node.attrib[&rsquo;name&rsquo;] ############ 保存文件 ############
 tree.write(&ldquo;newnew.xml&rdquo;, encoding=&lsquo;utf-8&rsquo;)</p>
 <p>解析文件方式，修改，保存</p>
 <p>d、删除节点</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET ############ 解析字符串方式打开 ############</p>
-<h1 id="打开文件读取xml内容-1">打开文件，读取XML内容<a class="anchorjs-link" href="#%e6%89%93%e5%bc%80%e6%96%87%e4%bb%b6%e8%af%bb%e5%8f%96xml%e5%86%85%e5%ae%b9-1"></a></h1><p>str_xml = open(&lsquo;xo.xml&rsquo;, &lsquo;r&rsquo;).read() # 将字符串解析成xml特殊对象，root代指xml文件的根节点
+<h1 id="打开文件读取xml内容-1">打开文件，读取XML内容</h1>
+<p>str_xml = open(&lsquo;xo.xml&rsquo;, &lsquo;r&rsquo;).read() # 将字符串解析成xml特殊对象，root代指xml文件的根节点
 root = ET.XML(str_xml) ############ 操作 ############</p>
-<h1 id="顶层标签-4">顶层标签<a class="anchorjs-link" href="#%e9%a1%b6%e5%b1%82%e6%a0%87%e7%ad%be-4"></a></h1><p>print(root.tag) # 遍历data下的所有country节点
+<h1 id="顶层标签-4">顶层标签</h1>
+<p>print(root.tag) # 遍历data下的所有country节点
 for country in root.findall(&lsquo;country&rsquo;): # 获取每一个country节点下rank节点的内容
 rank = int(country.find(&lsquo;rank&rsquo;).text) if rank &gt; 50: # 删除指定country节点
 root.remove(country) ############ 保存文件 ############
 tree = ET.ElementTree(root)
 tree.write(&ldquo;newnew.xml&rdquo;, encoding=&lsquo;utf-8&rsquo;)</p>
 <p>解析字符串方式打开，删除，保存</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET ############ 解析文件方式 ############</p>
-<h1 id="直接解析xml文件-3">直接解析xml文件<a class="anchorjs-link" href="#%e7%9b%b4%e6%8e%a5%e8%a7%a3%e6%9e%90xml%e6%96%87%e4%bb%b6-3"></a></h1><p>tree = ET.parse(&ldquo;xo.xml&rdquo;) # 获取xml文件的根节点
+<h1 id="直接解析xml文件-3">直接解析xml文件</h1>
+<p>tree = ET.parse(&ldquo;xo.xml&rdquo;) # 获取xml文件的根节点
 root = tree.getroot() ############ 操作 ############</p>
-<h1 id="顶层标签-5">顶层标签<a class="anchorjs-link" href="#%e9%a1%b6%e5%b1%82%e6%a0%87%e7%ad%be-5"></a></h1><p>print(root.tag) # 遍历data下的所有country节点
+<h1 id="顶层标签-5">顶层标签</h1>
+<p>print(root.tag) # 遍历data下的所有country节点
 for country in root.findall(&lsquo;country&rsquo;): # 获取每一个country节点下rank节点的内容
 rank = int(country.find(&lsquo;rank&rsquo;).text) if rank &gt; 50: # 删除指定country节点
 root.remove(country) ############ 保存文件 ############
@@ -1058,17 +726,7 @@ tree.write(&ldquo;newnew.xml&rdquo;, encoding=&lsquo;utf-8&rsquo;)</p>
 <p>解析文件方式打开，删除，保存</p>
 </blockquote>
 <p><strong>3、创建XML文档</strong></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET # 创建根节点
 root = ET.Element(&ldquo;famliy&rdquo;) # 创建节点大儿子
 son1 = ET.Element(&lsquo;son&rsquo;, {&rsquo;name&rsquo;: &lsquo;儿1&rsquo;}) # 创建小儿子
@@ -1082,17 +740,7 @@ root.append(son1)</p>
 <p>tree = ET.ElementTree(root)
 tree.write(&lsquo;oooo.xml&rsquo;,encoding=&lsquo;utf-8&rsquo;, short_empty_elements=False)</p>
 <p>创建方式（一）</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET # 创建根节点
 root = ET.Element(&ldquo;famliy&rdquo;) # 创建大儿子 # son1 = ET.Element(&lsquo;son&rsquo;, {&rsquo;name&rsquo;: &lsquo;儿1&rsquo;})
 son1 = root.makeelement(&lsquo;son&rsquo;, {&rsquo;name&rsquo;: &lsquo;儿1&rsquo;}) # 创建小儿子 # son2 = ET.Element(&lsquo;son&rsquo;, {&ldquo;name&rdquo;: &lsquo;儿2&rsquo;})
@@ -1106,17 +754,7 @@ root.append(son1)</p>
 <p>tree = ET.ElementTree(root)
 tree.write(&lsquo;oooo.xml&rsquo;,encoding=&lsquo;utf-8&rsquo;, short_empty_elements=False)</p>
 <p>创建方式（二）</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET # 创建根节点
 root = ET.Element(&ldquo;famliy&rdquo;) # 创建节点大儿子
 son1 = ET.SubElement(root, &ldquo;son&rdquo;, attrib={&rsquo;name&rsquo;: &lsquo;儿1&rsquo;}) # 创建小儿子
@@ -1126,17 +764,7 @@ grandson1.text = &lsquo;孙子&rsquo; et = ET.ElementTree(root)  #生成文档�
 et.write(&ldquo;test.xml&rdquo;, encoding=&ldquo;utf-8&rdquo;, xml_declaration=True, short_empty_elements=False)</p>
 <p>创建方式（三）</p>
 <p>由于原生保存的XML时默认无缩进，如果想要设置缩进的话， 需要修改保存方式：</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET from xml.dom import minidom def prettify(elem): &ldquo;&ldquo;&ldquo;将节点转换成字符串，并添加缩进。 &quot;&rdquo;&rdquo; rough_string = ET.tostring(elem, &lsquo;utf-8&rsquo;)
 reparsed = minidom.parseString(rough_string) return reparsed.toprettyxml(indent=&rdquo;\t&quot;) # 创建根节点
 root = ET.Element(&ldquo;famliy&rdquo;) # 创建大儿子 # son1 = ET.Element(&lsquo;son&rsquo;, {&rsquo;name&rsquo;: &lsquo;儿1&rsquo;})
@@ -1154,59 +782,32 @@ f.write(raw_str)
 f.close()</p>
 <p>View Code</p>
 <p><strong>4、命名空间</strong></p>
-<p>详细介绍，<a href="http://www.w3school.com.cn/xml/xml_namespaces.asp" target="_blank">猛击这里</a></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p>详细介绍，<a href="http://www.w3school.com.cn/xml/xml_namespaces.asp">猛击这里</a></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>from xml.etree import ElementTree as ET</p>
-<p>ET.register_namespace(&lsquo;com&rsquo;,&ldquo;<a href="http://www.company.com" target="_blank">http://www.company.com</a>&rdquo;) #some name</p>
-<h1 id="build-a-tree-structure">build a tree structure<a class="anchorjs-link" href="#build-a-tree-structure"></a></h1><p>root = ET.Element(&quot;{http://www.company.com}STUFF&quot;)
+<p>ET.register_namespace(&lsquo;com&rsquo;,&ldquo;<a href="http://www.company.com">http://www.company.com</a>&rdquo;) #some name</p>
+<h1 id="build-a-tree-structure">build a tree structure</h1>
+<p>root = ET.Element(&quot;{http://www.company.com}STUFF&quot;)
 body = ET.SubElement(root, &ldquo;{http://www.company.com}MORE_STUFF&rdquo;, attrib={&quot;{http://www.company.com}hhh&quot;: &ldquo;123&rdquo;})
 body.text = &ldquo;STUFF EVERYWHERE!&rdquo;</p>
-<h1 id="wrap-it-in-an-elementtree-instance-and-save-as-xml">wrap it in an ElementTree instance, and save as XML<a class="anchorjs-link" href="#wrap-it-in-an-elementtree-instance-and-save-as-xml"></a></h1><p>tree = ET.ElementTree(root)</p>
+<h1 id="wrap-it-in-an-elementtree-instance-and-save-as-xml">wrap it in an ElementTree instance, and save as XML</h1>
+<p>tree = ET.ElementTree(root)</p>
 <p>tree.write(&ldquo;page.xml&rdquo;,
 xml_declaration=True,
 encoding=&lsquo;utf-8&rsquo;,
 method=&ldquo;xml&rdquo;)</p>
 <p>命名空间</p>
-<h2 id="九requests">九、requests<a class="anchorjs-link" href="#%e4%b9%9drequests"></a></h2><p>Python标准库中提供了：urllib等模块以供Http请求，但是，它的 API 太渣了。它是为另一个时代、另一个互联网所创建的。它需要巨量的工作，甚至包括各种方法覆盖，来完成最简单的任务。</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<h2 id="九requests">九、requests</h2>
+<p>Python标准库中提供了：urllib等模块以供Http请求，但是，它的 API 太渣了。它是为另一个时代、另一个互联网所创建的。它需要巨量的工作，甚至包括各种方法覆盖，来完成最简单的任务。</p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import urllib.request</p>
-<p>f = urllib.request.urlopen(&lsquo;<a href="http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508%27" target="_blank">http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508'</a>)
+<p>f = urllib.request.urlopen(&lsquo;<a href="http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508'">http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508'</a>)
 result = f.read().decode(&lsquo;utf-8&rsquo;)</p>
 <p>发送GET请求</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import urllib.request</p>
-<p>req = urllib.request.Request(&lsquo;<a href="http://www.example.com/%27" target="_blank">http://www.example.com/'</a>)
-req.add_header(&lsquo;Referer&rsquo;, &lsquo;<a href="http://www.python.org/%27" target="_blank">http://www.python.org/'</a>)
+<p>req = urllib.request.Request(&lsquo;<a href="http://www.example.com/'">http://www.example.com/'</a>)
+req.add_header(&lsquo;Referer&rsquo;, &lsquo;<a href="http://www.python.org/'">http://www.python.org/'</a>)
 r = urllib.request.urlopen(req)</p>
 <p>result = f.read().decode(&lsquo;utf-8&rsquo;)</p>
 <p>发送携带请求头的GET请求</p>
@@ -1215,53 +816,25 @@ r = urllib.request.urlopen(req)</p>
 <p>1、安装模块</p>
 <p>pip3 install requests</p>
 <p>2、使用模块</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<h1 id="1无参数实例">1、无参数实例<a class="anchorjs-link" href="#1%e6%97%a0%e5%8f%82%e6%95%b0%e5%ae%9e%e4%be%8b"></a></h1><p>import requests</p>
-<p>ret = requests.get(&lsquo;<a href="https://github.com/timeline.json%27" target="_blank">https://github.com/timeline.json'</a>) print(ret.url) print(ret.text) # 2、有参数实例</p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
+<h1 id="1无参数实例">1、无参数实例</h1>
+<p>import requests</p>
+<p>ret = requests.get(&lsquo;<a href="https://github.com/timeline.json'">https://github.com/timeline.json'</a>) print(ret.url) print(ret.text) # 2、有参数实例</p>
 <p>import requests</p>
 <p>payload = {&lsquo;key1&rsquo;: &lsquo;value1&rsquo;, &lsquo;key2&rsquo;: &lsquo;value2&rsquo;}
-ret = requests.get(&ldquo;<a href="http://httpbin.org/get%22" target="_blank">http://httpbin.org/get"</a>, params=payload) print(ret.url) print(ret.text)</p>
+ret = requests.get(&ldquo;<a href="http://httpbin.org/get%22">http://httpbin.org/get&quot;</a>, params=payload) print(ret.url) print(ret.text)</p>
 <p>GET请求</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<h1 id="1基本post实例">1、基本POST实例<a class="anchorjs-link" href="#1%e5%9f%ba%e6%9c%acpost%e5%ae%9e%e4%be%8b"></a></h1><p>import requests</p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
+<h1 id="1基本post实例">1、基本POST实例</h1>
+<p>import requests</p>
 <p>payload = {&lsquo;key1&rsquo;: &lsquo;value1&rsquo;, &lsquo;key2&rsquo;: &lsquo;value2&rsquo;}
-ret = requests.post(&ldquo;<a href="http://httpbin.org/post%22" target="_blank">http://httpbin.org/post"</a>, data=payload) print(ret.text) # 2、发送请求头和数据实例</p>
+ret = requests.post(&ldquo;<a href="http://httpbin.org/post%22">http://httpbin.org/post&quot;</a>, data=payload) print(ret.text) # 2、发送请求头和数据实例</p>
 <p>import requests import json</p>
-<p>url = &lsquo;<a href="https://api.github.com/some/endpoint%27" target="_blank">https://api.github.com/some/endpoint'</a> payload = {&lsquo;some&rsquo;: &lsquo;data&rsquo;}
+<p>url = &lsquo;<a href="https://api.github.com/some/endpoint'">https://api.github.com/some/endpoint'</a> payload = {&lsquo;some&rsquo;: &lsquo;data&rsquo;}
 headers = {&lsquo;content-type&rsquo;: &lsquo;application/json&rsquo;}</p>
 <p>ret = requests.post(url, data=json.dumps(payload), headers=headers) print(ret.text) print(ret.cookies)</p>
 <p>POST请求</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>requests.get(url, params=None, **kwargs)
 requests.post(url, data=None, json=None, **kwargs)
 requests.put(url, data=None, **kwargs)
@@ -1274,46 +847,29 @@ requests.request(method, url, **kwargs)</p>
 <p>更多requests模块相关的文档见：http://cn.python-requests.org/zh_CN/latest/</p>
 <p>3、Http请求和XML实例</p>
 <p>实例：检测QQ账号是否在线</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import urllib import requests from xml.etree import ElementTree as ET # 使用内置模块urllib发送HTTP请求，或者XML格式内容
-&quot;&rdquo;&rdquo; f = urllib.request.urlopen(&lsquo;<a href="http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508%27" target="_blank">http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508'</a>)
+&quot;&rdquo;&rdquo; f = urllib.request.urlopen(&lsquo;<a href="http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508'">http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508'</a>)
 result = f.read().decode(&lsquo;utf-8&rsquo;) &quot;&quot;&quot;</p>
-<h1 id="使用第三方模块requests发送http请求或者xml格式内容">使用第三方模块requests发送HTTP请求，或者XML格式内容<a class="anchorjs-link" href="#%e4%bd%bf%e7%94%a8%e7%ac%ac%e4%b8%89%e6%96%b9%e6%a8%a1%e5%9d%97requests%e5%8f%91%e9%80%81http%e8%af%b7%e6%b1%82%e6%88%96%e8%80%85xml%e6%a0%bc%e5%bc%8f%e5%86%85%e5%ae%b9"></a></h1><p>r = requests.get(&lsquo;<a href="http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508%27" target="_blank">http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508'</a>)
+<h1 id="使用第三方模块requests发送http请求或者xml格式内容">使用第三方模块requests发送HTTP请求，或者XML格式内容</h1>
+<p>r = requests.get(&lsquo;<a href="http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508'">http://www.webxml.com.cn//webservices/qqOnlineWebService.asmx/qqCheckOnline?qqCode=424662508'</a>)
 result = r.text # 解析XML格式内容
 node = ET.XML(result) # 获取内容
 if node.text == &ldquo;Y&rdquo;: print(&ldquo;在线&rdquo;) else: print(&ldquo;离线&rdquo;)</p>
 <p>View Code</p>
 <p>实例：查看火车停靠信息</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import urllib import requests from xml.etree import ElementTree as ET # 使用内置模块urllib发送HTTP请求，或者XML格式内容
-&quot;&quot;&quot; f = urllib.request.urlopen(&lsquo;<a href="http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?TrainCode=G666&amp;UserID=%27" target="_blank">http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?TrainCode=G666&UserID='</a>)
+&quot;&quot;&quot; f = urllib.request.urlopen(&lsquo;<a href="http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?TrainCode=G666&amp;UserID='">http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?TrainCode=G666&amp;UserID='</a>)
 result = f.read().decode(&lsquo;utf-8&rsquo;) &quot;&quot;&quot;</p>
-<h1 id="使用第三方模块requests发送http请求或者xml格式内容-1">使用第三方模块requests发送HTTP请求，或者XML格式内容<a class="anchorjs-link" href="#%e4%bd%bf%e7%94%a8%e7%ac%ac%e4%b8%89%e6%96%b9%e6%a8%a1%e5%9d%97requests%e5%8f%91%e9%80%81http%e8%af%b7%e6%b1%82%e6%88%96%e8%80%85xml%e6%a0%bc%e5%bc%8f%e5%86%85%e5%ae%b9-1"></a></h1><p>r = requests.get(&lsquo;<a href="http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?TrainCode=G666&amp;UserID=%27" target="_blank">http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?TrainCode=G666&UserID='</a>)
+<h1 id="使用第三方模块requests发送http请求或者xml格式内容-1">使用第三方模块requests发送HTTP请求，或者XML格式内容</h1>
+<p>r = requests.get(&lsquo;<a href="http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?TrainCode=G666&amp;UserID='">http://www.webxml.com.cn/WebServices/TrainTimeWebService.asmx/getDetailInfoByTrainCode?TrainCode=G666&amp;UserID='</a>)
 result = r.text # 解析XML格式内容
 root = ET.XML(result) for node in root.iter(&lsquo;TrainDetailInfo&rsquo;): print(node.find(&lsquo;TrainStation&rsquo;).text,node.find(&lsquo;StartTime&rsquo;).text,node.tag,node.attrib)</p>
 <p>View Code</p>
-<p>注：更多接口<a href="http://www.cnblogs.com/wupeiqi/archive/2012/11/18/2776014.html" target="_blank">猛击这里</a></p>
-<h2 id="十logging">十、logging<a class="anchorjs-link" href="#%e5%8d%81logging"></a></h2><p>用于便捷记录日志且<strong>线程安全</strong>的模块</p>
+<p>注：更多接口<a href="http://www.cnblogs.com/wupeiqi/archive/2012/11/18/2776014.html">猛击这里</a></p>
+<h2 id="十logging">十、logging</h2>
+<p>用于便捷记录日志且<strong>线程安全</strong>的模块</p>
 <p><strong>1、单文件日志</strong></p>
 <p>import logging</p>
 <p>logging.basicConfig(filename=&lsquo;log.log&rsquo;,
@@ -1332,25 +888,10 @@ ERROR = 40 WARNING = 30 WARN = WARNING
 INFO = 20 DEBUG = 10 NOTSET = 0</p>
 <p>注：只有【当前写等级】大于【日志等级】时，日志文件才被记录。</p>
 <p>日志记录格式：</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//425762-20160524044013866-178249755.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//425762-20160524044013866-178249755.png" alt=""></p>
 <p><strong>2、多文件日志</strong></p>
 <p>对于上述记录日志的功能，只能将日志记录在单文件中，如果想要设置多个日志文件，logging.basicConfig将无法完成，需要自定义文件和日志操作对象。</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p># 定义文件
 file_1_1 = logging.FileHandler(&rsquo;l1_1.log&rsquo;, &lsquo;a&rsquo;, encoding=&lsquo;utf-8&rsquo;)
 fmt = logging.Formatter(fmt=&quot;%(asctime)s - %(name)s - %(levelname)s -%(module)s:  %(message)s&quot;)
@@ -1358,23 +899,16 @@ file_1_1.setFormatter(fmt)</p>
 <p>file_1_2 = logging.FileHandler(&rsquo;l1_2.log&rsquo;, &lsquo;a&rsquo;, encoding=&lsquo;utf-8&rsquo;)
 fmt = logging.Formatter()
 file_1_2.setFormatter(fmt)</p>
-<h1 id="定义日志">定义日志<a class="anchorjs-link" href="#%e5%ae%9a%e4%b9%89%e6%97%a5%e5%bf%97"></a></h1><p>logger1 = logging.Logger(&lsquo;s1&rsquo;, level=logging.ERROR)
+<h1 id="定义日志">定义日志</h1>
+<p>logger1 = logging.Logger(&lsquo;s1&rsquo;, level=logging.ERROR)
 logger1.addHandler(file_1_1)
 logger1.addHandler(file_1_2)</p>
-<h1 id="写日志">写日志<a class="anchorjs-link" href="#%e5%86%99%e6%97%a5%e5%bf%97"></a></h1><p>logger1.critical(&lsquo;1111&rsquo;)</p>
+<h1 id="写日志">写日志</h1>
+<p>logger1.critical(&lsquo;1111&rsquo;)</p>
 <p>日志一</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<h1 id="定义文件">定义文件<a class="anchorjs-link" href="#%e5%ae%9a%e4%b9%89%e6%96%87%e4%bb%b6"></a></h1><p>file_2_1 = logging.FileHandler(&rsquo;l2_1.log&rsquo;, &lsquo;a&rsquo;)
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
+<h1 id="定义文件">定义文件</h1>
+<p>file_2_1 = logging.FileHandler(&rsquo;l2_1.log&rsquo;, &lsquo;a&rsquo;)
 fmt = logging.Formatter()
 file_2_1.setFormatter(fmt) # 定义日志
 logger2 = logging.Logger(&lsquo;s2&rsquo;, level=logging.INFO)
@@ -1385,7 +919,8 @@ logger2.addHandler(file_2_1)</p>
 <li>当使用【logger1】写日志时，会将相应的内容写入 l1_1.log 和 l1_2.log 文件中</li>
 <li>当使用【logger2】写日志时，会将相应的内容写入 l2_1.log 文件中</li>
 </ul>
-<h2 id="十一系统命令">十一、系统命令<a class="anchorjs-link" href="#%e5%8d%81%e4%b8%80%e7%b3%bb%e7%bb%9f%e5%91%bd%e4%bb%a4"></a></h2><p>可以执行shell命令的相关模块和函数有：</p>
+<h2 id="十一系统命令">十一、系统命令</h2>
+<p>可以执行shell命令的相关模块和函数有：</p>
 <ul>
 <li>os.system</li>
 <li>os.spawn*</li>
@@ -1393,17 +928,7 @@ logger2.addHandler(file_2_1)</p>
 <li>popen2.*           &ndash;废弃</li>
 <li>commands.*      &ndash;废弃，3.x中被移除</li>
 </ul>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import commands</p>
 <p>result = commands.getoutput(&lsquo;cmd&rsquo;)
 result = commands.getstatus(&lsquo;cmd&rsquo;)
@@ -1439,17 +964,7 @@ subprocess.check_output(&ldquo;exit 1&rdquo;, shell=True)</p>
 <li>startupinfo与createionflags只在windows下有效<br>
 将被传递给底层的CreateProcess()函数，用于设置子进程的一些属性，如：主窗口的外观，进程的优先级等等</li>
 </ul>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import subprocess
 ret1 = subprocess.Popen([&ldquo;mkdir&rdquo;,&ldquo;t1&rdquo;])
 ret2 = subprocess.Popen(&ldquo;mkdir t2&rdquo;, shell=True)</p>
@@ -1459,31 +974,11 @@ ret2 = subprocess.Popen(&ldquo;mkdir t2&rdquo;, shell=True)</p>
 <li>输入即可得到输出，如：ifconfig</li>
 <li>输入进行某环境，依赖再输入，如：python</li>
 </ul>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import subprocess</p>
 <p>obj = subprocess.Popen(&ldquo;mkdir t3&rdquo;, shell=True, cwd=&rsquo;/home/dev&rsquo;,)</p>
 <p>View Code</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import subprocess</p>
 <p>obj = subprocess.Popen([&ldquo;python&rdquo;], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
 obj.stdin.write(&ldquo;print(1)\n&rdquo;)
@@ -1494,39 +989,20 @@ obj.stdout.close()
 cmd_error = obj.stderr.read()
 obj.stderr.close() print(cmd_out) print(cmd_error)</p>
 <p>View Code</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import subprocess</p>
 <p>obj = subprocess.Popen([&ldquo;python&rdquo;], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
 obj.stdin.write(&ldquo;print(1)\n&rdquo;)
 obj.stdin.write(&ldquo;print(2)&rdquo;)</p>
 <p>out_error_list = obj.communicate() print(out_error_list)</p>
 <p>View Code</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import subprocess</p>
 <p>obj = subprocess.Popen([&ldquo;python&rdquo;], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
 out_error_list = obj.communicate(&lsquo;print(&ldquo;hello&rdquo;)&rsquo;) print(out_error_list)</p>
 <p>View Code</p>
-<h2 id="十二shutil"><strong>十二、shutil</strong><a class="anchorjs-link" href="#%e5%8d%81%e4%ba%8cshutil"></a></h2><p>高级的 文件、文件夹、压缩包 处理模块</p>
+<h2 id="十二shutil"><strong>十二、shutil</strong></h2>
+<p>高级的 文件、文件夹、压缩包 处理模块</p>
 <p><strong>shutil.copyfileobj(fsrc, fdst[, length])</strong><br>
 将文件内容拷贝到另一个文件中</p>
 <p>import shutil</p>
@@ -1553,17 +1029,7 @@ out_error_list = obj.communicate(&lsquo;print(&ldquo;hello&rdquo;)&rsquo;) print
 递归的去拷贝文件夹</p>
 <p>import shutil</p>
 <p>shutil.copytree(&lsquo;folder1&rsquo;, &lsquo;folder2&rsquo;, ignore=shutil.ignore_patterns(&rsquo;*.pyc&rsquo;, &rsquo;tmp*&rsquo;))</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import shutil</p>
 <p>shutil.copytree(&lsquo;f1&rsquo;, &lsquo;f2&rsquo;, symlinks=True, ignore=shutil.ignore_patterns(&rsquo;*.pyc&rsquo;, &rsquo;tmp*&rsquo;))</p>
 <p>View Code</p>
@@ -1595,17 +1061,7 @@ ret = shutil.make_archive(&ldquo;wwwwwwwwww&rdquo;, &lsquo;gztar&rsquo;, root_di
 import shutil
 ret = shutil.make_archive(&quot;/Users/wupeiqi/wwwwwwwwww&quot;, &lsquo;gztar&rsquo;, root_dir=&rsquo;/Users/wupeiqi/Downloads/test&rsquo;)</p>
 <p>shutil 对压缩包的处理是调用 ZipFile 和 TarFile 两个模块来进行的，详细：</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import zipfile # 压缩
 z = zipfile.ZipFile(&rsquo;laxi.zip&rsquo;, &lsquo;w&rsquo;)
 z.write(&lsquo;a.log&rsquo;)
@@ -1615,17 +1071,7 @@ z = zipfile.ZipFile(&rsquo;laxi.zip&rsquo;, &lsquo;r&rsquo;)
 z.extractall()
 z.close()</p>
 <p>zipfile解压缩</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import tarfile # 压缩
 tar = tarfile.open(&lsquo;your.tar&rsquo;,&lsquo;w&rsquo;)
 tar.add(&rsquo;/Users/wupeiqi/PycharmProjects/bbs2.log&rsquo;, arcname=&lsquo;bbs2.log&rsquo;)
@@ -1635,23 +1081,14 @@ tar = tarfile.open(&lsquo;your.tar&rsquo;,&lsquo;r&rsquo;)
 tar.extractall() # 可设置解压地址
 tar.close()</p>
 <p>tarfile解压缩</p>
-<h2 id="十三paramiko">十三、paramiko<a class="anchorjs-link" href="#%e5%8d%81%e4%b8%89paramiko"></a></h2><p>paramiko是一个用于做远程控制的模块，使用该模块可以对远程服务器进行命令或文件操作，值得一说的是，fabric和ansible内部的远程管理就是使用的paramiko来现实。</p>
+<h2 id="十三paramiko">十三、paramiko</h2>
+<p>paramiko是一个用于做远程控制的模块，使用该模块可以对远程服务器进行命令或文件操作，值得一说的是，fabric和ansible内部的远程管理就是使用的paramiko来现实。</p>
 <p>1、下载安装</p>
 <p>pycrypto，由于 paramiko 模块内部依赖pycrypto，所以先下载安装pycrypto
 pip3 install pycrypto
 pip3 install paramiko</p>
 <p>2、模块使用</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>#!/usr/bin/env python #coding:utf-8</p>
 <p>import paramiko</p>
 <p>ssh = paramiko.SSHClient()
@@ -1660,17 +1097,7 @@ ssh.connect(&lsquo;192.168.1.108&rsquo;, 22, &lsquo;alex&rsquo;, &lsquo;123&rsqu
 stdin, stdout, stderr = ssh.exec_command(&lsquo;df&rsquo;) print stdout.read()
 ssh.close();</p>
 <p>执行命令 - 用户名+密码</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import paramiko</p>
 <p>private_key_path = &lsquo;/home/auto/.ssh/id_rsa&rsquo; key = paramiko.RSAKey.from_private_key_file(private_key_path)</p>
 <p>ssh = paramiko.SSHClient()
@@ -1679,17 +1106,7 @@ ssh.connect(&lsquo;主机名 &lsquo;, 端口, &lsquo;用户名&rsquo;, key)</p>
 <p>stdin, stdout, stderr = ssh.exec_command(&lsquo;df&rsquo;) print stdout.read()
 ssh.close()</p>
 <p>执行命令 - 密钥</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import os,sys import paramiko</p>
 <p>t = paramiko.Transport((&lsquo;182.92.219.86&rsquo;,22))
 t.connect(username=&lsquo;wupeiqi&rsquo;,password=&lsquo;123&rsquo;)
@@ -1702,17 +1119,7 @@ sftp = paramiko.SFTPClient.from_transport(t)
 sftp.get(&rsquo;/tmp/test.py&rsquo;,&rsquo;/tmp/test2.py&rsquo;)
 t.close()</p>
 <p>上传或下载文件 - 用户名+密码</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <p>import paramiko</p>
 <p>pravie_key_path = &lsquo;/home/auto/.ssh/id_rsa&rsquo; key = paramiko.RSAKey.from_private_key_file(pravie_key_path)</p>
 <p>t = paramiko.Transport((&lsquo;182.92.219.86&rsquo;,22))
@@ -1727,7 +1134,8 @@ t.connect(username=&lsquo;wupeiqi&rsquo;,pkey=key)</p>
 sftp.get(&rsquo;/tmp/test3.py&rsquo;,&rsquo;/tmp/test4.py&rsquo;)</p>
 <p>t.close()</p>
 <p>上传或下载文件 - 密钥</p>
-<h2 id="十四time">十四、time<a class="anchorjs-link" href="#%e5%8d%81%e5%9b%9btime"></a></h2><p>时间相关的操作，时间有三种表示方式：</p>
+<h2 id="十四time">十四、time</h2>
+<p>时间相关的操作，时间有三种表示方式：</p>
 <ul>
 <li>时间戳               1970年1月1日之后的秒，即：time.time()</li>
 <li>格式化的字符串    2014-11-11 11:11，    即：time.strftime(&rsquo;%Y-%m-%d&rsquo;)</li>
@@ -1755,17 +1163,7 @@ strftime(&quot;%Y-%m-%d&quot;)
 import datetime
 print datetime.datetime.now()
 print datetime.datetime.now() - datetime.timedelta(days=5)</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="images/ContractedBlock.gif" alt=""><img src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" alt=""></p>
 <pre><code>%Y  Year with century as a decimal number. %m  Month as a decimal number \[01,12\]. %d  Day of the month as a decimal number \[01,31\]. %H  Hour (24-hour clock) as a decimal number \[00,23\]. %M  Minute as a decimal number \[00,59\]. %S  Second as a decimal number \[00,61\]. %z  Time zone offset from UTC. %a  Locale's abbreviated weekday name.
 %A  Locale's full weekday name.
 %b  Locale's abbreviated month name.
@@ -1774,134 +1172,18 @@ print datetime.datetime.now() - datetime.timedelta(days=5)</p>
 %I  Hour (12-hour clock) as a decimal number \[01,12\]. %p  Locale's equivalent of either AM or PM.
 </code></pre>
 <p>格式化占位符</p>
-<h3 id="练习题">练习题：<a class="anchorjs-link" href="#%e7%bb%83%e4%b9%a0%e9%a2%98"></a></h3><p>1、通过HTTP请求和XML实现获取电视节目</p>
+<h3 id="练习题">练习题：</h3>
+<p>1、通过HTTP请求和XML实现获取电视节目</p>
 <p>     API：http://www.webxml.com.cn/webservices/ChinaTVprogramWebService.asmx </p>
 <p>2、通过HTTP请求和JSON实现获取天气状况</p>
 <p>API：http://wthrcdn.etouch.cn/weather_mini?city=北京</p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2017-03-30-range%E7%94%A8%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="range用法">
-              Previous<br>
-              <span>range用法</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/" data-toggle="tooltip" data-placement="top" title="Python开发【第四篇】：Python基础之函数">
-              Next<br>
-              <span>Python开发【第四篇】：Python基础之函数</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>

@@ -1,50 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Zabbix调优不完全指南 // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>Zabbix调优不完全指南 | 蔡振威的博客</title>
-
-  
-  <meta name="description" content="问题一、Zabbix server内存溢出，无法启动问题原因：
-这是由于zabbix默认的缓存配置只有8M，当你zabbix正常运行一段时间后，大批量添加一些被监控设备就会出现这种情况。
-解决方法：
-打开zabbix_server.conf文件，将CacheSize改一个较大的值，我现在给自己配的是1024M。
-vim /etc/zabbix/zabbix_server.conf CacheSize=1024M #第385行
-问题二、Zabbix housekeeper processes more than 75% busy
-问题原因：
-由于zabbix每天都会产生大量数据（比如我现在监控项有20K&#43;，每30s-5min每个监控项会产生一条数据，一天会产生非常多数据），为了防止数据库爆炸，zabbix会自动定期清理历史数据（这个历史数据保留时间值你可以在监控项中自己配置），但清理历史数据会影响mysql性能，就会出现上面的报错。
-解决方法：
-这里需要调整两个参数，一个是清理时间间隔、一个是清理的最大删除量。
-vim /etc/zabbix/zabbix_server.conf HousekeepingFrequency=12 #原值是每一小时清理一次，建议改为12或24小时清理一次。第363行 MaxHousekeeperDelete=100000 #原值为每次清理5000条，建议改为上限100000条。 第376行
-问题三、Zabbix poller processes more than 75% busy问题原因：
-这里可能有如下两个原因：
-1、通过Zabbix agent采集数据的设备死机或其他原因导致zabbix agent死掉server获取不到数据。
-2、server向agent获取数据时时间过长，超过了server设置的timeout时间。
-解决方法：
-1、增加zabbix server启动时初始化的进程数量：
-vim /etc/zabbix/zabbix_server.conf StartPollers=12 #第165行，视自己服务器性能改，上限是1000，如果改完发现启不起来可以改小一点。
-2、修改模板自动发现规则中的保留失去的资源期间为0。
-问题四：Zabbix discoverer processes more than 75% busy问题原因：
-看问题报警字面意思是自动发现进程忙碌数超过75%，这是因为我们用的监控模版中带着大量自动发现项，每一个自动发现项都会产生一个进程，所以一般我们添加多台被监控设备时就会出现这样的报错。
-解决办法：
-修改自动发现进程数。
-vim /etc/zabbix/zabbix_server.conf StartDiscoverers=10 #第219行，取掉#号，默认为1，改为10，上限为250请视自己的需求和服务器配置而定
-其次还可以通过执行定期重启server脚本来清理进程，释放内存。
-[root@m01 ~]# grep &lsquo;StartDiscoverers&rsquo; /etc/zabbix/zabbix_server.conf2 3 ### Option: StartDiscoverers4 5 StartDiscoverers=56 7 [root@m01 ~]# systemctl restart zabbix-server.">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Zabbix调优不完全指南"/>
-<meta name="twitter:description" content="问题一、Zabbix server内存溢出，无法启动问题原因：
+<meta name="twitter:description" content="问题一、Zabbix server内存溢出，无法启动 问题原因：
 这是由于zabbix默认的缓存配置只有8M，当你zabbix正常运行一段时间后，大批量添加一些被监控设备就会出现这种情况。
 解决方法：
 打开zabbix_server.conf文件，将CacheSize改一个较大的值，我现在给自己配的是1024M。
@@ -55,7 +24,7 @@ vim /etc/zabbix/zabbix_server.conf CacheSize=1024M #第385行
 解决方法：
 这里需要调整两个参数，一个是清理时间间隔、一个是清理的最大删除量。
 vim /etc/zabbix/zabbix_server.conf HousekeepingFrequency=12 #原值是每一小时清理一次，建议改为12或24小时清理一次。第363行 MaxHousekeeperDelete=100000 #原值为每次清理5000条，建议改为上限100000条。 第376行
-问题三、Zabbix poller processes more than 75% busy问题原因：
+问题三、Zabbix poller processes more than 75% busy 问题原因：
 这里可能有如下两个原因：
 1、通过Zabbix agent采集数据的设备死机或其他原因导致zabbix agent死掉server获取不到数据。
 2、server向agent获取数据时时间过长，超过了server设置的timeout时间。
@@ -63,16 +32,16 @@ vim /etc/zabbix/zabbix_server.conf HousekeepingFrequency=12 #原值是每一小�
 1、增加zabbix server启动时初始化的进程数量：
 vim /etc/zabbix/zabbix_server.conf StartPollers=12 #第165行，视自己服务器性能改，上限是1000，如果改完发现启不起来可以改小一点。
 2、修改模板自动发现规则中的保留失去的资源期间为0。
-问题四：Zabbix discoverer processes more than 75% busy问题原因：
+问题四：Zabbix discoverer processes more than 75% busy 问题原因：
 看问题报警字面意思是自动发现进程忙碌数超过75%，这是因为我们用的监控模版中带着大量自动发现项，每一个自动发现项都会产生一个进程，所以一般我们添加多台被监控设备时就会出现这样的报错。
 解决办法：
 修改自动发现进程数。
 vim /etc/zabbix/zabbix_server.conf StartDiscoverers=10 #第219行，取掉#号，默认为1，改为10，上限为250请视自己的需求和服务器配置而定
 其次还可以通过执行定期重启server脚本来清理进程，释放内存。
-[root@m01 ~]# grep &lsquo;StartDiscoverers&rsquo; /etc/zabbix/zabbix_server.conf2 3 ### Option: StartDiscoverers4 5 StartDiscoverers=56 7 [root@m01 ~]# systemctl restart zabbix-server."/>
+[root@m01 ~]# grep &lsquo;StartDiscoverers&rsquo; /etc/zabbix/zabbix_server."/>
 
-  <meta property="og:title" content="Zabbix调优不完全指南" />
-<meta property="og:description" content="问题一、Zabbix server内存溢出，无法启动问题原因：
+    <meta property="og:title" content="Zabbix调优不完全指南" />
+<meta property="og:description" content="问题一、Zabbix server内存溢出，无法启动 问题原因：
 这是由于zabbix默认的缓存配置只有8M，当你zabbix正常运行一段时间后，大批量添加一些被监控设备就会出现这种情况。
 解决方法：
 打开zabbix_server.conf文件，将CacheSize改一个较大的值，我现在给自己配的是1024M。
@@ -83,7 +52,7 @@ vim /etc/zabbix/zabbix_server.conf CacheSize=1024M #第385行
 解决方法：
 这里需要调整两个参数，一个是清理时间间隔、一个是清理的最大删除量。
 vim /etc/zabbix/zabbix_server.conf HousekeepingFrequency=12 #原值是每一小时清理一次，建议改为12或24小时清理一次。第363行 MaxHousekeeperDelete=100000 #原值为每次清理5000条，建议改为上限100000条。 第376行
-问题三、Zabbix poller processes more than 75% busy问题原因：
+问题三、Zabbix poller processes more than 75% busy 问题原因：
 这里可能有如下两个原因：
 1、通过Zabbix agent采集数据的设备死机或其他原因导致zabbix agent死掉server获取不到数据。
 2、server向agent获取数据时时间过长，超过了server设置的timeout时间。
@@ -91,13 +60,13 @@ vim /etc/zabbix/zabbix_server.conf HousekeepingFrequency=12 #原值是每一小�
 1、增加zabbix server启动时初始化的进程数量：
 vim /etc/zabbix/zabbix_server.conf StartPollers=12 #第165行，视自己服务器性能改，上限是1000，如果改完发现启不起来可以改小一点。
 2、修改模板自动发现规则中的保留失去的资源期间为0。
-问题四：Zabbix discoverer processes more than 75% busy问题原因：
+问题四：Zabbix discoverer processes more than 75% busy 问题原因：
 看问题报警字面意思是自动发现进程忙碌数超过75%，这是因为我们用的监控模版中带着大量自动发现项，每一个自动发现项都会产生一个进程，所以一般我们添加多台被监控设备时就会出现这样的报错。
 解决办法：
 修改自动发现进程数。
 vim /etc/zabbix/zabbix_server.conf StartDiscoverers=10 #第219行，取掉#号，默认为1，改为10，上限为250请视自己的需求和服务器配置而定
 其次还可以通过执行定期重启server脚本来清理进程，释放内存。
-[root@m01 ~]# grep &lsquo;StartDiscoverers&rsquo; /etc/zabbix/zabbix_server.conf2 3 ### Option: StartDiscoverers4 5 StartDiscoverers=56 7 [root@m01 ~]# systemctl restart zabbix-server." />
+[root@m01 ~]# grep &lsquo;StartDiscoverers&rsquo; /etc/zabbix/zabbix_server." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://water711.github.io/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-16T00:00:00+00:00" />
@@ -105,189 +74,39 @@ vim /etc/zabbix/zabbix_server.conf StartDiscoverers=10 #第219行，取掉#号�
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>Zabbix调优不完全指南</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Fri, Oct 16, 2020
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Zabbix调优不完全指南</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Oct 16, 2020
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          2 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <p> </p>
-<h2 id="问题一zabbix-server内存溢出无法启动">问题一、Zabbix server内存溢出，无法启动<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e4%b8%80zabbix-server%e5%86%85%e5%ad%98%e6%ba%a2%e5%87%ba%e6%97%a0%e6%b3%95%e5%90%af%e5%8a%a8"></a></h2><p>问题原因：</p>
+    </header>
+    <div class="post-content">
+      <p> </p>
+<h2 id="问题一zabbix-server内存溢出无法启动">问题一、Zabbix server内存溢出，无法启动</h2>
+<p>问题原因：</p>
 <p>这是由于zabbix默认的缓存配置只有8M，当你zabbix正常运行一段时间后，大批量添加一些被监控设备就会出现这种情况。</p>
 <p>解决方法：</p>
 <p>打开zabbix_server.conf文件，将CacheSize改一个较大的值，我现在给自己配的是1024M。</p>
@@ -303,7 +122,8 @@ CacheSize=1024M #第385行</p>
 HousekeepingFrequency=12 #原值是每一小时清理一次，建议改为12或24小时清理一次。第363行
 MaxHousekeeperDelete=100000 #原值为每次清理5000条，建议改为上限100000条。 第376行</p>
 <p> </p>
-<h2 id="问题三zabbix-poller-processes-more-than-75-busy">问题三、Zabbix poller processes more than 75% busy<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e4%b8%89zabbix-poller-processes-more-than-75-busy"></a></h2><p>问题原因：</p>
+<h2 id="问题三zabbix-poller-processes-more-than-75-busy">问题三、Zabbix poller processes more than 75% busy</h2>
+<p>问题原因：</p>
 <p>这里可能有如下两个原因：</p>
 <p>1、通过Zabbix agent采集数据的设备死机或其他原因导致zabbix agent死掉server获取不到数据。</p>
 <p>2、server向agent获取数据时时间过长，超过了server设置的timeout时间。</p>
@@ -313,7 +133,8 @@ MaxHousekeeperDelete=100000 #原值为每次清理5000条，建议改为上限10
 StartPollers=12 #第165行，视自己服务器性能改，上限是1000，如果改完发现启不起来可以改小一点。</p>
 <p>2、修改模板自动发现规则中的保留失去的资源期间为0。</p>
 <p> </p>
-<h2 id="问题四zabbix-discoverer-processes-more-than-75-busy">问题四：Zabbix discoverer processes more than 75% busy<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e5%9b%9bzabbix-discoverer-processes-more-than-75-busy"></a></h2><p>问题原因：</p>
+<h2 id="问题四zabbix-discoverer-processes-more-than-75-busy">问题四：Zabbix discoverer processes more than 75% busy</h2>
+<p>问题原因：</p>
 <p>看问题报警字面意思是自动发现进程忙碌数超过75%，这是因为我们用的监控模版中带着大量自动发现项，每一个自动发现项都会产生一个进程，所以一般我们添加多台被监控设备时就会出现这样的报错。</p>
 <p>解决办法：</p>
 <p>修改自动发现进程数。</p>
@@ -323,13 +144,15 @@ StartDiscoverers=10 #第219行，取掉#号，默认为1，改为10，上限为2
 <p>[root@m01 ~]# grep &lsquo;StartDiscoverers&rsquo; /etc/zabbix/zabbix_server.conf2 3 ### Option: StartDiscoverers4 5 StartDiscoverers=56 7
 [root@m01 ~]# systemctl restart zabbix-server.service [root@m01 ~]# crontab -e2 3 @daily service zabbix-server restart &gt; /dev/null 2&gt;&amp;14 5</p>
 <p> </p>
-<h2 id="问题五zabbix-alerter-processes-more-than-75-busy">问题五：Zabbix alerter processes more than 75% busy<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e4%ba%94zabbix-alerter-processes-more-than-75-busy"></a></h2><p>问题原因：</p>
+<h2 id="问题五zabbix-alerter-processes-more-than-75-busy">问题五：Zabbix alerter processes more than 75% busy</h2>
+<p>问题原因：</p>
 <p>这个问题通常是因为邮件告警进程过于繁忙导致的，如果邮件动作间隔设置过短，在一些极端情况下（比如核心网络宕了）会发生大量邮件（比如上万条邮件）告警，则会导致邮件进程繁忙或者邮件进程直接挂了。</p>
 <p>解决方法：</p>
 <p>修改邮件脚本，将邮件的动作改为打印时间，等待邮件完全释放再改回来，如下：</p>
 <p>[root@m01 ~]# cat /usr/lib/zabbix/alertscripts/sms 2 3 #!/bin/bash 4 5 echo `date` &raquo;/tmp/sms.txt</p>
 <p> </p>
-<h2 id="问题六zabbix-poller-processes-more-than-75-busy">问题六：Zabbix poller processes more than 75% busy<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e5%85%adzabbix-poller-processes-more-than-75-busy"></a></h2><p>问题原因：</p>
+<h2 id="问题六zabbix-poller-processes-more-than-75-busy">问题六：Zabbix poller processes more than 75% busy</h2>
+<p>问题原因：</p>
 <p>1、zabbix消耗的内存过多。</p>
 <p>2、某个进程卡住了。</p>
 <p>3、僵尸进程太多、出错、导致慢了。</p>
@@ -343,13 +166,15 @@ StartPollers=12 #第165行，我现在设置为12，如果你服务器性能够�
 crontab -e 调出Cron编辑器中增加一个计划：
 @daily service zabbix-server restart &gt; /dev/null 2&gt;&amp;1</p>
 <p> </p>
-<h2 id="问题七server端日志中出现大量first-network-error-wait-for-15-seconds">问题七：server端日志中出现大量first network error, wait for 15 seconds<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e4%b8%83server%e7%ab%af%e6%97%a5%e5%bf%97%e4%b8%ad%e5%87%ba%e7%8e%b0%e5%a4%a7%e9%87%8ffirst-network-error-wait-for-15-seconds"></a></h2><p>问题原因：</p>
+<h2 id="问题七server端日志中出现大量first-network-error-wait-for-15-seconds">问题七：server端日志中出现大量first network error, wait for 15 seconds</h2>
+<p>问题原因：</p>
 <p>产生这个问题的主要原因是你的监控项执行时间过长，超过了默认配置的timeout=15s时间，这里只要将你的server、proxy和agent的conf文件中的timeout时间改长一点即可，上限是30s，如果30s还不够那就要改系统源码来突破这个上限了。</p>
 <p>解决方法：</p>
 <p>vim /etc/zabbix/zabbix_server.conf #这里以修改server端conf文件为例，其他两个类似的就不列举了
 Timeout=30 #第448行</p>
 <p> </p>
-<h2 id="问题八more-than-100-items-having-missing-data-for-more-than-10-minutes和zabbix-poller-processes-more-than-75-busy">问题八：More than 100 items having missing data for more than 10 minutes和Zabbix poller processes more than 75% busy<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e5%85%abmore-than-100-items-having-missing-data-for-more-than-10-minutes%e5%92%8czabbix-poller-processes-more-than-75-busy"></a></h2><p>问题原因：</p>
+<h2 id="问题八more-than-100-items-having-missing-data-for-more-than-10-minutes和zabbix-poller-processes-more-than-75-busy">问题八：More than 100 items having missing data for more than 10 minutes和Zabbix poller processes more than 75% busy</h2>
+<p>问题原因：</p>
 <p>这两个问题的主要原因是你配置的缓存或者进程数太少，导致监控项很多时服务器来不及处理。</p>
 <p>解决方法：</p>
 <p>直接增加server端进程数和缓存即可。</p>
@@ -366,7 +191,8 @@ TrendCacheSize=256M
 HistoryTextCacheSize=80M
 ValueCacheSize=1G #这里把关于该问题的可能性能项配置一起给到大家</p>
 <p> </p>
-<h2 id="问题九connection-to-database-zabbix-failed-1040-too-many-connections">问题九：connection to database &lsquo;zabbix&rsquo; failed: [1040] Too many connections<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e4%b9%9dconnection-to-database-zabbix-failed-1040-too-many-connections"></a></h2><p>问题原因：</p>
+<h2 id="问题九connection-to-database-zabbix-failed-1040-too-many-connections">问题九：connection to database &lsquo;zabbix&rsquo; failed: [1040] Too many connections</h2>
+<p>问题原因：</p>
 <p>从字面意思上可以看出数据库的连接数已经超出最大限制。</p>
 <p>解决方法：</p>
 <p>直接修改mysql的最大连接数即可。</p>
@@ -374,151 +200,37 @@ ValueCacheSize=1G #这里把关于该问题的可能性能项配置一起给到�
 max_connections=1000 #将最大链接数调整为1000
 systemctl restart mariadb.service #重启SQL</p>
 <p> </p>
-<h2 id="问题十批量添加大量被监控设备后出现服务端直接宕机报警提示zabbix-value-cache-working-in-low-memory-mode-less-than-25-free-in-the-configuration-cache">问题十：批量添加大量被监控设备后出现服务端直接宕机，报警提示Zabbix value cache working in low memory mode Less than 25% free in the configuration cache。<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e5%8d%81%e6%89%b9%e9%87%8f%e6%b7%bb%e5%8a%a0%e5%a4%a7%e9%87%8f%e8%a2%ab%e7%9b%91%e6%8e%a7%e8%ae%be%e5%a4%87%e5%90%8e%e5%87%ba%e7%8e%b0%e6%9c%8d%e5%8a%a1%e7%ab%af%e7%9b%b4%e6%8e%a5%e5%ae%95%e6%9c%ba%e6%8a%a5%e8%ad%a6%e6%8f%90%e7%a4%bazabbix-value-cache-working-in-low-memory-mode-less-than-25-free-in-the-configuration-cache"></a></h2><p>问题原因：</p>
+<h2 id="问题十批量添加大量被监控设备后出现服务端直接宕机报警提示zabbix-value-cache-working-in-low-memory-mode-less-than-25-free-in-the-configuration-cache">问题十：批量添加大量被监控设备后出现服务端直接宕机，报警提示Zabbix value cache working in low memory mode Less than 25% free in the configuration cache。</h2>
+<p>问题原因：</p>
 <p>由于大量添加被监控设备，导致服务器内存溢出。</p>
 <p>解决方案：</p>
 <p>vim /etc/zabbix/zabbix_server.conf
 CacheSize=1024M #第385行</p>
 <p> </p>
-<h2 id="问题十一zabbix-alerter-processes-more-than-75-busy">问题十一：Zabbix alerter processes more than 75% busy<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e5%8d%81%e4%b8%80zabbix-alerter-processes-more-than-75-busy"></a></h2><p>问题原因：</p>
+<h2 id="问题十一zabbix-alerter-processes-more-than-75-busy">问题十一：Zabbix alerter processes more than 75% busy</h2>
+<p>问题原因：</p>
 <p>从字面意思可以看出当你产生大量告警是即会出现这个报错，告警进程过多。</p>
 <p>解决方案：</p>
 <p>调整conf文件中的最大告警进程数即可。</p>
 <p>vim /etc/zabbix/zabbix_server.conf
 StartAlerters=3 #第254行，去掉#注释，修改为10，上限为100。</p>
 <p> </p>
-<h2 id="问题十二zabbix-unreachable-poller-processes-more-than-75-busy">问题十二：zabbix unreachable poller processes more than 75 busy<a class="anchorjs-link" href="#%e9%97%ae%e9%a2%98%e5%8d%81%e4%ba%8czabbix-unreachable-poller-processes-more-than-75-busy"></a></h2><p>问题原因：</p>
+<h2 id="问题十二zabbix-unreachable-poller-processes-more-than-75-busy">问题十二：zabbix unreachable poller processes more than 75 busy</h2>
+<p>问题原因：</p>
 <p>产生这个问题的主要原因是zabbix server端轮询的不可达设备（被监控设备处于死机状态、agent与server数据传输超过timeout时间、mysql或zabbix server的io卡住了）过多导致。</p>
 <p>解决方案：</p>
 <p>vim /etc/zabbix/zabbix_server.conf
 StartPingers=12 #第165行，修改为12，上限是1000</p>
 <p> </p>
 <p>以上这些基本都是因为zabbix的zabbix_server.conf文件中的默认性能配置过低导致的错误，在日常使用中经常会遇到，只要进行简单配置后重新启动zabbix server即可解决。该贴会持续不定期更新我日常工作中遇到的各种问题</p>
-<p>原文链接：<a href="https://www.jianshu.com/p/2d911d55448f" target="_blank">https://www.jianshu.com/p/2d911d55448f</a></p>
+<p>原文链接：<a href="https://www.jianshu.com/p/2d911d55448f">https://www.jianshu.com/p/2d911d55448f</a></p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/" data-toggle="tooltip" data-placement="top" title="python&#43;selenium 批量配置华为S1720交换机">
-              Previous<br>
-              <span>python&#43;selenium 批量配置华为S1720交换机</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/" data-toggle="tooltip" data-placement="top" title="Centos7部署ELK日志收集系统">
-              Next<br>
-              <span>Centos7部署ELK日志收集系统</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>

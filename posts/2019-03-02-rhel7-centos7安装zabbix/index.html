@@ -1,38 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>RHEL7/CentOS7 安装Zabbix // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>RHEL7/CentOS7 安装Zabbix | 蔡振威的博客</title>
-
-  
-  <meta name="description" content="1、添加 Zabbix 软件仓库
-rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
-2、启用可选 rpms 的软件仓库
-yum -y install yum-utils yum-config-manager &ndash;enable rhel-7-server-optional-rpms
-3、安装 Server/前端/agent
-yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent
-4、安装mariaDB数据库
-yum install -y mariadb mariadb-server
-5、创建数据库
-mysql -uroot -p mysql&gt; create database zabbix character set utf8 collate utf8_bin;
-6、创建账户并授权
-mysql&gt; grant all privileges on zabbix.* to zabbix@localhost identified by &lsquo;zabbix&rsquo;; mysql&gt; quit;
-7、导入数据 (导入需要一点时间，不要以为卡住按ctrl&#43;c停止)
-zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -pzabbix zabbix
-8、修改Zabbix server配置文件
-vim /etc/zabbix/zabbix_server.conf DBPassword=zabbix">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="RHEL7/CentOS7 安装Zabbix"/>
 <meta name="twitter:description" content="1、添加 Zabbix 软件仓库
 rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
@@ -51,7 +30,7 @@ zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -pzabbix
 8、修改Zabbix server配置文件
 vim /etc/zabbix/zabbix_server.conf DBPassword=zabbix"/>
 
-  <meta property="og:title" content="RHEL7/CentOS7 安装Zabbix" />
+    <meta property="og:title" content="RHEL7/CentOS7 安装Zabbix" />
 <meta property="og:description" content="1、添加 Zabbix 软件仓库
 rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
 2、启用可选 rpms 的软件仓库
@@ -75,189 +54,38 @@ vim /etc/zabbix/zabbix_server.conf DBPassword=zabbix" />
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>RHEL7/CentOS7 安装Zabbix</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Sat, Mar 2, 2019
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">RHEL7/CentOS7 安装Zabbix</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Mar 2, 2019
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <p>1、添加 Zabbix 软件仓库</p>
-<p>rpm -ivh <a href="http://repo.zabbix.com/zabbix/4.0/rhel/7/x86" target="_blank">http://repo.zabbix.com/zabbix/4.0/rhel/7/x86</a>_64/zabbix-release-4.0-1.el7.noarch.rpm</p>
+    </header>
+    <div class="post-content">
+      <p>1、添加 Zabbix 软件仓库</p>
+<p>rpm -ivh <a href="http://repo.zabbix.com/zabbix/4.0/rhel/7/x86">http://repo.zabbix.com/zabbix/4.0/rhel/7/x86</a>_64/zabbix-release-4.0-1.el7.noarch.rpm</p>
 <p> </p>
 <p>2、启用可选 rpms 的软件仓库</p>
 <p>yum -y install yum-utils
@@ -308,217 +136,40 @@ systemctl enable zabbix-server httpd</p>
 <p> </p>
 <p>13、配置Zabbix前端</p>
 <p>浏览器访问 http://server_ip/zabbix</p>
-<p> <figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302225539553-1696934190.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<p>检查安装先决条件，必须所有项为OK <figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302225628090-650759764.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p> <img src="http://hugo.caizhenwei.top//1126217-20190302225539553-1696934190.png" alt=""></p>
+<p>检查安装先决条件，必须所有项为OK <img src="http://hugo.caizhenwei.top//1126217-20190302225628090-650759764.png" alt=""></p>
 <p>输入数据库密码，前面步骤已设置密码为zabbix</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302225705060-2145005440.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//1126217-20190302225705060-2145005440.png" alt=""></p>
 <p>Name为可选项，它会显示在菜单栏和网页title上</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302225722890-959692083.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302225930177-878796759.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302225949579-799579265.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//1126217-20190302225722890-959692083.png" alt=""></p>
+<p><img src="http://hugo.caizhenwei.top//1126217-20190302225930177-878796759.png" alt=""></p>
+<p><img src="http://hugo.caizhenwei.top//1126217-20190302225949579-799579265.png" alt=""></p>
 <p>默认用户名为Admin，密码为zabbix</p>
-<p> <figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302230006100-1150272097.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p> <img src="http://hugo.caizhenwei.top//1126217-20190302230006100-1150272097.png" alt=""></p>
 <p> </p>
 <p>14、设置中文语言</p>
 <p>点击右上角用户图标</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302230317266-1195121761.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//1126217-20190302230317266-1195121761.png" alt=""></p>
 <p> </p>
 <p>修改Language</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302230346542-652315672.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//1126217-20190302230346542-652315672.png" alt=""></p>
 <p> </p>
 <p>15、解决Zabbix中文乱码问题</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302230407510-853594795.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//1126217-20190302230407510-853594795.png" alt=""></p>
 <p> </p>
 <p>在windows系统上挑选一款中文字体</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302230432441-422499546.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//1126217-20190302230432441-422499546.png" alt=""></p>
 <p> </p>
 <p>先备份原有字体文件graphfont.ttf，再把字体文件名修改为graphfont.ttf</p>
 <p>拷贝到/usr/share/zabbix/fonts/ 目录下替换字体</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//1126217-20190302230443186-495071170.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//1126217-20190302230443186-495071170.png" alt=""></p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/" data-toggle="tooltip" data-placement="top" title="RHEL7/CentOS7 安装Zabbix">
-              Previous<br>
-              <span>RHEL7/CentOS7 安装Zabbix</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/" data-toggle="tooltip" data-placement="top" title="下载华为交换机MIB参考文件并使用snmpwalk获取OID信息">
-              Next<br>
-              <span>下载华为交换机MIB参考文件并使用snmpwalk获取OID信息</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>

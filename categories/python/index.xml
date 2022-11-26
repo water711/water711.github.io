@@ -13,10 +13,10 @@
       <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
-      <description>一、安装安装 pip3 install jupyter notebook
+      <description>一、安装 安装 pip3 install jupyter notebook
 运行 jupyter notebook
 浏览器访问 http://localhost:8888/undefined/tree
-二、配置远程访问1、生成配置文件
+二、配置远程访问 1、生成配置文件
 jupyter notebook &amp;ndash;generate-config #运行后输出：Writing default config to: C:\Users\administrator\.jupyter\jupyter_notebook_config.py
 2、设置密码
 jupyter notebook password
@@ -35,11 +35,11 @@ http://IP:8888/undefined/tree</description>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</guid>
-      <description>一、安装pyaudio软件包1、下载whl文件
+      <description>一、安装pyaudio软件包 1、下载whl文件
 https://github.com/intxcc/pyaudio_portaudio/releases
 2、安装pyaudio
 pip install PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
-二、代码文件import wave from pyaudio import PyAudio,paInt16 from datetime import datetime
+二、代码文件 import wave from pyaudio import PyAudio,paInt16 from datetime import datetime
 framerate=16000 NUM_SAMPLES=2000 channels=1 sampwidth=2 TIME=300 #每次录制秒数 count=12 #录制多少次
 def save_wave_file(filename,data): &amp;lsquo;&amp;lsquo;&amp;lsquo;save the data to the wavfile&amp;rsquo;&amp;rsquo;&amp;rsquo; wf=wave.open(filename,&amp;lsquo;wb&amp;rsquo;) wf.setnchannels(channels) wf.setsampwidth(sampwidth) wf.setframerate(framerate) wf.writeframes(b&amp;quot;&amp;quot;.join(data)) wf.close()
 def my_record(): file_name = datetime.now().strftime(&amp;quot;%Y%m%d_%H%M%S&amp;quot;) + &amp;lsquo;.wav&amp;rsquo; pa=PyAudio() stream=pa.open(format = paInt16,channels=1, rate=framerate,input=True, frames_per_buffer=NUM_SAMPLES) my_buf=[] count=0 while count&amp;lt;TIME*8:#控制录音时间 string_audio_data = stream.read(NUM_SAMPLES) my_buf.append(string_audio_data) count+=1 #print(&amp;rsquo;.&amp;rsquo;) save_wave_file(file_name,my_buf) stream.close()
@@ -53,11 +53,11 @@ if __name__ == &amp;lsquo;__main__&amp;rsquo;: for i in range(count): my_record(
       
       <guid>https://water711.github.io/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</guid>
       <description>**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
-准备工作1、安装Python
+准备工作 1、安装Python
 2、安装谷歌浏览器
 3、下载chromedriver驱动，放到脚本所在目录
 4、新建IP.txt，保存所有交换机IP，放到脚本所在目录
-一、批量修改密码# -*- coding : utf-8 -*-
+一、批量修改密码 # -*- coding : utf-8 -*-
 from selenium import webdriver from selenium.webdriver.support.ui import WebDriverWait import time
 UserName = &amp;lsquo;admin&amp;rsquo; OldPassword = &amp;lsquo;admin@huawei.com&amp;rsquo; NewPassword = &amp;rsquo;newpassword123&#39;
 def open_broswer(): #新建options options = webdriver.ChromeOptions()
@@ -71,9 +71,9 @@ def change_password(ip): print(ip) driver.</description>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
-      <description>github地址前后端：https://github.com/water711/Django_echarts_bootstrap
+      <description>github地址 前后端：https://github.com/water711/Django_echarts_bootstrap
 微信小程序：https://github.com/water711/echarts-keliu-wechat
-PC端效果展示：微信小程序端展示</description>
+PC端效果展示： 微信小程序端展示 </description>
     </item>
     
     <item>
@@ -99,7 +99,7 @@ from datetime import datetime,timedelta
       
       <guid>https://water711.github.io/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</guid>
       <description>来源某国外视频：https://www.bilibili.com/video/BV1E4411f7Q1
-环境Python：3.7.0
+环境 Python：3.7.0
 OpenCV：3.4.3.18
 # -*- coding:utf-8 -*-
 import cv2 import numpy as np import math cap = cv2.VideoCapture(0)
@@ -113,16 +113,16 @@ ret, frame = cap.read() frame = cv2.flip(frame,1) kernel = np.ones((3,3), np.uin
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</guid>
-      <description>一、注册讯飞开放平台账号1、官网注册：https://www.xfyun.cn/
+      <description>一、注册讯飞开放平台账号 1、官网注册：https://www.xfyun.cn/
 2、进入讯飞控制台，创建应用
 3、点击应用，查看APPID、APISecret和APIKey
-二、查看文档，下载DemoWebAPI 文档：https://www.xfyun.cn/doc/asr/voicedictation/API.html
-三、录制音频，并使用ffmpeg转码支持的音频格式
+二、查看文档，下载Demo WebAPI 文档：https://www.xfyun.cn/doc/asr/voicedictation/API.html
+三、录制音频，并使用ffmpeg转码 支持的音频格式
 讯飞音频格式说明：https://www.xfyun.cn/doc/asr/voicedictation/Audio.html
 1、官网下载ffmpeg，windows下载已编译版本
 2、命令行，进入ffmpeg\bin目录，进行转码
 ffmpeg -y -i E:\audio_test.m4a -acodec pcm_s16le -f s16le -ac 1 -ar 16000 E:\audio_test.pcm //将m4a格式转为pcm格式
-四、修改demo代码以上代码省略&amp;hellip;&amp;hellip;
+四、修改demo代码 以上代码省略&amp;hellip;&amp;hellip;
 if __name__ == &amp;ldquo;__main__&amp;rdquo;: # 测试时候在此处正确填写相关信息即可运行，填写APPID、APIKey、APISecret和音频路径 time1 = datetime.now() wsParam = Ws_Param(APPID=&amp;lsquo;xxxxxx&amp;rsquo;, APIKey=&amp;lsquo;xxxxxxxxxxxxxxxx&amp;rsquo;, APISecret=&amp;lsquo;xxxxxxxxxxxxxxxxx&amp;rsquo;, AudioFile=r&amp;rsquo;E:\audio_test.pcm&amp;rsquo;) &amp;hellip;&amp;hellip;
 运行结果
 sid:iat0007f62c@dx17292ff09777a1d802 call success!,data is:[{&amp;ldquo;bg&amp;rdquo;: 53, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;sc&amp;rdquo;: 0, &amp;ldquo;w&amp;rdquo;: &amp;ldquo;富强&amp;rdquo;}]}, {&amp;ldquo;bg&amp;rdquo;: 133, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;sc&amp;rdquo;: 0, &amp;ldquo;w&amp;rdquo;: &amp;ldquo;，&amp;rdquo;}]}, {&amp;ldquo;bg&amp;rdquo;: 133, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;sc&amp;rdquo;: 0, &amp;ldquo;w&amp;rdquo;: &amp;ldquo;民族&amp;rdquo;}]}, {&amp;ldquo;bg&amp;rdquo;: 237, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;w&amp;rdquo;: &amp;ldquo;文明&amp;rdquo;, &amp;ldquo;sc&amp;rdquo;: 0}]}, {&amp;ldquo;bg&amp;rdquo;: 305, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;sc&amp;rdquo;: 0, &amp;ldquo;w&amp;rdquo;: &amp;ldquo;，&amp;rdquo;}]}, {&amp;ldquo;bg&amp;rdquo;: 305, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;w&amp;rdquo;: &amp;ldquo;和谐&amp;rdquo;, &amp;ldquo;sc&amp;rdquo;: 0}]}, {&amp;ldquo;bg&amp;rdquo;: 373, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;w&amp;rdquo;: &amp;ldquo;等&amp;rdquo;, &amp;ldquo;sc&amp;rdquo;: 0}]}, {&amp;ldquo;bg&amp;rdquo;: 425, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;sc&amp;rdquo;: 0, &amp;ldquo;w&amp;rdquo;: &amp;ldquo;24&amp;rdquo;}]}, {&amp;ldquo;bg&amp;rdquo;: 513, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;sc&amp;rdquo;: 0, &amp;ldquo;w&amp;rdquo;: &amp;ldquo;个&amp;rdquo;}]}, {&amp;ldquo;bg&amp;rdquo;: 529, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;w&amp;rdquo;: &amp;ldquo;字&amp;rdquo;, &amp;ldquo;sc&amp;rdquo;: 0}]}, {&amp;ldquo;bg&amp;rdquo;: 549, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;sc&amp;rdquo;: 0, &amp;ldquo;w&amp;rdquo;: &amp;ldquo;叫&amp;rdquo;}]}, {&amp;ldquo;bg&amp;rdquo;: 589, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;sc&amp;rdquo;: 0, &amp;ldquo;w&amp;rdquo;: &amp;ldquo;社会主义&amp;rdquo;}]}, {&amp;ldquo;bg&amp;rdquo;: 685, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;sc&amp;rdquo;: 0, &amp;ldquo;w&amp;rdquo;: &amp;ldquo;核心&amp;rdquo;}]}, {&amp;ldquo;bg&amp;rdquo;: 733, &amp;ldquo;cw&amp;rdquo;: [{&amp;ldquo;sc&amp;rdquo;: 0, &amp;ldquo;w&amp;rdquo;: &amp;ldquo;价值观&amp;rdquo;}]}] sid:iat0007f62c@dx17292ff09777a1d802 call success!</description>
@@ -134,23 +134,22 @@ sid:iat0007f62c@dx17292ff09777a1d802 call success!,data is:[{&amp;ldquo;bg&amp;r
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</guid>
-      <description>环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖1、安装Visual Studio Build Tools（因为cmake依赖C++），安装时选择“C++生成工具”
+      <description>环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖 1、安装Visual Studio Build Tools（因为cmake依赖C++），安装时选择“C++生成工具”
 2、安装Cmake（因为dlib库需要cmake编译）
 pip3 install cmake
 3、安装face_recognition和dlib
 pip3 install face_recognition
 //安装安装face_recognition会自动安装dlib，如果安装下载时，多次超时中断，可以到PyPI上下载安装包（xxx.whl）或源码包（xxx.tar.gz），离线进行安装。
 pip install dlib-19.19.0.whl 或 pip3 install dlib-19.19.0.tar.gz
-二、face_recognition 命令行工具![](http://hugo.caizhenwei.top//cf190ebbc1c551c0d40f36fcc5549d24.png)
+二、face_recognition 命令行工具 ![](http://hugo.caizhenwei.top//cf190ebbc1c551c0d40f36fcc5549d24.png)
 face_recognition - 在单张图片或一个图片文件夹中认出是谁的脸。
 #将A.png图片到known文件夹中去辨认出是谁的脸 F:\face&amp;gt;face_recognition ./known ./check/A.png ./check/A.png,刘德华
 #将check目录中的人脸，逐个到known目录中辨认出是谁的脸 F:\face&amp;gt;face_recognition ./known ./check ./check\A.png,刘德华 ./check\B.jpg,刘亦菲 ./check\C.png,刘亦菲 //识别错误
 #调整人脸识别的容错率 #通过传入参数 &amp;ndash;tolerance 来实现这个功能，默认的容错率是0.6，容错率越低，识别越严格准确。 F:\face&amp;gt;face_recognition &amp;ndash;tolerance 0.5 ./known ./check ./check\A.png,刘德华 ./check\B.jpg,刘亦菲 ./check\C.png,unknown_person
-三、将网络摄像头画面中的人脸进行打码（需要安装OpenCV）参考：https://github.com/ageitgey/face_recognition/blob/master/examples/blur_faces_on_webcam.py
+三、将网络摄像头画面中的人脸进行打码（需要安装OpenCV） 参考：https://github.com/ageitgey/face_recognition/blob/master/examples/blur_faces_on_webcam.py
 安装opencv
 pip3 install opencv-python
-import face_recognition import cv2
-This is a demo of blurring faces in video.</description>
+import face_recognition import cv2</description>
     </item>
     
     <item>
@@ -159,23 +158,22 @@ This is a demo of blurring faces in video.</description>
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull/</guid>
-      <description>环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖1、安装Visual Studio Build Tools（因为cmake依赖C++），安装时选择“C++生成工具”
+      <description>环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖 1、安装Visual Studio Build Tools（因为cmake依赖C++），安装时选择“C++生成工具”
 2、安装Cmake（因为dlib库需要cmake编译）
 pip3 install cmake
 3、安装face_recognition和dlib
 pip3 install face_recognition
 //安装安装face_recognition会自动安装dlib，如果安装下载时，多次超时中断，可以到PyPI上下载安装包（xxx.whl）或源码包（xxx.tar.gz），离线进行安装。
 pip install dlib-19.19.0.whl 或 pip3 install dlib-19.19.0.tar.gz
-二、face_recognition 命令行工具![](images/cf190ebbc1c551c0d40f36fcc5549d24.png)
+二、face_recognition 命令行工具 ![](images/cf190ebbc1c551c0d40f36fcc5549d24.png)
 face_recognition - 在单张图片或一个图片文件夹中认出是谁的脸。
 #将A.png图片到known文件夹中去辨认出是谁的脸 F:\face&amp;gt;face_recognition ./known ./check/A.png ./check/A.png,刘德华
 #将check目录中的人脸，逐个到known目录中辨认出是谁的脸 F:\face&amp;gt;face_recognition ./known ./check ./check\A.png,刘德华 ./check\B.jpg,刘亦菲 ./check\C.png,刘亦菲 //识别错误
 #调整人脸识别的容错率 #通过传入参数 &amp;ndash;tolerance 来实现这个功能，默认的容错率是0.6，容错率越低，识别越严格准确。 F:\face&amp;gt;face_recognition &amp;ndash;tolerance 0.5 ./known ./check ./check\A.png,刘德华 ./check\B.jpg,刘亦菲 ./check\C.png,unknown_person
-三、将网络摄像头画面中的人脸进行打码（需要安装OpenCV）参考：https://github.com/ageitgey/face_recognition/blob/master/examples/blur_faces_on_webcam.py
+三、将网络摄像头画面中的人脸进行打码（需要安装OpenCV） 参考：https://github.com/ageitgey/face_recognition/blob/master/examples/blur_faces_on_webcam.py
 安装opencv
 pip3 install opencv-python
-import face_recognition import cv2
-This is a demo of blurring faces in video.</description>
+import face_recognition import cv2</description>
     </item>
     
     <item>
@@ -184,13 +182,13 @@ This is a demo of blurring faces in video.</description>
       <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
-      <description>1、安装python、nginx、django和uwsgi[root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0
+      <description>1、安装python、nginx、django和uwsgi [root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0
 [root@liyu ~]# python3 -V Python 3.6.8 [root@liyu ~]# yum install python36-devel //安装对应Python版本的devel，编译uwsgi需要的依赖
 [root@server ~]# pip3 install uwsgi
-2、创建django项目[root@server ~]# mkdir /web/ [root@server ~]# cd /web/ [root@server ~]# django-admin startproject test_project
+2、创建django项目 [root@server ~]# mkdir /web/ [root@server ~]# cd /web/ [root@server ~]# django-admin startproject test_project
 #允许所有主机访问 [root@server ~]# cd test_project/ [root@server test_project]# vim test_project/settings.py ALLOWED_HOSTS = [&amp;rsquo;*&amp;rsquo;]
 #开发环境下，可以直接使用下面命令来运行项目 [root@server ~]# python3 manage.py runserver 0.0.0.0:8000
-3、使用uwsgi启动django项目#uwsgi命令行方式直接启动（测试） [root@web test_project]# uwsgi &amp;ndash;http :8000 &amp;ndash;module test_project.wsgi //test_project.</description>
+3、使用uwsgi启动django项目 #uwsgi命令行方式直接启动（测试） [root@web test_project]# uwsgi &amp;ndash;http :8000 &amp;ndash;module test_project.</description>
     </item>
     
     <item>
@@ -199,11 +197,11 @@ This is a demo of blurring faces in video.</description>
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</guid>
-      <description>1、下载源码wget https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz tar xf Python-3.8.2.tgz cd Python-3.8.2/
-2、安装编译所需依赖yum install -y gcc openssl-devel zlib-devel libffi-devel sqlite-devel
-3、编译./configure prefix=/usr/local/python3 make -j8 &amp;amp;&amp;amp; make install
+      <description>1、下载源码 wget https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz tar xf Python-3.8.2.tgz cd Python-3.8.2/
+2、安装编译所需依赖 yum install -y gcc openssl-devel zlib-devel libffi-devel sqlite-devel
+3、编译 ./configure prefix=/usr/local/python3 make -j8 &amp;amp;&amp;amp; make install
 #如果gcc版本&amp;gt;=8.1.0，在编译时可以添加优化选项&amp;ndash;enable-optimizations ./configure prefix=/usr/local/python3 &amp;ndash;enable-optimizations make -j8 &amp;amp;&amp;amp; make install
-4、将python的bin目录添加到环境变量export PATH=$PATH:/usr/local/python3/bin/ echo export PATH=$PATH:/usr/local/python3/bin/ &amp;raquo; /etc/profile</description>
+4、将python的bin目录添加到环境变量 export PATH=$PATH:/usr/local/python3/bin/ echo export PATH=$PATH:/usr/local/python3/bin/ &amp;raquo; /etc/profile</description>
     </item>
     
     <item>
@@ -212,9 +210,9 @@ This is a demo of blurring faces in video.</description>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</guid>
-      <description>方法一、使用命令添加配置&amp;gt; pip config set global.index-url http://pypi.douban.com/simple/ Writing to C:\Users\admin\AppData\Roaming\pip\pip.ini
+      <description>方法一、使用命令添加配置 &amp;gt; pip config set global.index-url http://pypi.douban.com/simple/ Writing to C:\Users\admin\AppData\Roaming\pip\pip.ini
 pip config set install.trusted-host pypi.douban.com Writing to C:\Users\admin\AppData\Roaming\pip\pip.ini
-方法二：修改全局配置文件Windows： C:\Users\用户名\AppData\Roaming\pip\pip.ini
+方法二：修改全局配置文件 Windows： C:\Users\用户名\AppData\Roaming\pip\pip.ini
 Linux： ~/.pip/pip.conf
 [global] index-url = http://pypi.douban.com/simple
 [install] trusted-host = pypi.douban.com</description>
@@ -243,17 +241,17 @@ info = {&amp;rsquo;executable&amp;rsquo;: str(pe.szExeFile.decode(&amp;lsquo;gbk
       <guid>https://water711.github.io/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</guid>
       <description>Python版本：3.7
 浏览器：Chrome 79.0.3
-一、下载Selenium浏览器驱动（WebDriver）下载地址：http://npm.taobao.org/mirrors/chromedriver/
+一、下载Selenium浏览器驱动（WebDriver） 下载地址：http://npm.taobao.org/mirrors/chromedriver/
 （下载与浏览器版本对应的驱动，并将驱动放到python程序所在目录）
-二、获取网站cookie1、chrome浏览器安装第三方扩展EditThisCookie
+二、获取网站cookie 1、chrome浏览器安装第三方扩展EditThisCookie
 2、手动输入账号密码登录网站，使用EditThisCookie导出cookies
 3、将cookie（列表）转换成json文件
 # -*- coding : utf-8 -*- import json
 cookies = [ { &amp;ldquo;domain&amp;rdquo;: &amp;ldquo;.51cto.com&amp;rdquo;, &amp;ldquo;name&amp;rdquo;: &amp;ldquo;gr_user_id&amp;rdquo;, &amp;ldquo;value&amp;rdquo;: &amp;ldquo;ea0dbdab-1233-4454-a237-1ba0bd7c406e&amp;rdquo;, &amp;ldquo;id&amp;rdquo;: 1 }, { &amp;ldquo;domain&amp;rdquo;: &amp;ldquo;.51cto.com&amp;rdquo;, &amp;ldquo;name&amp;rdquo;: &amp;ldquo;Hm_lpvt_110fc9b2e1cae4d110b7959ee4f27e3b&amp;rdquo;, &amp;ldquo;value&amp;rdquo;: &amp;ldquo;168979366982&amp;rdquo;, &amp;ldquo;id&amp;rdquo;: 2 }, &amp;hellip;&amp;hellip; ]
 with open(&amp;ldquo;cookie.json&amp;rdquo;, &amp;ldquo;w&amp;rdquo;) as f: json.dump(cookies,f) print(&amp;ldquo;已保存为json文件&amp;hellip;&amp;rdquo;)
-三、使用cookie自动登录网站from selenium import webdriver import json
+三、使用cookie自动登录网站 from selenium import webdriver import json
 #打开浏览器 driver = webdriver.Chrome()
-#访问网址 driver.get(&amp;ldquo;https://www.51cto.com/&#34;)
+#访问网址 driver.get(&amp;ldquo;https://www.51cto.com/&amp;quot;)
 #最大化浏览器窗口 driver.maximize_window()
 #从json文件中载入cookie,并转换回列表 with open(&amp;lsquo;cookie.json&amp;rsquo;, &amp;lsquo;r&amp;rsquo;) as f: cookies = json.</description>
     </item>
@@ -264,11 +262,11 @@ with open(&amp;ldquo;cookie.json&amp;rdquo;, &amp;ldquo;w&amp;rdquo;) as f: json
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</guid>
-      <description>将data:image/base64转换成图片import base64
+      <description>将data:image/base64转换成图片 import base64
 value=&amp;ldquo;qeBQAAAABJ&amp;hellip;&amp;hellip;RU5ErkJggg==&amp;rdquo; #填写base64编码 img = base64.b64decode(value) fh = open(&amp;ldquo;pic.jpg&amp;rdquo;,&amp;ldquo;wb&amp;rdquo;) fh.write(img)
-将图片转换成data:image/base64import base64
+将图片转换成data:image/base64 import base64
 with open(&amp;ldquo;pic.jpg&amp;rdquo;,&amp;ldquo;rb&amp;rdquo;) as f: base64_data = base64.b64encode(f.read()) print(base64_data)
-base64编码iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAC91BMVEUAAACgekagekagekagekagekagekagekagekagekagekagekagekagekagekb//v7//v6he0f+/v7+/f3t5dvp39Ojfkyqh1j7+fb28u308Or+/fz59/T59vL07+i/pYH+/f39/Pv8+/n49vHx6+Lv6eHo39LZybTSv6bOup/Ap4TQvqS/poPOup6vjmL9/Pv8+/n7+ff7+fbz7ujw6uLv6eDr49jj18jl2szh1MPTwane0L3YybPGr5C5nXb//v77+ff59/Py7eXs5Nrl2szp4NTh1cTh1cS5nXetjWClgU/49fH39PD18ezVxK7Rv6WujmGtjF/9/Pv8+/r6+Pbg08LHsZL8+/n9/Pv49vL7+fb28u3///+duvaat/OcufWWs++kwf2rxv+YtfGiv/uUse2RruqgvfmZtvKwyf+PrOifvPiMqeWNquaOq+eoxP+mw/+tx/+Vsu6TsOy1zf+JpuKLqOSuyP+QremKp+Oyy/+IpeGHpOD9/f/k7P3u9P77/P/8+vejvvX9/PmlwPfj6/y8z/f5+/+gu/P68u7p7/u0yvf89PD75Of09/7w9f24z/3L2/v79vL56+m4zv/3+f7P3fvB0/qnwvnX4vikvve5zfXp8P3m7v3b5vzf6PvX4/vF1vq5zvepwfX9+PT76ej34eL319/7/P7J2Pm80Pmvx/jI1/Wxx/XgyfL58Oz46Ob43eL2y93xxtu80f/Dzf/y9v7S4Pupw/itxPS3vPGkuvH10PDEvO3uyOXnweDYt9n9/v/r8f2lwPnS3vesvfa/0fTQxPKtuvL50/Cdt+6js+v73ujXwOj1zOfNt+GdqN+1rd3ivNzOtNu6zP/Iyv2zy/yow/vZzPq4zPbszvL77On70ufPvOfnxOWmruTcvuHvxd+hqN7hvNq7rNrlvNnIzf6xwvvgzvnIxfflzfW3yvKzx++lve6qtu7wzOuZr+n72eicrOT24+OOpuHFs9+Upt+KpN+rqt320NyzuO26sN/XuNpRZOGQAAAAXHRSTlMAAgYKFQ4RHyMbFyctKjH++jP284SBNijVs6Lvyb+qNfHu4smTjYtkWVZJRkRDLOfm2NKypJiPe2xjXFlPOzH73NOZlX51dF8/PDLDvb1gUTkx7OrNak/r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</description>
+base64编码 iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAC91BMVEUAAACgekagekagekagekagekagekagekagekagekagekagekagekagekagekb//v7//v6he0f+/v7+/f3t5dvp39Ojfkyqh1j7+fb28u308Or+/fz59/T59vL07+i/pYH+/f39/Pv8+/n49vHx6+Lv6eHo39LZybTSv6bOup/Ap4TQvqS/poPOup6vjmL9/Pv8+/n7+ff7+fbz7ujw6uLv6eDr49jj18jl2szh1MPTwane0L3YybPGr5C5nXb//v77+ff59/Py7eXs5Nrl2szp4NTh1cTh1cS5nXetjWClgU/49fH39PD18ezVxK7Rv6WujmGtjF/9/Pv8+/r6+Pbg08LHsZL8+/n9/Pv49vL7+fb28u3///+duvaat/OcufWWs++kwf2rxv+YtfGiv/uUse2RruqgvfmZtvKwyf+PrOifvPiMqeWNquaOq+eoxP+mw/+tx/+Vsu6TsOy1zf+JpuKLqOSuyP+QremKp+Oyy/+IpeGHpOD9/f/k7P3u9P77/P/8+vejvvX9/PmlwPfj6/y8z/f5+/+gu/P68u7p7/u0yvf89PD75Of09/7w9f24z/3L2/v79vL56+m4zv/3+f7P3fvB0/qnwvnX4vikvve5zfXp8P3m7v3b5vzf6PvX4/vF1vq5zvepwfX9+PT76ej34eL319/7/P7J2Pm80Pmvx/jI1/Wxx/XgyfL58Oz46Ob43eL2y93xxtu80f/Dzf/y9v7S4Pupw/itxPS3vPGkuvH10PDEvO3uyOXnweDYt9n9/v/r8f2lwPnS3vesvfa/0fTQxPKtuvL50/Cdt+6js+v73ujXwOj1zOfNt+GdqN+1rd3ivNzOtNu6zP/Iyv2zy/yow/vZzPq4zPbszvL77On70ufPvOfnxOWmruTcvuHvxd+hqN7hvNq7rNrlvNnIzf6xwvvgzvnIxfflzfW3yvKzx++lve6qtu7wzOuZr+n72eicrOT24+OOpuHFs9+Upt+KpN+rqt320NyzuO26sN/XuNpRZOGQAAAAXHRSTlMAAgYKFQ4RHyMbFyctKjH++jP284SBNijVs6Lvyb+qNfHu4smTjYtkWVZJRkRDLOfm2NKypJiPe2xjXFlPOzH73NOZlX51dF8/PDLDvb1gUTkx7OrNak/r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</description>
     </item>
     
     <item>
@@ -277,12 +275,12 @@ base64编码iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAC91BMVEUAAACgekagekag
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</guid>
-      <description>一、准备环境1、安装Oracle 客户端（python、oracle客户端的位数要一致）
+      <description>一、准备环境 1、安装Oracle 客户端（python、oracle客户端的位数要一致）
 2、安装Python第三方模块
 pip3 install cx_Oracle xlsxwriter
 **cx_Oracle模块：**一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
 **xlsxwriter模块：**编写Excel 2007+XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。
-二、编写代码# -*- coding: utf-8 -*-
+二、编写代码 # -*- coding: utf-8 -*-
 import time import smtplib import cx_Oracle import xlsxwriter from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.application import MIMEApplication
 def send_mail(): from_addr = &amp;ldquo;12345678@qq.com&amp;rdquo; #发件人 pwd = &amp;ldquo;zjjeiuwpaynojhgsdf&amp;rdquo; #授权码/密码 to_addr = &amp;ldquo;87654321@qq.com&amp;rdquo; #收件人
 msg = MIMEMultipart() #实例化对象 msg\[&amp;quot;Subject&amp;quot;\] = &amp;quot;销售报表&amp;quot; #主题 msg\[&amp;quot;From&amp;quot;\] = from\_addr msg\[&amp;quot;To&amp;quot;\] = to\_addr part1 = MIMEText(&amp;quot;这里是邮件内容&amp;quot;) msg.attach(part1) # 添加附件 part2 = MIMEApplication(open(date + &amp;quot;.</description>
@@ -294,12 +292,12 @@ msg = MIMEMultipart() #实例化对象 msg\[&amp;quot;Subject&amp;quot;\] = &amp
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</guid>
-      <description>Python代码：# -*- coding:utf-8 -*-
+      <description>Python代码： # -*- coding:utf-8 -*-
 import threading import subprocess import time from queue import Queue import xlrd import msvcrt
-定义工作线程WORD_THREAD = 50
-将从excel表中读取ip并加入队列IP_QUEUE = Queue() workbook = xlrd.open_workbook(&amp;ldquo;IP.xls&amp;rdquo;) table = workbook.sheets()[0]
+定义工作线程 WORD_THREAD = 50
+将从excel表中读取ip并加入队列 IP_QUEUE = Queue() workbook = xlrd.open_workbook(&amp;ldquo;IP.xls&amp;rdquo;) table = workbook.sheets()[0]
 for row in range(1, table.nrows): ip = table.cell(row, 0).value name = table.cell(row, 1).value IP_QUEUE.put([ip,name])
-定义一个执行 ping 的函数def ping_ip(): while not IP_QUEUE.empty(): ip = IP_QUEUE.get() res = subprocess.call(&amp;lsquo;ping -n 2 -w 5 %s&amp;rsquo; % ip[0],stdout=subprocess.PIPE) # linux 系统将 &amp;lsquo;-n&amp;rsquo; 替换成 &amp;lsquo;-c&amp;rsquo; # 打印运行结果 # print(ip[0],True if res == 0 else False) if res == 0: print(ip[0],ip[1],&amp;ldquo;有响应&amp;rdquo;) else: print(ip[0],ip[1],&amp;ldquo;无响应&amp;rdquo;) ip.</description>
+定义一个执行 ping 的函数 def ping_ip(): while not IP_QUEUE.empty(): ip = IP_QUEUE.get() res = subprocess.call(&amp;lsquo;ping -n 2 -w 5 %s&amp;rsquo; % ip[0],stdout=subprocess.PIPE) # linux 系统将 &amp;lsquo;-n&amp;rsquo; 替换成 &amp;lsquo;-c&amp;rsquo; # 打印运行结果 # print(ip[0],True if res == 0 else False) if res == 0: print(ip[0],ip[1],&amp;ldquo;有响应&amp;rdquo;) else: print(ip[0],ip[1],&amp;ldquo;无响应&amp;rdquo;) ip.</description>
     </item>
     
     <item>
@@ -321,11 +319,11 @@ DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Ple
       <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</guid>
-      <description>源代码import cv2,os
+      <description>源代码 import cv2,os
 url = &amp;lsquo;rtsp://192.168.104.130/user=admin&amp;amp;password=admin&amp;amp;channel=1&amp;rsquo; cap = cv2.VideoCapture(url) ret, frame = cap.read() cv2.imwrite(&amp;ldquo;E:/test.png&amp;rdquo;, frame) cap.release() cv2.destroyAllWindows()
 在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节
 libpng warning:Image width is zero in IHDR libpng warning:Image height is zero in IHDR libpng error:Invalid IHDR data
-解决方法：进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下</description>
+解决方法： 进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下</description>
     </item>
     
     <item>
@@ -335,10 +333,10 @@ libpng warning:Image width is zero in IHDR libpng warning:Image height is zero i
       
       <guid>https://water711.github.io/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</guid>
       <description>在Windows下，我们可以使用内建的msvcrt库，实现按任意键继续或退出
-一、获取按键对应的ASCII 值import msvcrt print(ord(msvcrt.getch()))
+一、获取按键对应的ASCII 值 import msvcrt print(ord(msvcrt.getch()))
 svcrt 中的 getch() 方法，作用是获取一个按键响应并返回对应的字符。
 ord 将获得的字符转换为 ASCII 数值，例如捕获按键“q”将得到数值113，按键“Q”将得到数值81
-二、利用while死循环，当msvcrt捕获到指定的按键，中断循环import msvcrt
+二、利用while死循环，当msvcrt捕获到指定的按键，中断循环 import msvcrt
 print(&amp;ldquo;Press &amp;lsquo;q&amp;rsquo; to exit&amp;hellip;&amp;rdquo;)
 while True: if ord(msvcrt.getch()) in [81, 113]: break
 Linux下实现方式请查看以下文章：
@@ -389,11 +387,11 @@ url = &amp;lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;rsquo; post_heade
 命令：pip install xlrd xlwt xlutils
 示例代码：
 #!/usr/bin/env python
--*- coding:utf-8 -*-from xlrd import open_workbook from xlutils.copy import copy
+-*- coding:utf-8 -*- from xlrd import open_workbook from xlutils.copy import copy
 #读取excel文件 r_xls = open_workbook(&amp;ldquo;test.xls&amp;rdquo;)
-获取已有的行数row = r_xls.sheets()[0].nrows
-将xlrd的对象转化为xlwt的对象excel = copy(r_xls)
-获取要操作的sheettable = excel.get_sheet(0)
+获取已有的行数 row = r_xls.sheets()[0].nrows
+将xlrd的对象转化为xlwt的对象 excel = copy(r_xls)
+获取要操作的sheet table = excel.get_sheet(0)
 #对excel表追加一行内容，括号内分别为行数、列数、内容 table.write(row, 0, &amp;lsquo;内容1&amp;rsquo;) table.write(row, 1, &amp;lsquo;内容2&amp;rsquo;) table.write(row, 2, &amp;lsquo;内容3&amp;rsquo;)
 #保存并覆盖文件 excel.save(&amp;ldquo;test.xls&amp;rdquo;)</description>
     </item>
@@ -404,8 +402,8 @@ url = &amp;lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;rsquo; post_heade
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
-      <description>面向对象基础基础内容介绍详见一下两篇博文：
-面向对象初级篇 面向对象进阶篇 其他相关一、isinstance(obj, cls)
+      <description>面向对象基础 基础内容介绍详见一下两篇博文：
+面向对象初级篇 面向对象进阶篇 其他相关 一、isinstance(obj, cls)
 检查是否obj是否是类 cls 的对象
 class Foo(object): pass
 obj = Foo()
@@ -422,9 +420,7 @@ try: pass except Exception,ex: pass
 需求：将用户输入的两个数字相加
 while True: num1 = raw_input(&amp;rsquo;num1:&amp;rsquo;) num2 = raw_input(&amp;rsquo;num2:&amp;rsquo;) try: num1 = int(num1) num2 = int(num2) result = num1 + num2 except Exception, e: print &amp;lsquo;出现异常，信息如下：&amp;rsquo; print e
 View Code
-2、异常种类
-python中的异常种类非常多，每个异常专门用于处理某一项异常！！！
-AttributeError 试图访问一个对象没有的树形，比如foo.</description>
+2、异常种类</description>
     </item>
     
     <item>
@@ -433,12 +429,12 @@ AttributeError 试图访问一个对象没有的树形，比如foo.</description
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
-      <description>运算符1、算数运算：
+      <description>运算符 1、算数运算：
 2、比较运算：
 3、赋值运算：
 4、逻辑运算：
 5、成员运算：
-基本数据类型1、数字
+基本数据类型 1、数字
 int（整型）
 在32位机器上，整数的位数为32位，取值范围为-2**31～2**31-1，即-2147483648～2147483647
 在64位系统上，整数的位数为64位，取值范围为-2**63～2**63-1，即-9223372036854775808～9223372036854775807
@@ -452,7 +448,7 @@ Convert a number or string to an integer, or return 0 if no arguments are given.
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/</guid>
-      <description>字符串格式化Python的字符串格式化有两种方式: 百分号方式、format方式
+      <description>字符串格式化 Python的字符串格式化有两种方式: 百分号方式、format方式
 百分号的方式相对来说比较老，而format方式则是比较先进的方式，企图替换古老的方式，目前两者并存。[PEP-3101]
 This PEP proposes a new system for built-in string formatting operations, intended as a replacement for the existing &amp;lsquo;%&amp;rsquo; string formatting operator.
 1、百分号方式
@@ -495,10 +491,10 @@ WEB服务应用：
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>https://water711.github.io/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</guid>
-      <description>三元运算三元运算（三目运算），是对简单的条件语句的缩写。
+      <description>三元运算 三元运算（三目运算），是对简单的条件语句的缩写。
 # 书写格式
 result = 值1 if 条件 else 值2
-如果条件成立，那么将 “值1” 赋值给result变量，否则，将“值2”赋值给result变量基本数据类型补充set
+如果条件成立，那么将 “值1” 赋值给result变量，否则，将“值2”赋值给result变量 基本数据类型补充 set
 set集合，是一个无序且不重复的元素集合
 class set(object): &amp;quot;&amp;quot;&amp;quot; set() -&amp;gt; new empty set object set(iterable) -&amp;gt; new set object
 Build an unordered collection of unique elements. &amp;quot;&amp;quot;&amp;quot; def add(self, \*args, \*\*kwargs): # real signature unknown &amp;quot;&amp;quot;&amp;quot; Add an element to a set，添加元素 This has no effect if the element is already present. &amp;quot;&amp;quot;&amp;quot; pass def clear(self, \*args, \*\*kwargs): # real signature unknown &amp;quot;&amp;quot;&amp;quot; Remove all elements from this set.</description>
@@ -514,7 +510,7 @@ Build an unordered collection of unique elements. &amp;quot;&amp;quot;&amp;quot;
 类似于函数式编程和面向过程编程，函数式编程则完成一个功能，其他代码用来调用即可，提供了代码的重用性和代码间的耦合。而对于一个复杂的功能来，可能需要多个函数才能完成（函数又可以在不同的.py文件中），n个 .py 文件组成的代码集合就称为模块。
 如：os 是系统相关的模块；file是文件操作相关的模块
 模块分为三种：
-自定义模块 第三方模块 内置模块 自定义模块1、定义模块
+自定义模块 第三方模块 内置模块 自定义模块 1、定义模块
 情景一：
 情景二：
 情景三：
@@ -525,7 +521,7 @@ from module.xx.xx import *
 导入模块其实就是告诉Python解释器去解释那个py文件
 导入一个py文件，解释器解释该py文件 导入一个包，解释器解释该包下的 __init__.py 文件 【py2.7】 那么问题来了，导入模块时是根据那个路径作为基准来进行的呢？即：sys.path
 import sys print sys.path
-结果： [&amp;rsquo;/Users/wupeiqi/PycharmProjects/calculator/p1/pp1&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/setuptools-15.2-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/distribute-0.6.28-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/xlutils-1.7.1-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/xlwt-1.0.0-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/xlrd-0.9.3-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/tornado-4.1-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/backports.ssl_match_hostname-3.4.0.2-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/certifi-2015.4.28-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/pyOpenSSL-0.15.1-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/six-1.9.0-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/cryptography-0.9.1-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/cffi-1.1.1-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/ipaddress-1.0.7-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/enum34-1.0.4-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/pyasn1-0.1.7-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/idna-2.0-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/pycparser-2.13-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/Django-1.7.8-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/gevent-1.0.2-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/greenlet-0.4.7-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/Users/wupeiqi/PycharmProjects/calculator&amp;rsquo;, &amp;lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python27.zip&amp;rsquo;, &amp;lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python2.7&amp;rsquo;, &amp;lsquo;/usr/local/Cellar/python/2.</description>
+结果： [&amp;rsquo;/Users/wupeiqi/PycharmProjects/calculator/p1/pp1&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/setuptools-15.2-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/distribute-0.6.28-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/xlutils-1.7.1-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/xlwt-1.0.0-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/xlrd-0.9.3-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/tornado-4.1-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/backports.ssl_match_hostname-3.4.0.2-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/certifi-2015.4.28-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/pyOpenSSL-0.15.1-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/six-1.9.0-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/cryptography-0.9.1-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/cffi-1.1.1-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/ipaddress-1.0.7-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/enum34-1.0.4-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/pyasn1-0.1.7-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/idna-2.0-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/pycparser-2.13-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/Django-1.7.8-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/gevent-1.0.2-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/usr/local/lib/python2.7/site-packages/greenlet-0.4.7-py2.7-macosx-10.10-x86_64.egg&amp;rsquo;, &amp;lsquo;/Users/wupeiqi/PycharmProjects/calculator&amp;rsquo;, &amp;lsquo;/usr/local/Cellar/python/2.7.9/Frameworks/Python.framework/Versions/2.7/lib/python27.zip&amp;rsquo;, &amp;lsquo;/usr/local/Cellar/python/2.</description>
     </item>
     
     <item>
@@ -771,7 +767,7 @@ __add__(相加，运算符：+)
 n = 3 print(n.__add__(5)) #输出：8
 __and__（按位与运算，运算符：&amp;amp;）
 n = 5 print(n.__and__(7)) #输出：5 # 00000110 #与运算
-00000111 #等于 00000110__bool__
+00000111 #等于 00000110 __bool__
 #占位
 __ceil__（返回自身）
 n = 1234 print(n.__ceil__()) #输出：1234
@@ -792,7 +788,7 @@ __getattribute__
 __getnewargs__
 #占位
 __ge__(判断是否 &amp;gt;=)
-n = 5 print(n.__ge__(3)) #输出：True</description>
+n = 5 print(n.</description>
     </item>
     
     <item>

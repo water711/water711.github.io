@@ -1,54 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Docker可视化工具--Portainer安装 // 蔡振威的博客</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.107.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="John Doe" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.9e9c6027c30f5aa9423b581bd9cddd1ddc66088adb9c2604f89eb5828efea5a1.css" />
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  
-  
     
-  
-
-  <title>Docker可视化工具--Portainer安装 | 蔡振威的博客</title>
-
-  
-  <meta name="description" content="官网/安装文档：https://www.portainer.io/
-https://www.portainer.io/installation/
-https://portainer.readthedocs.io/en/stable/deployment.html
-Portainer是Docker的可视化管理工具，提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像，创建容器等操作）、事件日志显示、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。
-一、拉取portainer镜像docker pull portainer/portainer
-二、启动portainerdocker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer
-三、浏览器访问http://服务器IP地址:9000
-1、设置密码
-2、选择Local，连接本地主机docker
-3、查看本地所有容器
-4、查看容器的日志、inspect、占用的硬件资源、执行命令">
-  <meta name="keywords" content="">
-
-  <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker可视化工具--Portainer安装"/>
-<meta name="twitter:description" content="官网/安装文档：https://www.portainer.io/
+<meta name="twitter:description" content="官网/安装文档： https://www.portainer.io/
 https://www.portainer.io/installation/
 https://portainer.readthedocs.io/en/stable/deployment.html
 Portainer是Docker的可视化管理工具，提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像，创建容器等操作）、事件日志显示、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。
-一、拉取portainer镜像docker pull portainer/portainer
-二、启动portainerdocker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer
-三、浏览器访问http://服务器IP地址:9000
+一、拉取portainer镜像 docker pull portainer/portainer
+二、启动portainer docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer
+三、浏览器访问 http://服务器IP地址:9000
 1、设置密码
 2、选择Local，连接本地主机docker
 3、查看本地所有容器
 4、查看容器的日志、inspect、占用的硬件资源、执行命令"/>
 
-  <meta property="og:title" content="Docker可视化工具--Portainer安装" />
-<meta property="og:description" content="官网/安装文档：https://www.portainer.io/
+    <meta property="og:title" content="Docker可视化工具--Portainer安装" />
+<meta property="og:description" content="官网/安装文档： https://www.portainer.io/
 https://www.portainer.io/installation/
 https://portainer.readthedocs.io/en/stable/deployment.html
 Portainer是Docker的可视化管理工具，提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像，创建容器等操作）、事件日志显示、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。
-一、拉取portainer镜像docker pull portainer/portainer
-二、启动portainerdocker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer
-三、浏览器访问http://服务器IP地址:9000
+一、拉取portainer镜像 docker pull portainer/portainer
+二、启动portainer docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer
+三、浏览器访问 http://服务器IP地址:9000
 1、设置密码
 2、选择Local，连接本地主机docker
 3、查看本地所有容器
@@ -60,354 +44,65 @@ Portainer是Docker的可视化管理工具，提供状态显示面板、应用�
 
 
 
-  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
-  
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
-    type="text/css">
-
-  
-  
-  <link rel="stylesheet" href="/sass/main.css">
-
-  
-  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
-
-  
-
-  <script src=/js/lazysizes.min.js></script>
-
-  
-  
-
-  
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
-
-
-</head>
-
-
-
-<body ontouchstart="">
-
-  
-  
-  
-
-  
-
-  
-  
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
-  <div class="container-fluid">
-    
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://water711.github.io/">蔡振威的博客</a>
-    </div>
-    
-    <div id="huxblog_navbar">
-      <div class="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          
-
-          <li class="search-icon">
-            <a href="javascript:void(0)">
-              <i class="fa fa-search"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </div>
-  
-</nav>
-<script>
-  
-  
-  
-  var $body = document.body;
-  var $toggle = document.querySelector(".navbar-toggle");
-  var $navbar = document.querySelector("#huxblog_navbar");
-  var $collapse = document.querySelector(".navbar-collapse");
-
-  var __HuxNav__ = {
-    close: function () {
-      $navbar.className = " ";
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://water711.github.io/"><img class="app-header-avatar" src="/avatar.jpg" alt="John Doe" /></a>
+      <span class="app-header-title">蔡振威的博客</span>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium.</p>
+    </header>
+    <main class="app-container">
       
-      setTimeout(function () {
-        
-        if ($navbar.className.indexOf("in") < 0) {
-          $collapse.style.height = "0px";
-        }
-      }, 400);
-    },
-    open: function () {
-      $collapse.style.height = "auto";
-      $navbar.className += " in";
-    },
-  };
-
-  
-  $toggle.addEventListener("click", function (e) {
-    if ($navbar.className.indexOf("in") > 0) {
-      __HuxNav__.close();
-    } else {
-      __HuxNav__.open();
-    }
-  });
-
-  
-
-  document.addEventListener("click", function (e) {
-    if (e.target == $toggle) return;
-    if (e.target.className == "icon-bar") return;
-    __HuxNav__.close();
-  });
-</script>
-  
-<div class="search-page">
-  <div class="search-icon-close-container">
-    <span class="search-icon-close">
-      <i class="fa fa-chevron-down"></i>
-    </span>
-  </div>
-  <div class="search-main container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
-        <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
-        <div id="search-results" class="mini-post-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-  
-
-
-<style type="text/css">
-  header.intro-header {
-    position: relative;
-    background-image: url('');
-  }
-</style>
-
-<header class="intro-header style-text">
-
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <div class="tags">
-            
-          </div>
-          <h1>Docker可视化工具--Portainer安装</h1>
-          <h2 class="subheading"></h2>
-          <span class="meta">
-            Posted by   
-            on Tue, Feb 9, 2021
-          </span>
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Docker可视化工具--Portainer安装</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 9, 2021
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
-
-  
-
-
-<article>
-  <div class="container">
-    <div class="row">
-
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              post-container">
-        <h2 id="官网安装文档">官网/安装文档：<a class="anchorjs-link" href="#%e5%ae%98%e7%bd%91%e5%ae%89%e8%a3%85%e6%96%87%e6%a1%a3"></a></h2><p><a href="https://www.portainer.io/" target="_blank">https://www.portainer.io/</a></p>
-<p><a href="https://www.portainer.io/installation/" target="_blank">https://www.portainer.io/installation/</a></p>
-<p><a href="https://portainer.readthedocs.io/en/stable/deployment.html" target="_blank">https://portainer.readthedocs.io/en/stable/deployment.html</a></p>
+    </header>
+    <div class="post-content">
+      <h2 id="官网安装文档">官网/安装文档：</h2>
+<p><a href="https://www.portainer.io/">https://www.portainer.io/</a></p>
+<p><a href="https://www.portainer.io/installation/">https://www.portainer.io/installation/</a></p>
+<p><a href="https://portainer.readthedocs.io/en/stable/deployment.html">https://portainer.readthedocs.io/en/stable/deployment.html</a></p>
 <p> </p>
 <p><strong>Portainer是Docker的可视化管理工具</strong>，提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像，创建容器等操作）、事件日志显示、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。</p>
 <p> </p>
-<h2 id="一拉取portainer镜像">一、<strong>拉取portainer镜像</strong><a class="anchorjs-link" href="#%e4%b8%80%e6%8b%89%e5%8f%96portainer%e9%95%9c%e5%83%8f"></a></h2><p>docker pull portainer/portainer</p>
-<h2 id="二启动portainer">二、<strong>启动portainer</strong><a class="anchorjs-link" href="#%e4%ba%8c%e5%90%af%e5%8a%a8portainer"></a></h2><p>docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer</p>
-<h2 id="三浏览器访问">三、浏览器访问<a class="anchorjs-link" href="#%e4%b8%89%e6%b5%8f%e8%a7%88%e5%99%a8%e8%ae%bf%e9%97%ae"></a></h2><p>http://服务器IP地址:9000</p>
+<h2 id="一拉取portainer镜像">一、<strong>拉取portainer镜像</strong></h2>
+<p>docker pull portainer/portainer</p>
+<h2 id="二启动portainer">二、<strong>启动portainer</strong></h2>
+<p>docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer</p>
+<h2 id="三浏览器访问">三、浏览器访问</h2>
+<p>http://服务器IP地址:9000</p>
 <p>1、设置密码</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//a9c7a6f8e84392f3f01b27c94b7014f2.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//a9c7a6f8e84392f3f01b27c94b7014f2.png" alt=""></p>
 <p>2、选择Local，连接本地主机docker</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//96352a5a4b672d15e5686a50ca035629.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//d1e82f473a1702583257cd1685f887ee.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//96352a5a4b672d15e5686a50ca035629.png" alt=""></p>
+<p><img src="http://hugo.caizhenwei.top//d1e82f473a1702583257cd1685f887ee.png" alt=""></p>
 <p>3、查看本地所有容器</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//6c90e3074c9db7c7e032be0c8361df3d.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//6c90e3074c9db7c7e032be0c8361df3d.png" alt=""></p>
 <p>4、查看容器的日志、inspect、占用的硬件资源、执行命令</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//e1879ee6484a652700156ead356ab6bb.png" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
+<p><img src="http://hugo.caizhenwei.top//e1879ee6484a652700156ead356ab6bb.png" alt=""></p>
 
-
-        <hr style="visibility: hidden;" />
-        <ul class="pager">
-          
-          <li class="previous">
-            <a href="/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/" data-toggle="tooltip" data-placement="top" title="Centos7 部署Samba服务">
-              Previous<br>
-              <span>Centos7 部署Samba服务</span>
-            </a>
-          </li>
-          
-          
-          <li class="next">
-            <a href="/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/" data-toggle="tooltip" data-placement="top" title="手机端实现一键发送命令到NAS主机">
-              Next<br>
-              <span>手机端实现一键发送命令到NAS主机</span>
-            </a>
-          </li>
-          
-        </ul>
-        <hr style="visibility: hidden;" />
-
-        
-        
-
-
-
-
-
-
-      </div>
-
-      
-      
-      
-      
-      <div class="
-              col-lg-8 col-lg-offset-2
-              col-md-10 col-md-offset-1
-              sidebar-container">
-
-        
-        
-        <section>
-  
-  
-  <hr class="hidden-sm hidden-xs">
-  
-  <h5>FEATURED TAGS</h5>
-  <div class="tags">
-    
-    <a href="/tags/wordpress/">wordpress</a>
-    
-  </div>
-</section>
-
-        
-        
-
-      </div>
     </div>
-  </div>
-</article>
-
-
-
-  
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        
-
-
-<ul class="list-inline text-center">
-
-  
-  
-  
-  
-  
-  
-  
-  
-</ul>
-        <p class="copyright text-muted">
-          Copyright &copy; 蔡振威的博客 2022  
-          <br>
-          Powered by <a href="https://gohugo.io">Hugo</a>
-        </p>
-      </div>
+    <div class="post-footer">
+      
     </div>
-  </div>
-</footer>
+  </article>
 
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
-
-
-
-<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
-
-
-<script src=/js/simple-jekyll-search.min.js></script>
-
-
-<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="/zoomjs/zoom.min.js"></script>
-
-</body>
-
+    </main>
+  </body>
 </html>
