@@ -60,7 +60,7 @@ MBR阶段（16位实模式）：BIOS在完成通电自检后，将控制权移�
 HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Run HKCU\Software\Microsoft\Windows\CurrentVersion\Run HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce %ALLUSERSPROFILE%\Start Menu\Programs\Startup\ %USERPROFILE%\Start Menu\Programs\Startup\ 对于详细的Windows启动流程大家可以参考：The Birth of Windows Desktop ，更加详细的信息可以查阅Windows Internals Book 一书的第13章：启动和关机。
 这里向大家推荐一个检测系统启动项的工具：Autoruns，在Sysinternals Suite中可以找到。它能检测系统中存在的所有类型的启动项，包括由WinInit加载的用户启动项、由系统加载的驱动启动项，还有跟Explorer." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/2015-11-10-%E7%94%B5%E8%84%91%E5%8D%A1%E5%8D%A1%E5%8D%A1%E4%BD%86%E4%BD%A0%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81-ssd-%E5%90%97/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/2015-11-10-%E7%94%B5%E8%84%91%E5%8D%A1%E5%8D%A1%E5%8D%A1%E4%BD%86%E4%BD%A0%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81-ssd-%E5%90%97/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-11-10T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-11-10T00:00:00+00:00" />
 
@@ -119,7 +119,7 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce HKLM\SOFTWARE\Microsoft\W
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">
@@ -253,7 +253,7 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce HKLM\SOFTWARE\Microsoft\W
   </a>
   
 </figure></p>
-<h1 id="为什么只有ssd才能喂饱你的电脑">为什么只有SSD才能喂饱你的电脑<a class="anchorjs-link" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%8f%aa%e6%9c%89ssd%e6%89%8d%e8%83%bd%e5%96%82%e9%a5%b1%e4%bd%a0%e7%9a%84%e7%94%b5%e8%84%91"></a></h1><p><a href="http://hugo.caizhenwei.top//cao-yicong-50" target="_blank"><figure>
+<h1 id="为什么只有ssd才能喂饱你的电脑">为什么只有SSD才能喂饱你的电脑<a class="anchorjs-link" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%8f%aa%e6%9c%89ssd%e6%89%8d%e8%83%bd%e5%96%82%e9%a5%b1%e4%bd%a0%e7%9a%84%e7%94%b5%e8%84%91"></a></h1><p><a href="/http:/hugo.caizhenwei.top/cao-yicong-50" target="_blank"><figure>
   <a class="paragraph-image">
     <img data-src="images/556bd816cac19d4c8ccfeaa4a139c6c3_s.jpg" data-action="zoom" alt=""  class="lazyload">
   </a>
@@ -271,7 +271,7 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce HKLM\SOFTWARE\Microsoft\W
     <img data-src="images/6b726126fb8851a8f98c3fa56f3cbbed_b.jpg" data-action="zoom" alt=""  class="lazyload">
   </a>
   
-</figure>（图片来自：<a href="http://hugo.caizhenwei.top//11341.the-windows-7-boot-process-sbsl.aspx" target="_blank">http://hugo.caizhenwei.top//11341.the-windows-7-boot-process-sbsl.aspx</a>）</p>
+</figure>（图片来自：<a href="/http:/hugo.caizhenwei.top/11341.the-windows-7-boot-process-sbsl.aspx" target="_blank">http://hugo.caizhenwei.top//11341.the-windows-7-boot-process-sbsl.aspx</a>）</p>
 <ol>
 <li>MBR阶段（16位实模式）：BIOS在完成通电自检后，将控制权移交给位于硬盘前63个扇区的MBR（Master Boot Record），MBR将自己的镜像加载到内存，然后执行对分区表的搜索，然后将控制权转移给第一个活动分区的PBR（Partition Boot Record）；</li>
 <li>PBR阶段（16位实模式）：PBR是因操作系统而异的分区引导记录，它将自身加载到内存并加载基本的磁盘驱动，通过BIOS INT中断的方式查找此分区上的引导文件，也就是我们的Bootmgr，并将其加载到内存；</li>
@@ -319,8 +319,8 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce HKLM\SOFTWARE\Microsoft\W
 <li>%ALLUSERSPROFILE%\Start Menu\Programs\Startup\</li>
 <li>%USERPROFILE%\Start Menu\Programs\Startup\</li>
 </ul>
-<p>对于详细的Windows启动流程大家可以参考：<a href="http://www.codeproject.com/Articles/129874/The-Birth-of-Windows-Desktop" target="_blank">The Birth of Windows Desktop</a> ，更加详细的信息可以查阅<a href="https://technet.microsoft.com/en-us/sysinternals/bb963901.aspx" target="_blank">Windows Internals Book</a> 一书的第13章：启动和关机。</p>
-<p>这里向大家推荐一个检测系统启动项的工具：Autoruns，在<a href="https://technet.microsoft.com/en-us/sysinternals/bb842062.aspx?f=255&amp;MSPPError=-2147217396" target="_blank">Sysinternals Suite</a>中可以找到。它能检测系统中存在的所有类型的启动项，包括由WinInit加载的用户启动项、由系统加载的驱动启动项，还有跟Explorer.exe相关的启动项（比如右键关联菜单等）。</p>
+<p>对于详细的Windows启动流程大家可以参考：<a href="/http:/www.codeproject.com/Articles/129874/The-Birth-of-Windows-Desktop" target="_blank">The Birth of Windows Desktop</a> ，更加详细的信息可以查阅<a href="/https:/technet.microsoft.com/en-us/sysinternals/bb963901.aspx" target="_blank">Windows Internals Book</a> 一书的第13章：启动和关机。</p>
+<p>这里向大家推荐一个检测系统启动项的工具：Autoruns，在<a href="/https:/technet.microsoft.com/en-us/sysinternals/bb842062.aspx?f=255&amp;MSPPError=-2147217396" target="_blank">Sysinternals Suite</a>中可以找到。它能检测系统中存在的所有类型的启动项，包括由WinInit加载的用户启动项、由系统加载的驱动启动项，还有跟Explorer.exe相关的启动项（比如右键关联菜单等）。</p>
 <p>通过<strong>取消勾选就能干掉启动项</strong>，甚至能离线检测其他硬盘上的操作系统——如果它们损坏不能启动的话——<strong>通过禁掉可疑驱动的方式修复系统</strong>。这货还能导出刚配置好系统时的启动项记录，并在以后随时与之比较，<strong>找出新增的启动项</strong>。</p>
 <p><figure>
   <a class="paragraph-image">
@@ -351,7 +351,7 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce HKLM\SOFTWARE\Microsoft\W
 </figure>所以说，如果你也时常向你的朋友表演开机，那么包括SSD，UEFI、Windows的快速启动、Prefetch预读取这些技术都功不可没，虽然SSD能让系统运转如飞，但许多系统卡顿的原因可能并不是因为没有SSD，而是因为用久了长出了许多流氓启动项。而且，别忘了向他们展示你的HKLM\SYSTEM\CurrentControlSet\Services，告诫他们合理安装国产软件，兴许号称帮你清理启动项的卫士本身，才是占据启动时间的大头：）</p>
 <p> </p>
 <hr>
-<p>发自知乎专栏「<a href="http://zhuanlan.zhihu.com/yicong/20114305" target="_blank">二葱写字的地方</a>」</p>
+<p>发自知乎专栏「<a href="/http:/zhuanlan.zhihu.com/yicong/20114305" target="_blank">二葱写字的地方</a>」</p>
 
 
         <hr style="visibility: hidden;" />

@@ -81,7 +81,7 @@
 9、查看mysql初始密码
 [root@server1 ~]# grep &rsquo;temporary password&rsquo; /var/log/mysqld." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-08-23T00:00:00+00:00" />
 
@@ -140,7 +140,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">
@@ -268,12 +268,12 @@
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="方式一mysql-yum-repository">方式一、MySQL Yum Repository<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%b8%80mysql-yum-repository"></a></h2><p>官方安装文档：<a href="http://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html" target="_blank">http://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html</a></p>
-<p>1、访问官网：<a href="https://www.mysql.com/downloads/" target="_blank">https://www.mysql.com/downloads/</a></p>
-<p>2、点击：<a href="https://dev.mysql.com/downloads/" target="_blank">MySQL Community (GPL) Downloads »</a></p>
-<p>3、点击：<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank">MySQL Yum Repository</a>，复制下载链接</p>
+        <h2 id="方式一mysql-yum-repository">方式一、MySQL Yum Repository<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%b8%80mysql-yum-repository"></a></h2><p>官方安装文档：<a href="/http:/dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html" target="_blank">http://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html</a></p>
+<p>1、访问官网：<a href="/https:/www.mysql.com/downloads/" target="_blank">https://www.mysql.com/downloads/</a></p>
+<p>2、点击：<a href="/https:/dev.mysql.com/downloads/" target="_blank">MySQL Community (GPL) Downloads »</a></p>
+<p>3、点击：<a href="/https:/dev.mysql.com/downloads/repo/yum/" target="_blank">MySQL Yum Repository</a>，复制下载链接</p>
 <p>4、下载对应操作系统版本的RPM包</p>
-<p>[root@server1 ~]# wget <a href="https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm" target="_blank">https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</a></p>
+<p>[root@server1 ~]# wget <a href="/https:/dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm" target="_blank">https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</a></p>
 <p>5、安装mysql yum源</p>
 <p>[root@server1 ~]# rpm -ivh mysql80-community-release-el7-3.noarch.rpm</p>
 <p>6、查看当前启用的默认安装版本</p>
@@ -296,10 +296,10 @@
 <p>[root@server1 ~]# mysql -uroot -p</p>
 <p>mysql&gt; alter user &lsquo;root&rsquo;@&rsquo;localhost&rsquo; IDENTIFIED BY &lsquo;password&rsquo;;</p>
 <p> </p>
-<h2 id="方式二二进制预编译安装">方式二、二进制预编译安装<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%ba%8c%e4%ba%8c%e8%bf%9b%e5%88%b6%e9%a2%84%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85"></a></h2><p>官方安装文档：<a href="https://dev.mysql.com/doc/refman/8.0/en/binary-installation.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/binary-installation.html</a></p>
-<p>1、访问官网：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank">https://dev.mysql.com/downloads/mysql/</a></p>
-<p>2、选择<a href="https://dev.mysql.com/downloads/mysql/" target="_blank">MySQL Community Server</a> -&gt; &ldquo;Linux - Generic&rdquo;，下载预编译压缩包</p>
-<p>[root@server1 ~]# wget &ndash;no-check-certificate <a href="https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-linux-glibc2.12-x86" target="_blank">https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-linux-glibc2.12-x86</a>_64.tar.xz</p>
+<h2 id="方式二二进制预编译安装">方式二、二进制预编译安装<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%ba%8c%e4%ba%8c%e8%bf%9b%e5%88%b6%e9%a2%84%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85"></a></h2><p>官方安装文档：<a href="/https:/dev.mysql.com/doc/refman/8.0/en/binary-installation.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/binary-installation.html</a></p>
+<p>1、访问官网：<a href="/https:/dev.mysql.com/downloads/mysql/" target="_blank">https://dev.mysql.com/downloads/mysql/</a></p>
+<p>2、选择<a href="/https:/dev.mysql.com/downloads/mysql/" target="_blank">MySQL Community Server</a> -&gt; &ldquo;Linux - Generic&rdquo;，下载预编译压缩包</p>
+<p>[root@server1 ~]# wget &ndash;no-check-certificate <a href="/https:/dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-linux-glibc2.12-x86" target="_blank">https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-linux-glibc2.12-x86</a>_64.tar.xz</p>
 <p>3、安装依赖库</p>
 <p>yum -y install libaio</p>
 <p>4、配置mysql</p>
@@ -336,7 +336,7 @@ export PATH=$PATH:$MYSQL_HOME/bin</p>
 <p>[root@server1 ~]# firewall-cmd &ndash;permanent &ndash;zone=public &ndash;add-port=3306/tcp
 [root@server1 ~]# firewall-cmd &ndash;reload</p>
 <p> </p>
-<h2 id="方式三源码安装">方式三、源码安装<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%b8%89%e6%ba%90%e7%a0%81%e5%ae%89%e8%a3%85"></a></h2><p>官方安装文档：<a href="https://dev.mysql.com/doc/refman/8.0/en/source-installation.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/source-installation.html</a></p>
+<h2 id="方式三源码安装">方式三、源码安装<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%b8%89%e6%ba%90%e7%a0%81%e5%ae%89%e8%a3%85"></a></h2><p>官方安装文档：<a href="/https:/dev.mysql.com/doc/refman/8.0/en/source-installation.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/source-installation.html</a></p>
 <hr>
 <p>知悉：</p>
 <p>a. mysql从5.5版本开始，不再使用./configure编译，而是使用cmake编译器</p>
@@ -344,9 +344,9 @@ export PATH=$PATH:$MYSQL_HOME/bin</p>
 <p>c. centos7.6默认安装的是cmake2.8.12.2和gcc4.8.5，编译前需要升级到cmake3和gcc5.3以上版本</p>
 <p>d. 最好先卸载mariadb和删除/etc/my.cnf文件，mysql启动时会默认加载该配置文件，导致在安装参数里的设置无效，引发一系列错误</p>
 <hr>
-<p>1、访问官网：<a href="https://dev.mysql.com/downloads/" target="_blank">https://dev.mysql.com/downloads/</a></p>
-<p>2、选择 <a href="https://dev.mysql.com/downloads/mysql/" target="_blank">MySQL Community Server</a> -&gt; &ldquo;Source Code&rdquo; -&gt; &ldquo;Generic Linux&rdquo;，下载源码</p>
-<p>[root@server1 ~]# wget <a href="https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21.tar.gz" target="_blank">https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21.tar.gz</a></p>
+<p>1、访问官网：<a href="/https:/dev.mysql.com/downloads/" target="_blank">https://dev.mysql.com/downloads/</a></p>
+<p>2、选择 <a href="/https:/dev.mysql.com/downloads/mysql/" target="_blank">MySQL Community Server</a> -&gt; &ldquo;Source Code&rdquo; -&gt; &ldquo;Generic Linux&rdquo;，下载源码</p>
+<p>[root@server1 ~]# wget <a href="/https:/dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21.tar.gz" target="_blank">https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21.tar.gz</a></p>
 <p>3、安装依赖</p>
 <p>[root@server1 ~]# yum -y install gcc gcc-c++ ncurses ncurses-devel libaio-devel openssl openssl-devel</p>
 <p>4、编译前配置</p>
@@ -370,9 +370,9 @@ CMake 3.5.1 or higher is required.  You are running version 2.8.12.2</p>
 [root@server1 ~]# gcc -v
 [root@server1 ~]# vim ~/.bashrc  #将切换gcc版本命令加入开机启动脚本</p>
 <p>5、安装cmake3</p>
-<p>cmake官网：<a href="http://www.cmake.org/" target="_blank">http://www.cmake.org/</a></p>
+<p>cmake官网：<a href="/http:/www.cmake.org/" target="_blank">http://www.cmake.org/</a></p>
 <p>[root@server1 ~]# yum -remove cmake -y  #如果有旧版本，先移除
-[root@server1 ~]# wget <a href="https://github.com/Kitware/CMake/releases/download/v3.18.2/cmake-3.18.2.tar.gz" target="_blank">https://github.com/Kitware/CMake/releases/download/v3.18.2/cmake-3.18.2.tar.gz</a>
+[root@server1 ~]# wget <a href="/https:/github.com/Kitware/CMake/releases/download/v3.18.2/cmake-3.18.2.tar.gz" target="_blank">https://github.com/Kitware/CMake/releases/download/v3.18.2/cmake-3.18.2.tar.gz</a>
 [root@server1 ~]# tar zxvf cmake-3.18.2.tar.gz
 [root@server1 ~]# gcc -v  #编译前确保gcc版本升级到8.0以上
 [root@server1 ~]# cd cmake-3.18.2
@@ -380,7 +380,7 @@ CMake 3.5.1 or higher is required.  You are running version 2.8.12.2</p>
 [root@server1 cmake-3.18.2]# gmake &amp;&amp; gmake install
 [root@server1 cmake-3.18.2]# cmake &ndash;version</p>
 <p>6、编译</p>
-<p>编译参数官方文档：<a href="https://dev.mysql.com/doc/refman/8.0/en/source-configuration-options.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/source-configuration-options.html</a></p>
+<p>编译参数官方文档：<a href="/https:/dev.mysql.com/doc/refman/8.0/en/source-configuration-options.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/source-configuration-options.html</a></p>
 <p>[root@server1 ~]# cd mysql-8.0.21
 [root@server1 mysql-8.0.21]# mkdir bld
 [root@server1 mysql-8.0.21]# cd bld

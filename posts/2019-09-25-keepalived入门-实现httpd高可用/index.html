@@ -48,7 +48,7 @@ vrrp_instance VI_1 { state MASTER //定义本机的初始状态，MASTER为主�
 #备机配置keepalived [root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 //设置router_id，名称要唯一，两台机器不能相同 }
 vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 50 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-25T00:00:00+00:00" />
 
@@ -107,7 +107,7 @@ vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主�
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">

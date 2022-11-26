@@ -42,7 +42,7 @@ import cv2 import numpy as np import math cap = cv2.VideoCapture(0)
 while(1):
 ret, frame = cap.read() frame = cv2.flip(frame,1) kernel = np.ones((3,3), np.uint8) # define region of interest roi = frame\[100:300, 100:300\] cv2.rectangle(frame,(100,100),(300,300),(0,255,0),0) hsv = cv2.cvtColor(roi, cv2.COLOR\_BGR2HSV) # define range of skin color in HSV lower\_skin = np.array(\[0,20,70\], dtype=np.uint8) upper\_skin = np.array(\[20,255,255\], dtype=np.uint8) #extract skin color image mask = cv2.inRange(hsv, lower\_skin, upper\_skin) #extrapolate the hand to fill dark spots within mask = cv2." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-17T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-17T00:00:00+00:00" />
 
@@ -101,7 +101,7 @@ ret, frame = cap.read() frame = cv2.flip(frame,1) kernel = np.ones((3,3), np.uin
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">
@@ -229,7 +229,7 @@ ret, frame = cap.read() frame = cv2.flip(frame,1) kernel = np.ones((3,3), np.uin
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p>来源某国外视频：<a href="https://www.bilibili.com/video/BV1E4411f7Q1" target="_blank">https://www.bilibili.com/video/BV1E4411f7Q1</a></p>
+        <p>来源某国外视频：<a href="/https:/www.bilibili.com/video/BV1E4411f7Q1" target="_blank">https://www.bilibili.com/video/BV1E4411f7Q1</a></p>
 <h2 id="环境">环境<a class="anchorjs-link" href="#%e7%8e%af%e5%a2%83"></a></h2><p>Python：3.7.0</p>
 <p>OpenCV：3.4.3.18</p>
 <p><figure>

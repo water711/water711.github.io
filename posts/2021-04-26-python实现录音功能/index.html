@@ -48,7 +48,7 @@ def save_wave_file(filename,data): &lsquo;&lsquo;&lsquo;save the data to the wav
 def my_record(): file_name = datetime.now().strftime(&quot;%Y%m%d_%H%M%S&quot;) &#43; &lsquo;.wav&rsquo; pa=PyAudio() stream=pa.open(format = paInt16,channels=1, rate=framerate,input=True, frames_per_buffer=NUM_SAMPLES) my_buf=[] count=0 while count&lt;TIME*8:#控制录音时间 string_audio_data = stream.read(NUM_SAMPLES) my_buf.append(string_audio_data) count&#43;=1 #print(&rsquo;.&rsquo;) save_wave_file(file_name,my_buf) stream.close()
 if __name__ == &lsquo;__main__&rsquo;: for i in range(count): my_record()" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-26T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-04-26T00:00:00+00:00" />
 
@@ -107,7 +107,7 @@ if __name__ == &lsquo;__main__&rsquo;: for i in range(count): my_record()" />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">
@@ -237,7 +237,7 @@ if __name__ == &lsquo;__main__&rsquo;: for i in range(count): my_record()" />
               post-container">
         <p> </p>
 <h2 id="一安装pyaudio软件包">一、安装pyaudio软件包<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85pyaudio%e8%bd%af%e4%bb%b6%e5%8c%85"></a></h2><p>1、下载whl文件</p>
-<p><a href="https://github.com/intxcc/pyaudio_portaudio/releases" target="_blank">https://github.com/intxcc/pyaudio_portaudio/releases</a></p>
+<p><a href="/https:/github.com/intxcc/pyaudio_portaudio/releases" target="_blank">https://github.com/intxcc/pyaudio_portaudio/releases</a></p>
 <p>2、安装pyaudio</p>
 <p>pip install PyAudio-0.2.11-cp37-cp37m-win_amd64.whl</p>
 <h2 id="二代码文件">二、代码文件<a class="anchorjs-link" href="#%e4%ba%8c%e4%bb%a3%e7%a0%81%e6%96%87%e4%bb%b6"></a></h2><p>import wave
@@ -282,7 +282,7 @@ pyinstaller -F test.py</p>
 <p>#打包成exe并自定义图标(图标放在程序所在目录)
 pyinstaller -F &ndash;icon=my.ico test.py</p>
 <p> </p>
-<p>参考原文：<a href="https://blog.ailemon.me/2019/08/13/python-implement-audio-recorder-and-player/" target="_blank">https://blog.ailemon.me/2019/08/13/python-implement-audio-recorder-and-player/</a></p>
+<p>参考原文：<a href="/https:/blog.ailemon.me/2019/08/13/python-implement-audio-recorder-and-player/" target="_blank">https://blog.ailemon.me/2019/08/13/python-implement-audio-recorder-and-player/</a></p>
 
 
         <hr style="visibility: hidden;" />

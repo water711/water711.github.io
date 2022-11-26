@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 蔡振威的博客</title>
-    <link>http://example.org/posts/</link>
+    <link>/posts/</link>
     <description>Recent content in Posts on 蔡振威的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Win7下查看NVIDIA显卡的GPU使用率</title>
-      <link>http://example.org/posts/2021-05-29-win7%E4%B8%8B%E6%9F%A5%E7%9C%8Bnvidia%E6%98%BE%E5%8D%A1%E7%9A%84gpu%E4%BD%BF%E7%94%A8%E7%8E%87/</link>
+      <link>/posts/2021-05-29-win7%E4%B8%8B%E6%9F%A5%E7%9C%8Bnvidia%E6%98%BE%E5%8D%A1%E7%9A%84gpu%E4%BD%BF%E7%94%A8%E7%8E%87/</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-05-29-win7%E4%B8%8B%E6%9F%A5%E7%9C%8Bnvidia%E6%98%BE%E5%8D%A1%E7%9A%84gpu%E4%BD%BF%E7%94%A8%E7%8E%87/</guid>
+      <guid>/posts/2021-05-29-win7%E4%B8%8B%E6%9F%A5%E7%9C%8Bnvidia%E6%98%BE%E5%8D%A1%E7%9A%84gpu%E4%BD%BF%E7%94%A8%E7%8E%87/</guid>
       <description>在做图形渲染的时候，想了解GPU的使用情况，但是win7的任务管理器没有GPU的信息，还好NVIDIA提供了相关的命令
 进入cmd命令行
 cd C:\Program Files\NVIDIA Corporation\NVSMI #如果该目录加入了环境变量，可忽略 nvidia-smi.exe -h 查看帮助 nvidia-smi.exe -l 3 查看GPU使用率，每3秒刷新一次</description>
@@ -20,10 +20,10 @@ cd C:\Program Files\NVIDIA Corporation\NVSMI #如果该目录加入了环境变�
     
     <item>
       <title>安装Jupyter Notebook并配置远程登录</title>
-      <link>http://example.org/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
+      <link>/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
       <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
+      <guid>/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
       <description>一、安装安装 pip3 install jupyter notebook
 运行 jupyter notebook
 浏览器访问 http://localhost:8888/undefined/tree
@@ -42,10 +42,10 @@ http://IP:8888/undefined/tree</description>
     
     <item>
       <title>Kali2021安装VNC</title>
-      <link>http://example.org/posts/2021-04-26-kali2021%E5%AE%89%E8%A3%85vnc/</link>
+      <link>/posts/2021-04-26-kali2021%E5%AE%89%E8%A3%85vnc/</link>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-04-26-kali2021%E5%AE%89%E8%A3%85vnc/</guid>
+      <guid>/posts/2021-04-26-kali2021%E5%AE%89%E8%A3%85vnc/</guid>
       <description>1、安装 x11vncapt install x11vnc -y
 2、生成密码文件x11vnc -storepasswd 123456 /etc/x11vnc.pass
 参数说明： -storepasswd：指定一个密码 /etc/x11vnc.pass：保存的路径（任意）
@@ -57,10 +57,10 @@ ExecStart 启动命令中，指定刚刚生成的 密码文件 和 端口
     
     <item>
       <title>Python实现录音功能</title>
-      <link>http://example.org/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</link>
+      <link>/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</guid>
+      <guid>/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</guid>
       <description>一、安装pyaudio软件包1、下载whl文件
 https://github.com/intxcc/pyaudio_portaudio/releases
 2、安装pyaudio
@@ -74,10 +74,10 @@ if __name__ == &amp;lsquo;__main__&amp;rsquo;: for i in range(count): my_record(
     
     <item>
       <title>centos7安装transmission</title>
-      <link>http://example.org/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission/</link>
+      <link>/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission/</guid>
+      <guid>/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission/</guid>
       <description>一、使用docker安装docker hub仓库地址：https://hub.docker.com/r/linuxserver/transmission
 1、下载镜像
 docker pull linuxserver/transmission
@@ -91,10 +91,10 @@ yum -y install epel-release yum install tranmission transmission-daemon systemct
     
     <item>
       <title>使用docker快速搭建L2TP服务器</title>
-      <link>http://example.org/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>使用 Docker 镜像快速搭建 IPsec VPN 服务器。支持 IPsec/L2TP，Cisco IPsec 和 IKEv2 协议。
 作者github地址：https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-zh.md
 一、下载镜像并运行docker run \ &amp;ndash;name ipsec-vpn-server \ &amp;ndash;restart=always \ -v ikev2-vpn-data:/etc/ipsec.d \ -v /lib/modules:/lib/modules:ro \ -p 500:500/udp \ -p 4500:4500/udp \ -d &amp;ndash;privileged \ hwdsl2/ipsec-vpn-server
@@ -111,10 +111,10 @@ route add 192.168.100.0 mask 255.255.255.0 192.168.42.1</description>
     
     <item>
       <title>crond任务没有正常执行的排查方法</title>
-      <link>http://example.org/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/</link>
+      <link>/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/</guid>
+      <guid>/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/</guid>
       <description>很多时候写了定时任务却发现没有执行，或者执行失败，但因为crond是后台运行的，有没有任何提示，很难进行排错。但是可以让crond运行在前端并进行调试的。
 crond是允许接受选项的
 crond [-n] [-P] [-x flags] 选项说明： -n：让crond以前端方式运行，即不依赖于终端。 -P：不重设环境变量PATH，而是从父进程中继承。 -x：设置调试项，flags是调试方式，比较有用的方式是test和sch，即&amp;quot;-x test&amp;quot;和&amp;quot;-x sch&amp;quot;。 ：其中test调试将不会真正的执行，sch调试显示调度信息，可以看到等待时间。具体的见下面的示例。
@@ -127,10 +127,10 @@ crond调试正常显示如下：
     
     <item>
       <title>Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式</title>
-      <link>http://example.org/posts/2021-03-20-hyper-v%E7%9A%84vhdx%E6%A0%BC%E5%BC%8F%E7%A3%81%E7%9B%98%E9%95%9C%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAvirtualbox%E6%94%AF%E6%8C%81%E7%9A%84vhd%E6%A0%BC%E5%BC%8F/</link>
+      <link>/posts/2021-03-20-hyper-v%E7%9A%84vhdx%E6%A0%BC%E5%BC%8F%E7%A3%81%E7%9B%98%E9%95%9C%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAvirtualbox%E6%94%AF%E6%8C%81%E7%9A%84vhd%E6%A0%BC%E5%BC%8F/</link>
       <pubDate>Sat, 20 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-03-20-hyper-v%E7%9A%84vhdx%E6%A0%BC%E5%BC%8F%E7%A3%81%E7%9B%98%E9%95%9C%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAvirtualbox%E6%94%AF%E6%8C%81%E7%9A%84vhd%E6%A0%BC%E5%BC%8F/</guid>
+      <guid>/posts/2021-03-20-hyper-v%E7%9A%84vhdx%E6%A0%BC%E5%BC%8F%E7%A3%81%E7%9B%98%E9%95%9C%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAvirtualbox%E6%94%AF%E6%8C%81%E7%9A%84vhd%E6%A0%BC%E5%BC%8F/</guid>
       <description>.vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。
 在已经开启了hyper-v的电脑上进行镜像转换：1、以管理员权限打开powershell
 Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径
@@ -141,10 +141,10 @@ PS：注意两个路径都要带后缀，文件名中如果存在空格则需要
     
     <item>
       <title>Linux安装使用clash网络代理工具</title>
-      <link>http://example.org/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+      <link>/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
+      <guid>/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
       <description>一、下载解压运行各平台clash安装包链接：https://github.com/Dreamacro/clash/releases
 mkdir clash #创建目录 cd clash #进入目录 wget http://xxxxxxclash-linux-amd64-v1.3.5.gz #下载clash gunzip clash-linux-amd64-v1.3.5.gz #解压 mv clash-linux-amd64-v1.3.5 clash #重命名 chmod +x clash #添加可执行权限
 ./clash #前台运行clashINFO[0000] Can&amp;rsquo;t find config, create a initial config file INFO[0000] Can&amp;rsquo;t find MMDB, start download INFO[0205] HTTP proxy listening at: 127.0.0.1:7890
@@ -158,10 +158,10 @@ cd ~/.config/clash wget -O config.yaml http://xxxx.com/link/f?clash=1&amp;log-le
     
     <item>
       <title>通过TG机器人发送通知到手机</title>
-      <link>http://example.org/posts/2021-02-15-%E9%80%9A%E8%BF%87tg%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E9%80%9A%E7%9F%A5%E5%88%B0%E6%89%8B%E6%9C%BA/</link>
+      <link>/posts/2021-02-15-%E9%80%9A%E8%BF%87tg%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E9%80%9A%E7%9F%A5%E5%88%B0%E6%89%8B%E6%9C%BA/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-15-%E9%80%9A%E8%BF%87tg%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E9%80%9A%E7%9F%A5%E5%88%B0%E6%89%8B%E6%9C%BA/</guid>
+      <guid>/posts/2021-02-15-%E9%80%9A%E8%BF%87tg%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E9%80%9A%E7%9F%A5%E5%88%B0%E6%89%8B%E6%9C%BA/</guid>
       <description>一、创建TG机器人1、打开botfather聊天窗口
 手机端：打开TG，点击底部Chats，上方搜索 @botfather ，进行聊天窗口，点击Start
 电脑端：https://telegram.me/BotFather
@@ -186,10 +186,10 @@ curl -X POST &amp;ldquo;https://api.telegram.org/bot这里填入机器人token/s
     
     <item>
       <title>Telegram机器人编程，实现复读功能</title>
-      <link>http://example.org/posts/2021-02-10-telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%A4%8D%E8%AF%BB%E5%8A%9F%E8%83%BD/</link>
+      <link>/posts/2021-02-10-telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%A4%8D%E8%AF%BB%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-10-telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%A4%8D%E8%AF%BB%E5%8A%9F%E8%83%BD/</guid>
+      <guid>/posts/2021-02-10-telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%A4%8D%E8%AF%BB%E5%8A%9F%E8%83%BD/</guid>
       <description>一、新建谷歌脚本1、打开Google Apps Script，点击Start Scripting，新建项目
 https://www.google.com/script/start/
 2、粘贴以下代码，并修改机器人token（api.telegram.org/bot后面这串字符）
@@ -204,10 +204,10 @@ if (body.message.text){ payload = { &amp;ldquo;method&amp;rdquo;: &amp;ldquo;sen
     
     <item>
       <title>手机端实现一键发送命令到NAS主机</title>
-      <link>http://example.org/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</link>
+      <link>/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</link>
       <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</guid>
+      <guid>/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</guid>
       <description>NAS操作系统：Centos7
 实现原理：通过访问网页，执行含有shell命令的php代码
 1、安装apache和phpyum install -y httpd php
@@ -222,10 +222,10 @@ vim /etc/sudoersroot ALL=(ALL) ALL apache ALL=(ALL) NOPASSWD:ALL #添加这一�
     
     <item>
       <title>Docker可视化工具--Portainer安装</title>
-      <link>http://example.org/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</link>
+      <link>/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</link>
       <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</guid>
+      <guid>/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</guid>
       <description>官网/安装文档：https://www.portainer.io/
 https://www.portainer.io/installation/
 https://portainer.readthedocs.io/en/stable/deployment.html
@@ -241,10 +241,10 @@ Portainer是Docker的可视化管理工具，提供状态显示面板、应用�
     
     <item>
       <title>Centos7 部署Samba服务</title>
-      <link>http://example.org/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</link>
+      <link>/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</guid>
       <description>1、安装软件包yum -y install samba
 2、建立访问用户useradd test smbpasswd -a test
 3、配置samba共享[data] path = /mnt/data write list = test
@@ -262,10 +262,10 @@ vim /etc/samba/smb.</description>
     
     <item>
       <title>Docker部署开源摄像头录制软件shinobi</title>
-      <link>http://example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</link>
+      <link>/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</guid>
+      <guid>/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</guid>
       <description>官方文档：https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/dev/Docker
 一、安装shinobi方法1、使用脚本自动安装（存储路径默认在$HOME目录下）
 curl -o https://gitlab.com/Shinobi-Systems/Shinobi-Installer/raw/master/shinobi-docker.sh
@@ -293,10 +293,10 @@ http://HOST_IP:SHINOBI_PORT/super
     
     <item>
       <title>Docker部署开源摄像头录制软件shinobi</title>
-      <link>http://example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/</link>
+      <link>/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/</guid>
+      <guid>/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/</guid>
       <description>官方文档：https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/dev/Docker
 一、安装shinobi方法1、使用脚本自动安装（存储路径默认在$HOME目录下）
 curl -o https://gitlab.com/Shinobi-Systems/Shinobi-Installer/raw/master/shinobi-docker.sh
@@ -324,10 +324,10 @@ http://HOST_IP:SHINOBI_PORT/super
     
     <item>
       <title>Centos7 修改Docker默认存储位置</title>
-      <link>http://example.org/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</link>
+      <link>/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</guid>
+      <guid>/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</guid>
       <description>1、查看docker默认目录docker info | grep &amp;ldquo;Docker Root Dir&amp;rdquo;
 2、新建或者编辑 daemon.json 文件vim /etc/docker/daemon.json
 { &amp;ldquo;graph&amp;rdquo;: &amp;ldquo;/mnt/docker&amp;rdquo; }
@@ -337,10 +337,10 @@ http://HOST_IP:SHINOBI_PORT/super
     
     <item>
       <title>Windows Server 2012 R2安装docker</title>
-      <link>http://example.org/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85docker/</link>
+      <link>/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85docker/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85docker/</guid>
+      <guid>/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85docker/</guid>
       <description>一、下载安装Docker Toolboxhttps://github.com/docker/toolbox/releases
 二、安装Docker Quickstart Terminal注意：安装完成之后，先不要打开Docker Quickstart Terminal
 三、添加环境变量，替换默认docker machine的存储位置如果不修改，则docker会把镜像默认下载到C盘，导致以后系统盘空间变小
@@ -351,10 +351,10 @@ http://HOST_IP:SHINOBI_PORT/super
     
     <item>
       <title>Windows Server 2012 R2安装docker</title>
-      <link>http://example.org/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85dockernull/</link>
+      <link>/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85dockernull/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85dockernull/</guid>
+      <guid>/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85dockernull/</guid>
       <description>一、下载安装Docker Toolboxhttps://github.com/docker/toolbox/releases
 二、安装Docker Quickstart Terminal注意：安装完成之后，先不要打开Docker Quickstart Terminal
 三、添加环境变量，替换默认docker machine的存储位置如果不修改，则docker会把镜像默认下载到C盘，导致以后系统盘空间变小
@@ -365,38 +365,38 @@ http://HOST_IP:SHINOBI_PORT/super
     
     <item>
       <title>使用Working Copy远程挂载github仓库</title>
-      <link>http://example.org/posts/2021-02-01-%E4%BD%BF%E7%94%A8working-copy%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BDgithub%E4%BB%93%E5%BA%93/</link>
+      <link>/posts/2021-02-01-%E4%BD%BF%E7%94%A8working-copy%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BDgithub%E4%BB%93%E5%BA%93/</link>
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-02-01-%E4%BD%BF%E7%94%A8working-copy%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BDgithub%E4%BB%93%E5%BA%93/</guid>
+      <guid>/posts/2021-02-01-%E4%BD%BF%E7%94%A8working-copy%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BDgithub%E4%BB%93%E5%BA%93/</guid>
       <description>一、手机上新建目录，用于存放github仓库文件二、打开Working Copy，点击右上角加号，选择Setup synced directory三、选中第1步新建的目录，点击完成，在弹出的界面中点击左上角的Done四、点击Repository-》Create Repository，输入仓库URL地址，取消Allow Push，点击右上角保存五、点击右下角指纹按钮，在弹出页面中，点击Fetch，同步仓库文件到本地（第一次可能会失败）六、如果同步失败，退出软件，重新打开，进入该仓库，点击Branch，查看分支七、选择分支，点击Checkout可以看到该分支下所有目录和文件</description>
     </item>
     
     <item>
       <title>解决raw.github无法访问的问题</title>
-      <link>http://example.org/posts/2021-01-28-%E8%A7%A3%E5%86%B3raw-github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>/posts/2021-01-28-%E8%A7%A3%E5%86%B3raw-github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-28-%E8%A7%A3%E5%86%B3raw-github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>/posts/2021-01-28-%E8%A7%A3%E5%86%B3raw-github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>域名被DNS污染，手动在hosts文件中添加解析
 199.232.4.133 raw.githubusercontent.com</description>
     </item>
     
     <item>
       <title>Windows Server 2012/2016 任务管理器增加磁盘监控</title>
-      <link>http://example.org/posts/2021-01-26-windows-server-2012-2016-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E7%9B%91%E6%8E%A7/</link>
+      <link>/posts/2021-01-26-windows-server-2012-2016-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E7%9B%91%E6%8E%A7/</link>
       <pubDate>Tue, 26 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-26-windows-server-2012-2016-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E7%9B%91%E6%8E%A7/</guid>
+      <guid>/posts/2021-01-26-windows-server-2012-2016-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E7%9B%91%E6%8E%A7/</guid>
       <description>命令行中输入：diskperf -y</description>
     </item>
     
     <item>
       <title>Win7搭建Openwrt插件库</title>
-      <link>http://example.org/posts/2021-01-16-win7%E6%90%AD%E5%BB%BAopenwrt%E6%8F%92%E4%BB%B6%E5%BA%93/</link>
+      <link>/posts/2021-01-16-win7%E6%90%AD%E5%BB%BAopenwrt%E6%8F%92%E4%BB%B6%E5%BA%93/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-16-win7%E6%90%AD%E5%BB%BAopenwrt%E6%8F%92%E4%BB%B6%E5%BA%93/</guid>
+      <guid>/posts/2021-01-16-win7%E6%90%AD%E5%BB%BAopenwrt%E6%8F%92%E4%BB%B6%E5%BA%93/</guid>
       <description>Win7环境搭建openwrt插件库一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录）
 /lede/bin/packages/mips_24kc /lede/bin/targets/ar71xx/generic/packages
 我这边拷贝到 F盘openwrt_package文件夹
@@ -423,10 +423,10 @@ src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192
     
     <item>
       <title>Mysql临时开启查询日志</title>
-      <link>http://example.org/posts/2021-01-15-mysql%E4%B8%B4%E6%97%B6%E5%BC%80%E5%90%AF%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97/</link>
+      <link>/posts/2021-01-15-mysql%E4%B8%B4%E6%97%B6%E5%BC%80%E5%90%AF%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97/</link>
       <pubDate>Fri, 15 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-15-mysql%E4%B8%B4%E6%97%B6%E5%BC%80%E5%90%AF%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97/</guid>
+      <guid>/posts/2021-01-15-mysql%E4%B8%B4%E6%97%B6%E5%BC%80%E5%90%AF%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97/</guid>
       <description>查询当前是否开启了查询日志mysql&amp;gt; show global variables like &amp;lsquo;%general_log%&amp;rsquo;; +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+ | Variable_name | Value | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+ | general_log | OFF | | general_log_file | D:\mysql\data\LENOVO-LA0X1198.log | +&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;+
 开启查询日志mysql&amp;gt; SET GLOBAL general_log = &amp;lsquo;ON&amp;rsquo;;
 关闭查询日志mysql&amp;gt; SET GLOBAL general_log = &amp;lsquo;OFF&amp;rsquo;;</description>
@@ -434,10 +434,10 @@ src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192
     
     <item>
       <title>Win7实现多用户同时远程登录</title>
-      <link>http://example.org/posts/2021-01-14-win7%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%94%A8%E6%88%B7%E5%90%8C%E6%97%B6%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
+      <link>/posts/2021-01-14-win7%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%94%A8%E6%88%B7%E5%90%8C%E6%97%B6%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
       <pubDate>Thu, 14 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-14-win7%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%94%A8%E6%88%B7%E5%90%8C%E6%97%B6%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
+      <guid>/posts/2021-01-14-win7%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%94%A8%E6%88%B7%E5%90%8C%E6%97%B6%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
       <description>有时候服务器是Win7系统的时候，远程登录桌面时，即使登录的是不同的管理账号，还是会把远程登录的人给踢下来。即不同的账号只能同时存在一个会话窗。下面教大家如果设置Win7让两个账号的两会话同时存在，且相互之间不冲突。
 下载一个universal termsrv.dll patch。
 链接：http://pan.baidu.com/s/1kV9hirt 密码：jqg2
@@ -448,10 +448,10 @@ src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192
     
     <item>
       <title>CentOS7使用SpeedTest工具测速</title>
-      <link>http://example.org/posts/2021-01-13-centos7%E4%BD%BF%E7%94%A8speedtest%E5%B7%A5%E5%85%B7%E6%B5%8B%E9%80%9F/</link>
+      <link>/posts/2021-01-13-centos7%E4%BD%BF%E7%94%A8speedtest%E5%B7%A5%E5%85%B7%E6%B5%8B%E9%80%9F/</link>
       <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-13-centos7%E4%BD%BF%E7%94%A8speedtest%E5%B7%A5%E5%85%B7%E6%B5%8B%E9%80%9F/</guid>
+      <guid>/posts/2021-01-13-centos7%E4%BD%BF%E7%94%A8speedtest%E5%B7%A5%E5%85%B7%E6%B5%8B%E9%80%9F/</guid>
       <description>SpeedTest官方文档：https://www.speedtest.net/apps/cli
 方法一：wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py chmod +x speedtest-cli ./speedtest-cli &amp;ndash;share
 方法二：sudo yum install wget wget https://bintray.com/ookla/rhel/rpm -O bintray-ookla-rhel.repo sudo mv bintray-ookla-rhel.repo /etc/yum.repos.d/ sudo yum install speedtest</description>
@@ -459,10 +459,10 @@ src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192
     
     <item>
       <title>Centos7 升级内核</title>
-      <link>http://example.org/posts/2021-01-07-centos7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</link>
+      <link>/posts/2021-01-07-centos7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-07-centos7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</guid>
+      <guid>/posts/2021-01-07-centos7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</guid>
       <description>一、导入ELRepo仓库的公共密钥rpm &amp;ndash;import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 二、安装EL仓库源rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 三、查看可提供升级的内核版本yum &amp;ndash;disablerepo=&amp;quot;*&amp;quot; &amp;ndash;enablerepo=&amp;ldquo;elrepo-kernel&amp;rdquo; list available
@@ -471,10 +471,10 @@ src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192
     
     <item>
       <title>Centos7 安装docker</title>
-      <link>http://example.org/posts/2021-01-07-centos7-%E5%AE%89%E8%A3%85docker/</link>
+      <link>/posts/2021-01-07-centos7-%E5%AE%89%E8%A3%85docker/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-07-centos7-%E5%AE%89%E8%A3%85docker/</guid>
+      <guid>/posts/2021-01-07-centos7-%E5%AE%89%E8%A3%85docker/</guid>
       <description>一、如果系统安装过docker，先卸载sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine
 二、安装依赖包sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2
 三、添加Docker软件包源sudo yum-config-manager &amp;ndash;add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -484,10 +484,10 @@ src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192
     
     <item>
       <title>GitHub访问太慢，git clone太慢的9种解决办法</title>
-      <link>http://example.org/posts/2021-01-06-github%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2git-clone%E5%A4%AA%E6%85%A2%E7%9A%849%E7%A7%8D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
+      <link>/posts/2021-01-06-github%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2git-clone%E5%A4%AA%E6%85%A2%E7%9A%849%E7%A7%8D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</link>
       <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-06-github%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2git-clone%E5%A4%AA%E6%85%A2%E7%9A%849%E7%A7%8D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
+      <guid>/posts/2021-01-06-github%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2git-clone%E5%A4%AA%E6%85%A2%E7%9A%849%E7%A7%8D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</guid>
       <description>一、GitHub 镜像访问最常见GitHub镜像地址：
 https://hub.fastgit.org/ https://github.com.cnpmjs.org/ 访问上面的镜像网站，网站的内容跟GitHub是完整同步的镜像，然后在这个网站里面进行下载克隆等操作。
 二、GitHub 文件加速使用非常简单，内有提示！
@@ -519,10 +519,10 @@ eg：140.82.114.4 http://github.com
     
     <item>
       <title>ubuntu18.04.1 安装配置vnc server</title>
-      <link>http://example.org/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server/</link>
+      <link>/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server/</link>
       <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server/</guid>
+      <guid>/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server/</guid>
       <description>一、安装VNCServersudo apt-get install vnc4server
 二、设置密码并运行vncserver（输入命令后输入密码）vncserver
 三、配置xstartup文件修改xstartup文件内容，针对Xfce4桌面环境.
@@ -539,10 +539,10 @@ vnc客户端连接vnc viewer链接新建链接，然后地址输入ip:5901
     
     <item>
       <title>Centos7 修改docker镜像源</title>
-      <link>http://example.org/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/</link>
+      <link>/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/</link>
       <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/</guid>
+      <guid>/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/</guid>
       <description>参考链接：https://www.daocloud.io/mirror
 Linuxcurl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io
 该脚本可以将 &amp;ndash;registry-mirror 加入到你的 Docker 配置文件 /etc/docker/daemon.json 中。适用于 Ubuntu14.04、Debian、CentOS6 、CentOS7、Fedora、Arch Linux、openSUSE Leap 42.1，其他版本可能有细微不同。更多详情请访问文档。
@@ -556,10 +556,10 @@ Linuxcurl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f13
     
     <item>
       <title>centos7 设置默认启动内核，并删除多余内核</title>
-      <link>http://example.org/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8/</link>
+      <link>/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8/</link>
       <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8/</guid>
+      <guid>/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8/</guid>
       <description>设置默认启动内核1、查看系统可用内核
 [root@NAS]# awk -F\&amp;rsquo; &amp;lsquo;$1==&amp;ldquo;menuentry &amp;quot; {print i++ &amp;quot; : &amp;quot; $2}&amp;rsquo; /etc/grub2.cfg
 0 : CentOS Linux (4.4.248-1.el7.elrepo.x86_64) 7 (Core) 1 : CentOS Linux (3.10.0-1160.11.1.el7.x86_64) 7 (Core) 2 : CentOS Linux (3.10.0-957.el7.x86_64) 7 (Core) 3 : CentOS Linux (0-rescue-70b8558dd1bf4abb887cf26344a88da3) 7 (Core) Linux (3.10.0-1127.8.2.el7.x86_64) 7 (Core)&amp;rsquo; &amp;ndash;class centos &amp;ndash;class gnu-linux &amp;ndash;class gnu &amp;ndash;class os &amp;ndash;unrestricted $menuentry_id_option &amp;lsquo;gnulinux-3.10.0-957.el7.x86_64-advanced-31cdfa8e-4bda-4e29-a11e-8e46000798d6&amp;rsquo; {
@@ -571,10 +571,10 @@ Linuxcurl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f13
     
     <item>
       <title>访问共享文件和连接远程桌面时，CSR蓝牙驱动引起的资源管理器崩溃</title>
-      <link>http://example.org/posts/2020-12-19-%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%92%8C%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%97%B6csr%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7/</link>
+      <link>/posts/2020-12-19-%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%92%8C%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%97%B6csr%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-12-19-%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%92%8C%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%97%B6csr%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7/</guid>
+      <guid>/posts/2020-12-19-%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%92%8C%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%97%B6csr%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7/</guid>
       <description>解决方法：1.进入CSR蓝牙驱动的安装目录，默认是：C:\Program Files\CSR\CSR Harmony Wireless Software Stack；
 2.找到“BLEtokenCredentialProvider.dll”将其删除或重命名即可。
 原文链接：https://blog.csdn.net/guangguang210/article/details/79051550</description>
@@ -582,10 +582,10 @@ Linuxcurl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://f13
     
     <item>
       <title>ASUS华硕路由器开启Openvpn，使用苹果手机连接OpenVPN</title>
-      <link>http://example.org/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpn/</link>
+      <link>/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpn/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpn/</guid>
+      <guid>/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpn/</guid>
       <description>一、ASUS华硕路由器开启Openvpn二、苹果手机连接OpenVPN1、使用美区APPLE ID登录APP store，搜索OpenVPN，下载应用
 2、将ASUS导出的OpenVPN配置文件，发送到手机，并使用OpenVPN应用打开文件
 3、点击ADD导入配置
@@ -604,10 +604,10 @@ PS：如果配置中有 redirect-gateway ，则需要注释掉</description>
     
     <item>
       <title>ASUS华硕路由器开启Openvpn，使用苹果手机连接OpenVPN</title>
-      <link>http://example.org/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpnnull/</link>
+      <link>/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpnnull/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpnnull/</guid>
+      <guid>/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpnnull/</guid>
       <description>一、ASUS华硕路由器开启Openvpn二、苹果手机连接OpenVPN1、使用美区APPLE ID登录APP store，搜索OpenVPN，下载应用
 2、将ASUS导出的OpenVPN配置文件，发送到手机，并使用OpenVPN应用打开文件
 3、点击ADD导入配置
@@ -626,10 +626,10 @@ PS：如果配置中有 redirect-gateway ，则需要注释掉</description>
     
     <item>
       <title>Centos7 安装FFmpeg对视频转码压缩</title>
-      <link>http://example.org/posts/2020-12-04-centos7-%E5%AE%89%E8%A3%85ffmpeg%E5%AF%B9%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%8E%8B%E7%BC%A9/</link>
+      <link>/posts/2020-12-04-centos7-%E5%AE%89%E8%A3%85ffmpeg%E5%AF%B9%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%8E%8B%E7%BC%A9/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-12-04-centos7-%E5%AE%89%E8%A3%85ffmpeg%E5%AF%B9%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%8E%8B%E7%BC%A9/</guid>
+      <guid>/posts/2020-12-04-centos7-%E5%AE%89%E8%A3%85ffmpeg%E5%AF%B9%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%8E%8B%E7%BC%A9/</guid>
       <description>一、安装ffmpeg1、安装epel源
 [root@BK ~]# yum install -y epel-release
 2、安装Nux-Dextop源
@@ -648,10 +648,10 @@ PS：如果配置中有 redirect-gateway ，则需要注释掉</description>
     
     <item>
       <title>Centos7 将home目录和根目录的磁盘空间合并</title>
-      <link>http://example.org/posts/2020-12-04-centos7-%E5%B0%86home%E7%9B%AE%E5%BD%95%E5%92%8C%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%90%88%E5%B9%B6/</link>
+      <link>/posts/2020-12-04-centos7-%E5%B0%86home%E7%9B%AE%E5%BD%95%E5%92%8C%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%90%88%E5%B9%B6/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-12-04-centos7-%E5%B0%86home%E7%9B%AE%E5%BD%95%E5%92%8C%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%90%88%E5%B9%B6/</guid>
+      <guid>/posts/2020-12-04-centos7-%E5%B0%86home%E7%9B%AE%E5%BD%95%E5%92%8C%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%90%88%E5%B9%B6/</guid>
       <description>1、查看当前磁盘空间使用情况[root@BK ~]# df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 1.8G 0 1.8G 0% /dev tmpfs 1.9G 0 1.9G 0% /dev/shm tmpfs 1.9G 8.9M 1.8G 1% /run tmpfs 1.9G 0 1.9G 0% /sys/fs/cgroup /dev/mapper/centos-root 411G 1.8G 409G 1% / /dev/sda1 1014M 192M 823M 19% /boot /dev/mapper/centos-home 50G 33M 50G 1% /home tmpfs 371M 0 371M 0% /run/user/0
 2、备份/home目录[root@BK ~]# cp -rp /home/ /tmp/
 -r 递归复制该目录下的子目录 -p 将文件和目录具有的权限一同复制</description>
@@ -659,10 +659,10 @@ PS：如果配置中有 redirect-gateway ，则需要注释掉</description>
     
     <item>
       <title>批处理之forfiles命令</title>
-      <link>http://example.org/posts/2020-12-03-%E6%89%B9%E5%A4%84%E7%90%86%E4%B9%8Bforfiles%E5%91%BD%E4%BB%A4/</link>
+      <link>/posts/2020-12-03-%E6%89%B9%E5%A4%84%E7%90%86%E4%B9%8Bforfiles%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-12-03-%E6%89%B9%E5%A4%84%E7%90%86%E4%B9%8Bforfiles%E5%91%BD%E4%BB%A4/</guid>
+      <guid>/posts/2020-12-03-%E6%89%B9%E5%A4%84%E7%90%86%E4%B9%8Bforfiles%E5%91%BD%E4%BB%A4/</guid>
       <description> 官方文档：https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles
 forfiles命令：按照通配符或修改日期进行文件搜索，并将搜索结果传给另一个命令进行文件操作
 案例：
@@ -674,10 +674,10 @@ forfiles命令：按照通配符或修改日期进行文件搜索，并将搜索
     
     <item>
       <title>Centos7部署ELK日志收集系统</title>
-      <link>http://example.org/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/</link>
+      <link>/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Sat, 17 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/</guid>
       <description>一、安装Elasticsearch1、下载安装包并解压
 [root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/
 2、创建用户和用户组
@@ -691,10 +691,10 @@ elasticsearch默认不允许使用root用户运行，如果要强行使用root�
     
     <item>
       <title>Zabbix调优不完全指南</title>
-      <link>http://example.org/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+      <link>/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
       <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+      <guid>/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
       <description>问题一、Zabbix server内存溢出，无法启动问题原因：
 这是由于zabbix默认的缓存配置只有8M，当你zabbix正常运行一段时间后，大批量添加一些被监控设备就会出现这种情况。
 解决方法：
@@ -725,10 +725,10 @@ vim /etc/zabbix/zabbix_server.conf StartDiscoverers=10 #第219行，取掉#号�
     
     <item>
       <title>python&#43;selenium 批量配置华为S1720交换机</title>
-      <link>http://example.org/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</link>
+      <link>/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</guid>
+      <guid>/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</guid>
       <description>**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
 准备工作1、安装Python
 2、安装谷歌浏览器
@@ -744,10 +744,10 @@ def change_password(ip): print(ip) driver.</description>
     
     <item>
       <title>Centos7部署FTP服务</title>
-      <link>http://example.org/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/</link>
+      <link>/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/</guid>
       <description>一、安装FTP服务1、安装vsftpd软件
 [root@FTP ~]# yum -y install vsftpd
 2、防火墙放行FTP服务
@@ -773,10 +773,10 @@ def change_password(ip): print(ip) driver.</description>
     
     <item>
       <title>windows事件查看器 连接多台服务器查看日志</title>
-      <link>http://example.org/posts/2020-10-05-windows%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8-%E8%BF%9E%E6%8E%A5%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97/</link>
+      <link>/posts/2020-10-05-windows%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8-%E8%BF%9E%E6%8E%A5%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-10-05-windows%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8-%E8%BF%9E%E6%8E%A5%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97/</guid>
+      <guid>/posts/2020-10-05-windows%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8-%E8%BF%9E%E6%8E%A5%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97/</guid>
       <description>一、打开事件查看器
 点击 控制面板-&amp;gt; 管理工具 -&amp;gt; 事件查看器，或者在cmd命令行下输入 eventvwr
 二、连接服务器查看日志
@@ -793,10 +793,10 @@ def change_password(ip): print(ip) driver.</description>
     
     <item>
       <title>win7访问共享文件，提示&#34;登录失败：禁用当前用户&#34;</title>
-      <link>http://example.org/posts/2020-09-22-win7%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%E7%A6%81%E7%94%A8%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7/</link>
+      <link>/posts/2020-09-22-win7%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%E7%A6%81%E7%94%A8%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7/</link>
       <pubDate>Tue, 22 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-09-22-win7%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%E7%A6%81%E7%94%A8%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7/</guid>
+      <guid>/posts/2020-09-22-win7%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%E7%A6%81%E7%94%A8%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7/</guid>
       <description>可能出现原因：服务端机器，禁用了默认管理员和来宾账户
 例如： 客户端机器当前使用的是administrator账户，访问服务端时，默认是用这个账户来作为用户名登录，但是由于服务端的administrator账号是禁用状态，服务器返回这个账户禁止，客户端不再提示用户输入用户名和密码，直接终止共享访问
 解决办法：方法1：本机建立一个新账户，再通过新账户而不是同名的administrator账户去访问共享服务端就不会出现“登录失败:禁用的当前账户”，会直接提示输入密码 方法2：修改服务器端的访问模式，让everyone都能访问，并启用来宾账户，客户端以guest登录 方法3：客户端打开cmd命令提示符，输入net use \\ip\共享文件夹 /user:用户名，回车后输入密码，再通过\\ip就能访问共享文件夹了</description>
@@ -804,10 +804,10 @@ def change_password(ip): print(ip) driver.</description>
     
     <item>
       <title>Centos7安装mysql8.0</title>
-      <link>http://example.org/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/</link>
+      <link>/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/</link>
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/</guid>
+      <guid>/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/</guid>
       <description>方式一、MySQL Yum Repository官方安装文档：http://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html
 1、访问官网：https://www.mysql.com/downloads/
 2、点击：MySQL Community (GPL) Downloads »
@@ -832,10 +832,10 @@ def change_password(ip): print(ip) driver.</description>
     
     <item>
       <title>Zabbix之使用微信公众号告警</title>
-      <link>http://example.org/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</link>
+      <link>/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</guid>
+      <guid>/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</guid>
       <description>效果展示实现方式 服务号 订阅号 -》 测试号（本文使用测试号演示） 一、注册微信公众号服务号需要是企业身份，并进行微信认证
 个人可以申请订阅号后，开启测试号获取模板消息接口来进行测试
 二、开通模板消息并设置告警模板服务号：公众号后台-》添加功能-》模板消息
@@ -848,10 +848,10 @@ def send_message(token): url = &amp;ldquo;https://api.weixin.qq.com/cgi-bin/mess
     
     <item>
       <title>Django&#43;Echarts&#43;Bootstrap实现数据可视化</title>
-      <link>http://example.org/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+      <link>/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
+      <guid>/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
       <description>github地址前后端：https://github.com/water711/Django_echarts_bootstrap
 微信小程序：https://github.com/water711/echarts-keliu-wechat
 PC端效果展示：微信小程序端展示</description>
@@ -859,10 +859,10 @@ PC端效果展示：微信小程序端展示</description>
     
     <item>
       <title>python datetime模块</title>
-      <link>http://example.org/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</link>
+      <link>/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</guid>
+      <guid>/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</guid>
       <description>datetime是Python处理日期和时间的标准库。
 官方文档：https://docs.python.org/3/library/datetime.html
 from datetime import datetime,timedelta
@@ -875,20 +875,20 @@ from datetime import datetime,timedelta
     
     <item>
       <title>解决PotPlayer不支持S/W HEVC(H265)解码</title>
-      <link>http://example.org/posts/2020-07-03-%E8%A7%A3%E5%86%B3potplayer%E4%B8%8D%E6%94%AF%E6%8C%81s-w-hevch265%E8%A7%A3%E7%A0%81/</link>
+      <link>/posts/2020-07-03-%E8%A7%A3%E5%86%B3potplayer%E4%B8%8D%E6%94%AF%E6%8C%81s-w-hevch265%E8%A7%A3%E7%A0%81/</link>
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-07-03-%E8%A7%A3%E5%86%B3potplayer%E4%B8%8D%E6%94%AF%E6%8C%81s-w-hevch265%E8%A7%A3%E7%A0%81/</guid>
+      <guid>/posts/2020-07-03-%E8%A7%A3%E5%86%B3potplayer%E4%B8%8D%E6%94%AF%E6%8C%81s-w-hevch265%E8%A7%A3%E7%A0%81/</guid>
       <description>1、播放器右键-》选项-》3D视频-》点击安装（H.264 MVC解码）自动打开网页进行下载
 2、安装完解码器后，点击选项-》滤镜-》视频解码器-》选择 FFmpeg.dll</description>
     </item>
     
     <item>
       <title>使用Python&#43;OpenCV实现手势识别</title>
-      <link>http://example.org/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</link>
+      <link>/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</guid>
+      <guid>/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</guid>
       <description>来源某国外视频：https://www.bilibili.com/video/BV1E4411f7Q1
 环境Python：3.7.0
 OpenCV：3.4.3.18
@@ -900,10 +900,10 @@ ret, frame = cap.read() frame = cv2.flip(frame,1) kernel = np.ones((3,3), np.uin
     
     <item>
       <title>Python使用讯飞API进行语音转文字</title>
-      <link>http://example.org/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</link>
+      <link>/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</guid>
+      <guid>/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</guid>
       <description>一、注册讯飞开放平台账号1、官网注册：https://www.xfyun.cn/
 2、进入讯飞控制台，创建应用
 3、点击应用，查看APPID、APISecret和APIKey
@@ -921,10 +921,10 @@ sid:iat0007f62c@dx17292ff09777a1d802 call success!,data is:[{&amp;ldquo;bg&amp;r
     
     <item>
       <title>Centos7 磁盘配额</title>
-      <link>http://example.org/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/</link>
+      <link>/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/</link>
       <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/</guid>
+      <guid>/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/</guid>
       <description>参考文档：http://c.biancheng.net/view/908.html
 磁盘配额概述1、磁盘配额限制只能作用于普通用户和用户组，超级用户 root 不能做磁盘配额；
 2、磁盘配额限制只能针对分区，不能针对目录，即仅能针对文件系统进行限制，例如 /dev/sda1 挂载到 /home，那么在 /home下的所有目录都会受到磁盘配额的限制；
@@ -941,10 +941,10 @@ CONFIG_QUOTA_DEBUG is not setCONFIG_QUOTA_TREE=y CONFIG_QUOTACTL=y CONFIG_QUOTAC
     
     <item>
       <title>跨公网远程网络唤醒PC</title>
-      <link>http://example.org/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc/</link>
+      <link>/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc/</link>
       <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc/</guid>
+      <guid>/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc/</guid>
       <description>1、主板BISO开启网络唤醒不同的主板，开启的位置可能有所不同
 2、操作系统中网卡开启网络唤醒Windows系统下：
 Linux系统下：
@@ -958,10 +958,10 @@ https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
     
     <item>
       <title>跨公网远程网络唤醒PC</title>
-      <link>http://example.org/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pcnull/</link>
+      <link>/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pcnull/</link>
       <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pcnull/</guid>
+      <guid>/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pcnull/</guid>
       <description>1、主板BISO开启网络唤醒不同的主板，开启的位置可能有所不同
 2、操作系统中网卡开启网络唤醒Windows系统下：
 Linux系统下：
@@ -975,10 +975,10 @@ https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
     
     <item>
       <title>Centos7 部署Apache服务</title>
-      <link>http://example.org/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/</link>
+      <link>/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/</guid>
       <description>1、安装Apache#安装 [root@web ~]# yum -y install httpd
 #防火墙开放http服务 [root@web ~]# firewall-cmd &amp;ndash;permanent &amp;ndash;add-service=http [root@web ~]# firewall-cmd &amp;ndash;reload
 #新建测试页面 [root@web ~]# echo &amp;ldquo;web page&amp;rdquo; &amp;gt; /var/www/html/index.html
@@ -992,10 +992,10 @@ https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
     
     <item>
       <title>Centos7部署DNS服务</title>
-      <link>http://example.org/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1/</link>
+      <link>/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1/</guid>
       <description>1、安装bind软件包[root@DNS ~]# yum -y install bind
 2、修改主配置文件，添加正向解析区域[root@DNS ~]# vim /etc/named.conf
 options { listen-on port 53 { any; }; //将127.0.0.1修改为any listen-on-v6 port 53 { any; }; //将::1修改为any directory &amp;ldquo;/var/named&amp;rdquo;; //区域数据文件默认位置，可以不用修改 &amp;hellip; allow-query { any; }; //将127.0.0.1修改为any
@@ -1005,10 +1005,10 @@ options { listen-on port 53 { any; }; //将127.0.0.1修改为any listen-on-v6 po
     
     <item>
       <title>Linux下设置硬盘自动休眠省电</title>
-      <link>http://example.org/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/</link>
+      <link>/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/</link>
       <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/</guid>
+      <guid>/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/</guid>
       <description>场景：电脑挂载多个硬盘做NAS，硬盘大部分时间为待机状态（不使用），为节约电费，有必要设置硬盘休眠
 1、安装硬盘性能测试/设置工具
 [root@NAS ~]# yum -y install hdparm
@@ -1031,10 +1031,10 @@ PS：在centos7下测试，发现有时候硬盘不会自动休眠
     
     <item>
       <title>老毛桃PE以ISO镜像模式安装CentOS7</title>
-      <link>http://example.org/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</link>
+      <link>/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</link>
       <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</guid>
+      <guid>/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</guid>
       <description>参考文章链接：https://www.cnblogs.com/sun51586/p/10497538.html
 准备：
 一个u盘，并制作老毛桃winpe启动盘
@@ -1060,10 +1060,10 @@ PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
     
     <item>
       <title>老毛桃PE以ISO镜像模式安装CentOS7</title>
-      <link>http://example.org/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7null/</link>
+      <link>/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7null/</link>
       <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7null/</guid>
+      <guid>/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7null/</guid>
       <description>参考文章链接：https://www.cnblogs.com/sun51586/p/10497538.html
 准备：
 一个u盘，并制作老毛桃winpe启动盘
@@ -1089,10 +1089,10 @@ PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
     
     <item>
       <title>Centos 挂载NTFS硬盘分区</title>
-      <link>http://example.org/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/</link>
+      <link>/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/</guid>
+      <guid>/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/</guid>
       <description>1、插入带有NTFS文件格式的硬盘，并查看硬盘设备路径
 [root@NAS ~]# lsblk //列出所有块设备，会显示所有分区大小
 如果上面命令查看不出哪个是新插增硬盘，可使用下面命令
@@ -1105,10 +1105,10 @@ PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
     
     <item>
       <title>VMware 虚拟机设置启动U盘PE</title>
-      <link>http://example.org/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98pe/</link>
+      <link>/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98pe/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98pe/</guid>
+      <guid>/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98pe/</guid>
       <description>参考：https://blog.51cto.com/oyang/1107753
 1、打开虚拟机，选择“编辑虚拟机设置”
 2、弹出“虚拟机设置”窗口，点击“添加”
@@ -1125,10 +1125,10 @@ PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
     
     <item>
       <title>VMware 虚拟机设置启动U盘PE</title>
-      <link>http://example.org/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98penull/</link>
+      <link>/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98penull/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98penull/</guid>
+      <guid>/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98penull/</guid>
       <description>参考：https://blog.51cto.com/oyang/1107753
 1、打开虚拟机，选择“编辑虚拟机设置”
 2、弹出“虚拟机设置”窗口，点击“添加”
@@ -1145,10 +1145,10 @@ PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
     
     <item>
       <title>Python人脸识别库Face Recognition</title>
-      <link>http://example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</link>
+      <link>/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</link>
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</guid>
+      <guid>/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</guid>
       <description>环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖1、安装Visual Studio Build Tools（因为cmake依赖C++），安装时选择“C++生成工具”
 2、安装Cmake（因为dlib库需要cmake编译）
 pip3 install cmake
@@ -1170,10 +1170,10 @@ This is a demo of blurring faces in video.</description>
     
     <item>
       <title>Python人脸识别库Face Recognition</title>
-      <link>http://example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull/</link>
+      <link>/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull/</link>
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull/</guid>
+      <guid>/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull/</guid>
       <description>环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖1、安装Visual Studio Build Tools（因为cmake依赖C++），安装时选择“C++生成工具”
 2、安装Cmake（因为dlib库需要cmake编译）
 pip3 install cmake
@@ -1195,10 +1195,10 @@ This is a demo of blurring faces in video.</description>
     
     <item>
       <title>微信小程序动态修改样式</title>
-      <link>http://example.org/posts/2020-05-22-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F/</link>
+      <link>/posts/2020-05-22-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F/</link>
       <pubDate>Fri, 22 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-05-22-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F/</guid>
+      <guid>/posts/2020-05-22-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F/</guid>
       <description>**场景：**适配不同的手机屏幕尺寸，让元素始终位于屏幕中央
 效果图：
 一、index.wxml 二、index.wxss.container{ display:flex; justify-content: center; align-items: center; }
@@ -1208,10 +1208,10 @@ This is a demo of blurring faces in video.</description>
     
     <item>
       <title>使用uWSGI和Nginx来部署基于Django的Web服务器</title>
-      <link>http://example.org/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>1、安装python、nginx、django和uwsgi[root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0
 [root@liyu ~]# python3 -V Python 3.6.8 [root@liyu ~]# yum install python36-devel //安装对应Python版本的devel，编译uwsgi需要的依赖
 [root@server ~]# pip3 install uwsgi
@@ -1223,10 +1223,10 @@ This is a demo of blurring faces in video.</description>
     
     <item>
       <title>Centos7源码安装python3</title>
-      <link>http://example.org/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</link>
+      <link>/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</guid>
+      <guid>/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</guid>
       <description>1、下载源码wget https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz tar xf Python-3.8.2.tgz cd Python-3.8.2/
 2、安装编译所需依赖yum install -y gcc openssl-devel zlib-devel libffi-devel sqlite-devel
 3、编译./configure prefix=/usr/local/python3 make -j8 &amp;amp;&amp;amp; make install
@@ -1236,10 +1236,10 @@ This is a demo of blurring faces in video.</description>
     
     <item>
       <title>添加pip全局配置，使用国内下载源</title>
-      <link>http://example.org/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</link>
+      <link>/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</guid>
+      <guid>/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</guid>
       <description>方法一、使用命令添加配置&amp;gt; pip config set global.index-url http://pypi.douban.com/simple/ Writing to C:\Users\admin\AppData\Roaming\pip\pip.ini
 pip config set install.trusted-host pypi.douban.com Writing to C:\Users\admin\AppData\Roaming\pip\pip.ini
 方法二：修改全局配置文件Windows： C:\Users\用户名\AppData\Roaming\pip\pip.ini
@@ -1250,10 +1250,10 @@ Linux： ~/.pip/pip.conf
     
     <item>
       <title>window使用pipenv install出现UnicodeDecodeError</title>
-      <link>http://example.org/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</link>
+      <link>/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</guid>
+      <guid>/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</guid>
       <description>$ pipenv install Traceback (most recent call last): File &amp;ldquo;d:\python37\lib\runpy.py&amp;rdquo;, line 193, in _run_module_as_main &amp;ldquo;__main__&amp;rdquo;, mod_spec) &amp;hellip;&amp;hellip; File &amp;ldquo;d:\python37\lib\site-packages\pipenv\vendor\shellingham\nt.py&amp;rdquo;, line 78, in _iter_process info = {&amp;rsquo;executable&amp;rsquo;: str(pe.szExeFile.decode(&amp;lsquo;utf-8&amp;rsquo;))} UnicodeDecodeError: &amp;lsquo;utf-8&amp;rsquo; codec can&amp;rsquo;t decode byte 0xcc in position 0: invalid continuation byte
 解决方法：
 在报错信息里，找到报错的文件及代码位置
@@ -1265,10 +1265,10 @@ info = {&amp;rsquo;executable&amp;rsquo;: str(pe.szExeFile.decode(&amp;lsquo;gbk
     
     <item>
       <title>Python&#43;Selenium 使用cookie实现自动登录网站</title>
-      <link>http://example.org/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</link>
+      <link>/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</guid>
+      <guid>/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</guid>
       <description>Python版本：3.7
 浏览器：Chrome 79.0.3
 一、下载Selenium浏览器驱动（WebDriver）下载地址：http://npm.taobao.org/mirrors/chromedriver/
@@ -1288,10 +1288,10 @@ with open(&amp;ldquo;cookie.json&amp;rdquo;, &amp;ldquo;w&amp;rdquo;) as f: json
     
     <item>
       <title>配置Fiddler实现苹果手机抓包</title>
-      <link>http://example.org/posts/2020-03-23-%E9%85%8D%E7%BD%AEfiddler%E5%AE%9E%E7%8E%B0%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85/</link>
+      <link>/posts/2020-03-23-%E9%85%8D%E7%BD%AEfiddler%E5%AE%9E%E7%8E%B0%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85/</link>
       <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-03-23-%E9%85%8D%E7%BD%AEfiddler%E5%AE%9E%E7%8E%B0%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85/</guid>
+      <guid>/posts/2020-03-23-%E9%85%8D%E7%BD%AEfiddler%E5%AE%9E%E7%8E%B0%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85/</guid>
       <description>一、配置Fiddler允许远端设备连接Tools-&amp;gt; Options-&amp;gt;Connections，勾选&amp;quot;Allow remote computers to connect&amp;quot; （修改后需重启Fiddler）
 二、配置抓取https请求Tools-&amp;gt; Options-&amp;gt;Connections，勾选&amp;quot;Capture HTTPS CONNECTs&amp;quot;、&amp;ldquo;Decrypt HTTPS traffic&amp;rdquo;
 三、手机设置代理IPIP和端口号为Fiddler所在电脑的IP和Fiddler端口号
@@ -1301,10 +1301,10 @@ with open(&amp;ldquo;cookie.json&amp;rdquo;, &amp;ldquo;w&amp;rdquo;) as f: json
     
     <item>
       <title>data:image/base64与图片互相转换</title>
-      <link>http://example.org/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</link>
+      <link>/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</guid>
+      <guid>/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</guid>
       <description>将data:image/base64转换成图片import base64
 value=&amp;ldquo;qeBQAAAABJ&amp;hellip;&amp;hellip;RU5ErkJggg==&amp;rdquo; #填写base64编码 img = base64.b64decode(value) fh = open(&amp;ldquo;pic.jpg&amp;rdquo;,&amp;ldquo;wb&amp;rdquo;) fh.write(img)
 将图片转换成data:image/base64import base64
@@ -1314,10 +1314,10 @@ base64编码iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAC91BMVEUAAACgekagekag
     
     <item>
       <title>申请阿里云免费SSL证书并部署至Nginx服务器</title>
-      <link>http://example.org/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>一、申请阿里云免费SSL证书2021阿里云SSL免费证书购买地址又变了，为了解决免费证书近期存在的吊销、统计等问题，自2021年起，免费证书申请将切换到证书资源包下。
 1、 打开阿里云SSL证书选购页面，点击“选购证书”
 2、 商品类型选择“云盾证书资源包”
@@ -1342,10 +1342,10 @@ server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.
     
     <item>
       <title>阿里云ECS搭建NPS内网穿透服务</title>
-      <link>http://example.org/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</link>
+      <link>/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</guid>
       <description>环境：服务端操作系统：Centos7
 客户端操作系统：Centos7、Win7
 一、NPS介绍nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。目前支持tcp、udp流量转发，可支持任何tcp、udp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还支持内网http代理、内网socks5代理、p2p等，并带有功能强大的web管理端。
@@ -1376,10 +1376,10 @@ npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp</descriptio
     
     <item>
       <title>Zabbix使用腾讯云短信进行告警</title>
-      <link>http://example.org/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</link>
+      <link>/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</guid>
+      <guid>/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</guid>
       <description>一、开通腾讯云短信服务（需要实名认证）官方文档：https://cloud.tencent.com/document/product/382/18071
 二、创建短信模板短信模板内容中：{1}{2}{3}为发送信息时，需要传递的参数内容
 三、编写发送短信的Shell脚本官方API接口文档：https://cloud.tencent.com/document/product/382/5976
@@ -1394,10 +1394,10 @@ curl -i -X POST -H &amp;ldquo;&amp;lsquo;Content-type&amp;rsquo;:&amp;lsquo;appl
     
     <item>
       <title>CentOS7安装Oracle 11g数据库</title>
-      <link>http://example.org/posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>/posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>/posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description>Oracle官方11g安装文档：https://docs.oracle.com/cd/E11882_01/install.112/e24326/toc.htm
 一、下载对应Oracle安装包1、查看操作系统硬件架构类型
 [root@server ~]# uname -m x86_64
@@ -1410,10 +1410,10 @@ https://www.oracle.com/database/technologies/oracle-database-software-downloads.
     
     <item>
       <title>Windows下使用ssh转发Linux下x11图形界面</title>
-      <link>http://example.org/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</link>
+      <link>/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</guid>
+      <guid>/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</guid>
       <description>准备环境Linux系统：Centos7
 SSH客户端工具：Putty和XShell
 Xming下载地址： https://sourceforge.net/projects/xming/
@@ -1431,10 +1431,10 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
     
     <item>
       <title>华为防火墙多运营商出口智能选路</title>
-      <link>http://example.org/posts/2020-02-10-%E4%BD%BF%E7%94%A8ensp%E6%A8%A1%E6%8B%9F%E5%A4%9A%E8%BF%90%E8%90%A5%E5%95%86%E5%87%BA%E5%8F%A3%E6%99%BA%E8%83%BD%E9%80%89%E8%B7%AF/</link>
+      <link>/posts/2020-02-10-%E4%BD%BF%E7%94%A8ensp%E6%A8%A1%E6%8B%9F%E5%A4%9A%E8%BF%90%E8%90%A5%E5%95%86%E5%87%BA%E5%8F%A3%E6%99%BA%E8%83%BD%E9%80%89%E8%B7%AF/</link>
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-02-10-%E4%BD%BF%E7%94%A8ensp%E6%A8%A1%E6%8B%9F%E5%A4%9A%E8%BF%90%E8%90%A5%E5%95%86%E5%87%BA%E5%8F%A3%E6%99%BA%E8%83%BD%E9%80%89%E8%B7%AF/</guid>
+      <guid>/posts/2020-02-10-%E4%BD%BF%E7%94%A8ensp%E6%A8%A1%E6%8B%9F%E5%A4%9A%E8%BF%90%E8%90%A5%E5%95%86%E5%87%BA%E5%8F%A3%E6%99%BA%E8%83%BD%E9%80%89%E8%B7%AF/</guid>
       <description>一、准备实验环境1、安装ENSP模拟器 v1.3.00.100
 2、物理机安装环回接口/网卡（运行：hdwwiz，运行硬件向导，环回网卡IP设置为192.168.0.10/24）
 https://jingyan.baidu.com/article/046a7b3eef6d69f9c27fa9ea.html
@@ -1454,10 +1454,10 @@ Username:admin Password:Admin@123 The password needs to be changed. Change now? 
     
     <item>
       <title>有道云笔记修改笔记背景</title>
-      <link>http://example.org/posts/2020-01-15-%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%BF%AE%E6%94%B9%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF/</link>
+      <link>/posts/2020-01-15-%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%BF%AE%E6%94%B9%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-01-15-%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%BF%AE%E6%94%B9%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF/</guid>
+      <guid>/posts/2020-01-15-%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%BF%AE%E6%94%B9%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF/</guid>
       <description>1、打开以下目录（win7系统）C:\Users\admin\AppData\Local\Youdao\YNote\bgImage-10
 2、复制v开头的图片，修改文件名为c-xx.png也可使用画图工具或PS，自定义图片颜色，拷贝到该目录，修改文件名为c-xx.png
 3、打开有道云笔记，在视图中选择纸张背景</description>
@@ -1465,10 +1465,10 @@ Username:admin Password:Admin@123 The password needs to be changed. Change now? 
     
     <item>
       <title>Zabbix监控windows日志</title>
-      <link>http://example.org/posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97/</link>
+      <link>/posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97/</guid>
+      <guid>/posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97/</guid>
       <description>一、Zabbix服务端添加主机#zabbix客户端在主动模式下，服务端接收数据需要开放10051端口 [root@zabbix1 ~]# firewall-cmd &amp;ndash;zone=public &amp;ndash;add-port=10051/tcp &amp;ndash;permanent success [root@zabbix1 ~]# firewall-cmd &amp;ndash;reload success
 二、安装 zabbix客户端1、查看zabbix服务端版本
 [root@zabbix1 ~]# zabbix_server -V zabbix_server (Zabbix) 4.2.6
@@ -1487,10 +1487,10 @@ cd D:\Program Files\zabbix_agents-4.2.6\bin #进入agents\bin目录</description
     
     <item>
       <title>Linux定时备份数据库并上传FTP服务器</title>
-      <link>http://example.org/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>一、编写备份脚本#!/usr/bin/bash
 date=`date +%Y-%m-%d` #该变量用于备份文件命名 ftp_user=test ftp_pwd=&amp;lsquo;123456&amp;rsquo; ftp_ip=172.16.10.10
 file_name=wp_$date.sql #数据库备份文件名 tar_file_name=wp_$date.tar.gzip #打包压缩后文件名
@@ -1502,10 +1502,10 @@ mysqldump -utest -p123456 &amp;ndash;single-transaction &amp;ndash;triggers &amp
     
     <item>
       <title>微软Remote App实现应用程序虚拟化</title>
-      <link>http://example.org/posts/2020-01-03-%E5%BE%AE%E8%BD%AFremote-app%E5%AE%9E%E7%8E%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
+      <link>/posts/2020-01-03-%E5%BE%AE%E8%BD%AFremote-app%E5%AE%9E%E7%8E%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
       <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-01-03-%E5%BE%AE%E8%BD%AFremote-app%E5%AE%9E%E7%8E%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
+      <guid>/posts/2020-01-03-%E5%BE%AE%E8%BD%AFremote-app%E5%AE%9E%E7%8E%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
       <description>域服务器：192.168.1.130
 Remote App服务器：192.168.1.130
 服务器操作系统：Windows Server 2012 R2
@@ -1534,10 +1534,10 @@ Remote App服务器：192.168.1.130
     
     <item>
       <title>pthon3实现oracle数据库查询、导出EXCEL并邮件发送</title>
-      <link>http://example.org/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</link>
+      <link>/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</guid>
+      <guid>/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</guid>
       <description>一、准备环境1、安装Oracle 客户端（python、oracle客户端的位数要一致）
 2、安装Python第三方模块
 pip3 install cx_Oracle xlsxwriter
@@ -1551,19 +1551,19 @@ msg = MIMEMultipart() #实例化对象 msg\[&amp;quot;Subject&amp;quot;\] = &amp
     
     <item>
       <title>windows计划任务，执行程序后，生成的文件不在程序所在目录</title>
-      <link>http://example.org/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80/</link>
+      <link>/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80/</guid>
+      <guid>/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80/</guid>
       <description>场景：通过windows计划任务，执行数据库备份脚本（批处理文件），每天定时备份数据库问题：手动执行备份脚本，数据库是备份到脚本所在目录，但是通过计划任务执行脚本，数据库备份到了C:\Windows\System32目录下解决方法：在计划任务执行程序或脚本下面，超始于（可选）选项中，指定程序所在目录</description>
     </item>
     
     <item>
       <title>oracle安装、授权、备份和恢复</title>
-      <link>http://example.org/posts/2019-12-31-oracle%E5%AE%89%E8%A3%85%E6%8E%88%E6%9D%83%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</link>
+      <link>/posts/2019-12-31-oracle%E5%AE%89%E8%A3%85%E6%8E%88%E6%9D%83%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-12-31-oracle%E5%AE%89%E8%A3%85%E6%8E%88%E6%9D%83%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</guid>
+      <guid>/posts/2019-12-31-oracle%E5%AE%89%E8%A3%85%E6%8E%88%E6%9D%83%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</guid>
       <description>一、下载并安装Oracle Database官网地址：https://www.oracle.com/technetwork/cn/database/enterprise-edition/downloads/index.html
 1、下载解压后，右键setup.exe，以管理员身份运行
 2、电子邮件可不填
@@ -1605,10 +1605,10 @@ C:\Users\Administrator&amp;gt;lsnrctl status
     
     <item>
       <title>使用PXE网络引导安装Linux和windows系统</title>
-      <link>http://example.org/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/</link>
+      <link>/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/</guid>
       <description>需要搭建的服务：DHCP 服务器：配置为需要对 PXE 客户端请求进行响应的 DHCP 服务器或 DHCP 代理。 PXE 服务器：运行 TFTP 服务的服务器，可托管客户端将下载的 Windows PE 启动文件。 文件服务器：托管网络文件共享的服务器。
 （实际环境中，可以把上述服务部署在一台服务器上）
 一、配置DHCP服务[root@PXE ~]# yum -y install dhcp
@@ -1620,10 +1620,10 @@ C:\Users\Administrator&amp;gt;lsnrctl status
     
     <item>
       <title>Wordpress网站迁移</title>
-      <link>http://example.org/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/</link>
+      <link>/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/</link>
       <pubDate>Sat, 21 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/</guid>
+      <guid>/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/</guid>
       <description>博客原本部署在阿里云虚拟主机上，今年双11，购买了一台阿里云ECS服务器，现在开始做迁移
 一、备份网站空间及数据库二、阿里云ECS部署LNMP环境#安装nginx和mariadb [root@ecs]# yum -y install nginx mariadb mariadb-server [root@ecs]# systemctl start nginx mariadb [root@ecs]# systemctl enable nginx mariadb
 #EPEL源的php版本较低，安装第三方源 [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
@@ -1634,10 +1634,10 @@ server {listen 80 default_server;listen [::]:80 default_server;server_name _;roo
     
     <item>
       <title>python 从文件读取IP地址 并实现多线程扫描</title>
-      <link>http://example.org/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</link>
+      <link>/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</guid>
+      <guid>/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</guid>
       <description>Python代码：# -*- coding:utf-8 -*-
 import threading import subprocess import time from queue import Queue import xlrd import msvcrt
 定义工作线程WORD_THREAD = 50
@@ -1648,10 +1648,10 @@ for row in range(1, table.nrows): ip = table.cell(row, 0).value name = table.cel
     
     <item>
       <title>windows下使用pip安装包失败，提示Could not install packages due to an EnvironmentError: [Errno 0] Error</title>
-      <link>http://example.org/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</link>
+      <link>/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</link>
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</guid>
+      <guid>/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</guid>
       <description>python27版本，使用pip安装包，报错 Could not install packages due to an EnvironmentError: [Errno 0]
 重装python后，并将pip更新到最新版本，还是报错
 弄了一晚上，结果发现是之前修改了cmd命令行窗口的默认编码，导致安装包失败
@@ -1661,10 +1661,10 @@ DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Ple
     
     <item>
       <title>JAVA使用opencv通过RTSP流打开摄像头</title>
-      <link>http://example.org/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4/</link>
+      <link>/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4/</link>
       <pubDate>Tue, 29 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4/</guid>
+      <guid>/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4/</guid>
       <description>一、安装OpenCV打开OpenCV官网，下载对应系统的opencv，并解压到任意位置
 解压./opencv/build/java目录下有以下文件
 二、Eclipse加载OpenCV库官方配置文档：https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html
@@ -1685,10 +1685,10 @@ public class opencvTest { public static void main( String[] args ) { System.load
     
     <item>
       <title>Eclipse中使用jar包</title>
-      <link>http://example.org/posts/2019-10-24-eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8jar%E5%8C%85/</link>
+      <link>/posts/2019-10-24-eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8jar%E5%8C%85/</link>
       <pubDate>Thu, 24 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-24-eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8jar%E5%8C%85/</guid>
+      <guid>/posts/2019-10-24-eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8jar%E5%8C%85/</guid>
       <description>一、什么是jar包jar包就是别人已经写好的一些类，然后将这些类进行打包，你可以将这些jar包引入你的项目中，然后就可以直接使用这些jar包中的类和属性以及方法。
 二、如何下载jar包 包所在的官网下载 百度或谷歌，搜索包名 第三方jar包仓库下载（例如：https://mvnrepository.com/） 三、Eclipse如何使用jar包1、在项目下，新建lib目录，把jar包拷贝到该目录
 2、选择项目，右键点击jar包 -&amp;gt; Build Path -&amp;gt; Add to Build Path</description>
@@ -1696,10 +1696,10 @@ public class opencvTest { public static void main( String[] args ) { System.load
     
     <item>
       <title>Centos7设置系统时间/时区</title>
-      <link>http://example.org/posts/2019-10-13-centos7%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4-%E6%97%B6%E5%8C%BA/</link>
+      <link>/posts/2019-10-13-centos7%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4-%E6%97%B6%E5%8C%BA/</link>
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-13-centos7%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4-%E6%97%B6%E5%8C%BA/</guid>
+      <guid>/posts/2019-10-13-centos7%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4-%E6%97%B6%E5%8C%BA/</guid>
       <description>一、查看系统时区/时间#方法一： [root@server1 ~]# timedatectl Local time: Tue 2019-09-17 05:14:47 CST Universal time: Mon 2019-09-16 21:14:47 UTC //世界协调时间 RTC time: Sun 2019-10-13 06:17:36 //BIOS硬件时钟(Real Time Clock） Time zone: Asia/Shanghai (CST, +0800) //时区 NTP enabled: n/a //是否启用NTP服务 NTP synchronized: no //NTP时间是否已同步 RTC in local TZ: no //BIOS硬件时间是否与系统时间同步 DST active: n/a
 #方法二： [root@server1 ~]# date Sun Oct 13 14:40:33 CST 2019
 二、设置系统时区[root@server1 ~]# timedatectl set-timezone Asia/Shanghai //设置时区为上海东8区
@@ -1709,10 +1709,10 @@ public class opencvTest { public static void main( String[] args ) { System.load
     
     <item>
       <title>PyInstaller打包python程序后，cv2.VideoCapture()获取摄像头画画失败</title>
-      <link>http://example.org/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</link>
+      <link>/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</link>
       <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</guid>
+      <guid>/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</guid>
       <description>源代码import cv2,os
 url = &amp;lsquo;rtsp://192.168.104.130/user=admin&amp;amp;password=admin&amp;amp;channel=1&amp;rsquo; cap = cv2.VideoCapture(url) ret, frame = cap.read() cv2.imwrite(&amp;ldquo;E:/test.png&amp;rdquo;, frame) cap.release() cv2.destroyAllWindows()
 在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节
@@ -1722,10 +1722,10 @@ libpng warning:Image width is zero in IHDR libpng warning:Image height is zero i
     
     <item>
       <title>Python3实现按任意键继续或退出</title>
-      <link>http://example.org/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</link>
+      <link>/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</link>
       <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</guid>
+      <guid>/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</guid>
       <description>在Windows下，我们可以使用内建的msvcrt库，实现按任意键继续或退出
 一、获取按键对应的ASCII 值import msvcrt print(ord(msvcrt.getch()))
 svcrt 中的 getch() 方法，作用是获取一个按键响应并返回对应的字符。
@@ -1739,10 +1739,10 @@ https://www.jb51.net/article/90845.htm</description>
     
     <item>
       <title>Zabbix_配置snmptrap监控交换机</title>
-      <link>http://example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</link>
+      <link>/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</link>
       <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</guid>
+      <guid>/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</guid>
       <description>一、安装配置snmptrapd[root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
 [root@zabbix1 ~]# systemctl start snmptrapd [root@zabbix1 ~]# systemctl enable snmptrapd
 #防火墙开放snmp trap端口 [root@zabbix1 ~]# firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=162/udp [root@zabbix1 ~]# firewall-cmd &amp;ndash;reload
@@ -1758,10 +1758,10 @@ https://www.jb51.net/article/90845.htm</description>
     
     <item>
       <title>Zabbix_配置snmptrap监控交换机</title>
-      <link>http://example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrapnull/</link>
+      <link>/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrapnull/</link>
       <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrapnull/</guid>
+      <guid>/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrapnull/</guid>
       <description>一、安装配置snmptrapd[root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt
 [root@zabbix1 ~]# systemctl start snmptrapd [root@zabbix1 ~]# systemctl enable snmptrapd
 #防火墙开放snmp trap端口 [root@zabbix1 ~]# firewall-cmd &amp;ndash;permanent &amp;ndash;add-port=162/udp [root@zabbix1 ~]# firewall-cmd &amp;ndash;reload
@@ -1777,19 +1777,19 @@ https://www.jb51.net/article/90845.htm</description>
     
     <item>
       <title>tcpdump常用参数及使用案例</title>
-      <link>http://example.org/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/</link>
+      <link>/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/</link>
       <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/</guid>
+      <guid>/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/</guid>
       <description>Usage: tcpdump [-aAbdDefhHIJKlLnNOpqStuUvxX#] [ -B size ] [ -c count ] [ -C file_size ] [ -E algo:secret ] [ -F file ] [ -G seconds ] [ -i interface ] [ -j tstamptype ] [ -M secret ] [ &amp;ndash;number ] [ -Q|-P in|out|inout ] [ -r file ] [ -s snaplen ] [ &amp;ndash;time-stamp-precision precision ] [ &amp;ndash;immediate-mode ] [ -T type ] [ &amp;ndash;version ] [ -V file ] [ -w file ] [ -W filecount ] [ -y datalinktype ] [ -z postrotate-command ] [ -Z user ] [ expression ]</description>
     </item>
     
     <item>
       <title>WordPress编辑器栏增加字体和大小</title>
-      <link>http://example.org/posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F/</link>
+      <link>/posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F/</link>
       <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F/</guid>
+      <guid>/posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F/</guid>
       <description>在主题的functions.php文件最后面添加以下代码//编辑器增加字体格式和字体大小按钮 function add_editor_buttons($buttons) { $buttons[] = &amp;lsquo;fontselect&amp;rsquo;; $buttons[] = &amp;lsquo;fontsizeselect&amp;rsquo;; return $buttons; } add_filter(&amp;ldquo;mce_buttons_2&amp;rdquo;, &amp;ldquo;add_editor_buttons&amp;rdquo;);
 //自定义字体格式 function custum_fontfamily($initArray){ $initArray[&amp;lsquo;font_formats&amp;rsquo;] = &amp;ldquo;微软雅黑=&amp;lsquo;微软雅黑&amp;rsquo;;宋体=&amp;lsquo;宋体&amp;rsquo;;黑体=&amp;lsquo;黑体&amp;rsquo;;仿宋=&amp;lsquo;仿宋&amp;rsquo;;楷体=&amp;lsquo;楷体&amp;rsquo;;隶书=&amp;lsquo;隶书&amp;rsquo;;幼圆=&amp;lsquo;幼圆&amp;rsquo;;Arial=&amp;lsquo;Arial&amp;rsquo;;&amp;rdquo;; return $initArray; } add_filter(&amp;rsquo;tiny_mce_before_init&amp;rsquo;, &amp;lsquo;custum_fontfamily&amp;rsquo;);
 编辑器其它功能按钮剪切（cut） 复制（copy） 粘贴（paste） 撤销（undo） 重做（redo） 居中（justifycenter） 加粗（bold） 斜体（italic） 左对齐（justifyleft） 右对齐（justfyright） 两端对齐（justfyfull） 插入超链接（link） 取消超链接（unlink） 插入图片（image） 清除格式（removeformat） 下划线（underline） 删除线（strikethrough） 锚文本（anchor） 新建文本（newdocument） 字体颜色（forecolor） 字体背景色（backcolor） 格式选择（formmatselect） 字体选择（fontselect） 字号选择（fontsizeselect） 样式选择（styleselect） 无序列表（bullist） 编号列表（numlist） 减少缩进（outdent） 缩进（indent） 帮助（wp_help） 打开HTML代码编辑器（code） 水平线（hr） 清除冗余代码（cleanup） 上标（sub） 下标（sup） 特殊符号（charmap） 插入more标签（wp_more） 插入分页标签（wp_page） 隐藏按钮显示开关（wp_adv） 隐藏按钮区起始部分（wp_adv_start） 隐藏按钮区结束部分（wp_adv_end） 拼写检查（spellchecker）
@@ -1798,10 +1798,10 @@ https://www.jb51.net/article/90845.htm</description>
     
     <item>
       <title>搭建Zabbix高可用架构</title>
-      <link>http://example.org/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</link>
+      <link>/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</guid>
+      <guid>/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</guid>
       <description>环境：zabbix1：192.168.1.241（Master）
 zabbix2：192.168.1.242（Slave）
 zabbix：192.168.1.240（虚拟IP）
@@ -1813,10 +1813,10 @@ zabbix：192.168.1.240（虚拟IP）
     
     <item>
       <title>mysql主从数据不一致，同步失败后重做主从</title>
-      <link>http://example.org/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/</link>
+      <link>/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/</link>
       <pubDate>Sat, 28 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/</guid>
+      <guid>/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/</guid>
       <description>环境：
 Master主机：zabbix1
 Slave主机：zabbix2
@@ -1829,10 +1829,10 @@ mysql&amp;gt; show slave status \G;</description>
     
     <item>
       <title>keepalived之vrrp_script脚本分析</title>
-      <link>http://example.org/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90/</link>
+      <link>/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90/</link>
       <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
+      <guid>/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
       <description>实验环境：
 Server1：192.168.200.10
 Server2：192.168.200.20
@@ -1850,10 +1850,10 @@ virtual_router_id 51 priority 100 advert_int 1 authentication { auth_type PASS a
     
     <item>
       <title>keepalived入门-实现httpd高可用</title>
-      <link>http://example.org/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/</link>
+      <link>/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/</link>
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/</guid>
+      <guid>/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/</guid>
       <description>实验环境：
 Server1：192.168.200.10
 Server2：192.168.200.20
@@ -1867,10 +1867,10 @@ vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主�
     
     <item>
       <title>Nginx反向代理与负载均衡</title>
-      <link>http://example.org/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+      <link>/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
       <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+      <guid>/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
       <description>正向代理和反向代理的区别：正向代理：代理服务器为客户端去收发请求，隐藏真实客户端
 反向代理：代理服务器为服务端收发请求，隐藏真实服务端
 需求一：隐藏真实网站服务器，由代理服务器去访问内部网站服务器，提高了内部服务器安全性1、安装nginx
@@ -1884,10 +1884,10 @@ vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主�
     
     <item>
       <title>内网环境搭建YUM仓库</title>
-      <link>http://example.org/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/</link>
+      <link>/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/</link>
       <pubDate>Tue, 03 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/</guid>
+      <guid>/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/</guid>
       <description>需求：内网环境下，无法访问外网，如何更新系统以及安装项目所需软件？ 一、找一台可以联网的机器，安装操作系统（一般最小化安装，和内网机器一致）缓存所需软件包1、开启yum缓存
 [root@host1 ~]# vim /etc/yum.conf [main] cachedir=/var/cache/yum/$basearch/$releasever //此处为缓存路径 keepcache=1 //设为1，则开启yum缓存 [root@host1 ~]# yum clean all
 2、更新系统（缓存更新包）
@@ -1902,10 +1902,10 @@ vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主�
     
     <item>
       <title>使用Python调用Zabbix API</title>
-      <link>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</link>
+      <link>/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</link>
       <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</guid>
+      <guid>/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</guid>
       <description>Zabbix API官方文档： https://www.zabbix.com/documentation/4.0/zh/manual/api
 1、向 api_jsonrpc.php 发送HTTP_POST 登录请求，获取身份验证令牌
 # -*- coding:utf-8 -*- import json import requests
@@ -1919,10 +1919,10 @@ url = &amp;lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;rsquo; post_heade
     
     <item>
       <title>使用Python调用Zabbix API</title>
-      <link>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</link>
+      <link>/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</link>
       <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</guid>
+      <guid>/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</guid>
       <description>Zabbix API官方文档： https://www.zabbix.com/documentation/4.0/zh/manual/api
 1、向 api_jsonrpc.php 发送HTTP_POST 登录请求，获取身份验证令牌
 # -*- coding:utf-8 -*- import json import requests
@@ -1936,20 +1936,20 @@ url = &amp;lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;rsquo; post_heade
     
     <item>
       <title>vsftpd本地用户shell为nologin无法访问ftp</title>
-      <link>http://example.org/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp/</link>
+      <link>/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp/</link>
       <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp/</guid>
+      <guid>/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp/</guid>
       <description>vsftp会根据/etc/shells文件来判断用户是否是有效，并阻止shell不在/etc/shells文件里的用户登陆
 解决方法：echo &amp;lsquo;/sbin/nologin&amp;rsquo; &amp;raquo; /etc/shells</description>
     </item>
     
     <item>
       <title>mysql8.0绿色版安装及mysqldump备份</title>
-      <link>http://example.org/posts/2019-03-10-mysql8-0%E7%BB%BF%E8%89%B2%E7%89%88%E5%AE%89%E8%A3%85%E5%8F%8Amysqldump%E5%A4%87%E4%BB%BD/</link>
+      <link>/posts/2019-03-10-mysql8-0%E7%BB%BF%E8%89%B2%E7%89%88%E5%AE%89%E8%A3%85%E5%8F%8Amysqldump%E5%A4%87%E4%BB%BD/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-03-10-mysql8-0%E7%BB%BF%E8%89%B2%E7%89%88%E5%AE%89%E8%A3%85%E5%8F%8Amysqldump%E5%A4%87%E4%BB%BD/</guid>
+      <guid>/posts/2019-03-10-mysql8-0%E7%BB%BF%E8%89%B2%E7%89%88%E5%AE%89%E8%A3%85%E5%8F%8Amysqldump%E5%A4%87%E4%BB%BD/</guid>
       <description>1、下载mysql绿色版压缩包 https://dev.mysql.com/downloads/mysql/
 2、解压到安装目录后，在根目录创建data文件夹
 3、把mysql下的bin目录添加到环境变量
@@ -1960,10 +1960,10 @@ url = &amp;lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;rsquo; post_heade
     
     <item>
       <title>zabbix利用SNMPTrap接收交换机主动告警</title>
-      <link>http://example.org/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6/</link>
+      <link>/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Wed, 06 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6/</guid>
+      <guid>/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6/</guid>
       <description>zabbix接收trap的工作流程：
 snmptrapd 收到trap snmptrapd将trap传递给SNMPTT或调用Perl接收器 SNMPTT或Perl trap接收器解析，格式化并将trap写入文件 Zabbix SNMP trap读取并解析trap文件 对于每个trap，Zabbix发现主机接口与接收的trap地址匹配的所有“SNMP trap”监控项。请注意，在匹配期间只使用主机接口中选定的“IP”或“DNS”。 对于每个找到的监控项，将trap与“snmptrap[regexp]”中的regexp进行比较。 trap设置为all匹配项的值。如果没有找到匹配的监控项，并且有一个“snmptrap.fallback”监控项，则将trap设置为该值。 如果trap未设置为任何监控项的值，Zabbix默认记录不匹配的trap。（这由管理 - &amp;gt;常规 - &amp;gt;其它中的“记录不匹配的SNMP trap（Log unmatched SNMP traps）”配置。） 一、安装配置snmptrapd
 1、yum install -y net-snmp net-snmp-utils net-snmp-perl #安装net-snmp及相关工具（里面包含SNMPTrapd）
@@ -1981,10 +1981,10 @@ traphandle default /usr/sbin/snmptthandler #指定snmptt为trap接收器，此�
     
     <item>
       <title>zabbix监控交换机状态</title>
-      <link>http://example.org/posts/2019-03-04-zabbix%E7%9B%91%E6%8E%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%8A%B6%E6%80%81/</link>
+      <link>/posts/2019-03-04-zabbix%E7%9B%91%E6%8E%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%8A%B6%E6%80%81/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-03-04-zabbix%E7%9B%91%E6%8E%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%8A%B6%E6%80%81/</guid>
+      <guid>/posts/2019-03-04-zabbix%E7%9B%91%E6%8E%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%8A%B6%E6%80%81/</guid>
       <description>1、在Zabbix中添加主机
 输入名称、群组和交换机IP（交换机要开启snmp）
 2、创建监控项
@@ -1996,10 +1996,10 @@ OID获取方法可查看上一篇文章：https://www.cnblogs.com/zhenwei66/p/10
     
     <item>
       <title>zabbix配置邮件告警</title>
-      <link>http://example.org/posts/2019-03-04-zabbix%E9%85%8D%E7%BD%AE%E9%82%AE%E4%BB%B6%E5%91%8A%E8%AD%A6/</link>
+      <link>/posts/2019-03-04-zabbix%E9%85%8D%E7%BD%AE%E9%82%AE%E4%BB%B6%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-03-04-zabbix%E9%85%8D%E7%BD%AE%E9%82%AE%E4%BB%B6%E5%91%8A%E8%AD%A6/</guid>
+      <guid>/posts/2019-03-04-zabbix%E9%85%8D%E7%BD%AE%E9%82%AE%E4%BB%B6%E5%91%8A%E8%AD%A6/</guid>
       <description>1、安装邮件服务
 yum -y install mailx echo &amp;ldquo;我是内容&amp;rdquo; | mail -s &amp;ldquo;邮件测试&amp;rdquo; 894548465@qq.com #发邮件测试
 2、添加报警媒介
@@ -2018,10 +2018,10 @@ PS：如果收不到，有可能是被过滤到垃圾箱</description>
     
     <item>
       <title>下载华为交换机MIB参考文件并使用snmpwalk获取OID信息</title>
-      <link>http://example.org/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/</link>
+      <link>/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/</link>
       <pubDate>Mon, 04 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/</guid>
+      <guid>/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/</guid>
       <description>1、下载交换机MIB参考文件 访问 https://support.huawei.com/enterprise/zh/index.html，搜索交换机型号，点击案例库，选择MIB参考
 2、交换机下启用snmp，并设置团体名 图形界面：
 命令行：
@@ -2043,10 +2043,10 @@ snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.6710887
     
     <item>
       <title>RHEL7/CentOS7 安装Zabbix</title>
-      <link>http://example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix/</link>
+      <link>/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix/</link>
       <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix/</guid>
+      <guid>/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix/</guid>
       <description>1、添加 Zabbix 软件仓库
 rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
 2、启用可选 rpms 的软件仓库
@@ -2067,10 +2067,10 @@ vim /etc/zabbix/zabbix_server.conf DBPassword=zabbix</description>
     
     <item>
       <title>RHEL7/CentOS7 安装Zabbix</title>
-      <link>http://example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/</link>
+      <link>/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/</link>
       <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/</guid>
+      <guid>/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/</guid>
       <description>1、添加 Zabbix 软件仓库
 rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
 2、启用可选 rpms 的软件仓库
@@ -2091,10 +2091,10 @@ vim /etc/zabbix/zabbix_server.conf DBPassword=zabbix</description>
     
     <item>
       <title>访问System x3650 IMM2的几种方式</title>
-      <link>http://example.org/posts/2019-02-24-%E8%AE%BF%E9%97%AEsystemx3650imm2%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
+      <link>/posts/2019-02-24-%E8%AE%BF%E9%97%AEsystemx3650imm2%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Sun, 24 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-02-24-%E8%AE%BF%E9%97%AEsystemx3650imm2%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
+      <guid>/posts/2019-02-24-%E8%AE%BF%E9%97%AEsystemx3650imm2%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid>
       <description>一、通过web浏览器访问
 1、打开浏览器，在地址栏上输入IMM2的IP地址访问，打开登录页面后，输入用户名和密码 登录
 PS：第一次登录IMM2时，初始的用户名为USERID，密码为PASSW0RD(零，不是字母O)。在初始配置期间更改此用户名和密码，以增强安全性。
@@ -2114,10 +2114,10 @@ ipmitool -U 用户名 -P 密码 -H IP地址 sensor // 打印详细的传感器�
     
     <item>
       <title>Lenovo System x3650 设置管理接口地址</title>
-      <link>http://example.org/posts/2019-02-22-lenovosystemx3650%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</link>
+      <link>/posts/2019-02-22-lenovosystemx3650%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</link>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-02-22-lenovosystemx3650%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</guid>
+      <guid>/posts/2019-02-22-lenovosystemx3650%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</guid>
       <description>1、开启服务器。
 2、显示 Setup提示后，按 F1。（此提示在屏幕上仅显示几秒钟。必须迅速按 F1。）
 如果同时设置了开机密码和管理员密码，则必须输入管理员密码才能访问完整的 Setup Utility 菜单。
@@ -2132,10 +2132,10 @@ ipmitool -U 用户名 -P 密码 -H IP地址 sensor // 打印详细的传感器�
     
     <item>
       <title>Linux系统下邮件服务器的搭建（Postfix&#43;Dovecot）</title>
-      <link>http://example.org/posts/2018-02-25-linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BApostfixdovecot/</link>
+      <link>/posts/2018-02-25-linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BApostfixdovecot/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2018-02-25-linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BApostfixdovecot/</guid>
+      <guid>/posts/2018-02-25-linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BApostfixdovecot/</guid>
       <description>对于网站来说，发送各种例如注册通知的邮件是很基本的一个需求，之前我一直用的是腾讯的企业邮箱，感觉挺方便的，直接可以绑定QQ邮箱接收邮件，网站配置一下SMTP也就可以发出邮件。
 但是在前几天由于有重要信息需要立即通知用户，所以选择了群发邮件的方式。在当我以为一切都是辣么完美的时候，陆续有用户过来问我什么情况，我都会跟他们说请查收邮件，但是有好几个人说并没有任何邮件，于是我试着再发一次，结果返回了错误提示。在网上找了下原因，后来看到这个：各大免费邮箱邮件群发账户SMTP服务器配置及SMTP发送量限制情况，才知道是因为发信数量限制了。
 所以只好另寻出路了，然后我在知乎上面找到了很多个提供邮件发送的服务商，大概有这些：SendGrid、MailChimp、Amazon SES、SendCloud、Mailgun等等，在看了不少人的建议之后，我选择了Mailgun。
@@ -2155,10 +2155,10 @@ vi /etc/postfix/main.cf 修改如下：
     
     <item>
       <title>Python之excel文件追加内容</title>
-      <link>http://example.org/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</link>
+      <link>/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</link>
       <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</guid>
+      <guid>/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</guid>
       <description>首先要安装三个模块：xlrd，xlwt，xlutils
 命令：pip install xlrd xlwt xlutils
 示例代码：
@@ -2174,10 +2174,10 @@ vi /etc/postfix/main.cf 修改如下：
     
     <item>
       <title>Python开发【第七篇】：面向对象</title>
-      <link>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <link>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <guid>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
       <description>面向对象基础基础内容介绍详见一下两篇博文：
 面向对象初级篇 面向对象进阶篇 其他相关一、isinstance(obj, cls)
 检查是否obj是否是类 cls 的对象
@@ -2203,10 +2203,10 @@ AttributeError 试图访问一个对象没有的树形，比如foo.</description
     
     <item>
       <title>Python开发【第三篇】：Python基本数据类型</title>
-      <link>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>运算符1、算数运算：
 2、比较运算：
 3、赋值运算：
@@ -2222,10 +2222,10 @@ Convert a number or string to an integer, or return 0 if no arguments are given.
     
     <item>
       <title>Python开发【第五篇】：Python基础之杂货铺</title>
-      <link>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/</link>
+      <link>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/</guid>
+      <guid>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/</guid>
       <description>字符串格式化Python的字符串格式化有两种方式: 百分号方式、format方式
 百分号的方式相对来说比较老，而format方式则是比较先进的方式，企图替换古老的方式，目前两者并存。[PEP-3101]
 This PEP proposes a new system for built-in string formatting operations, intended as a replacement for the existing &amp;lsquo;%&amp;rsquo; string formatting operator.
@@ -2241,10 +2241,10 @@ s，获取传入对象的__str__方法的返回值，并将其格式化到指定
     
     <item>
       <title>Python开发【第八篇】：网络编程</title>
-      <link>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
+      <link>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
+      <guid>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
       <description>socket通常也称作&amp;quot;套接字&amp;quot;，用于描述IP地址和端口，是一个通信链的句柄，应用程序通常通过&amp;quot;套接字&amp;quot;向网络发出请求或者应答网络请求。
 socket起源于Unix，而Unix/Linux基本哲学之一就是“一切皆文件”，对于文件用【打开】【读写】【关闭】模式来操作。socket就是该模式的一个实现，socket即是一种特殊的文件，一些socket函数就是对其进行的操作（读/写IO、打开、关闭）
 socket和file的区别：
@@ -2265,10 +2265,10 @@ WEB服务应用：
     
     <item>
       <title>Python开发【第四篇】：Python基础之函数</title>
-      <link>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</link>
+      <link>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</guid>
+      <guid>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</guid>
       <description>三元运算三元运算（三目运算），是对简单的条件语句的缩写。
 # 书写格式
 result = 值1 if 条件 else 值2
@@ -2280,10 +2280,10 @@ Build an unordered collection of unique elements. &amp;quot;&amp;quot;&amp;quot;
     
     <item>
       <title>Python开发【第六篇】：模块</title>
-      <link>http://example.org/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/</link>
+      <link>/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/</guid>
+      <guid>/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/</guid>
       <description>模块，用一砣代码实现了某个功能的代码集合。
 类似于函数式编程和面向过程编程，函数式编程则完成一个功能，其他代码用来调用即可，提供了代码的重用性和代码间的耦合。而对于一个复杂的功能来，可能需要多个函数才能完成（函数又可以在不同的.py文件中），n个 .py 文件组成的代码集合就称为模块。
 如：os 是系统相关的模块；file是文件操作相关的模块
@@ -2304,20 +2304,20 @@ import sys print sys.path
     
     <item>
       <title>range用法</title>
-      <link>http://example.org/posts/2017-03-30-range%E7%94%A8%E6%B3%95/</link>
+      <link>/posts/2017-03-30-range%E7%94%A8%E6%B3%95/</link>
       <pubDate>Thu, 30 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-30-range%E7%94%A8%E6%B3%95/</guid>
+      <guid>/posts/2017-03-30-range%E7%94%A8%E6%B3%95/</guid>
       <description>递减
 for i in range(10,1,-1): #range默认递增步长1，递减必需指定负数步长 print(i)</description>
     </item>
     
     <item>
       <title>python 列表生成式</title>
-      <link>http://example.org/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F/</link>
+      <link>/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F/</link>
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F/</guid>
+      <guid>/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F/</guid>
       <description>需求：把一个列表中每个元素的值加1
 第一种方法（for&amp;hellip;in循环 + append到新列表）
 a = [5, 8, 11, 14, 17, 20, 23, 26] b = [] for i in a: b.append(i+1) a = b print(a)
@@ -2331,10 +2331,10 @@ a = [5, 8, 11, 14, 17, 20, 23, 26] a = [i+1 for i in a] print(a)</description>
     
     <item>
       <title>python3 文件操作</title>
-      <link>http://example.org/posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <link>/posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <guid>/posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
       <description>步骤：打开文件-》操作文件-》关闭文件
 打开文件
 文件句柄 = open(&amp;lsquo;文件路径&amp;rsquo;, &amp;lsquo;模式&amp;rsquo;)
@@ -2371,10 +2371,10 @@ print(文件句柄.readline()) #读取第一行数据 print(文件句柄.readlin
     
     <item>
       <title>python 内置函数</title>
-      <link>http://example.org/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</link>
+      <link>/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</link>
       <pubDate>Thu, 23 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</guid>
+      <guid>/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</guid>
       <description>官方说明文档：https://docs.python.org/3/library/functions.html
 abs(求绝对值)
 print(abs(-5)) #输出：5
@@ -2404,10 +2404,10 @@ n = 5 print(callable(test)) print(callable(n)) #输出：True # False</descripti
     
     <item>
       <title>python3 deque（双向队列）</title>
-      <link>http://example.org/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97/</link>
+      <link>/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97/</link>
       <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97/</guid>
+      <guid>/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97/</guid>
       <description>创建双向队列
 import collections d = collections.deque()
 append(往右边添加一个元素)
@@ -2426,10 +2426,10 @@ import collections d = collections.deque() d.append(1) d.extend([3,4,5]) print(d
     
     <item>
       <title>python3 Queue（单向队列）</title>
-      <link>http://example.org/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97/</link>
+      <link>/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97/</link>
       <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97/</guid>
+      <guid>/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97/</guid>
       <description>创建队列
 import queue q = queue.Queue()
 empty（如果队列为空，返回True）
@@ -2452,10 +2452,10 @@ task_done（在完成一项任务之后，向任务已经完成的队列发送�
     
     <item>
       <title>python3 Counter类（计数器）</title>
-      <link>http://example.org/posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8/</link>
+      <link>/posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8/</guid>
+      <guid>/posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8/</guid>
       <description>Counter（计数器）：用于追踪值的出现次数
 Counter类继承dict类，所以它能使用dict类里面的方法
 创建一个Counter类
@@ -2471,10 +2471,10 @@ import collections obj = collections.Counter(&amp;lsquo;aabbbcccc&amp;rsquo;) pr
     
     <item>
       <title>python3 dict（字典）</title>
-      <link>http://example.org/posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8/</link>
+      <link>/posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8/</guid>
+      <guid>/posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8/</guid>
       <description>clear(清空字典内容)
 stu = { &amp;rsquo;num1&amp;rsquo;:&amp;lsquo;Tom&amp;rsquo;, &amp;rsquo;num2&amp;rsquo;:&amp;lsquo;Lucy&amp;rsquo;, &amp;rsquo;num3&amp;rsquo;:&amp;lsquo;Sam&amp;rsquo;, } print(stu.clear()) #输出：None
 copy（拷贝字典）
@@ -2492,10 +2492,10 @@ stu = { &amp;rsquo;num1&amp;rsquo;:&amp;lsquo;Tom&amp;rsquo;, &amp;rsquo;num2&am
     
     <item>
       <title>python3 OrderedDict类（有序字典）</title>
-      <link>http://example.org/posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8/</link>
+      <link>/posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8/</guid>
+      <guid>/posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8/</guid>
       <description>创建有序字典
 import collections
 dic = collections.OrderedDict() dic[&amp;lsquo;k1&amp;rsquo;] = &amp;lsquo;v1&amp;rsquo; dic[&amp;lsquo;k2&amp;rsquo;] = &amp;lsquo;v2&amp;rsquo; dic[&amp;lsquo;k3&amp;rsquo;] = &amp;lsquo;v3&amp;rsquo; print(dic) #输出：OrderedDict([(&amp;lsquo;k1&amp;rsquo;, &amp;lsquo;v1&amp;rsquo;), (&amp;lsquo;k2&amp;rsquo;, &amp;lsquo;v2&amp;rsquo;), (&amp;lsquo;k3&amp;rsquo;, &amp;lsquo;v3&amp;rsquo;)])
@@ -2512,10 +2512,10 @@ dic = collections.OrderedDict() name = [&amp;rsquo;tom&amp;rsquo;,&amp;rsquo;luc
     
     <item>
       <title>python3 set（集合）</title>
-      <link>http://example.org/posts/2017-03-21-python3set%E9%9B%86%E5%90%88/</link>
+      <link>/posts/2017-03-21-python3set%E9%9B%86%E5%90%88/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-21-python3set%E9%9B%86%E5%90%88/</guid>
+      <guid>/posts/2017-03-21-python3set%E9%9B%86%E5%90%88/</guid>
       <description>add（增加元素）
 name = set([&amp;lsquo;Tom&amp;rsquo;,&amp;lsquo;Lucy&amp;rsquo;,&amp;lsquo;Ben&amp;rsquo;]) name.add(&amp;lsquo;Juny&amp;rsquo;) print(name) #输出：{&amp;lsquo;Lucy&amp;rsquo;, &amp;lsquo;Juny&amp;rsquo;, &amp;lsquo;Ben&amp;rsquo;, &amp;lsquo;Tom&amp;rsquo;}
 clear（清空所有元素）
@@ -2535,10 +2535,10 @@ n1 = set([2,3,4,5]) n2 = set([4,5,6,7]) n = n1.</description>
     
     <item>
       <title>python3 int（整型）</title>
-      <link>http://example.org/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B/</link>
+      <link>/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B/</guid>
+      <guid>/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B/</guid>
       <description>__abs__(返回绝对值)
 n = -5 print(n.__abs__()) #输出：5
 __add__(相加，运算符：+)
@@ -2571,10 +2571,10 @@ n = 5 print(n.__ge__(3)) #输出：True</description>
     
     <item>
       <title>python3 str（字符串）</title>
-      <link>http://example.org/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <link>/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
       <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <guid>/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
       <description>__add__函数 (在后面追加字符串)
 s1 =&amp;lsquo;Hello&amp;rsquo; s2 = s1.__add__(&amp;rsquo; boy!&amp;rsquo;) print(s2) #输出：Hello boy!
 __contains__（判断是否包含某字符串，包含则返回True）
@@ -2617,10 +2617,10 @@ __repr__
     
     <item>
       <title>python3基础知识梳理</title>
-      <link>http://example.org/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/</link>
+      <link>/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/</link>
       <pubDate>Fri, 17 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/</guid>
+      <guid>/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/</guid>
       <description>一、数据类型
 1、数字
 int（整型） long（长整型） float（浮点型） complex（复数） 2、布尔值
@@ -2642,10 +2642,10 @@ ps：在python中，使用+号连接字符串，每出现一个+号，就要重�
     
     <item>
       <title>wamp集成环境开启伪静态</title>
-      <link>http://example.org/posts/2015-12-12-wamp%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83%E5%BC%80%E5%90%AF%E4%BC%AA%E9%9D%99%E6%80%81/</link>
+      <link>/posts/2015-12-12-wamp%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83%E5%BC%80%E5%90%AF%E4%BC%AA%E9%9D%99%E6%80%81/</link>
       <pubDate>Sat, 12 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-12-12-wamp%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83%E5%BC%80%E5%90%AF%E4%BC%AA%E9%9D%99%E6%80%81/</guid>
+      <guid>/posts/2015-12-12-wamp%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83%E5%BC%80%E5%90%AF%E4%BC%AA%E9%9D%99%E6%80%81/</guid>
       <description>wamp集成在安装完后默认是没有开启伪静态的，下面是wamp开启rewrite伪静态的方法：
 第一步：打开wamp安装目录里的bin文件夹，找到Apache安装目录下的conf目录中的httpd.conf这个文件
 (例如我的是：D:\wamp\bin\apache\Apache2.2.11\conf)
@@ -2656,10 +2656,10 @@ ps：在python中，使用+号连接字符串，每出现一个+号，就要重�
     
     <item>
       <title>孩子在麦当劳偷纸巾后，妈妈问了4个问题</title>
-      <link>http://example.org/posts/2015-12-02-%E5%AD%A9%E5%AD%90%E5%9C%A8%E9%BA%A6%E5%BD%93%E5%8A%B3%E5%81%B7%E7%BA%B8%E5%B7%BE%E5%90%8E%E5%A6%88%E5%A6%88%E9%97%AE%E4%BA%864%E4%B8%AA%E9%97%AE%E9%A2%98/</link>
+      <link>/posts/2015-12-02-%E5%AD%A9%E5%AD%90%E5%9C%A8%E9%BA%A6%E5%BD%93%E5%8A%B3%E5%81%B7%E7%BA%B8%E5%B7%BE%E5%90%8E%E5%A6%88%E5%A6%88%E9%97%AE%E4%BA%864%E4%B8%AA%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-12-02-%E5%AD%A9%E5%AD%90%E5%9C%A8%E9%BA%A6%E5%BD%93%E5%8A%B3%E5%81%B7%E7%BA%B8%E5%B7%BE%E5%90%8E%E5%A6%88%E5%A6%88%E9%97%AE%E4%BA%864%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
+      <guid>/posts/2015-12-02-%E5%AD%A9%E5%AD%90%E5%9C%A8%E9%BA%A6%E5%BD%93%E5%8A%B3%E5%81%B7%E7%BA%B8%E5%B7%BE%E5%90%8E%E5%A6%88%E5%A6%88%E9%97%AE%E4%BA%864%E4%B8%AA%E9%97%AE%E9%A2%98/</guid>
       <description>这天在街上打电话，无意中听到了母子俩的对话，被妈妈的教育深深感动，教育孩子就该如此。
 “妈妈把你的酸奶喝光了，你委屈吗？”
 “委屈！”小男孩泪眼婆挲。
@@ -2687,10 +2687,10 @@ ps：在python中，使用+号连接字符串，每出现一个+号，就要重�
     
     <item>
       <title>仿冒电信运营商手机营业厅的大规模钓鱼事件</title>
-      <link>http://example.org/posts/2015-11-17-%E4%BB%BF%E5%86%92%E7%94%B5%E4%BF%A1%E8%BF%90%E8%90%A5%E5%95%86%E6%89%8B%E6%9C%BA%E8%90%A5%E4%B8%9A%E5%8E%85%E7%9A%84%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%92%93%E9%B1%BC%E4%BA%8B%E4%BB%B6/</link>
+      <link>/posts/2015-11-17-%E4%BB%BF%E5%86%92%E7%94%B5%E4%BF%A1%E8%BF%90%E8%90%A5%E5%95%86%E6%89%8B%E6%9C%BA%E8%90%A5%E4%B8%9A%E5%8E%85%E7%9A%84%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%92%93%E9%B1%BC%E4%BA%8B%E4%BB%B6/</link>
       <pubDate>Tue, 17 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-17-%E4%BB%BF%E5%86%92%E7%94%B5%E4%BF%A1%E8%BF%90%E8%90%A5%E5%95%86%E6%89%8B%E6%9C%BA%E8%90%A5%E4%B8%9A%E5%8E%85%E7%9A%84%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%92%93%E9%B1%BC%E4%BA%8B%E4%BB%B6/</guid>
+      <guid>/posts/2015-11-17-%E4%BB%BF%E5%86%92%E7%94%B5%E4%BF%A1%E8%BF%90%E8%90%A5%E5%95%86%E6%89%8B%E6%9C%BA%E8%90%A5%E4%B8%9A%E5%8E%85%E7%9A%84%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%92%93%E9%B1%BC%E4%BA%8B%E4%BB%B6/</guid>
       <description>有白帽子在乌云报告了一起钓鱼攻击事件，说起钓鱼各位已经是身经百战了，但乌云君发现此次事件暴露出目前钓鱼团伙的一些流行的套路和技术手段。另外还发现此类站点居然存在一些入门级的web安全漏洞，可能会导致受骗者信息二次、三次、四次、五次。。。泄露，鱼篓子漏了一地。
 漏洞地址：仿冒电信运营商掌上营业厅的大规模钓鱼事件(大量用户银行卡中招CVV2与密码泄露)
 此次钓鱼攻击由三个部分组成：
@@ -2721,10 +2721,10 @@ ps：在python中，使用+号连接字符串，每出现一个+号，就要重�
     
     <item>
       <title>选择虚拟主机常犯的6个错误</title>
-      <link>http://example.org/posts/2015-11-16-%E9%80%89%E6%8B%A9%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%8A%AF%E7%9A%846%E4%B8%AA%E9%94%99%E8%AF%AF/</link>
+      <link>/posts/2015-11-16-%E9%80%89%E6%8B%A9%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%8A%AF%E7%9A%846%E4%B8%AA%E9%94%99%E8%AF%AF/</link>
       <pubDate>Mon, 16 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-16-%E9%80%89%E6%8B%A9%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%8A%AF%E7%9A%846%E4%B8%AA%E9%94%99%E8%AF%AF/</guid>
+      <guid>/posts/2015-11-16-%E9%80%89%E6%8B%A9%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%8A%AF%E7%9A%846%E4%B8%AA%E9%94%99%E8%AF%AF/</guid>
       <description>一般我们准备做一个博客网站之前，大概都是什么样的状态呢？嗯……让我猜猜，你大概是兴奋 ！其实这不单是你，很多博主在建立自己域名的独立博客之前都是一样的状态。 现在的互联网主机市场，到处都是“顶级虚拟主机”的网站（这些基本的都是个人网站，要么是代理，要么是自己租用别人的，要么是自己随便整两个机子），便宜的价格，无限制的空间，各种优惠…等等都会吸引你去购买他们的相对“便宜和最好的”虚拟主机。
 错误1：搜索“顶级虚拟主机’在互联网上，最不幸就是好和坏都是共存的，主机服务也是一样。还有很多人希望随便做点事情就可以赚一些钱。 各种所谓的“顶级虚拟主机的网站管理员”大概就属于这一类。 他们卖出去的大部分所谓的“顶级虚拟主机（通常是共享主机）”中，很多是根据客户下单的金额多少来订购相应的主机配置。 很明显，很多在这些网站上的主机质量数据是都是假的。
 搜索“顶级虚拟主机&#39;现在有很多假的主机评测网站，当然也有很多假的评论在里面。选择一个真正的虚拟主机评测网站或论坛也是很重要的。国内的主机评测网站，暂时还没有一个像样的，至少我个人觉得是这样。不管是主机之家，主机评测网还是虚拟主机评测网，都差不多。国外主机评测论坛推荐一个WebHostingTalk，做的不错。
@@ -2753,10 +2753,10 @@ ps：在python中，使用+号连接字符串，每出现一个+号，就要重�
     
     <item>
       <title>搜索引擎之高级搜索指令</title>
-      <link>http://example.org/posts/2015-11-15-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%B9%8B%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8C%87%E4%BB%A4/</link>
+      <link>/posts/2015-11-15-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%B9%8B%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8C%87%E4%BB%A4/</link>
       <pubDate>Sun, 15 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-15-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%B9%8B%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8C%87%E4%BB%A4/</guid>
+      <guid>/posts/2015-11-15-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%B9%8B%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8C%87%E4%BB%A4/</guid>
       <description>搜索引擎的一些高级搜索指令，帮助你更快的找到想要的信息，更是seo人员必备的技巧.1、双引号显示完整信息：双引号代表完全匹配，现在百度和Google都支持该指令。在搜索时把关键词加上双引号就能返回包括整个完整的词的搜索结果。比如我们搜索“糖半甜饮品”这个关键词，如果加上双引号的话，那么返回的结果只显示那些完整出现糖半甜饮品的网页，单独出现糖半甜和单独出现饮品，以及糖半甜饮品没有完整连续出现的页面将不显示。这样在做SEO的时候就能一步到位的准确查找指定的竞争对手。
 2、减号结果更精准：有时候我们搜索一个词的时候却返回了很多不想要的结果，搜索引擎认为很多词和你搜索的词有一定的相关性就全部返回了搜索结果，这样就会给我们找到目标页面带来很大的影响。这时就能使用减号这个高级指令，比如搜索“糖半甜 -饮品”，返回的结果如下图所示，需要注意的是在减号前面一定要有空格，减号后边紧跟要排除的词。
 3、星号适用Google：现在百度、soso和搜狗三个搜索引擎不支持星号，而Goolge支持，喜欢Goolge的朋友要注意星号的使用。星号是一个通配符，能匹配所有的字符，在一些特殊的情况下可以使用星号进行搜索。比如在Goolge中输入“搜索*擎”，那么会显示包括搜索影擎之类的结果。
@@ -2774,10 +2774,10 @@ ps：在python中，使用+号连接字符串，每出现一个+号，就要重�
     
     <item>
       <title>注意！面对各种监控摄像头请保持你 duang~duang~的微笑 ：）</title>
-      <link>http://example.org/posts/2015-11-14-%E6%B3%A8%E6%84%8F%E9%9D%A2%E5%AF%B9%E5%90%84%E7%A7%8D%E7%9B%91%E6%8E%A7%E6%91%84%E5%83%8F%E5%A4%B4%E8%AF%B7%E4%BF%9D%E6%8C%81%E4%BD%A0-duangduang%E7%9A%84%E5%BE%AE%E7%AC%91-/</link>
+      <link>/posts/2015-11-14-%E6%B3%A8%E6%84%8F%E9%9D%A2%E5%AF%B9%E5%90%84%E7%A7%8D%E7%9B%91%E6%8E%A7%E6%91%84%E5%83%8F%E5%A4%B4%E8%AF%B7%E4%BF%9D%E6%8C%81%E4%BD%A0-duangduang%E7%9A%84%E5%BE%AE%E7%AC%91-/</link>
       <pubDate>Sat, 14 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-14-%E6%B3%A8%E6%84%8F%E9%9D%A2%E5%AF%B9%E5%90%84%E7%A7%8D%E7%9B%91%E6%8E%A7%E6%91%84%E5%83%8F%E5%A4%B4%E8%AF%B7%E4%BF%9D%E6%8C%81%E4%BD%A0-duangduang%E7%9A%84%E5%BE%AE%E7%AC%91-/</guid>
+      <guid>/posts/2015-11-14-%E6%B3%A8%E6%84%8F%E9%9D%A2%E5%AF%B9%E5%90%84%E7%A7%8D%E7%9B%91%E6%8E%A7%E6%91%84%E5%83%8F%E5%A4%B4%E8%AF%B7%E4%BF%9D%E6%8C%81%E4%BD%A0-duangduang%E7%9A%84%E5%BE%AE%E7%AC%91-/</guid>
       <description>昨日乌云君的朋友圈还是几只队伍在疯狂刷屏：
 白金队 黑蓝队 撕港澳通行证队 跑出手机的3D二逼熊队 duang~duang~队&amp;hellip; 以为这些队伍的节奏会保持几天，结果就在当晚一张模糊的“江苏省公安厅电文”内容造就了今天的新队伍——“海康威视队”（话说这么重要的电文咋这么容易就被传到网上呢？这也太不小心了）
 如今的用户对安全的敏感与警觉性有了很大的提升，视频监控设备漏洞对咱普通百姓有啥影响呢？还是从乌云君擅长，并能够解答的技术部分给大家聊影响，其他不了解的内容就不去下定论。
@@ -2798,10 +2798,10 @@ PS:上图为某实体设备中控指纹系统，也存在默认口令（估计�
     
     <item>
       <title>编程的初心</title>
-      <link>http://example.org/posts/2015-11-14-%E7%BC%96%E7%A8%8B%E7%9A%84%E5%88%9D%E5%BF%83/</link>
+      <link>/posts/2015-11-14-%E7%BC%96%E7%A8%8B%E7%9A%84%E5%88%9D%E5%BF%83/</link>
       <pubDate>Sat, 14 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-14-%E7%BC%96%E7%A8%8B%E7%9A%84%E5%88%9D%E5%BF%83/</guid>
+      <guid>/posts/2015-11-14-%E7%BC%96%E7%A8%8B%E7%9A%84%E5%88%9D%E5%BF%83/</guid>
       <description>**261702314998329**
 我不算一个合格的程序员，我仅仅在两三年前自学过一点 PHP，然后大一和大二这学期在课堂上照本宣科的学习了C，C++和 JAVA，除了 PHP 外，其它的语言也就达到一个写个计算器的程度。
 虽然如此，可是我还是要说，我深深的为神奇的程序世界所着迷，我的智力和精力都有限，可是程序世界的可能性是无限的，其魅力也是无限的。
@@ -2815,10 +2815,10 @@ PS:上图为某实体设备中控指纹系统，也存在默认口令（估计�
     
     <item>
       <title>没想到，打印机也会泄密？？？</title>
-      <link>http://example.org/posts/2015-11-13-%E6%B2%A1%E6%83%B3%E5%88%B0%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%9F%E4%BC%9A%E6%B3%84%E5%AF%86/</link>
+      <link>/posts/2015-11-13-%E6%B2%A1%E6%83%B3%E5%88%B0%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%9F%E4%BC%9A%E6%B3%84%E5%AF%86/</link>
       <pubDate>Fri, 13 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-13-%E6%B2%A1%E6%83%B3%E5%88%B0%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%9F%E4%BC%9A%E6%B3%84%E5%AF%86/</guid>
+      <guid>/posts/2015-11-13-%E6%B2%A1%E6%83%B3%E5%88%B0%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%9F%E4%BC%9A%E6%B3%84%E5%AF%86/</guid>
       <description>作为办公设备的打印机，如今已经成为各级党政机关、单位不可或缺的办公工具。这些设备在给工作带来便利的同时，也对信息安全构成了潜在威胁。
 大家都应该知道，凡事涉及“保密承诺”的文件，涉密双方都应该积极的保证文件或项目信息的安全。但是！当我们做好了一切保密工作后，很可能还会栽在这个地方……
 看到这个东西第一印象会觉得他是个网站。没错，不过别小瞧它，就是这个“网站”，导致泄露了移动某省分公司的4G业务、资源分析报告，工作计划甚至是某公司与移动签署的保密协议。乌云该漏洞报告地址：中国移动某省公司打印机未授权访问已成功下载移动内部资料（保密承诺书？）
@@ -2833,10 +2833,10 @@ PS:上图为某实体设备中控指纹系统，也存在默认口令（估计�
     
     <item>
       <title>双11网购，你买了吗？网购订单信息小心泄露！</title>
-      <link>http://example.org/posts/2015-11-12-%E5%8F%8C11%E7%BD%91%E8%B4%AD%E4%BD%A0%E4%B9%B0%E4%BA%86%E5%90%97%E7%BD%91%E8%B4%AD%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF%E5%B0%8F%E5%BF%83%E6%B3%84%E9%9C%B2/</link>
+      <link>/posts/2015-11-12-%E5%8F%8C11%E7%BD%91%E8%B4%AD%E4%BD%A0%E4%B9%B0%E4%BA%86%E5%90%97%E7%BD%91%E8%B4%AD%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF%E5%B0%8F%E5%BF%83%E6%B3%84%E9%9C%B2/</link>
       <pubDate>Thu, 12 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-12-%E5%8F%8C11%E7%BD%91%E8%B4%AD%E4%BD%A0%E4%B9%B0%E4%BA%86%E5%90%97%E7%BD%91%E8%B4%AD%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF%E5%B0%8F%E5%BF%83%E6%B3%84%E9%9C%B2/</guid>
+      <guid>/posts/2015-11-12-%E5%8F%8C11%E7%BD%91%E8%B4%AD%E4%BD%A0%E4%B9%B0%E4%BA%86%E5%90%97%E7%BD%91%E8%B4%AD%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF%E5%B0%8F%E5%BF%83%E6%B3%84%E9%9C%B2/</guid>
       <description>**mai.jpg**
 今天是一年一度的电商“双11”购物狂欢节。相信不少“剁手党”已经开始血拼了，购物的同时，你们也要小心订单信息的泄露哦。
 相信很多人都曾面临过自己的订单信息泄露引起的诈骗或者骚扰电话、典型的机票改签骗局、订单退款骗局等等。每次大家都很愤怒的认为电商平台在出卖自己的信息，然而事实上是怎样，我想从我负责订单信息泄露两年的实际经历来谈谈我的看法。
@@ -2883,10 +2883,10 @@ PS:上图为某实体设备中控指纹系统，也存在默认口令（估计�
     
     <item>
       <title>流量劫持首判犯罪，今后运营商还敢随便劫持么？</title>
-      <link>http://example.org/posts/2015-11-11-%E6%B5%81%E9%87%8F%E5%8A%AB%E6%8C%81%E9%A6%96%E5%88%A4%E7%8A%AF%E7%BD%AA%E4%BB%8A%E5%90%8E%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%98%E6%95%A2%E9%9A%8F%E4%BE%BF%E5%8A%AB%E6%8C%81%E4%B9%88/</link>
+      <link>/posts/2015-11-11-%E6%B5%81%E9%87%8F%E5%8A%AB%E6%8C%81%E9%A6%96%E5%88%A4%E7%8A%AF%E7%BD%AA%E4%BB%8A%E5%90%8E%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%98%E6%95%A2%E9%9A%8F%E4%BE%BF%E5%8A%AB%E6%8C%81%E4%B9%88/</link>
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-11-%E6%B5%81%E9%87%8F%E5%8A%AB%E6%8C%81%E9%A6%96%E5%88%A4%E7%8A%AF%E7%BD%AA%E4%BB%8A%E5%90%8E%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%98%E6%95%A2%E9%9A%8F%E4%BE%BF%E5%8A%AB%E6%8C%81%E4%B9%88/</guid>
+      <guid>/posts/2015-11-11-%E6%B5%81%E9%87%8F%E5%8A%AB%E6%8C%81%E9%A6%96%E5%88%A4%E7%8A%AF%E7%BD%AA%E4%BB%8A%E5%90%8E%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%98%E6%95%A2%E9%9A%8F%E4%BE%BF%E5%8A%AB%E6%8C%81%E4%B9%88/</guid>
       <description>不知道你有没有遇到过这种情况，明明杀软也查不出病毒，但是你经常会打开任一网址就自动跳转到广告页面，不停弹出莫名其妙的新窗口，主页被锁定无法修改，强制访问某些网站。至少我就遇到过好几次。这种情况便是“流量劫持”。
 昨日，上海浦东法院首次在司法层面将流量劫持认定为犯罪，该院判决了全国首起流量劫持刑案，两名被告人被判有期徒刑3年，缓刑3年；扣押在案的作案工具以及退缴在案的违法所得予以没收。
 从2013年底到2014年10月，付某、黄某等人租赁多台服务器，使用恶意代码修改互联网用户路由器的DNS设置，进而使用户登录“2345.com”等导航网站时，跳转到其设置的“5w.com”导航网站。两人再将获取的互联网用户流量出售给“5w.com”导航网站所有者——杭州久尚科技有限公司。
@@ -2904,10 +2904,10 @@ DNS劫持问题重提，虽然很多人都抱着死猪不怕开水烫的态度�
     
     <item>
       <title>走近科学：揭开伪基站的神秘面纱</title>
-      <link>http://example.org/posts/2015-11-11-%E8%B5%B0%E8%BF%91%E7%A7%91%E5%AD%A6%E6%8F%AD%E5%BC%80%E4%BC%AA%E5%9F%BA%E7%AB%99%E7%9A%84%E7%A5%9E%E7%A7%98%E9%9D%A2%E7%BA%B1/</link>
+      <link>/posts/2015-11-11-%E8%B5%B0%E8%BF%91%E7%A7%91%E5%AD%A6%E6%8F%AD%E5%BC%80%E4%BC%AA%E5%9F%BA%E7%AB%99%E7%9A%84%E7%A5%9E%E7%A7%98%E9%9D%A2%E7%BA%B1/</link>
       <pubDate>Wed, 11 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-11-%E8%B5%B0%E8%BF%91%E7%A7%91%E5%AD%A6%E6%8F%AD%E5%BC%80%E4%BC%AA%E5%9F%BA%E7%AB%99%E7%9A%84%E7%A5%9E%E7%A7%98%E9%9D%A2%E7%BA%B1/</guid>
+      <guid>/posts/2015-11-11-%E8%B5%B0%E8%BF%91%E7%A7%91%E5%AD%A6%E6%8F%AD%E5%BC%80%E4%BC%AA%E5%9F%BA%E7%AB%99%E7%9A%84%E7%A5%9E%E7%A7%98%E9%9D%A2%E7%BA%B1/</guid>
       <description>本文原创作者：敏争
 22222.jpg“伪基站”目前已经成为广告、诈骗等垃圾短信的重要实施手段。在经过一轮打击销声匿迹一段时间之后，现在又有抬头之势，有的犯罪集团通过生产、销售“伪基站”设备，年获利可达到几百万。
 一、伪基站及其危害
@@ -2957,10 +2957,10 @@ GSM的鉴权流程如下：
     
     <item>
       <title>一个码农的自白：我为什么写博客</title>
-      <link>http://example.org/posts/2015-11-10-%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E7%99%BD%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2/</link>
+      <link>/posts/2015-11-10-%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E7%99%BD%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Tue, 10 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-10-%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E7%99%BD%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>/posts/2015-11-10-%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E7%99%BD%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2/</guid>
       <description>摘要: 屌丝程序员的逆袭一般分两步: 让自己变得牛逼, 让别人知道你牛逼. 我通过写博客来让自己更擅长归纳和抽象, 也通过写博客来让别人知道我能胜任某份工作.
 一个程序员的自白：我为什么写博客牛人都这么干时间: 2011年
 人物: 初出茅庐的臭小子, 臭石头一般坚硬的相信我将来一定会成为富二代他爹.
@@ -2974,10 +2974,10 @@ GSM的鉴权流程如下：
     
     <item>
       <title>对于小白 还在考虑学习哪几种编程语言吗</title>
-      <link>http://example.org/posts/2015-11-10-%E5%AF%B9%E4%BA%8E%E5%B0%8F%E7%99%BD-%E5%93%AA%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%9C%80%E5%80%BC%E5%BE%97%E4%BD%A0%E5%8E%BB%E5%AD%A6%E4%B9%A0/</link>
+      <link>/posts/2015-11-10-%E5%AF%B9%E4%BA%8E%E5%B0%8F%E7%99%BD-%E5%93%AA%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%9C%80%E5%80%BC%E5%BE%97%E4%BD%A0%E5%8E%BB%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Tue, 10 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-10-%E5%AF%B9%E4%BA%8E%E5%B0%8F%E7%99%BD-%E5%93%AA%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%9C%80%E5%80%BC%E5%BE%97%E4%BD%A0%E5%8E%BB%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>/posts/2015-11-10-%E5%AF%B9%E4%BA%8E%E5%B0%8F%E7%99%BD-%E5%93%AA%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%9C%80%E5%80%BC%E5%BE%97%E4%BD%A0%E5%8E%BB%E5%AD%A6%E4%B9%A0/</guid>
       <description>对于小白 哪几种编程语言最值得你去学习有几个人曾经问我，有哪些最有用或最好的编程语言适宜学习？
 HTML/CSS不谈，我认为答案取决于你想通过编程来做什么。
 几种编程语言简述 对只用一种语言来构建某个项目的情况而言，Javascript和它的框架是非常有用的。 Angular.js可以控制展示给用户的网站前端。 Node.js将作为管理网站所有内容的网络服务器。 Express.js在前端和服务器两者之间运行，对信息的来去进行导向。 MongoDB作为存储中心，用于存储从用户处获取的数据。MEAN（Mongo/Express/Angular/Node）——一个有助于构建你在一个Web应用中所需要的一切东西的结构化框架——是一套目前被大量初创公司所喜好的编程语言。这是一个完备的组件，它包含了基于单一语言来Web化地构建所有事物的技术。
@@ -3002,10 +3002,10 @@ Ruby——尤其是当它与Rails一起使用时——是一种因其并不陡�
     
     <item>
       <title>电脑越用越卡，但你真的需要 换SSD吗？</title>
-      <link>http://example.org/posts/2015-11-10-%E7%94%B5%E8%84%91%E5%8D%A1%E5%8D%A1%E5%8D%A1%E4%BD%86%E4%BD%A0%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81-ssd-%E5%90%97/</link>
+      <link>/posts/2015-11-10-%E7%94%B5%E8%84%91%E5%8D%A1%E5%8D%A1%E5%8D%A1%E4%BD%86%E4%BD%A0%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81-ssd-%E5%90%97/</link>
       <pubDate>Tue, 10 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2015-11-10-%E7%94%B5%E8%84%91%E5%8D%A1%E5%8D%A1%E5%8D%A1%E4%BD%86%E4%BD%A0%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81-ssd-%E5%90%97/</guid>
+      <guid>/posts/2015-11-10-%E7%94%B5%E8%84%91%E5%8D%A1%E5%8D%A1%E5%8D%A1%E4%BD%86%E4%BD%A0%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81-ssd-%E5%90%97/</guid>
       <description>为什么只有SSD才能喂饱你的电脑曹一聪 · 4 个月前
 首先，这篇文章只是二葱学习Windows 系统的笔记，真不是讲怎么优化系统的，真没讨论要不要上SSD 啊，该上还是得上啊，表打我，逃（不知从什么时候开始，SSD渐渐成为解决电脑卡顿的第一解决方案。甚至关于MacBook与Windows笔记本的流畅度之争的核心，也是围绕是否标配PCI-E接口的SSD。而且大家纷纷换上SSD之后，也确实感觉到了系统运行速度的质的变化。似乎大家都忘了，若干年前大家刚装好的XP系统，也能做到一分钟内开机，打开Word文档似乎也是看个过场动画就打开了。那么究竟是什么导致现在电脑对SSD这么饥渴的需求呢？我们先来看一张截图：这是二葱自己电脑的启动项的截图，可能很多人都在各种系统优化技巧里读到过，禁用其中的一部分启动项可以提升系统的启动速度。然而事实是，经常见到安装了国产流氓软件套装的电脑，即便是把这些启动项都禁掉（所谓一键优化），依然需要花费数分钟的时间才能进入系统，好容易到了桌面了，还要失去响应好长时间。讽刺的是，二葱把这些启动项都打开，依然可以做到在一个微信小视频的时间内开机进入桌面。
 要想弄清楚这个问题，必须先弄清楚_Windows的启动流程_。
@@ -3023,10 +3023,10 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce HKLM\SOFTWARE\Microsoft\W
     
     <item>
       <title>Search Results</title>
-      <link>http://example.org/posts/search/</link>
+      <link>/posts/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/search/</guid>
+      <guid>/posts/search/</guid>
       <description>This file exists solely to respond to /search URL with the related search layout template.
 No content shown here is rendered, all content is based in the template layouts/page/search.html
 Setting a very low sitemap priority will tell search engines this is not important content.

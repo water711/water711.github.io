@@ -39,7 +39,7 @@ import threading import subprocess import time from queue import Queue import xl
 for row in range(1, table.nrows): ip = table.cell(row, 0).value name = table.cell(row, 1).value IP_QUEUE.put([ip,name])
 定义一个执行 ping 的函数def ping_ip(): while not IP_QUEUE.empty(): ip = IP_QUEUE.get() res = subprocess.call(&lsquo;ping -n 2 -w 5 %s&rsquo; % ip[0],stdout=subprocess.PIPE) # linux 系统将 &lsquo;-n&rsquo; 替换成 &lsquo;-c&rsquo; # 打印运行结果 # print(ip[0],True if res == 0 else False) if res == 0: print(ip[0],ip[1],&ldquo;有响应&rdquo;) else: print(ip[0],ip[1],&ldquo;无响应&rdquo;) ip." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-11-25T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-11-25T00:00:00+00:00" />
 
@@ -98,7 +98,7 @@ for row in range(1, table.nrows): ip = table.cell(row, 0).value name = table.cel
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">

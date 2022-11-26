@@ -48,7 +48,7 @@
 #重启httpd服务 [root@web ~]# systemctl restart httpd
 #关闭selinux [root@web ~]# setenforce 0" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-05T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-05T00:00:00+00:00" />
 
@@ -107,7 +107,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">
@@ -264,13 +264,13 @@ DocumentRoot &ldquo;/web&rdquo; <br>
 <h2 id="3新建虚拟主机">3、新建虚拟主机<a class="anchorjs-link" href="#3%e6%96%b0%e5%bb%ba%e8%99%9a%e6%8b%9f%e4%b8%bb%e6%9c%ba"></a></h2><p>#新建虚拟主机配置文件，注意文件一定要是.conf的后缀
 [root@web ~]# vim /etc/httpd/conf.d/test1.com.conf
 &lt;VirtualHost *:80&gt;
-ServerName <a href="https://www.test1.com" target="_blank">www.test1.com</a>
+ServerName <a href="/https:/www.test1.com" target="_blank">www.test1.com</a>
 DocumentRoot /web/test1/
 </VirtualHost></p>
 <p>[root@web ~]# vim /etc/httpd/conf.d/test2.com.conf
 Listen 81  //修改虚拟主机端口为81
 &lt;VirtualHost *:81&gt;
-ServerName <a href="https://www.test2.com" target="_blank">www.test2.com</a>
+ServerName <a href="/https:/www.test2.com" target="_blank">www.test2.com</a>
 DocumentRoot /web/test2
 </VirtualHost></p>
 <p>#新建网站目录及文件
@@ -285,8 +285,8 @@ DocumentRoot /web/test2
 [root@web ~]# systemctl restart httpd</p>
 <p>#测试
 修改客户端电脑host文件：
-192.168.1.156 <a href="https://www.test1.com" target="_blank">www.test1.com</a>
-192.168.1.156 <a href="https://www.test2.com" target="_blank">www.test2.com</a>
+192.168.1.156 <a href="/https:/www.test1.com" target="_blank">www.test1.com</a>
+192.168.1.156 <a href="/https:/www.test2.com" target="_blank">www.test2.com</a>
 浏览器访问www.test1.com和www.test2.com:81（如果无法正常访问，检查网站目录权限，apache用户是否有读权限）</p>
 
 

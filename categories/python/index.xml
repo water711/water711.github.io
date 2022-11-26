@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on 蔡振威的博客</title>
-    <link>http://example.org/categories/python/</link>
+    <link>/categories/python/</link>
     <description>Recent content in python on 蔡振威的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>安装Jupyter Notebook并配置远程登录</title>
-      <link>http://example.org/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
+      <link>/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
       <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
+      <guid>/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
       <description>一、安装安装 pip3 install jupyter notebook
 运行 jupyter notebook
 浏览器访问 http://localhost:8888/undefined/tree
@@ -31,10 +31,10 @@ http://IP:8888/undefined/tree</description>
     
     <item>
       <title>Python实现录音功能</title>
-      <link>http://example.org/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</link>
+      <link>/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</guid>
+      <guid>/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</guid>
       <description>一、安装pyaudio软件包1、下载whl文件
 https://github.com/intxcc/pyaudio_portaudio/releases
 2、安装pyaudio
@@ -48,10 +48,10 @@ if __name__ == &amp;lsquo;__main__&amp;rsquo;: for i in range(count): my_record(
     
     <item>
       <title>python&#43;selenium 批量配置华为S1720交换机</title>
-      <link>http://example.org/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</link>
+      <link>/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</guid>
+      <guid>/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</guid>
       <description>**公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
 准备工作1、安装Python
 2、安装谷歌浏览器
@@ -67,10 +67,10 @@ def change_password(ip): print(ip) driver.</description>
     
     <item>
       <title>Django&#43;Echarts&#43;Bootstrap实现数据可视化</title>
-      <link>http://example.org/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+      <link>/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
+      <guid>/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
       <description>github地址前后端：https://github.com/water711/Django_echarts_bootstrap
 微信小程序：https://github.com/water711/echarts-keliu-wechat
 PC端效果展示：微信小程序端展示</description>
@@ -78,10 +78,10 @@ PC端效果展示：微信小程序端展示</description>
     
     <item>
       <title>python datetime模块</title>
-      <link>http://example.org/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</link>
+      <link>/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</guid>
+      <guid>/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</guid>
       <description>datetime是Python处理日期和时间的标准库。
 官方文档：https://docs.python.org/3/library/datetime.html
 from datetime import datetime,timedelta
@@ -94,10 +94,10 @@ from datetime import datetime,timedelta
     
     <item>
       <title>使用Python&#43;OpenCV实现手势识别</title>
-      <link>http://example.org/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</link>
+      <link>/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</guid>
+      <guid>/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</guid>
       <description>来源某国外视频：https://www.bilibili.com/video/BV1E4411f7Q1
 环境Python：3.7.0
 OpenCV：3.4.3.18
@@ -109,10 +109,10 @@ ret, frame = cap.read() frame = cv2.flip(frame,1) kernel = np.ones((3,3), np.uin
     
     <item>
       <title>Python使用讯飞API进行语音转文字</title>
-      <link>http://example.org/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</link>
+      <link>/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</guid>
+      <guid>/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</guid>
       <description>一、注册讯飞开放平台账号1、官网注册：https://www.xfyun.cn/
 2、进入讯飞控制台，创建应用
 3、点击应用，查看APPID、APISecret和APIKey
@@ -130,10 +130,10 @@ sid:iat0007f62c@dx17292ff09777a1d802 call success!,data is:[{&amp;ldquo;bg&amp;r
     
     <item>
       <title>Python人脸识别库Face Recognition</title>
-      <link>http://example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</link>
+      <link>/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</link>
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</guid>
+      <guid>/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</guid>
       <description>环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖1、安装Visual Studio Build Tools（因为cmake依赖C++），安装时选择“C++生成工具”
 2、安装Cmake（因为dlib库需要cmake编译）
 pip3 install cmake
@@ -155,10 +155,10 @@ This is a demo of blurring faces in video.</description>
     
     <item>
       <title>Python人脸识别库Face Recognition</title>
-      <link>http://example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull/</link>
+      <link>/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull/</link>
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull/</guid>
+      <guid>/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull/</guid>
       <description>环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖1、安装Visual Studio Build Tools（因为cmake依赖C++），安装时选择“C++生成工具”
 2、安装Cmake（因为dlib库需要cmake编译）
 pip3 install cmake
@@ -180,10 +180,10 @@ This is a demo of blurring faces in video.</description>
     
     <item>
       <title>使用uWSGI和Nginx来部署基于Django的Web服务器</title>
-      <link>http://example.org/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>1、安装python、nginx、django和uwsgi[root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0
 [root@liyu ~]# python3 -V Python 3.6.8 [root@liyu ~]# yum install python36-devel //安装对应Python版本的devel，编译uwsgi需要的依赖
 [root@server ~]# pip3 install uwsgi
@@ -195,10 +195,10 @@ This is a demo of blurring faces in video.</description>
     
     <item>
       <title>Centos7源码安装python3</title>
-      <link>http://example.org/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</link>
+      <link>/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</guid>
+      <guid>/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</guid>
       <description>1、下载源码wget https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz tar xf Python-3.8.2.tgz cd Python-3.8.2/
 2、安装编译所需依赖yum install -y gcc openssl-devel zlib-devel libffi-devel sqlite-devel
 3、编译./configure prefix=/usr/local/python3 make -j8 &amp;amp;&amp;amp; make install
@@ -208,10 +208,10 @@ This is a demo of blurring faces in video.</description>
     
     <item>
       <title>添加pip全局配置，使用国内下载源</title>
-      <link>http://example.org/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</link>
+      <link>/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</guid>
+      <guid>/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</guid>
       <description>方法一、使用命令添加配置&amp;gt; pip config set global.index-url http://pypi.douban.com/simple/ Writing to C:\Users\admin\AppData\Roaming\pip\pip.ini
 pip config set install.trusted-host pypi.douban.com Writing to C:\Users\admin\AppData\Roaming\pip\pip.ini
 方法二：修改全局配置文件Windows： C:\Users\用户名\AppData\Roaming\pip\pip.ini
@@ -222,10 +222,10 @@ Linux： ~/.pip/pip.conf
     
     <item>
       <title>window使用pipenv install出现UnicodeDecodeError</title>
-      <link>http://example.org/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</link>
+      <link>/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</guid>
+      <guid>/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</guid>
       <description>$ pipenv install Traceback (most recent call last): File &amp;ldquo;d:\python37\lib\runpy.py&amp;rdquo;, line 193, in _run_module_as_main &amp;ldquo;__main__&amp;rdquo;, mod_spec) &amp;hellip;&amp;hellip; File &amp;ldquo;d:\python37\lib\site-packages\pipenv\vendor\shellingham\nt.py&amp;rdquo;, line 78, in _iter_process info = {&amp;rsquo;executable&amp;rsquo;: str(pe.szExeFile.decode(&amp;lsquo;utf-8&amp;rsquo;))} UnicodeDecodeError: &amp;lsquo;utf-8&amp;rsquo; codec can&amp;rsquo;t decode byte 0xcc in position 0: invalid continuation byte
 解决方法：
 在报错信息里，找到报错的文件及代码位置
@@ -237,10 +237,10 @@ info = {&amp;rsquo;executable&amp;rsquo;: str(pe.szExeFile.decode(&amp;lsquo;gbk
     
     <item>
       <title>Python&#43;Selenium 使用cookie实现自动登录网站</title>
-      <link>http://example.org/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</link>
+      <link>/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</guid>
+      <guid>/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</guid>
       <description>Python版本：3.7
 浏览器：Chrome 79.0.3
 一、下载Selenium浏览器驱动（WebDriver）下载地址：http://npm.taobao.org/mirrors/chromedriver/
@@ -260,10 +260,10 @@ with open(&amp;ldquo;cookie.json&amp;rdquo;, &amp;ldquo;w&amp;rdquo;) as f: json
     
     <item>
       <title>data:image/base64与图片互相转换</title>
-      <link>http://example.org/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</link>
+      <link>/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</guid>
+      <guid>/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</guid>
       <description>将data:image/base64转换成图片import base64
 value=&amp;ldquo;qeBQAAAABJ&amp;hellip;&amp;hellip;RU5ErkJggg==&amp;rdquo; #填写base64编码 img = base64.b64decode(value) fh = open(&amp;ldquo;pic.jpg&amp;rdquo;,&amp;ldquo;wb&amp;rdquo;) fh.write(img)
 将图片转换成data:image/base64import base64
@@ -273,10 +273,10 @@ base64编码iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAC91BMVEUAAACgekagekag
     
     <item>
       <title>pthon3实现oracle数据库查询、导出EXCEL并邮件发送</title>
-      <link>http://example.org/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</link>
+      <link>/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</guid>
+      <guid>/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</guid>
       <description>一、准备环境1、安装Oracle 客户端（python、oracle客户端的位数要一致）
 2、安装Python第三方模块
 pip3 install cx_Oracle xlsxwriter
@@ -290,10 +290,10 @@ msg = MIMEMultipart() #实例化对象 msg\[&amp;quot;Subject&amp;quot;\] = &amp
     
     <item>
       <title>python 从文件读取IP地址 并实现多线程扫描</title>
-      <link>http://example.org/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</link>
+      <link>/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</guid>
+      <guid>/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</guid>
       <description>Python代码：# -*- coding:utf-8 -*-
 import threading import subprocess import time from queue import Queue import xlrd import msvcrt
 定义工作线程WORD_THREAD = 50
@@ -304,10 +304,10 @@ for row in range(1, table.nrows): ip = table.cell(row, 0).value name = table.cel
     
     <item>
       <title>windows下使用pip安装包失败，提示Could not install packages due to an EnvironmentError: [Errno 0] Error</title>
-      <link>http://example.org/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</link>
+      <link>/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</link>
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</guid>
+      <guid>/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</guid>
       <description>python27版本，使用pip安装包，报错 Could not install packages due to an EnvironmentError: [Errno 0]
 重装python后，并将pip更新到最新版本，还是报错
 弄了一晚上，结果发现是之前修改了cmd命令行窗口的默认编码，导致安装包失败
@@ -317,10 +317,10 @@ DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Ple
     
     <item>
       <title>PyInstaller打包python程序后，cv2.VideoCapture()获取摄像头画画失败</title>
-      <link>http://example.org/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</link>
+      <link>/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</link>
       <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</guid>
+      <guid>/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</guid>
       <description>源代码import cv2,os
 url = &amp;lsquo;rtsp://192.168.104.130/user=admin&amp;amp;password=admin&amp;amp;channel=1&amp;rsquo; cap = cv2.VideoCapture(url) ret, frame = cap.read() cv2.imwrite(&amp;ldquo;E:/test.png&amp;rdquo;, frame) cap.release() cv2.destroyAllWindows()
 在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节
@@ -330,10 +330,10 @@ libpng warning:Image width is zero in IHDR libpng warning:Image height is zero i
     
     <item>
       <title>Python3实现按任意键继续或退出</title>
-      <link>http://example.org/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</link>
+      <link>/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</link>
       <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</guid>
+      <guid>/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</guid>
       <description>在Windows下，我们可以使用内建的msvcrt库，实现按任意键继续或退出
 一、获取按键对应的ASCII 值import msvcrt print(ord(msvcrt.getch()))
 svcrt 中的 getch() 方法，作用是获取一个按键响应并返回对应的字符。
@@ -347,10 +347,10 @@ https://www.jb51.net/article/90845.htm</description>
     
     <item>
       <title>使用Python调用Zabbix API</title>
-      <link>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</link>
+      <link>/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</link>
       <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</guid>
+      <guid>/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</guid>
       <description>Zabbix API官方文档： https://www.zabbix.com/documentation/4.0/zh/manual/api
 1、向 api_jsonrpc.php 发送HTTP_POST 登录请求，获取身份验证令牌
 # -*- coding:utf-8 -*- import json import requests
@@ -364,10 +364,10 @@ url = &amp;lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;rsquo; post_heade
     
     <item>
       <title>使用Python调用Zabbix API</title>
-      <link>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</link>
+      <link>/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</link>
       <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</guid>
+      <guid>/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</guid>
       <description>Zabbix API官方文档： https://www.zabbix.com/documentation/4.0/zh/manual/api
 1、向 api_jsonrpc.php 发送HTTP_POST 登录请求，获取身份验证令牌
 # -*- coding:utf-8 -*- import json import requests
@@ -381,10 +381,10 @@ url = &amp;lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;rsquo; post_heade
     
     <item>
       <title>Python之excel文件追加内容</title>
-      <link>http://example.org/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</link>
+      <link>/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</link>
       <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</guid>
+      <guid>/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</guid>
       <description>首先要安装三个模块：xlrd，xlwt，xlutils
 命令：pip install xlrd xlwt xlutils
 示例代码：
@@ -400,10 +400,10 @@ url = &amp;lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;rsquo; post_heade
     
     <item>
       <title>Python开发【第七篇】：面向对象</title>
-      <link>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <link>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <guid>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
       <description>面向对象基础基础内容介绍详见一下两篇博文：
 面向对象初级篇 面向对象进阶篇 其他相关一、isinstance(obj, cls)
 检查是否obj是否是类 cls 的对象
@@ -429,10 +429,10 @@ AttributeError 试图访问一个对象没有的树形，比如foo.</description
     
     <item>
       <title>Python开发【第三篇】：Python基本数据类型</title>
-      <link>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>运算符1、算数运算：
 2、比较运算：
 3、赋值运算：
@@ -448,10 +448,10 @@ Convert a number or string to an integer, or return 0 if no arguments are given.
     
     <item>
       <title>Python开发【第五篇】：Python基础之杂货铺</title>
-      <link>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/</link>
+      <link>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/</guid>
+      <guid>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/</guid>
       <description>字符串格式化Python的字符串格式化有两种方式: 百分号方式、format方式
 百分号的方式相对来说比较老，而format方式则是比较先进的方式，企图替换古老的方式，目前两者并存。[PEP-3101]
 This PEP proposes a new system for built-in string formatting operations, intended as a replacement for the existing &amp;lsquo;%&amp;rsquo; string formatting operator.
@@ -467,10 +467,10 @@ s，获取传入对象的__str__方法的返回值，并将其格式化到指定
     
     <item>
       <title>Python开发【第八篇】：网络编程</title>
-      <link>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
+      <link>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
+      <guid>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
       <description>socket通常也称作&amp;quot;套接字&amp;quot;，用于描述IP地址和端口，是一个通信链的句柄，应用程序通常通过&amp;quot;套接字&amp;quot;向网络发出请求或者应答网络请求。
 socket起源于Unix，而Unix/Linux基本哲学之一就是“一切皆文件”，对于文件用【打开】【读写】【关闭】模式来操作。socket就是该模式的一个实现，socket即是一种特殊的文件，一些socket函数就是对其进行的操作（读/写IO、打开、关闭）
 socket和file的区别：
@@ -491,10 +491,10 @@ WEB服务应用：
     
     <item>
       <title>Python开发【第四篇】：Python基础之函数</title>
-      <link>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</link>
+      <link>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</guid>
+      <guid>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</guid>
       <description>三元运算三元运算（三目运算），是对简单的条件语句的缩写。
 # 书写格式
 result = 值1 if 条件 else 值2
@@ -506,10 +506,10 @@ Build an unordered collection of unique elements. &amp;quot;&amp;quot;&amp;quot;
     
     <item>
       <title>Python开发【第六篇】：模块</title>
-      <link>http://example.org/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/</link>
+      <link>/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/</guid>
+      <guid>/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/</guid>
       <description>模块，用一砣代码实现了某个功能的代码集合。
 类似于函数式编程和面向过程编程，函数式编程则完成一个功能，其他代码用来调用即可，提供了代码的重用性和代码间的耦合。而对于一个复杂的功能来，可能需要多个函数才能完成（函数又可以在不同的.py文件中），n个 .py 文件组成的代码集合就称为模块。
 如：os 是系统相关的模块；file是文件操作相关的模块
@@ -530,20 +530,20 @@ import sys print sys.path
     
     <item>
       <title>range用法</title>
-      <link>http://example.org/posts/2017-03-30-range%E7%94%A8%E6%B3%95/</link>
+      <link>/posts/2017-03-30-range%E7%94%A8%E6%B3%95/</link>
       <pubDate>Thu, 30 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-30-range%E7%94%A8%E6%B3%95/</guid>
+      <guid>/posts/2017-03-30-range%E7%94%A8%E6%B3%95/</guid>
       <description>递减
 for i in range(10,1,-1): #range默认递增步长1，递减必需指定负数步长 print(i)</description>
     </item>
     
     <item>
       <title>python 列表生成式</title>
-      <link>http://example.org/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F/</link>
+      <link>/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F/</link>
       <pubDate>Sun, 26 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F/</guid>
+      <guid>/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F/</guid>
       <description>需求：把一个列表中每个元素的值加1
 第一种方法（for&amp;hellip;in循环 + append到新列表）
 a = [5, 8, 11, 14, 17, 20, 23, 26] b = [] for i in a: b.append(i+1) a = b print(a)
@@ -557,10 +557,10 @@ a = [5, 8, 11, 14, 17, 20, 23, 26] a = [i+1 for i in a] print(a)</description>
     
     <item>
       <title>python3 文件操作</title>
-      <link>http://example.org/posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
+      <link>/posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</link>
       <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
+      <guid>/posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</guid>
       <description>步骤：打开文件-》操作文件-》关闭文件
 打开文件
 文件句柄 = open(&amp;lsquo;文件路径&amp;rsquo;, &amp;lsquo;模式&amp;rsquo;)
@@ -597,10 +597,10 @@ print(文件句柄.readline()) #读取第一行数据 print(文件句柄.readlin
     
     <item>
       <title>python 内置函数</title>
-      <link>http://example.org/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</link>
+      <link>/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</link>
       <pubDate>Thu, 23 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</guid>
+      <guid>/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</guid>
       <description>官方说明文档：https://docs.python.org/3/library/functions.html
 abs(求绝对值)
 print(abs(-5)) #输出：5
@@ -630,10 +630,10 @@ n = 5 print(callable(test)) print(callable(n)) #输出：True # False</descripti
     
     <item>
       <title>python3 deque（双向队列）</title>
-      <link>http://example.org/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97/</link>
+      <link>/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97/</link>
       <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97/</guid>
+      <guid>/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97/</guid>
       <description>创建双向队列
 import collections d = collections.deque()
 append(往右边添加一个元素)
@@ -652,10 +652,10 @@ import collections d = collections.deque() d.append(1) d.extend([3,4,5]) print(d
     
     <item>
       <title>python3 Queue（单向队列）</title>
-      <link>http://example.org/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97/</link>
+      <link>/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97/</link>
       <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97/</guid>
+      <guid>/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97/</guid>
       <description>创建队列
 import queue q = queue.Queue()
 empty（如果队列为空，返回True）
@@ -678,10 +678,10 @@ task_done（在完成一项任务之后，向任务已经完成的队列发送�
     
     <item>
       <title>python3 Counter类（计数器）</title>
-      <link>http://example.org/posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8/</link>
+      <link>/posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8/</guid>
+      <guid>/posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8/</guid>
       <description>Counter（计数器）：用于追踪值的出现次数
 Counter类继承dict类，所以它能使用dict类里面的方法
 创建一个Counter类
@@ -697,10 +697,10 @@ import collections obj = collections.Counter(&amp;lsquo;aabbbcccc&amp;rsquo;) pr
     
     <item>
       <title>python3 dict（字典）</title>
-      <link>http://example.org/posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8/</link>
+      <link>/posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8/</guid>
+      <guid>/posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8/</guid>
       <description>clear(清空字典内容)
 stu = { &amp;rsquo;num1&amp;rsquo;:&amp;lsquo;Tom&amp;rsquo;, &amp;rsquo;num2&amp;rsquo;:&amp;lsquo;Lucy&amp;rsquo;, &amp;rsquo;num3&amp;rsquo;:&amp;lsquo;Sam&amp;rsquo;, } print(stu.clear()) #输出：None
 copy（拷贝字典）
@@ -718,10 +718,10 @@ stu = { &amp;rsquo;num1&amp;rsquo;:&amp;lsquo;Tom&amp;rsquo;, &amp;rsquo;num2&am
     
     <item>
       <title>python3 OrderedDict类（有序字典）</title>
-      <link>http://example.org/posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8/</link>
+      <link>/posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8/</guid>
+      <guid>/posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8/</guid>
       <description>创建有序字典
 import collections
 dic = collections.OrderedDict() dic[&amp;lsquo;k1&amp;rsquo;] = &amp;lsquo;v1&amp;rsquo; dic[&amp;lsquo;k2&amp;rsquo;] = &amp;lsquo;v2&amp;rsquo; dic[&amp;lsquo;k3&amp;rsquo;] = &amp;lsquo;v3&amp;rsquo; print(dic) #输出：OrderedDict([(&amp;lsquo;k1&amp;rsquo;, &amp;lsquo;v1&amp;rsquo;), (&amp;lsquo;k2&amp;rsquo;, &amp;lsquo;v2&amp;rsquo;), (&amp;lsquo;k3&amp;rsquo;, &amp;lsquo;v3&amp;rsquo;)])
@@ -738,10 +738,10 @@ dic = collections.OrderedDict() name = [&amp;rsquo;tom&amp;rsquo;,&amp;rsquo;luc
     
     <item>
       <title>python3 set（集合）</title>
-      <link>http://example.org/posts/2017-03-21-python3set%E9%9B%86%E5%90%88/</link>
+      <link>/posts/2017-03-21-python3set%E9%9B%86%E5%90%88/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-21-python3set%E9%9B%86%E5%90%88/</guid>
+      <guid>/posts/2017-03-21-python3set%E9%9B%86%E5%90%88/</guid>
       <description>add（增加元素）
 name = set([&amp;lsquo;Tom&amp;rsquo;,&amp;lsquo;Lucy&amp;rsquo;,&amp;lsquo;Ben&amp;rsquo;]) name.add(&amp;lsquo;Juny&amp;rsquo;) print(name) #输出：{&amp;lsquo;Lucy&amp;rsquo;, &amp;lsquo;Juny&amp;rsquo;, &amp;lsquo;Ben&amp;rsquo;, &amp;lsquo;Tom&amp;rsquo;}
 clear（清空所有元素）
@@ -761,10 +761,10 @@ n1 = set([2,3,4,5]) n2 = set([4,5,6,7]) n = n1.</description>
     
     <item>
       <title>python3 int（整型）</title>
-      <link>http://example.org/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B/</link>
+      <link>/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B/</link>
       <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B/</guid>
+      <guid>/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B/</guid>
       <description>__abs__(返回绝对值)
 n = -5 print(n.__abs__()) #输出：5
 __add__(相加，运算符：+)
@@ -797,10 +797,10 @@ n = 5 print(n.__ge__(3)) #输出：True</description>
     
     <item>
       <title>python3 str（字符串）</title>
-      <link>http://example.org/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <link>/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
       <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <guid>/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
       <description>__add__函数 (在后面追加字符串)
 s1 =&amp;lsquo;Hello&amp;rsquo; s2 = s1.__add__(&amp;rsquo; boy!&amp;rsquo;) print(s2) #输出：Hello boy!
 __contains__（判断是否包含某字符串，包含则返回True）
@@ -843,10 +843,10 @@ __repr__
     
     <item>
       <title>python3基础知识梳理</title>
-      <link>http://example.org/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/</link>
+      <link>/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/</link>
       <pubDate>Fri, 17 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/</guid>
+      <guid>/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/</guid>
       <description>一、数据类型
 1、数字
 int（整型） long（长整型） float（浮点型） complex（复数） 2、布尔值

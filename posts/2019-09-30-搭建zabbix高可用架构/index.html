@@ -42,7 +42,7 @@ zabbix：192.168.1.240（虚拟IP）
 #安装Zabbix server，Web前端，agent，数据库 [root@Zabbix1 ~]# yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent mariadb mariadb-server
 #初始化并创建数据库 [root@Zabbix1 ~]# systemctl enable mariadb [root@Zabbix1 ~]# systemctl start mariadb [root@Zabbix1 ~]# mysql_secure_installation [root@Zabbix1 ~]# mysql -uroot -p MariaDB [(none)]&gt; create database zabbix character set utf8 collate utf8_bin; MariaDB [(none)]&gt; grant all privileges on zabbix." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-30T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-30T00:00:00+00:00" />
 
@@ -101,7 +101,7 @@ zabbix：192.168.1.240（虚拟IP）
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="http://example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">
@@ -237,7 +237,7 @@ zabbix：192.168.1.240（虚拟IP）
 192.168.1.242 zabbix2
 192.168.1.240 zabbix</p>
 <h2 id="一安装zabbix">一、安装Zabbix<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85zabbix"></a></h2><p>#安装Zabbix仓库
-[root@Zabbix1 ~]# rpm -Uvh <a href="https://repo.zabbix.com/zabbix/4.2/rhel/7/x86" target="_blank">https://repo.zabbix.com/zabbix/4.2/rhel/7/x86</a>_64/zabbix-release-4.2-2.el7.noarch.rpm
+[root@Zabbix1 ~]# rpm -Uvh <a href="/https:/repo.zabbix.com/zabbix/4.2/rhel/7/x86" target="_blank">https://repo.zabbix.com/zabbix/4.2/rhel/7/x86</a>_64/zabbix-release-4.2-2.el7.noarch.rpm
 [root@Zabbix1 ~]# yum clean all</p>
 <p>#安装Zabbix server，Web前端，agent，数据库
 [root@Zabbix1 ~]# yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent mariadb mariadb-server</p>
