@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>python3基础知识梳理 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="一、数据类型
+1、数字
+int（整型） long（长整型） float（浮点型） complex（复数） 2、布尔值
+True或False 3、字符串
+二、变量
+变量命名规则：
+变量名只能是 字母、数字或下划线的任意组合 变量名的第一个字符不能是数字 变量名不能为关键字（例如：and，or，continue，break，in，else，print 等） ****三、字符串拼接
+1、使用加号（&#43;）
+name = &ldquo;Tom&rdquo; age = 25 print(name &#43; &ldquo;s age is &quot; &#43; str(age)) #输出：Toms age is 25
+2、字符串格式化
+name = &ldquo;Tom&rdquo; age = 25 print(&quot;%s&rsquo;s age is %d&rdquo; % (name,age) ) #输出：Toms age is 25
+ps：在python中，使用&#43;号连接字符串，每出现一个&#43;号，就要重新在内存中申请一块空间，有多少个&#43;号，就要申请多少块空间。一般不建设使用&#43;号连接字符串。
+四、列表和元组
+1、列表（list）
+创建列表 str_list = [&lsquo;Tom&rsquo;,&lsquo;Lucy&rsquo;,&lsquo;Mary&rsquo;] 或者 str_list = list([&lsquo;Tom&rsquo;,&lsquo;Lucy&rsquo;,&lsquo;Mary&rsquo;])
+索引（访问列表中某一个值） str_list[0]
+追加（增加元素到末尾） str_list.append(&rsquo;lilei&rsquo;) print(str_list) #输出：[&lsquo;Tom&rsquo;, &lsquo;Lucy&rsquo;, &lsquo;Mary&rsquo;, &rsquo;lilei&rsquo;]">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python3基础知识梳理"/>
+<meta name="twitter:description" content="一、数据类型
+1、数字
+int（整型） long（长整型） float（浮点型） complex（复数） 2、布尔值
+True或False 3、字符串
+二、变量
+变量命名规则：
+变量名只能是 字母、数字或下划线的任意组合 变量名的第一个字符不能是数字 变量名不能为关键字（例如：and，or，continue，break，in，else，print 等） ****三、字符串拼接
+1、使用加号（&#43;）
+name = &ldquo;Tom&rdquo; age = 25 print(name &#43; &ldquo;s age is &quot; &#43; str(age)) #输出：Toms age is 25
+2、字符串格式化
+name = &ldquo;Tom&rdquo; age = 25 print(&quot;%s&rsquo;s age is %d&rdquo; % (name,age) ) #输出：Toms age is 25
+ps：在python中，使用&#43;号连接字符串，每出现一个&#43;号，就要重新在内存中申请一块空间，有多少个&#43;号，就要申请多少块空间。一般不建设使用&#43;号连接字符串。
+四、列表和元组
+1、列表（list）
+创建列表 str_list = [&lsquo;Tom&rsquo;,&lsquo;Lucy&rsquo;,&lsquo;Mary&rsquo;] 或者 str_list = list([&lsquo;Tom&rsquo;,&lsquo;Lucy&rsquo;,&lsquo;Mary&rsquo;])
+索引（访问列表中某一个值） str_list[0]
+追加（增加元素到末尾） str_list.append(&rsquo;lilei&rsquo;) print(str_list) #输出：[&lsquo;Tom&rsquo;, &lsquo;Lucy&rsquo;, &lsquo;Mary&rsquo;, &rsquo;lilei&rsquo;]"/>
+
+  <meta property="og:title" content="python3基础知识梳理" />
+<meta property="og:description" content="一、数据类型
+1、数字
+int（整型） long（长整型） float（浮点型） complex（复数） 2、布尔值
+True或False 3、字符串
+二、变量
+变量命名规则：
+变量名只能是 字母、数字或下划线的任意组合 变量名的第一个字符不能是数字 变量名不能为关键字（例如：and，or，continue，break，in，else，print 等） ****三、字符串拼接
+1、使用加号（&#43;）
+name = &ldquo;Tom&rdquo; age = 25 print(name &#43; &ldquo;s age is &quot; &#43; str(age)) #输出：Toms age is 25
+2、字符串格式化
+name = &ldquo;Tom&rdquo; age = 25 print(&quot;%s&rsquo;s age is %d&rdquo; % (name,age) ) #输出：Toms age is 25
+ps：在python中，使用&#43;号连接字符串，每出现一个&#43;号，就要重新在内存中申请一块空间，有多少个&#43;号，就要申请多少块空间。一般不建设使用&#43;号连接字符串。
+四、列表和元组
+1、列表（list）
+创建列表 str_list = [&lsquo;Tom&rsquo;,&lsquo;Lucy&rsquo;,&lsquo;Mary&rsquo;] 或者 str_list = list([&lsquo;Tom&rsquo;,&lsquo;Lucy&rsquo;,&lsquo;Mary&rsquo;])
+索引（访问列表中某一个值） str_list[0]
+追加（增加元素到末尾） str_list.append(&rsquo;lilei&rsquo;) print(str_list) #输出：[&lsquo;Tom&rsquo;, &lsquo;Lucy&rsquo;, &lsquo;Mary&rsquo;, &rsquo;lilei&rsquo;]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-03-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-03-17T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>python3基础知识梳理</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Fri, Mar 17, 2017
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p><strong>一、数据类型</strong></p>
+<p>1、数字</p>
+<ul>
+<li>int（整型）</li>
+<li>long（长整型）</li>
+<li>float（浮点型）</li>
+<li>complex（复数）</li>
+</ul>
+<p>2、布尔值</p>
+<ul>
+<li>True或False</li>
+</ul>
+<p>3、字符串</p>
+<p><strong>二、变量</strong></p>
+<p>变量命名规则：</p>
+<ul>
+<li>变量名只能是 字母、数字或下划线的任意组合</li>
+<li>变量名的第一个字符不能是数字</li>
+<li>变量名不能为关键字（例如：and，or，continue，break，in，else，print 等）</li>
+</ul>
+<p>****三、<strong>字符串拼接</strong></p>
+<p>1、使用加号（+）</p>
+<p>name = &ldquo;Tom&rdquo; age = 25
+print(name + &ldquo;s age is &quot; + str(age)) #输出：Toms age is 25</p>
+<p>2、字符串格式化</p>
+<p>name = &ldquo;Tom&rdquo; age = 25
+print(&quot;%s&rsquo;s age is %d&rdquo; % (name,age) ) #输出：Toms age is 25</p>
+<p> ps：在python中，使用+号连接字符串，每出现一个+号，就要重新在内存中申请一块空间，有多少个+号，就要申请多少块空间。一般不建设使用+号连接字符串。</p>
+<p><strong>四、列表和元组</strong></p>
+<p>1、列表（list）</p>
+<ul>
+<li>创建列表</li>
+</ul>
+<p>str_list = [&lsquo;Tom&rsquo;,&lsquo;Lucy&rsquo;,&lsquo;Mary&rsquo;]
+或者
+str_list = list([&lsquo;Tom&rsquo;,&lsquo;Lucy&rsquo;,&lsquo;Mary&rsquo;])</p>
+<ul>
+<li>索引（访问列表中某一个值）</li>
+</ul>
+<p>str_list[0]</p>
+<ul>
+<li>追加（增加元素到末尾）</li>
+</ul>
+<p>str_list.append(&rsquo;lilei&rsquo;) print(str_list) #输出：[&lsquo;Tom&rsquo;, &lsquo;Lucy&rsquo;, &lsquo;Mary&rsquo;, &rsquo;lilei&rsquo;]</p>
+<ul>
+<li>插入（在指定位置加入元素）</li>
+</ul>
+<p>str_list.insert(1,&rsquo;lilei&rsquo;) print(str_list) #输出：[&lsquo;Tom&rsquo;, &rsquo;lilei&rsquo;, &lsquo;Lucy&rsquo;, &lsquo;Mary&rsquo;]</p>
+<ul>
+<li>删除（删除指定元素）</li>
+</ul>
+<p>str_list.remove(&lsquo;Lucy&rsquo;) print(str_list) #输出：[&lsquo;Tom&rsquo;, &lsquo;Mary&rsquo;]</p>
+<ul>
+<li>切片</li>
+</ul>
+<p>str_list = [3,4,5,6,7,8,9]
+new_1 = str_list[1:3]    #从索引1开始取，取到索引3
+new_2 = str_list[0:6:2]  #从索引0开始取，每两位一取，到第6位为止
+new_3 = str_list[-2:]    # 取后面2个数
+new_4 = str_list[:3]     # 取前面3个数
+new_5 = str_list[::3]    #所有数，每3个取一个</p>
+<p>print(new_1,new_2,new_3,new_4,new_5) #输出：[4, 5] [3, 5, 7] [8, 9] [3, 4, 5] [3, 6, 9]</p>
+<p>2、元组(tuple)</p>
+<ul>
+<li>创建元组</li>
+</ul>
+<p>age = (18,25,33)
+或者
+age = tuple((18,25,33))</p>
+<p> 除了不能修改、增加、删除元素，其它操作元组和列表几乎一样。</p>
+<p><strong>五、字典</strong></p>
+<p>使用key-value的存储方式</p>
+<ul>
+<li>创建字典</li>
+</ul>
+<p>phone = { &lsquo;张三&rsquo;:&lsquo;13075632152&rsquo;, &lsquo;李四&rsquo;:&lsquo;15732015632&rsquo;, &lsquo;王五&rsquo;:&lsquo;13420321523&rsquo;,
+}</p>
+<ul>
+<li>获取字典中key的值</li>
+</ul>
+<p>print(phone[&lsquo;张三&rsquo;])      #如果key不存在，会报错，key用中括号装
+print(phone.get(&lsquo;老黄&rsquo;))  #如果key不存在，返回None,key用小括号装</p>
+<p>#输出：13075632152 # None</p>
+<ul>
+<li>赋值</li>
+</ul>
+<p>phone[&lsquo;老黄&rsquo;] = &lsquo;13678623153&rsquo;   #新增
+phone[&lsquo;张三&rsquo;] = &lsquo;12300055555&rsquo;   #修改
+print(phone) #输出：{&lsquo;王五&rsquo;: &lsquo;13420321523&rsquo;, &lsquo;老黄&rsquo;: &lsquo;13678623153&rsquo;, &lsquo;张三&rsquo;: &lsquo;12300055555&rsquo;, &lsquo;李四&rsquo;: &lsquo;15732015632&rsquo;}<br>
+#因为字典是<strong>无序</strong>的，所以每次输出的排列顺序都可能不同</p>
+<ul>
+<li>删除</li>
+</ul>
+<p>phone.pop(&lsquo;张三&rsquo;)   #第一种方法
+del phone[&lsquo;李四&rsquo;]   #第二种方法
+phone.popitem()    #随机删除某一个</p>
+<ul>
+<li>遍历</li>
+</ul>
+<p>for key in phone: print(key,phone[key]) #输出： # 王五 13420321523 # 张三 13075632152 # 李四 15732015632</p>
+<ul>
+<li>多级嵌套</li>
+</ul>
+<p>phone = { &lsquo;人事部&rsquo;:{&lsquo;老张&rsquo;:&lsquo;13700112233&rsquo;,&lsquo;老李&rsquo;:&lsquo;13432023152&rsquo;}, &lsquo;财务部&rsquo;:{&lsquo;小丽&rsquo;:&lsquo;13230555666&rsquo;,&lsquo;小映&rsquo;:&lsquo;13723688888&rsquo;}, &lsquo;技术部&rsquo;:{&lsquo;老罗&rsquo;:&lsquo;13866666333&rsquo;}
+} print(phone[&lsquo;人事部&rsquo;][&lsquo;老李&rsquo;]) #输出：13432023152</p>
+<p>六、if语句</p>
+<p>1、if&hellip;else</p>
+<p>age = 16
+if age &lt;18: print(&lsquo;你还未成年呢&rsquo;) else: print(&lsquo;你已经成年了&rsquo;)</p>
+<p>2、if&hellip;elif&hellip;.else</p>
+<p>score = 85
+if score &gt; 0 and score&lt; 60: print(&lsquo;你的成绩不及格&rsquo;) elif score &gt;= 60 and score &lt;80: print(&lsquo;你的成绩及格了&rsquo;) elif score&gt;=80 and score&lt;90: print(&lsquo;你的成绩良好&rsquo;) else: print(&lsquo;你的成绩优秀&rsquo;)</p>
+<p>七、while循环</p>
+<p>i=0
+num=0 while i&lt;=100:
+num+=i
+i+=1
+print(&lsquo;1-100累加等于%d&rsquo;%num)</p>
+<p>八、for&hellip;in循环</p>
+<p>num = [] for i in range(10):
+num.append(i) print(num) #输出：[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</p>
+<p>九、用户交互(input)</p>
+<p>import getpass
+username = input(&ldquo;username:&rdquo;)
+password = getpass.getpass(&ldquo;password:&rdquo;) print(username) print(password)</p>
+<p>十、文件基本操作</p>
+<p> 打开文件：f = open(&lsquo;文件路径&rsquo;，&lsquo;模式&rsquo;)    或者   with open(&lsquo;文件路径&rsquo;,&lsquo;模式&rsquo;) as f:</p>
+<p>模式：</p>
+<ul>
+<li>r：以只读方式打开文件</li>
+<li>w：打开一个文件只用于写入。如果该文件已存在则将其覆盖。如果该文件不存在，创建新文件。</li>
+<li>a：打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</li>
+<li>w+：打开一个文件用于读写。(文件一打开就清空了，还能读到东西吗？)</li>
+<li>a+：打开一个文件用于读写。</li>
+</ul>
+<p>读文件：</p>
+<p> read()  readlines()  readline() 的用法</p>
+<p>f = open(&rsquo;d:/test.txt&rsquo;,&lsquo;r&rsquo;)  #以只读方式打开文件</p>
+<p>print(f.read())  #read()一次读取文件的全部内容</p>
+<p>for line in f.readlines():   #readlines()读取整个文件，并按行存进列表
+print(line.strip(&rsquo;\n&rsquo;))  #去掉行尾的&rsquo;\n&rsquo;</p>
+<p>while 1:
+line = f.readline()   #readline()每次只读取一行
+print(line.strip(&rsquo;\n&rsquo;)) if not line: break f.close() #关闭文件</p>
+<p>写文件：</p>
+<p>f =open(&rsquo;d:/test.txt&rsquo;,&lsquo;a&rsquo;)
+f.write(&lsquo;hello,boy!\n&rsquo;)<br>
+f.close()</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/2015-12-12-wamp%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83%E5%BC%80%E5%90%AF%E4%BC%AA%E9%9D%99%E6%80%81.html" data-toggle="tooltip" data-placement="top" title="wamp集成环境开启伪静态">
+              Previous<br>
+              <span>wamp集成环境开启伪静态</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2.html" data-toggle="tooltip" data-placement="top" title="python3 str（字符串）">
+              Next<br>
+              <span>python3 str（字符串）</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

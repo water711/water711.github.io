@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>Python人脸识别库Face Recognition | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖1、安装Visual Studio Build Tools（因为cmake依赖C&#43;&#43;），安装时选择“C&#43;&#43;生成工具”
+2、安装Cmake（因为dlib库需要cmake编译）
+pip3 install cmake
+3、安装face_recognition和dlib
+pip3 install face_recognition
+//安装安装face_recognition会自动安装dlib，如果安装下载时，多次超时中断，可以到PyPI上下载安装包（xxx.whl）或源码包（xxx.tar.gz），离线进行安装。
+pip install dlib-19.19.0.whl 或 pip3 install dlib-19.19.0.tar.gz
+二、face_recognition 命令行工具![](http://hugo.caizhenwei.top//cf190ebbc1c551c0d40f36fcc5549d24.png)
+face_recognition - 在单张图片或一个图片文件夹中认出是谁的脸。
+#将A.png图片到known文件夹中去辨认出是谁的脸 F:\face&gt;face_recognition ./known ./check/A.png ./check/A.png,刘德华
+#将check目录中的人脸，逐个到known目录中辨认出是谁的脸 F:\face&gt;face_recognition ./known ./check ./check\A.png,刘德华 ./check\B.jpg,刘亦菲 ./check\C.png,刘亦菲 //识别错误
+#调整人脸识别的容错率 #通过传入参数 &ndash;tolerance 来实现这个功能，默认的容错率是0.6，容错率越低，识别越严格准确。 F:\face&gt;face_recognition &ndash;tolerance 0.5 ./known ./check ./check\A.png,刘德华 ./check\B.jpg,刘亦菲 ./check\C.png,unknown_person
+三、将网络摄像头画面中的人脸进行打码（需要安装OpenCV）参考：https://github.com/ageitgey/face_recognition/blob/master/examples/blur_faces_on_webcam.py
+安装opencv
+pip3 install opencv-python
+import face_recognition import cv2
+This is a demo of blurring faces in video.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python人脸识别库Face Recognition"/>
+<meta name="twitter:description" content="环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖1、安装Visual Studio Build Tools（因为cmake依赖C&#43;&#43;），安装时选择“C&#43;&#43;生成工具”
+2、安装Cmake（因为dlib库需要cmake编译）
+pip3 install cmake
+3、安装face_recognition和dlib
+pip3 install face_recognition
+//安装安装face_recognition会自动安装dlib，如果安装下载时，多次超时中断，可以到PyPI上下载安装包（xxx.whl）或源码包（xxx.tar.gz），离线进行安装。
+pip install dlib-19.19.0.whl 或 pip3 install dlib-19.19.0.tar.gz
+二、face_recognition 命令行工具![](http://hugo.caizhenwei.top//cf190ebbc1c551c0d40f36fcc5549d24.png)
+face_recognition - 在单张图片或一个图片文件夹中认出是谁的脸。
+#将A.png图片到known文件夹中去辨认出是谁的脸 F:\face&gt;face_recognition ./known ./check/A.png ./check/A.png,刘德华
+#将check目录中的人脸，逐个到known目录中辨认出是谁的脸 F:\face&gt;face_recognition ./known ./check ./check\A.png,刘德华 ./check\B.jpg,刘亦菲 ./check\C.png,刘亦菲 //识别错误
+#调整人脸识别的容错率 #通过传入参数 &ndash;tolerance 来实现这个功能，默认的容错率是0.6，容错率越低，识别越严格准确。 F:\face&gt;face_recognition &ndash;tolerance 0.5 ./known ./check ./check\A.png,刘德华 ./check\B.jpg,刘亦菲 ./check\C.png,unknown_person
+三、将网络摄像头画面中的人脸进行打码（需要安装OpenCV）参考：https://github.com/ageitgey/face_recognition/blob/master/examples/blur_faces_on_webcam.py
+安装opencv
+pip3 install opencv-python
+import face_recognition import cv2
+This is a demo of blurring faces in video."/>
+
+  <meta property="og:title" content="Python人脸识别库Face Recognition" />
+<meta property="og:description" content="环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖1、安装Visual Studio Build Tools（因为cmake依赖C&#43;&#43;），安装时选择“C&#43;&#43;生成工具”
+2、安装Cmake（因为dlib库需要cmake编译）
+pip3 install cmake
+3、安装face_recognition和dlib
+pip3 install face_recognition
+//安装安装face_recognition会自动安装dlib，如果安装下载时，多次超时中断，可以到PyPI上下载安装包（xxx.whl）或源码包（xxx.tar.gz），离线进行安装。
+pip install dlib-19.19.0.whl 或 pip3 install dlib-19.19.0.tar.gz
+二、face_recognition 命令行工具![](http://hugo.caizhenwei.top//cf190ebbc1c551c0d40f36fcc5549d24.png)
+face_recognition - 在单张图片或一个图片文件夹中认出是谁的脸。
+#将A.png图片到known文件夹中去辨认出是谁的脸 F:\face&gt;face_recognition ./known ./check/A.png ./check/A.png,刘德华
+#将check目录中的人脸，逐个到known目录中辨认出是谁的脸 F:\face&gt;face_recognition ./known ./check ./check\A.png,刘德华 ./check\B.jpg,刘亦菲 ./check\C.png,刘亦菲 //识别错误
+#调整人脸识别的容错率 #通过传入参数 &ndash;tolerance 来实现这个功能，默认的容错率是0.6，容错率越低，识别越严格准确。 F:\face&gt;face_recognition &ndash;tolerance 0.5 ./known ./check ./check\A.png,刘德华 ./check\B.jpg,刘亦菲 ./check\C.png,unknown_person
+三、将网络摄像头画面中的人脸进行打码（需要安装OpenCV）参考：https://github.com/ageitgey/face_recognition/blob/master/examples/blur_faces_on_webcam.py
+安装opencv
+pip3 install opencv-python
+import face_recognition import cv2
+This is a demo of blurring faces in video." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-05-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-31T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>Python人脸识别库Face Recognition</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Sun, May 31, 2020
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <h2 id="环境">环境<a class="anchorjs-link" href="#%e7%8e%af%e5%a2%83"></a></h2><ul>
+<li>Python 3.7</li>
+<li>Windows 7 X64 （windows并不是官方支持的，但也许也能用）</li>
+</ul>
+<h2 id="官方文档">官方文档<a class="anchorjs-link" href="#%e5%ae%98%e6%96%b9%e6%96%87%e6%a1%a3"></a></h2><ul>
+<li><a href="https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md" target="_blank">https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md</a></li>
+</ul>
+<h2 id="一安装第三方库及相关依赖">一、安装第三方库及相关依赖<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85%e7%ac%ac%e4%b8%89%e6%96%b9%e5%ba%93%e5%8f%8a%e7%9b%b8%e5%85%b3%e4%be%9d%e8%b5%96"></a></h2><p>1、安装<a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools" target="_blank">Visual Studio Build Tools</a>（因为cmake依赖C++），安装时选择“C++生成工具”</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//85f3d40a2c2a2fe62fb0d6dd341f16fa.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>2、安装Cmake（因为dlib库需要cmake编译）</p>
+<p>pip3 install cmake</p>
+<p>3、安装face_recognition和dlib</p>
+<p>pip3 install face_recognition</p>
+<p>//安装安装face_recognition会自动安装dlib，如果安装下载时，多次超时中断，可以到<a href="https://pypi.org/" target="_blank">PyPI</a>上下载安装包（xxx.whl）或源码包（xxx.tar.gz），离线进行安装。</p>
+<p>pip install dlib-19.19.0.whl
+或
+pip3 install dlib-19.19.0.tar.gz</p>
+<p> </p>
+<h2 id="二face_recognition-命令行工具">二、face_recognition 命令行工具<a class="anchorjs-link" href="#%e4%ba%8cface_recognition-%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%b7%a5%e5%85%b7"></a></h2><p><code>![](http://hugo.caizhenwei.top//cf190ebbc1c551c0d40f36fcc5549d24.png)</code></p>
+<p><code>face_recognition</code> - 在单张图片或一个图片文件夹中认出是谁的脸。</p>
+<p>#将A.png图片到known文件夹中去辨认出是谁的脸
+F:\face&gt;face_recognition ./known ./check/A.png
+./check/A.png,刘德华</p>
+<p>#将check目录中的人脸，逐个到known目录中辨认出是谁的脸
+F:\face&gt;face_recognition ./known ./check
+./check\A.png,刘德华
+./check\B.jpg,刘亦菲
+./check\C.png,刘亦菲  //识别错误</p>
+<p>#调整人脸识别的容错率
+#通过传入参数 &ndash;tolerance 来实现这个功能，默认的容错率是0.6，容错率越低，识别越严格准确。
+F:\face&gt;face_recognition &ndash;tolerance 0.5 ./known ./check
+./check\A.png,刘德华
+./check\B.jpg,刘亦菲
+./check\C.png,unknown_person</p>
+<p> </p>
+<h2 id="三将网络摄像头画面中的人脸进行打码需要安装opencv">三、将网络摄像头画面中的人脸进行打码（需要安装OpenCV）<a class="anchorjs-link" href="#%e4%b8%89%e5%b0%86%e7%bd%91%e7%bb%9c%e6%91%84%e5%83%8f%e5%a4%b4%e7%94%bb%e9%9d%a2%e4%b8%ad%e7%9a%84%e4%ba%ba%e8%84%b8%e8%bf%9b%e8%a1%8c%e6%89%93%e7%a0%81%e9%9c%80%e8%a6%81%e5%ae%89%e8%a3%85opencv"></a></h2><p>参考：<a href="https://github.com/ageitgey/face_recognition/blob/master/examples/blur_faces_on_webcam.py" target="_blank">https://github.com/ageitgey/face_recognition/blob/master/examples/blur_faces_on_webcam.py</a></p>
+<p>安装opencv</p>
+<p>pip3 install opencv-python</p>
+<p> </p>
+<p>import face_recognition
+import cv2</p>
+<h1 id="this-is-a-demo-of-blurring-faces-in-video">This is a demo of blurring faces in video.<a class="anchorjs-link" href="#this-is-a-demo-of-blurring-faces-in-video"></a></h1><h1 id="please-note-this-example-requires-opencv-the-cv2-library-to-be-installed-only-to-read-from-your-webcam">PLEASE NOTE: This example requires OpenCV (the `cv2` library) to be installed only to read from your webcam.<a class="anchorjs-link" href="#please-note-this-example-requires-opencv-the-cv2-library-to-be-installed-only-to-read-from-your-webcam"></a></h1><h1 id="opencv-is-not-required-to-use-the-face_recognition-library-its-only-required-if-you-want-to-run-this">OpenCV is *not* required to use the face_recognition library. It&rsquo;s only required if you want to run this<a class="anchorjs-link" href="#opencv-is-not-required-to-use-the-face_recognition-library-its-only-required-if-you-want-to-run-this"></a></h1><h1 id="specific-demo-if-you-have-trouble-installing-it-try-any-of-the-other-demos-that-dont-require-it-instead">specific demo. If you have trouble installing it, try any of the other demos that don&rsquo;t require it instead.<a class="anchorjs-link" href="#specific-demo-if-you-have-trouble-installing-it-try-any-of-the-other-demos-that-dont-require-it-instead"></a></h1><h1 id="get-a-reference-to-webcam-0-the-default-one">Get a reference to webcam #0 (the default one)<a class="anchorjs-link" href="#get-a-reference-to-webcam-0-the-default-one"></a></h1><p>video_capture = cv2.VideoCapture(&ldquo;rtsp://admin:admin888@192.168.1.240/stream1&rdquo;)</p>
+<h1 id="initialize-some-variables">Initialize some variables<a class="anchorjs-link" href="#initialize-some-variables"></a></h1><p>face_locations = []</p>
+<p>while True:
+# Grab a single frame of video
+ret, frame = video_capture.read()</p>
+<pre><code># Resize frame of video to 1/4 size for faster face detection processing
+small\_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
+
+# Find all the faces and face encodings in the current frame of video
+face\_locations = face\_recognition.face\_locations(small\_frame, model=&quot;cnn&quot;)
+
+# Display the results
+for top, right, bottom, left in face\_locations:
+    # Scale back up face locations since the frame we detected in was scaled to 1/4 size
+    top \*= 4
+    right \*= 4
+    bottom \*= 4
+    left \*= 4
+
+    # Extract the region of the image that contains the face
+    face\_image = frame\[top:bottom, left:right\]
+
+    # Blur the face image
+    face\_image = cv2.GaussianBlur(face\_image, (99, 99), 30)
+
+    # Put the blurred face region back into the frame image
+    frame\[top:bottom, left:right\] = face\_image
+
+# Display the resulting image
+# cv2.resizeWindow(&quot;Tracking&quot;, 800,800)
+cv2.imshow('Video', frame)
+
+# Hit 'q' on the keyboard to quit!
+if cv2.waitKey(1) &amp; 0xFF == ord('q'):
+    break
+</code></pre>
+<h1 id="release-handle-to-the-webcam">Release handle to the webcam<a class="anchorjs-link" href="#release-handle-to-the-webcam"></a></h1><p>video_capture.release()
+cv2.destroyAllWindows()</p>
+<p>运行效果：</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//d3b3a42abe1c45b541e7257f6fb9fadc.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h2 id="四实时检测识别网络摄像头中的人脸需要安装opencv">四、实时检测识别网络摄像头中的人脸（需要安装OpenCV）<a class="anchorjs-link" href="#%e5%9b%9b%e5%ae%9e%e6%97%b6%e6%a3%80%e6%b5%8b%e8%af%86%e5%88%ab%e7%bd%91%e7%bb%9c%e6%91%84%e5%83%8f%e5%a4%b4%e4%b8%ad%e7%9a%84%e4%ba%ba%e8%84%b8%e9%9c%80%e8%a6%81%e5%ae%89%e8%a3%85opencv"></a></h2><p>安装opencv</p>
+<p>pip3 install opencv-python</p>
+<p>参考：<a href="https://github.com/ageitgey/face_recognition/blob/master/examples/facerec_from_webcam_faster.py" target="_blank">https://github.com/ageitgey/face_recognition/blob/master/examples/facerec_from_webcam_faster.py</a></p>
+<p>import face_recognition
+import cv2
+import numpy as np</p>
+<h1 id="从rtsp地址中打开一个网络摄像头">从rtsp地址中打开一个网络摄像头<a class="anchorjs-link" href="#%e4%bb%8ertsp%e5%9c%b0%e5%9d%80%e4%b8%ad%e6%89%93%e5%bc%80%e4%b8%80%e4%b8%aa%e7%bd%91%e7%bb%9c%e6%91%84%e5%83%8f%e5%a4%b4"></a></h1><p>video_capture = cv2.VideoCapture(&ldquo;rtsp://admin:admin888@192.168.1.240/stream2&rdquo;)</p>
+<h1 id="加载第1个图片返回图片中每个人脸128个维度的编码列表">加载第1个图片，返回图片中每个人脸128个维度的编码列表<a class="anchorjs-link" href="#%e5%8a%a0%e8%bd%bd%e7%ac%ac1%e4%b8%aa%e5%9b%be%e7%89%87%e8%bf%94%e5%9b%9e%e5%9b%be%e7%89%87%e4%b8%ad%e6%af%8f%e4%b8%aa%e4%ba%ba%e8%84%b8128%e4%b8%aa%e7%bb%b4%e5%ba%a6%e7%9a%84%e7%bc%96%e7%a0%81%e5%88%97%e8%a1%a8"></a></h1><p>obama_image = face_recognition.load_image_file(&ldquo;obama.png&rdquo;)
+obama_face_encoding = face_recognition.face_encodings(obama_image)[0]</p>
+<h1 id="加载第2个图片返回图片中每个人脸128个维度的编码列表">加载第2个图片，返回图片中每个人脸128个维度的编码列表<a class="anchorjs-link" href="#%e5%8a%a0%e8%bd%bd%e7%ac%ac2%e4%b8%aa%e5%9b%be%e7%89%87%e8%bf%94%e5%9b%9e%e5%9b%be%e7%89%87%e4%b8%ad%e6%af%8f%e4%b8%aa%e4%ba%ba%e8%84%b8128%e4%b8%aa%e7%bb%b4%e5%ba%a6%e7%9a%84%e7%bc%96%e7%a0%81%e5%88%97%e8%a1%a8"></a></h1><p>me_image = face_recognition.load_image_file(&ldquo;me.jpg&rdquo;)
+me_face_encoding = face_recognition.face_encodings(me_image)[0]</p>
+<h1 id="创建已知的人脸编码及人名的数组">创建已知的人脸编码及人名的数组<a class="anchorjs-link" href="#%e5%88%9b%e5%bb%ba%e5%b7%b2%e7%9f%a5%e7%9a%84%e4%ba%ba%e8%84%b8%e7%bc%96%e7%a0%81%e5%8f%8a%e4%ba%ba%e5%90%8d%e7%9a%84%e6%95%b0%e7%bb%84"></a></h1><p>known_face_encodings = [
+obama_face_encoding,
+me_face_encoding
+]
+known_face_names = [
+&ldquo;obama&rdquo;,
+&ldquo;me&rdquo;
+]</p>
+<h1 id="初始化变量">初始化变量<a class="anchorjs-link" href="#%e5%88%9d%e5%a7%8b%e5%8c%96%e5%8f%98%e9%87%8f"></a></h1><p>face_locations = []
+face_encodings = []
+face_names = []
+process_this_frame = True</p>
+<p>while True:
+# 从摄像头视频中抓取一帧图像
+ret, frame = video_capture.read()</p>
+<pre><code># 将帧的大小调整为1/4，以加快人脸识别速度
+small\_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
+
+#将图像从opencv默认的BGR颜色，转换为RGB颜色（face\_recognition使用RGB）
+rgb\_small\_frame = small\_frame\[:, :, ::-1\]
+
+# 每隔一帧处理一次视频以节省时间
+if process\_this\_frame:
+    # Find all the faces and face encodings in the current frame of video
+    # 查找当前帧的所有人脸位置和面部编码转换
+    face\_locations = face\_recognition.face\_locations(rgb\_small\_frame)
+    face\_encodings = face\_recognition.face\_encodings(rgb\_small\_frame, face\_locations)
+
+    face\_names = \[\]
+    for face\_encoding in face\_encodings:
+        '''
+        循环面部编码列表，查看人脸是否在已知的人脸列表中
+        '''
+
+        matches = face\_recognition.compare\_faces(known\_face\_encodings, face\_encoding)
+        name = &quot;Unknown&quot;
+
+        # # If a match was found in known\_face\_encodings, just use the first one.
+        # if True in matches:
+        #     first\_match\_index = matches.index(True)
+        #     name = known\_face\_names\[first\_match\_index\]
+
+        # Or instead, use the known face with the smallest distance to the new face
+        face\_distances = face\_recognition.face\_distance(known\_face\_encodings, face\_encoding)
+        best\_match\_index = np.argmin(face\_distances)
+        if matches\[best\_match\_index\]:
+            name = known\_face\_names\[best\_match\_index\]
+
+        face\_names.append(name)
+
+process\_this\_frame = not process\_this\_frame
+
+# Display the results
+for (top, right, bottom, left), name in zip(face\_locations, face\_names):
+    # Scale back up face locations since the frame we detected in was scaled to 1/4 size
+    top \*= 4
+    right \*= 4
+    bottom \*= 4
+    left \*= 4
+
+    # Draw a box around the face
+    cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+
+    # Draw a label with a name below the face
+    cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
+    font = cv2.FONT\_HERSHEY\_DUPLEX
+    cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
+
+# Display the resulting image
+cv2.imshow('Video', frame)
+
+# 按键盘 q 退出
+if cv2.waitKey(1) &amp; 0xFF == ord('q'):
+    break
+</code></pre>
+<h1 id="关闭摄像头句柄">关闭摄像头句柄<a class="anchorjs-link" href="#%e5%85%b3%e9%97%ad%e6%91%84%e5%83%8f%e5%a4%b4%e5%8f%a5%e6%9f%84"></a></h1><p>video_capture.release()
+cv2.destroyAllWindows()</p>
+<p>运行效果：</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//e42648f7c7cc71230912109bf7baa4ba.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull.html" data-toggle="tooltip" data-placement="top" title="Python人脸识别库Face Recognition">
+              Previous<br>
+              <span>Python人脸识别库Face Recognition</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98penull.html" data-toggle="tooltip" data-placement="top" title="VMware 虚拟机设置启动U盘PE">
+              Next<br>
+              <span>VMware 虚拟机设置启动U盘PE</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

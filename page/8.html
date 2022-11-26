@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.107.0">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+
+  <title>蔡振威的博客</title>
+
+  
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="蔡振威的博客"/>
+<meta name="twitter:description" content=""/>
+
+  <meta property="og:title" content="蔡振威的博客" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//example.org/" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  <link rel="alternate" type="application/rss+xml" href="../index.xml" title="蔡振威的博客" />
+  <link rel="alternate" type="application/json" href="../index.json" title="蔡振威的博客" />
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+<header class="intro-header style-text">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="site-heading">
+        
+          <h1>蔡振威的博客</h1>
+          
+          
+          
+          
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+  
+  <div class="container">
+    <div class="row">
+      
+      
+      
+      <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12
+      col-xs-12 postlist-container">
+        
+
+
+   <div class="post-preview">
+  <a href="../posts/2020-03-23-%E9%85%8D%E7%BD%AEfiddler%E5%AE%9E%E7%8E%B0%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85.html">
+      <h2 class="post-title">配置Fiddler实现苹果手机抓包</h2>
+      
+      <div class="post-content-preview">
+        
+        一、配置Fiddler允许远端设备连接Tools-&amp;gt; Options-&amp;gt;Connections，勾选&amp;quot;Allow remote computers to connect&amp;quot; （修改后需重启Fiddler）
+二、配置抓取https请求Tools-&amp;gt; Options-&amp;gt;Connections，勾 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Mar 23, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2.html">
+      <h2 class="post-title">data:image/base64与图片互相转换</h2>
+      
+      <div class="post-content-preview">
+        
+        将data:image/base64转换成图片import base64
+value=&amp;ldquo;qeBQAAAABJ&amp;hellip;&amp;hellip;RU5ErkJggg==&amp;rdquo; #填写base64编码 img = base64.b64decode(value) fh = …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Mar 2, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8.html">
+      <h2 class="post-title">申请阿里云免费SSL证书并部署至Nginx服务器</h2>
+      
+      <div class="post-content-preview">
+        
+        一、申请阿里云免费SSL证书2021阿里云SSL免费证书购买地址又变了，为了解决免费证书近期存在的吊销、统计等问题，自2021年起，免费证书申请将切换到证书资源包下。
+1、 打开阿里云SSL证书选购页面，点击“选购证书”
+2、 商品类型选择“云盾证书资源包”
+3、 资源包规格选择“免费证书扩容包”
+4、 资源包个数选择“20”
+选择完毕后总配置费用为0元，然 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Feb 24, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1.html">
+      <h2 class="post-title">阿里云ECS搭建NPS内网穿透服务</h2>
+      
+      <div class="post-content-preview">
+        
+        环境：服务端操作系统：Centos7
+客户端操作系统：Centos7、Win7
+一、NPS介绍nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。目前支持tcp、udp流量转发，可支持任何tcp、udp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还支持内网http代理、内网socks5代理、p2p等，并 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Wed, Feb 19, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6.html">
+      <h2 class="post-title">Zabbix使用腾讯云短信进行告警</h2>
+      
+      <div class="post-content-preview">
+        
+        一、开通腾讯云短信服务（需要实名认证）官方文档：https://cloud.tencent.com/document/product/382/18071
+二、创建短信模板短信模板内容中：{1}{2}{3}为发送信息时，需要传递的参数内容
+三、编写发送短信的Shell脚本官方API接口文 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Feb 18, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93.html">
+      <h2 class="post-title">CentOS7安装Oracle 11g数据库</h2>
+      
+      <div class="post-content-preview">
+        
+        Oracle官方11g安装文档：https://docs.oracle.com/cd/E11882_01/install.112/e24326/toc.htm
+一、下载对应Oracle安装包1、查看操作系统硬件架构类型
+[root@server ~]# uname -m x86_64
+2、 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Sun, Feb 16, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2.html">
+      <h2 class="post-title">Windows下使用ssh转发Linux下x11图形界面</h2>
+      
+      <div class="post-content-preview">
+        
+        准备环境Linux系统：Centos7
+SSH客户端工具：Putty和XShell
+Xming下载地址： https://sourceforge.net/projects/xming/
+X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
+一、Windows下安 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Fri, Feb 14, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2020-02-10-%E4%BD%BF%E7%94%A8ensp%E6%A8%A1%E6%8B%9F%E5%A4%9A%E8%BF%90%E8%90%A5%E5%95%86%E5%87%BA%E5%8F%A3%E6%99%BA%E8%83%BD%E9%80%89%E8%B7%AF.html">
+      <h2 class="post-title">华为防火墙多运营商出口智能选路</h2>
+      
+      <div class="post-content-preview">
+        
+        一、准备实验环境1、安装ENSP模拟器 v1.3.00.100
+2、物理机安装环回接口/网卡（运行：hdwwiz，运行硬件向导，环回网卡IP设置为192.168.0.10/24）
+https://jingyan.baidu.com/article/046a7b3eef6d69f9c27fa9ea.html
+3、ENSP …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Feb 10, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2020-01-15-%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%BF%AE%E6%94%B9%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF.html">
+      <h2 class="post-title">有道云笔记修改笔记背景</h2>
+      
+      <div class="post-content-preview">
+        
+        1、打开以下目录（win7系统）C:\Users\admin\AppData\Local\Youdao\YNote\bgImage-10
+2、复制v开头的图片，修改文件名为c-xx.png也可使用画图工具或PS，自定义图片颜色，拷贝到该目录，修改文件名为c-xx.png
+3、打开有道云笔记，在视图中选择纸张背景
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Wed, Jan 15, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97.html">
+      <h2 class="post-title">Zabbix监控windows日志</h2>
+      
+      <div class="post-content-preview">
+        
+        一、Zabbix服务端添加主机#zabbix客户端在主动模式下，服务端接收数据需要开放10051端口 [root@zabbix1 ~]# firewall-cmd &amp;ndash;zone=public &amp;ndash;add-port=10051/tcp &amp;ndash;permanent success [root@zabbix1 ~]# …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Wed, Jan 8, 2020
+  </p>
+</div>
+<hr>
+
+
+
+<ul class="pager">
+  
+  <li class="previous">
+      <a href="../page/7.html">&larr; Newer Posts</a>
+  </li>
+  
+  
+  <li class="next">
+      <a href="../page/9.html">Older Posts &rarr;</a>
+  </li>
+  
+</ul>
+
+
+      </div>
+      
+      <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12
+      col-xs-12 sidebar-container">
+
+        
+        <section>
+  
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+        
+<section class="visible-md visible-lg">
+  <hr>
+  
+  <h5>ABOUT ME</h5>
+  
+
+  
+  <div class="short-about">
+    
+    
+    
+    
+
+
+<ul class="list-inline">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+  </div>
+</section>
+
+        
+        
+
+
+      </div>
+      
+
+    </div>
+  </div>
+
+  
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

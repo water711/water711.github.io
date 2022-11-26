@@ -2,489 +2,489 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/categories/</loc>
+    <loc>//example.org/categories.html</loc>
     <lastmod>2021-05-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/other/</loc>
+    <loc>//example.org/categories/other.html</loc>
     <lastmod>2021-05-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>//example.org/posts.html</loc>
     <lastmod>2021-05-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-05-29-win7%E4%B8%8B%E6%9F%A5%E7%9C%8Bnvidia%E6%98%BE%E5%8D%A1%E7%9A%84gpu%E4%BD%BF%E7%94%A8%E7%8E%87/</loc>
+    <loc>//example.org/posts/2021-05-29-win7%E4%B8%8B%E6%9F%A5%E7%9C%8Bnvidia%E6%98%BE%E5%8D%A1%E7%9A%84gpu%E4%BD%BF%E7%94%A8%E7%8E%87.html</loc>
     <lastmod>2021-05-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>//example.org/</loc>
     <lastmod>2021-05-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/python/</loc>
+    <loc>//example.org/categories/python.html</loc>
     <lastmod>2021-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</loc>
+    <loc>//example.org/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95.html</loc>
     <lastmod>2021-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-04-26-kali2021%E5%AE%89%E8%A3%85vnc/</loc>
+    <loc>//example.org/posts/2021-04-26-kali2021%E5%AE%89%E8%A3%85vnc.html</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/linux/</loc>
+    <loc>//example.org/categories/linux.html</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</loc>
+    <loc>//example.org/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD.html</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission/</loc>
+    <loc>//example.org/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission.html</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/nas/</loc>
+    <loc>//example.org/categories/nas.html</loc>
     <lastmod>2021-04-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>//example.org/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8.html</loc>
     <lastmod>2021-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/</loc>
+    <loc>//example.org/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95.html</loc>
     <lastmod>2021-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-03-20-hyper-v%E7%9A%84vhdx%E6%A0%BC%E5%BC%8F%E7%A3%81%E7%9B%98%E9%95%9C%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAvirtualbox%E6%94%AF%E6%8C%81%E7%9A%84vhd%E6%A0%BC%E5%BC%8F/</loc>
+    <loc>//example.org/posts/2021-03-20-hyper-v%E7%9A%84vhdx%E6%A0%BC%E5%BC%8F%E7%A3%81%E7%9B%98%E9%95%9C%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAvirtualbox%E6%94%AF%E6%8C%81%E7%9A%84vhd%E6%A0%BC%E5%BC%8F.html</loc>
     <lastmod>2021-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
+    <loc>//example.org/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7.html</loc>
     <lastmod>2021-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-15-%E9%80%9A%E8%BF%87tg%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E9%80%9A%E7%9F%A5%E5%88%B0%E6%89%8B%E6%9C%BA/</loc>
+    <loc>//example.org/posts/2021-02-15-%E9%80%9A%E8%BF%87tg%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E9%80%9A%E7%9F%A5%E5%88%B0%E6%89%8B%E6%9C%BA.html</loc>
     <lastmod>2021-02-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-10-telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%A4%8D%E8%AF%BB%E5%8A%9F%E8%83%BD/</loc>
+    <loc>//example.org/posts/2021-02-10-telegram%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%A4%8D%E8%AF%BB%E5%8A%9F%E8%83%BD.html</loc>
     <lastmod>2021-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</loc>
+    <loc>//example.org/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA.html</loc>
     <lastmod>2021-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</loc>
+    <loc>//example.org/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85.html</loc>
     <lastmod>2021-02-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>//example.org/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1.html</loc>
     <lastmod>2021-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</loc>
+    <loc>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi.html</loc>
     <lastmod>2021-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/</loc>
+    <loc>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull.html</loc>
     <lastmod>2021-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</loc>
+    <loc>//example.org/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE.html</loc>
     <lastmod>2021-02-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85docker/</loc>
+    <loc>//example.org/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85docker.html</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85dockernull/</loc>
+    <loc>//example.org/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85dockernull.html</loc>
     <lastmod>2021-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-02-01-%E4%BD%BF%E7%94%A8working-copy%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BDgithub%E4%BB%93%E5%BA%93/</loc>
+    <loc>//example.org/posts/2021-02-01-%E4%BD%BF%E7%94%A8working-copy%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BDgithub%E4%BB%93%E5%BA%93.html</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-28-%E8%A7%A3%E5%86%B3raw-github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <loc>//example.org/posts/2021-01-28-%E8%A7%A3%E5%86%B3raw-github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98.html</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-26-windows-server-2012-2016-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E7%9B%91%E6%8E%A7/</loc>
+    <loc>//example.org/posts/2021-01-26-windows-server-2012-2016-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E7%9B%91%E6%8E%A7.html</loc>
     <lastmod>2021-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-16-win7%E6%90%AD%E5%BB%BAopenwrt%E6%8F%92%E4%BB%B6%E5%BA%93/</loc>
+    <loc>//example.org/posts/2021-01-16-win7%E6%90%AD%E5%BB%BAopenwrt%E6%8F%92%E4%BB%B6%E5%BA%93.html</loc>
     <lastmod>2021-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-15-mysql%E4%B8%B4%E6%97%B6%E5%BC%80%E5%90%AF%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97/</loc>
+    <loc>//example.org/posts/2021-01-15-mysql%E4%B8%B4%E6%97%B6%E5%BC%80%E5%90%AF%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97.html</loc>
     <lastmod>2021-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-14-win7%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%94%A8%E6%88%B7%E5%90%8C%E6%97%B6%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</loc>
+    <loc>//example.org/posts/2021-01-14-win7%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%94%A8%E6%88%B7%E5%90%8C%E6%97%B6%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95.html</loc>
     <lastmod>2021-01-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-13-centos7%E4%BD%BF%E7%94%A8speedtest%E5%B7%A5%E5%85%B7%E6%B5%8B%E9%80%9F/</loc>
+    <loc>//example.org/posts/2021-01-13-centos7%E4%BD%BF%E7%94%A8speedtest%E5%B7%A5%E5%85%B7%E6%B5%8B%E9%80%9F.html</loc>
     <lastmod>2021-01-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-07-centos7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</loc>
+    <loc>//example.org/posts/2021-01-07-centos7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8.html</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-07-centos7-%E5%AE%89%E8%A3%85docker/</loc>
+    <loc>//example.org/posts/2021-01-07-centos7-%E5%AE%89%E8%A3%85docker.html</loc>
     <lastmod>2021-01-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-06-github%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2git-clone%E5%A4%AA%E6%85%A2%E7%9A%849%E7%A7%8D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
+    <loc>//example.org/posts/2021-01-06-github%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2git-clone%E5%A4%AA%E6%85%A2%E7%9A%849%E7%A7%8D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95.html</loc>
     <lastmod>2021-01-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server/</loc>
+    <loc>//example.org/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server.html</loc>
     <lastmod>2021-01-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/</loc>
+    <loc>//example.org/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90.html</loc>
     <lastmod>2021-01-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8/</loc>
+    <loc>//example.org/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8.html</loc>
     <lastmod>2020-12-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-12-19-%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%92%8C%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%97%B6csr%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7/</loc>
+    <loc>//example.org/posts/2020-12-19-%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%92%8C%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%97%B6csr%E8%93%9D%E7%89%99%E9%A9%B1%E5%8A%A8%E5%BC%95%E8%B5%B7.html</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpn/</loc>
+    <loc>//example.org/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpn.html</loc>
     <lastmod>2020-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpnnull/</loc>
+    <loc>//example.org/posts/2020-12-14-asus%E5%8D%8E%E7%A1%95%E8%B7%AF%E7%94%B1%E5%99%A8%E5%BC%80%E5%90%AFopenvpn%E4%BD%BF%E7%94%A8%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E8%BF%9E%E6%8E%A5openvpnnull.html</loc>
     <lastmod>2020-12-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-12-04-centos7-%E5%AE%89%E8%A3%85ffmpeg%E5%AF%B9%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%8E%8B%E7%BC%A9/</loc>
+    <loc>//example.org/posts/2020-12-04-centos7-%E5%AE%89%E8%A3%85ffmpeg%E5%AF%B9%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%8E%8B%E7%BC%A9.html</loc>
     <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-12-04-centos7-%E5%B0%86home%E7%9B%AE%E5%BD%95%E5%92%8C%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%90%88%E5%B9%B6/</loc>
+    <loc>//example.org/posts/2020-12-04-centos7-%E5%B0%86home%E7%9B%AE%E5%BD%95%E5%92%8C%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%90%88%E5%B9%B6.html</loc>
     <lastmod>2020-12-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-12-03-%E6%89%B9%E5%A4%84%E7%90%86%E4%B9%8Bforfiles%E5%91%BD%E4%BB%A4/</loc>
+    <loc>//example.org/posts/2020-12-03-%E6%89%B9%E5%A4%84%E7%90%86%E4%B9%8Bforfiles%E5%91%BD%E4%BB%A4.html</loc>
     <lastmod>2020-12-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>//example.org/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F.html</loc>
     <lastmod>2020-10-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/zabbix/</loc>
+    <loc>//example.org/categories/zabbix.html</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</loc>
+    <loc>//example.org/posts/2020-10-16-zabbix%E8%B0%83%E4%BC%98%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97.html</loc>
     <lastmod>2020-10-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</loc>
+    <loc>//example.org/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA.html</loc>
     <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>//example.org/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1.html</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-10-05-windows%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8-%E8%BF%9E%E6%8E%A5%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97/</loc>
+    <loc>//example.org/posts/2020-10-05-windows%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8-%E8%BF%9E%E6%8E%A5%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97.html</loc>
     <lastmod>2020-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-09-22-win7%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%E7%A6%81%E7%94%A8%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7/</loc>
+    <loc>//example.org/posts/2020-09-22-win7%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%E7%A6%81%E7%94%A8%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7.html</loc>
     <lastmod>2020-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/</loc>
+    <loc>//example.org/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0.html</loc>
     <lastmod>2020-08-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</loc>
+    <loc>//example.org/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6.html</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</loc>
+    <loc>//example.org/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96.html</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</loc>
+    <loc>//example.org/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97.html</loc>
     <lastmod>2020-07-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-07-03-%E8%A7%A3%E5%86%B3potplayer%E4%B8%8D%E6%94%AF%E6%8C%81s-w-hevch265%E8%A7%A3%E7%A0%81/</loc>
+    <loc>//example.org/posts/2020-07-03-%E8%A7%A3%E5%86%B3potplayer%E4%B8%8D%E6%94%AF%E6%8C%81s-w-hevch265%E8%A7%A3%E7%A0%81.html</loc>
     <lastmod>2020-07-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</loc>
+    <loc>//example.org/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB.html</loc>
     <lastmod>2020-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</loc>
+    <loc>//example.org/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97.html</loc>
     <lastmod>2020-06-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/</loc>
+    <loc>//example.org/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D.html</loc>
     <lastmod>2020-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc/</loc>
+    <loc>//example.org/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc.html</loc>
     <lastmod>2020-06-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pcnull/</loc>
+    <loc>//example.org/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pcnull.html</loc>
     <lastmod>2020-06-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>//example.org/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1.html</loc>
     <lastmod>2020-06-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>//example.org/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1.html</loc>
     <lastmod>2020-06-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/</loc>
+    <loc>//example.org/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5.html</loc>
     <lastmod>2020-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</loc>
+    <loc>//example.org/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7.html</loc>
     <lastmod>2020-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7null/</loc>
+    <loc>//example.org/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7null.html</loc>
     <lastmod>2020-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/</loc>
+    <loc>//example.org/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA.html</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98pe/</loc>
+    <loc>//example.org/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98pe.html</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98penull/</loc>
+    <loc>//example.org/posts/2020-06-01-vmware-%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE%E5%90%AF%E5%8A%A8u%E7%9B%98penull.html</loc>
     <lastmod>2020-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</loc>
+    <loc>//example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition.html</loc>
     <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull/</loc>
+    <loc>//example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognitionnull.html</loc>
     <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-05-22-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F/</loc>
+    <loc>//example.org/posts/2020-05-22-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9%E6%A0%B7%E5%BC%8F.html</loc>
     <lastmod>2020-05-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>//example.org/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8.html</loc>
     <lastmod>2020-05-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</loc>
+    <loc>//example.org/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3.html</loc>
     <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</loc>
+    <loc>//example.org/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90.html</loc>
     <lastmod>2020-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</loc>
+    <loc>//example.org/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror.html</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</loc>
+    <loc>//example.org/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99.html</loc>
     <lastmod>2020-03-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-03-23-%E9%85%8D%E7%BD%AEfiddler%E5%AE%9E%E7%8E%B0%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85/</loc>
+    <loc>//example.org/posts/2020-03-23-%E9%85%8D%E7%BD%AEfiddler%E5%AE%9E%E7%8E%B0%E8%8B%B9%E6%9E%9C%E6%89%8B%E6%9C%BA%E6%8A%93%E5%8C%85.html</loc>
     <lastmod>2020-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</loc>
+    <loc>//example.org/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2.html</loc>
     <lastmod>2020-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>//example.org/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8.html</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>//example.org/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1.html</loc>
     <lastmod>2020-02-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</loc>
+    <loc>//example.org/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6.html</loc>
     <lastmod>2020-02-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+    <loc>//example.org/posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93.html</loc>
     <lastmod>2020-02-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</loc>
+    <loc>//example.org/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2.html</loc>
     <lastmod>2020-02-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-02-10-%E4%BD%BF%E7%94%A8ensp%E6%A8%A1%E6%8B%9F%E5%A4%9A%E8%BF%90%E8%90%A5%E5%95%86%E5%87%BA%E5%8F%A3%E6%99%BA%E8%83%BD%E9%80%89%E8%B7%AF/</loc>
+    <loc>//example.org/posts/2020-02-10-%E4%BD%BF%E7%94%A8ensp%E6%A8%A1%E6%8B%9F%E5%A4%9A%E8%BF%90%E8%90%A5%E5%95%86%E5%87%BA%E5%8F%A3%E6%99%BA%E8%83%BD%E9%80%89%E8%B7%AF.html</loc>
     <lastmod>2020-02-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-01-15-%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%BF%AE%E6%94%B9%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF/</loc>
+    <loc>//example.org/posts/2020-01-15-%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0%E4%BF%AE%E6%94%B9%E7%AC%94%E8%AE%B0%E8%83%8C%E6%99%AF.html</loc>
     <lastmod>2020-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97/</loc>
+    <loc>//example.org/posts/2020-01-08-zabbix%E7%9B%91%E6%8E%A7windows%E6%97%A5%E5%BF%97.html</loc>
     <lastmod>2020-01-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <loc>//example.org/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8.html</loc>
     <lastmod>2020-01-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-01-03-%E5%BE%AE%E8%BD%AFremote-app%E5%AE%9E%E7%8E%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%99%9A%E6%8B%9F%E5%8C%96/</loc>
+    <loc>//example.org/posts/2020-01-03-%E5%BE%AE%E8%BD%AFremote-app%E5%AE%9E%E7%8E%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%99%9A%E6%8B%9F%E5%8C%96.html</loc>
     <lastmod>2020-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</loc>
+    <loc>//example.org/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81.html</loc>
     <lastmod>2020-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80/</loc>
+    <loc>//example.org/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80.html</loc>
     <lastmod>2020-01-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-12-31-oracle%E5%AE%89%E8%A3%85%E6%8E%88%E6%9D%83%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/</loc>
+    <loc>//example.org/posts/2019-12-31-oracle%E5%AE%89%E8%A3%85%E6%8E%88%E6%9D%83%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D.html</loc>
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>//example.org/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F.html</loc>
     <lastmod>2019-12-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/</loc>
+    <loc>//example.org/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB.html</loc>
     <lastmod>2019-12-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</loc>
+    <loc>//example.org/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F.html</loc>
     <lastmod>2019-11-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</loc>
+    <loc>//example.org/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error.html</loc>
     <lastmod>2019-11-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4/</loc>
+    <loc>//example.org/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4.html</loc>
     <lastmod>2019-10-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-10-24-eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8jar%E5%8C%85/</loc>
+    <loc>//example.org/posts/2019-10-24-eclipse%E4%B8%AD%E4%BD%BF%E7%94%A8jar%E5%8C%85.html</loc>
     <lastmod>2019-10-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-10-13-centos7%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4-%E6%97%B6%E5%8C%BA/</loc>
+    <loc>//example.org/posts/2019-10-13-centos7%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4-%E6%97%B6%E5%8C%BA.html</loc>
     <lastmod>2019-10-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</loc>
+    <loc>//example.org/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5.html</loc>
     <lastmod>2019-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</loc>
+    <loc>//example.org/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA.html</loc>
     <lastmod>2019-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</loc>
+    <loc>//example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap.html</loc>
     <lastmod>2019-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrapnull/</loc>
+    <loc>//example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrapnull.html</loc>
     <lastmod>2019-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//example.org/tags.html</loc>
     <lastmod>2019-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/</loc>
+    <loc>//example.org/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B.html</loc>
     <lastmod>2019-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/wordpress/</loc>
+    <loc>//example.org/tags/wordpress.html</loc>
     <lastmod>2019-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F/</loc>
+    <loc>//example.org/posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F.html</loc>
     <lastmod>2019-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</loc>
+    <loc>//example.org/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84.html</loc>
     <lastmod>2019-09-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/</loc>
+    <loc>//example.org/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E.html</loc>
     <lastmod>2019-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90/</loc>
+    <loc>//example.org/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90.html</loc>
     <lastmod>2019-09-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/</loc>
+    <loc>//example.org/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8.html</loc>
     <lastmod>2019-09-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</loc>
+    <loc>//example.org/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1.html</loc>
     <lastmod>2019-09-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/</loc>
+    <loc>//example.org/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93.html</loc>
     <lastmod>2019-09-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</loc>
+    <loc>//example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi.html</loc>
     <lastmod>2019-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/</loc>
+    <loc>//example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull.html</loc>
     <lastmod>2019-06-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp/</loc>
+    <loc>//example.org/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp.html</loc>
     <lastmod>2019-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-03-10-mysql8-0%E7%BB%BF%E8%89%B2%E7%89%88%E5%AE%89%E8%A3%85%E5%8F%8Amysqldump%E5%A4%87%E4%BB%BD/</loc>
+    <loc>//example.org/posts/2019-03-10-mysql8-0%E7%BB%BF%E8%89%B2%E7%89%88%E5%AE%89%E8%A3%85%E5%8F%8Amysqldump%E5%A4%87%E4%BB%BD.html</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6/</loc>
+    <loc>//example.org/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6.html</loc>
     <lastmod>2019-03-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-03-04-zabbix%E7%9B%91%E6%8E%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%8A%B6%E6%80%81/</loc>
+    <loc>//example.org/posts/2019-03-04-zabbix%E7%9B%91%E6%8E%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%8A%B6%E6%80%81.html</loc>
     <lastmod>2019-03-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-03-04-zabbix%E9%85%8D%E7%BD%AE%E9%82%AE%E4%BB%B6%E5%91%8A%E8%AD%A6/</loc>
+    <loc>//example.org/posts/2019-03-04-zabbix%E9%85%8D%E7%BD%AE%E9%82%AE%E4%BB%B6%E5%91%8A%E8%AD%A6.html</loc>
     <lastmod>2019-03-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/</loc>
+    <loc>//example.org/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF.html</loc>
     <lastmod>2019-03-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix/</loc>
+    <loc>//example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix.html</loc>
     <lastmod>2019-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/</loc>
+    <loc>//example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull.html</loc>
     <lastmod>2019-03-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-02-24-%E8%AE%BF%E9%97%AEsystemx3650imm2%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</loc>
+    <loc>//example.org/posts/2019-02-24-%E8%AE%BF%E9%97%AEsystemx3650imm2%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F.html</loc>
     <lastmod>2019-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2019-02-22-lenovosystemx3650%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80/</loc>
+    <loc>//example.org/posts/2019-02-22-lenovosystemx3650%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E6%8E%A5%E5%8F%A3%E5%9C%B0%E5%9D%80.html</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2018-02-25-linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BApostfixdovecot/</loc>
+    <loc>//example.org/posts/2018-02-25-linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BApostfixdovecot.html</loc>
     <lastmod>2018-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</loc>
+    <loc>//example.org/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9.html</loc>
     <lastmod>2018-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
+    <loc>//example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>//example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA/</loc>
+    <loc>//example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%BA%94%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%9D%82%E8%B4%A7%E9%93%BA.html</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
+    <loc>//example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AB%E7%AF%87%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0/</loc>
+    <loc>//example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%9B%9B%E7%AF%87python%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%87%BD%E6%95%B0.html</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97/</loc>
+    <loc>//example.org/posts/2017-04-10-python%E5%BC%80%E5%8F%91%E7%AC%AC%E5%85%AD%E7%AF%87%E6%A8%A1%E5%9D%97.html</loc>
     <lastmod>2017-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-30-range%E7%94%A8%E6%B3%95/</loc>
+    <loc>//example.org/posts/2017-03-30-range%E7%94%A8%E6%B3%95.html</loc>
     <lastmod>2017-03-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F/</loc>
+    <loc>//example.org/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F.html</loc>
     <lastmod>2017-03-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/</loc>
+    <loc>//example.org/posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.html</loc>
     <lastmod>2017-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</loc>
+    <loc>//example.org/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html</loc>
     <lastmod>2017-03-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97/</loc>
+    <loc>//example.org/posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97.html</loc>
     <lastmod>2017-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97/</loc>
+    <loc>//example.org/posts/2017-03-22-python3queue%E5%8D%95%E5%90%91%E9%98%9F%E5%88%97.html</loc>
     <lastmod>2017-03-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8/</loc>
+    <loc>//example.org/posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8.html</loc>
     <lastmod>2017-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8/</loc>
+    <loc>//example.org/posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8.html</loc>
     <lastmod>2017-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8/</loc>
+    <loc>//example.org/posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8.html</loc>
     <lastmod>2017-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-21-python3set%E9%9B%86%E5%90%88/</loc>
+    <loc>//example.org/posts/2017-03-21-python3set%E9%9B%86%E5%90%88.html</loc>
     <lastmod>2017-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B/</loc>
+    <loc>//example.org/posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B.html</loc>
     <lastmod>2017-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <loc>//example.org/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2.html</loc>
     <lastmod>2017-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/</loc>
+    <loc>//example.org/posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86.html</loc>
     <lastmod>2017-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-12-12-wamp%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83%E5%BC%80%E5%90%AF%E4%BC%AA%E9%9D%99%E6%80%81/</loc>
+    <loc>//example.org/posts/2015-12-12-wamp%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83%E5%BC%80%E5%90%AF%E4%BC%AA%E9%9D%99%E6%80%81.html</loc>
     <lastmod>2015-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-12-02-%E5%AD%A9%E5%AD%90%E5%9C%A8%E9%BA%A6%E5%BD%93%E5%8A%B3%E5%81%B7%E7%BA%B8%E5%B7%BE%E5%90%8E%E5%A6%88%E5%A6%88%E9%97%AE%E4%BA%864%E4%B8%AA%E9%97%AE%E9%A2%98/</loc>
+    <loc>//example.org/posts/2015-12-02-%E5%AD%A9%E5%AD%90%E5%9C%A8%E9%BA%A6%E5%BD%93%E5%8A%B3%E5%81%B7%E7%BA%B8%E5%B7%BE%E5%90%8E%E5%A6%88%E5%A6%88%E9%97%AE%E4%BA%864%E4%B8%AA%E9%97%AE%E9%A2%98.html</loc>
     <lastmod>2015-12-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-17-%E4%BB%BF%E5%86%92%E7%94%B5%E4%BF%A1%E8%BF%90%E8%90%A5%E5%95%86%E6%89%8B%E6%9C%BA%E8%90%A5%E4%B8%9A%E5%8E%85%E7%9A%84%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%92%93%E9%B1%BC%E4%BA%8B%E4%BB%B6/</loc>
+    <loc>//example.org/posts/2015-11-17-%E4%BB%BF%E5%86%92%E7%94%B5%E4%BF%A1%E8%BF%90%E8%90%A5%E5%95%86%E6%89%8B%E6%9C%BA%E8%90%A5%E4%B8%9A%E5%8E%85%E7%9A%84%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%92%93%E9%B1%BC%E4%BA%8B%E4%BB%B6.html</loc>
     <lastmod>2015-11-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-16-%E9%80%89%E6%8B%A9%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%8A%AF%E7%9A%846%E4%B8%AA%E9%94%99%E8%AF%AF/</loc>
+    <loc>//example.org/posts/2015-11-16-%E9%80%89%E6%8B%A9%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA%E5%B8%B8%E7%8A%AF%E7%9A%846%E4%B8%AA%E9%94%99%E8%AF%AF.html</loc>
     <lastmod>2015-11-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-15-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%B9%8B%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8C%87%E4%BB%A4/</loc>
+    <loc>//example.org/posts/2015-11-15-%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E4%B9%8B%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8C%87%E4%BB%A4.html</loc>
     <lastmod>2015-11-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-14-%E6%B3%A8%E6%84%8F%E9%9D%A2%E5%AF%B9%E5%90%84%E7%A7%8D%E7%9B%91%E6%8E%A7%E6%91%84%E5%83%8F%E5%A4%B4%E8%AF%B7%E4%BF%9D%E6%8C%81%E4%BD%A0-duangduang%E7%9A%84%E5%BE%AE%E7%AC%91-/</loc>
+    <loc>//example.org/posts/2015-11-14-%E6%B3%A8%E6%84%8F%E9%9D%A2%E5%AF%B9%E5%90%84%E7%A7%8D%E7%9B%91%E6%8E%A7%E6%91%84%E5%83%8F%E5%A4%B4%E8%AF%B7%E4%BF%9D%E6%8C%81%E4%BD%A0-duangduang%E7%9A%84%E5%BE%AE%E7%AC%91-.html</loc>
     <lastmod>2015-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-14-%E7%BC%96%E7%A8%8B%E7%9A%84%E5%88%9D%E5%BF%83/</loc>
+    <loc>//example.org/posts/2015-11-14-%E7%BC%96%E7%A8%8B%E7%9A%84%E5%88%9D%E5%BF%83.html</loc>
     <lastmod>2015-11-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-13-%E6%B2%A1%E6%83%B3%E5%88%B0%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%9F%E4%BC%9A%E6%B3%84%E5%AF%86/</loc>
+    <loc>//example.org/posts/2015-11-13-%E6%B2%A1%E6%83%B3%E5%88%B0%E6%89%93%E5%8D%B0%E6%9C%BA%E4%B9%9F%E4%BC%9A%E6%B3%84%E5%AF%86.html</loc>
     <lastmod>2015-11-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-12-%E5%8F%8C11%E7%BD%91%E8%B4%AD%E4%BD%A0%E4%B9%B0%E4%BA%86%E5%90%97%E7%BD%91%E8%B4%AD%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF%E5%B0%8F%E5%BF%83%E6%B3%84%E9%9C%B2/</loc>
+    <loc>//example.org/posts/2015-11-12-%E5%8F%8C11%E7%BD%91%E8%B4%AD%E4%BD%A0%E4%B9%B0%E4%BA%86%E5%90%97%E7%BD%91%E8%B4%AD%E8%AE%A2%E5%8D%95%E4%BF%A1%E6%81%AF%E5%B0%8F%E5%BF%83%E6%B3%84%E9%9C%B2.html</loc>
     <lastmod>2015-11-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-11-%E6%B5%81%E9%87%8F%E5%8A%AB%E6%8C%81%E9%A6%96%E5%88%A4%E7%8A%AF%E7%BD%AA%E4%BB%8A%E5%90%8E%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%98%E6%95%A2%E9%9A%8F%E4%BE%BF%E5%8A%AB%E6%8C%81%E4%B9%88/</loc>
+    <loc>//example.org/posts/2015-11-11-%E6%B5%81%E9%87%8F%E5%8A%AB%E6%8C%81%E9%A6%96%E5%88%A4%E7%8A%AF%E7%BD%AA%E4%BB%8A%E5%90%8E%E8%BF%90%E8%90%A5%E5%95%86%E8%BF%98%E6%95%A2%E9%9A%8F%E4%BE%BF%E5%8A%AB%E6%8C%81%E4%B9%88.html</loc>
     <lastmod>2015-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-11-%E8%B5%B0%E8%BF%91%E7%A7%91%E5%AD%A6%E6%8F%AD%E5%BC%80%E4%BC%AA%E5%9F%BA%E7%AB%99%E7%9A%84%E7%A5%9E%E7%A7%98%E9%9D%A2%E7%BA%B1/</loc>
+    <loc>//example.org/posts/2015-11-11-%E8%B5%B0%E8%BF%91%E7%A7%91%E5%AD%A6%E6%8F%AD%E5%BC%80%E4%BC%AA%E5%9F%BA%E7%AB%99%E7%9A%84%E7%A5%9E%E7%A7%98%E9%9D%A2%E7%BA%B1.html</loc>
     <lastmod>2015-11-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-10-%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E7%99%BD%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>//example.org/posts/2015-11-10-%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E7%99%BD%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E5%86%99%E5%8D%9A%E5%AE%A2.html</loc>
     <lastmod>2015-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-10-%E5%AF%B9%E4%BA%8E%E5%B0%8F%E7%99%BD-%E5%93%AA%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%9C%80%E5%80%BC%E5%BE%97%E4%BD%A0%E5%8E%BB%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>//example.org/posts/2015-11-10-%E5%AF%B9%E4%BA%8E%E5%B0%8F%E7%99%BD-%E5%93%AA%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%9C%80%E5%80%BC%E5%BE%97%E4%BD%A0%E5%8E%BB%E5%AD%A6%E4%B9%A0.html</loc>
     <lastmod>2015-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/2015-11-10-%E7%94%B5%E8%84%91%E5%8D%A1%E5%8D%A1%E5%8D%A1%E4%BD%86%E4%BD%A0%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81-ssd-%E5%90%97/</loc>
+    <loc>//example.org/posts/2015-11-10-%E7%94%B5%E8%84%91%E5%8D%A1%E5%8D%A1%E5%8D%A1%E4%BD%86%E4%BD%A0%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81-ssd-%E5%90%97.html</loc>
     <lastmod>2015-11-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/search/</loc>
+    <loc>//example.org/posts/search.html</loc>
   </url>
 </urlset>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>搭建Zabbix高可用架构 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="环境：zabbix1：192.168.1.241（Master）
+zabbix2：192.168.1.242（Slave）
+zabbix：192.168.1.240（虚拟IP）
+配置hosts文件[root@Zabbix1 ~]# vim /etc/hosts 192.168.1.241 zabbix1 192.168.1.242 zabbix2 192.168.1.240 zabbix
+一、安装Zabbix#安装Zabbix仓库 [root@Zabbix1 ~]# rpm -Uvh https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-2.el7.noarch.rpm [root@Zabbix1 ~]# yum clean all
+#安装Zabbix server，Web前端，agent，数据库 [root@Zabbix1 ~]# yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent mariadb mariadb-server
+#初始化并创建数据库 [root@Zabbix1 ~]# systemctl enable mariadb [root@Zabbix1 ~]# systemctl start mariadb [root@Zabbix1 ~]# mysql_secure_installation [root@Zabbix1 ~]# mysql -uroot -p MariaDB [(none)]&gt; create database zabbix character set utf8 collate utf8_bin; MariaDB [(none)]&gt; grant all privileges on zabbix.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="搭建Zabbix高可用架构"/>
+<meta name="twitter:description" content="环境：zabbix1：192.168.1.241（Master）
+zabbix2：192.168.1.242（Slave）
+zabbix：192.168.1.240（虚拟IP）
+配置hosts文件[root@Zabbix1 ~]# vim /etc/hosts 192.168.1.241 zabbix1 192.168.1.242 zabbix2 192.168.1.240 zabbix
+一、安装Zabbix#安装Zabbix仓库 [root@Zabbix1 ~]# rpm -Uvh https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-2.el7.noarch.rpm [root@Zabbix1 ~]# yum clean all
+#安装Zabbix server，Web前端，agent，数据库 [root@Zabbix1 ~]# yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent mariadb mariadb-server
+#初始化并创建数据库 [root@Zabbix1 ~]# systemctl enable mariadb [root@Zabbix1 ~]# systemctl start mariadb [root@Zabbix1 ~]# mysql_secure_installation [root@Zabbix1 ~]# mysql -uroot -p MariaDB [(none)]&gt; create database zabbix character set utf8 collate utf8_bin; MariaDB [(none)]&gt; grant all privileges on zabbix."/>
+
+  <meta property="og:title" content="搭建Zabbix高可用架构" />
+<meta property="og:description" content="环境：zabbix1：192.168.1.241（Master）
+zabbix2：192.168.1.242（Slave）
+zabbix：192.168.1.240（虚拟IP）
+配置hosts文件[root@Zabbix1 ~]# vim /etc/hosts 192.168.1.241 zabbix1 192.168.1.242 zabbix2 192.168.1.240 zabbix
+一、安装Zabbix#安装Zabbix仓库 [root@Zabbix1 ~]# rpm -Uvh https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-2.el7.noarch.rpm [root@Zabbix1 ~]# yum clean all
+#安装Zabbix server，Web前端，agent，数据库 [root@Zabbix1 ~]# yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent mariadb mariadb-server
+#初始化并创建数据库 [root@Zabbix1 ~]# systemctl enable mariadb [root@Zabbix1 ~]# systemctl start mariadb [root@Zabbix1 ~]# mysql_secure_installation [root@Zabbix1 ~]# mysql -uroot -p MariaDB [(none)]&gt; create database zabbix character set utf8 collate utf8_bin; MariaDB [(none)]&gt; grant all privileges on zabbix." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-30T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>搭建Zabbix高可用架构</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Mon, Sep 30, 2019
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <h2 id="环境">环境：<a class="anchorjs-link" href="#%e7%8e%af%e5%a2%83"></a></h2><p>zabbix1：192.168.1.241（Master）</p>
+<p>zabbix2：192.168.1.242（Slave）</p>
+<p>zabbix：192.168.1.240（虚拟IP）</p>
+<h2 id="配置hosts文件">配置hosts文件<a class="anchorjs-link" href="#%e9%85%8d%e7%bd%aehosts%e6%96%87%e4%bb%b6"></a></h2><p>[root@Zabbix1 ~]# vim /etc/hosts
+192.168.1.241 zabbix1
+192.168.1.242 zabbix2
+192.168.1.240 zabbix</p>
+<h2 id="一安装zabbix">一、安装Zabbix<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85zabbix"></a></h2><p>#安装Zabbix仓库
+[root@Zabbix1 ~]# rpm -Uvh <a href="https://repo.zabbix.com/zabbix/4.2/rhel/7/x86" target="_blank">https://repo.zabbix.com/zabbix/4.2/rhel/7/x86</a>_64/zabbix-release-4.2-2.el7.noarch.rpm
+[root@Zabbix1 ~]# yum clean all</p>
+<p>#安装Zabbix server，Web前端，agent，数据库
+[root@Zabbix1 ~]# yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent mariadb mariadb-server</p>
+<p>#初始化并创建数据库
+[root@Zabbix1 ~]# systemctl enable mariadb
+[root@Zabbix1 ~]# systemctl start mariadb
+[root@Zabbix1 ~]# mysql_secure_installation
+[root@Zabbix1 ~]# mysql -uroot -p
+MariaDB [(none)]&gt; create database zabbix character set utf8 collate utf8_bin;
+MariaDB [(none)]&gt; grant all privileges on zabbix.* to zabbix@localhost identified by &lsquo;password&rsquo;;
+MariaDB [(none)]&gt; grant all privileges on zabbix.* to <a href="../mailto:zabbix@192.168.1.240">zabbix@192.168.1.240</a> identified by &lsquo;password&rsquo;;
+MariaDB [(none)]&gt; quit;</p>
+<p>#导入初始架构和数据到zabbix数据库（这步zabbix2不用操作）
+[root@Zabbix1 ~]# zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix</p>
+<p>#配置Zabbix server
+[root@Zabbix1 ~]# sed -i &lsquo;/# DBPassword=/cDBPassword=password&rsquo; /etc/zabbix/zabbix_server.conf  #指定数据库密码</p>
+<p>#配置前端PHP时区
+[root@Zabbix1 ~]# sed -ri &lsquo;/.*?php_value date/c\php_value date.timezone Asia/Shanghai&rsquo; /etc/httpd/conf.d/zabbix.conf   //设置时区为上海</p>
+<p>#关闭Selinux和配置防火墙
+[root@Zabbix1 ~]# setenforce 0  //临时关闭Selinux
+[root@Zabbix1 ~]# sed -i /^SELINUX=/cSELINUX=disabled /etc/selinux/config  //永久关闭Selinux
+[root@Zabbix1 ~]# firewall-cmd &ndash;permanent &ndash;add-service=http
+[root@Zabbix1 ~]# firewall-cmd &ndash;reload</p>
+<p>#启动Zabbix相关服务
+[root@Zabbix1 ~]# systemctl restart zabbix-server zabbix-agent httpd
+[root@Zabbix1 ~]# systemctl enable zabbix-server zabbix-agent httpd</p>
+<p> </p>
+<h2 id="二部署keepalived">二、<strong>部署keepalived</strong><a class="anchorjs-link" href="#%e4%ba%8c%e9%83%a8%e7%bd%b2keepalived"></a></h2><p>#两台机器安装keepalived
+[root@Zabbix1 ~]# yum -y install keepalived</p>
+<p>[root@Zabbix1 ~]# vim /etc/keepalived/keepalived.conf
+! Configuration File for keepalived</p>
+<p>global_defs {
+router_id zabbix1
+}</p>
+<p>vrrp_script zabbix_chk {
+script &ldquo;/etc/keepalived/zabbix_check.sh&rdquo;
+interval 5
+}</p>
+<p>vrrp_instance VI_1 {
+state MASTER
+interface eth0
+virtual_router_id 51
+priority 100
+advert_int 1
+authentication {
+auth_type PASS
+auth_pass 1111
+}
+virtual_ipaddress {
+192.168.1.240
+}
+track_script {
+zabbix_chk
+}
+notify_master &ldquo;/etc/keepalived/zabbix.sh start&rdquo; #指定当切换到master时，启动zabbix-server
+notify_backup &ldquo;/etc/keepalived/zabbix.sh stop&rdquo; #指定当切换到backup时，停止zabbix-server(防止两台机器同时运行zabbix-server,导致主从同步失败)
+notify_fault &ldquo;/etc/keepalived/zabbix.sh stop&rdquo; #当前节点出现故障,停止zabbix-server
+}</p>
+<p>[root@Zabbix2 ~]# vim /etc/keepalived/keepalived.conf
+! Configuration File for keepalived</p>
+<p>global_defs {
+router_id zabbix2
+}</p>
+<p>vrrp_instance VI_1 {
+state BACKUP
+interface eth0
+virtual_router_id 51
+priority 50
+advert_int 1
+authentication {
+auth_type PASS
+auth_pass 1111
+}
+virtual_ipaddress {
+192.168.1.240
+}</p>
+<p>notify_master &ldquo;/etc/keepalived/zabbix.sh start&rdquo; #指定当切换到master时，启动zabbix-server
+notify_backup &ldquo;/etc/keepalived/zabbix.sh stop&rdquo; #指定当切换到backup时，停止zabbix-server
+notify_fault  &ldquo;/etc/keepalived/zabbix.sh stop&rdquo; #当前节点出现故障,停止zabbix-server
+}</p>
+<p> </p>
+<p>服务状态检测脚本（只配置在zabbix1上）</p>
+<p>[root@Zabbix1 ~]# vim /etc/keepalived/zabbix_check.sh
+#!/bin/bash</p>
+<p>zabbix_server_status1=$(ps -C zabbix_server &ndash;no-heading|wc -l)</p>
+<p>if [ &ldquo;${zabbix_server_status1}&rdquo; = &ldquo;0&rdquo; ]; then
+systemctl restart zabbix_server.service
+sleep 2</p>
+<p>zabbix_server_status2=$(ps -C zabbix_server &ndash;no-heading|wc -l)
+if [ &ldquo;${zabbix_server_status2}&rdquo; = &ldquo;0&rdquo; ]; then
+exit 1
+fi
+fi</p>
+<p>mariadb_status1=$(ps -C mysqld &ndash;no-heading|wc -l)</p>
+<p>if [ &ldquo;${mariadb_status1}&rdquo; = &ldquo;0&rdquo; ]; then
+systemctl restart mariadb.service
+sleep 2</p>
+<p>mariadb_status2=$(ps -C mysqld &ndash;no-heading|wc -l)
+if [ &ldquo;${mariadb_status2}&rdquo; = &ldquo;0&rdquo; ]; then
+exit 1
+fi
+fi</p>
+<p>httpd_status1=$(ps -C httpd &ndash;no-heading|wc -l)</p>
+<p>if [ &ldquo;${httpd_status1}&rdquo; = &ldquo;0&rdquo; ]; then
+systemctl restart httpd.service
+sleep 2</p>
+<p>httpd_status2=$(ps -C httpd &ndash;no-heading|wc -l)
+if [ &ldquo;${httpd_status2}&rdquo; = &ldquo;0&rdquo; ]; then
+exit 1
+fi
+fi</p>
+<p>[root@Zabbix1 ~]# chmod +x /etc/keepalived/zabbix_check.sh</p>
+<p> </p>
+<p>notify脚本</p>
+<p>[root@Zabbix1 ]# vim /etc/keepalived/zabbix.sh
+#!/bin/bash
+case &ldquo;$1&rdquo; in
+start)
+systemctl start zabbix-server
+;;
+stop)
+systemctl stop zabbix-server
+;;
+esac</p>
+<p>[root@Zabbix1 ]# chmod +x /etc/keepalived/zabbix.sh</p>
+<p> </p>
+<p>防火墙配置允许VRRP组播</p>
+<p>[root@Zabbix1 ~]# firewall-cmd &ndash;direct &ndash;permanent &ndash;add-rule ipv4 filter INPUT 0 &ndash;in-interface eth0 &ndash;destination 224.0.0.18 &ndash;protocol vrrp -j ACCEPT
+[root@Zabbix1 ~]# firewall-cmd &ndash;reload</p>
+<p> </p>
+<p>[root@Zabbix1 ~]# systemctl restart keepalived.service<br>
+[root@Zabbix1 ~]# systemctl enable keepalived.service</p>
+<h2 id="三配置mariadb数据库主主同步">三、配置mariadb数据库主主同步<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%aemariadb%e6%95%b0%e6%8d%ae%e5%ba%93%e4%b8%bb%e4%b8%bb%e5%90%8c%e6%ad%a5"></a></h2><p>防火墙开放数据库端口</p>
+<p>[root@Zabbix1 ~]# firewall-cmd &ndash;permanent &ndash;add-port=3306/tcp
+[root@Zabbix1 ~]# firewall-cmd &ndash;reload</p>
+<p> </p>
+<h3 id="zabbix1上操作"><strong>zabbix1上操作</strong><a class="anchorjs-link" href="#zabbix1%e4%b8%8a%e6%93%8d%e4%bd%9c"></a></h3><p>#备份原有配置
+[root@Zabbix1 ~]# cp /etc/my.cnf{,.bak}</p>
+<p>#编辑zabbix1的my.cnf文件
+[root@Zabbix1 ~]# vim /etc/my.cnf
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+symbolic-links=0</p>
+<p>server-id=241                     #保证每个服务器不一样，这里以IP最后一位来区分
+log-bin=mysql-bin                 #开启bin日志
+auto-increment-increment = 2      #步进值auto_imcrement。一般有n台主MySQL就填n
+auto-increment-offset = 1         #起始值。一般填第n台主MySQL。此时为第一台主MySQL
+binlog_format = mixed             #设置binlog格式为mixed
+sync_binlog=1                     #事务特性每1次事务提交
+binlog-do-db=zabbix               #同步的据库名
+binlog-ignore-db=mysql            #不同步数据库名
+binlog-ignore-db=sys
+binlog-ignore-db=performance_schema
+binlog-ignore-db=information_schema
+replicate-do-db=zabbix            #需要复制的数据库<br>
+replicate-ignore-db=mysql         #不需要复制的数据库
+replicate-ignore-db=sys
+replicate-ignore-db=performance_schema
+replicate-ignore-db=information_schema</p>
+<p>[mysqld_safe]
+log-error=/var/log/mariadb/mariadb.log
+pid-file=/var/run/mariadb/mariadb.pid</p>
+<p>#重启mariadb
+[root@Zabbix1 ~]# systemctl restart mariadb.service</p>
+<p>#登录MariaDB控制台，授权同步用户，用于zabbix2上同步数据
+[root@Zabbix1 ~]# mysql -uroot -p
+MariaDB [(none)]&gt; GRANT REPLICATION SLAVE ON *.* TO &lsquo;zabbix242&rsquo;@&lsquo;192.168.1.242&rsquo; IDENTIFIED BY &lsquo;zabbix242&rsquo;;
+MariaDB [(none)]&gt; FLUSH PRIVILEGES;
+MariaDB [(none)]&gt; exit</p>
+<p>#备份zabbix库
+[root@Zabbix1 ~]# mysqldump -uroot -p zabbix &ndash;single-transaction &ndash;master-data=1 &ndash;flush-logs &gt; zabbix.sql</p>
+<p>#把备份文件拷贝到zabbix2机器上
+[root@Zabbix1 ~]# scp zabbix.sql zabbix2:/root/</p>
+<h3 id="zabbix2上操作"><strong>zabbix2上操作</strong><a class="anchorjs-link" href="#zabbix2%e4%b8%8a%e6%93%8d%e4%bd%9c"></a></h3><p>#备份原有配置
+[root@Zabbix2 ~]# cp /etc/my.cnf{,.bak}</p>
+<p>#编辑zabbix2的my.cnf文件
+[root@Zabbix2 ~]# vim /etc/my.cnf
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+symbolic-links=0
+server-id=242                     #保证每个服务器不一样
+log-bin=mysql-bin                 #开启bin日志
+auto-increment-increment = 2      #步进值auto_imcrement。一般有n台主MySQL就填n
+auto-increment-offset = 2         #起始值。一般填第n台主MySQL。此时为第一台主MySQL
+binlog_format = mixed             #设置binlog格式为mixed
+sync_binlog=1                     #事务特性每1次事务提交
+binlog-do-db=zabbix               #同步的据库名
+binlog-ignore-db=mysql            #不同步数据库名
+binlog-ignore-db=sys
+binlog-ignore-db=performance_schema
+binlog-ignore-db=information_schema
+replicate-do-db=zabbix            #需要复制的数据库<br>
+replicate-ignore-db=mysql         #不需要复制的数据库
+replicate-ignore-db=sys
+replicate-ignore-db=performance_schema
+replicate-ignore-db=information_schema</p>
+<p>[mysqld_safe]
+log-error=/var/log/mariadb/mariadb.log
+pid-file=/var/run/mariadb/mariadb.pid</p>
+<p>#重启mariadb
+[root@Zabbix2 ~]# systemctl restart mariadb.service</p>
+<p> </p>
+<p>#登录MariaDB控制台
+[root@Zabbix2 ~]# mysql -uroot -p</p>
+<p>#指定Master信息
+MariaDB [(none)]&gt; CHANGE MASTER TO
+MASTER_HOST=&lsquo;192.168.1.241&rsquo;,
+MASTER_USER=&lsquo;zabbix242&rsquo;,
+MASTER_PASSWORD=&lsquo;zabbix242&rsquo;;</p>
+<p>#导入zabbix1备份的数据库
+MariaDB [(none)]&gt; use zabbix
+MariaDB [zabbix]&gt; set sql_log_bin=0;   #临时关闭二进制日志
+MariaDB [zabbix]&gt; source /root/zabbix.sql</p>
+<p>#启动SLAVE
+MariaDB [zabbix]&gt; START SLAVE;</p>
+<p>#检查主从复制是否配置成功（Slave_IO_Running和Slave_SQL_Running是否为YES）
+MariaDB [zabbix]&gt; SHOW SLAVE STATUS\G;</p>
+<p><strong>接下来配置zabbix2到zabbix1 主从配置（即可实现主主同步）</strong></p>
+<h3 id="zabbix2上操作-1"><strong>zabbix2上操作</strong><a class="anchorjs-link" href="#zabbix2%e4%b8%8a%e6%93%8d%e4%bd%9c-1"></a></h3><p>#授权用户，用于zabbix1上同步数据
+MariaDB [zabbix]&gt; GRANT REPLICATION SLAVE ON *.* TO &lsquo;zabbix241&rsquo;@&lsquo;192.168.1.241&rsquo; IDENTIFIED BY &lsquo;zabbix241&rsquo;;
+MariaDB [(none)]&gt; FLUSH PRIVILEGES;</p>
+<p>#显示master状态，记录一下File和Position的值
+MariaDB [zabbix]&gt; show master status;
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB                                |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| mysql-bin.000001 |  1743933 | zabbix       | mysql,sys,performance_schema,information_schema |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+</p>
+<h3 id="zabbix1上操作-1"><strong>zabbix1上操作</strong><a class="anchorjs-link" href="#zabbix1%e4%b8%8a%e6%93%8d%e4%bd%9c-1"></a></h3><p>#配置主从同步（zabbix2主，zabbix1从）
+MariaDB [(none)]&gt; CHANGE MASTER TO
+MASTER_HOST=&lsquo;192.168.1.242&rsquo;,
+MASTER_USER=&lsquo;zabbix241&rsquo;,
+MASTER_PASSWORD=&lsquo;zabbix241&rsquo;,
+MASTER_LOG_FILE=&lsquo;mysql-bin.000001&rsquo;,
+MASTER_LOG_POS=1743933;
+MariaDB [(none)]&gt; START SLAVE;</p>
+<p>#检查主从复制是否配置成功（Slave_IO_Running和Slave_SQL_Running是否为YES）
+MariaDB [zabbix]&gt; SHOW SLAVE STATUS\G;</p>
+<p> </p>
+<h2 id="四浏览器输入虚拟ip配置数据库连接">四、浏览器输入虚拟IP，配置数据库连接<a class="anchorjs-link" href="#%e5%9b%9b%e6%b5%8f%e8%a7%88%e5%99%a8%e8%be%93%e5%85%a5%e8%99%9a%e6%8b%9fip%e9%85%8d%e7%bd%ae%e6%95%b0%e6%8d%ae%e5%ba%93%e8%bf%9e%e6%8e%a5"></a></h2><p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//97790c6e36ef390e2748218cce95ee85.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//e5d2172802c592e9a726c0f239cc09eb.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p> </p>
+<h2 id="五zabbix前端文件及配置主备同步rsync-inotify">五、zabbix前端文件及配置，主备同步（rsync +inotify）<a class="anchorjs-link" href="#%e4%ba%94zabbix%e5%89%8d%e7%ab%af%e6%96%87%e4%bb%b6%e5%8f%8a%e9%85%8d%e7%bd%ae%e4%b8%bb%e5%a4%87%e5%90%8c%e6%ad%a5rsync-inotify"></a></h2><p>#安装文件同步组件
+[root@Zabbix1 ~]# yum -y install epel-release
+[root@Zabbix1 ~]# yum -y install rsync inotify-tools</p>
+<p> </p>
+<p>#配置ssh秘钥登录
+[root@Zabbix1 ~]# ssh-keygen   //生成秘钥
+[root@Zabbix1 ~]# ssh-copy-id zabbix2  //发送公钥到zabbix2，实现免密码远程登录</p>
+<p>[root@Zabbix1 ~]# ssh-keygen   //生成秘钥
+[root@Zabbix1 ~]# ssh-copy-id zabbix1  //发送公钥到zabbix1，实现免密码远程登录</p>
+<p> </p>
+<p>#网站及配置文件首次同步
+[root@Zabbix1 ~]# rsync -rdvLzP &ndash;delete /usr/share/zabbix/ zabbix2:/usr/share/zabbix/
+[root@Zabbix1 ~]# rsync -rdvLzP &ndash;delete /etc/zabbix/ zabbix2:/etc/zabbix/</p>
+<p> </p>
+<p>#通过inotify监控文件系统变化并自动同步文件
+[root@Zabbix1 ~]# vim rsync.sh
+source_path_1=/usr/share/zabbix/
+source_path_2=/etc/zabbix/
+log_file=/var/log/rsync_client.log</p>
+<p>inotify_fun1(){
+/usr/bin/inotifywait -mrq &ndash;timefmt &lsquo;%Y/%m/%d-%H:%M:%S&rsquo; &ndash;format &lsquo;%T %w %f&rsquo; \
+-e modify,delete,create,move,attrib ${source_path_1} \
+| while read file
+do
+rsync -rvLzP &ndash;delete ${source_path_1} zabbix2:${source_path_1}<br>
+done
+}</p>
+<p>inotify_fun2(){
+/usr/bin/inotifywait -mrq &ndash;timefmt &lsquo;%Y/%m/%d-%H:%M:%S&rsquo; &ndash;format &lsquo;%T %w %f&rsquo; \
+-e modify,delete,create,move,attrib ${source_path_2} \
+| while read file
+do
+rsync -rdvLzP &ndash;delete ${source_path_2} zabbix2:${source_path_2}
+done
+}</p>
+<p>inotify_fun1 &raquo; ${log_file} 2&gt;&amp;1 &amp;
+inotify_fun2 &raquo; ${log_file} 2&gt;&amp;1 &amp;</p>
+<p> </p>
+<p>#将脚本设置为开机启动
+[root@Zabbix1 ~]#  cp rsync.sh /etc/init.d/
+[root@Zabbix1 ~]#  chmod +x /etc/rc.d/rc.local
+[root@Zabbix1 ~]#  echo &ldquo;sh /etc/init.d/rsync.sh&rdquo; &raquo; /etc/rc.d/rc.local</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E.html" data-toggle="tooltip" data-placement="top" title="mysql主从数据不一致，同步失败后重做主从">
+              Previous<br>
+              <span>mysql主从数据不一致，同步失败后重做主从</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F.html" data-toggle="tooltip" data-placement="top" title="WordPress编辑器栏增加字体和大小">
+              Next<br>
+              <span>WordPress编辑器栏增加字体和大小</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

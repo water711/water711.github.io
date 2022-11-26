@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.107.0">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+
+  <title>蔡振威的博客</title>
+
+  
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="蔡振威的博客"/>
+<meta name="twitter:description" content=""/>
+
+  <meta property="og:title" content="蔡振威的博客" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="//example.org/" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  <link rel="alternate" type="application/rss+xml" href="../index.xml" title="蔡振威的博客" />
+  <link rel="alternate" type="application/json" href="../index.json" title="蔡振威的博客" />
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+
+<header class="intro-header style-text">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="site-heading">
+        
+          <h1>蔡振威的博客</h1>
+          
+          
+          
+          
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+  
+  <div class="container">
+    <div class="row">
+      
+      
+      
+      <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12
+      col-xs-12 postlist-container">
+        
+
+
+   <div class="post-preview">
+  <a href="../posts/2017-03-21-python3counter%E7%B1%BB%E8%AE%A1%E6%95%B0%E5%99%A8.html">
+      <h2 class="post-title">python3 Counter类（计数器）</h2>
+      
+      <div class="post-content-preview">
+        
+        Counter（计数器）：用于追踪值的出现次数
+Counter类继承dict类，所以它能使用dict类里面的方法
+创建一个Counter类
+import collections obj = collections.Counter(&amp;lsquo;aabbccc&amp;rsquo;) print(obj) #输出：Counter({&amp;lsquo;c&amp;rsquo;: …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Mar 21, 2017
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2017-03-21-python3dict%E5%AD%97%E5%85%B8.html">
+      <h2 class="post-title">python3 dict（字典）</h2>
+      
+      <div class="post-content-preview">
+        
+        clear(清空字典内容)
+stu = { &amp;rsquo;num1&amp;rsquo;:&amp;lsquo;Tom&amp;rsquo;, &amp;rsquo;num2&amp;rsquo;:&amp;lsquo;Lucy&amp;rsquo;, &amp;rsquo;num3&amp;rsquo;:&amp;lsquo;Sam&amp;rsquo;, } print(stu.clear()) #输出：None
+copy（拷贝字典） …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Mar 21, 2017
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2017-03-21-python3ordereddict%E7%B1%BB%E6%9C%89%E5%BA%8F%E5%AD%97%E5%85%B8.html">
+      <h2 class="post-title">python3 OrderedDict类（有序字典）</h2>
+      
+      <div class="post-content-preview">
+        
+        创建有序字典
+import collections
+dic = collections.OrderedDict() dic[&amp;lsquo;k1&amp;rsquo;] = &amp;lsquo;v1&amp;rsquo; dic[&amp;lsquo;k2&amp;rsquo;] = &amp;lsquo;v2&amp;rsquo; dic[&amp;lsquo;k3&amp;rsquo;] = &amp;lsquo;v3&amp;rsquo; …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Mar 21, 2017
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2017-03-21-python3set%E9%9B%86%E5%90%88.html">
+      <h2 class="post-title">python3 set（集合）</h2>
+      
+      <div class="post-content-preview">
+        
+        add（增加元素）
+name = set([&amp;lsquo;Tom&amp;rsquo;,&amp;lsquo;Lucy&amp;rsquo;,&amp;lsquo;Ben&amp;rsquo;]) name.add(&amp;lsquo;Juny&amp;rsquo;) print(name) #输出：{&amp;lsquo;Lucy&amp;rsquo;, &amp;lsquo;Juny&amp;rsquo;, …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Mar 21, 2017
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B.html">
+      <h2 class="post-title">python3 int（整型）</h2>
+      
+      <div class="post-content-preview">
+        
+        __abs__(返回绝对值)
+n = -5 print(n.__abs__()) #输出：5
+__add__(相加，运算符：+)
+n = 3 print(n.__add__(5)) #输出：8
+__and__（按位与运算，运算符：&amp;amp;）
+n = 5 print(n.__and__(7)) #输出：5 # 00000110 #与运算
+00000111 # …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Mar 20, 2017
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2.html">
+      <h2 class="post-title">python3 str（字符串）</h2>
+      
+      <div class="post-content-preview">
+        
+        __add__函数 (在后面追加字符串)
+s1 =&amp;lsquo;Hello&amp;rsquo; s2 = s1.__add__(&amp;rsquo; boy!&amp;rsquo;) print(s2) #输出：Hello boy!
+__contains__（判断是否包含某字符串，包含则返回True）
+s1 = &amp;lsquo;Hello&amp;rsquo; result = …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Sat, Mar 18, 2017
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86.html">
+      <h2 class="post-title">python3基础知识梳理</h2>
+      
+      <div class="post-content-preview">
+        
+        一、数据类型
+1、数字
+int（整型） long（长整型） float（浮点型） complex（复数） 2、布尔值
+True或False 3、字符串
+二、变量
+变量命名规则：
+变量名只能是 字母、数字或下划线的任意组合 变量名的第一个字符不能是数字 变量名不能为关键字（例如：and，or，continue，break，in，else，print 等） …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Fri, Mar 17, 2017
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2015-12-12-wamp%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83%E5%BC%80%E5%90%AF%E4%BC%AA%E9%9D%99%E6%80%81.html">
+      <h2 class="post-title">wamp集成环境开启伪静态</h2>
+      
+      <div class="post-content-preview">
+        
+        wamp集成在安装完后默认是没有开启伪静态的，下面是wamp开启rewrite伪静态的方法：
+第一步：打开wamp安装目录里的bin文件夹，找到Apache安装目录下的conf目录中的httpd.conf这个文件
+(例如我的是：D:\wamp\bin\apache\Apache2.2.11\conf)
+查找，“LoadModule …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Sat, Dec 12, 2015
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2015-12-02-%E5%AD%A9%E5%AD%90%E5%9C%A8%E9%BA%A6%E5%BD%93%E5%8A%B3%E5%81%B7%E7%BA%B8%E5%B7%BE%E5%90%8E%E5%A6%88%E5%A6%88%E9%97%AE%E4%BA%864%E4%B8%AA%E9%97%AE%E9%A2%98.html">
+      <h2 class="post-title">孩子在麦当劳偷纸巾后，妈妈问了4个问题</h2>
+      
+      <div class="post-content-preview">
+        
+        这天在街上打电话，无意中听到了母子俩的对话，被妈妈的教育深深感动，教育孩子就该如此。
+“妈妈把你的酸奶喝光了，你委屈吗？”
+“委屈！”小男孩泪眼婆挲。
+“你把麦当劳厕所的厕纸抽光了，麦当劳的经理发现了会责怪搞卫生的阿姨，阿姨还可能被扣薪水，她委屈吗？”
+“委屈！”小男孩的眼睛不敢看妈妈，脸颊已经变红。
+这时妈妈像变魔术一样，从身后拿出了一瓶酸奶，“妈妈不应该 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Wed, Dec 2, 2015
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="../posts/2015-11-17-%E4%BB%BF%E5%86%92%E7%94%B5%E4%BF%A1%E8%BF%90%E8%90%A5%E5%95%86%E6%89%8B%E6%9C%BA%E8%90%A5%E4%B8%9A%E5%8E%85%E7%9A%84%E5%A4%A7%E8%A7%84%E6%A8%A1%E9%92%93%E9%B1%BC%E4%BA%8B%E4%BB%B6.html">
+      <h2 class="post-title">仿冒电信运营商手机营业厅的大规模钓鱼事件</h2>
+      
+      <div class="post-content-preview">
+        
+        有白帽子在乌云报告了一起钓鱼攻击事件，说起钓鱼各位已经是身经百战了，但乌云君发现此次事件暴露出目前钓鱼团伙的一些流行的套路和技术手段。另外还发现此类站点居然存在一些入门级的web安全漏洞，可能会导致受骗者信息二次、三次、四次、五次。。。泄露，鱼篓子漏了一地。
+漏洞地址：仿冒电信运营商掌上营业厅的大规模钓鱼事件(大量用户银行卡中招CVV2与密码泄露)
+此次钓鱼 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Nov 17, 2015
+  </p>
+</div>
+<hr>
+
+
+
+<ul class="pager">
+  
+  <li class="previous">
+      <a href="../page/13.html">&larr; Newer Posts</a>
+  </li>
+  
+  
+  <li class="next">
+      <a href="../page/15.html">Older Posts &rarr;</a>
+  </li>
+  
+</ul>
+
+
+      </div>
+      
+      <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12
+      col-xs-12 sidebar-container">
+
+        
+        <section>
+  
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+        
+<section class="visible-md visible-lg">
+  <hr>
+  
+  <h5>ABOUT ME</h5>
+  
+
+  
+  <div class="short-about">
+    
+    
+    
+    
+
+
+<ul class="list-inline">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+  </div>
+</section>
+
+        
+        
+
+
+      </div>
+      
+
+    </div>
+  </div>
+
+  
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

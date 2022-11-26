@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>python 内置函数 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="官方说明文档：https://docs.python.org/3/library/functions.html
+abs(求绝对值)
+print(abs(-5)) #输出：5
+all(判断可迭代对象的每个元素是否都为True，只要有一个元素为0、None、空字符 &rsquo; &lsquo;、空列表、空元组、空字典，都返回False) 可迭代对象：就是可循环遍历的对象
+print(all([])) #空列表，返回True print(all([&rsquo;&rsquo;,])) #列表元素有1个为空，返回False print(all((0,1,2))) #元组元素有一个为0，返回False
+#输出：True # False # False
+any(判断可迭代对象的每个元素是否都为True，和all函数相反)
+print(any([0,&rsquo;&rsquo;,None,{},1])) #只要有一个元素为真，返回真 print(any([0,&rsquo;&rsquo;,None,{}])) #所有元素为假，才为假
+#输出：True # False
+ascii（返回一个用ASCII表示的对象，非ascii字符，会输出\x，\u或\U等字符来表示）
+补充：到对象的类中执行__repr__方法，获取其返回值
+print(ascii(&lsquo;hello&rsquo;)) print(ascii(&lsquo;中文&rsquo;)) #输出：&lsquo;hello&rsquo; # &lsquo;\u4e2d\u6587&rsquo;
+bin（返回二进制数）
+print(bin(57)) #输出：0b111001
+bool（返回布尔值）
+print(bool(5)) #输出：True
+bytearray（转换成字节数组）
+print(bytearray(3)) print(bytearray(&lsquo;hello&rsquo;,encoding=&lsquo;utf-8&rsquo;)) #参数为字符串要指定编码 print(bytearray(&lsquo;中文&rsquo;,&lsquo;utf-8&rsquo;)) print(bytearray([11,22,33])) #参数为可迭代类型，则元素必须为[0 ,255]中的整数；
+#输出：bytearray(b&rsquo;\x00\x00\x00&rsquo;) # bytearray(b&rsquo;hello&rsquo;) # bytearray(b&rsquo;\xe4\xb8\xad\xe6\x96\x87&rsquo;) # bytearray(b&rsquo;\x0b\x16!&rsquo;)
+bytes（转换成字节）
+print(bytes(2)) print(bytes(&lsquo;中文&rsquo;,encoding=&lsquo;utf-8&rsquo;)) #字符转换成字节，utf-8编码1个字符为3个字节，GBK编码1个字符为2个字节
+#输出：b&rsquo;\x00\x00&rsquo; # b&rsquo;\xe4\xb8\xad\xe6\x96\x87&rsquo;
+callable（检测对象是否可被执行）
+def test(): print(&lsquo;succeed&rsquo;)
+n = 5 print(callable(test)) print(callable(n)) #输出：True # False">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python 内置函数"/>
+<meta name="twitter:description" content="官方说明文档：https://docs.python.org/3/library/functions.html
+abs(求绝对值)
+print(abs(-5)) #输出：5
+all(判断可迭代对象的每个元素是否都为True，只要有一个元素为0、None、空字符 &rsquo; &lsquo;、空列表、空元组、空字典，都返回False) 可迭代对象：就是可循环遍历的对象
+print(all([])) #空列表，返回True print(all([&rsquo;&rsquo;,])) #列表元素有1个为空，返回False print(all((0,1,2))) #元组元素有一个为0，返回False
+#输出：True # False # False
+any(判断可迭代对象的每个元素是否都为True，和all函数相反)
+print(any([0,&rsquo;&rsquo;,None,{},1])) #只要有一个元素为真，返回真 print(any([0,&rsquo;&rsquo;,None,{}])) #所有元素为假，才为假
+#输出：True # False
+ascii（返回一个用ASCII表示的对象，非ascii字符，会输出\x，\u或\U等字符来表示）
+补充：到对象的类中执行__repr__方法，获取其返回值
+print(ascii(&lsquo;hello&rsquo;)) print(ascii(&lsquo;中文&rsquo;)) #输出：&lsquo;hello&rsquo; # &lsquo;\u4e2d\u6587&rsquo;
+bin（返回二进制数）
+print(bin(57)) #输出：0b111001
+bool（返回布尔值）
+print(bool(5)) #输出：True
+bytearray（转换成字节数组）
+print(bytearray(3)) print(bytearray(&lsquo;hello&rsquo;,encoding=&lsquo;utf-8&rsquo;)) #参数为字符串要指定编码 print(bytearray(&lsquo;中文&rsquo;,&lsquo;utf-8&rsquo;)) print(bytearray([11,22,33])) #参数为可迭代类型，则元素必须为[0 ,255]中的整数；
+#输出：bytearray(b&rsquo;\x00\x00\x00&rsquo;) # bytearray(b&rsquo;hello&rsquo;) # bytearray(b&rsquo;\xe4\xb8\xad\xe6\x96\x87&rsquo;) # bytearray(b&rsquo;\x0b\x16!&rsquo;)
+bytes（转换成字节）
+print(bytes(2)) print(bytes(&lsquo;中文&rsquo;,encoding=&lsquo;utf-8&rsquo;)) #字符转换成字节，utf-8编码1个字符为3个字节，GBK编码1个字符为2个字节
+#输出：b&rsquo;\x00\x00&rsquo; # b&rsquo;\xe4\xb8\xad\xe6\x96\x87&rsquo;
+callable（检测对象是否可被执行）
+def test(): print(&lsquo;succeed&rsquo;)
+n = 5 print(callable(test)) print(callable(n)) #输出：True # False"/>
+
+  <meta property="og:title" content="python 内置函数" />
+<meta property="og:description" content="官方说明文档：https://docs.python.org/3/library/functions.html
+abs(求绝对值)
+print(abs(-5)) #输出：5
+all(判断可迭代对象的每个元素是否都为True，只要有一个元素为0、None、空字符 &rsquo; &lsquo;、空列表、空元组、空字典，都返回False) 可迭代对象：就是可循环遍历的对象
+print(all([])) #空列表，返回True print(all([&rsquo;&rsquo;,])) #列表元素有1个为空，返回False print(all((0,1,2))) #元组元素有一个为0，返回False
+#输出：True # False # False
+any(判断可迭代对象的每个元素是否都为True，和all函数相反)
+print(any([0,&rsquo;&rsquo;,None,{},1])) #只要有一个元素为真，返回真 print(any([0,&rsquo;&rsquo;,None,{}])) #所有元素为假，才为假
+#输出：True # False
+ascii（返回一个用ASCII表示的对象，非ascii字符，会输出\x，\u或\U等字符来表示）
+补充：到对象的类中执行__repr__方法，获取其返回值
+print(ascii(&lsquo;hello&rsquo;)) print(ascii(&lsquo;中文&rsquo;)) #输出：&lsquo;hello&rsquo; # &lsquo;\u4e2d\u6587&rsquo;
+bin（返回二进制数）
+print(bin(57)) #输出：0b111001
+bool（返回布尔值）
+print(bool(5)) #输出：True
+bytearray（转换成字节数组）
+print(bytearray(3)) print(bytearray(&lsquo;hello&rsquo;,encoding=&lsquo;utf-8&rsquo;)) #参数为字符串要指定编码 print(bytearray(&lsquo;中文&rsquo;,&lsquo;utf-8&rsquo;)) print(bytearray([11,22,33])) #参数为可迭代类型，则元素必须为[0 ,255]中的整数；
+#输出：bytearray(b&rsquo;\x00\x00\x00&rsquo;) # bytearray(b&rsquo;hello&rsquo;) # bytearray(b&rsquo;\xe4\xb8\xad\xe6\x96\x87&rsquo;) # bytearray(b&rsquo;\x0b\x16!&rsquo;)
+bytes（转换成字节）
+print(bytes(2)) print(bytes(&lsquo;中文&rsquo;,encoding=&lsquo;utf-8&rsquo;)) #字符转换成字节，utf-8编码1个字符为3个字节，GBK编码1个字符为2个字节
+#输出：b&rsquo;\x00\x00&rsquo; # b&rsquo;\xe4\xb8\xad\xe6\x96\x87&rsquo;
+callable（检测对象是否可被执行）
+def test(): print(&lsquo;succeed&rsquo;)
+n = 5 print(callable(test)) print(callable(n)) #输出：True # False" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2017-03-23-python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-03-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-03-23T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>python 内置函数</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Thu, Mar 23, 2017
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>官方说明文档：<a href="https://docs.python.org/3/library/functions.html" target="_blank">https://docs.python.org/3/library/functions.html</a></p>
+<hr>
+<p> abs(求绝对值)</p>
+<p>print(abs(-5)) #输出：5</p>
+<p>all(判断可迭代对象的每个元素是否都为True，只要有一个元素为0、None、空字符 &rsquo; &lsquo;、空列表、空元组、空字典，都返回False)        </p>
+<p>可迭代对象：就是可循环遍历的对象</p>
+<p>print(all([]))  #空列表，返回True
+print(all([&rsquo;&rsquo;,])) #列表元素有1个为空，返回False
+print(all((0,1,2)))  #元组元素有一个为0，返回False</p>
+<p>#输出：True # False # False</p>
+<p> any(判断可迭代对象的每个元素是否都为True，和all函数相反)</p>
+<p>print(any([0,&rsquo;&rsquo;,None,{},1])) #只要有一个元素为真，返回真
+print(any([0,&rsquo;&rsquo;,None,{}]))   #所有元素为假，才为假</p>
+<p>#输出：True # False</p>
+<p> ascii（返回一个用ASCII表示的对象，非ascii字符，会输出\x，\u或\U等字符来表示）</p>
+<p>补充：到对象的类中执行__repr__方法，获取其返回值</p>
+<p>print(ascii(&lsquo;hello&rsquo;)) print(ascii(&lsquo;中文&rsquo;)) #输出：&lsquo;hello&rsquo; # &lsquo;\u4e2d\u6587&rsquo;</p>
+<p>bin（返回二进制数）</p>
+<p>print(bin(57)) #输出：0b111001</p>
+<p>bool（返回布尔值）</p>
+<p>print(bool(5)) #输出：True</p>
+<p>bytearray（转换成字节数组）</p>
+<p>print(bytearray(3)) print(bytearray(&lsquo;hello&rsquo;,encoding=&lsquo;utf-8&rsquo;))  #参数为字符串要指定编码
+print(bytearray(&lsquo;中文&rsquo;,&lsquo;utf-8&rsquo;)) print(bytearray([11,22,33]))  #参数为可迭代类型，则元素必须为[0 ,255]中的整数；</p>
+<p>#输出：bytearray(b&rsquo;\x00\x00\x00&rsquo;) # bytearray(b&rsquo;hello&rsquo;) # bytearray(b&rsquo;\xe4\xb8\xad\xe6\x96\x87&rsquo;) # bytearray(b&rsquo;\x0b\x16!&rsquo;)</p>
+<p>bytes（转换成字节）</p>
+<p>print(bytes(2)) print(bytes(&lsquo;中文&rsquo;,encoding=&lsquo;utf-8&rsquo;))  #字符转换成字节，utf-8编码1个字符为3个字节，GBK编码1个字符为2个字节</p>
+<p>#输出：b&rsquo;\x00\x00&rsquo; # b&rsquo;\xe4\xb8\xad\xe6\x96\x87&rsquo;</p>
+<p>callable（检测对象是否可被执行）</p>
+<p>def test(): print(&lsquo;succeed&rsquo;)</p>
+<p>n = 5
+print(callable(test)) print(callable(n)) #输出：True # False</p>
+<p>chr（将数字转换成ASCII码中的字符）</p>
+<p>print(chr(65)) #输出：A</p>
+<p>ord（将ASCII码中的字符转换成数值）</p>
+<p>print(ord(&lsquo;A&rsquo;)) #输出：65</p>
+<p>classmethod</p>
+<p>#占位</p>
+<p>compile （编译）</p>
+<p>#占位</p>
+<p>complex（返回复数）</p>
+<p>#占位</p>
+<p>delattr</p>
+<p>#占位</p>
+<p> dict（创建字典）</p>
+<p>d = dict(a=1,b=2) print(d) #输出：{&lsquo;b&rsquo;: 2, &lsquo;a&rsquo;: 1}</p>
+<p>dir（查看某个对象或模块提供了哪些功能）</p>
+<p>print(dir(str)) #输出：[&rsquo;__add__&rsquo;, &lsquo;__class__&rsquo;, &lsquo;__contains__&rsquo;,&hellip;&hellip;&rsquo;translate&rsquo;, &lsquo;upper&rsquo;, &lsquo;zfill&rsquo;]</p>
+<p>divmod（传入除数和被除数，返回商和余数）</p>
+<p>print(divmod(13,5)) #输出：(2, 3)</p>
+<p> enumerate（传入可迭代对象，获得它的索引和值）</p>
+<p>name = [&lsquo;Tom&rsquo;,&lsquo;Lucy&rsquo;,&lsquo;Ben&rsquo;] for i,j in enumerate(name):   #i为索引，j为值
+print(i,j) #输出：0 Tom # 1 Lucy # 2 Ben</p>
+<p>eval(执行字符串里面的表达式,并返回结果)</p>
+<p>print(eval(&lsquo;5*10&rsquo;)) #输出：50</p>
+<p>exec（执行字符串里面的代码）</p>
+<p>exec(&lsquo;a=2+3&rsquo;) print(a) #输出：5</p>
+<p>map（遍历可迭代对象的元素，把每个元素传入指定方法或函数中执行，并生成的可迭代对象）</p>
+<p>def func(a): return a*2 li = [11,22,33,44]
+new_li = map(func,li) print(list(new_li))  #new_li是map对象，要转成list才能输出结果</p>
+<p>#输出：[22, 44, 66, 88]</p>
+<p>filter（使用指定方法或函数，过滤可迭代对象的元素，并生成新的可迭代对象）</p>
+<p>def func(a): if a&gt;50: return True else: return False</p>
+<p>li = [33,44,55,66,77]
+new_li = filter(func,li) print(list(new_li))   #new_li是filter对象，要转成list才能输出结果</p>
+<p>#输出：[55, 66, 77]</p>
+<p>float（把数字转换为浮点型）</p>
+<p>print(float(22)) #输出：22.0</p>
+<p>format（格式化输出）</p>
+<p>print(format(9,&lsquo;b&rsquo;))   #转换成二进制,输出1001
+print(format(9,&lsquo;o&rsquo;))   #转换成八进制,输出11
+print(format(9,&rsquo;d&rsquo;))   #转换成十进制,输出9
+print(format(12,&lsquo;x&rsquo;))  #转换成十六进制,小写显示，输出c
+print(format(12,&lsquo;X&rsquo;))  #转换成十六进制,大写显示，输出C
+print(format(65,&lsquo;c&rsquo;))  #转换成ASCII,输出A</p>
+<p>getattr</p>
+<p>#占位</p>
+<p>globals（返回当前所有全局变量）</p>
+<p>a = 3
+print(globals()) #输出：{&lsquo;a&rsquo;: 3, &lsquo;__package__&rsquo;: None, &lsquo;__builtins__&rsquo;&hellip;&hellip;&rsquo;__name__&rsquo;: &lsquo;__main__&rsquo;}</p>
+<p>hasattr</p>
+<p>#占位</p>
+<p>hash（获取对象的哈希值）</p>
+<p>print(hash(&lsquo;xxoo&rsquo;)) #输出：1068037005</p>
+<p>help（获取对象的帮助信息）</p>
+<p>print(help(dict))</p>
+<p>hex（输出整数的16进制）</p>
+<p>print(hex(123)) #输出：0x7b</p>
+<p>id（查看变量的内存地址）</p>
+<p>a = 3
+print(id(a)) #输出：490363184</p>
+<p>input（获取用户输入值）</p>
+<p>name = input(&lsquo;please input your name:&rsquo;) print(name) #运行,please input your name:Tom #输出：Tom</p>
+<p>int（创建一个整型的数值）</p>
+<p>a = int(1314)</p>
+<p>isinstance（判断对象是否为某个类型，返回布尔值）</p>
+<p>print(isinstance(123,int))   #输出True
+print(isinstance([&lsquo;a&rsquo;,&lsquo;b&rsquo;],list))  #输出True
+print(isinstance((&lsquo;a&rsquo;,&lsquo;b&rsquo;),tuple))  #输出True
+print(isinstance(&lsquo;abc&rsquo;,(int,str,list)))  #输出True
+print(isinstance(&lsquo;ab&rsquo;,int))   #输出False</p>
+<p>issubclass</p>
+<p>#占位</p>
+<p>iter（传入一个可迭代对象，获取一个生成器）</p>
+<p>l1 = iter([1,2,3,4,5]) print(l1) #</p>
+<p>len（获取对象的长度）</p>
+<p>a = [1,2,3,4] print(len(a)) #输出：4</p>
+<p>list（创建一个列表）</p>
+<p>li = list([1,2,3,4])</p>
+<p>locals（返回当前所有局部变量）</p>
+<p>print(locals())</p>
+<p>max（获取最大值）</p>
+<p>print(max(2,4,6,8)) #输出：8</p>
+<p>min（获取最小值）</p>
+<p>print(min(2,4,6,8)) #输出：2</p>
+<p>next</p>
+<p>#占位</p>
+<p>object</p>
+<p>#占位</p>
+<p>oct（返回八进制）</p>
+<p>print(oct(12)) #输出：0o14</p>
+<p>open（打开文件）</p>
+<p>#占位</p>
+<p> pow（求指数）</p>
+<p>ret = pow(2,3)  #求2的3次方
+print(ret) #输出：8</p>
+<p>print(打印输出)</p>
+<p>print(123)</p>
+<p>property</p>
+<p>#占位</p>
+<p>range（创建一个连续的整数序列）</p>
+<p>for i in range(1,10): print(i)    #打印1到9的数字</p>
+<p> repr</p>
+<p>#占位</p>
+<p>reversed（反转）</p>
+<p>n = [1,2,3,4,5]
+m = reversed(n) print(list(m))  #m是reversed对象，要转成list输出</p>
+<p>#输出：[5, 4, 3, 2, 1]</p>
+<p>round（求四舍五入后的值）</p>
+<p>print(round(4.3)) print(round(4.8)) #输出：4 # 5</p>
+<p>set（创建set集合，无序且元素不重复的集合）</p>
+<p>n = set([1,2,2,3,3]) print(n) #输出：{1, 2, 3}</p>
+<p>setattr</p>
+<p>#占位</p>
+<p>slice</p>
+<p>#占位</p>
+<p>sorted（排序）</p>
+<p>s = [5,2,7,9,3] print(sorted(s)) #输出：[2, 3, 5, 7, 9]</p>
+<p>staticmethod</p>
+<p>#占位</p>
+<p>str（创建字符串）</p>
+<p>s = str(&lsquo;123abc&rsquo;)</p>
+<p>sum（求和）</p>
+<p>print(sum([1,2,3])) #输出：6</p>
+<p> super</p>
+<p>#占位</p>
+<p>tuple（创建一个元组）</p>
+<p>t = tuple([1,2,3])</p>
+<p>type（查看对象的类型）</p>
+<p>n = 123
+print(type(n)) #输出：</p>
+<p>vars(查看某个对象或模块提供了哪些功能，返回字典，dir是返回列表)</p>
+<p>print(vars(str))</p>
+<p>zip（把传入所有的迭代对象，相同位置的元素，组合起来，形成新的迭代对象）</p>
+<p>x = [1,2,3]
+y = [6,7,8,9]
+z = zip(x,y) print(list(z))   #取到最短的序列</p>
+<p>#输出：[(1, 6), (2, 7), (3, 8)]</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/2017-03-22-python3deque%E5%8F%8C%E5%90%91%E9%98%9F%E5%88%97.html" data-toggle="tooltip" data-placement="top" title="python3 deque（双向队列）">
+              Previous<br>
+              <span>python3 deque（双向队列）</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.html" data-toggle="tooltip" data-placement="top" title="python3 文件操作">
+              Next<br>
+              <span>python3 文件操作</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

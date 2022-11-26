@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>python 列表生成式 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="需求：把一个列表中每个元素的值加1
+第一种方法（for&hellip;in循环 &#43; append到新列表）
+a = [5, 8, 11, 14, 17, 20, 23, 26] b = [] for i in a: b.append(i&#43;1) a = b print(a)
+第二种方法（使用for&hellip;in循环 &#43; enumerate函数）
+a = [5, 8, 11, 14, 17, 20, 23, 26] for i,j in enumerate(a): a[i] = j&#43;1 # 或者 a[i]&#43;=1 print(a)
+第三种方法(使用map函数 &#43; lambda表达式)
+a = [5, 8, 11, 14, 17, 20, 23, 26] a = map(lambda x:x&#43;1,a) print(list(a))
+第四种方法(使用列表生成式)
+a = [5, 8, 11, 14, 17, 20, 23, 26] a = [i&#43;1 for i in a] print(a)">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python 列表生成式"/>
+<meta name="twitter:description" content="需求：把一个列表中每个元素的值加1
+第一种方法（for&hellip;in循环 &#43; append到新列表）
+a = [5, 8, 11, 14, 17, 20, 23, 26] b = [] for i in a: b.append(i&#43;1) a = b print(a)
+第二种方法（使用for&hellip;in循环 &#43; enumerate函数）
+a = [5, 8, 11, 14, 17, 20, 23, 26] for i,j in enumerate(a): a[i] = j&#43;1 # 或者 a[i]&#43;=1 print(a)
+第三种方法(使用map函数 &#43; lambda表达式)
+a = [5, 8, 11, 14, 17, 20, 23, 26] a = map(lambda x:x&#43;1,a) print(list(a))
+第四种方法(使用列表生成式)
+a = [5, 8, 11, 14, 17, 20, 23, 26] a = [i&#43;1 for i in a] print(a)"/>
+
+  <meta property="og:title" content="python 列表生成式" />
+<meta property="og:description" content="需求：把一个列表中每个元素的值加1
+第一种方法（for&hellip;in循环 &#43; append到新列表）
+a = [5, 8, 11, 14, 17, 20, 23, 26] b = [] for i in a: b.append(i&#43;1) a = b print(a)
+第二种方法（使用for&hellip;in循环 &#43; enumerate函数）
+a = [5, 8, 11, 14, 17, 20, 23, 26] for i,j in enumerate(a): a[i] = j&#43;1 # 或者 a[i]&#43;=1 print(a)
+第三种方法(使用map函数 &#43; lambda表达式)
+a = [5, 8, 11, 14, 17, 20, 23, 26] a = map(lambda x:x&#43;1,a) print(list(a))
+第四种方法(使用列表生成式)
+a = [5, 8, 11, 14, 17, 20, 23, 26] a = [i&#43;1 for i in a] print(a)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2017-03-26-python%E5%88%97%E8%A1%A8%E7%94%9F%E6%88%90%E5%BC%8F.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-03-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-03-26T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>python 列表生成式</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Sun, Mar 26, 2017
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>需求：把一个列表中每个元素的值加1</p>
+<p>第一种方法（for&hellip;in循环 + append到新列表）</p>
+<p>a = [5, 8, 11, 14, 17, 20, 23, 26]
+b = [] for i in a:
+b.append(i+1)
+a = b print(a)</p>
+<p>第二种方法（使用for&hellip;in循环 + enumerate函数）</p>
+<p>a = [5, 8, 11, 14, 17, 20, 23, 26] for i,j in enumerate(a):
+a[i] = j+1       # 或者 a[i]+=1
+print(a)</p>
+<p>第三种方法(使用map函数 + lambda表达式)</p>
+<p>a = [5, 8, 11, 14, 17, 20, 23, 26]
+a = map(lambda x:x+1,a) print(list(a))</p>
+<p>第四种方法(使用列表生成式)</p>
+<p>a = [5, 8, 11, 14, 17, 20, 23, 26]
+a = [i+1 for i in a] print(a)</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/2017-03-24-python3%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.html" data-toggle="tooltip" data-placement="top" title="python3 文件操作">
+              Previous<br>
+              <span>python3 文件操作</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2017-03-30-range%E7%94%A8%E6%B3%95.html" data-toggle="tooltip" data-placement="top" title="range用法">
+              Next<br>
+              <span>range用法</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

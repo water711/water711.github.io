@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 蔡振威的博客</title>
-    <link>/categories/</link>
+    <link>//example.org/categories.html</link>
     <description>Recent content in Categories on 蔡振威的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="//example.org/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>other</title>
-      <link>/categories/other/</link>
+      <link>//example.org/categories/other.html</link>
       <pubDate>Sat, 29 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/other/</guid>
+      <guid>//example.org/categories/other.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>/categories/python/</link>
+      <link>//example.org/categories/python.html</link>
       <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/python/</guid>
+      <guid>//example.org/categories/python.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>/categories/linux/</link>
+      <link>//example.org/categories/linux.html</link>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/linux/</guid>
+      <guid>//example.org/categories/linux.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>nas</title>
-      <link>/categories/nas/</link>
+      <link>//example.org/categories/nas.html</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>/categories/nas/</guid>
+      <guid>//example.org/categories/nas.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>zabbix</title>
-      <link>/categories/zabbix/</link>
+      <link>//example.org/categories/zabbix.html</link>
       <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/zabbix/</guid>
+      <guid>//example.org/categories/zabbix.html</guid>
       <description></description>
     </item>
     

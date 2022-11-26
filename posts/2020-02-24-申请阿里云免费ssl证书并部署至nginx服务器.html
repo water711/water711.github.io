@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>申请阿里云免费SSL证书并部署至Nginx服务器 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="一、申请阿里云免费SSL证书2021阿里云SSL免费证书购买地址又变了，为了解决免费证书近期存在的吊销、统计等问题，自2021年起，免费证书申请将切换到证书资源包下。
+1、 打开阿里云SSL证书选购页面，点击“选购证书”
+2、 商品类型选择“云盾证书资源包”
+3、 资源包规格选择“免费证书扩容包”
+4、 资源包个数选择“20”
+选择完毕后总配置费用为0元，然后点“立即购买”支付0元即可。
+二、控制台证书申请1、登录到SSL证书管理控制台
+2、 选择左侧栏”证书资源包“
+3、点击“证书申请”
+4、下载证书
+证书绑定域名：填写你要申请SSL的域名，如www.xxx.com
+域名验证方式：如果你的域名在本账号下，可以选择自动DNS验证，阿里云系统会为你的域名添加_dnsauth的TXT解析记录；如果域名不在本账号下，可以选择手工DNS验证或文件验证。详细教程参考：阿里云SSL证书申请域名验证选择及操作流程
+联系人：填写联系人信息，可以新建也可以选择之前保存的
+所在地：根据实际情况选择即可
+CSR生成方式：CSR文件是您的公钥证书原始文件，包含了您的服务器信息和您的单位信息，需要提交给CA认证中心审核。建议默认即可，使用系统创建的CSR，避免因内容不正确而导致的审核失败。
+三、Nginx服务器上安装证书1、创建cert目录，将下载的证书文件和密钥文件拷贝到cert目录
+[root@server ~]# mkdir /etc/nginx/cert
+2、修改虚拟主机配置文件
+server { listen 80; server_name www.xxxx.com; root /data/web/; location / { index index.html index.htm; } }
+server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.html index.htm; ssl_certificate /etc/nginx/cert/www.xxxx.com.pem; ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key; ssl_session_timeout 5m; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_prefer_server_ciphers on; location / { index index.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="申请阿里云免费SSL证书并部署至Nginx服务器"/>
+<meta name="twitter:description" content="一、申请阿里云免费SSL证书2021阿里云SSL免费证书购买地址又变了，为了解决免费证书近期存在的吊销、统计等问题，自2021年起，免费证书申请将切换到证书资源包下。
+1、 打开阿里云SSL证书选购页面，点击“选购证书”
+2、 商品类型选择“云盾证书资源包”
+3、 资源包规格选择“免费证书扩容包”
+4、 资源包个数选择“20”
+选择完毕后总配置费用为0元，然后点“立即购买”支付0元即可。
+二、控制台证书申请1、登录到SSL证书管理控制台
+2、 选择左侧栏”证书资源包“
+3、点击“证书申请”
+4、下载证书
+证书绑定域名：填写你要申请SSL的域名，如www.xxx.com
+域名验证方式：如果你的域名在本账号下，可以选择自动DNS验证，阿里云系统会为你的域名添加_dnsauth的TXT解析记录；如果域名不在本账号下，可以选择手工DNS验证或文件验证。详细教程参考：阿里云SSL证书申请域名验证选择及操作流程
+联系人：填写联系人信息，可以新建也可以选择之前保存的
+所在地：根据实际情况选择即可
+CSR生成方式：CSR文件是您的公钥证书原始文件，包含了您的服务器信息和您的单位信息，需要提交给CA认证中心审核。建议默认即可，使用系统创建的CSR，避免因内容不正确而导致的审核失败。
+三、Nginx服务器上安装证书1、创建cert目录，将下载的证书文件和密钥文件拷贝到cert目录
+[root@server ~]# mkdir /etc/nginx/cert
+2、修改虚拟主机配置文件
+server { listen 80; server_name www.xxxx.com; root /data/web/; location / { index index.html index.htm; } }
+server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.html index.htm; ssl_certificate /etc/nginx/cert/www.xxxx.com.pem; ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key; ssl_session_timeout 5m; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_prefer_server_ciphers on; location / { index index."/>
+
+  <meta property="og:title" content="申请阿里云免费SSL证书并部署至Nginx服务器" />
+<meta property="og:description" content="一、申请阿里云免费SSL证书2021阿里云SSL免费证书购买地址又变了，为了解决免费证书近期存在的吊销、统计等问题，自2021年起，免费证书申请将切换到证书资源包下。
+1、 打开阿里云SSL证书选购页面，点击“选购证书”
+2、 商品类型选择“云盾证书资源包”
+3、 资源包规格选择“免费证书扩容包”
+4、 资源包个数选择“20”
+选择完毕后总配置费用为0元，然后点“立即购买”支付0元即可。
+二、控制台证书申请1、登录到SSL证书管理控制台
+2、 选择左侧栏”证书资源包“
+3、点击“证书申请”
+4、下载证书
+证书绑定域名：填写你要申请SSL的域名，如www.xxx.com
+域名验证方式：如果你的域名在本账号下，可以选择自动DNS验证，阿里云系统会为你的域名添加_dnsauth的TXT解析记录；如果域名不在本账号下，可以选择手工DNS验证或文件验证。详细教程参考：阿里云SSL证书申请域名验证选择及操作流程
+联系人：填写联系人信息，可以新建也可以选择之前保存的
+所在地：根据实际情况选择即可
+CSR生成方式：CSR文件是您的公钥证书原始文件，包含了您的服务器信息和您的单位信息，需要提交给CA认证中心审核。建议默认即可，使用系统创建的CSR，避免因内容不正确而导致的审核失败。
+三、Nginx服务器上安装证书1、创建cert目录，将下载的证书文件和密钥文件拷贝到cert目录
+[root@server ~]# mkdir /etc/nginx/cert
+2、修改虚拟主机配置文件
+server { listen 80; server_name www.xxxx.com; root /data/web/; location / { index index.html index.htm; } }
+server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.html index.htm; ssl_certificate /etc/nginx/cert/www.xxxx.com.pem; ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key; ssl_session_timeout 5m; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_prefer_server_ciphers on; location / { index index." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-02-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-24T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>申请阿里云免费SSL证书并部署至Nginx服务器</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Mon, Feb 24, 2020
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <h2 id="一申请阿里云免费ssl证书">一、申请阿里云免费SSL证书<a class="anchorjs-link" href="#%e4%b8%80%e7%94%b3%e8%af%b7%e9%98%bf%e9%87%8c%e4%ba%91%e5%85%8d%e8%b4%b9ssl%e8%af%81%e4%b9%a6"></a></h2><p>2021阿里云SSL免费证书购买地址又变了，为了解决免费证书近期存在的吊销、统计等问题，自2021年起，免费证书申请将切换到证书资源包下。</p>
+<p>1、 打开<a href="https://www.xinshouzhanzhang.com/url/cas/" target="_blank">阿里云SSL证书选购页面</a>，点击“选购证书”</p>
+<p>2、 商品类型选择“云盾证书资源包”</p>
+<p>3、 资源包规格选择“免费证书扩容包”</p>
+<p>4、 资源包个数选择“20”</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//02ef11b3124e9e3c9ed4e4c0d7aa661f.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>选择完毕后总配置费用为0元，然后点“立即购买”支付0元即可。</p>
+<h2 id="二控制台证书申请">二、控制台证书申请<a class="anchorjs-link" href="#%e4%ba%8c%e6%8e%a7%e5%88%b6%e5%8f%b0%e8%af%81%e4%b9%a6%e7%94%b3%e8%af%b7"></a></h2><p>1、<a href="https://www.xinshouzhanzhang.com/url/console_ssl/" target="_blank">登录到SSL证书管理控制台</a></p>
+<p>2、 选择左侧栏”证书资源包“</p>
+<p>3、点击“证书申请”</p>
+<p>4、下载证书</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//a4df5348fb1bffc5dedf979abc54a27c.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//a738774bb0901fd9a359fcab004651c6.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//b89fcdf57ebaa8c35e7fd78672745443.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//019438292e4dd4614a3edc513653d7aa.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>证书绑定域名：填写你要申请SSL的域名，如www.xxx.com</p>
+<p>域名验证方式：如果你的域名在本账号下，可以选择自动DNS验证，阿里云系统会为你的域名添加_dnsauth的TXT解析记录；如果域名不在本账号下，可以选择手工DNS验证或文件验证。详细教程参考：<a href="https://www.xinshouzhanzhang.com/sslyumingyanzheng.html" target="_blank">阿里云SSL证书申请域名验证选择及操作流程</a></p>
+<p>联系人：填写联系人信息，可以新建也可以选择之前保存的</p>
+<p>所在地：根据实际情况选择即可</p>
+<p>CSR生成方式：CSR文件是您的公钥证书原始文件，包含了您的服务器信息和您的单位信息，需要提交给CA认证中心审核。建议默认即可，使用系统创建的CSR，避免因内容不正确而导致的审核失败。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//06f07e193f29df6da62c017904348485.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h2 id="三nginx服务器上安装证书">三、Nginx服务器上安装证书<a class="anchorjs-link" href="#%e4%b8%89nginx%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e5%ae%89%e8%a3%85%e8%af%81%e4%b9%a6"></a></h2><p>1、创建cert目录，将下载的证书文件和密钥文件拷贝到cert目录</p>
+<p>[root@server ~]# mkdir /etc/nginx/cert</p>
+<p>2、修改虚拟主机配置文件</p>
+<p>server {
+listen 80;
+server_name <a href="https://www.xxxx.com" target="_blank">www.xxxx.com</a>;
+root /data/web/;
+location / {
+index index.html index.htm;
+}
+}</p>
+<p>server {
+listen 443 ssl;
+server_name <a href="https://www.xxxx.com" target="_blank">www.xxxx.com</a>;
+root  /data/web/;
+index index.html index.htm;
+ssl_certificate /etc/nginx/cert/www.xxxx.com.pem;
+ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key;
+ssl_session_timeout 5m;
+ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_prefer_server_ciphers on;
+location / {
+index index.html index.htm;
+}
+}</p>
+<p>3、重新加载nginx配置文件</p>
+<p>[root@server ~]# systemctl reload nginx</p>
+<p>[root@server ~]# ss -lanp | grep 443  #查看443端口是否在监听</p>
+<p>4、防火墙放行443端口</p>
+<p>如果使用的是阿里云ECS服务器，进入ECS控制台安全组页面配置放行443端口</p>
+<p>5、浏览器访问https://域名</p>
+<p>如果网页地址栏出现小锁标志，表示证书安装成功</p>
+<p> </p>
+<hr>
+<p><strong>申请阿里云免费SSL证书（旧已失效）</strong></p>
+<p>1、打开<a href="https://www.aliyun.com/" target="_blank">阿里云官网</a>，搜索SSL证书</p>
+<p>2、点击“选购证书”，选择免费版（个人）</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//a1bb683d84fb21ada7ed3202f2954d75.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//83a6a1e12514849ca2711f7d23f46eef.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>3、购买成功后，进入SSL证书管理控制台，进行申请和验证</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//0225a8215b35147e9adee8f3ea5ff0d6.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//88579c7d0c75938835dfe1d8342b1ab5.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>如果域名提供商在阿里云验证就简单了，只要选择自动DNS验证方式，那么证书审核通过之后会自动的添加一条域名解析记录</p>
+<p>如果域名在其他服务商那里，就要手动给域名添加一条DNS解析记录</p>
+<p>4、审核成功后，进入SSL证书控制台，下载证书</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//480a4dddfacc63896888591620c84d0f.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>5、下载后解压，得到证书和秘钥文件</p>
+<p>.pem：证书文件。</p>
+<p>.key：证书的密钥文件。（申请证书时如果未选择自动创建CRS，则下载的证书文件压缩包中不会包含.key文件，需要手动创建的密钥文件）</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1.html" data-toggle="tooltip" data-placement="top" title="阿里云ECS搭建NPS内网穿透服务">
+              Previous<br>
+              <span>阿里云ECS搭建NPS内网穿透服务</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2.html" data-toggle="tooltip" data-placement="top" title="data:image/base64与图片互相转换">
+              Next<br>
+              <span>data:image/base64与图片互相转换</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

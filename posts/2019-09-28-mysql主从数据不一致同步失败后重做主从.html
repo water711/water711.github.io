@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>mysql主从数据不一致，同步失败后重做主从 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="环境：
+Master主机：zabbix1
+Slave主机：zabbix2
+主从同步的数据库：zabbix
+一、备份Master数据库[root@Zabbix1 ~]# mysqldump -uroot -p zabbix &ndash;single-transaction &ndash;master-data=1 &ndash;flush-logs &gt; zabbix.sql #拷贝到slave机器 [root@Zabbix1 ~]# scp zabbix.sql zabbix2:/root/zabbix.sql
+二、导入主库并重新同步[root@Zabbix2 ~]# mysql -uroot -p mysql&gt; stop slave; mysql&gt; reset slave; mysql&gt; use zabbix mysql&gt; set sql_log_bin=0; #临时关闭bin_log，加快恢复速度 mysql&gt; source /root/zabbix.sql #恢复数据库
+因为备份数据库时，指定了&ndash;master-data=1，备份文件会记录备份时的master_log_file和log_pos，并在mysql控制台下使用source &#43; 备份文件名 恢复，所以不用再使用CHANGE MASTER TO指定文件和位置 mysql&gt; start slave;
+mysql&gt; show slave status \G;">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="mysql主从数据不一致，同步失败后重做主从"/>
+<meta name="twitter:description" content="环境：
+Master主机：zabbix1
+Slave主机：zabbix2
+主从同步的数据库：zabbix
+一、备份Master数据库[root@Zabbix1 ~]# mysqldump -uroot -p zabbix &ndash;single-transaction &ndash;master-data=1 &ndash;flush-logs &gt; zabbix.sql #拷贝到slave机器 [root@Zabbix1 ~]# scp zabbix.sql zabbix2:/root/zabbix.sql
+二、导入主库并重新同步[root@Zabbix2 ~]# mysql -uroot -p mysql&gt; stop slave; mysql&gt; reset slave; mysql&gt; use zabbix mysql&gt; set sql_log_bin=0; #临时关闭bin_log，加快恢复速度 mysql&gt; source /root/zabbix.sql #恢复数据库
+因为备份数据库时，指定了&ndash;master-data=1，备份文件会记录备份时的master_log_file和log_pos，并在mysql控制台下使用source &#43; 备份文件名 恢复，所以不用再使用CHANGE MASTER TO指定文件和位置 mysql&gt; start slave;
+mysql&gt; show slave status \G;"/>
+
+  <meta property="og:title" content="mysql主从数据不一致，同步失败后重做主从" />
+<meta property="og:description" content="环境：
+Master主机：zabbix1
+Slave主机：zabbix2
+主从同步的数据库：zabbix
+一、备份Master数据库[root@Zabbix1 ~]# mysqldump -uroot -p zabbix &ndash;single-transaction &ndash;master-data=1 &ndash;flush-logs &gt; zabbix.sql #拷贝到slave机器 [root@Zabbix1 ~]# scp zabbix.sql zabbix2:/root/zabbix.sql
+二、导入主库并重新同步[root@Zabbix2 ~]# mysql -uroot -p mysql&gt; stop slave; mysql&gt; reset slave; mysql&gt; use zabbix mysql&gt; set sql_log_bin=0; #临时关闭bin_log，加快恢复速度 mysql&gt; source /root/zabbix.sql #恢复数据库
+因为备份数据库时，指定了&ndash;master-data=1，备份文件会记录备份时的master_log_file和log_pos，并在mysql控制台下使用source &#43; 备份文件名 恢复，所以不用再使用CHANGE MASTER TO指定文件和位置 mysql&gt; start slave;
+mysql&gt; show slave status \G;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-28T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>mysql主从数据不一致，同步失败后重做主从</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Sat, Sep 28, 2019
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>环境：</p>
+<p>Master主机：zabbix1</p>
+<p>Slave主机：zabbix2</p>
+<p>主从同步的数据库：zabbix</p>
+<h2 id="一备份master数据库">一、备份Master数据库<a class="anchorjs-link" href="#%e4%b8%80%e5%a4%87%e4%bb%bdmaster%e6%95%b0%e6%8d%ae%e5%ba%93"></a></h2><p>[root@Zabbix1 ~]# mysqldump -uroot -p zabbix &ndash;single-transaction &ndash;master-data=1 &ndash;flush-logs &gt; zabbix.sql
+#拷贝到slave机器
+[root@Zabbix1 ~]# scp zabbix.sql zabbix2:/root/zabbix.sql</p>
+<p> </p>
+<h2 id="二导入主库并重新同步">二、导入主库并重新同步<a class="anchorjs-link" href="#%e4%ba%8c%e5%af%bc%e5%85%a5%e4%b8%bb%e5%ba%93%e5%b9%b6%e9%87%8d%e6%96%b0%e5%90%8c%e6%ad%a5"></a></h2><p>[root@Zabbix2 ~]# mysql -uroot -p
+mysql&gt; stop slave;
+mysql&gt; reset slave;
+mysql&gt; use zabbix
+mysql&gt; set sql_log_bin=0;    #临时关闭bin_log，加快恢复速度
+mysql&gt; source /root/zabbix.sql   #恢复数据库</p>
+<h1 id="因为备份数据库时指定了--master-data1备份文件会记录备份时的master_log_file和log_pos并在mysql">因为备份数据库时，指定了&ndash;master-data=1，备份文件会记录备份时的master_log_file和log_pos，并在mysql<a class="anchorjs-link" href="#%e5%9b%a0%e4%b8%ba%e5%a4%87%e4%bb%bd%e6%95%b0%e6%8d%ae%e5%ba%93%e6%97%b6%e6%8c%87%e5%ae%9a%e4%ba%86--master-data1%e5%a4%87%e4%bb%bd%e6%96%87%e4%bb%b6%e4%bc%9a%e8%ae%b0%e5%bd%95%e5%a4%87%e4%bb%bd%e6%97%b6%e7%9a%84master_log_file%e5%92%8clog_pos%e5%b9%b6%e5%9c%a8mysql"></a></h1><p>控制台下使用source + 备份文件名 恢复，所以不用再使用CHANGE MASTER TO指定文件和位置
+mysql&gt; start slave;<br>
+mysql&gt; show slave status \G;</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90.html" data-toggle="tooltip" data-placement="top" title="keepalived之vrrp_script脚本分析">
+              Previous<br>
+              <span>keepalived之vrrp_script脚本分析</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84.html" data-toggle="tooltip" data-placement="top" title="搭建Zabbix高可用架构">
+              Next<br>
+              <span>搭建Zabbix高可用架构</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

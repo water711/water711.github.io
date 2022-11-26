@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>Python开发【第七篇】：面向对象 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="面向对象基础基础内容介绍详见一下两篇博文：
+面向对象初级篇 面向对象进阶篇 其他相关一、isinstance(obj, cls)
+检查是否obj是否是类 cls 的对象
+class Foo(object): pass
+obj = Foo()
+isinstance(obj, Foo)
+二、issubclass(sub, super)
+检查sub类是否是 super 类的派生类
+class Foo(object): pass
+class Bar(Foo): pass
+issubclass(Bar, Foo)
+三、异常处理
+1、异常基础
+在编程过程中为了增加友好性，在程序出现bug时一般不会将错误信息显示给用户，而是现实一个提示的页面，通俗来说就是不让用户看见大黄页！！！
+try: pass except Exception,ex: pass
+需求：将用户输入的两个数字相加
+while True: num1 = raw_input(&rsquo;num1:&rsquo;) num2 = raw_input(&rsquo;num2:&rsquo;) try: num1 = int(num1) num2 = int(num2) result = num1 &#43; num2 except Exception, e: print &lsquo;出现异常，信息如下：&rsquo; print e
+View Code
+2、异常种类
+python中的异常种类非常多，每个异常专门用于处理某一项异常！！！
+AttributeError 试图访问一个对象没有的树形，比如foo.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python开发【第七篇】：面向对象"/>
+<meta name="twitter:description" content="面向对象基础基础内容介绍详见一下两篇博文：
+面向对象初级篇 面向对象进阶篇 其他相关一、isinstance(obj, cls)
+检查是否obj是否是类 cls 的对象
+class Foo(object): pass
+obj = Foo()
+isinstance(obj, Foo)
+二、issubclass(sub, super)
+检查sub类是否是 super 类的派生类
+class Foo(object): pass
+class Bar(Foo): pass
+issubclass(Bar, Foo)
+三、异常处理
+1、异常基础
+在编程过程中为了增加友好性，在程序出现bug时一般不会将错误信息显示给用户，而是现实一个提示的页面，通俗来说就是不让用户看见大黄页！！！
+try: pass except Exception,ex: pass
+需求：将用户输入的两个数字相加
+while True: num1 = raw_input(&rsquo;num1:&rsquo;) num2 = raw_input(&rsquo;num2:&rsquo;) try: num1 = int(num1) num2 = int(num2) result = num1 &#43; num2 except Exception, e: print &lsquo;出现异常，信息如下：&rsquo; print e
+View Code
+2、异常种类
+python中的异常种类非常多，每个异常专门用于处理某一项异常！！！
+AttributeError 试图访问一个对象没有的树形，比如foo."/>
+
+  <meta property="og:title" content="Python开发【第七篇】：面向对象" />
+<meta property="og:description" content="面向对象基础基础内容介绍详见一下两篇博文：
+面向对象初级篇 面向对象进阶篇 其他相关一、isinstance(obj, cls)
+检查是否obj是否是类 cls 的对象
+class Foo(object): pass
+obj = Foo()
+isinstance(obj, Foo)
+二、issubclass(sub, super)
+检查sub类是否是 super 类的派生类
+class Foo(object): pass
+class Bar(Foo): pass
+issubclass(Bar, Foo)
+三、异常处理
+1、异常基础
+在编程过程中为了增加友好性，在程序出现bug时一般不会将错误信息显示给用户，而是现实一个提示的页面，通俗来说就是不让用户看见大黄页！！！
+try: pass except Exception,ex: pass
+需求：将用户输入的两个数字相加
+while True: num1 = raw_input(&rsquo;num1:&rsquo;) num2 = raw_input(&rsquo;num2:&rsquo;) try: num1 = int(num1) num2 = int(num2) result = num1 &#43; num2 except Exception, e: print &lsquo;出现异常，信息如下：&rsquo; print e
+View Code
+2、异常种类
+python中的异常种类非常多，每个异常专门用于处理某一项异常！！！
+AttributeError 试图访问一个对象没有的树形，比如foo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%83%E7%AF%87%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-04-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-04-11T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>Python开发【第七篇】：面向对象</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Tue, Apr 11, 2017
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <h3 id="面向对象基础">面向对象基础<a class="anchorjs-link" href="#%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e5%9f%ba%e7%a1%80"></a></h3><p>基础内容介绍详见一下两篇博文：</p>
+<ul>
+<li><a href="http://www.cnblogs.com/wupeiqi/p/4493506.html" target="_blank">面向对象初级篇</a></li>
+<li><a href="http://www.cnblogs.com/wupeiqi/p/4766801.html" target="_blank">面向对象进阶篇</a></li>
+</ul>
+<h3 id="其他相关">其他相关<a class="anchorjs-link" href="#%e5%85%b6%e4%bb%96%e7%9b%b8%e5%85%b3"></a></h3><p><strong>一、isinstance(obj, cls)</strong></p>
+<p> 检查是否obj是否是类 cls 的对象</p>
+<p>class Foo(object):
+pass</p>
+<p>obj = Foo()</p>
+<p>isinstance(obj, Foo)</p>
+<p><strong>二、issubclass(sub, super)</strong></p>
+<p>检查sub类是否是 super 类的派生类</p>
+<p>class Foo(object):
+pass</p>
+<p>class Bar(Foo):
+pass</p>
+<p>issubclass(Bar, Foo)</p>
+<p><strong>三、异常处理</strong></p>
+<p><strong>1、异常基础</strong></p>
+<p>在编程过程中为了增加友好性，在程序出现bug时一般不会将错误信息显示给用户，而是现实一个提示的页面，通俗来说就是不让用户看见大黄页！！！</p>
+<p>try:
+pass
+except Exception,ex:
+pass</p>
+<p>需求：将用户输入的两个数字相加</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>while True:
+num1 = raw_input(&rsquo;num1:&rsquo;)
+num2 = raw_input(&rsquo;num2:&rsquo;) try:
+num1 = int(num1)
+num2 = int(num2)
+result = num1 + num2 except Exception, e: print &lsquo;出现异常，信息如下：&rsquo;
+print e</p>
+<p>View Code</p>
+<p><strong>2、异常种类</strong></p>
+<p>python中的异常种类非常多，每个异常专门用于处理某一项异常！！！</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>AttributeError 试图访问一个对象没有的树形，比如foo.x，但是foo没有属性x
+IOError 输入/输出异常；基本上是无法打开文件
+ImportError 无法引入模块或包；基本上是路径问题或名称错误
+IndentationError 语法错误（的子类） ；代码没有正确对齐
+IndexError 下标索引超出序列边界，比如当x只有三个元素，却试图访问x[5]
+KeyError 试图访问字典里不存在的键
+KeyboardInterrupt Ctrl+C被按下
+NameError 使用一个还未被赋予对象的变量
+SyntaxError Python代码非法，代码不能编译(个人认为这是语法错误，写错了）
+TypeError 传入对象类型与要求的不符合
+UnboundLocalError 试图访问一个还未被设置的局部变量，基本上是由于另有一个同名的全局变量，
+导致你以为正在访问它
+ValueError 传入一个调用者不期望的值，即使值的类型是正确的</p>
+<p>常用异常</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>ArithmeticError
+AssertionError
+AttributeError
+BaseException
+BufferError
+BytesWarning
+DeprecationWarning
+EnvironmentError
+EOFError
+Exception
+FloatingPointError
+FutureWarning
+GeneratorExit
+ImportError
+ImportWarning
+IndentationError
+IndexError
+IOError
+KeyboardInterrupt
+KeyError
+LookupError
+MemoryError
+NameError
+NotImplementedError
+OSError
+OverflowError
+PendingDeprecationWarning
+ReferenceError
+RuntimeError
+RuntimeWarning
+StandardError
+StopIteration
+SyntaxError
+SyntaxWarning
+SystemError
+SystemExit
+TabError
+TypeError
+UnboundLocalError
+UnicodeDecodeError
+UnicodeEncodeError
+UnicodeError
+UnicodeTranslateError
+UnicodeWarning
+UserWarning
+ValueError
+Warning
+ZeroDivisionError</p>
+<p>更多异常</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>dic = [&ldquo;wupeiqi&rdquo;, &lsquo;alex&rsquo;] try:
+dic[10] except IndexError, e: print e</p>
+<p>实例：IndexError</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>dic = {&lsquo;k1&rsquo;:&lsquo;v1&rsquo;} try:
+dic[&lsquo;k20&rsquo;] except KeyError, e: print e</p>
+<p>实例：KeyError</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>s1 = &lsquo;hello&rsquo;
+try:
+int(s1) except ValueError, e: print e</p>
+<p>实例：ValueError</p>
+<p>对于上述实例，异常类只能用来处理指定的异常情况，如果非指定异常则无法处理。</p>
+<p># 未捕获到异常，程序直接报错</p>
+<p>s1 = &lsquo;hello&rsquo;
+try:
+int(s1)
+except IndexError,e:
+print e</p>
+<p>所以，写程序时需要考虑到try代码块中可能出现的任意异常，可以这样写：</p>
+<p>s1 = &lsquo;hello&rsquo;
+try:
+int(s1)
+except IndexError,e:
+print e
+except KeyError,e:
+print e
+except ValueError,e:
+print e</p>
+<p>万能异常 在python的异常中，有一个万能异常：Exception，他可以捕获任意异常，即：</p>
+<p>s1 = &lsquo;hello&rsquo;
+try:
+int(s1)
+except Exception,e:
+print e</p>
+<p>接下来你可能要问了，既然有这个万能异常，其他异常是不是就可以忽略了！</p>
+<p>答：当然不是，对于特殊处理或提醒的异常需要先定义，最后定义Exception来确保程序正常运行。</p>
+<p>s1 = &lsquo;hello&rsquo;
+try:
+int(s1)
+except KeyError,e:
+print &lsquo;键错误&rsquo;
+except IndexError,e:
+print &lsquo;索引错误&rsquo;
+except Exception, e:
+print &lsquo;错误&rsquo;</p>
+<p><strong>3、异常其他结构</strong></p>
+<p>try:
+# 主代码块
+pass
+except KeyError,e:
+# 异常时，执行该块
+pass
+else:
+# 主代码块执行完，执行该块
+pass
+finally:
+# 无论异常与否，最终执行该块
+pass</p>
+<p><strong>4、主动触发异常</strong></p>
+<p>try:
+raise Exception(&lsquo;错误了。。。&rsquo;)
+except Exception,e:
+print e</p>
+<p><strong>5、自定义异常</strong></p>
+<p>class WupeiqiException(Exception):</p>
+<pre><code>def \_\_init\_\_(self, msg):
+    self.message = msg
+
+def \_\_str\_\_(self):
+    return self.message
+</code></pre>
+<p>try:
+raise WupeiqiException(&lsquo;我的异常&rsquo;)
+except WupeiqiException,e:
+print e</p>
+<p><strong>6、断言</strong></p>
+<p># assert 条件</p>
+<p>assert 1 == 1</p>
+<p>assert 1 == 2</p>
+<p><strong>四、反射</strong></p>
+<p>python中的反射功能是由以下四个内置函数提供：hasattr、getattr、setattr、delattr，改四个函数分别用于对对象内部执行：检查是否含有某成员、获取成员、设置成员、删除成员。</p>
+<p>class Foo(object):</p>
+<pre><code>def \_\_init\_\_(self):
+    self.name = 'wupeiqi'
+
+def func(self):
+    return 'func'
+</code></pre>
+<p>obj = Foo()</p>
+<h1 id="-检查是否含有成员">#### 检查是否含有成员<a class="anchorjs-link" href="#-%e6%a3%80%e6%9f%a5%e6%98%af%e5%90%a6%e5%90%ab%e6%9c%89%e6%88%90%e5%91%98"></a></h1><p>hasattr(obj, &rsquo;name&rsquo;)
+hasattr(obj, &lsquo;func&rsquo;)</p>
+<h1 id="-获取成员">#### 获取成员<a class="anchorjs-link" href="#-%e8%8e%b7%e5%8f%96%e6%88%90%e5%91%98"></a></h1><p>getattr(obj, &rsquo;name&rsquo;)
+getattr(obj, &lsquo;func&rsquo;)</p>
+<h1 id="-设置成员">#### 设置成员<a class="anchorjs-link" href="#-%e8%ae%be%e7%bd%ae%e6%88%90%e5%91%98"></a></h1><p>setattr(obj, &lsquo;age&rsquo;, 18)
+setattr(obj, &lsquo;show&rsquo;, lambda num: num + 1)</p>
+<h1 id="-删除成员">#### 删除成员<a class="anchorjs-link" href="#-%e5%88%a0%e9%99%a4%e6%88%90%e5%91%98"></a></h1><p>delattr(obj, &rsquo;name&rsquo;)
+delattr(obj, &lsquo;func&rsquo;)</p>
+<blockquote>
+<p>详细解析：</p>
+<p>当我们要访问一个对象的成员时，应该是这样操作：</p>
+<p>class Foo(object):</p>
+<pre><code>def \_\_init\_\_(self):
+    self.name = 'alex'
+
+def func(self):
+    return 'func'
+</code></pre>
+<p>obj = Foo()</p>
+<h1 id="访问字段">访问字段<a class="anchorjs-link" href="#%e8%ae%bf%e9%97%ae%e5%ad%97%e6%ae%b5"></a></h1><p>obj.name</p>
+<h1 id="执行方法">执行方法<a class="anchorjs-link" href="#%e6%89%a7%e8%a1%8c%e6%96%b9%e6%b3%95"></a></h1><p>obj.func()</p>
+<p> <figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//425762-20150907094454965-329821364.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure>  </p>
+<p>那么问题来了？</p>
+<p>a、上述访问对象成员的 name 和 func 是什么？ </p>
+<p><em>答：是变量名</em></p>
+<p>b、obj.xxx 是什么意思？ </p>
+<p><em>答：obj.xxx 表示去obj中或类中寻找变量名 xxx，并获取对应内存地址中的内容。</em></p>
+<p>c、需求：请使用其他方式获取obj对象中的name变量指向内存中的值 “alex”</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>class Foo(object): def __init__(self):
+self.name = &lsquo;alex&rsquo;</p>
+<h1 id="不允许使用-objname">不允许使用 obj.name<a class="anchorjs-link" href="#%e4%b8%8d%e5%85%81%e8%ae%b8%e4%bd%bf%e7%94%a8-objname"></a></h1><p>obj = Foo()</p>
+<p>View Code</p>
+<p><em>答：有两种方式，如下：</em></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>class Foo(object): def __init__(self):
+self.name = &lsquo;alex&rsquo;</p>
+<pre><code>def func(self): return 'func'
+</code></pre>
+<h1 id="不允许使用-objname-1">不允许使用 obj.name<a class="anchorjs-link" href="#%e4%b8%8d%e5%85%81%e8%ae%b8%e4%bd%bf%e7%94%a8-objname-1"></a></h1><p>obj = Foo() print obj.__dict__[&rsquo;name&rsquo;]</p>
+<p>方式一</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>class Foo(object): def __init__(self):
+self.name = &lsquo;alex&rsquo;</p>
+<pre><code>def func(self): return 'func'
+</code></pre>
+<h1 id="不允许使用-objname-2">不允许使用 obj.name<a class="anchorjs-link" href="#%e4%b8%8d%e5%85%81%e8%ae%b8%e4%bd%bf%e7%94%a8-objname-2"></a></h1><p>obj = Foo() print getattr(obj, &rsquo;name&rsquo;)</p>
+<p>方式二</p>
+<p>d、比较三种访问方式</p>
+<ul>
+<li>obj.name</li>
+<li>obj.__dict__[&rsquo;name&rsquo;]</li>
+<li>getattr(obj, &rsquo;name&rsquo;)</li>
+</ul>
+<p><em>答：第一种和其他种比，&hellip;</em><br>
+<em>第二种和第三种比，&hellip;</em></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python #coding:utf-8
+from wsgiref.simple_server import make_server class Handler(object): def index(self): return &lsquo;index&rsquo;</p>
+<pre><code>def news(self): return 'news'
+</code></pre>
+<p>def RunServer(environ, start_response):
+start_response(&lsquo;200 OK&rsquo;, [(&lsquo;Content-Type&rsquo;, &rsquo;text/html&rsquo;)])
+url = environ[&lsquo;PATH_INFO&rsquo;]
+temp = url.split(&rsquo;/&rsquo;)[1]
+obj = Handler()
+is_exist = hasattr(obj, temp) if is_exist:
+func = getattr(obj, temp)
+ret = func() return ret else: return &lsquo;404 not found&rsquo;</p>
+<p>if __name__ == &lsquo;__main__&rsquo;:
+httpd = make_server(&rsquo;&rsquo;, 8001, RunServer) print &ldquo;Serving HTTP on port 8000&hellip;&rdquo; httpd.serve_forever()</p>
+<p>Web框架实例</p>
+</blockquote>
+<p>**结论：**反射是通过字符串的形式操作对象相关的成员。<strong>一切事物都是对象！！！</strong></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>import sys def s1(): print &lsquo;s1&rsquo;</p>
+<p>def s2(): print &lsquo;s2&rsquo; this_module = sys.modules[__name__]</p>
+<p>hasattr(this_module, &lsquo;s1&rsquo;)
+getattr(this_module, &lsquo;s2&rsquo;)</p>
+<p>反射当前模块成员</p>
+<p><strong>类也是对象</strong></p>
+<p>class Foo(object):</p>
+<pre><code>staticField = &quot;old boy&quot;
+
+def \_\_init\_\_(self):
+    self.name = 'wupeiqi'
+
+def func(self):
+    return 'func'
+
+@staticmethod
+def bar():
+    return 'bar'
+</code></pre>
+<p>print getattr(Foo, &lsquo;staticField&rsquo;)
+print getattr(Foo, &lsquo;func&rsquo;)
+print getattr(Foo, &lsquo;bar&rsquo;)</p>
+<p><strong>模块也是对象</strong></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python # -*- coding:utf-8 -*-</p>
+<p>def dev(): return &lsquo;dev&rsquo;</p>
+<p>home.py</p>
+<p>#!/usr/bin/env python</p>
+<h1 id="---codingutf-8---">-*- coding:utf-8 -*-<a class="anchorjs-link" href="#---codingutf-8---"></a></h1><p>&quot;&quot;&quot;
+程序目录：
+home.py
+index.py</p>
+<p>当前文件：
+index.py
+&quot;&quot;&quot;</p>
+<p>import home as obj</p>
+<p>#obj.dev()</p>
+<p>func = getattr(obj, &lsquo;dev&rsquo;)
+func() </p>
+<h3 id="设计模式">设计模式<a class="anchorjs-link" href="#%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f"></a></h3><p><strong>一、单例模式</strong></p>
+<p>单例，顾名思义单个实例。</p>
+<blockquote>
+<p>学习单例之前，首先来回顾下面向对象的内容：</p>
+<p>python的面向对象由两个非常重要的两个“东西”组成：类、实例</p>
+<p><strong>面向对象场景一：</strong></p>
+<p>如：创建三个游戏人物，分别是：</p>
+<ul>
+<li>苍井井，女，18，初始战斗力1000</li>
+<li>东尼木木，男，20，初始战斗力1800</li>
+<li>波多多，女，19，初始战斗力2500</li>
+</ul>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h1 id="--定义类">#####################  定义类 <a class="anchorjs-link" href="#--%e5%ae%9a%e4%b9%89%e7%b1%bb"></a></h1><p>class Person: def __init__(self, na, gen, age, fig):
+self.name = na
+self.gender = gen
+self.age = age
+self.fight =fig def grassland(self): &ldquo;&ldquo;&ldquo;注释：草丛战斗，消耗200战斗力&rdquo;&rdquo;&rdquo; self.fight = self.fight - 200</p>
+<h1 id="--创建实例">#####################  创建实例 <a class="anchorjs-link" href="#--%e5%88%9b%e5%bb%ba%e5%ae%9e%e4%be%8b"></a></h1><p>cang = Person(&lsquo;苍井井&rsquo;, &lsquo;女&rsquo;, 18, 1000)    # 创建苍井井角色
+dong = Person(&lsquo;东尼木木&rsquo;, &lsquo;男&rsquo;, 20, 1800)  # 创建东尼木木角色
+bo = Person(&lsquo;波多多&rsquo;, &lsquo;女&rsquo;, 19, 2500)      # 创建波多多角色</p>
+<p>View Code</p>
+<p><strong>面向对象场景二：</strong></p>
+<p>如：创建对数据库操作的公共类</p>
+<ul>
+<li>增</li>
+<li>删</li>
+<li>改</li>
+<li>查</li>
+</ul>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h1 id="-定义类">#### 定义类<a class="anchorjs-link" href="#-%e5%ae%9a%e4%b9%89%e7%b1%bb"></a></h1><p>class DbHelper(object): def __init__(self):
+self.hostname = &lsquo;1.1.1.1&rsquo; self.port = 3306 self.password = &lsquo;pwd&rsquo; self.username = &lsquo;root&rsquo;</p>
+<pre><code>def fetch(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    pass
+
+def create(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    pass
+
+def remove(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    pass
+
+def modify(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    pass
+</code></pre>
+<h1 id="-操作类">#### 操作类<a class="anchorjs-link" href="#-%e6%93%8d%e4%bd%9c%e7%b1%bb"></a></h1><p>db = DbHelper()
+db.create()</p>
+<p>View Code</p>
+</blockquote>
+<p>**实例：**结合场景二实现Web应用程序</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python #coding:utf-8
+from wsgiref.simple_server import make_server class DbHelper(object): def __init__(self):
+self.hostname = &lsquo;1.1.1.1&rsquo; self.port = 3306 self.password = &lsquo;pwd&rsquo; self.username = &lsquo;root&rsquo;</p>
+<pre><code>def fetch(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    return 'fetch'
+
+def create(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    return 'create'
+
+def remove(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    return 'remove'
+
+def modify(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    return 'modify'
+</code></pre>
+<p>class Handler(object): def index(self): # 创建对象
+db = DbHelper()
+db.fetch() return &lsquo;index&rsquo;</p>
+<pre><code>def news(self): return 'news'
+</code></pre>
+<p>def RunServer(environ, start_response):
+start_response(&lsquo;200 OK&rsquo;, [(&lsquo;Content-Type&rsquo;, &rsquo;text/html&rsquo;)])
+url = environ[&lsquo;PATH_INFO&rsquo;]
+temp = url.split(&rsquo;/&rsquo;)[1]
+obj = Handler()
+is_exist = hasattr(obj, temp) if is_exist:
+func = getattr(obj, temp)
+ret = func() return ret else: return &lsquo;404 not found&rsquo;</p>
+<p>if __name__ == &lsquo;__main__&rsquo;:
+httpd = make_server(&rsquo;&rsquo;, 8001, RunServer) print &ldquo;Serving HTTP on port 8001&hellip;&rdquo; httpd.serve_forever()</p>
+<p>Web应用程序实例</p>
+<p>对于上述实例，每个请求到来，都需要在内存里创建一个实例，再通过该实例执行指定的方法。</p>
+<p>那么问题来了&hellip;如果并发量大的话，内存里就会存在非常多<strong>功能上一模一样的对象</strong>。存在这些对象肯定会消耗内存，对于这些功能相同的对象可以在内存中仅创建一个，需要时都去调用，也是极好的！！！</p>
+<p><strong>铛铛 铛铛 铛铛铛铛铛</strong>，单例模式出马，单例模式用来保证内存中<strong>仅存在一个实例</strong>！！！</p>
+<p>通过面向对象的特性，构造出单例模式：</p>
+<p># ########### 单例类定义 ###########
+class Foo(object):</p>
+<pre><code>\_\_instance = None
+
+@staticmethod
+def singleton():
+    if Foo.\_\_instance:
+        return Foo.\_\_instance
+    else:
+        Foo.\_\_instance = Foo()
+        return Foo.\_\_instance
+</code></pre>
+<h1 id="-获取实例">########### 获取实例<a class="anchorjs-link" href="#-%e8%8e%b7%e5%8f%96%e5%ae%9e%e4%be%8b"></a></h1><p>obj = Foo.singleton()</p>
+<p>对于Python单例模式，创建对象时不能再直接使用：obj = Foo()，而应该调用特殊的方法：obj = Foo.singleton() 。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>#!/usr/bin/env python #coding:utf-8
+from wsgiref.simple_server import make_server # ########### 单例类定义 ###########
+class DbHelper(object): __instance = None def __init__(self):
+self.hostname = &lsquo;1.1.1.1&rsquo; self.port = 3306 self.password = &lsquo;pwd&rsquo; self.username = &lsquo;root&rsquo; @staticmethod def singleton(): if DbHelper.__instance: return DbHelper.__instance
+else:
+DbHelper.__instance = DbHelper() return DbHelper.__instance</p>
+<pre><code>def fetch(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    pass
+
+def create(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    pass
+
+def remove(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    pass
+
+def modify(self): # 连接数据库
+    # 拼接sql语句
+    # 操作
+    pass
+</code></pre>
+<p>class Handler(object): def index(self):
+obj = DbHelper.singleton() print id(single)
+obj.create() return &lsquo;index&rsquo;</p>
+<pre><code>def news(self): return 'news'
+</code></pre>
+<p>def RunServer(environ, start_response):
+start_response(&lsquo;200 OK&rsquo;, [(&lsquo;Content-Type&rsquo;, &rsquo;text/html&rsquo;)])
+url = environ[&lsquo;PATH_INFO&rsquo;]
+temp = url.split(&rsquo;/&rsquo;)[1]
+obj = Handler()
+is_exist = hasattr(obj, temp) if is_exist:
+func = getattr(obj, temp)
+ret = func() return ret else: return &lsquo;404 not found&rsquo;</p>
+<p>if __name__ == &lsquo;__main__&rsquo;:
+httpd = make_server(&rsquo;&rsquo;, 8001, RunServer) print &ldquo;Serving HTTP on port 8001&hellip;&rdquo; httpd.serve_forever()</p>
+<p>Web应用实例-单例模式</p>
+<p>总结：单利模式存在的目的是保证当前内存中仅存在单个实例，避免内存浪费！！！</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/2017-04-11-python%E5%BC%80%E5%8F%91%E7%AC%AC%E4%B8%89%E7%AF%87python%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html" data-toggle="tooltip" data-placement="top" title="Python开发【第三篇】：Python基本数据类型">
+              Previous<br>
+              <span>Python开发【第三篇】：Python基本数据类型</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9.html" data-toggle="tooltip" data-placement="top" title="Python之excel文件追加内容">
+              Next<br>
+              <span>Python之excel文件追加内容</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

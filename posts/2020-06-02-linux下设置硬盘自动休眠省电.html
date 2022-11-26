@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>Linux下设置硬盘自动休眠省电 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="场景：电脑挂载多个硬盘做NAS，硬盘大部分时间为待机状态（不使用），为节约电费，有必要设置硬盘休眠
+1、安装硬盘性能测试/设置工具
+[root@NAS ~]# yum -y install hdparm
+[root@NAS ~]# hdparm &ndash;help
+参数说明： -S&lt;时间&gt; 设定硬盘进入省电模式前的等待时间（关闭旋转电机） -y 使IDE硬盘进入省电模式 -Y 使IDE硬盘进入睡眠模式 -C 检测IDE硬盘的电源管理模式 -f 将内存缓冲区的数据写入硬盘，并清楚缓冲区 -i 显示硬盘的硬件规格信息，这些信息是在开机时由硬盘本身所提供 -I 直接读取硬盘所提供的硬件规格信息 -t 评估硬盘的读取效率 -T 评估硬盘快取的读取效率
+2、使硬盘立即进入省电状态
+[root@NAS ~]# hdparm -Y /dev/sda
+PS：可以配合crontab来设置定时休眠
+3、设置硬盘省电策略
+无访问一定时间后自动停转，关闭旋转电机
+[root@NAS ~]# hdparm -S 10 /dev/sda
+//这里-S取值为10，则为50秒 换算关系为：1 = 5秒
+PS：在centos7下测试，发现有时候硬盘不会自动休眠
+4、查看当前硬盘省电状态
+[root@NAS ~]# hdparm -C /dev/sda
+//active：活动状态 //standby 省电状态
+5、使用crontab定期执行硬盘休眠
+[root@NAS ~]# crontab -e */1 * * * * /usr/sbin/hdparm -Y /dev/sda &gt; /dev/null">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux下设置硬盘自动休眠省电"/>
+<meta name="twitter:description" content="场景：电脑挂载多个硬盘做NAS，硬盘大部分时间为待机状态（不使用），为节约电费，有必要设置硬盘休眠
+1、安装硬盘性能测试/设置工具
+[root@NAS ~]# yum -y install hdparm
+[root@NAS ~]# hdparm &ndash;help
+参数说明： -S&lt;时间&gt; 设定硬盘进入省电模式前的等待时间（关闭旋转电机） -y 使IDE硬盘进入省电模式 -Y 使IDE硬盘进入睡眠模式 -C 检测IDE硬盘的电源管理模式 -f 将内存缓冲区的数据写入硬盘，并清楚缓冲区 -i 显示硬盘的硬件规格信息，这些信息是在开机时由硬盘本身所提供 -I 直接读取硬盘所提供的硬件规格信息 -t 评估硬盘的读取效率 -T 评估硬盘快取的读取效率
+2、使硬盘立即进入省电状态
+[root@NAS ~]# hdparm -Y /dev/sda
+PS：可以配合crontab来设置定时休眠
+3、设置硬盘省电策略
+无访问一定时间后自动停转，关闭旋转电机
+[root@NAS ~]# hdparm -S 10 /dev/sda
+//这里-S取值为10，则为50秒 换算关系为：1 = 5秒
+PS：在centos7下测试，发现有时候硬盘不会自动休眠
+4、查看当前硬盘省电状态
+[root@NAS ~]# hdparm -C /dev/sda
+//active：活动状态 //standby 省电状态
+5、使用crontab定期执行硬盘休眠
+[root@NAS ~]# crontab -e */1 * * * * /usr/sbin/hdparm -Y /dev/sda &gt; /dev/null"/>
+
+  <meta property="og:title" content="Linux下设置硬盘自动休眠省电" />
+<meta property="og:description" content="场景：电脑挂载多个硬盘做NAS，硬盘大部分时间为待机状态（不使用），为节约电费，有必要设置硬盘休眠
+1、安装硬盘性能测试/设置工具
+[root@NAS ~]# yum -y install hdparm
+[root@NAS ~]# hdparm &ndash;help
+参数说明： -S&lt;时间&gt; 设定硬盘进入省电模式前的等待时间（关闭旋转电机） -y 使IDE硬盘进入省电模式 -Y 使IDE硬盘进入睡眠模式 -C 检测IDE硬盘的电源管理模式 -f 将内存缓冲区的数据写入硬盘，并清楚缓冲区 -i 显示硬盘的硬件规格信息，这些信息是在开机时由硬盘本身所提供 -I 直接读取硬盘所提供的硬件规格信息 -t 评估硬盘的读取效率 -T 评估硬盘快取的读取效率
+2、使硬盘立即进入省电状态
+[root@NAS ~]# hdparm -Y /dev/sda
+PS：可以配合crontab来设置定时休眠
+3、设置硬盘省电策略
+无访问一定时间后自动停转，关闭旋转电机
+[root@NAS ~]# hdparm -S 10 /dev/sda
+//这里-S取值为10，则为50秒 换算关系为：1 = 5秒
+PS：在centos7下测试，发现有时候硬盘不会自动休眠
+4、查看当前硬盘省电状态
+[root@NAS ~]# hdparm -C /dev/sda
+//active：活动状态 //standby 省电状态
+5、使用crontab定期执行硬盘休眠
+[root@NAS ~]# crontab -e */1 * * * * /usr/sbin/hdparm -Y /dev/sda &gt; /dev/null" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-02T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>Linux下设置硬盘自动休眠省电</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Tue, Jun 2, 2020
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>场景：电脑挂载多个硬盘做NAS，硬盘大部分时间为待机状态（不使用），为节约电费，有必要设置硬盘休眠</p>
+<p> </p>
+<p>1、安装硬盘性能测试/设置工具</p>
+<p>[root@NAS ~]# yum -y install hdparm</p>
+<p>[root@NAS ~]# hdparm &ndash;help</p>
+<p>参数说明：
+-S&lt;时间&gt; 设定硬盘进入省电模式前的等待时间（关闭旋转电机）
+-y 使IDE硬盘进入省电模式
+-Y 使IDE硬盘进入睡眠模式
+-C 检测IDE硬盘的电源管理模式
+-f 将内存缓冲区的数据写入硬盘，并清楚缓冲区
+-i 显示硬盘的硬件规格信息，这些信息是在开机时由硬盘本身所提供
+-I 直接读取硬盘所提供的硬件规格信息
+-t 评估硬盘的读取效率
+-T 评估硬盘快取的读取效率</p>
+<p> </p>
+<p>2、使硬盘立即进入省电状态</p>
+<p>[root@NAS ~]# hdparm -Y /dev/sda</p>
+<p>PS：可以配合crontab来设置定时休眠</p>
+<p> </p>
+<p>3、设置硬盘省电策略</p>
+<p>无访问一定时间后自动停转，关闭旋转电机</p>
+<p>[root@NAS ~]# hdparm -S 10 /dev/sda</p>
+<p>//这里-S取值为10，则为50秒
+换算关系为：1 = 5秒</p>
+<p>PS：在centos7下测试，发现有时候硬盘不会自动休眠</p>
+<p> </p>
+<p>4、查看当前硬盘省电状态</p>
+<p>[root@NAS ~]# hdparm -C /dev/sda</p>
+<p>//active：活动状态
+//standby 省电状态</p>
+<p> </p>
+<p>5、使用crontab定期执行硬盘休眠</p>
+<p>[root@NAS ~]# crontab -e
+*/1 * * * * /usr/sbin/hdparm -Y /dev/sda &gt; /dev/null</p>
+<p>//每分钟执行一次休眠</p>
+<p> </p>
+<p>6、配合autofs自动挂载硬盘，实现硬盘未使用时自动休眠</p>
+<p>原理：autofs设置不使用时自动卸载挂载点，并配合脚本检测硬盘是否挂载，当硬盘未被挂载，立即执行硬盘休眠</p>
+<p><strong>a、安装autofs</strong></p>
+<p>[root@NAS ~]# yum -y install autofs</p>
+<p><strong>b、修改主配置文件</strong></p>
+<p>[root@NAS ~]# vim /etc/auto.master
+/mnt     /etc/nas.misc
+挂载目录     子配置文件</p>
+<p><strong>c、修改子配置文件</strong></p>
+<p>[root@NAS nas]# vim /etc/nas.misc
+nas  -fstype=ntfs,ro,nosuid,nodev :/dev/sda1   #将/dev/sda1设备，挂载到/mnt/nas目录下(mnt为主配置文件中设置的挂载目录)</p>
+<p><strong>d、修改无访问时卸载时间（默认300秒）</strong></p>
+<p>#全局设置
+[root@NAS ~]# vim /etc/sysconfig/autofs
+TIMEOUT=180   //修改为180秒</p>
+<p>#局部设置(设置后会覆盖全局设置)
+[root@NAS ~]# vim /etc/auto.master
+/mnt /etc/nas.misc  &ndash;timeout=180</p>
+<p><strong>e、启动autofs服务</strong></p>
+<p>[root@NAS nas]# systemctl restart autofs
+[root@NAS nas]# systemctl enable autofs</p>
+<p><strong>f、测试</strong></p>
+<p>[root@NAS ~]# ls /mnt  #当前mnt目录为空</p>
+<p>[root@NAS ~]# ls /mnt/nas  #访问nas目录，自动挂载</p>
+<p>[root@NAS ~]# df -h   #查看挂载的磁盘</p>
+<p><strong>g、编写脚本，检测当前是否挂载设备，如果没挂载，则立即休眠硬盘</strong></p>
+<p>[root@NAS ~]# vim check_disk.sh</p>
+<p>#!/bin/bash</p>
+<p>df -h | grep &lsquo;/mnt/nas&rsquo; &gt; /dev/null
+result=`echo $?`</p>
+<p>if [ $result != 0 ];then
+hdparm -Y /dev/sda &gt; /dev/null
+fi</p>
+<p><strong>h、使用crontab定期执行脚本</strong></p>
+<p>[root@NAS ~]# crontab -e
+*/2 * * * * /bin/sh /root/check_disk.sh &gt; /dev/null</p>
+<p>//每2分钟执行一次脚本</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7.html" data-toggle="tooltip" data-placement="top" title="老毛桃PE以ISO镜像模式安装CentOS7">
+              Previous<br>
+              <span>老毛桃PE以ISO镜像模式安装CentOS7</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1.html" data-toggle="tooltip" data-placement="top" title="Centos7部署DNS服务">
+              Next<br>
+              <span>Centos7部署DNS服务</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

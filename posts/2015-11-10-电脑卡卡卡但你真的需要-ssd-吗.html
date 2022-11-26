@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>电脑越用越卡，但你真的需要 换SSD吗？ | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="为什么只有SSD才能喂饱你的电脑曹一聪 · 4 个月前
+首先，这篇文章只是二葱学习Windows 系统的笔记，真不是讲怎么优化系统的，真没讨论要不要上SSD 啊，该上还是得上啊，表打我，逃（不知从什么时候开始，SSD渐渐成为解决电脑卡顿的第一解决方案。甚至关于MacBook与Windows笔记本的流畅度之争的核心，也是围绕是否标配PCI-E接口的SSD。而且大家纷纷换上SSD之后，也确实感觉到了系统运行速度的质的变化。似乎大家都忘了，若干年前大家刚装好的XP系统，也能做到一分钟内开机，打开Word文档似乎也是看个过场动画就打开了。那么究竟是什么导致现在电脑对SSD这么饥渴的需求呢？我们先来看一张截图：这是二葱自己电脑的启动项的截图，可能很多人都在各种系统优化技巧里读到过，禁用其中的一部分启动项可以提升系统的启动速度。然而事实是，经常见到安装了国产流氓软件套装的电脑，即便是把这些启动项都禁掉（所谓一键优化），依然需要花费数分钟的时间才能进入系统，好容易到了桌面了，还要失去响应好长时间。讽刺的是，二葱把这些启动项都打开，依然可以做到在一个微信小视频的时间内开机进入桌面。
+要想弄清楚这个问题，必须先弄清楚_Windows的启动流程_。
+（图片来自：http://hugo.caizhenwei.top//11341.the-windows-7-boot-process-sbsl.aspx）
+MBR阶段（16位实模式）：BIOS在完成通电自检后，将控制权移交给位于硬盘前63个扇区的MBR（Master Boot Record），MBR将自己的镜像加载到内存，然后执行对分区表的搜索，然后将控制权转移给第一个活动分区的PBR（Partition Boot Record）； PBR阶段（16位实模式）：PBR是因操作系统而异的分区引导记录，它将自身加载到内存并加载基本的磁盘驱动，通过BIOS INT中断的方式查找此分区上的引导文件，也就是我们的Bootmgr，并将其加载到内存； Bootmgr阶段（16位实模式和32位无分页内存）：读取BCD信息，显示启动菜单，如果安装有多个版本的Windows引导记录，能在这里选择要启动的系统，或者执行内存测试等操作，在选定操作系统后，将Windows BootLoader——Winload.exe加载到内存； Winload.exe阶段（32位或64位 保护模式，有内存分页）：加载Windows内核 Ntoskrnl.exe和它的依赖项Kdcom.dll（Kernel Debugger），Ci.dll，Clfs.sys，Pshed.dll，HAL.dll（硬件抽象层，其实就是主板驱动），并将注册表中HKLM\SYSTEM子键内容加载到内存，如果检测到页面文件Hiberfil.sys则启动Winresume.exe恢复休眠文件； Ntoskrnl.exe阶段（保护模式）：初始化Windows执行体并一一加载注册在HKLM\SYSTEM\CurrentControlSet\Services下标记为System的系统驱动程序，运行会话管理器smss.exe，准备运行native code所需的环境； Smss.exe阶段（Native程序）：初始化环境变量和Windows图形子系统（Win32k.sys），初始化Windows API（csrss.exe）和Windows初始化进程（WinInit.exe）和登陆进程（WinLogon.exe）； WinInit.exe阶段（Windows程序）：初始化服务管理器（SCM），本地安全鉴定进程（LSASS）和本地会话管理器（LSM），初始化剩余的注册表中的启动项内容，以用户态运行启动项任务； Winlogon.exe阶段：显示登陆画面，处理与用户登录相关的安全鉴定任务； Services.exe阶段：完成加载在HKLM\SYSTEM\CurrentControlSet\Services下标记为AutoStart的驱动程序和Windows服务； Explorer.exe阶段：在创建Windows Shell（Explorer.exe）时，初始化桌面窗口管理器（DWM）进程，Explorer.exe加载自身和相关启动项。 自此Windows的启动流程才算基本结束。下图是二葱在虚拟机里安装的基本纯净的Win 7系统完成启动后的所有进程：
+图中可以看出进程的父子关系，其中粉色标注的是系统服务，淡蓝色的是用户进程。之前提到，以高完整性级别运行某个程序，需要UAC提权，而且以管理员账户是不能以SYSTEM的身份创建进程的。那么图中以SYSTEM运行的电脑管家、甚至是Bing输入法的更新程序，还有以High级别运行的子进程是如何创建的呢？
+答案就藏在HKLM\SYSTEM\CurrentControlSet\Services中，读到这里大家不妨运行regedit亲自查看一下自己电脑里的注册表项，这是大部分在启动时加载或延时加载的Windows服务和相关驱动。刚才文章开头从任务管理器里看到的启动项，把它们都加起来，应该都没有这个子键下的启动项要多，甚至都不在一个数量级上。每个子键下，Start的值都表示着这个启动项的触发时间：
+0：由BootLoader加载，比系统内核启动的时间还要早，标为0的多是底层ATA驱动； 1：由Ntoskrnl加载，比如各类常规硬件驱动、过滤型驱动，还有各路安全卫士的程序本体、QQ的窗体保护驱动等； 2：由WinInit加载或特定事件触发，在基本的GDI图形初始化完成后才加载的程序，如果装的程序多的话，也会占用不少启动时间； 3：手动加载； 4：该项被禁用。 其中Start值为0和1的启动项，是以高权限加载的，即上图中标注为粉色的进程。
+现在事实的真相已经浮出水面了，如果你觉得自己的电脑启动时间过长——甚至SSD也没有带来改善的话，可以去看一下注册表的HKLM\SYSTEM\CurrentControlSet\Services这里，是不是有上百个加载项。二葱在舍友的电脑上试了下，发现早就被他卸载的xx日历、xx视频、xx助手各类软件一个不少，一共五百多项，这样的电脑恐怕连SSD都无法拯救吧。
+（如果需要对这里面的启动项进行删减，请一定一定不要直接删除所怀疑的子键，就不说三遍了，记住如果想禁用一个Services里的启动项，先手动把Start的值改为“3”或“4”，如果重启之后使用一段时间确实不会产生负面影响的话，再考虑删掉这个子键。对于普通用户，更是不建议手动对注册表做任何改动，因为HKEY_LOCAL_MACHINE下的子键涉及系统全局配置，修改不善会造成整个系统的不稳定）
+这还没完，在加载完驱动和服务之后，WinInit还要继续加载这里的用户态启动项：
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Run HKCU\Software\Microsoft\Windows\CurrentVersion\Run HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce %ALLUSERSPROFILE%\Start Menu\Programs\Startup\ %USERPROFILE%\Start Menu\Programs\Startup\ 对于详细的Windows启动流程大家可以参考：The Birth of Windows Desktop ，更加详细的信息可以查阅Windows Internals Book 一书的第13章：启动和关机。
+这里向大家推荐一个检测系统启动项的工具：Autoruns，在Sysinternals Suite中可以找到。它能检测系统中存在的所有类型的启动项，包括由WinInit加载的用户启动项、由系统加载的驱动启动项，还有跟Explorer.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="电脑越用越卡，但你真的需要 换SSD吗？"/>
+<meta name="twitter:description" content="为什么只有SSD才能喂饱你的电脑曹一聪 · 4 个月前
+首先，这篇文章只是二葱学习Windows 系统的笔记，真不是讲怎么优化系统的，真没讨论要不要上SSD 啊，该上还是得上啊，表打我，逃（不知从什么时候开始，SSD渐渐成为解决电脑卡顿的第一解决方案。甚至关于MacBook与Windows笔记本的流畅度之争的核心，也是围绕是否标配PCI-E接口的SSD。而且大家纷纷换上SSD之后，也确实感觉到了系统运行速度的质的变化。似乎大家都忘了，若干年前大家刚装好的XP系统，也能做到一分钟内开机，打开Word文档似乎也是看个过场动画就打开了。那么究竟是什么导致现在电脑对SSD这么饥渴的需求呢？我们先来看一张截图：这是二葱自己电脑的启动项的截图，可能很多人都在各种系统优化技巧里读到过，禁用其中的一部分启动项可以提升系统的启动速度。然而事实是，经常见到安装了国产流氓软件套装的电脑，即便是把这些启动项都禁掉（所谓一键优化），依然需要花费数分钟的时间才能进入系统，好容易到了桌面了，还要失去响应好长时间。讽刺的是，二葱把这些启动项都打开，依然可以做到在一个微信小视频的时间内开机进入桌面。
+要想弄清楚这个问题，必须先弄清楚_Windows的启动流程_。
+（图片来自：http://hugo.caizhenwei.top//11341.the-windows-7-boot-process-sbsl.aspx）
+MBR阶段（16位实模式）：BIOS在完成通电自检后，将控制权移交给位于硬盘前63个扇区的MBR（Master Boot Record），MBR将自己的镜像加载到内存，然后执行对分区表的搜索，然后将控制权转移给第一个活动分区的PBR（Partition Boot Record）； PBR阶段（16位实模式）：PBR是因操作系统而异的分区引导记录，它将自身加载到内存并加载基本的磁盘驱动，通过BIOS INT中断的方式查找此分区上的引导文件，也就是我们的Bootmgr，并将其加载到内存； Bootmgr阶段（16位实模式和32位无分页内存）：读取BCD信息，显示启动菜单，如果安装有多个版本的Windows引导记录，能在这里选择要启动的系统，或者执行内存测试等操作，在选定操作系统后，将Windows BootLoader——Winload.exe加载到内存； Winload.exe阶段（32位或64位 保护模式，有内存分页）：加载Windows内核 Ntoskrnl.exe和它的依赖项Kdcom.dll（Kernel Debugger），Ci.dll，Clfs.sys，Pshed.dll，HAL.dll（硬件抽象层，其实就是主板驱动），并将注册表中HKLM\SYSTEM子键内容加载到内存，如果检测到页面文件Hiberfil.sys则启动Winresume.exe恢复休眠文件； Ntoskrnl.exe阶段（保护模式）：初始化Windows执行体并一一加载注册在HKLM\SYSTEM\CurrentControlSet\Services下标记为System的系统驱动程序，运行会话管理器smss.exe，准备运行native code所需的环境； Smss.exe阶段（Native程序）：初始化环境变量和Windows图形子系统（Win32k.sys），初始化Windows API（csrss.exe）和Windows初始化进程（WinInit.exe）和登陆进程（WinLogon.exe）； WinInit.exe阶段（Windows程序）：初始化服务管理器（SCM），本地安全鉴定进程（LSASS）和本地会话管理器（LSM），初始化剩余的注册表中的启动项内容，以用户态运行启动项任务； Winlogon.exe阶段：显示登陆画面，处理与用户登录相关的安全鉴定任务； Services.exe阶段：完成加载在HKLM\SYSTEM\CurrentControlSet\Services下标记为AutoStart的驱动程序和Windows服务； Explorer.exe阶段：在创建Windows Shell（Explorer.exe）时，初始化桌面窗口管理器（DWM）进程，Explorer.exe加载自身和相关启动项。 自此Windows的启动流程才算基本结束。下图是二葱在虚拟机里安装的基本纯净的Win 7系统完成启动后的所有进程：
+图中可以看出进程的父子关系，其中粉色标注的是系统服务，淡蓝色的是用户进程。之前提到，以高完整性级别运行某个程序，需要UAC提权，而且以管理员账户是不能以SYSTEM的身份创建进程的。那么图中以SYSTEM运行的电脑管家、甚至是Bing输入法的更新程序，还有以High级别运行的子进程是如何创建的呢？
+答案就藏在HKLM\SYSTEM\CurrentControlSet\Services中，读到这里大家不妨运行regedit亲自查看一下自己电脑里的注册表项，这是大部分在启动时加载或延时加载的Windows服务和相关驱动。刚才文章开头从任务管理器里看到的启动项，把它们都加起来，应该都没有这个子键下的启动项要多，甚至都不在一个数量级上。每个子键下，Start的值都表示着这个启动项的触发时间：
+0：由BootLoader加载，比系统内核启动的时间还要早，标为0的多是底层ATA驱动； 1：由Ntoskrnl加载，比如各类常规硬件驱动、过滤型驱动，还有各路安全卫士的程序本体、QQ的窗体保护驱动等； 2：由WinInit加载或特定事件触发，在基本的GDI图形初始化完成后才加载的程序，如果装的程序多的话，也会占用不少启动时间； 3：手动加载； 4：该项被禁用。 其中Start值为0和1的启动项，是以高权限加载的，即上图中标注为粉色的进程。
+现在事实的真相已经浮出水面了，如果你觉得自己的电脑启动时间过长——甚至SSD也没有带来改善的话，可以去看一下注册表的HKLM\SYSTEM\CurrentControlSet\Services这里，是不是有上百个加载项。二葱在舍友的电脑上试了下，发现早就被他卸载的xx日历、xx视频、xx助手各类软件一个不少，一共五百多项，这样的电脑恐怕连SSD都无法拯救吧。
+（如果需要对这里面的启动项进行删减，请一定一定不要直接删除所怀疑的子键，就不说三遍了，记住如果想禁用一个Services里的启动项，先手动把Start的值改为“3”或“4”，如果重启之后使用一段时间确实不会产生负面影响的话，再考虑删掉这个子键。对于普通用户，更是不建议手动对注册表做任何改动，因为HKEY_LOCAL_MACHINE下的子键涉及系统全局配置，修改不善会造成整个系统的不稳定）
+这还没完，在加载完驱动和服务之后，WinInit还要继续加载这里的用户态启动项：
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Run HKCU\Software\Microsoft\Windows\CurrentVersion\Run HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce %ALLUSERSPROFILE%\Start Menu\Programs\Startup\ %USERPROFILE%\Start Menu\Programs\Startup\ 对于详细的Windows启动流程大家可以参考：The Birth of Windows Desktop ，更加详细的信息可以查阅Windows Internals Book 一书的第13章：启动和关机。
+这里向大家推荐一个检测系统启动项的工具：Autoruns，在Sysinternals Suite中可以找到。它能检测系统中存在的所有类型的启动项，包括由WinInit加载的用户启动项、由系统加载的驱动启动项，还有跟Explorer."/>
+
+  <meta property="og:title" content="电脑越用越卡，但你真的需要 换SSD吗？" />
+<meta property="og:description" content="为什么只有SSD才能喂饱你的电脑曹一聪 · 4 个月前
+首先，这篇文章只是二葱学习Windows 系统的笔记，真不是讲怎么优化系统的，真没讨论要不要上SSD 啊，该上还是得上啊，表打我，逃（不知从什么时候开始，SSD渐渐成为解决电脑卡顿的第一解决方案。甚至关于MacBook与Windows笔记本的流畅度之争的核心，也是围绕是否标配PCI-E接口的SSD。而且大家纷纷换上SSD之后，也确实感觉到了系统运行速度的质的变化。似乎大家都忘了，若干年前大家刚装好的XP系统，也能做到一分钟内开机，打开Word文档似乎也是看个过场动画就打开了。那么究竟是什么导致现在电脑对SSD这么饥渴的需求呢？我们先来看一张截图：这是二葱自己电脑的启动项的截图，可能很多人都在各种系统优化技巧里读到过，禁用其中的一部分启动项可以提升系统的启动速度。然而事实是，经常见到安装了国产流氓软件套装的电脑，即便是把这些启动项都禁掉（所谓一键优化），依然需要花费数分钟的时间才能进入系统，好容易到了桌面了，还要失去响应好长时间。讽刺的是，二葱把这些启动项都打开，依然可以做到在一个微信小视频的时间内开机进入桌面。
+要想弄清楚这个问题，必须先弄清楚_Windows的启动流程_。
+（图片来自：http://hugo.caizhenwei.top//11341.the-windows-7-boot-process-sbsl.aspx）
+MBR阶段（16位实模式）：BIOS在完成通电自检后，将控制权移交给位于硬盘前63个扇区的MBR（Master Boot Record），MBR将自己的镜像加载到内存，然后执行对分区表的搜索，然后将控制权转移给第一个活动分区的PBR（Partition Boot Record）； PBR阶段（16位实模式）：PBR是因操作系统而异的分区引导记录，它将自身加载到内存并加载基本的磁盘驱动，通过BIOS INT中断的方式查找此分区上的引导文件，也就是我们的Bootmgr，并将其加载到内存； Bootmgr阶段（16位实模式和32位无分页内存）：读取BCD信息，显示启动菜单，如果安装有多个版本的Windows引导记录，能在这里选择要启动的系统，或者执行内存测试等操作，在选定操作系统后，将Windows BootLoader——Winload.exe加载到内存； Winload.exe阶段（32位或64位 保护模式，有内存分页）：加载Windows内核 Ntoskrnl.exe和它的依赖项Kdcom.dll（Kernel Debugger），Ci.dll，Clfs.sys，Pshed.dll，HAL.dll（硬件抽象层，其实就是主板驱动），并将注册表中HKLM\SYSTEM子键内容加载到内存，如果检测到页面文件Hiberfil.sys则启动Winresume.exe恢复休眠文件； Ntoskrnl.exe阶段（保护模式）：初始化Windows执行体并一一加载注册在HKLM\SYSTEM\CurrentControlSet\Services下标记为System的系统驱动程序，运行会话管理器smss.exe，准备运行native code所需的环境； Smss.exe阶段（Native程序）：初始化环境变量和Windows图形子系统（Win32k.sys），初始化Windows API（csrss.exe）和Windows初始化进程（WinInit.exe）和登陆进程（WinLogon.exe）； WinInit.exe阶段（Windows程序）：初始化服务管理器（SCM），本地安全鉴定进程（LSASS）和本地会话管理器（LSM），初始化剩余的注册表中的启动项内容，以用户态运行启动项任务； Winlogon.exe阶段：显示登陆画面，处理与用户登录相关的安全鉴定任务； Services.exe阶段：完成加载在HKLM\SYSTEM\CurrentControlSet\Services下标记为AutoStart的驱动程序和Windows服务； Explorer.exe阶段：在创建Windows Shell（Explorer.exe）时，初始化桌面窗口管理器（DWM）进程，Explorer.exe加载自身和相关启动项。 自此Windows的启动流程才算基本结束。下图是二葱在虚拟机里安装的基本纯净的Win 7系统完成启动后的所有进程：
+图中可以看出进程的父子关系，其中粉色标注的是系统服务，淡蓝色的是用户进程。之前提到，以高完整性级别运行某个程序，需要UAC提权，而且以管理员账户是不能以SYSTEM的身份创建进程的。那么图中以SYSTEM运行的电脑管家、甚至是Bing输入法的更新程序，还有以High级别运行的子进程是如何创建的呢？
+答案就藏在HKLM\SYSTEM\CurrentControlSet\Services中，读到这里大家不妨运行regedit亲自查看一下自己电脑里的注册表项，这是大部分在启动时加载或延时加载的Windows服务和相关驱动。刚才文章开头从任务管理器里看到的启动项，把它们都加起来，应该都没有这个子键下的启动项要多，甚至都不在一个数量级上。每个子键下，Start的值都表示着这个启动项的触发时间：
+0：由BootLoader加载，比系统内核启动的时间还要早，标为0的多是底层ATA驱动； 1：由Ntoskrnl加载，比如各类常规硬件驱动、过滤型驱动，还有各路安全卫士的程序本体、QQ的窗体保护驱动等； 2：由WinInit加载或特定事件触发，在基本的GDI图形初始化完成后才加载的程序，如果装的程序多的话，也会占用不少启动时间； 3：手动加载； 4：该项被禁用。 其中Start值为0和1的启动项，是以高权限加载的，即上图中标注为粉色的进程。
+现在事实的真相已经浮出水面了，如果你觉得自己的电脑启动时间过长——甚至SSD也没有带来改善的话，可以去看一下注册表的HKLM\SYSTEM\CurrentControlSet\Services这里，是不是有上百个加载项。二葱在舍友的电脑上试了下，发现早就被他卸载的xx日历、xx视频、xx助手各类软件一个不少，一共五百多项，这样的电脑恐怕连SSD都无法拯救吧。
+（如果需要对这里面的启动项进行删减，请一定一定不要直接删除所怀疑的子键，就不说三遍了，记住如果想禁用一个Services里的启动项，先手动把Start的值改为“3”或“4”，如果重启之后使用一段时间确实不会产生负面影响的话，再考虑删掉这个子键。对于普通用户，更是不建议手动对注册表做任何改动，因为HKEY_LOCAL_MACHINE下的子键涉及系统全局配置，修改不善会造成整个系统的不稳定）
+这还没完，在加载完驱动和服务之后，WinInit还要继续加载这里的用户态启动项：
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Run HKCU\Software\Microsoft\Windows\CurrentVersion\Run HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce %ALLUSERSPROFILE%\Start Menu\Programs\Startup\ %USERPROFILE%\Start Menu\Programs\Startup\ 对于详细的Windows启动流程大家可以参考：The Birth of Windows Desktop ，更加详细的信息可以查阅Windows Internals Book 一书的第13章：启动和关机。
+这里向大家推荐一个检测系统启动项的工具：Autoruns，在Sysinternals Suite中可以找到。它能检测系统中存在的所有类型的启动项，包括由WinInit加载的用户启动项、由系统加载的驱动启动项，还有跟Explorer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2015-11-10-%E7%94%B5%E8%84%91%E5%8D%A1%E5%8D%A1%E5%8D%A1%E4%BD%86%E4%BD%A0%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81-ssd-%E5%90%97.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-11-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-11-10T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>电脑越用越卡，但你真的需要 换SSD吗？</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Tue, Nov 10, 2015
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//112736b01efa27e87647151b3942ad67.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h1 id="为什么只有ssd才能喂饱你的电脑">为什么只有SSD才能喂饱你的电脑<a class="anchorjs-link" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%8f%aa%e6%9c%89ssd%e6%89%8d%e8%83%bd%e5%96%82%e9%a5%b1%e4%bd%a0%e7%9a%84%e7%94%b5%e8%84%91"></a></h1><p><a href="http://hugo.caizhenwei.top//cao-yicong-50" target="_blank"><figure>
+  <a class="paragraph-image">
+    <img data-src="images/556bd816cac19d4c8ccfeaa4a139c6c3_s.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure>曹一聪</a> · 4 个月前</p>
+<p>首先，这篇文章只是二葱学习Windows 系统的笔记，真不是讲怎么优化系统的，真没讨论要不要上SSD 啊，该上还是得上啊，表打我，逃（不知从什么时候开始，SSD渐渐成为解决电脑卡顿的第一解决方案。甚至关于MacBook与Windows笔记本的流畅度之争的核心，也是围绕是否标配PCI-E接口的SSD。而且大家纷纷换上SSD之后，也确实感觉到了系统运行速度的质的变化。似乎大家都忘了，若干年前大家刚装好的XP系统，也能做到一分钟内开机，打开Word文档似乎也是看个过场动画就打开了。那么究竟是什么导致现在电脑对SSD这么饥渴的需求呢？我们先来看一张截图：<figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//7c0d869a34545a063e826dbc1de4bd8b_b.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure>这是二葱自己电脑的启动项的截图，可能很多人都在各种系统优化技巧里读到过，禁用其中的一部分启动项可以提升系统的启动速度。然而事实是，经常见到安装了国产流氓软件套装的电脑，即便是把这些启动项都禁掉（所谓一键优化），依然需要花费数分钟的时间才能进入系统，好容易到了桌面了，还要失去响应好长时间。讽刺的是，二葱把这些启动项都打开，依然可以做到在一个微信小视频的时间内开机进入桌面。</p>
+<p>要想弄清楚这个问题，必须先弄清楚_Windows的启动流程_。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/6b726126fb8851a8f98c3fa56f3cbbed_b.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure>（图片来自：<a href="http://hugo.caizhenwei.top//11341.the-windows-7-boot-process-sbsl.aspx" target="_blank">http://hugo.caizhenwei.top//11341.the-windows-7-boot-process-sbsl.aspx</a>）</p>
+<ol>
+<li>MBR阶段（16位实模式）：BIOS在完成通电自检后，将控制权移交给位于硬盘前63个扇区的MBR（Master Boot Record），MBR将自己的镜像加载到内存，然后执行对分区表的搜索，然后将控制权转移给第一个活动分区的PBR（Partition Boot Record）；</li>
+<li>PBR阶段（16位实模式）：PBR是因操作系统而异的分区引导记录，它将自身加载到内存并加载基本的磁盘驱动，通过BIOS INT中断的方式查找此分区上的引导文件，也就是我们的Bootmgr，并将其加载到内存；</li>
+<li>Bootmgr阶段（16位实模式和32位无分页内存）：读取BCD信息，显示启动菜单，如果安装有多个版本的Windows引导记录，能在这里选择要启动的系统，或者执行内存测试等操作，在选定操作系统后，将Windows BootLoader——Winload.exe加载到内存；</li>
+<li>Winload.exe阶段（32位或64位 保护模式，有内存分页）：加载Windows内核 Ntoskrnl.exe和它的依赖项Kdcom.dll（Kernel Debugger），Ci.dll，Clfs.sys，Pshed.dll，HAL.dll（硬件抽象层，其实就是主板驱动），并将注册表中HKLM\SYSTEM子键内容加载到内存，如果检测到页面文件Hiberfil.sys则启动Winresume.exe恢复休眠文件；</li>
+<li>Ntoskrnl.exe阶段（保护模式）：初始化Windows执行体并一一加载注册在HKLM\SYSTEM\CurrentControlSet\Services下标记为System的系统驱动程序，运行会话管理器smss.exe，准备运行native code所需的环境；</li>
+<li>Smss.exe阶段（Native程序）：初始化环境变量和Windows图形子系统（Win32k.sys），初始化Windows API（csrss.exe）和Windows初始化进程（WinInit.exe）和登陆进程（WinLogon.exe）；</li>
+<li>WinInit.exe阶段（Windows程序）：初始化服务管理器（SCM），本地安全鉴定进程（LSASS）和本地会话管理器（LSM），初始化剩余的注册表中的启动项内容，以用户态运行启动项任务；</li>
+<li>Winlogon.exe阶段：显示登陆画面，处理与用户登录相关的安全鉴定任务；</li>
+<li>Services.exe阶段：完成加载在HKLM\SYSTEM\CurrentControlSet\Services下标记为AutoStart的驱动程序和Windows服务；</li>
+<li>Explorer.exe阶段：在创建Windows Shell（Explorer.exe）时，初始化桌面窗口管理器（DWM）进程，Explorer.exe加载自身和相关启动项。</li>
+</ol>
+<p>自此Windows的启动流程才算基本结束。下图是二葱在虚拟机里安装的基本纯净的Win 7系统完成启动后的所有进程：</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//89e2a97ebac40a498b75fba7c8480800_b.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure>图中可以看出进程的父子关系，其中粉色标注的是系统服务，淡蓝色的是用户进程。之前提到，以高完整性级别运行某个程序，需要UAC提权，而且以管理员账户是不能以SYSTEM的身份创建进程的。那么图中以SYSTEM运行的电脑管家、甚至是Bing输入法的更新程序，还有以High级别运行的子进程是如何创建的呢？</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//f2dd8467e53f360c34b25171157888ba_b.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure>答案就藏在HKLM\SYSTEM\CurrentControlSet\Services中，读到这里大家不妨运行regedit亲自查看一下自己电脑里的注册表项，这是大部分在启动时加载或延时加载的Windows服务和相关驱动。刚才文章开头从任务管理器里看到的启动项，把它们都加起来，应该都没有这个子键下的启动项要多，甚至都<strong>不在一个数量级上</strong>。每个子键下，Start的值都表示着这个启动项的触发时间：</p>
+<ul>
+<li>0：由BootLoader加载，比系统内核启动的时间还要早，标为0的多是底层ATA驱动；</li>
+<li>1：由Ntoskrnl加载，比如各类常规硬件驱动、过滤型驱动，还有各路安全卫士的程序本体、QQ的窗体保护驱动等；</li>
+<li>2：由WinInit加载或特定事件触发，在基本的GDI图形初始化完成后才加载的程序，如果装的程序多的话，也会占用不少启动时间；</li>
+<li>3：手动加载；</li>
+<li>4：该项被禁用。</li>
+</ul>
+<p>其中Start值为0和1的启动项，是以高权限加载的，即上图中标注为粉色的进程。</p>
+<p>现在事实的真相已经浮出水面了，如果你觉得自己的电脑启动时间过长——甚至SSD也没有带来改善的话，可以去看一下注册表的HKLM\SYSTEM\CurrentControlSet\Services这里，是不是有上百个加载项。二葱在舍友的电脑上试了下，发现早就被他卸载的xx日历、xx视频、xx助手各类软件一个不少，一共五百多项，这样的电脑恐怕连SSD都无法拯救吧。</p>
+<p>（如果需要对这里面的启动项进行删减，请一定一定<strong>不要直接删除所怀疑的子键</strong>，就不说三遍了，记住如果想禁用一个Services里的启动项，先手动把Start的值改为“3”或“4”，如果重启之后使用一段时间确实不会产生负面影响的话，再考虑删掉这个子键。对于普通用户，更是<strong>不建议手动对注册表做任何改动</strong>，因为HKEY_LOCAL_MACHINE下的子键涉及系统全局配置，修改不善会<strong>造成整个系统的不稳定）</strong></p>
+<p>这还没完，在加载完驱动和服务之后，WinInit还要继续加载这里的用户态启动项：</p>
+<ul>
+<li>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce</li>
+<li>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run</li>
+<li>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run</li>
+<li>HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load</li>
+<li>HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Run</li>
+<li>HKCU\Software\Microsoft\Windows\CurrentVersion\Run</li>
+<li>HKCU\Software\Microsoft\Windows\CurrentVersion\RunOnce</li>
+<li>%ALLUSERSPROFILE%\Start Menu\Programs\Startup\</li>
+<li>%USERPROFILE%\Start Menu\Programs\Startup\</li>
+</ul>
+<p>对于详细的Windows启动流程大家可以参考：<a href="http://www.codeproject.com/Articles/129874/The-Birth-of-Windows-Desktop" target="_blank">The Birth of Windows Desktop</a> ，更加详细的信息可以查阅<a href="https://technet.microsoft.com/en-us/sysinternals/bb963901.aspx" target="_blank">Windows Internals Book</a> 一书的第13章：启动和关机。</p>
+<p>这里向大家推荐一个检测系统启动项的工具：Autoruns，在<a href="https://technet.microsoft.com/en-us/sysinternals/bb842062.aspx?f=255&amp;MSPPError=-2147217396" target="_blank">Sysinternals Suite</a>中可以找到。它能检测系统中存在的所有类型的启动项，包括由WinInit加载的用户启动项、由系统加载的驱动启动项，还有跟Explorer.exe相关的启动项（比如右键关联菜单等）。</p>
+<p>通过<strong>取消勾选就能干掉启动项</strong>，甚至能离线检测其他硬盘上的操作系统——如果它们损坏不能启动的话——<strong>通过禁掉可疑驱动的方式修复系统</strong>。这货还能导出刚配置好系统时的启动项记录，并在以后随时与之比较，<strong>找出新增的启动项</strong>。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ba3efb8bd2082b456b8da5dd14cc2b96_b.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure><strong>通过“Description”和“Publisher”可以基本确定一个启动项的作用和发布者，<strong>如果在这里看到不希望被自动加载的条目，可以直接取消勾选。通常</strong>不建议</strong>大家直接通过注册表编辑器直接改动HKLM\SYSTEM\CurrentControlSet\Services里面的内容，但如果大家对系统机制有所了解，可以通过Autoruns可以基本确定非必需的启动项，然后手动干掉它。</p>
+<p>回想起来，之前面试被问到系统启动项都有哪些的时候，才知道自己的回答有多么幼稚。好在知之甚少不可怕，只要做到比昨天知道的更多就好。像这种经常被大家忽视的真相，就一定要让更多人知道。所以如果看完你觉得大彻大悟，原来自己被耍这么久，请不要忘记分享到朋友圈：）</p>
+<p>最后再提一下Windows 8引入的快速启动功能，如下图所示，多数电脑都会默认开启这个选项：</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//459ce84075c3d469bf71c17c6496f586_b.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure>打开了 “快速启动”的电脑，在关机时不会像以前那样依次结束进程然后关闭电源，而是在关闭了用户态的进程后，将Session 0的内核会话压缩到Hibernate文件中，在下次开机时并不会重新一一载入所有的设备驱动，而是直接将内核会话的休眠文件释放到内存，然后重新初始化它们。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//25a09ca1239b5aa39f2ad31a3395583e_b.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure>据说这项技术最大能减少 70% 的启动时间。</p>
+<p>另外，对于支持UEFI启动的电脑，通电自检时不再会像以前BIOS那样依次检测硬件设备的完好性，而是并行检测，也可以缩短1~2秒的启动时间。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//d389a904d6716ac1bf8bae61b69c7a73_b.jpg" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure>所以说，如果你也时常向你的朋友表演开机，那么包括SSD，UEFI、Windows的快速启动、Prefetch预读取这些技术都功不可没，虽然SSD能让系统运转如飞，但许多系统卡顿的原因可能并不是因为没有SSD，而是因为用久了长出了许多流氓启动项。而且，别忘了向他们展示你的HKLM\SYSTEM\CurrentControlSet\Services，告诫他们合理安装国产软件，兴许号称帮你清理启动项的卫士本身，才是占据启动时间的大头：）</p>
+<p> </p>
+<hr>
+<p>发自知乎专栏「<a href="http://zhuanlan.zhihu.com/yicong/20114305" target="_blank">二葱写字的地方</a>」</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/search.html" data-toggle="tooltip" data-placement="top" title="Search Results">
+              Previous<br>
+              <span>Search Results</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2015-11-10-%E5%AF%B9%E4%BA%8E%E5%B0%8F%E7%99%BD-%E5%93%AA%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%9C%80%E5%80%BC%E5%BE%97%E4%BD%A0%E5%8E%BB%E5%AD%A6%E4%B9%A0.html" data-toggle="tooltip" data-placement="top" title="对于小白 还在考虑学习哪几种编程语言吗">
+              Next<br>
+              <span>对于小白 还在考虑学习哪几种编程语言吗</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

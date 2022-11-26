@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>python3 str（字符串） | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="__add__函数 (在后面追加字符串)
+s1 =&lsquo;Hello&rsquo; s2 = s1.__add__(&rsquo; boy!&rsquo;) print(s2) #输出：Hello boy!
+__contains__（判断是否包含某字符串，包含则返回True）
+s1 = &lsquo;Hello&rsquo; result = s1.__contains__(&lsquo;He&rsquo;) print(result) #输出：True
+__eq__（判断两个字符串是否相同，相同则返回True）
+s1 = &lsquo;Hello&rsquo; s2 = &lsquo;How&rsquo; result = s1.__eq__(s2) print(result) #输出：False
+__format__
+#占位
+__getattribute__
+#占位
+__getitem__
+#占位
+__getnewargs__
+#占位
+__ge__ (大于或等于)
+print(&lsquo;b&rsquo;.__ge__(&lsquo;a&rsquo;)) #输出：True
+__gt__(大于)
+print(&lsquo;b&rsquo;.__ge__(&lsquo;a&rsquo;)) #输出：True
+__hash__
+#占位
+__iter__
+#占位
+__len__(返回字符串长度)
+print(&lsquo;abc&rsquo;.__len__()) #输出：3
+__le__（小于或等于）
+print(&lsquo;b&rsquo;.__le__(&lsquo;a&rsquo;)) #输出：False
+__lt__（小于）
+print(&lsquo;b&rsquo;.__lt__(&lsquo;a&rsquo;)) #输出：False
+__mod__
+#占位
+__mul__
+#占位
+__new__
+#占位
+__ne__
+#占位
+__repr__
+#占位">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python3 str（字符串）"/>
+<meta name="twitter:description" content="__add__函数 (在后面追加字符串)
+s1 =&lsquo;Hello&rsquo; s2 = s1.__add__(&rsquo; boy!&rsquo;) print(s2) #输出：Hello boy!
+__contains__（判断是否包含某字符串，包含则返回True）
+s1 = &lsquo;Hello&rsquo; result = s1.__contains__(&lsquo;He&rsquo;) print(result) #输出：True
+__eq__（判断两个字符串是否相同，相同则返回True）
+s1 = &lsquo;Hello&rsquo; s2 = &lsquo;How&rsquo; result = s1.__eq__(s2) print(result) #输出：False
+__format__
+#占位
+__getattribute__
+#占位
+__getitem__
+#占位
+__getnewargs__
+#占位
+__ge__ (大于或等于)
+print(&lsquo;b&rsquo;.__ge__(&lsquo;a&rsquo;)) #输出：True
+__gt__(大于)
+print(&lsquo;b&rsquo;.__ge__(&lsquo;a&rsquo;)) #输出：True
+__hash__
+#占位
+__iter__
+#占位
+__len__(返回字符串长度)
+print(&lsquo;abc&rsquo;.__len__()) #输出：3
+__le__（小于或等于）
+print(&lsquo;b&rsquo;.__le__(&lsquo;a&rsquo;)) #输出：False
+__lt__（小于）
+print(&lsquo;b&rsquo;.__lt__(&lsquo;a&rsquo;)) #输出：False
+__mod__
+#占位
+__mul__
+#占位
+__new__
+#占位
+__ne__
+#占位
+__repr__
+#占位"/>
+
+  <meta property="og:title" content="python3 str（字符串）" />
+<meta property="og:description" content="__add__函数 (在后面追加字符串)
+s1 =&lsquo;Hello&rsquo; s2 = s1.__add__(&rsquo; boy!&rsquo;) print(s2) #输出：Hello boy!
+__contains__（判断是否包含某字符串，包含则返回True）
+s1 = &lsquo;Hello&rsquo; result = s1.__contains__(&lsquo;He&rsquo;) print(result) #输出：True
+__eq__（判断两个字符串是否相同，相同则返回True）
+s1 = &lsquo;Hello&rsquo; s2 = &lsquo;How&rsquo; result = s1.__eq__(s2) print(result) #输出：False
+__format__
+#占位
+__getattribute__
+#占位
+__getitem__
+#占位
+__getnewargs__
+#占位
+__ge__ (大于或等于)
+print(&lsquo;b&rsquo;.__ge__(&lsquo;a&rsquo;)) #输出：True
+__gt__(大于)
+print(&lsquo;b&rsquo;.__ge__(&lsquo;a&rsquo;)) #输出：True
+__hash__
+#占位
+__iter__
+#占位
+__len__(返回字符串长度)
+print(&lsquo;abc&rsquo;.__len__()) #输出：3
+__le__（小于或等于）
+print(&lsquo;b&rsquo;.__le__(&lsquo;a&rsquo;)) #输出：False
+__lt__（小于）
+print(&lsquo;b&rsquo;.__lt__(&lsquo;a&rsquo;)) #输出：False
+__mod__
+#占位
+__mul__
+#占位
+__new__
+#占位
+__ne__
+#占位
+__repr__
+#占位" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2017-03-18-python3str%E5%AD%97%E7%AC%A6%E4%B8%B2.html" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2017-03-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-03-18T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="../sass/main.css">
+
+  
+  <link rel="stylesheet" href="../zoomjs/zoom.min.css">
+
+  
+
+  <script src=../js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>python3 str（字符串）</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Sat, Mar 18, 2017
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>__add__函数 (在后面追加字符串)</p>
+<p>s1 =&lsquo;Hello&rsquo; s2 = s1.__add__(&rsquo; boy!&rsquo;) print(s2) #输出：Hello boy!</p>
+<p>__contains__（判断是否包含某字符串，包含则返回True）</p>
+<p>s1 = &lsquo;Hello&rsquo; result = s1.__contains__(&lsquo;He&rsquo;) print(result) #输出：True</p>
+<p>__eq__（判断两个字符串是否相同，相同则返回True）</p>
+<p>s1 = &lsquo;Hello&rsquo; s2 = &lsquo;How&rsquo; result = s1.__eq__(s2) print(result) #输出：False</p>
+<p> __format__</p>
+<p>#占位</p>
+<p>__getattribute__</p>
+<p>#占位</p>
+<p>__getitem__</p>
+<p>#占位</p>
+<p>__getnewargs__</p>
+<p>#占位</p>
+<p>__ge__ (大于或等于)</p>
+<p>print(&lsquo;b&rsquo;.__ge__(&lsquo;a&rsquo;)) #输出：True</p>
+<p>__gt__(大于)</p>
+<p>print(&lsquo;b&rsquo;.__ge__(&lsquo;a&rsquo;)) #输出：True</p>
+<p>__hash__</p>
+<p>#占位</p>
+<p>__iter__</p>
+<p>#占位</p>
+<p>__len__(返回字符串长度)</p>
+<p>print(&lsquo;abc&rsquo;.__len__()) #输出：3</p>
+<p>__le__（小于或等于）</p>
+<p>print(&lsquo;b&rsquo;.__le__(&lsquo;a&rsquo;)) #输出：False</p>
+<p>__lt__（小于）</p>
+<p>print(&lsquo;b&rsquo;.__lt__(&lsquo;a&rsquo;)) #输出：False</p>
+<p>__mod__</p>
+<p>#占位</p>
+<p>__mul__</p>
+<p>#占位</p>
+<p>__new__</p>
+<p>#占位</p>
+<p>__ne__</p>
+<p>#占位</p>
+<p>__repr__</p>
+<p>#占位</p>
+<p>__rmod__</p>
+<p>#占位</p>
+<p>__rmul__</p>
+<p>#占位</p>
+<p>__sizeof__</p>
+<p>#占位</p>
+<p>__str__(返回自已)</p>
+<p>print(&lsquo;abc&rsquo;.__str__()) #输出：abc</p>
+<p>capitalize(首字母大写)</p>
+<p>s = &rsquo;tom&rsquo;
+print(s.capitalize()) #输出：Tom</p>
+<p>casefold（大写转换成小写）</p>
+<p>s = &lsquo;TOM&rsquo;
+print(s.casefold()) #输出：tom</p>
+<p>center (指定长度和填充字符，内容居中，填充字符留空则为空格)</p>
+<p>s = &lsquo;Tom&rsquo;
+print(s.center(20,&rsquo;-&rsquo;)) #输出：&mdash;&mdash;&ndash;Tom&mdash;&mdash;&mdash;</p>
+<p>count(计算某个字符串出现的个数，第二个参数：起始位置，第三个参数：结束位置)</p>
+<p>s = &lsquo;aabbbcccccdd&rsquo;
+print(s.count(&lsquo;cc&rsquo;,3,11)) #输出：2</p>
+<p>encode（编码）</p>
+<p>s = &ldquo;中文&rdquo;
+print(s.encode(&lsquo;gbk&rsquo;)) #输出：b&rsquo;\xd6\xd0\xce\xc4&rsquo;</p>
+<p>endswith（判断字符串是否以某个字符或字符串结尾的，第二个参数：起始位置，第三个参数：结束位置）</p>
+<p>s = &lsquo;Projects&rsquo;
+print(s.endswith(&rsquo;ts&rsquo;)) print(s.endswith(&rsquo;e&rsquo;,0,5)) #输出：True # True</p>
+<p>expandtabs（把1个tab键转换成7个空格）</p>
+<p>s = &lsquo;H\ti&rsquo;
+print(s.expandtabs()) #输出：H       i</p>
+<p>find（查找某个字符或字符串的索引位置，第二个参数：起始位置，第三个参数：结束位置）</p>
+<p>s = &lsquo;Hello&rsquo;
+print(s.find(&lsquo;o&rsquo;)) print(s.find(&lsquo;o&rsquo;,0,3))  #找不到返回-1</p>
+<p>#输出：4 # -1</p>
+<p>format(字符串格式化/拼接)</p>
+<p>name = &lsquo;Tom&rsquo; age = 18 s = &lsquo;{0}\&rsquo;s age is {1}&rsquo;.format(name,age) print(s) #或者
+str = &lsquo;{name}\&rsquo;s age is {age}&rsquo; result = str.format(age=18,name=&lsquo;Tom&rsquo;) print(result) #输出：Tom&rsquo;s age is 18</p>
+<p> format_map</p>
+<p>#占位</p>
+<p>index（查找某个字符或字符串的索引位置，和find不一样是，如果字符不存在，会报错）</p>
+<p>s = &lsquo;Hello&rsquo;
+print(s.index(&lsquo;o&rsquo;)) print(s.index(&rsquo;e&rsquo;,0,3)) #输出：4 # 1</p>
+<p> isalnum(是否为字母或数字)</p>
+<p>s = &lsquo;!#&rsquo;
+print(s.isalnum()) #输出：False</p>
+<p>isalpha(是否为字母)</p>
+<p>s = &lsquo;123&rsquo;
+print(s.isalpha()) #输出：False</p>
+<p>isdecimal（是否为十进制数）</p>
+<p>s = &lsquo;123&rsquo;
+print(s.isdecimal()) #输出：True</p>
+<p>#True: Unicode数字，，全角数字（双字节） #False: 罗马数字，汉字数字 #Error: byte数字（单字节）</p>
+<p>isdigit（是否为数字）</p>
+<p>s = &lsquo;123&rsquo;
+print(s.isdigit()) #输出：True</p>
+<p>#True: Unicode数字，byte数字（单字节），全角数字（双字节），罗马数字 #False: 汉字数字</p>
+<p>isidentifier（是否为标识符/变量名）</p>
+<p>s = &lsquo;1num&rsquo;
+print(s.isidentifier()) #输出：False #因为变量名不能以数字开头</p>
+<p>islower（是否全部为小写字母）</p>
+<p>s = &lsquo;Hello&rsquo;
+print(s.islower()) #输出：False</p>
+<p>isnumeric（是否为数字）</p>
+<p>s = &lsquo;123&rsquo;
+print(s.isnumeric()) #输出：True</p>
+<p>#True: Unicode数字，全角数字（双字节），罗马数字，汉字数字</p>
+<p>isprintable(是否为可打印字符/能否原样输出)</p>
+<p>s = &lsquo;\n&rsquo;
+print(s.isprintable()) #输出：False</p>
+<p>isspace（是否为空格）</p>
+<p>print(&rsquo; &lsquo;.isspace()) print(&rsquo;\t&rsquo;.isspace()) #输出：True # True</p>
+<p>istitle（是否为标题/每个单词首字母大写）</p>
+<p>print(&lsquo;Hello Boy&rsquo;.istitle()) print(&lsquo;hello boy&rsquo;.istitle()) #输出：True # False</p>
+<p>isupper（是否全部为大写字母）</p>
+<p>print(&lsquo;BOY&rsquo;.isupper()) print(&lsquo;Boy&rsquo;.isupper()) #输出：True # False</p>
+<p>join(将序列中的元素以指定的字符连接生成一个新的字符串)</p>
+<p>s = [&lsquo;H&rsquo;,&rsquo;e&rsquo;,&rsquo;l&rsquo;,&rsquo;l&rsquo;,&lsquo;o&rsquo;] print(&rsquo;&rsquo;.join(s)) print(&rsquo;-&rsquo;.join(s)) #输出：Hello # H-e-l-l-o</p>
+<p>ljust(指定长度和填充字符，内容左对齐，填充字符留空则为空格)</p>
+<p>s = &lsquo;Hello&rsquo;
+print(s.ljust(10,&rsquo;-&rsquo;)) #输出：Hello&mdash;&ndash;</p>
+<p>lower（字符串全部换成小写）</p>
+<p>s = &lsquo;TOM&rsquo;
+print(s.lower()) #输出：tom</p>
+<p>lstrip(移除字符串左侧指定的字符，默认为空格)</p>
+<p>s = &rsquo; Tom&rsquo;
+print(s.lstrip()) #输出：Tom</p>
+<p>maketrans(创建字符映射的转换表，配合translate函数使用)</p>
+<p>intab = &ldquo;abcde&rdquo; outtab = &ldquo;12345&rdquo; trantab = str.maketrans(intab, outtab)</p>
+<p>str = &ldquo;Hello abc&rdquo;
+print (str.translate(trantab)) #输出：H5llo 123</p>
+<p>partition（ 指定分隔符，将字符串进行分割）</p>
+<p>s = &lsquo;IamTom&rsquo;
+print(s.partition(&lsquo;am&rsquo;)) #输出：(&lsquo;I&rsquo;, &lsquo;am&rsquo;, &lsquo;Tom&rsquo;)</p>
+<p>replace(把字符串中的 old（旧字符串） 替换成 new(新字符串)，如果指定第三个参数max，则替换不超过 max 次。)</p>
+<p>s = &lsquo;Tom&rsquo;
+print(s.replace(&rsquo;m&rsquo;,&lsquo;o&rsquo;)) #输出：Too</p>
+<p>rfind(从右边查找指定字符串出现的位置，如果没有匹配项则返回-1)</p>
+<p>s = &lsquo;one two one&rsquo;
+print(s.rfind(&lsquo;one&rsquo;)) print(s.rfind(&lsquo;one&rsquo;,0,6))  #指定起始和结束位置</p>
+<p>#输出：8 # 0</p>
+<p>rindex(从右边查找指定字符串出现的位置，如果没有匹配项则报错)</p>
+<p>s = &lsquo;one two one&rsquo;
+print(s.rindex(&lsquo;one&rsquo;)) print(s.rindex(&lsquo;one&rsquo;,0,6))  #指定起始和结束位置</p>
+<p>#输出：8 # 0</p>
+<p>rjust(指定长度和填充字符，内容右对齐，填充字符留空则为空格)</p>
+<p>s = &lsquo;Hello&rsquo;
+print(s.rjust(10,&rsquo;-&rsquo;)) #输出：&mdash;&ndash;Hello</p>
+<p>rpartition（ 指定分隔符，从右边开始将字符串进行分割）</p>
+<p>s = &lsquo;IamTom_IamTom&rsquo;
+print(s.rpartition(&lsquo;am&rsquo;)) #输出：(&lsquo;IamTom_I&rsquo;, &lsquo;am&rsquo;, &lsquo;Tom&rsquo;)</p>
+<p>rsplit(指定分隔符对字符串进行切片，如果指定第二个参数num，则只分隔num次，最后返回一个列表)</p>
+<p>s = &lsquo;a b c d&rsquo;
+print(s.rsplit()) print(s.rsplit(&rsquo; &lsquo;,2))  #从右边开始，按空格分隔两次</p>
+<p>#输出：[&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;] # [&lsquo;a b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;]</p>
+<p> rstrip(删除字符串末尾的指定字符，默认为空格)</p>
+<p>s = &lsquo;!!! I am Tom !!!&rsquo;
+print(s.rstrip(&rsquo;!&rsquo;)) #输出：!!! I am Tom</p>
+<p>split(指定分隔符对字符串进行切片，如果指定第二个参数num，则只分隔num次，最后返回一个列表)</p>
+<p>s = &lsquo;a b c d&rsquo;
+print(s.split()) print(s.split(&rsquo; &lsquo;,2)) #从左边开始，按空格分隔两次</p>
+<p>#输出：[&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;, &rsquo;d&rsquo;] # [&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c d&rsquo;]</p>
+<p>splitlines(按换行符来分隔字符串，返回一个列表)</p>
+<p>s = &lsquo;a\nb\nc&rsquo;
+print(s.splitlines())    #默认参数为False
+print(s.splitlines(True)) #指定Ture参数，则保留换行符</p>
+<p>#输出：[&lsquo;a&rsquo;, &lsquo;b&rsquo;, &lsquo;c&rsquo;] # [&lsquo;a\n&rsquo;, &lsquo;b\n&rsquo;, &lsquo;c&rsquo;]</p>
+<p>startswith（判断字符串是否以某个字符或字符串开头的，第二个参数：起始位置，第三个参数：结束位置）</p>
+<p>s = &lsquo;Projects&rsquo;
+print(s.startswith(&lsquo;Pr&rsquo;)) print(s.startswith(&rsquo;e&rsquo;,4,8)) #输出：True # True</p>
+<p>strip(删除字符串前后的指定字符，默认为空格)</p>
+<p>s = &lsquo;!!! I am Tom !!!&rsquo;
+print(s.strip(&rsquo;!&rsquo;)) #输出： I am Tom</p>
+<p>swapcase（大小写互换）</p>
+<p>s = &lsquo;I am Tom&rsquo;
+print(s.swapcase()) #输出：i AM tOM</p>
+<p>title(转换成标题，就是每个单词首字母大写)</p>
+<p>s = &lsquo;i am tom&rsquo;
+print(s.title()) #输出：I Am Tom</p>
+<p>translate（根据maketrans方法创建的表，进行字符替换）</p>
+<p>intab = &ldquo;abcde&rdquo; outtab = &ldquo;12345&rdquo; trantab = str.maketrans(intab, outtab)</p>
+<p>str = &ldquo;Hello abc&rdquo;
+print (str.translate(trantab)) #输出：H5llo 123</p>
+<p>upper(小写转换成大写)</p>
+<p>s = &lsquo;Hello&rsquo;
+print(s.upper()) #输出：HELLO</p>
+<p>zfill(指定字符串的长度。原字符串右对齐，前面填充0)</p>
+<p>s = &lsquo;Hello&rsquo;
+print(s.zfill(10)) # 输出：00000Hello</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="../posts/2017-03-17-python3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86.html" data-toggle="tooltip" data-placement="top" title="python3基础知识梳理">
+              Previous<br>
+              <span>python3基础知识梳理</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="../posts/2017-03-20-python3int%E6%95%B4%E5%9E%8B.html" data-toggle="tooltip" data-placement="top" title="python3 int（整型）">
+              Next<br>
+              <span>python3 int（整型）</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="../tags/wordpress.html">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=../js/jquery.min.js></script>
+<script src=../js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="../js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=../js/simple-jekyll-search.min.js></script>
+
+
+<script src="../js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>
