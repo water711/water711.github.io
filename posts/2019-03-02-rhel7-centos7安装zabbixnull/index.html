@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>RHEL7/CentOS7 安装Zabbix | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="1、添加 Zabbix 软件仓库
+rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+2、启用可选 rpms 的软件仓库
+yum -y install yum-utils yum-config-manager &ndash;enable rhel-7-server-optional-rpms
+3、安装 Server/前端/agent
+yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent
+4、安装mariaDB数据库
+yum install -y mariadb mariadb-server
+5、创建数据库
+mysql -uroot -p mysql&gt; create database zabbix character set utf8 collate utf8_bin;
+6、创建账户并授权
+mysql&gt; grant all privileges on zabbix.* to zabbix@localhost identified by &lsquo;zabbix&rsquo;; mysql&gt; quit;
+7、导入数据 (导入需要一点时间，不要以为卡住按ctrl&#43;c停止)
+zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -pzabbix zabbix
+8、修改Zabbix server配置文件
+vim /etc/zabbix/zabbix_server.conf DBPassword=zabbix">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="RHEL7/CentOS7 安装Zabbix"/>
+<meta name="twitter:description" content="1、添加 Zabbix 软件仓库
+rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+2、启用可选 rpms 的软件仓库
+yum -y install yum-utils yum-config-manager &ndash;enable rhel-7-server-optional-rpms
+3、安装 Server/前端/agent
+yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent
+4、安装mariaDB数据库
+yum install -y mariadb mariadb-server
+5、创建数据库
+mysql -uroot -p mysql&gt; create database zabbix character set utf8 collate utf8_bin;
+6、创建账户并授权
+mysql&gt; grant all privileges on zabbix.* to zabbix@localhost identified by &lsquo;zabbix&rsquo;; mysql&gt; quit;
+7、导入数据 (导入需要一点时间，不要以为卡住按ctrl&#43;c停止)
+zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -pzabbix zabbix
+8、修改Zabbix server配置文件
+vim /etc/zabbix/zabbix_server.conf DBPassword=zabbix"/>
+
+  <meta property="og:title" content="RHEL7/CentOS7 安装Zabbix" />
+<meta property="og:description" content="1、添加 Zabbix 软件仓库
+rpm -ivh http://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
+2、启用可选 rpms 的软件仓库
+yum -y install yum-utils yum-config-manager &ndash;enable rhel-7-server-optional-rpms
+3、安装 Server/前端/agent
+yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent
+4、安装mariaDB数据库
+yum install -y mariadb mariadb-server
+5、创建数据库
+mysql -uroot -p mysql&gt; create database zabbix character set utf8 collate utf8_bin;
+6、创建账户并授权
+mysql&gt; grant all privileges on zabbix.* to zabbix@localhost identified by &lsquo;zabbix&rsquo;; mysql&gt; quit;
+7、导入数据 (导入需要一点时间，不要以为卡住按ctrl&#43;c停止)
+zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -pzabbix zabbix
+8、修改Zabbix server配置文件
+vim /etc/zabbix/zabbix_server.conf DBPassword=zabbix" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbixnull/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-03-02T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>RHEL7/CentOS7 安装Zabbix</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Sat, Mar 2, 2019
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p>1、添加 Zabbix 软件仓库</p>
+<p>rpm -ivh <a href="http://repo.zabbix.com/zabbix/4.0/rhel/7/x86" target="_blank">http://repo.zabbix.com/zabbix/4.0/rhel/7/x86</a>_64/zabbix-release-4.0-1.el7.noarch.rpm</p>
+<p> </p>
+<p>2、启用可选 rpms 的软件仓库</p>
+<p>yum -y install yum-utils
+yum-config-manager &ndash;enable rhel-7-server-optional-rpms</p>
+<p> </p>
+<p>3、安装 Server/前端/agent</p>
+<p>yum -y install zabbix-server-mysql zabbix-web-mysql zabbix-agent</p>
+<p> </p>
+<p>4、安装mariaDB数据库</p>
+<p>yum install -y mariadb mariadb-server</p>
+<p> </p>
+<p>5、创建数据库</p>
+<p>mysql -uroot -p
+mysql&gt; create database zabbix character set utf8 collate utf8_bin;</p>
+<p> </p>
+<p>6、创建账户并授权</p>
+<p>mysql&gt; grant all privileges on zabbix.* to zabbix@localhost identified by &lsquo;zabbix&rsquo;;
+mysql&gt; quit;</p>
+<p> </p>
+<p>7、导入数据 (导入需要一点时间，不要以为卡住按ctrl+c停止)</p>
+<p>zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -pzabbix zabbix</p>
+<p> </p>
+<p>8、修改Zabbix server配置文件</p>
+<p>vim /etc/zabbix/zabbix_server.conf
+DBPassword=zabbix</p>
+<p> </p>
+<p>9、为Zabbix前端配置PHP</p>
+<p>vim /etc/httpd/conf.d/zabbix.conf
+php_value date.timezone Asia/Shanghai</p>
+<p> </p>
+<p>10、关闭selinux</p>
+<p>永久关闭</p>
+<p>vim /etc/selinux/config
+SELINUX=disabled</p>
+<p>临时关闭</p>
+<p>setenforce 0</p>
+<p> </p>
+<p>11、关闭防火墙</p>
+<p>永久关闭</p>
+<p>systemctl disable firewalld.service</p>
+<p>临时关闭</p>
+<p>systemctl stop firewalld.service</p>
+<p> </p>
+<p>12. 启动Zabbix server和httpd服务</p>
+<p>启动服务，并设置开机自启</p>
+<p>systemctl restart zabbix-server httpd
+systemctl enable zabbix-server httpd</p>
+<p> </p>
+<p>13、配置Zabbix前端</p>
+<p>浏览器访问 http://server_ip/zabbix</p>
+<p> <figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302225539553-1696934190.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>检查安装先决条件，必须所有项为OK <figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302225628090-650759764.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>输入数据库密码，前面步骤已设置密码为zabbix</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302225705060-2145005440.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>Name为可选项，它会显示在菜单栏和网页title上</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302225722890-959692083.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302225930177-878796759.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302225949579-799579265.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>默认用户名为Admin，密码为zabbix</p>
+<p> <figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302230006100-1150272097.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p> </p>
+<p>14、设置中文语言</p>
+<p>点击右上角用户图标</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302230317266-1195121761.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p> </p>
+<p>修改Language</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302230346542-652315672.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p> </p>
+<p>15、解决Zabbix中文乱码问题</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302230407510-853594795.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p> </p>
+<p>在windows系统上挑选一款中文字体</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302230432441-422499546.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p> </p>
+<p>先备份原有字体文件graphfont.ttf，再把字体文件名修改为graphfont.ttf</p>
+<p>拷贝到/usr/share/zabbix/fonts/ 目录下替换字体</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/1126217-20190302230443186-495071170.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2019-02-24-%E8%AE%BF%E9%97%AEsystemx3650imm2%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/" data-toggle="tooltip" data-placement="top" title="访问System x3650 IMM2的几种方式">
+              Previous<br>
+              <span>访问System x3650 IMM2的几种方式</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2019-03-02-rhel7-centos7%E5%AE%89%E8%A3%85zabbix/" data-toggle="tooltip" data-placement="top" title="RHEL7/CentOS7 安装Zabbix">
+              Next<br>
+              <span>RHEL7/CentOS7 安装Zabbix</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

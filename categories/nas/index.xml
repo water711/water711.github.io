@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nas on 蔡振威的博客</title>
-    <link>//example.org/categories/nas.html</link>
+    <link>//example.org/categories/nas/</link>
     <description>Recent content in nas on 蔡振威的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="//example.org/categories/nas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>centos7安装transmission</title>
-      <link>//example.org/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission.html</link>
+      <link>//example.org/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission.html</guid>
+      <guid>//example.org/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission/</guid>
       <description>一、使用docker安装docker hub仓库地址：https://hub.docker.com/r/linuxserver/transmission
 1、下载镜像
 docker pull linuxserver/transmission
@@ -26,10 +26,10 @@ yum -y install epel-release yum install tranmission transmission-daemon systemct
     
     <item>
       <title>使用docker快速搭建L2TP服务器</title>
-      <link>//example.org/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
+      <link>//example.org/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8.html</guid>
+      <guid>//example.org/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>使用 Docker 镜像快速搭建 IPsec VPN 服务器。支持 IPsec/L2TP，Cisco IPsec 和 IKEv2 协议。
 作者github地址：https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-zh.md
 一、下载镜像并运行docker run \ &amp;ndash;name ipsec-vpn-server \ &amp;ndash;restart=always \ -v ikev2-vpn-data:/etc/ipsec.d \ -v /lib/modules:/lib/modules:ro \ -p 500:500/udp \ -p 4500:4500/udp \ -d &amp;ndash;privileged \ hwdsl2/ipsec-vpn-server
@@ -46,10 +46,10 @@ route add 192.168.100.0 mask 255.255.255.0 192.168.42.1</description>
     
     <item>
       <title>Linux安装使用clash网络代理工具</title>
-      <link>//example.org/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7.html</link>
+      <link>//example.org/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7.html</guid>
+      <guid>//example.org/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
       <description>一、下载解压运行各平台clash安装包链接：https://github.com/Dreamacro/clash/releases
 mkdir clash #创建目录 cd clash #进入目录 wget http://xxxxxxclash-linux-amd64-v1.3.5.gz #下载clash gunzip clash-linux-amd64-v1.3.5.gz #解压 mv clash-linux-amd64-v1.3.5 clash #重命名 chmod +x clash #添加可执行权限
 ./clash #前台运行clashINFO[0000] Can&amp;rsquo;t find config, create a initial config file INFO[0000] Can&amp;rsquo;t find MMDB, start download INFO[0205] HTTP proxy listening at: 127.0.0.1:7890
@@ -63,10 +63,10 @@ cd ~/.config/clash wget -O config.yaml http://xxxx.com/link/f?clash=1&amp;log-le
     
     <item>
       <title>手机端实现一键发送命令到NAS主机</title>
-      <link>//example.org/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA.html</link>
+      <link>//example.org/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</link>
       <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA.html</guid>
+      <guid>//example.org/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</guid>
       <description>NAS操作系统：Centos7
 实现原理：通过访问网页，执行含有shell命令的php代码
 1、安装apache和phpyum install -y httpd php
@@ -81,10 +81,10 @@ vim /etc/sudoersroot ALL=(ALL) ALL apache ALL=(ALL) NOPASSWD:ALL #添加这一�
     
     <item>
       <title>Docker可视化工具--Portainer安装</title>
-      <link>//example.org/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85.html</link>
+      <link>//example.org/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</link>
       <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85.html</guid>
+      <guid>//example.org/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</guid>
       <description>官网/安装文档：https://www.portainer.io/
 https://www.portainer.io/installation/
 https://portainer.readthedocs.io/en/stable/deployment.html
@@ -100,10 +100,10 @@ Portainer是Docker的可视化管理工具，提供状态显示面板、应用�
     
     <item>
       <title>Centos7 部署Samba服务</title>
-      <link>//example.org/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1.html</link>
+      <link>//example.org/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1.html</guid>
+      <guid>//example.org/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</guid>
       <description>1、安装软件包yum -y install samba
 2、建立访问用户useradd test smbpasswd -a test
 3、配置samba共享[data] path = /mnt/data write list = test
@@ -121,10 +121,10 @@ vim /etc/samba/smb.</description>
     
     <item>
       <title>Docker部署开源摄像头录制软件shinobi</title>
-      <link>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi.html</link>
+      <link>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi.html</guid>
+      <guid>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</guid>
       <description>官方文档：https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/dev/Docker
 一、安装shinobi方法1、使用脚本自动安装（存储路径默认在$HOME目录下）
 curl -o https://gitlab.com/Shinobi-Systems/Shinobi-Installer/raw/master/shinobi-docker.sh
@@ -152,10 +152,10 @@ http://HOST_IP:SHINOBI_PORT/super
     
     <item>
       <title>Docker部署开源摄像头录制软件shinobi</title>
-      <link>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull.html</link>
+      <link>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull.html</guid>
+      <guid>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/</guid>
       <description>官方文档：https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/dev/Docker
 一、安装shinobi方法1、使用脚本自动安装（存储路径默认在$HOME目录下）
 curl -o https://gitlab.com/Shinobi-Systems/Shinobi-Installer/raw/master/shinobi-docker.sh
@@ -183,10 +183,10 @@ http://HOST_IP:SHINOBI_PORT/super
     
     <item>
       <title>Centos7 修改Docker默认存储位置</title>
-      <link>//example.org/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE.html</link>
+      <link>//example.org/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE.html</guid>
+      <guid>//example.org/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</guid>
       <description>1、查看docker默认目录docker info | grep &amp;ldquo;Docker Root Dir&amp;rdquo;
 2、新建或者编辑 daemon.json 文件vim /etc/docker/daemon.json
 { &amp;ldquo;graph&amp;rdquo;: &amp;ldquo;/mnt/docker&amp;rdquo; }

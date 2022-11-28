@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>oracle安装、授权、备份和恢复 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="一、下载并安装Oracle Database官网地址：https://www.oracle.com/technetwork/cn/database/enterprise-edition/downloads/index.html
+1、下载解压后，右键setup.exe，以管理员身份运行
+2、电子邮件可不填
+3、这里跳过软件更新
+4、我这里选择仅安装数据库软件（安装后再手动配置数据库），也可以选第一项在安装时创建数据库
+5、选择 单实例数据库安装
+6、选择语言
+7、我这里选择标准版
+8、输入安装目录
+9、执行安装
+10、安装完成
+二、创建数据库1、在D盘下创建oradata和orats目录
+2、进行D:\app\Administrator\product\11.2.0\dbhome_1\BIN\目录，右键以管理员身份运行dbca.bat
+3、默认选择“创建数据库”
+4、默认选择“一般用途或事务处理”
+5、输入数据库名和SID
+6、取消勾选“配置Enterprise Manager”，下一步
+7、输入管理口令
+8、选择数据库文件存放位置
+9、取消勾选“指定快速恢复区”
+10、默认不勾选“示例方案”，下一步
+11、指定分配给该数据库的内存大小
+12、调整最大连接进程数
+13、选择Unicode字符集
+14、修改日志大小和日志成员
+15、点击完成
+16、核对概要信息后，点击确定，开始创建
+三、配置Oracle Net Services1、进行D:\app\Administrator\product\11.2.0\dbhome_1\BIN\目录，右键以管理员身份运行netca.bat
+2、默认选择”监听程序配置“
+3、监听程序名，默认即可
+4、网络协议，默认TCP
+5、监听的端口号，默认1521
+6、是否配置另一个监听程序，选择“否”
+7、完成配置
+8、查看监听程序状态
+C:\Users\Administrator&gt;lsnrctl status
+正在连接到 (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=WIN-71CA1NGO1FG)(PORT=1521))) LISTENER 的 STATUS别名 LISTENER 版本 TNSLSNR for 64-bit Windows: Version 11.2.0.4.0 - Production 启动日期 30-12月-2019 21:41:23 正常运行时间 0 天 0 小时 59 分 1 秒 跟踪级别 off 安全性 ON: Local OS Authentication SNMP OFF 监听程序参数文件 D:\app\Administrator\product\11.">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="oracle安装、授权、备份和恢复"/>
+<meta name="twitter:description" content="一、下载并安装Oracle Database官网地址：https://www.oracle.com/technetwork/cn/database/enterprise-edition/downloads/index.html
+1、下载解压后，右键setup.exe，以管理员身份运行
+2、电子邮件可不填
+3、这里跳过软件更新
+4、我这里选择仅安装数据库软件（安装后再手动配置数据库），也可以选第一项在安装时创建数据库
+5、选择 单实例数据库安装
+6、选择语言
+7、我这里选择标准版
+8、输入安装目录
+9、执行安装
+10、安装完成
+二、创建数据库1、在D盘下创建oradata和orats目录
+2、进行D:\app\Administrator\product\11.2.0\dbhome_1\BIN\目录，右键以管理员身份运行dbca.bat
+3、默认选择“创建数据库”
+4、默认选择“一般用途或事务处理”
+5、输入数据库名和SID
+6、取消勾选“配置Enterprise Manager”，下一步
+7、输入管理口令
+8、选择数据库文件存放位置
+9、取消勾选“指定快速恢复区”
+10、默认不勾选“示例方案”，下一步
+11、指定分配给该数据库的内存大小
+12、调整最大连接进程数
+13、选择Unicode字符集
+14、修改日志大小和日志成员
+15、点击完成
+16、核对概要信息后，点击确定，开始创建
+三、配置Oracle Net Services1、进行D:\app\Administrator\product\11.2.0\dbhome_1\BIN\目录，右键以管理员身份运行netca.bat
+2、默认选择”监听程序配置“
+3、监听程序名，默认即可
+4、网络协议，默认TCP
+5、监听的端口号，默认1521
+6、是否配置另一个监听程序，选择“否”
+7、完成配置
+8、查看监听程序状态
+C:\Users\Administrator&gt;lsnrctl status
+正在连接到 (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=WIN-71CA1NGO1FG)(PORT=1521))) LISTENER 的 STATUS别名 LISTENER 版本 TNSLSNR for 64-bit Windows: Version 11.2.0.4.0 - Production 启动日期 30-12月-2019 21:41:23 正常运行时间 0 天 0 小时 59 分 1 秒 跟踪级别 off 安全性 ON: Local OS Authentication SNMP OFF 监听程序参数文件 D:\app\Administrator\product\11."/>
+
+  <meta property="og:title" content="oracle安装、授权、备份和恢复" />
+<meta property="og:description" content="一、下载并安装Oracle Database官网地址：https://www.oracle.com/technetwork/cn/database/enterprise-edition/downloads/index.html
+1、下载解压后，右键setup.exe，以管理员身份运行
+2、电子邮件可不填
+3、这里跳过软件更新
+4、我这里选择仅安装数据库软件（安装后再手动配置数据库），也可以选第一项在安装时创建数据库
+5、选择 单实例数据库安装
+6、选择语言
+7、我这里选择标准版
+8、输入安装目录
+9、执行安装
+10、安装完成
+二、创建数据库1、在D盘下创建oradata和orats目录
+2、进行D:\app\Administrator\product\11.2.0\dbhome_1\BIN\目录，右键以管理员身份运行dbca.bat
+3、默认选择“创建数据库”
+4、默认选择“一般用途或事务处理”
+5、输入数据库名和SID
+6、取消勾选“配置Enterprise Manager”，下一步
+7、输入管理口令
+8、选择数据库文件存放位置
+9、取消勾选“指定快速恢复区”
+10、默认不勾选“示例方案”，下一步
+11、指定分配给该数据库的内存大小
+12、调整最大连接进程数
+13、选择Unicode字符集
+14、修改日志大小和日志成员
+15、点击完成
+16、核对概要信息后，点击确定，开始创建
+三、配置Oracle Net Services1、进行D:\app\Administrator\product\11.2.0\dbhome_1\BIN\目录，右键以管理员身份运行netca.bat
+2、默认选择”监听程序配置“
+3、监听程序名，默认即可
+4、网络协议，默认TCP
+5、监听的端口号，默认1521
+6、是否配置另一个监听程序，选择“否”
+7、完成配置
+8、查看监听程序状态
+C:\Users\Administrator&gt;lsnrctl status
+正在连接到 (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=WIN-71CA1NGO1FG)(PORT=1521))) LISTENER 的 STATUS别名 LISTENER 版本 TNSLSNR for 64-bit Windows: Version 11.2.0.4.0 - Production 启动日期 30-12月-2019 21:41:23 正常运行时间 0 天 0 小时 59 分 1 秒 跟踪级别 off 安全性 ON: Local OS Authentication SNMP OFF 监听程序参数文件 D:\app\Administrator\product\11." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2019-12-31-oracle%E5%AE%89%E8%A3%85%E6%8E%88%E6%9D%83%E5%A4%87%E4%BB%BD%E5%92%8C%E6%81%A2%E5%A4%8D/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-12-31T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-31T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>oracle安装、授权、备份和恢复</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Tue, Dec 31, 2019
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p> </p>
+<h2 id="一下载并安装oracle-database">一、下载并安装Oracle Database<a class="anchorjs-link" href="#%e4%b8%80%e4%b8%8b%e8%bd%bd%e5%b9%b6%e5%ae%89%e8%a3%85oracle-database"></a></h2><p>官网地址：<a href="https://www.oracle.com/technetwork/cn/database/enterprise-edition/downloads/index.html" target="_blank">https://www.oracle.com/technetwork/cn/database/enterprise-edition/downloads/index.html</a></p>
+<p>1、下载解压后，右键setup.exe，以管理员身份运行</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//98b5180cdc690ae3656587c12421f25f.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>2、电子邮件可不填</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//ec4920c3a604bcbbff68bee0a38b0a8b.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>3、这里跳过软件更新</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//79fbbbe8460ead24a7c7476d739b9424.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>4、我这里选择仅安装数据库软件（安装后再手动配置数据库），也可以选第一项在安装时创建数据库</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//34c6c8bb7a66aa08cb00c166225ba243.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>5、选择 单实例数据库安装</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//da0b59eda535322e4c0bd808c43c752d.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>6、选择语言</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//af7b2ae6efe871b29651c732e1aba20d.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>7、我这里选择标准版</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//476fc9adab86509d1ea95251ad54b5e8.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>8、输入安装目录</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//308e2d26017447610a2a2e718cea0222.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>9、执行安装</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//454a22129f53f6b700e617659b02e4ef.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>10、安装完成</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//7ed7ce08c4ee835e2baa23ceae068ca6.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h2 id="二创建数据库">二、创建数据库<a class="anchorjs-link" href="#%e4%ba%8c%e5%88%9b%e5%bb%ba%e6%95%b0%e6%8d%ae%e5%ba%93"></a></h2><p>1、在D盘下创建oradata和orats目录</p>
+<p>2、进行D:\app\Administrator\product\11.2.0\dbhome_1\BIN\目录，右键以管理员身份运行dbca.bat</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//9da689fb3027df75d4a293dae0dc44a6.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>3、默认选择“创建数据库”</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//f810845904266557a0dc72bd6ba5d372.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>4、默认选择“一般用途或事务处理”</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//5fb497b7a4ae70820a88c377565bdab0.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>5、输入数据库名和SID</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//4dc767766f1ed3063ecbaab5db411659.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>6、取消勾选“配置Enterprise Manager”，下一步</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//4ab42836d791cb83620b6c44c4755f0e.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>7、输入管理口令</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//451f1ab1485dff2f92305c6166cf3609.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>8、选择数据库文件存放位置</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//b90d2ee1c6075340c47fef2f9f7c5e85.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>9、取消勾选“指定快速恢复区”</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//494ea91797f927d18449b1290378ab58.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>10、默认不勾选“示例方案”，下一步</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//896580dcebc44b4f3234f887e0f7accb.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>11、指定分配给该数据库的内存大小</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//219fcab388fe96e43be94b3626f12a26.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>12、调整最大连接进程数</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//7ba5b3eb1ef7dc45d984ad0c9411e030.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>13、选择Unicode字符集</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//29ace6dfddc7c020260c9048926ccaae.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>14、修改日志大小和日志成员</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//76b760fa4a32e61191fb39c17bb4e5e2.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//95714c10c445749111ed613d491ee552.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//8b0b2e1f7db98a4c3bbe636c462fa2ac.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>15、点击完成</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//0ec85d7a6a306dcd206ded7e3a648b49.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>16、核对概要信息后，点击确定，开始创建</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//d27bc5355eac6cd660dc404a76e61988.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//96a01cc7d7d3101e851341b9e9bc600d.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//0c92dce65eb2743b41ad69bc44e4536a.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h2 id="三配置oracle-net-services">三、配置Oracle Net Services<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%aeoracle-net-services"></a></h2><p>1、进行D:\app\Administrator\product\11.2.0\dbhome_1\BIN\目录，右键以管理员身份运行netca.bat</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//7e68b16e0bbd3a87eaaee8c53764a825.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>2、默认选择”监听程序配置“</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//6e020c6ce96a664cf2a1627b4667747f.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//793e18d9980221df3745fa2ae438eb6c.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>3、监听程序名，默认即可</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//31535d6625c42ddfb60c1b24dc076213.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>4、网络协议，默认TCP</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//cc65749b370721c5d9afdfa03f1414c0.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>5、监听的端口号，默认1521</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//5d6455a639325650b2b419298e72615b.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>6、是否配置另一个监听程序，选择“否”</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//eb2f35ed0a28a1a21b1904da7120acf6.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//2d6f283bb055247fa9380a3404209dd8.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>7、完成配置</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//be4e0b57944332ad01247a924a0d5e82.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>8、查看监听程序状态</p>
+<p>C:\Users\Administrator&gt;lsnrctl status</p>
+<h2 id="listener-的-status">正在连接到 (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=WIN-71CA1NGO1FG)(PORT=1521)))
+LISTENER 的 STATUS<a class="anchorjs-link" href="#listener-%e7%9a%84-status"></a></h2><p>别名                      LISTENER
+版本                      TNSLSNR for 64-bit Windows: Version 11.2.0.4.0 - Production
+启动日期                  30-12月-2019 21:41:23
+正常运行时间              0 天 0 小时 59 分 1 秒
+跟踪级别                  off
+安全性                    ON: Local OS Authentication
+SNMP                      OFF
+监听程序参数文件          D:\app\Administrator\product\11.2.0\dbhome_1\network\admin\listener.ora
+监听程序日志文件          D:\app\Administrator\diag\tnslsnr\WIN-71CA1NGO1FG\listener\alert\log.xml
+监听端点概要&hellip;
+(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=WIN-71CA1NGO1FG)(PORT=1521)))
+(DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(PIPENAME=\\.\pipe\EXTPROC1521ipc)))
+服务摘要..
+服务 &ldquo;CLRExtProc&rdquo; 包含 1 个实例。
+实例 &ldquo;CLRExtProc&rdquo;, 状态 UNKNOWN, 包含此服务的 1 个处理程序&hellip;
+服务 &ldquo;WEBBS61XDB&rdquo; 包含 1 个实例。
+实例 &ldquo;webbs61&rdquo;, 状态 READY, 包含此服务的 1 个处理程序&hellip;
+服务 &ldquo;webbs61&rdquo; 包含 1 个实例。
+实例 &ldquo;webbs61&rdquo;, 状态 READY, 包含此服务的 1 个处理程序&hellip;
+命令执行成功</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//a3a4a72ac2661375ce0a68369f67fe7e.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h2 id="四创建表空间">四、创建表空间<a class="anchorjs-link" href="#%e5%9b%9b%e5%88%9b%e5%bb%ba%e8%a1%a8%e7%a9%ba%e9%97%b4"></a></h2><p>1、使用oracle sys管理员登陆（以操作系统权限认证）</p>
+<p>C:\Users\Administrator&gt;sqlplus / as sysdba</p>
+<p>SQL*Plus: Release 11.2.0.4.0 Production on 星期一 12月 30 21:14:07 2019</p>
+<p>Copyright (c) 1982, 2013, Oracle.  All rights reserved.</p>
+<p>连接到:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production</p>
+<p>SQL&gt;</p>
+<p>2、创建表空间</p>
+<p>#创建表空间
+SQL&gt; CREATE TABLESPACE &ldquo;DATA01&rdquo;
+2  LOGGING
+3  DATAFILE &lsquo;D:\orats\DATA01_1.dbf&rsquo; SIZE 5120M AUTOEXTEND ON NEXT 8192K MAXSIZE UNLIMITED,
+4           &lsquo;D:\orats\DATA01_2.dbf&rsquo; SIZE 5120M AUTOEXTEND ON NEXT 8192K MAXSIZE UNLIMITED
+5  EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT AUTO;</p>
+<p>表空间已创建。</p>
+<p>SQL&gt; CREATE TABLESPACE &ldquo;INDEX01&rdquo;
+2  LOGGING <br>
+3  DATAFILE &lsquo;D:\orats\INDEX01_1.dbf&rsquo; SIZE 5120M AUTOEXTEND ON NEXT 8192K MAXSIZE UNLIMITED,
+4           &lsquo;D:\orats\INDEX01_2.dbf&rsquo; SIZE 5120M AUTOEXTEND ON NEXT 8192K MAXSIZE UNLIMITED
+5  EXTENT MANAGEMENT LOCAL SEGMENT SPACE MANAGEMENT AUTO;</p>
+<p> </p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//a7991e796486e9caabf50114cab23ddd.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//8ad86a345e8da8f210c8d049f662a4c1.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>3、修改密码有效期</p>
+<p>#将密码有效期修改成“无限制”
+SQL&gt; ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;</p>
+<p>配置文件已更改</p>
+<p>##提交上面的DML命令
+SQL&gt; COMMIT;</p>
+<p>提交完成。</p>
+<h2 id="五创建用户及授权">五、创建用户及授权<a class="anchorjs-link" href="#%e4%ba%94%e5%88%9b%e5%bb%ba%e7%94%a8%e6%88%b7%e5%8f%8a%e6%8e%88%e6%9d%83"></a></h2><p>C:\Users\Administrator&gt;sqlplus / as sysdba</p>
+<p>#创建数据库用户
+SQL&gt;create user 用户名 identified by 密码
+default tablespace data01
+temporary tablespace temp
+quota 0 on system
+quota unlimited on data01
+quota unlimited on index01;</p>
+<p>用户已创建。</p>
+<p>SQL&gt; Grant CONNECT,RESOURCE,dba TO 用户名;   #授权用户connect、resource和dba权限</p>
+<p>授权成功。</p>
+<p>SQL&gt; COMMIT;</p>
+<p>提交完成。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//0ab0157540725c36c8e666ee0c72d30a.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<h2 id="六备份oracle数据库">六、备份Oracle数据库<a class="anchorjs-link" href="#%e5%85%ad%e5%a4%87%e4%bb%bdoracle%e6%95%b0%e6%8d%ae%e5%ba%93"></a></h2><p>#使用exp备份，owner为导出该用户所有者的权限和数据
+D:\backup&gt;exp 用户名/密码@127.0.0.1/数据库名  owner=用户名  file=backup.dmp log=backup.log</p>
+<p>#下面为输出信息
+Export: Release 11.2.0.4.0 - Production on 星期二 12月 31 09:45:46 2019</p>
+<p>Copyright (c) 1982, 2011, Oracle and/or its affiliates.  All rights reserved.</p>
+<p>连接到: Oracle Database 11g Release 11.2.0.4.0 - 64bit Production
+已导出 ZHS16GBK 字符集和 AL16UTF16 NCHAR 字符集
+服务器使用 AL32UTF8 字符集 (可能的字符集转换)</p>
+<p>即将导出指定的用户&hellip;
+. 正在导出 pre-schema 过程对象和操作
+. 正在导出用户 WEBBS61 的外部函数库名
+. 导出 PUBLIC 类型同义词
+. 正在导出专用类型同义词
+. 正在导出用户 WEBBS61 的对象类型定义
+即将导出 WEBBS61 的对象&hellip;
+. 正在导出数据库链接
+. 正在导出序号
+. 正在导出簇定义
+. 即将导出 WEBBS61 的表通过常规路径&hellip;
+. 正在导出同义词
+. 正在导出视图
+. 正在导出存储过程
+. 正在导出运算符
+. 正在导出引用完整性约束条件
+. 正在导出触发器
+. 正在导出索引类型
+. 正在导出位图, 功能性索引和可扩展索引
+. 正在导出后期表活动
+. 正在导出实体化视图
+. 正在导出快照日志
+. 正在导出作业队列
+. 正在导出刷新组和子组
+. 正在导出维
+. 正在导出 post-schema 过程对象和操作
+. 正在导出统计信息
+成功终止导出, 没有出现警告。</p>
+<h2 id="七恢复数据">七、恢复数据<a class="anchorjs-link" href="#%e4%b8%83%e6%81%a2%e5%a4%8d%e6%95%b0%e6%8d%ae"></a></h2><p>D:\backup&gt;Imp 用户名/密码@127.0.0.1/数据库名 file=D:\backup.DMP log=D:\backup.LOG FROMUSER=用户名 grants=N ROWS=y commit=y</p>
+<p>#输出信息
+连接到: Oracle Database 11g Release 11.2.0.4.0 - 64bit Production</p>
+<p>经由常规路径由 EXPORT:V11.02.00 创建的导出文件
+已经完成 ZHS16GBK 字符集和 AL16UTF16 NCHAR 字符集中的导入
+导入服务器使用 AL32UTF8 字符集 (可能的字符集转换)
+. 正在将 WEBBS61 的对象导入到 WEBBS61
+. . 正在导入表              &ldquo;XF_test1&quot;导入了           5 行
+. . 正在导入表              &ldquo;XF_test2&quot;导入了           10 行
+成功终止导入, 没有出现警告。</p>
+<h2 id="六安装oracle客户端">六、安装ORACLE客户端<a class="anchorjs-link" href="#%e5%85%ad%e5%ae%89%e8%a3%85oracle%e5%ae%a2%e6%88%b7%e7%ab%af"></a></h2><p>官网下载地址：<a href="https://www.oracle.com/technetwork/cn/database/enterprise-edition/downloads/index.html" target="_blank">https://www.oracle.com/technetwork/cn/database/enterprise-edition/downloads/index.html</a></p>
+<p>1、下载解压后，右键setup.exe，以管理员身份运行</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//036d04c79978a08f414c6a1a9e7ea024.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>2、选择管理员</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//6207b3447d48fe9590ca01a07fe2a0a1.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>3、跳过软件更新</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//1e04b2c7b24d29acbe856242bf7a0481.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>4、选择语言</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//a4c9bcaa5b50f85cbd1e9b39c430745e.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>5、指定安装位置</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//015ab7522b5396fc7a7c5725b428d800.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>6、安装</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="http://hugo.caizhenwei.top//219cf44046d8cb6040753575e86e8567.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>7、数据库连接测试</p>
+<p>C:\Users\Administrator&gt;sqlplus 用户名/密码@IP地址:端口/数据库名 as sysdba</p>
+<p>SQL*Plus: Release 11.2.0.4.0 Production on 星期二 12月 31 17:57:41 2019</p>
+<p>连接到:
+Oracle Database 11g Release 11.2.0.4.0 - 64bit Production</p>
+<p>SQL&gt; show user;
+USER 为 &ldquo;SYS&rdquo;
+SQL&gt;</p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/" data-toggle="tooltip" data-placement="top" title="使用PXE网络引导安装Linux和windows系统">
+              Previous<br>
+              <span>使用PXE网络引导安装Linux和windows系统</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2020-01-02-windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E6%89%A7%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%90%8E%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E4%BB%B6%E4%B8%8D%E5%9C%A8%E7%A8%8B%E5%BA%8F%E6%89%80/" data-toggle="tooltip" data-placement="top" title="windows计划任务，执行程序后，生成的文件不在程序所在目录">
+              Next<br>
+              <span>windows计划任务，执行程序后，生成的文件不在程序所在目录</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

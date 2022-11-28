@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>老毛桃PE以ISO镜像模式安装CentOS7 | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="参考文章链接：https://www.cnblogs.com/sun51586/p/10497538.html
+准备：
+一个u盘，并制作老毛桃winpe启动盘
+下载centos7 mini版本。（注意：因为dvd版本大于4g，一般fat格式的u盘无法存放，如果格式化为NTFS，则centos镜像无法识别）
+安装中常见错误 ，如下图：
+1，Warning: /dev/root does not exist!
+2，Warning: no suitable images
+还有一些其它错误 ，不知是何原因，遇到时请重试几次。不知是老毛桃制作的启动盘有问题，还是u盘有问题，还是电脑有问题。总之多试几次是可以的。
+-
+安装步骤：
+1、制作老毛桃PE启动U盘，将下载centos7的iso文件复制到u盘的/LMT目录
+2、从u盘启动电脑，选择“启动自定义ISO/IMG文件”
+3、选择“自动搜索并列出LMT目录下所有文件”
+4、选中镜像文件，回车
+5、选中“Install CentOS 7”，按Tab键，修改启动命令后，回车
+&gt; vmlinuz initrd=initrd.img linux dd quiet
+6、出现下图界面面，找到vfat文件格式的设备，记下设备名称（我这里是sdb1）
+7、重启电脑，按前面步骤回到第5步界面，选中“Install CentOS 7”,按Tab键，修改启动命令后，回车
+PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
+&gt; vmlinuz initrd=initrd.img inst.stage2=hd:/dev/sdb1:/LMT/ quiet
+8、完成上述步骤后，就能进入系统安装界面">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="老毛桃PE以ISO镜像模式安装CentOS7"/>
+<meta name="twitter:description" content="参考文章链接：https://www.cnblogs.com/sun51586/p/10497538.html
+准备：
+一个u盘，并制作老毛桃winpe启动盘
+下载centos7 mini版本。（注意：因为dvd版本大于4g，一般fat格式的u盘无法存放，如果格式化为NTFS，则centos镜像无法识别）
+安装中常见错误 ，如下图：
+1，Warning: /dev/root does not exist!
+2，Warning: no suitable images
+还有一些其它错误 ，不知是何原因，遇到时请重试几次。不知是老毛桃制作的启动盘有问题，还是u盘有问题，还是电脑有问题。总之多试几次是可以的。
+-
+安装步骤：
+1、制作老毛桃PE启动U盘，将下载centos7的iso文件复制到u盘的/LMT目录
+2、从u盘启动电脑，选择“启动自定义ISO/IMG文件”
+3、选择“自动搜索并列出LMT目录下所有文件”
+4、选中镜像文件，回车
+5、选中“Install CentOS 7”，按Tab键，修改启动命令后，回车
+&gt; vmlinuz initrd=initrd.img linux dd quiet
+6、出现下图界面面，找到vfat文件格式的设备，记下设备名称（我这里是sdb1）
+7、重启电脑，按前面步骤回到第5步界面，选中“Install CentOS 7”,按Tab键，修改启动命令后，回车
+PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
+&gt; vmlinuz initrd=initrd.img inst.stage2=hd:/dev/sdb1:/LMT/ quiet
+8、完成上述步骤后，就能进入系统安装界面"/>
+
+  <meta property="og:title" content="老毛桃PE以ISO镜像模式安装CentOS7" />
+<meta property="og:description" content="参考文章链接：https://www.cnblogs.com/sun51586/p/10497538.html
+准备：
+一个u盘，并制作老毛桃winpe启动盘
+下载centos7 mini版本。（注意：因为dvd版本大于4g，一般fat格式的u盘无法存放，如果格式化为NTFS，则centos镜像无法识别）
+安装中常见错误 ，如下图：
+1，Warning: /dev/root does not exist!
+2，Warning: no suitable images
+还有一些其它错误 ，不知是何原因，遇到时请重试几次。不知是老毛桃制作的启动盘有问题，还是u盘有问题，还是电脑有问题。总之多试几次是可以的。
+-
+安装步骤：
+1、制作老毛桃PE启动U盘，将下载centos7的iso文件复制到u盘的/LMT目录
+2、从u盘启动电脑，选择“启动自定义ISO/IMG文件”
+3、选择“自动搜索并列出LMT目录下所有文件”
+4、选中镜像文件，回车
+5、选中“Install CentOS 7”，按Tab键，修改启动命令后，回车
+&gt; vmlinuz initrd=initrd.img linux dd quiet
+6、出现下图界面面，找到vfat文件格式的设备，记下设备名称（我这里是sdb1）
+7、重启电脑，按前面步骤回到第5步界面，选中“Install CentOS 7”,按Tab键，修改启动命令后，回车
+PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
+&gt; vmlinuz initrd=initrd.img inst.stage2=hd:/dev/sdb1:/LMT/ quiet
+8、完成上述步骤后，就能进入系统安装界面" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7null/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-02T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>老毛桃PE以ISO镜像模式安装CentOS7</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Tue, Jun 2, 2020
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p><strong>参考文章链接：<a href="https://www.cnblogs.com/sun51586/p/10497538.html" target="_blank">https://www.cnblogs.com/sun51586/p/10497538.html</a></strong></p>
+<p> </p>
+<p><strong>准备：</strong></p>
+<p>一个u盘，并制作<a href="http://www.laomaotao.org" target="_blank">老毛桃winpe</a>启动盘</p>
+<p>下载centos7 mini版本。（注意：因为dvd版本大于4g，一般fat格式的u盘无法存放，如果格式化为NTFS，则centos镜像无法识别）</p>
+<p> </p>
+<p><strong>安装中常见错误 ，如下图：</strong></p>
+<p>1，Warning: /dev/root does not exist!</p>
+<p>2，Warning: no suitable images</p>
+<p>还有一些其它错误 ，不知是何原因，遇到时请重试几次。不知是老毛桃制作的启动盘有问题，还是u盘有问题，还是电脑有问题。总之多试几次是可以的。</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/76f3f72bc01bf6b49f0af175608bfc50.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/788ff2c94a6e40ba43bb3c2e9c56a7e2.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>-</p>
+<p><strong>安装步骤：</strong></p>
+<p>1、制作老毛桃PE启动U盘，将下载centos7的iso文件复制到u盘的/LMT目录</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/2c8d5b9876e19a7a3e3a535af01a8792.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>2、从u盘启动电脑，选择“启动自定义ISO/IMG文件”</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/a17003ee414dc5464bf64c47bed54328.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>3、选择“自动搜索并列出LMT目录下所有文件”</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/a3813d6fe554a06b8b9387a0c35dcf6a.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>4、选中镜像文件，回车</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/00a2ffa03738a65fde23aba6854ec537.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>5、选中“Install CentOS 7”，按Tab键，修改启动命令后，回车</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/12d46303db6fd1b30171584727004848.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>&gt; vmlinuz initrd=initrd.img linux dd quiet</p>
+<p>6、出现下图界面面，找到vfat文件格式的设备，记下设备名称（我这里是sdb1）</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/55eab529ce340c9b2a4ddd5f82b78407.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>7、重启电脑，按前面步骤回到第5步界面，选中“Install CentOS 7”,按Tab键，修改启动命令后，回车</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/38e333a28b205203f6223eecd5f947d2.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+<p>PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录</p>
+<p>&gt; vmlinuz initrd=initrd.img inst.stage2=hd:/dev/sdb1:/LMT/ quiet</p>
+<p>8、完成上述步骤后，就能进入系统安装界面</p>
+<p><figure>
+  <a class="paragraph-image">
+    <img data-src="images/1fb5fd575c1f7300fdfdd9fa235773a8.png" data-action="zoom" alt=""  class="lazyload">
+  </a>
+  
+</figure></p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/" data-toggle="tooltip" data-placement="top" title="Centos 挂载NTFS硬盘分区">
+              Previous<br>
+              <span>Centos 挂载NTFS硬盘分区</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/" data-toggle="tooltip" data-placement="top" title="老毛桃PE以ISO镜像模式安装CentOS7">
+              Next<br>
+              <span>老毛桃PE以ISO镜像模式安装CentOS7</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>

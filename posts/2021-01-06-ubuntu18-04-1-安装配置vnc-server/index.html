@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+  
+    
+  
+
+  <title>ubuntu18.04.1 安装配置vnc server | 蔡振威的博客</title>
+
+  
+  <meta name="description" content="一、安装VNCServersudo apt-get install vnc4server
+二、设置密码并运行vncserver（输入命令后输入密码）vncserver
+三、配置xstartup文件修改xstartup文件内容，针对Xfce4桌面环境.
+vim ~/.vnc/xstartup
+#!/bin/sh unset SESSION_MANAGER unset DBUS_SESSION_BUS_ADDRESS startxfce4 &amp; [ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup [ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources xsetroot -solid grey
+四、重启vncserver修改配置文件后，运行如下命令结束掉之前产生的窗口:1
+vncserver -kill :1
+五、重新启动（reboot系统后，然后启动服务）vncserver
+vnc客户端连接vnc viewer链接新建链接，然后地址输入ip:5901
+注意事项1.防火墙
+2.如果是用了腾讯云或者其他如阿里云等则需要配置安全组放开5901端口
+原文链接：https://blog.csdn.net/hanmingjun/article/details/107122567">
+  <meta name="keywords" content="">
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ubuntu18.04.1 安装配置vnc server"/>
+<meta name="twitter:description" content="一、安装VNCServersudo apt-get install vnc4server
+二、设置密码并运行vncserver（输入命令后输入密码）vncserver
+三、配置xstartup文件修改xstartup文件内容，针对Xfce4桌面环境.
+vim ~/.vnc/xstartup
+#!/bin/sh unset SESSION_MANAGER unset DBUS_SESSION_BUS_ADDRESS startxfce4 &amp; [ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup [ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources xsetroot -solid grey
+四、重启vncserver修改配置文件后，运行如下命令结束掉之前产生的窗口:1
+vncserver -kill :1
+五、重新启动（reboot系统后，然后启动服务）vncserver
+vnc客户端连接vnc viewer链接新建链接，然后地址输入ip:5901
+注意事项1.防火墙
+2.如果是用了腾讯云或者其他如阿里云等则需要配置安全组放开5901端口
+原文链接：https://blog.csdn.net/hanmingjun/article/details/107122567"/>
+
+  <meta property="og:title" content="ubuntu18.04.1 安装配置vnc server" />
+<meta property="og:description" content="一、安装VNCServersudo apt-get install vnc4server
+二、设置密码并运行vncserver（输入命令后输入密码）vncserver
+三、配置xstartup文件修改xstartup文件内容，针对Xfce4桌面环境.
+vim ~/.vnc/xstartup
+#!/bin/sh unset SESSION_MANAGER unset DBUS_SESSION_BUS_ADDRESS startxfce4 &amp; [ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup [ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources xsetroot -solid grey
+四、重启vncserver修改配置文件后，运行如下命令结束掉之前产生的窗口:1
+vncserver -kill :1
+五、重新启动（reboot系统后，然后启动服务）vncserver
+vnc客户端连接vnc viewer链接新建链接，然后地址输入ip:5901
+注意事项1.防火墙
+2.如果是用了腾讯云或者其他如阿里云等则需要配置安全组放开5901端口
+原文链接：https://blog.csdn.net/hanmingjun/article/details/107122567" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//example.org/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-01-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-06T00:00:00+00:00" />
+
+
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css"  crossorigin="anonymous">
+  
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    type="text/css">
+
+  
+  
+  <link rel="stylesheet" href="/sass/main.css">
+
+  
+  <link rel="stylesheet" href="/zoomjs/zoom.min.css">
+
+  
+
+  <script src=/js/lazysizes.min.js></script>
+
+  
+  
+
+  
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/logo.svg" sizes="any" type="image/svg+xml" />
+
+
+</head>
+
+
+
+<body ontouchstart="">
+
+  
+  
+  
+
+  
+
+  
+  
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+  <div class="container-fluid">
+    
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+    </div>
+    
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          
+
+          <li class="search-icon">
+            <a href="javascript:void(0)">
+              <i class="fa fa-search"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+  
+</nav>
+<script>
+  
+  
+  
+  var $body = document.body;
+  var $toggle = document.querySelector(".navbar-toggle");
+  var $navbar = document.querySelector("#huxblog_navbar");
+  var $collapse = document.querySelector(".navbar-collapse");
+
+  var __HuxNav__ = {
+    close: function () {
+      $navbar.className = " ";
+      
+      setTimeout(function () {
+        
+        if ($navbar.className.indexOf("in") < 0) {
+          $collapse.style.height = "0px";
+        }
+      }, 400);
+    },
+    open: function () {
+      $collapse.style.height = "auto";
+      $navbar.className += " in";
+    },
+  };
+
+  
+  $toggle.addEventListener("click", function (e) {
+    if ($navbar.className.indexOf("in") > 0) {
+      __HuxNav__.close();
+    } else {
+      __HuxNav__.open();
+    }
+  });
+
+  
+
+  document.addEventListener("click", function (e) {
+    if (e.target == $toggle) return;
+    if (e.target.className == "icon-bar") return;
+    __HuxNav__.close();
+  });
+</script>
+  
+<div class="search-page">
+  <div class="search-icon-close-container">
+    <span class="search-icon-close">
+      <i class="fa fa-chevron-down"></i>
+    </span>
+  </div>
+  <div class="search-main container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <form></form>
+        <input type="text" id="search-input" placeholder="$ grep...">
+        </form>
+        <div id="search-results" class="mini-post-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+
+<style type="text/css">
+  header.intro-header {
+    position: relative;
+    background-image: url('');
+  }
+</style>
+
+<header class="intro-header style-text">
+
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <div class="tags">
+            
+          </div>
+          <h1>ubuntu18.04.1 安装配置vnc server</h1>
+          <h2 class="subheading"></h2>
+          <span class="meta">
+            Posted by   
+            on Wed, Jan 6, 2021
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  
+
+
+<article>
+  <div class="container">
+    <div class="row">
+
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              post-container">
+        <p> </p>
+<h2 id="一安装vncserver">一、安装VNCServer<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85vncserver"></a></h2><p>sudo apt-get install vnc4server</p>
+<h2 id="二设置密码并运行vncserver输入命令后输入密码">二、设置密码并运行vncserver（输入命令后输入密码）<a class="anchorjs-link" href="#%e4%ba%8c%e8%ae%be%e7%bd%ae%e5%af%86%e7%a0%81%e5%b9%b6%e8%bf%90%e8%a1%8cvncserver%e8%be%93%e5%85%a5%e5%91%bd%e4%bb%a4%e5%90%8e%e8%be%93%e5%85%a5%e5%af%86%e7%a0%81"></a></h2><p>vncserver</p>
+<h2 id="三配置xstartup文件">三、配置xstartup文件<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%aexstartup%e6%96%87%e4%bb%b6"></a></h2><p>修改xstartup文件内容，针对Xfce4桌面环境.</p>
+<p>vim ~/.vnc/xstartup</p>
+<p>#!/bin/sh
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+startxfce4 &amp;
+[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources
+xsetroot -solid grey</p>
+<h2 id="四重启vncserver">四、重启vncserver<a class="anchorjs-link" href="#%e5%9b%9b%e9%87%8d%e5%90%afvncserver"></a></h2><p>修改配置文件后，运行如下命令结束掉之前产生的窗口:1</p>
+<p>vncserver -kill :1</p>
+<h2 id="五重新启动reboot系统后然后启动服务">五、重新启动（reboot系统后，然后启动服务）<a class="anchorjs-link" href="#%e4%ba%94%e9%87%8d%e6%96%b0%e5%90%af%e5%8a%a8reboot%e7%b3%bb%e7%bb%9f%e5%90%8e%e7%84%b6%e5%90%8e%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1"></a></h2><p>vncserver</p>
+<h2 id="vnc客户端连接">vnc客户端连接<a class="anchorjs-link" href="#vnc%e5%ae%a2%e6%88%b7%e7%ab%af%e8%bf%9e%e6%8e%a5"></a></h2><p>vnc viewer链接新建链接，然后地址输入ip:5901</p>
+<h2 id="注意事项">注意事项<a class="anchorjs-link" href="#%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9"></a></h2><p>1.防火墙</p>
+<p>2.如果是用了腾讯云或者其他如阿里云等则需要配置安全组放开5901端口</p>
+<p> </p>
+<p>原文链接：<a href="https://blog.csdn.net/hanmingjun/article/details/107122567" target="_blank">https://blog.csdn.net/hanmingjun/article/details/107122567</a></p>
+
+
+        <hr style="visibility: hidden;" />
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/" data-toggle="tooltip" data-placement="top" title="Centos7 修改docker镜像源">
+              Previous<br>
+              <span>Centos7 修改docker镜像源</span>
+            </a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/posts/2021-01-06-github%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2git-clone%E5%A4%AA%E6%85%A2%E7%9A%849%E7%A7%8D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="GitHub访问太慢，git clone太慢的9种解决办法">
+              Next<br>
+              <span>GitHub访问太慢，git clone太慢的9种解决办法</span>
+            </a>
+          </li>
+          
+        </ul>
+        <hr style="visibility: hidden;" />
+
+        
+        
+
+
+
+
+
+
+      </div>
+
+      
+      
+      
+      
+      <div class="
+              col-lg-8 col-lg-offset-2
+              col-md-10 col-md-offset-1
+              sidebar-container">
+
+        
+        
+        <section>
+  
+  
+  <hr class="hidden-sm hidden-xs">
+  
+  <h5>FEATURED TAGS</h5>
+  <div class="tags">
+    
+    <a href="/tags/wordpress/">wordpress</a>
+    
+  </div>
+</section>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+  
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        
+
+
+<ul class="list-inline text-center">
+
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+        <p class="copyright text-muted">
+          Copyright &copy; 蔡振威的博客 2022  
+          <br>
+          Powered by <a href="https://gohugo.io">Hugo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js crossorigin="anonymous"></script>
+
+
+
+<script src="/js/hux-blog.min.73a6a8d8df45293e042d15867416f603045bbeb98406731e5022d6c60388cd9d.js"></script>
+
+
+<script src=/js/simple-jekyll-search.min.js></script>
+
+
+<script src="/js/search.min.53bce5da475b4d362500e5ce5dddfa22e20e1b9018777411d2020b4b839c9310.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/zoomjs/zoom.min.js"></script>
+
+</body>
+
+</html>
