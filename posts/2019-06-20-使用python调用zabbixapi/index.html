@@ -16,37 +16,25 @@
   
   <meta name="description" content="Zabbix API官方文档： https://www.zabbix.com/documentation/4.0/zh/manual/api
 1、向 api_jsonrpc.php 发送HTTP_POST 登录请求，获取身份验证令牌
-# -*- coding:utf-8 -*- import json import requests
-url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo; post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;} post_data = { &ldquo;jsonrpc&rdquo; : &ldquo;2.0&rdquo;, &ldquo;method&rdquo; : &ldquo;user.login&rdquo;, &ldquo;params&rdquo; : { &ldquo;user&rdquo; : &ldquo;Admin&rdquo;, &ldquo;password&rdquo; : &ldquo;zabbix&rdquo; }, &ldquo;id&rdquo; : 1 }
-ret = requests.post(url, data = json.dumps(post_data), headers = post_headers) print(ret.text)
-输出结果：
-{ &ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;, &ldquo;result&rdquo;:&ldquo;da336b04d376d914bf06bd2192c4ce3f&rdquo;, #身份验证令牌 &ldquo;id&rdquo;:1 }
-2、查询所有主机的信息
-url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo; post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;} post_data = { &ldquo;jsonrpc&rdquo;: &ldquo;2.">
+# -*- coding:utf-8 -*- import json import requests url = &#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39; post_headers = {&#39;Content-Type&#39;: &#39;application/json&#39;} post_data = { &#34;jsonrpc&#34; : &#34;2.0&#34;, &#34;method&#34; : &#34;user.login&#34;, &#34;params&#34; : { &#34;user&#34; : &#34;Admin&#34;, &#34;password&#34; : &#34;zabbix&#34; }, &#34;id&#34; : 1 } ret = requests.post(url, data = json.dumps(post_data), headers = post_headers) print(ret.text) 输出结果：
+{ &#34;jsonrpc&#34;:&#34;2.0&#34;, &#34;result&#34;:&#34;da336b04d376d914bf06bd2192c4ce3f&#34;, #身份验证令牌 &#34;id&#34;:1 } 2、查询所有主机的信息
+url = &#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39; post_headers = {&#39;Content-Type&#39;: &#39;application/json&#39;} post_data = { &#34;jsonrpc&#34;: &#34;2.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用Python调用Zabbix API"/>
 <meta name="twitter:description" content="Zabbix API官方文档： https://www.zabbix.com/documentation/4.0/zh/manual/api
 1、向 api_jsonrpc.php 发送HTTP_POST 登录请求，获取身份验证令牌
-# -*- coding:utf-8 -*- import json import requests
-url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo; post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;} post_data = { &ldquo;jsonrpc&rdquo; : &ldquo;2.0&rdquo;, &ldquo;method&rdquo; : &ldquo;user.login&rdquo;, &ldquo;params&rdquo; : { &ldquo;user&rdquo; : &ldquo;Admin&rdquo;, &ldquo;password&rdquo; : &ldquo;zabbix&rdquo; }, &ldquo;id&rdquo; : 1 }
-ret = requests.post(url, data = json.dumps(post_data), headers = post_headers) print(ret.text)
-输出结果：
-{ &ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;, &ldquo;result&rdquo;:&ldquo;da336b04d376d914bf06bd2192c4ce3f&rdquo;, #身份验证令牌 &ldquo;id&rdquo;:1 }
-2、查询所有主机的信息
-url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo; post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;} post_data = { &ldquo;jsonrpc&rdquo;: &ldquo;2."/>
+# -*- coding:utf-8 -*- import json import requests url = &#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39; post_headers = {&#39;Content-Type&#39;: &#39;application/json&#39;} post_data = { &#34;jsonrpc&#34; : &#34;2.0&#34;, &#34;method&#34; : &#34;user.login&#34;, &#34;params&#34; : { &#34;user&#34; : &#34;Admin&#34;, &#34;password&#34; : &#34;zabbix&#34; }, &#34;id&#34; : 1 } ret = requests.post(url, data = json.dumps(post_data), headers = post_headers) print(ret.text) 输出结果：
+{ &#34;jsonrpc&#34;:&#34;2.0&#34;, &#34;result&#34;:&#34;da336b04d376d914bf06bd2192c4ce3f&#34;, #身份验证令牌 &#34;id&#34;:1 } 2、查询所有主机的信息
+url = &#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39; post_headers = {&#39;Content-Type&#39;: &#39;application/json&#39;} post_data = { &#34;jsonrpc&#34;: &#34;2."/>
 
   <meta property="og:title" content="使用Python调用Zabbix API" />
 <meta property="og:description" content="Zabbix API官方文档： https://www.zabbix.com/documentation/4.0/zh/manual/api
 1、向 api_jsonrpc.php 发送HTTP_POST 登录请求，获取身份验证令牌
-# -*- coding:utf-8 -*- import json import requests
-url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo; post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;} post_data = { &ldquo;jsonrpc&rdquo; : &ldquo;2.0&rdquo;, &ldquo;method&rdquo; : &ldquo;user.login&rdquo;, &ldquo;params&rdquo; : { &ldquo;user&rdquo; : &ldquo;Admin&rdquo;, &ldquo;password&rdquo; : &ldquo;zabbix&rdquo; }, &ldquo;id&rdquo; : 1 }
-ret = requests.post(url, data = json.dumps(post_data), headers = post_headers) print(ret.text)
-输出结果：
-{ &ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;, &ldquo;result&rdquo;:&ldquo;da336b04d376d914bf06bd2192c4ce3f&rdquo;, #身份验证令牌 &ldquo;id&rdquo;:1 }
-2、查询所有主机的信息
-url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo; post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;} post_data = { &ldquo;jsonrpc&rdquo;: &ldquo;2." />
+# -*- coding:utf-8 -*- import json import requests url = &#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39; post_headers = {&#39;Content-Type&#39;: &#39;application/json&#39;} post_data = { &#34;jsonrpc&#34; : &#34;2.0&#34;, &#34;method&#34; : &#34;user.login&#34;, &#34;params&#34; : { &#34;user&#34; : &#34;Admin&#34;, &#34;password&#34; : &#34;zabbix&#34; }, &#34;id&#34; : 1 } ret = requests.post(url, data = json.dumps(post_data), headers = post_headers) print(ret.text) 输出结果：
+{ &#34;jsonrpc&#34;:&#34;2.0&#34;, &#34;result&#34;:&#34;da336b04d376d914bf06bd2192c4ce3f&#34;, #身份验证令牌 &#34;id&#34;:1 } 2、查询所有主机的信息
+url = &#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39; post_headers = {&#39;Content-Type&#39;: &#39;application/json&#39;} post_data = { &#34;jsonrpc&#34;: &#34;2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-06-20T00:00:00+00:00" />
@@ -236,280 +224,237 @@ url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo; post_headers = {&l
               col-md-10 col-md-offset-1
               post-container">
         <p>Zabbix API官方文档： <a href="https://www.zabbix.com/documentation/4.0/zh/manual/api" target="_blank">https://www.zabbix.com/documentation/4.0/zh/manual/api</a></p>
-<p> </p>
 <p>1、向 <code>api_jsonrpc.php</code> 发送HTTP_POST 登录请求，获取身份验证令牌</p>
-<p># -*- coding:utf-8 -*-
-import json
-import requests</p>
-<p>url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo;
-post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># -*- coding:utf-8 -*-</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39;</span>
+</span></span><span style="display:flex;"><span>post_headers <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Content-Type&#39;</span>: <span style="color:#e6db74">&#39;application/json&#39;</span>}
+</span></span><span style="display:flex;"><span>post_data <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;jsonrpc&#34;</span> : <span style="color:#e6db74">&#34;2.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;method&#34;</span> : <span style="color:#e6db74">&#34;user.login&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;params&#34;</span> : {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;user&#34;</span> : <span style="color:#e6db74">&#34;Admin&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;password&#34;</span> : <span style="color:#e6db74">&#34;zabbix&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;id&#34;</span> : <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ret <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>post(url, data <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps(post_data), headers <span style="color:#f92672">=</span> post_headers)
+</span></span><span style="display:flex;"><span>print(ret<span style="color:#f92672">.</span>text)
+</span></span></code></pre></div><p>输出结果：</p>
+<pre tabindex="0"><code> {
+　　&#34;jsonrpc&#34;:&#34;2.0&#34;,
+　　&#34;result&#34;:&#34;da336b04d376d914bf06bd2192c4ce3f&#34;,  #身份验证令牌
+　　&#34;id&#34;:1
+}
+</code></pre><p>2、查询所有主机的信息</p>
+<pre tabindex="0"><code>url = &#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39;
+post_headers = {&#39;Content-Type&#39;: &#39;application/json&#39;}
 post_data = {
-&ldquo;jsonrpc&rdquo; : &ldquo;2.0&rdquo;,
-&ldquo;method&rdquo; : &ldquo;user.login&rdquo;,
-&ldquo;params&rdquo; : {
-&ldquo;user&rdquo; : &ldquo;Admin&rdquo;,
-&ldquo;password&rdquo; : &ldquo;zabbix&rdquo;
-},
-&ldquo;id&rdquo; : 1
-}</p>
-<p>ret = requests.post(url, data = json.dumps(post_data), headers = post_headers)
-print(ret.text)</p>
-<p>输出结果：</p>
-<p>{
-　　&ldquo;jsonrpc&rdquo;:&ldquo;2.0&rdquo;,
-　　&ldquo;result&rdquo;:&ldquo;da336b04d376d914bf06bd2192c4ce3f&rdquo;,  #身份验证令牌
-　　&ldquo;id&rdquo;:1
-}</p>
-<p> </p>
-<p>2、查询所有主机的信息</p>
-<p>url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo;
-post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;}
-post_data = {
-&ldquo;jsonrpc&rdquo;: &ldquo;2.0&rdquo;,
-&ldquo;method&rdquo;: &ldquo;host.get&rdquo;,
-&ldquo;params&rdquo;: {
-&ldquo;output&rdquo;: [
-&ldquo;hostid&rdquo;,
-&ldquo;host&rdquo;
-],
-&ldquo;selectInterfaces&rdquo;: [
-&ldquo;interfaceid&rdquo;,
-&ldquo;ip&rdquo;
-]
-},
-&ldquo;id&rdquo;: 2,
-&ldquo;auth&rdquo;: &ldquo;da336b04d376d914bf06bd2192c4ce3f&rdquo;  #这是第一步获取的身份验证令牌
-}</p>
-<p>ret = requests.post(url, data = json.dumps(post_data), headers = post_headers)
-print(ret.text)</p>
-<p>输出结果：</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<p>{
-&ldquo;jsonrpc&rdquo;: &ldquo;2.0&rdquo;,
-&ldquo;result&rdquo;: [
-{
-&ldquo;hostid&rdquo;: &ldquo;10084&rdquo;,
-&ldquo;host&rdquo;: &ldquo;Zabbix server&rdquo;,
-&ldquo;interfaces&rdquo;: [
-{
-&ldquo;interfaceid&rdquo;: &ldquo;1&rdquo;,
-&ldquo;ip&rdquo;: &ldquo;127.0.0.1&rdquo;
+    &#34;jsonrpc&#34;: &#34;2.0&#34;,
+    &#34;method&#34;: &#34;host.get&#34;,
+    &#34;params&#34;: {
+        &#34;output&#34;: [
+            &#34;hostid&#34;,
+            &#34;host&#34;
+        ],
+        &#34;selectInterfaces&#34;: [
+            &#34;interfaceid&#34;,
+            &#34;ip&#34;
+        ]
+    },
+    &#34;id&#34;: 2,
+    &#34;auth&#34;: &#34;da336b04d376d914bf06bd2192c4ce3f&#34;  #这是第一步获取的身份验证令牌
 }
-]
-}
-],
-&ldquo;id&rdquo;: 2
-}</p>
-<p> </p>
-<p>3、获取主机组信息</p>
-<p>url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo;
-post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;}
-post_data = {
-&ldquo;jsonrpc&rdquo;: &ldquo;2.0&rdquo;,
-&ldquo;method&rdquo;: &ldquo;hostgroup.get&rdquo;,
-&ldquo;params&rdquo;: {
-&ldquo;output&rdquo;: &ldquo;extend&rdquo;,
-&ldquo;filter&rdquo;: {
-&ldquo;name&rdquo;: [
-&ldquo;Linux servers&rdquo;
-]
-}
-},
-&ldquo;auth&rdquo;: &ldquo;da336b04d376d914bf06bd2192c4ce3f&rdquo;,
-&ldquo;id&rdquo;: 1
-}</p>
-<p>ret = requests.post(url, data = json.dumps(post_data), headers = post_headers)
-print(ret.text)</p>
-<p>输出结果：</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<p>{
-&ldquo;jsonrpc&rdquo;: &ldquo;2.0&rdquo;,
-&ldquo;result&rdquo;: [
-{
-&ldquo;groupid&rdquo;: &ldquo;2&rdquo;,
-&ldquo;name&rdquo;: &ldquo;Linux servers&rdquo;,
-&ldquo;internal&rdquo;: &ldquo;0&rdquo;,
-&ldquo;flags&rdquo;: &ldquo;0&rdquo;
-}
-],
-&ldquo;id&rdquo;: 1
-}</p>
-<p> </p>
-<p>4、获取模版信息</p>
-<p>url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo;
-post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;}
-post_data = {
-&ldquo;jsonrpc&rdquo;: &ldquo;2.0&rdquo;,
-&ldquo;method&rdquo;: &ldquo;template.get&rdquo;,
-&ldquo;params&rdquo;: {
-&ldquo;output&rdquo;: &ldquo;extend&rdquo;,
-&ldquo;filter&rdquo;: {
-&ldquo;host&rdquo;: [
-&ldquo;Template OS Linux&rdquo;
-]
-}
-},
-&ldquo;auth&rdquo;: &ldquo;dfba5d41dc9b46d6525f70af13631cb6&rdquo;,
-&ldquo;id&rdquo;: 1
-}</p>
-<p>ret = requests.post(url, data = json.dumps(post_data), headers = post_headers)
-print(ret.text)</p>
-<p>输出结果：</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<p>{
-&ldquo;jsonrpc&rdquo;: &ldquo;2.0&rdquo;,
-&ldquo;result&rdquo;: [
-{
-&ldquo;proxy_hostid&rdquo;: &ldquo;0&rdquo;,
-&ldquo;host&rdquo;: &ldquo;Template OS Linux&rdquo;,
-&ldquo;status&rdquo;: &ldquo;3&rdquo;,
-&ldquo;disable_until&rdquo;: &ldquo;0&rdquo;,
-&ldquo;error&rdquo;: &ldquo;&rdquo;,
-&ldquo;available&rdquo;: &ldquo;0&rdquo;,
-&ldquo;errors_from&rdquo;: &ldquo;0&rdquo;,
-&ldquo;lastaccess&rdquo;: &ldquo;0&rdquo;,
-&ldquo;ipmi_authtype&rdquo;: &ldquo;-1&rdquo;,
-&ldquo;ipmi_privilege&rdquo;: &ldquo;2&rdquo;,
-&ldquo;ipmi_username&rdquo;: &ldquo;&rdquo;,
-&ldquo;ipmi_password&rdquo;: &ldquo;&rdquo;,
-&ldquo;ipmi_disable_until&rdquo;: &ldquo;0&rdquo;,
-&ldquo;ipmi_available&rdquo;: &ldquo;0&rdquo;,
-&ldquo;snmp_disable_until&rdquo;: &ldquo;0&rdquo;,
-&ldquo;snmp_available&rdquo;: &ldquo;0&rdquo;,
-&ldquo;maintenanceid&rdquo;: &ldquo;0&rdquo;,
-&ldquo;maintenance_status&rdquo;: &ldquo;0&rdquo;,
-&ldquo;maintenance_type&rdquo;: &ldquo;0&rdquo;,
-&ldquo;maintenance_from&rdquo;: &ldquo;0&rdquo;,
-&ldquo;ipmi_errors_from&rdquo;: &ldquo;0&rdquo;,
-&ldquo;snmp_errors_from&rdquo;: &ldquo;0&rdquo;,
-&ldquo;ipmi_error&rdquo;: &ldquo;&rdquo;,
-&ldquo;snmp_error&rdquo;: &ldquo;&rdquo;,
-&ldquo;jmx_disable_until&rdquo;: &ldquo;0&rdquo;,
-&ldquo;jmx_available&rdquo;: &ldquo;0&rdquo;,
-&ldquo;jmx_errors_from&rdquo;: &ldquo;0&rdquo;,
-&ldquo;jmx_error&rdquo;: &ldquo;&rdquo;,
-&ldquo;name&rdquo;: &ldquo;Template OS Linux&rdquo;,
-&ldquo;flags&rdquo;: &ldquo;0&rdquo;,
-&ldquo;templateid&rdquo;: &ldquo;10001&rdquo;,
-&ldquo;description&rdquo;: &ldquo;&rdquo;,
-&ldquo;tls_connect&rdquo;: &ldquo;1&rdquo;,
-&ldquo;tls_accept&rdquo;: &ldquo;1&rdquo;,
-&ldquo;tls_issuer&rdquo;: &ldquo;&rdquo;,
-&ldquo;tls_subject&rdquo;: &ldquo;&rdquo;,
-&ldquo;tls_psk_identity&rdquo;: &ldquo;&rdquo;,
-&ldquo;tls_psk&rdquo;: &ldquo;&rdquo;,
-&ldquo;proxy_address&rdquo;: &ldquo;&rdquo;,
-&ldquo;auto_compress&rdquo;: &ldquo;1&rdquo;
-}
-],
-&ldquo;id&rdquo;: 1
-}</p>
-<p> </p>
-<p>5、创建主机</p>
-<p>url = &lsquo;http://172.10.10.2/zabbix/api_jsonrpc.php&rsquo;
-post_headers = {&lsquo;Content-Type&rsquo;: &lsquo;application/json&rsquo;}
-post_data = {
-&ldquo;jsonrpc&rdquo;: &ldquo;2.0&rdquo;,
-&ldquo;method&rdquo;: &ldquo;host.create&rdquo;,
-&ldquo;params&rdquo;: {
-&ldquo;host&rdquo;: &ldquo;Linux server&rdquo;,
-&ldquo;interfaces&rdquo;: [
-{
-&ldquo;type&rdquo;: 1,
-&ldquo;main&rdquo;: 1,
-&ldquo;useip&rdquo;: 1,
-&ldquo;ip&rdquo;: &ldquo;192.168.3.1&rdquo;,
-&ldquo;dns&rdquo;: &ldquo;&rdquo;,
-&ldquo;port&rdquo;: &ldquo;10050&rdquo;
-}
-],
-&ldquo;groups&rdquo;: [
-{
-&ldquo;groupid&rdquo;: &ldquo;2&rdquo;  #填写第3步获取的组ID
-}
-],
-&ldquo;templates&rdquo;: [
-{
-&ldquo;templateid&rdquo;: &ldquo;10001&rdquo;  #填写第4步获取的模板ID
-}
-],
-&ldquo;macros&rdquo;: [
-{
-&ldquo;macro&rdquo;: &ldquo;{$USER_ID}&rdquo;,
-&ldquo;value&rdquo;: &ldquo;123321&rdquo;
-}
-],
-&ldquo;inventory_mode&rdquo;: 0,
-&ldquo;inventory&rdquo;: {
-&ldquo;macaddress_a&rdquo;: &ldquo;01234&rdquo;,
-&ldquo;macaddress_b&rdquo;: &ldquo;56768&rdquo;
-}
-},
-&ldquo;auth&rdquo;: &ldquo;dfba5d41dc9b46d6525f70af13631cb6&rdquo;,
-&ldquo;id&rdquo;: 1
-}</p>
-<p>ret = requests.post(url, data = json.dumps(post_data), headers = post_headers)
-print(ret.text)</p>
-<p>输出结果：</p>
-<p><figure>
-  <a class="paragraph-image">
-    <img data-src="images/ContractedBlock.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure><figure>
-  <a class="paragraph-image">
-    <img data-src="http://hugo.caizhenwei.top//ExpandedBlockStart.gif" data-action="zoom" alt=""  class="lazyload">
-  </a>
-  
-</figure></p>
-<p>{
-&ldquo;jsonrpc&rdquo;: &ldquo;2.0&rdquo;,
-&ldquo;result&rdquo;: {
-&ldquo;hostids&rdquo;: [
-&ldquo;10264&rdquo;
-]
-},
-&ldquo;id&rdquo;: 1
-}</p>
 
+ret = requests.post(url, data = json.dumps(post_data), headers = post_headers)
+print(ret.text)
+</code></pre><p>输出结果：</p>
+<pre tabindex="0"><code>{
+    &#34;jsonrpc&#34;: &#34;2.0&#34;, 
+    &#34;result&#34;: [
+        {
+            &#34;hostid&#34;: &#34;10084&#34;, 
+            &#34;host&#34;: &#34;Zabbix server&#34;, 
+            &#34;interfaces&#34;: [
+                {
+                    &#34;interfaceid&#34;: &#34;1&#34;, 
+                    &#34;ip&#34;: &#34;127.0.0.1&#34;
+                }
+            ]
+        }
+    ], 
+    &#34;id&#34;: 2
+}
+</code></pre><p>3、获取主机组信息</p>
+<pre tabindex="0"><code>url = &#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39;
+post_headers = {&#39;Content-Type&#39;: &#39;application/json&#39;}
+post_data = {
+    &#34;jsonrpc&#34;: &#34;2.0&#34;,
+    &#34;method&#34;: &#34;hostgroup.get&#34;,
+    &#34;params&#34;: {
+        &#34;output&#34;: &#34;extend&#34;,
+        &#34;filter&#34;: {
+            &#34;name&#34;: [
+                &#34;Linux servers&#34;
+            ]
+        }
+    },
+    &#34;auth&#34;: &#34;da336b04d376d914bf06bd2192c4ce3f&#34;,
+    &#34;id&#34;: 1
+}
+ 
+ret = requests.post(url, data = json.dumps(post_data), headers = post_headers)
+print(ret.text)
+</code></pre><p>输出结果：</p>
+<pre tabindex="0"><code>{
+    &#34;jsonrpc&#34;: &#34;2.0&#34;, 
+    &#34;result&#34;: [
+        {
+            &#34;groupid&#34;: &#34;2&#34;, 
+            &#34;name&#34;: &#34;Linux servers&#34;, 
+            &#34;internal&#34;: &#34;0&#34;, 
+            &#34;flags&#34;: &#34;0&#34;
+        }
+    ], 
+    &#34;id&#34;: 1
+}
+</code></pre><p>4、获取模版信息</p>
+<pre tabindex="0"><code>url = &#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39;
+post_headers = {&#39;Content-Type&#39;: &#39;application/json&#39;}
+post_data = {
+    &#34;jsonrpc&#34;: &#34;2.0&#34;,
+    &#34;method&#34;: &#34;template.get&#34;,
+    &#34;params&#34;: {
+        &#34;output&#34;: &#34;extend&#34;,
+        &#34;filter&#34;: {
+            &#34;host&#34;: [
+                &#34;Template OS Linux&#34;
+            ]
+        }
+    },
+    &#34;auth&#34;: &#34;dfba5d41dc9b46d6525f70af13631cb6&#34;,
+    &#34;id&#34;: 1
+}
+ 
+ret = requests.post(url, data = json.dumps(post_data), headers = post_headers)
+print(ret.text)
+</code></pre><p>输出结果：</p>
+<pre tabindex="0"><code>{
+    &#34;jsonrpc&#34;: &#34;2.0&#34;, 
+    &#34;result&#34;: [
+        {
+            &#34;proxy_hostid&#34;: &#34;0&#34;, 
+            &#34;host&#34;: &#34;Template OS Linux&#34;, 
+            &#34;status&#34;: &#34;3&#34;, 
+            &#34;disable_until&#34;: &#34;0&#34;, 
+            &#34;error&#34;: &#34;&#34;, 
+            &#34;available&#34;: &#34;0&#34;, 
+            &#34;errors_from&#34;: &#34;0&#34;, 
+            &#34;lastaccess&#34;: &#34;0&#34;, 
+            &#34;ipmi_authtype&#34;: &#34;-1&#34;, 
+            &#34;ipmi_privilege&#34;: &#34;2&#34;, 
+            &#34;ipmi_username&#34;: &#34;&#34;, 
+            &#34;ipmi_password&#34;: &#34;&#34;, 
+            &#34;ipmi_disable_until&#34;: &#34;0&#34;, 
+            &#34;ipmi_available&#34;: &#34;0&#34;, 
+            &#34;snmp_disable_until&#34;: &#34;0&#34;, 
+            &#34;snmp_available&#34;: &#34;0&#34;, 
+            &#34;maintenanceid&#34;: &#34;0&#34;, 
+            &#34;maintenance_status&#34;: &#34;0&#34;, 
+            &#34;maintenance_type&#34;: &#34;0&#34;, 
+            &#34;maintenance_from&#34;: &#34;0&#34;, 
+            &#34;ipmi_errors_from&#34;: &#34;0&#34;, 
+            &#34;snmp_errors_from&#34;: &#34;0&#34;, 
+            &#34;ipmi_error&#34;: &#34;&#34;, 
+            &#34;snmp_error&#34;: &#34;&#34;, 
+            &#34;jmx_disable_until&#34;: &#34;0&#34;, 
+            &#34;jmx_available&#34;: &#34;0&#34;, 
+            &#34;jmx_errors_from&#34;: &#34;0&#34;, 
+            &#34;jmx_error&#34;: &#34;&#34;, 
+            &#34;name&#34;: &#34;Template OS Linux&#34;, 
+            &#34;flags&#34;: &#34;0&#34;, 
+            &#34;templateid&#34;: &#34;10001&#34;, 
+            &#34;description&#34;: &#34;&#34;, 
+            &#34;tls_connect&#34;: &#34;1&#34;, 
+            &#34;tls_accept&#34;: &#34;1&#34;, 
+            &#34;tls_issuer&#34;: &#34;&#34;, 
+            &#34;tls_subject&#34;: &#34;&#34;, 
+            &#34;tls_psk_identity&#34;: &#34;&#34;, 
+            &#34;tls_psk&#34;: &#34;&#34;, 
+            &#34;proxy_address&#34;: &#34;&#34;, 
+            &#34;auto_compress&#34;: &#34;1&#34;
+        }
+    ], 
+    &#34;id&#34;: 1
+}
+</code></pre><p>5、创建主机</p>
+<pre tabindex="0"><code>url = &#39;http://172.10.10.2/zabbix/api_jsonrpc.php&#39;
+post_headers = {&#39;Content-Type&#39;: &#39;application/json&#39;}
+post_data = {
+    &#34;jsonrpc&#34;: &#34;2.0&#34;,
+    &#34;method&#34;: &#34;host.create&#34;,
+    &#34;params&#34;: {
+        &#34;host&#34;: &#34;Linux server&#34;,
+        &#34;interfaces&#34;: [
+            {
+                &#34;type&#34;: 1,
+                &#34;main&#34;: 1,
+                &#34;useip&#34;: 1,
+                &#34;ip&#34;: &#34;192.168.3.1&#34;,
+                &#34;dns&#34;: &#34;&#34;,
+                &#34;port&#34;: &#34;10050&#34;
+            }
+        ],
+        &#34;groups&#34;: [
+            {
+                &#34;groupid&#34;: &#34;2&#34;  #填写第3步获取的组ID
+            }
+        ],
+        &#34;templates&#34;: [
+            {
+                &#34;templateid&#34;: &#34;10001&#34;  #填写第4步获取的模板ID
+            }
+        ],
+        &#34;macros&#34;: [
+            {
+                &#34;macro&#34;: &#34;{$USER_ID}&#34;,
+                &#34;value&#34;: &#34;123321&#34;
+            }
+        ],
+        &#34;inventory_mode&#34;: 0,
+        &#34;inventory&#34;: {
+            &#34;macaddress_a&#34;: &#34;01234&#34;,
+            &#34;macaddress_b&#34;: &#34;56768&#34;
+        }
+    },
+    &#34;auth&#34;: &#34;dfba5d41dc9b46d6525f70af13631cb6&#34;,
+    &#34;id&#34;: 1
+}
+ 
+ret = requests.post(url, data = json.dumps(post_data), headers = post_headers)
+print(ret.text)
+</code></pre><p>输出结果：</p>
+<pre tabindex="0"><code>{
+    &#34;jsonrpc&#34;: &#34;2.0&#34;, 
+    &#34;result&#34;: {
+        &#34;hostids&#34;: [
+            &#34;10264&#34;
+        ]
+    }, 
+    &#34;id&#34;: 1
+}
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">
           
           <li class="previous">
-            <a href="/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapinull/" data-toggle="tooltip" data-placement="top" title="使用Python调用Zabbix API">
+            <a href="/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp/" data-toggle="tooltip" data-placement="top" title="vsftpd本地用户shell为nologin无法访问ftp">
               Previous<br>
-              <span>使用Python调用Zabbix API</span>
+              <span>vsftpd本地用户shell为nologin无法访问ftp</span>
             </a>
           </li>
           

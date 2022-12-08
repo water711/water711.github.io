@@ -206,67 +206,6 @@
 
 
    <div class="post-preview">
-  <a href="/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/">
-      <h2 class="post-title">python&#43;selenium 批量配置华为S1720交换机</h2>
-      
-      <div class="post-content-preview">
-        
-        **公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，**为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
-准备工作1、安装Python
-2、安装谷歌浏览器
-3、下载chromedriver驱 …
-         
-      </div>
-  </a>
-  <p class="post-meta">
-      Posted by    on Fri, Oct 9, 2020
-  </p>
-</div>
-<hr>
-
-   <div class="post-preview">
-  <a href="/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/">
-      <h2 class="post-title">Centos7部署FTP服务</h2>
-      
-      <div class="post-content-preview">
-        
-        一、安装FTP服务1、安装vsftpd软件
-[root@FTP ~]# yum -y install vsftpd
-2、防火墙放行FTP服务
-[root@FTP ~]# firewall-cmd &amp;ndash;permanent &amp;ndash;add-service=ftp
-[root@FTP ~]# firewall-cmd &amp;ndash;reload …
-         
-      </div>
-  </a>
-  <p class="post-meta">
-      Posted by    on Mon, Oct 5, 2020
-  </p>
-</div>
-<hr>
-
-   <div class="post-preview">
-  <a href="/posts/2020-10-05-windows%E4%BA%8B%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%99%A8-%E8%BF%9E%E6%8E%A5%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97/">
-      <h2 class="post-title">windows事件查看器 连接多台服务器查看日志</h2>
-      
-      <div class="post-content-preview">
-        
-        一、打开事件查看器
-点击 控制面板-&amp;gt; 管理工具 -&amp;gt; 事件查看器，或者在cmd命令行下输入 eventvwr
-二、连接服务器查看日志
-1、菜单栏 -&amp;gt; 操作 -&amp;gt; 连接到另一台计算机
-2、输入服务器IP和账号密码（该账号需要有日志查看权限）
-注意：用户名前面的计算机名称要保留，计算机名称任意即可，
-如果删掉前面计算机名称，确认后会自 …
-         
-      </div>
-  </a>
-  <p class="post-meta">
-      Posted by    on Mon, Oct 5, 2020
-  </p>
-</div>
-<hr>
-
-   <div class="post-preview">
   <a href="/posts/2020-09-22-win7%E8%AE%BF%E9%97%AE%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E6%8F%90%E7%A4%BA%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5%E7%A6%81%E7%94%A8%E5%BD%93%E5%89%8D%E7%94%A8%E6%88%B7/">
       <h2 class="post-title">win7访问共享文件，提示&#34;登录失败：禁用当前用户&#34;</h2>
       
@@ -310,9 +249,9 @@
         
         效果展示实现方式 服务号 订阅号 -》 测试号（本文使用测试号演示） 一、注册微信公众号服务号需要是企业身份，并进行微信认证
 个人可以申请订阅号后，开启测试号获取模板消息接口来进行测试
-二、开通模板消息并设置告警模板服务号：公众号后台-》添加功能-》模板消息
+二、开通模板消息并设置告警模板服务号： 公众号后台-》添加功能-》模板消息
 测试号：
-三、编写Python脚本#!/usr/local/python3/bin/python3 …
+三、编写Python脚 …
          
       </div>
   </a>
@@ -348,9 +287,7 @@ PC端效果展示：微信小程序端展示
         
         datetime是Python处理日期和时间的标准库。
 官方文档：https://docs.python.org/3/library/datetime.html
-from datetime import datetime,timedelta
-#获取当前日期时间 now = datetime.now()
-#str转换为datetime mday = …
+from datetime import datetime,timedelta #获取当前日期时间 now = datetime.now() #str转换为datetime mday = …
          
       </div>
   </a>
@@ -386,13 +323,72 @@ from datetime import datetime,timedelta
         来源某国外视频：https://www.bilibili.com/video/BV1E4411f7Q1
 环境Python：3.7.0
 OpenCV：3.4.3.18
-# -*- coding:utf-8 -*-
-import cv2 import numpy as np import math cap = cv2.VideoCapture(0) …
+# -*- coding:utf-8 -*- import cv2 import numpy as np import math cap = cv2.VideoCapture(0) …
          
       </div>
   </a>
   <p class="post-meta">
       Posted by    on Wed, Jun 17, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/">
+      <h2 class="post-title">Python使用讯飞API进行语音转文字</h2>
+      
+      <div class="post-content-preview">
+        
+        一、注册讯飞开放平台账号1、官网注册：https://www.xfyun.cn/
+2、进入讯飞控制台，创建应用
+3、点击应用，查看APPID、APISecret和APIKey
+二、查看文档，下载DemoWebAPI 文档：https://www.xfyun.cn/doc/asr/voicedictation/API.html
+三、录制音频，并使用ffmpeg …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Jun 8, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/">
+      <h2 class="post-title">Centos7 磁盘配额</h2>
+      
+      <div class="post-content-preview">
+        
+        参考文档：http://c.biancheng.net/view/908.html
+磁盘配额概述1、磁盘配额限制只能作用于普通用户和用户组，超级用户 root 不能做磁盘配额；
+2、磁盘配额限制只能针对分区，不能针对目录，即仅能针对文件系统进行限制，例如 /dev/sda1 挂载到 /home，那么在 /home下的所有目录都会受到磁盘配额的限制；
+3、磁盘 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Sun, Jun 7, 2020
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc/">
+      <h2 class="post-title">跨公网远程网络唤醒PC</h2>
+      
+      <div class="post-content-preview">
+        
+        1、主板BISO开启网络唤醒不同的主板，开启的位置可能有所不同
+2、操作系统中网卡开启网络唤醒Windows系统下：
+Linux系统下：
+https://jingyan.baidu.com/article/f7ff0bfc33090f2e26bb13f8.html
+查看网卡是否支持网络唤醒
+[root@NAS ~]# ethtool eth0 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Sat, Jun 6, 2020
   </p>
 </div>
 <hr>

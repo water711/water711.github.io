@@ -16,9 +16,7 @@
   
   <meta name="description" content=".vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。
 在已经开启了hyper-v的电脑上进行镜像转换：1、以管理员权限打开powershell
-Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径
-例如： Convert-VHD -Path c:\Ubuntu.vhdx -DestinationPath d:\Ubuntu_vhd.vhd
-PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。
+Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径 例如： Convert-VHD -Path c:\\Ubuntu.vhdx -DestinationPath d:\\Ubuntu\_vhd.vhd PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。
 2、转换完成后，用VirtualBox新建虚拟机（不创建硬盘），并加载转换后的硬盘镜像，启动">
   <meta name="keywords" content="">
 
@@ -26,17 +24,13 @@ PS：注意两个路径都要带后缀，文件名中如果存在空格则需要
 <meta name="twitter:title" content="Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式"/>
 <meta name="twitter:description" content=".vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。
 在已经开启了hyper-v的电脑上进行镜像转换：1、以管理员权限打开powershell
-Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径
-例如： Convert-VHD -Path c:\Ubuntu.vhdx -DestinationPath d:\Ubuntu_vhd.vhd
-PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。
+Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径 例如： Convert-VHD -Path c:\\Ubuntu.vhdx -DestinationPath d:\\Ubuntu\_vhd.vhd PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。
 2、转换完成后，用VirtualBox新建虚拟机（不创建硬盘），并加载转换后的硬盘镜像，启动"/>
 
   <meta property="og:title" content="Hyper-V的vhdx格式磁盘镜像转换为VirtualBox支持的vhd格式" />
 <meta property="og:description" content=".vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。
 在已经开启了hyper-v的电脑上进行镜像转换：1、以管理员权限打开powershell
-Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径
-例如： Convert-VHD -Path c:\Ubuntu.vhdx -DestinationPath d:\Ubuntu_vhd.vhd
-PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。
+Convert-VHD –Path hyper镜像路径 –DestinationPath 转换成镜像路径 例如： Convert-VHD -Path c:\\Ubuntu.vhdx -DestinationPath d:\\Ubuntu\_vhd.vhd PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。
 2、转换完成后，用VirtualBox新建虚拟机（不创建硬盘），并加载转换后的硬盘镜像，启动" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2021-03-20-hyper-v%E7%9A%84vhdx%E6%A0%BC%E5%BC%8F%E7%A3%81%E7%9B%98%E9%95%9C%E5%83%8F%E8%BD%AC%E6%8D%A2%E4%B8%BAvirtualbox%E6%94%AF%E6%8C%81%E7%9A%84vhd%E6%A0%BC%E5%BC%8F/" /><meta property="article:section" content="posts" />
@@ -226,15 +220,13 @@ PS：注意两个路径都要带后缀，文件名中如果存在空格则需要
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p> </p>
-<p>.vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。</p>
-<p> </p>
-<h2 id="在已经开启了hyper-v的电脑上进行镜像转换">在已经开启了hyper-v的电脑上进行镜像转换：<a class="anchorjs-link" href="#%e5%9c%a8%e5%b7%b2%e7%bb%8f%e5%bc%80%e5%90%af%e4%ba%86hyper-v%e7%9a%84%e7%94%b5%e8%84%91%e4%b8%8a%e8%bf%9b%e8%a1%8c%e9%95%9c%e5%83%8f%e8%bd%ac%e6%8d%a2"></a></h2><p><strong>1、以管理员权限打开powershell</strong></p>
-<p>Convert-VHD –Path hyper镜像路径 –DestinationPath  转换成镜像路径</p>
-<p>例如：
-Convert-VHD -Path c:\Ubuntu.vhdx -DestinationPath d:\Ubuntu_vhd.vhd</p>
-<p>PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。</p>
-<p> </p>
+        <p>.vhdx是从Windows server 2012起引入的一种磁盘格式，是.vhd的升级版。与后者相比，vhdx格式的虚拟硬盘可以更好地保护数据，避免突然断电造成的数据损坏。</p>
+<h3 id="在已经开启了hyper-v的电脑上进行镜像转换">在已经开启了hyper-v的电脑上进行镜像转换：<a class="anchorjs-link" href="#%e5%9c%a8%e5%b7%b2%e7%bb%8f%e5%bc%80%e5%90%af%e4%ba%86hyper-v%e7%9a%84%e7%94%b5%e8%84%91%e4%b8%8a%e8%bf%9b%e8%a1%8c%e9%95%9c%e5%83%8f%e8%bd%ac%e6%8d%a2"></a></h3><p><strong>1、以管理员权限打开powershell</strong></p>
+<pre tabindex="0"><code>Convert-VHD –Path hyper镜像路径 –DestinationPath  转换成镜像路径
+
+例如：
+Convert-VHD -Path c:\\Ubuntu.vhdx -DestinationPath d:\\Ubuntu\_vhd.vhd
+</code></pre><p>PS：注意两个路径都要带后缀，文件名中如果存在空格则需要使用单引号括起来。</p>
 <p><strong>2、转换完成后，用VirtualBox新建虚拟机（不创建硬盘），并加载转换后的硬盘镜像，启动</strong></p>
 
 

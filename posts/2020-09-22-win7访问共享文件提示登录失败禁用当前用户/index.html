@@ -217,10 +217,11 @@
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="可能出现原因">可能出现原因：<a class="anchorjs-link" href="#%e5%8f%af%e8%83%bd%e5%87%ba%e7%8e%b0%e5%8e%9f%e5%9b%a0"></a></h2><p>服务端机器，禁用了默认管理员和来宾账户</p>
-<p>例如：       客户端机器当前使用的是administrator账户，访问服务端时，默认是用这个账户来作为用户名登录，但是由于服务端的administrator账号是禁用状态，服务器返回这个账户禁止，客户端不再提示用户输入用户名和密码，直接终止共享访问</p>
-<p> </p>
-<h2 id="解决办法">解决办法：<a class="anchorjs-link" href="#%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95"></a></h2><p>方法1：本机建立一个新账户，再通过新账户而不是同名的administrator账户去访问共享服务端就不会出现“登录失败:禁用的当前账户”，会直接提示输入密码       方法2：修改服务器端的访问模式，让everyone都能访问，并启用来宾账户，客户端以guest登录       方法3：客户端打开cmd命令提示符，输入net use \\ip\共享文件夹 /user:用户名，回车后输入密码，再通过\\ip就能访问共享文件夹了</p>
+        <h3 id="可能出现原因">可能出现原因：<a class="anchorjs-link" href="#%e5%8f%af%e8%83%bd%e5%87%ba%e7%8e%b0%e5%8e%9f%e5%9b%a0"></a></h3><p><strong>服务端机器，禁用了默认管理员和来宾账户</strong></p>
+<p>例如： 客户端机器当前使用的是administrator账户，访问服务端时，默认是用这个账户来作为用户名登录，但是由于服务端的administrator账号是禁用状态，服务器返回这个账户禁止，客户端不再提示用户输入用户名和密码，直接终止共享访问</p>
+<h3 id="解决办法">解决办法：<a class="anchorjs-link" href="#%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95"></a></h3><p>方法1：本机建立一个新账户，再通过新账户而不是同名的administrator账户去访问共享服务端就不会出现“登录失败:禁用的当前账户”，会直接提示输入密码      </p>
+<p>方法2：修改服务器端的访问模式，让everyone都能访问，并启用来宾账户，客户端以guest登录      </p>
+<p>方法3：客户端打开cmd命令提示符，输入net use \\ip\共享文件夹 /user:用户名，回车后输入密码，再通过\\ip就能访问共享文件夹了</p>
 
 
         <hr style="visibility: hidden;" />

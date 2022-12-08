@@ -16,34 +16,19 @@
   
   <meta name="description" content="datetime是Python处理日期和时间的标准库。
 官方文档：https://docs.python.org/3/library/datetime.html
-from datetime import datetime,timedelta
-#获取当前日期时间 now = datetime.now()
-#str转换为datetime mday = datetime.strptime(&lsquo;2020-01-01 12:10:55&rsquo;, &lsquo;%Y-%m-%d %H:%M:%S&rsquo;) print(mday) # 2020-01-01 12:10:55 print(type(mday)) # &lt;class &lsquo;datetime.datetime&rsquo;&gt;
-#datetime转换为str(将字符串格式化为datetime) s = mday.strftime(&rsquo;%Y-%m-%d %H:%M:%S&rsquo;) print(s) # 2020-01-01 12:10:55 print(type(s)) # &lt;class &lsquo;str&rsquo;&gt;
-#datetime加减(需要导入timedelta类) day1 = mday &#43; timedelta(days=2) #2020-01-03 12:10:55 day2 = mday &#43; timedelta(hours=5) #2020-01-01 17:10:55 day3 = mday - timedelta(days=5, hours=6) #2019-12-27 06:10:55
-#打印一年的日期 start_date = datetime.strptime(&lsquo;2019-01-01&rsquo;,&rsquo;%Y-%m-%d&rsquo;) for i in range(0,365): ndate = start_date &#43; timedelta(days=i) ndate = str(ndate).">
+from datetime import datetime,timedelta #获取当前日期时间 now = datetime.now() #str转换为datetime mday = datetime.strptime(&#39;2020-01-01 12:10:55&#39;, &#39;%Y-%m-%d %H:%M:%S&#39;) print(mday) # 2020-01-01 12:10:55 print(type(mday)) # &lt;class &#39;datetime.datetime&#39;&gt; #datetime转换为str(将字符串格式化为datetime) s = mday.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;) print(s) # 2020-01-01 12:10:55 print(type(s)) # &lt;class &#39;str&#39;&gt; #datetime加减(需要导入timedelta类) day1 = mday &#43; timedelta(days=2) #2020-01-03 12:10:55 day2 = mday &#43; timedelta(hours=5) #2020-01-01 17:10:55 day3 = mday - timedelta(days=5, hours=6) #2019-12-27 06:10:55 #打印一年的日期 start\_date = datetime.strptime(&#39;2019-01-01&#39;,&#39;%Y-%m-%d&#39;) for i in range(0,365): ndate = start\_date &#43; timedelta(days=i) ndate = str(ndate).">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="python datetime模块"/>
 <meta name="twitter:description" content="datetime是Python处理日期和时间的标准库。
 官方文档：https://docs.python.org/3/library/datetime.html
-from datetime import datetime,timedelta
-#获取当前日期时间 now = datetime.now()
-#str转换为datetime mday = datetime.strptime(&lsquo;2020-01-01 12:10:55&rsquo;, &lsquo;%Y-%m-%d %H:%M:%S&rsquo;) print(mday) # 2020-01-01 12:10:55 print(type(mday)) # &lt;class &lsquo;datetime.datetime&rsquo;&gt;
-#datetime转换为str(将字符串格式化为datetime) s = mday.strftime(&rsquo;%Y-%m-%d %H:%M:%S&rsquo;) print(s) # 2020-01-01 12:10:55 print(type(s)) # &lt;class &lsquo;str&rsquo;&gt;
-#datetime加减(需要导入timedelta类) day1 = mday &#43; timedelta(days=2) #2020-01-03 12:10:55 day2 = mday &#43; timedelta(hours=5) #2020-01-01 17:10:55 day3 = mday - timedelta(days=5, hours=6) #2019-12-27 06:10:55
-#打印一年的日期 start_date = datetime.strptime(&lsquo;2019-01-01&rsquo;,&rsquo;%Y-%m-%d&rsquo;) for i in range(0,365): ndate = start_date &#43; timedelta(days=i) ndate = str(ndate)."/>
+from datetime import datetime,timedelta #获取当前日期时间 now = datetime.now() #str转换为datetime mday = datetime.strptime(&#39;2020-01-01 12:10:55&#39;, &#39;%Y-%m-%d %H:%M:%S&#39;) print(mday) # 2020-01-01 12:10:55 print(type(mday)) # &lt;class &#39;datetime.datetime&#39;&gt; #datetime转换为str(将字符串格式化为datetime) s = mday.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;) print(s) # 2020-01-01 12:10:55 print(type(s)) # &lt;class &#39;str&#39;&gt; #datetime加减(需要导入timedelta类) day1 = mday &#43; timedelta(days=2) #2020-01-03 12:10:55 day2 = mday &#43; timedelta(hours=5) #2020-01-01 17:10:55 day3 = mday - timedelta(days=5, hours=6) #2019-12-27 06:10:55 #打印一年的日期 start\_date = datetime.strptime(&#39;2019-01-01&#39;,&#39;%Y-%m-%d&#39;) for i in range(0,365): ndate = start\_date &#43; timedelta(days=i) ndate = str(ndate)."/>
 
   <meta property="og:title" content="python datetime模块" />
 <meta property="og:description" content="datetime是Python处理日期和时间的标准库。
 官方文档：https://docs.python.org/3/library/datetime.html
-from datetime import datetime,timedelta
-#获取当前日期时间 now = datetime.now()
-#str转换为datetime mday = datetime.strptime(&lsquo;2020-01-01 12:10:55&rsquo;, &lsquo;%Y-%m-%d %H:%M:%S&rsquo;) print(mday) # 2020-01-01 12:10:55 print(type(mday)) # &lt;class &lsquo;datetime.datetime&rsquo;&gt;
-#datetime转换为str(将字符串格式化为datetime) s = mday.strftime(&rsquo;%Y-%m-%d %H:%M:%S&rsquo;) print(s) # 2020-01-01 12:10:55 print(type(s)) # &lt;class &lsquo;str&rsquo;&gt;
-#datetime加减(需要导入timedelta类) day1 = mday &#43; timedelta(days=2) #2020-01-03 12:10:55 day2 = mday &#43; timedelta(hours=5) #2020-01-01 17:10:55 day3 = mday - timedelta(days=5, hours=6) #2019-12-27 06:10:55
-#打印一年的日期 start_date = datetime.strptime(&lsquo;2019-01-01&rsquo;,&rsquo;%Y-%m-%d&rsquo;) for i in range(0,365): ndate = start_date &#43; timedelta(days=i) ndate = str(ndate)." />
+from datetime import datetime,timedelta #获取当前日期时间 now = datetime.now() #str转换为datetime mday = datetime.strptime(&#39;2020-01-01 12:10:55&#39;, &#39;%Y-%m-%d %H:%M:%S&#39;) print(mday) # 2020-01-01 12:10:55 print(type(mday)) # &lt;class &#39;datetime.datetime&#39;&gt; #datetime转换为str(将字符串格式化为datetime) s = mday.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;) print(s) # 2020-01-01 12:10:55 print(type(s)) # &lt;class &#39;str&#39;&gt; #datetime加减(需要导入timedelta类) day1 = mday &#43; timedelta(days=2) #2020-01-03 12:10:55 day2 = mday &#43; timedelta(hours=5) #2020-01-01 17:10:55 day3 = mday - timedelta(days=5, hours=6) #2019-12-27 06:10:55 #打印一年的日期 start\_date = datetime.strptime(&#39;2019-01-01&#39;,&#39;%Y-%m-%d&#39;) for i in range(0,365): ndate = start\_date &#43; timedelta(days=i) ndate = str(ndate)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-07-27T00:00:00+00:00" />
@@ -234,30 +219,32 @@ from datetime import datetime,timedelta
               post-container">
         <p>datetime是Python处理日期和时间的标准库。</p>
 <p>官方文档：<a href="https://docs.python.org/3/library/datetime.html" target="_blank">https://docs.python.org/3/library/datetime.html</a></p>
-<p> </p>
-<p>from datetime import datetime,timedelta</p>
-<p>#获取当前日期时间
-now = datetime.now()</p>
-<p>#str转换为datetime
-mday = datetime.strptime(&lsquo;2020-01-01 12:10:55&rsquo;, &lsquo;%Y-%m-%d %H:%M:%S&rsquo;)
+<pre tabindex="0"><code>from datetime import datetime,timedelta
+
+#获取当前日期时间
+now = datetime.now()
+
+#str转换为datetime
+mday = datetime.strptime(&#39;2020-01-01 12:10:55&#39;, &#39;%Y-%m-%d %H:%M:%S&#39;)
 print(mday)         # 2020-01-01 12:10:55
-print(type(mday))   # &lt;class &lsquo;datetime.datetime&rsquo;&gt;</p>
-<p>#datetime转换为str(将字符串格式化为datetime)
-s = mday.strftime(&rsquo;%Y-%m-%d %H:%M:%S&rsquo;)
+print(type(mday))   # &lt;class &#39;datetime.datetime&#39;&gt;
+
+#datetime转换为str(将字符串格式化为datetime)
+s = mday.strftime(&#39;%Y-%m-%d %H:%M:%S&#39;)
 print(s)         # 2020-01-01 12:10:55
-print(type(s))   # &lt;class &lsquo;str&rsquo;&gt;</p>
-<p>#datetime加减(需要导入timedelta类)
+print(type(s))   # &lt;class &#39;str&#39;&gt;
+
+#datetime加减(需要导入timedelta类)
 day1 = mday + timedelta(days=2)            #2020-01-03 12:10:55
 day2 = mday + timedelta(hours=5)           #2020-01-01 17:10:55
-day3 = mday - timedelta(days=5, hours=6)   #2019-12-27 06:10:55</p>
-<p> </p>
-<p>#打印一年的日期
-start_date = datetime.strptime(&lsquo;2019-01-01&rsquo;,&rsquo;%Y-%m-%d&rsquo;)
+day3 = mday - timedelta(days=5, hours=6)   #2019-12-27 06:10:55
+</code></pre><pre tabindex="0"><code>#打印一年的日期
+start\_date = datetime.strptime(&#39;2019-01-01&#39;,&#39;%Y-%m-%d&#39;)
 for i in range(0,365):
-ndate = start_date + timedelta(days=i)
-ndate = str(ndate).split(&quot; &ldquo;)[0]  #将日期和时间切割出来，取日期
-print(ndate)</p>
-
+    ndate = start\_date + timedelta(days=i)
+    ndate = str(ndate).split(&#34; &#34;)\[0\]  #将日期和时间切割出来，取日期
+    print(ndate)
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

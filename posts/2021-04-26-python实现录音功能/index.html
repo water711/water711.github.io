@@ -17,12 +17,7 @@
   <meta name="description" content="一、安装pyaudio软件包1、下载whl文件
 https://github.com/intxcc/pyaudio_portaudio/releases
 2、安装pyaudio
-pip install PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
-二、代码文件import wave from pyaudio import PyAudio,paInt16 from datetime import datetime
-framerate=16000 NUM_SAMPLES=2000 channels=1 sampwidth=2 TIME=300 #每次录制秒数 count=12 #录制多少次
-def save_wave_file(filename,data): &lsquo;&lsquo;&lsquo;save the data to the wavfile&rsquo;&rsquo;&rsquo; wf=wave.open(filename,&lsquo;wb&rsquo;) wf.setnchannels(channels) wf.setsampwidth(sampwidth) wf.setframerate(framerate) wf.writeframes(b&quot;&quot;.join(data)) wf.close()
-def my_record(): file_name = datetime.now().strftime(&quot;%Y%m%d_%H%M%S&quot;) &#43; &lsquo;.wav&rsquo; pa=PyAudio() stream=pa.open(format = paInt16,channels=1, rate=framerate,input=True, frames_per_buffer=NUM_SAMPLES) my_buf=[] count=0 while count&lt;TIME*8:#控制录音时间 string_audio_data = stream.read(NUM_SAMPLES) my_buf.append(string_audio_data) count&#43;=1 #print(&rsquo;.&rsquo;) save_wave_file(file_name,my_buf) stream.close()
-if __name__ == &lsquo;__main__&rsquo;: for i in range(count): my_record()">
+pip install PyAudio-0.2.11-cp37-cp37m-win\_amd64.whl 二、代码文件import wave from pyaudio import PyAudio,paInt16 from datetime import datetime framerate=16000 NUM\_SAMPLES=2000 channels=1 sampwidth=2 TIME=300 #每次录制秒数 count=12 #录制多少次 def save\_wave\_file(filename,data): &#39;&#39;&#39;save the data to the wavfile&#39;&#39;&#39; wf=wave.open(filename,&#39;wb&#39;) wf.setnchannels(channels) wf.setsampwidth(sampwidth) wf.setframerate(framerate) wf.writeframes(b&#34;&#34;.join(data)) wf.close() def my\_record(): file\_name = datetime.now().strftime(&#34;%Y%m%d\_%H%M%S&#34;) &#43; &#39;.wav&#39; pa=PyAudio() stream=pa.open(format = paInt16,channels=1, rate=framerate,input=True, frames\_per\_buffer=NUM\_SAMPLES) my\_buf=\[\] count=0 while count&lt;TIME\*8:#控制录音时间 string\_audio\_data = stream.read(NUM\_SAMPLES) my\_buf.append(string\_audio\_data) count&#43;=1 #print(&#39;.&#39;) save\_wave\_file(file\_name,my\_buf) stream.close() if \_\_name\_\_ == &#39;\_\_main\_\_&#39;: for i in range(count): my\_record() ## 三、打包为exe可执行程序 #安装pyinstaller软件包 pip install pyinstaller #打包成exe pyinstaller -F test.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
@@ -30,23 +25,13 @@ if __name__ == &lsquo;__main__&rsquo;: for i in range(count): my_record()">
 <meta name="twitter:description" content="一、安装pyaudio软件包1、下载whl文件
 https://github.com/intxcc/pyaudio_portaudio/releases
 2、安装pyaudio
-pip install PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
-二、代码文件import wave from pyaudio import PyAudio,paInt16 from datetime import datetime
-framerate=16000 NUM_SAMPLES=2000 channels=1 sampwidth=2 TIME=300 #每次录制秒数 count=12 #录制多少次
-def save_wave_file(filename,data): &lsquo;&lsquo;&lsquo;save the data to the wavfile&rsquo;&rsquo;&rsquo; wf=wave.open(filename,&lsquo;wb&rsquo;) wf.setnchannels(channels) wf.setsampwidth(sampwidth) wf.setframerate(framerate) wf.writeframes(b&quot;&quot;.join(data)) wf.close()
-def my_record(): file_name = datetime.now().strftime(&quot;%Y%m%d_%H%M%S&quot;) &#43; &lsquo;.wav&rsquo; pa=PyAudio() stream=pa.open(format = paInt16,channels=1, rate=framerate,input=True, frames_per_buffer=NUM_SAMPLES) my_buf=[] count=0 while count&lt;TIME*8:#控制录音时间 string_audio_data = stream.read(NUM_SAMPLES) my_buf.append(string_audio_data) count&#43;=1 #print(&rsquo;.&rsquo;) save_wave_file(file_name,my_buf) stream.close()
-if __name__ == &lsquo;__main__&rsquo;: for i in range(count): my_record()"/>
+pip install PyAudio-0.2.11-cp37-cp37m-win\_amd64.whl 二、代码文件import wave from pyaudio import PyAudio,paInt16 from datetime import datetime framerate=16000 NUM\_SAMPLES=2000 channels=1 sampwidth=2 TIME=300 #每次录制秒数 count=12 #录制多少次 def save\_wave\_file(filename,data): &#39;&#39;&#39;save the data to the wavfile&#39;&#39;&#39; wf=wave.open(filename,&#39;wb&#39;) wf.setnchannels(channels) wf.setsampwidth(sampwidth) wf.setframerate(framerate) wf.writeframes(b&#34;&#34;.join(data)) wf.close() def my\_record(): file\_name = datetime.now().strftime(&#34;%Y%m%d\_%H%M%S&#34;) &#43; &#39;.wav&#39; pa=PyAudio() stream=pa.open(format = paInt16,channels=1, rate=framerate,input=True, frames\_per\_buffer=NUM\_SAMPLES) my\_buf=\[\] count=0 while count&lt;TIME\*8:#控制录音时间 string\_audio\_data = stream.read(NUM\_SAMPLES) my\_buf.append(string\_audio\_data) count&#43;=1 #print(&#39;.&#39;) save\_wave\_file(file\_name,my\_buf) stream.close() if \_\_name\_\_ == &#39;\_\_main\_\_&#39;: for i in range(count): my\_record() ## 三、打包为exe可执行程序 #安装pyinstaller软件包 pip install pyinstaller #打包成exe pyinstaller -F test."/>
 
   <meta property="og:title" content="Python实现录音功能" />
 <meta property="og:description" content="一、安装pyaudio软件包1、下载whl文件
 https://github.com/intxcc/pyaudio_portaudio/releases
 2、安装pyaudio
-pip install PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
-二、代码文件import wave from pyaudio import PyAudio,paInt16 from datetime import datetime
-framerate=16000 NUM_SAMPLES=2000 channels=1 sampwidth=2 TIME=300 #每次录制秒数 count=12 #录制多少次
-def save_wave_file(filename,data): &lsquo;&lsquo;&lsquo;save the data to the wavfile&rsquo;&rsquo;&rsquo; wf=wave.open(filename,&lsquo;wb&rsquo;) wf.setnchannels(channels) wf.setsampwidth(sampwidth) wf.setframerate(framerate) wf.writeframes(b&quot;&quot;.join(data)) wf.close()
-def my_record(): file_name = datetime.now().strftime(&quot;%Y%m%d_%H%M%S&quot;) &#43; &lsquo;.wav&rsquo; pa=PyAudio() stream=pa.open(format = paInt16,channels=1, rate=framerate,input=True, frames_per_buffer=NUM_SAMPLES) my_buf=[] count=0 while count&lt;TIME*8:#控制录音时间 string_audio_data = stream.read(NUM_SAMPLES) my_buf.append(string_audio_data) count&#43;=1 #print(&rsquo;.&rsquo;) save_wave_file(file_name,my_buf) stream.close()
-if __name__ == &lsquo;__main__&rsquo;: for i in range(count): my_record()" />
+pip install PyAudio-0.2.11-cp37-cp37m-win\_amd64.whl 二、代码文件import wave from pyaudio import PyAudio,paInt16 from datetime import datetime framerate=16000 NUM\_SAMPLES=2000 channels=1 sampwidth=2 TIME=300 #每次录制秒数 count=12 #录制多少次 def save\_wave\_file(filename,data): &#39;&#39;&#39;save the data to the wavfile&#39;&#39;&#39; wf=wave.open(filename,&#39;wb&#39;) wf.setnchannels(channels) wf.setsampwidth(sampwidth) wf.setframerate(framerate) wf.writeframes(b&#34;&#34;.join(data)) wf.close() def my\_record(): file\_name = datetime.now().strftime(&#34;%Y%m%d\_%H%M%S&#34;) &#43; &#39;.wav&#39; pa=PyAudio() stream=pa.open(format = paInt16,channels=1, rate=framerate,input=True, frames\_per\_buffer=NUM\_SAMPLES) my\_buf=\[\] count=0 while count&lt;TIME\*8:#控制录音时间 string\_audio\_data = stream.read(NUM\_SAMPLES) my\_buf.append(string\_audio\_data) count&#43;=1 #print(&#39;.&#39;) save\_wave\_file(file\_name,my\_buf) stream.close() if \_\_name\_\_ == &#39;\_\_main\_\_&#39;: for i in range(count): my\_record() ## 三、打包为exe可执行程序 #安装pyinstaller软件包 pip install pyinstaller #打包成exe pyinstaller -F test." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-26T00:00:00+00:00" />
@@ -236,52 +221,61 @@ if __name__ == &lsquo;__main__&rsquo;: for i in range(count): my_record()" />
               col-md-10 col-md-offset-1
               post-container">
         <p> </p>
-<h2 id="一安装pyaudio软件包">一、安装pyaudio软件包<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85pyaudio%e8%bd%af%e4%bb%b6%e5%8c%85"></a></h2><p>1、下载whl文件</p>
-<p><a href="https://github.com/intxcc/pyaudio_portaudio/releases" target="_blank">https://github.com/intxcc/pyaudio_portaudio/releases</a></p>
+<h2 id="一安装pyaudio软件包">一、安装pyaudio软件包<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85pyaudio%e8%bd%af%e4%bb%b6%e5%8c%85"></a></h2><p>1、下载whl文件<br>
+<a href="https://github.com/intxcc/pyaudio_portaudio/releases" target="_blank">https://github.com/intxcc/pyaudio_portaudio/releases</a></p>
 <p>2、安装pyaudio</p>
-<p>pip install PyAudio-0.2.11-cp37-cp37m-win_amd64.whl</p>
-<h2 id="二代码文件">二、代码文件<a class="anchorjs-link" href="#%e4%ba%8c%e4%bb%a3%e7%a0%81%e6%96%87%e4%bb%b6"></a></h2><p>import wave
-from pyaudio import PyAudio,paInt16
-from datetime import datetime</p>
-<p>framerate=16000
-NUM_SAMPLES=2000
-channels=1
-sampwidth=2
-TIME=300  #每次录制秒数
-count=12  #录制多少次</p>
-<p>def save_wave_file(filename,data):
-&lsquo;&lsquo;&lsquo;save the data to the wavfile&rsquo;&rsquo;&rsquo;
-wf=wave.open(filename,&lsquo;wb&rsquo;)
-wf.setnchannels(channels)
-wf.setsampwidth(sampwidth)
-wf.setframerate(framerate)
-wf.writeframes(b&quot;&quot;.join(data))
-wf.close()</p>
-<p>def my_record():
-file_name = datetime.now().strftime(&quot;%Y%m%d_%H%M%S&quot;) + &lsquo;.wav&rsquo;
-pa=PyAudio()
-stream=pa.open(format = paInt16,channels=1,
-rate=framerate,input=True,
-frames_per_buffer=NUM_SAMPLES)
-my_buf=[]
-count=0
-while count&lt;TIME*8:#控制录音时间
-string_audio_data = stream.read(NUM_SAMPLES)
-my_buf.append(string_audio_data)
-count+=1
-#print(&rsquo;.&rsquo;)
-save_wave_file(file_name,my_buf)
-stream.close()</p>
-<p>if __name__ == &lsquo;__main__&rsquo;:
-for i in range(count):
-my_record()</p>
-<h2 id="三打包为exe可执行程序">三、打包为exe可执行程序<a class="anchorjs-link" href="#%e4%b8%89%e6%89%93%e5%8c%85%e4%b8%baexe%e5%8f%af%e6%89%a7%e8%a1%8c%e7%a8%8b%e5%ba%8f"></a></h2><p>#安装pyinstaller软件包
-pip install pyinstaller</p>
-<p>#打包成exe
-pyinstaller -F test.py</p>
-<p>#打包成exe并自定义图标(图标放在程序所在目录)
-pyinstaller -F &ndash;icon=my.ico test.py</p>
-<p> </p>
+<pre tabindex="0"><code>pip install PyAudio-0.2.11-cp37-cp37m-win\_amd64.whl
+</code></pre><h2 id="二代码文件">二、代码文件<a class="anchorjs-link" href="#%e4%ba%8c%e4%bb%a3%e7%a0%81%e6%96%87%e4%bb%b6"></a></h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> wave
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pyaudio <span style="color:#f92672">import</span> PyAudio,paInt16
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>framerate<span style="color:#f92672">=</span><span style="color:#ae81ff">16000</span>
+</span></span><span style="display:flex;"><span>NUM\_SAMPLES<span style="color:#f92672">=</span><span style="color:#ae81ff">2000</span>
+</span></span><span style="display:flex;"><span>channels<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>sampwidth<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>TIME<span style="color:#f92672">=</span><span style="color:#ae81ff">300</span>  <span style="color:#75715e">#每次录制秒数</span>
+</span></span><span style="display:flex;"><span>count<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>  <span style="color:#75715e">#录制多少次</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">save</span>\_wave\_file(filename,data):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;&#39;&#39;save the data to the wavfile&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    wf<span style="color:#f92672">=</span>wave<span style="color:#f92672">.</span>open(filename,<span style="color:#e6db74">&#39;wb&#39;</span>)
+</span></span><span style="display:flex;"><span>    wf<span style="color:#f92672">.</span>setnchannels(channels)
+</span></span><span style="display:flex;"><span>    wf<span style="color:#f92672">.</span>setsampwidth(sampwidth)
+</span></span><span style="display:flex;"><span>    wf<span style="color:#f92672">.</span>setframerate(framerate)
+</span></span><span style="display:flex;"><span>    wf<span style="color:#f92672">.</span>writeframes(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>join(data))
+</span></span><span style="display:flex;"><span>    wf<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">my</span>\_record():
+</span></span><span style="display:flex;"><span>    file\_name <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%Y%m</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">\_%H%M%S&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.wav&#39;</span>
+</span></span><span style="display:flex;"><span>    pa<span style="color:#f92672">=</span>PyAudio()
+</span></span><span style="display:flex;"><span>    stream<span style="color:#f92672">=</span>pa<span style="color:#f92672">.</span>open(format <span style="color:#f92672">=</span> paInt16,channels<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>                   rate<span style="color:#f92672">=</span>framerate,input<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>                   frames\_per\_buffer<span style="color:#f92672">=</span>NUM\_SAMPLES)
+</span></span><span style="display:flex;"><span>    my\_buf<span style="color:#f92672">=</span>\[\]
+</span></span><span style="display:flex;"><span>    count<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> count<span style="color:#f92672">&lt;</span>TIME\<span style="color:#f92672">*</span><span style="color:#ae81ff">8</span>:<span style="color:#75715e">#控制录音时间</span>
+</span></span><span style="display:flex;"><span>        string\_audio\_data <span style="color:#f92672">=</span> stream<span style="color:#f92672">.</span>read(NUM\_SAMPLES)
+</span></span><span style="display:flex;"><span>        my\_buf<span style="color:#f92672">.</span>append(string\_audio\_data)
+</span></span><span style="display:flex;"><span>        count<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#print(&#39;.&#39;)</span>
+</span></span><span style="display:flex;"><span>    save\_wave\_file(file\_name,my\_buf)
+</span></span><span style="display:flex;"><span>    stream<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> \_\_name\_\_ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;\_\_main\_\_&#39;</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(count):
+</span></span><span style="display:flex;"><span>        my\_record()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 三、打包为exe可执行程序</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#安装pyinstaller软件包</span>
+</span></span><span style="display:flex;"><span>pip install pyinstaller
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#打包成exe</span>
+</span></span><span style="display:flex;"><span>pyinstaller <span style="color:#f92672">-</span>F test<span style="color:#f92672">.</span>py
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#打包成exe并自定义图标(图标放在程序所在目录)</span>
+</span></span><span style="display:flex;"><span>pyinstaller <span style="color:#f92672">-</span>F <span style="color:#f92672">--</span>icon<span style="color:#f92672">=</span>my<span style="color:#f92672">.</span>ico test<span style="color:#f92672">.</span>py
+</span></span></code></pre></div><p> </p>
 <p>参考原文：<a href="https://blog.ailemon.me/2019/08/13/python-implement-audio-recorder-and-player/" target="_blank">https://blog.ailemon.me/2019/08/13/python-implement-audio-recorder-and-player/</a></p>
 
 

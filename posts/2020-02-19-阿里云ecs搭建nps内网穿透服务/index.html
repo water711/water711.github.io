@@ -20,17 +20,12 @@
 github文档：https://github.com/ehang-io/nps/blob/master/README_zh.md
 二、阿里云ECS安装NPS服务端1、下载对应系统的软件压缩包
 github地址：https://github.com/ehang-io/nps/releases
-[root@ECS ~]# wget https://github.com/cnlh/nps/releases/download/v0.25.3/linux_amd64_server.tar.gz [root@ECS ~]# tar xvf linux_amd64_server.tar.gz -C nps_server/
-2、修改NPS配置文件
-[root@ECS ~]# vim nps_server/conf/nps.conf appname = nps runmode = dev bridge_type=tcp
-bridge_port=8074 #服务端客户端通信端口 bridge_ip=0.0.0.0 public_vkey=123 #客户端以配置文件模式启动时的密钥 log_level=7 web_username=admin #web界面管理账号 web_password=aassdd #web界面管理密码 web_port = 8811 #web管理端口 web_ip=0.0.0.0
-官方配置参数详细说明：https://ehang-io.github.io/nps/#/server_config
+[root@ECS ~]# wget https://github.com/cnlh/nps/releases/download/v0.25.3/linux_amd64_server.tar.gz [root@ECS ~]# tar xvf linux_amd64_server.tar.gz -C nps_server/ 2、修改NPS配置文件
+[root@ECS ~]# vim nps_server/conf/nps.conf appname = nps runmode = dev bridge_type=tcp bridge_port=8074 #服务端客户端通信端口 bridge_ip=0.0.0.0 public_vkey=123 #客户端以配置文件模式启动时的密钥 log_level=7 web_username=admin #web界面管理账号 web_password=aassdd #web界面管理密码 web_port = 8811 #web管理端口 web_ip=0.0.0.0 官方配置参数详细说明：https://ehang-io.github.io/nps/#/server_config
 3、安装并启动服务端
 首先前台启动，查看是否能正常运行
-./nps start
-前台运行成功后（ctrl&#43;C 关闭），执行安装操作
-./nps install #安装后，web前端和配置文件位于/etc/nps/目录下,主程序在/usr/bin/nps
-4、阿里云ECS配置安全组策略（端口放行）
+./nps start 前台运行成功后（ctrl&#43;C 关闭），执行安装操作
+./nps install #安装后，web前端和配置文件位于/etc/nps/目录下,主程序在/usr/bin/nps 4、阿里云ECS配置安全组策略（端口放行）
 放行NPS通信端口
 放行web管理端口
 三、配置windows客户端转发3389端口流量1、浏览器访问NPS前端页面：http://域名或IP : 端口
@@ -39,7 +34,7 @@ bridge_port=8074 #服务端客户端通信端口 bridge_ip=0.0.0.0 public_vkey=1
 3、下载nps客户端软件 ，解压后进入cmd命令行，运行连接命令
 下载地址：https://github.com/ehang-io/nps/releases（注意版本要与服务端一致，否则可能会连接失败）
 4、注册到系统服务，开机自动启动
-npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp">
+npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp 5、客户端连接成功后，登录web页面，配置穿透服务">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
@@ -50,17 +45,12 @@ npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp">
 github文档：https://github.com/ehang-io/nps/blob/master/README_zh.md
 二、阿里云ECS安装NPS服务端1、下载对应系统的软件压缩包
 github地址：https://github.com/ehang-io/nps/releases
-[root@ECS ~]# wget https://github.com/cnlh/nps/releases/download/v0.25.3/linux_amd64_server.tar.gz [root@ECS ~]# tar xvf linux_amd64_server.tar.gz -C nps_server/
-2、修改NPS配置文件
-[root@ECS ~]# vim nps_server/conf/nps.conf appname = nps runmode = dev bridge_type=tcp
-bridge_port=8074 #服务端客户端通信端口 bridge_ip=0.0.0.0 public_vkey=123 #客户端以配置文件模式启动时的密钥 log_level=7 web_username=admin #web界面管理账号 web_password=aassdd #web界面管理密码 web_port = 8811 #web管理端口 web_ip=0.0.0.0
-官方配置参数详细说明：https://ehang-io.github.io/nps/#/server_config
+[root@ECS ~]# wget https://github.com/cnlh/nps/releases/download/v0.25.3/linux_amd64_server.tar.gz [root@ECS ~]# tar xvf linux_amd64_server.tar.gz -C nps_server/ 2、修改NPS配置文件
+[root@ECS ~]# vim nps_server/conf/nps.conf appname = nps runmode = dev bridge_type=tcp bridge_port=8074 #服务端客户端通信端口 bridge_ip=0.0.0.0 public_vkey=123 #客户端以配置文件模式启动时的密钥 log_level=7 web_username=admin #web界面管理账号 web_password=aassdd #web界面管理密码 web_port = 8811 #web管理端口 web_ip=0.0.0.0 官方配置参数详细说明：https://ehang-io.github.io/nps/#/server_config
 3、安装并启动服务端
 首先前台启动，查看是否能正常运行
-./nps start
-前台运行成功后（ctrl&#43;C 关闭），执行安装操作
-./nps install #安装后，web前端和配置文件位于/etc/nps/目录下,主程序在/usr/bin/nps
-4、阿里云ECS配置安全组策略（端口放行）
+./nps start 前台运行成功后（ctrl&#43;C 关闭），执行安装操作
+./nps install #安装后，web前端和配置文件位于/etc/nps/目录下,主程序在/usr/bin/nps 4、阿里云ECS配置安全组策略（端口放行）
 放行NPS通信端口
 放行web管理端口
 三、配置windows客户端转发3389端口流量1、浏览器访问NPS前端页面：http://域名或IP : 端口
@@ -69,7 +59,7 @@ bridge_port=8074 #服务端客户端通信端口 bridge_ip=0.0.0.0 public_vkey=1
 3、下载nps客户端软件 ，解压后进入cmd命令行，运行连接命令
 下载地址：https://github.com/ehang-io/nps/releases（注意版本要与服务端一致，否则可能会连接失败）
 4、注册到系统服务，开机自动启动
-npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp"/>
+npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp 5、客户端连接成功后，登录web页面，配置穿透服务"/>
 
   <meta property="og:title" content="阿里云ECS搭建NPS内网穿透服务" />
 <meta property="og:description" content="环境：服务端操作系统：Centos7
@@ -78,17 +68,12 @@ npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp"/>
 github文档：https://github.com/ehang-io/nps/blob/master/README_zh.md
 二、阿里云ECS安装NPS服务端1、下载对应系统的软件压缩包
 github地址：https://github.com/ehang-io/nps/releases
-[root@ECS ~]# wget https://github.com/cnlh/nps/releases/download/v0.25.3/linux_amd64_server.tar.gz [root@ECS ~]# tar xvf linux_amd64_server.tar.gz -C nps_server/
-2、修改NPS配置文件
-[root@ECS ~]# vim nps_server/conf/nps.conf appname = nps runmode = dev bridge_type=tcp
-bridge_port=8074 #服务端客户端通信端口 bridge_ip=0.0.0.0 public_vkey=123 #客户端以配置文件模式启动时的密钥 log_level=7 web_username=admin #web界面管理账号 web_password=aassdd #web界面管理密码 web_port = 8811 #web管理端口 web_ip=0.0.0.0
-官方配置参数详细说明：https://ehang-io.github.io/nps/#/server_config
+[root@ECS ~]# wget https://github.com/cnlh/nps/releases/download/v0.25.3/linux_amd64_server.tar.gz [root@ECS ~]# tar xvf linux_amd64_server.tar.gz -C nps_server/ 2、修改NPS配置文件
+[root@ECS ~]# vim nps_server/conf/nps.conf appname = nps runmode = dev bridge_type=tcp bridge_port=8074 #服务端客户端通信端口 bridge_ip=0.0.0.0 public_vkey=123 #客户端以配置文件模式启动时的密钥 log_level=7 web_username=admin #web界面管理账号 web_password=aassdd #web界面管理密码 web_port = 8811 #web管理端口 web_ip=0.0.0.0 官方配置参数详细说明：https://ehang-io.github.io/nps/#/server_config
 3、安装并启动服务端
 首先前台启动，查看是否能正常运行
-./nps start
-前台运行成功后（ctrl&#43;C 关闭），执行安装操作
-./nps install #安装后，web前端和配置文件位于/etc/nps/目录下,主程序在/usr/bin/nps
-4、阿里云ECS配置安全组策略（端口放行）
+./nps start 前台运行成功后（ctrl&#43;C 关闭），执行安装操作
+./nps install #安装后，web前端和配置文件位于/etc/nps/目录下,主程序在/usr/bin/nps 4、阿里云ECS配置安全组策略（端口放行）
 放行NPS通信端口
 放行web管理端口
 三、配置windows客户端转发3389端口流量1、浏览器访问NPS前端页面：http://域名或IP : 端口
@@ -97,7 +82,7 @@ bridge_port=8074 #服务端客户端通信端口 bridge_ip=0.0.0.0 public_vkey=1
 3、下载nps客户端软件 ，解压后进入cmd命令行，运行连接命令
 下载地址：https://github.com/ehang-io/nps/releases（注意版本要与服务端一致，否则可能会连接失败）
 4、注册到系统服务，开机自动启动
-npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp" />
+npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp 5、客户端连接成功后，登录web页面，配置穿透服务" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-02-19T00:00:00+00:00" />
@@ -286,19 +271,19 @@ npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp" />
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="环境">环境：<a class="anchorjs-link" href="#%e7%8e%af%e5%a2%83"></a></h2><p>服务端操作系统：Centos7</p>
+        <h3 id="环境">环境：<a class="anchorjs-link" href="#%e7%8e%af%e5%a2%83"></a></h3><p>服务端操作系统：Centos7</p>
 <p>客户端操作系统：Centos7、Win7</p>
-<h2 id="一nps介绍">一、NPS介绍<a class="anchorjs-link" href="#%e4%b8%80nps%e4%bb%8b%e7%bb%8d"></a></h2><p>nps是一款轻量级、高性能、功能强大的<strong>内网穿透</strong>代理服务器。目前支持<strong>tcp、udp流量转发</strong>，可支持任何<strong>tcp、udp</strong>上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还<strong>支持内网http代理、内网socks5代理</strong>、<strong>p2p等</strong>，并带有功能强大的web管理端。</p>
+<h3 id="一nps介绍">一、NPS介绍<a class="anchorjs-link" href="#%e4%b8%80nps%e4%bb%8b%e7%bb%8d"></a></h3><p>nps是一款轻量级、高性能、功能强大的<strong>内网穿透</strong>代理服务器。目前支持<strong>tcp、udp流量转发</strong>，可支持任何<strong>tcp、udp</strong>上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还<strong>支持内网http代理、内网socks5代理</strong>、<strong>p2p等</strong>，并带有功能强大的web管理端。</p>
 <p>github文档：<a href="https://github.com/ehang-io/nps/blob/master/README_zh.md" target="_blank">https://github.com/ehang-io/nps/blob/master/README_zh.md</a></p>
-<h2 id="二阿里云ecs安装nps服务端">二、阿里云ECS安装NPS服务端<a class="anchorjs-link" href="#%e4%ba%8c%e9%98%bf%e9%87%8c%e4%ba%91ecs%e5%ae%89%e8%a3%85nps%e6%9c%8d%e5%8a%a1%e7%ab%af"></a></h2><p>1、下载对应系统的软件压缩包</p>
+<h3 id="二阿里云ecs安装nps服务端">二、阿里云ECS安装NPS服务端<a class="anchorjs-link" href="#%e4%ba%8c%e9%98%bf%e9%87%8c%e4%ba%91ecs%e5%ae%89%e8%a3%85nps%e6%9c%8d%e5%8a%a1%e7%ab%af"></a></h3><p>1、下载对应系统的软件压缩包</p>
 <p>github地址：<a href="https://github.com/ehang-io/nps/releases" target="_blank">https://github.com/ehang-io/nps/releases</a></p>
-<p>[root@ECS ~]# wget <a href="https://github.com/cnlh/nps/releases/download/v0.25.3/linux" target="_blank">https://github.com/cnlh/nps/releases/download/v0.25.3/linux</a>_amd64_server.tar.gz
-[root@ECS ~]# tar xvf linux_amd64_server.tar.gz -C nps_server/</p>
-<p>2、修改NPS配置文件</p>
-<p>[root@ECS ~]# vim nps_server/conf/nps.conf
+<pre tabindex="0"><code>[root@ECS ~]# wget https://github.com/cnlh/nps/releases/download/v0.25.3/linux_amd64_server.tar.gz
+[root@ECS ~]# tar xvf linux_amd64_server.tar.gz -C nps_server/
+</code></pre><p>2、修改NPS配置文件</p>
+<pre tabindex="0"><code>[root@ECS ~]# vim nps_server/conf/nps.conf
 appname = nps
 runmode = dev
-bridge_type=tcp<br>
+bridge_type=tcp  
 bridge_port=8074    #服务端客户端通信端口
 bridge_ip=0.0.0.0
 public_vkey=123     #客户端以配置文件模式启动时的密钥
@@ -306,14 +291,14 @@ log_level=7
 web_username=admin   #web界面管理账号
 web_password=aassdd   #web界面管理密码
 web_port = 8811      #web管理端口
-web_ip=0.0.0.0</p>
-<p>官方配置参数详细说明：<a href="https://ehang-io.github.io/nps/#/server_config" target="_blank">https://ehang-io.github.io/nps/#/server_config</a></p>
+web_ip=0.0.0.0
+</code></pre><p>官方配置参数详细说明：<a href="https://ehang-io.github.io/nps/#/server_config" target="_blank">https://ehang-io.github.io/nps/#/server_config</a></p>
 <p>3、安装并启动服务端</p>
 <p>首先前台启动，查看是否能正常运行</p>
-<p>./nps start</p>
-<p>前台运行成功后（ctrl+C 关闭），执行安装操作</p>
-<p>./nps install   #安装后，web前端和配置文件位于/etc/nps/目录下,主程序在/usr/bin/nps</p>
-<p>4、阿里云ECS配置安全组策略（端口放行）</p>
+<pre tabindex="0"><code>./nps start
+</code></pre><p>前台运行成功后（ctrl+C 关闭），执行安装操作</p>
+<pre tabindex="0"><code>./nps install   #安装后，web前端和配置文件位于/etc/nps/目录下,主程序在/usr/bin/nps
+</code></pre><p>4、阿里云ECS配置安全组策略（端口放行）</p>
 <p>放行NPS通信端口</p>
 <p><figure>
   <a class="paragraph-image">
@@ -328,7 +313,7 @@ web_ip=0.0.0.0</p>
   </a>
   
 </figure></p>
-<h2 id="三配置windows客户端转发3389端口流量">三、配置windows客户端转发3389端口流量<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%aewindows%e5%ae%a2%e6%88%b7%e7%ab%af%e8%bd%ac%e5%8f%913389%e7%ab%af%e5%8f%a3%e6%b5%81%e9%87%8f"></a></h2><p>1、浏览器访问NPS前端页面：http://域名或IP : 端口</p>
+<h3 id="三配置windows客户端转发3389端口流量">三、配置windows客户端转发3389端口流量<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%aewindows%e5%ae%a2%e6%88%b7%e7%ab%af%e8%bd%ac%e5%8f%913389%e7%ab%af%e5%8f%a3%e6%b5%81%e9%87%8f"></a></h3><p>1、浏览器访问NPS前端页面：http://域名或IP : 端口</p>
 <p>2、新增客户端</p>
 <p><figure>
   <a class="paragraph-image">
@@ -358,8 +343,8 @@ web_ip=0.0.0.0</p>
   
 </figure></p>
 <p>4、注册到系统服务，开机自动启动</p>
-<p>npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp</p>
-<p>5、客户端连接成功后，登录web页面，配置穿透服务</p>
+<pre tabindex="0"><code>npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp
+</code></pre><p>5、客户端连接成功后，登录web页面，配置穿透服务</p>
 <p>新增tcp隧道（下面规则为：当访问服务端37123时，流量会转发到客户端id为7的3389端口）</p>
 <p>客户端id在客户端列表页面查看</p>
 <p><figure>
@@ -376,7 +361,7 @@ web_ip=0.0.0.0</p>
   </a>
   
 </figure></p>
-<h2 id="四配置linux客户端转发ssh端口流量">四、配置Linux客户端转发ssh端口流量<a class="anchorjs-link" href="#%e5%9b%9b%e9%85%8d%e7%bd%aelinux%e5%ae%a2%e6%88%b7%e7%ab%af%e8%bd%ac%e5%8f%91ssh%e7%ab%af%e5%8f%a3%e6%b5%81%e9%87%8f"></a></h2><p>1、浏览器访问NPS前端页面：http://域名或IP : 端口</p>
+<h3 id="四配置linux客户端转发ssh端口流量">四、配置Linux客户端转发ssh端口流量<a class="anchorjs-link" href="#%e5%9b%9b%e9%85%8d%e7%bd%aelinux%e5%ae%a2%e6%88%b7%e7%ab%af%e8%bd%ac%e5%8f%91ssh%e7%ab%af%e5%8f%a3%e6%b5%81%e9%87%8f"></a></h3><p>1、浏览器访问NPS前端页面：http://域名或IP : 端口</p>
 <p>2、新增客户端</p>
 <p><figure>
   <a class="paragraph-image">
@@ -399,10 +384,10 @@ web_ip=0.0.0.0</p>
 </figure></p>
 <p>3、下载nps客户端软件 ，解压并运行连接命令</p>
 <p>下载地址：<a href="https://github.com/ehang-io/nps/releases" target="_blank">https://github.com/ehang-io/nps/releases</a>（注意版本要与服务端一致，否则可能会连接失败）</p>
-<p>[root@server nps]# ./npc -server=www.xxx.com:8074 -vkey=qaxs234jy1zz5n -type=tcp</p>
-<p>4、注册到系统服务(开机启动、守护进程)</p>
-<p>[root@server nps]# ./npc install -server=www.xxx.com:8074 -vkey=qaxs234jy1zz5n -type=tcp</p>
-<p>5、新增tcp隧道，即添加转发端口（下面规则为：当访问服务端8282端口时，流量会转发到客户端id为5的22端口）</p>
+<pre tabindex="0"><code>[root@server nps]# ./npc -server=www.xxx.com:8074 -vkey=qaxs234jy1zz5n -type=tcp
+</code></pre><p>4、注册到系统服务(开机启动、守护进程)</p>
+<pre tabindex="0"><code>[root@server nps]# ./npc install -server=www.xxx.com:8074 -vkey=qaxs234jy1zz5n -type=tcp
+</code></pre><p>5、新增tcp隧道，即添加转发端口（下面规则为：当访问服务端8282端口时，流量会转发到客户端id为5的22端口）</p>
 <p>客户端id在客户端列表页面查看</p>
 <p><figure>
   <a class="paragraph-image">
@@ -413,16 +398,18 @@ web_ip=0.0.0.0</p>
 <p>6、登录阿里云ECS配置安全组策略（放行端口8282）</p>
 <p>7、测试</p>
 <p>[root@test ~]# ssh -p8282 <a href="/mailto:root@www.xxx.com">root@www.xxx.com</a></p>
-<h2 id="五配置p2p内网穿透">五、配置P2P内网穿透<a class="anchorjs-link" href="#%e4%ba%94%e9%85%8d%e7%bd%aep2p%e5%86%85%e7%bd%91%e7%a9%bf%e9%80%8f"></a></h2><p><strong>使用场景</strong> 点对点传输，可用于大文件传输的场景，如在内网架设NAS，流量不经过服务器转发</p>
+<h3 id="五配置p2p内网穿透">五、配置P2P内网穿透<a class="anchorjs-link" href="#%e4%ba%94%e9%85%8d%e7%bd%aep2p%e5%86%85%e7%bd%91%e7%a9%bf%e9%80%8f"></a></h3><p><strong>使用场景</strong> 点对点传输，可用于大文件传输的场景，如在内网架设NAS，流量不经过服务器转发</p>
 <p><strong>要求</strong> 目标内网设备与访问端都需要运行npc，且二者NAT类型不能同时为对称型网络</p>
 <p>1、编辑服务器配置文件，开启p2p穿透</p>
-<p>[root@server ~]# vim /etc/nps/conf/nps.conf
+<pre tabindex="0"><code>[root@server ~]# vim /etc/nps/conf/nps.conf
 #p2p
 p2p_ip=&lt;服务器公网IP，不要填域名，不要填127.0.0.1&gt;
-p2p_port=&lt;默认使用6000端口，可自行配置&gt;</p>
-<h1 id="重启nps">重启nps<a class="anchorjs-link" href="#%e9%87%8d%e5%90%afnps"></a></h1><p>[root@caizhenwei ~]# /usr/bin/nps stop
-[root@caizhenwei ~]# /usr/bin/nps start</p>
-<p>2、进入nps管理后台，添加一条P2P转发记录</p>
+p2p_port=&lt;默认使用6000端口，可自行配置&gt;
+
+#重启nps
+[root@caizhenwei ~]# /usr/bin/nps stop 
+[root@caizhenwei ~]# /usr/bin/nps start
+</code></pre><p>2、进入nps管理后台，添加一条P2P转发记录</p>
 <p>输入需要连接的客户端id</p>
 <p>内网目标输入127.0.0.1:3389（这里是指访问客户端id为9的3389端口）</p>
 <p>唯一验证密钥：作为目标端的身份标识。如果有多条p2p记录，请保证唯一验证密钥不要重复。</p>

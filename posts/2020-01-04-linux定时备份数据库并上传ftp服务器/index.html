@@ -14,33 +14,15 @@
   <title>Linux定时备份数据库并上传FTP服务器 | 蔡振威的博客</title>
 
   
-  <meta name="description" content="一、编写备份脚本#!/usr/bin/bash
-date=`date &#43;%Y-%m-%d` #该变量用于备份文件命名 ftp_user=test ftp_pwd=&lsquo;123456&rsquo; ftp_ip=172.16.10.10
-file_name=wp_$date.sql #数据库备份文件名 tar_file_name=wp_$date.tar.gzip #打包压缩后文件名
-mysqldump -utest -p123456 &ndash;single-transaction &ndash;triggers &ndash;routines wordpress &gt; $file_name #备份数据库 tar -czvf $tar_file_name $file_name &ndash;remove-files #打包压缩备份文件，并删除源文件
-#由于FTP服务器不支持ssl，所以要关闭ssl，否则连接后会卡在“making data connection” lftp -e &ldquo;set ftp:ssl-allow off;&rdquo; $ftp_user:$ftp_pwd@$ftp_ip &laquo;EOF cd Backup put ./$tar_file_name bye EOF
-二、配置定时任务[root@server]# systemctl status crond #查看计划任务服务是否正常运行
-[root@server]# crontab -e #编辑定时任务 0 1 * * * /bin/bash /task/backup.sh # 每天1点整执行备份脚本">
+  <meta name="description" content="一、编写备份脚本#!/usr/bin/bash date=`date &#43;%Y-%m-%d` #该变量用于备份文件命名 ftp_user=test ftp_pwd=&#39;123456&#39; ftp_ip=172.16.10.10 file_name=wp_$date.sql #数据库备份文件名 tar_file_name=wp_$date.tar.gzip #打包压缩后文件名 mysqldump -utest -p123456 --single-transaction --triggers --routines wordpress &gt; $file_name #备份数据库 tar -czvf $tar_file_name $file_name --remove-files #打包压缩备份文件，并删除源文件 #由于FTP服务器不支持ssl，所以要关闭ssl，否则连接后会卡在“making data connection” lftp -e &#34;set ftp:ssl-allow off;&#34; $ftp_user:$ftp_pwd@$ftp_ip &lt;&lt;EOF cd Backup put ./$tar_file_name bye EOF 二、配置定时任务[root@server]# systemctl status crond #查看计划任务服务是否正常运行 [root@server]# crontab -e #编辑定时任务 0 1 * * * /bin/bash /task/backup.sh # 每天1点整执行备份脚本 ">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux定时备份数据库并上传FTP服务器"/>
-<meta name="twitter:description" content="一、编写备份脚本#!/usr/bin/bash
-date=`date &#43;%Y-%m-%d` #该变量用于备份文件命名 ftp_user=test ftp_pwd=&lsquo;123456&rsquo; ftp_ip=172.16.10.10
-file_name=wp_$date.sql #数据库备份文件名 tar_file_name=wp_$date.tar.gzip #打包压缩后文件名
-mysqldump -utest -p123456 &ndash;single-transaction &ndash;triggers &ndash;routines wordpress &gt; $file_name #备份数据库 tar -czvf $tar_file_name $file_name &ndash;remove-files #打包压缩备份文件，并删除源文件
-#由于FTP服务器不支持ssl，所以要关闭ssl，否则连接后会卡在“making data connection” lftp -e &ldquo;set ftp:ssl-allow off;&rdquo; $ftp_user:$ftp_pwd@$ftp_ip &laquo;EOF cd Backup put ./$tar_file_name bye EOF
-二、配置定时任务[root@server]# systemctl status crond #查看计划任务服务是否正常运行
-[root@server]# crontab -e #编辑定时任务 0 1 * * * /bin/bash /task/backup.sh # 每天1点整执行备份脚本"/>
+<meta name="twitter:description" content="一、编写备份脚本#!/usr/bin/bash date=`date &#43;%Y-%m-%d` #该变量用于备份文件命名 ftp_user=test ftp_pwd=&#39;123456&#39; ftp_ip=172.16.10.10 file_name=wp_$date.sql #数据库备份文件名 tar_file_name=wp_$date.tar.gzip #打包压缩后文件名 mysqldump -utest -p123456 --single-transaction --triggers --routines wordpress &gt; $file_name #备份数据库 tar -czvf $tar_file_name $file_name --remove-files #打包压缩备份文件，并删除源文件 #由于FTP服务器不支持ssl，所以要关闭ssl，否则连接后会卡在“making data connection” lftp -e &#34;set ftp:ssl-allow off;&#34; $ftp_user:$ftp_pwd@$ftp_ip &lt;&lt;EOF cd Backup put ./$tar_file_name bye EOF 二、配置定时任务[root@server]# systemctl status crond #查看计划任务服务是否正常运行 [root@server]# crontab -e #编辑定时任务 0 1 * * * /bin/bash /task/backup.sh # 每天1点整执行备份脚本 "/>
 
   <meta property="og:title" content="Linux定时备份数据库并上传FTP服务器" />
-<meta property="og:description" content="一、编写备份脚本#!/usr/bin/bash
-date=`date &#43;%Y-%m-%d` #该变量用于备份文件命名 ftp_user=test ftp_pwd=&lsquo;123456&rsquo; ftp_ip=172.16.10.10
-file_name=wp_$date.sql #数据库备份文件名 tar_file_name=wp_$date.tar.gzip #打包压缩后文件名
-mysqldump -utest -p123456 &ndash;single-transaction &ndash;triggers &ndash;routines wordpress &gt; $file_name #备份数据库 tar -czvf $tar_file_name $file_name &ndash;remove-files #打包压缩备份文件，并删除源文件
-#由于FTP服务器不支持ssl，所以要关闭ssl，否则连接后会卡在“making data connection” lftp -e &ldquo;set ftp:ssl-allow off;&rdquo; $ftp_user:$ftp_pwd@$ftp_ip &laquo;EOF cd Backup put ./$tar_file_name bye EOF
-二、配置定时任务[root@server]# systemctl status crond #查看计划任务服务是否正常运行
-[root@server]# crontab -e #编辑定时任务 0 1 * * * /bin/bash /task/backup.sh # 每天1点整执行备份脚本" />
+<meta property="og:description" content="一、编写备份脚本#!/usr/bin/bash date=`date &#43;%Y-%m-%d` #该变量用于备份文件命名 ftp_user=test ftp_pwd=&#39;123456&#39; ftp_ip=172.16.10.10 file_name=wp_$date.sql #数据库备份文件名 tar_file_name=wp_$date.tar.gzip #打包压缩后文件名 mysqldump -utest -p123456 --single-transaction --triggers --routines wordpress &gt; $file_name #备份数据库 tar -czvf $tar_file_name $file_name --remove-files #打包压缩备份文件，并删除源文件 #由于FTP服务器不支持ssl，所以要关闭ssl，否则连接后会卡在“making data connection” lftp -e &#34;set ftp:ssl-allow off;&#34; $ftp_user:$ftp_pwd@$ftp_ip &lt;&lt;EOF cd Backup put ./$tar_file_name bye EOF 二、配置定时任务[root@server]# systemctl status crond #查看计划任务服务是否正常运行 [root@server]# crontab -e #编辑定时任务 0 1 * * * /bin/bash /task/backup.sh # 每天1点整执行备份脚本 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-04T00:00:00+00:00" />
@@ -229,26 +211,30 @@ mysqldump -utest -p123456 &ndash;single-transaction &ndash;triggers &ndash;routi
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="一编写备份脚本">一、编写备份脚本<a class="anchorjs-link" href="#%e4%b8%80%e7%bc%96%e5%86%99%e5%a4%87%e4%bb%bd%e8%84%9a%e6%9c%ac"></a></h2><p>#!/usr/bin/bash</p>
-<p>date=`date +%Y-%m-%d`  #该变量用于备份文件命名
+        <h3 id="一编写备份脚本">一、编写备份脚本<a class="anchorjs-link" href="#%e4%b8%80%e7%bc%96%e5%86%99%e5%a4%87%e4%bb%bd%e8%84%9a%e6%9c%ac"></a></h3><pre tabindex="0"><code>#!/usr/bin/bash
+ 
+date=`date +%Y-%m-%d`  #该变量用于备份文件命名
 ftp_user=test
-ftp_pwd=&lsquo;123456&rsquo;
-ftp_ip=172.16.10.10</p>
-<p>file_name=wp_$date.sql  #数据库备份文件名
-tar_file_name=wp_$date.tar.gzip  #打包压缩后文件名</p>
-<p>mysqldump -utest -p123456 &ndash;single-transaction &ndash;triggers &ndash;routines wordpress &gt; $file_name  #备份数据库
-tar -czvf $tar_file_name $file_name &ndash;remove-files  #打包压缩备份文件，并删除源文件</p>
-<p>#由于FTP服务器不支持ssl，所以要关闭ssl，否则连接后会卡在“making data connection”
-lftp -e &ldquo;set ftp:ssl-allow off;&rdquo; $ftp_user:$ftp_pwd@$ftp_ip &laquo;EOF
+ftp_pwd=&#39;123456&#39;
+ftp_ip=172.16.10.10
+ 
+file_name=wp_$date.sql  #数据库备份文件名
+tar_file_name=wp_$date.tar.gzip  #打包压缩后文件名
+ 
+mysqldump -utest -p123456 --single-transaction --triggers --routines wordpress &gt; $file_name  #备份数据库
+tar -czvf $tar_file_name $file_name --remove-files  #打包压缩备份文件，并删除源文件
+ 
+#由于FTP服务器不支持ssl，所以要关闭ssl，否则连接后会卡在“making data connection”
+lftp -e &#34;set ftp:ssl-allow off;&#34; $ftp_user:$ftp_pwd@$ftp_ip &lt;&lt;EOF
 cd Backup
 put ./$tar_file_name
 bye
-EOF</p>
-<p> </p>
-<h2 id="二配置定时任务">二、配置定时任务<a class="anchorjs-link" href="#%e4%ba%8c%e9%85%8d%e7%bd%ae%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1"></a></h2><p>[root@server]# systemctl status crond  #查看计划任务服务是否正常运行</p>
-<p>[root@server]# crontab -e  #编辑定时任务
-0 1 * * * /bin/bash /task/backup.sh   # 每天1点整执行备份脚本</p>
-
+EOF
+</code></pre><h3 id="二配置定时任务">二、配置定时任务<a class="anchorjs-link" href="#%e4%ba%8c%e9%85%8d%e7%bd%ae%e5%ae%9a%e6%97%b6%e4%bb%bb%e5%8a%a1"></a></h3><pre tabindex="0"><code>[root@server]# systemctl status crond  #查看计划任务服务是否正常运行
+ 
+[root@server]# crontab -e  #编辑定时任务
+0 1 * * * /bin/bash /task/backup.sh   # 每天1点整执行备份脚本
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

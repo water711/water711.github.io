@@ -14,39 +14,15 @@
   <title>Centos7 部署Apache服务 | 蔡振威的博客</title>
 
   
-  <meta name="description" content="1、安装Apache#安装 [root@web ~]# yum -y install httpd
-#防火墙开放http服务 [root@web ~]# firewall-cmd &ndash;permanent &ndash;add-service=http [root@web ~]# firewall-cmd &ndash;reload
-#新建测试页面 [root@web ~]# echo &ldquo;web page&rdquo; &gt; /var/www/html/index.html
-#启动服务 [root@web ~]# systemctl start httpd [root@web ~]# systemctl enable httpd
-#测试 使用浏览器访问web主机IP
-2、修改网站目录#新建网站目录及页面 [root@web ~]# mkdir /web [root@web ~]# echo &ldquo;new web page&rdquo; &gt; /web/index.html
-#修改主配置文件 [root@web ~]# vim /etc/httpd/conf/httpd.conf //修改以下两处位置 DocumentRoot &ldquo;/web&rdquo; &lt;Directory &ldquo;/web&rdquo;&gt;
-#重启httpd服务 [root@web ~]# systemctl restart httpd
-#关闭selinux [root@web ~]# setenforce 0">
+  <meta name="description" content="1、安装Apache#安装 [root@web ~]# yum -y install httpd #防火墙开放http服务 [root@web ~]# firewall-cmd --permanent --add-service=http [root@web ~]# firewall-cmd --reload #新建测试页面 [root@web ~]# echo &#34;web page&#34; &gt; /var/www/html/index.html #启动服务 [root@web ~]# systemctl start httpd [root@web ~]# systemctl enable httpd #测试 使用浏览器访问web主机IP 2、修改网站目录#新建网站目录及页面 [root@web ~]# mkdir /web [root@web ~]# echo &#34;new web page&#34; &gt; /web/index.html #修改主配置文件 [root@web ~]# vim /etc/httpd/conf/httpd.conf //修改以下两处位置 DocumentRoot &#34;/web&#34; &lt;Directory &#34;/web&#34;&gt; #重启httpd服务 [root@web ~]# systemctl restart httpd #关闭selinux [root@web ~]# setenforce 0 #测试 使用浏览器访问web主机IP 3、新建虚拟主机#新建虚拟主机配置文件，注意文件一定要是.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Centos7 部署Apache服务"/>
-<meta name="twitter:description" content="1、安装Apache#安装 [root@web ~]# yum -y install httpd
-#防火墙开放http服务 [root@web ~]# firewall-cmd &ndash;permanent &ndash;add-service=http [root@web ~]# firewall-cmd &ndash;reload
-#新建测试页面 [root@web ~]# echo &ldquo;web page&rdquo; &gt; /var/www/html/index.html
-#启动服务 [root@web ~]# systemctl start httpd [root@web ~]# systemctl enable httpd
-#测试 使用浏览器访问web主机IP
-2、修改网站目录#新建网站目录及页面 [root@web ~]# mkdir /web [root@web ~]# echo &ldquo;new web page&rdquo; &gt; /web/index.html
-#修改主配置文件 [root@web ~]# vim /etc/httpd/conf/httpd.conf //修改以下两处位置 DocumentRoot &ldquo;/web&rdquo; &lt;Directory &ldquo;/web&rdquo;&gt;
-#重启httpd服务 [root@web ~]# systemctl restart httpd
-#关闭selinux [root@web ~]# setenforce 0"/>
+<meta name="twitter:description" content="1、安装Apache#安装 [root@web ~]# yum -y install httpd #防火墙开放http服务 [root@web ~]# firewall-cmd --permanent --add-service=http [root@web ~]# firewall-cmd --reload #新建测试页面 [root@web ~]# echo &#34;web page&#34; &gt; /var/www/html/index.html #启动服务 [root@web ~]# systemctl start httpd [root@web ~]# systemctl enable httpd #测试 使用浏览器访问web主机IP 2、修改网站目录#新建网站目录及页面 [root@web ~]# mkdir /web [root@web ~]# echo &#34;new web page&#34; &gt; /web/index.html #修改主配置文件 [root@web ~]# vim /etc/httpd/conf/httpd.conf //修改以下两处位置 DocumentRoot &#34;/web&#34; &lt;Directory &#34;/web&#34;&gt; #重启httpd服务 [root@web ~]# systemctl restart httpd #关闭selinux [root@web ~]# setenforce 0 #测试 使用浏览器访问web主机IP 3、新建虚拟主机#新建虚拟主机配置文件，注意文件一定要是."/>
 
   <meta property="og:title" content="Centos7 部署Apache服务" />
-<meta property="og:description" content="1、安装Apache#安装 [root@web ~]# yum -y install httpd
-#防火墙开放http服务 [root@web ~]# firewall-cmd &ndash;permanent &ndash;add-service=http [root@web ~]# firewall-cmd &ndash;reload
-#新建测试页面 [root@web ~]# echo &ldquo;web page&rdquo; &gt; /var/www/html/index.html
-#启动服务 [root@web ~]# systemctl start httpd [root@web ~]# systemctl enable httpd
-#测试 使用浏览器访问web主机IP
-2、修改网站目录#新建网站目录及页面 [root@web ~]# mkdir /web [root@web ~]# echo &ldquo;new web page&rdquo; &gt; /web/index.html
-#修改主配置文件 [root@web ~]# vim /etc/httpd/conf/httpd.conf //修改以下两处位置 DocumentRoot &ldquo;/web&rdquo; &lt;Directory &ldquo;/web&rdquo;&gt;
-#重启httpd服务 [root@web ~]# systemctl restart httpd
-#关闭selinux [root@web ~]# setenforce 0" />
+<meta property="og:description" content="1、安装Apache#安装 [root@web ~]# yum -y install httpd #防火墙开放http服务 [root@web ~]# firewall-cmd --permanent --add-service=http [root@web ~]# firewall-cmd --reload #新建测试页面 [root@web ~]# echo &#34;web page&#34; &gt; /var/www/html/index.html #启动服务 [root@web ~]# systemctl start httpd [root@web ~]# systemctl enable httpd #测试 使用浏览器访问web主机IP 2、修改网站目录#新建网站目录及页面 [root@web ~]# mkdir /web [root@web ~]# echo &#34;new web page&#34; &gt; /web/index.html #修改主配置文件 [root@web ~]# vim /etc/httpd/conf/httpd.conf //修改以下两处位置 DocumentRoot &#34;/web&#34; &lt;Directory &#34;/web&#34;&gt; #重启httpd服务 [root@web ~]# systemctl restart httpd #关闭selinux [root@web ~]# setenforce 0 #测试 使用浏览器访问web主机IP 3、新建虚拟主机#新建虚拟主机配置文件，注意文件一定要是." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-05T00:00:00+00:00" />
@@ -235,60 +211,72 @@
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="1安装apache">1、安装Apache<a class="anchorjs-link" href="#1%e5%ae%89%e8%a3%85apache"></a></h2><p>#安装
-[root@web ~]# yum -y install httpd</p>
-<p>#防火墙开放http服务
-[root@web ~]# firewall-cmd &ndash;permanent &ndash;add-service=http
-[root@web ~]# firewall-cmd &ndash;reload</p>
-<p>#新建测试页面
-[root@web ~]# echo &ldquo;web page&rdquo; &gt; /var/www/html/index.html</p>
-<p>#启动服务
-[root@web ~]# systemctl start httpd
-[root@web ~]# systemctl enable httpd</p>
-<p>#测试
-使用浏览器访问web主机IP</p>
-<h2 id="2修改网站目录">2、修改网站目录<a class="anchorjs-link" href="#2%e4%bf%ae%e6%94%b9%e7%bd%91%e7%ab%99%e7%9b%ae%e5%bd%95"></a></h2><p>#新建网站目录及页面
-[root@web ~]# mkdir /web
-[root@web ~]# echo &ldquo;new web page&rdquo; &gt; /web/index.html</p>
-<p>#修改主配置文件
-[root@web ~]# vim /etc/httpd/conf/httpd.conf
-//修改以下两处位置
-DocumentRoot &ldquo;/web&rdquo; <br>
-&lt;Directory &ldquo;/web&rdquo;&gt;</p>
-<p>#重启httpd服务
-[root@web ~]# systemctl restart httpd</p>
-<p>#关闭selinux
-[root@web ~]# setenforce 0</p>
-<p>#测试
-使用浏览器访问web主机IP</p>
-<h2 id="3新建虚拟主机">3、新建虚拟主机<a class="anchorjs-link" href="#3%e6%96%b0%e5%bb%ba%e8%99%9a%e6%8b%9f%e4%b8%bb%e6%9c%ba"></a></h2><p>#新建虚拟主机配置文件，注意文件一定要是.conf的后缀
-[root@web ~]# vim /etc/httpd/conf.d/test1.com.conf
-&lt;VirtualHost *:80&gt;
-ServerName <a href="https://www.test1.com" target="_blank">www.test1.com</a>
-DocumentRoot /web/test1/
-</VirtualHost></p>
-<p>[root@web ~]# vim /etc/httpd/conf.d/test2.com.conf
-Listen 81  //修改虚拟主机端口为81
-&lt;VirtualHost *:81&gt;
-ServerName <a href="https://www.test2.com" target="_blank">www.test2.com</a>
-DocumentRoot /web/test2
-</VirtualHost></p>
-<p>#新建网站目录及文件
-[root@web ~]# mkdir /web/test1
-[root@web ~]# echo &ldquo;test1 page&rdquo; &gt; /web/test1/index.html
-[root@web ~]# mkdir /web/test2
-[root@web ~]# echo &ldquo;test2 page&rdquo; &gt; /web/test2/index.html
-#防火墙开放端口
-[root@web ~]# firewall-cmd &ndash;permanent &ndash;add-port=81/tcp
-[root@web ~]# firewall-cmd &ndash;reload</p>
-<p>#重启httpd服务
-[root@web ~]# systemctl restart httpd</p>
-<p>#测试
-修改客户端电脑host文件：
-192.168.1.156 <a href="https://www.test1.com" target="_blank">www.test1.com</a>
-192.168.1.156 <a href="https://www.test2.com" target="_blank">www.test2.com</a>
-浏览器访问www.test1.com和www.test2.com:81（如果无法正常访问，检查网站目录权限，apache用户是否有读权限）</p>
+        <h3 id="1安装apache">1、安装Apache<a class="anchorjs-link" href="#1%e5%ae%89%e8%a3%85apache"></a></h3><pre tabindex="0"><code>#安装
+[root@web ~]# yum -y install httpd
 
+#防火墙开放http服务
+[root@web ~]# firewall-cmd --permanent --add-service=http
+[root@web ~]# firewall-cmd --reload
+
+#新建测试页面
+[root@web ~]# echo &#34;web page&#34; &gt; /var/www/html/index.html
+
+#启动服务
+[root@web ~]# systemctl start httpd
+[root@web ~]# systemctl enable httpd
+
+#测试
+使用浏览器访问web主机IP
+</code></pre><h3 id="2修改网站目录">2、修改网站目录<a class="anchorjs-link" href="#2%e4%bf%ae%e6%94%b9%e7%bd%91%e7%ab%99%e7%9b%ae%e5%bd%95"></a></h3><pre tabindex="0"><code>#新建网站目录及页面
+[root@web ~]# mkdir /web
+[root@web ~]# echo &#34;new web page&#34; &gt; /web/index.html
+
+#修改主配置文件
+[root@web ~]# vim /etc/httpd/conf/httpd.conf
+    //修改以下两处位置
+    DocumentRoot &#34;/web&#34;    
+    &lt;Directory &#34;/web&#34;&gt; 
+
+#重启httpd服务
+[root@web ~]# systemctl restart httpd
+
+#关闭selinux
+[root@web ~]# setenforce 0
+
+#测试
+使用浏览器访问web主机IP
+</code></pre><h3 id="3新建虚拟主机">3、新建虚拟主机<a class="anchorjs-link" href="#3%e6%96%b0%e5%bb%ba%e8%99%9a%e6%8b%9f%e4%b8%bb%e6%9c%ba"></a></h3><pre tabindex="0"><code>#新建虚拟主机配置文件，注意文件一定要是.conf的后缀
+[root@web ~]# vim /etc/httpd/conf.d/test1.com.conf
+  &lt;VirtualHost \*:80&gt;
+        ServerName www.test1.com
+        DocumentRoot /web/test1/
+  &lt;/VirtualHost&gt;
+
+[root@web ~]# vim /etc/httpd/conf.d/test2.com.conf
+  Listen 81  //修改虚拟主机端口为81
+  &lt;VirtualHost \*:81&gt;
+        ServerName www.test2.com
+        DocumentRoot /web/test2
+  &lt;/VirtualHost&gt;
+
+#新建网站目录及文件
+[root@web ~]# mkdir /web/test1
+[root@web ~]# echo &#34;test1 page&#34; &gt; /web/test1/index.html
+[root@web ~]# mkdir /web/test2
+[root@web ~]# echo &#34;test2 page&#34; &gt; /web/test2/index.html
+#防火墙开放端口
+[root@web ~]# firewall-cmd --permanent --add-port=81/tcp
+[root@web ~]# firewall-cmd --reload
+
+#重启httpd服务
+[root@web ~]# systemctl restart httpd
+
+#测试
+修改客户端电脑host文件：
+192.168.1.156 www.test1.com
+192.168.1.156 www.test2.com
+浏览器访问www.test1.com和www.test2.com:81（如果无法正常访问，检查网站目录权限，apache用户是否有读权限）
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">
@@ -302,7 +290,7 @@ DocumentRoot /web/test2
           
           
           <li class="next">
-            <a href="/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pcnull/" data-toggle="tooltip" data-placement="top" title="跨公网远程网络唤醒PC">
+            <a href="/posts/2020-06-06-%E8%B7%A8%E5%85%AC%E7%BD%91%E8%BF%9C%E7%A8%8B%E7%BD%91%E7%BB%9C%E5%94%A4%E9%86%92pc/" data-toggle="tooltip" data-placement="top" title="跨公网远程网络唤醒PC">
               Next<br>
               <span>跨公网远程网络唤醒PC</span>
             </a>

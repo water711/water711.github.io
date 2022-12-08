@@ -211,9 +211,8 @@
       
       <div class="post-content-preview">
         
-        在做图形渲染的时候，想了解GPU的使用情况，但是win7的任务管理器没有GPU的信息，还好NVIDIA提供了相关的命令
-进入cmd命令行
-cd C:\Program Files\NVIDIA Corporation\NVSMI #如果该目录加入了环境变量，可忽略 nvidia-smi.exe -h 查看帮助 nvidia-smi.exe -l 3 查看GPU …
+        在做图形渲染的时候，想了解GPU的使用情况，但是win7的任务管理器没有GPU的信息，还好NVIDIA提供了相关的命令,先进入cmd命令行
+cd C:\\Program Files\\NVIDIA Corporation\\NVSMI #如果该目录加入了环境变量，可忽略 nvidia-smi.exe -h #查看帮助 nvidia-smi.exe -l 3 …
          
       </div>
   </a>
@@ -229,11 +228,8 @@ cd C:\Program Files\NVIDIA Corporation\NVSMI #如果该目录加入了环境变�
       
       <div class="post-content-preview">
         
-        一、安装安装 pip3 install jupyter notebook
-运行 jupyter notebook
-浏览器访问 http://localhost:8888/undefined/tree
-二、配置远程访问1、生成配置文件
-jupyter notebook &amp;ndash;generate-config #运行后输出：Writing default …
+        一、安装#安装 pip3 install jupyter notebook #运行 jupyter notebook #浏览器访问 http://localhost:8888/undefined/tree 二、配置远程访问1、生成配置文件
+jupyter notebook --generate-config #运行后输出：Writing default …
          
       </div>
   </a>
@@ -249,10 +245,10 @@ jupyter notebook &amp;ndash;generate-config #运行后输出：Writing default �
       
       <div class="post-content-preview">
         
-        1、安装 x11vncapt install x11vnc -y
-2、生成密码文件x11vnc -storepasswd 123456 /etc/x11vnc.pass
-参数说明： -storepasswd：指定一个密码 /etc/x11vnc.pass：保存的路径（任意）
-3、新建systemd 配置_文件_vim …
+        1、安装 x11vncapt install x11vnc -y 2、生成密码文件x11vnc -storepasswd 123456 /etc/x11vnc.pass 参数说明：
+-storepasswd：指定一个密码
+/etc/x11vnc.pass：保存的路径（任意）
+3、新建systemd配置文件vim …
          
       </div>
   </a>
@@ -271,8 +267,7 @@ jupyter notebook &amp;ndash;generate-config #运行后输出：Writing default �
         一、安装pyaudio软件包1、下载whl文件
 https://github.com/intxcc/pyaudio_portaudio/releases
 2、安装pyaudio
-pip install PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
-二、代码文件import wave from pyaudio import …
+pip install PyAudio-0.2.11-cp37-cp37m-win\_amd64.whl 二、代码文件import wave from pyaudio import …
          
       </div>
   </a>
@@ -289,10 +284,8 @@ pip install PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
       <div class="post-content-preview">
         
         一、使用docker安装docker hub仓库地址：https://hub.docker.com/r/linuxserver/transmission
-1、下载镜像
-docker pull linuxserver/transmission
-2、运行容器
-docker run -d \ &amp;ndash;name=transmission \ -e …
+1、下载镜像docker pull linuxserver/transmission
+2、运行容器docker run -d \ --name=transmission \ -e PUID=1000 \ …
          
       </div>
   </a>
@@ -310,7 +303,7 @@ docker run -d \ &amp;ndash;name=transmission \ -e …
         
         使用 Docker 镜像快速搭建 IPsec VPN 服务器。支持 IPsec/L2TP，Cisco IPsec 和 IKEv2 协议。
 作者github地址：https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-zh.md
-一、下载镜像并运行docker run \ …
+一、下载镜像并运行docker run \\ …
          
       </div>
   </a>
@@ -379,7 +372,7 @@ mkdir clash #创建目录 cd clash #进入目录 wget http://xxxxxxclash-linux-a
       
       <div class="post-content-preview">
         
-        一、创建TG机器人1、打开botfather聊天窗口
+         一、创建TG机器人1、打开botfather聊天窗口
 手机端：打开TG，点击底部Chats，上方搜索 @botfather ，进行聊天窗口，点击Start
 电脑端：https://telegram.me/BotFather
 2、发送/newbot命令，创建一个机器人

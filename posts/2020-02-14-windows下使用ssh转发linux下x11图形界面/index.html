@@ -23,10 +23,9 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
 三、配置XShell转发Linux图形界面右键点击会话属性
 选择SSH-&gt;隧道，勾选“转发X11连接到（X），选择“X DISPLAY(D)”，输入localhost:0.0 （0.0为Windows右下角Xming后面数字）
 使用XShell连接Centos7，运行带有图形化界面的软件
-[root@client ~]# firefox
-四、配置Putty转发Linux图形界面打开Putty，点击Connection-&gt;SSH-&gt;X11，勾选“启用X11转发”,X display location输入localhost:0.0 （0.0为Windows右下角Xming后面数字）
+[root@client ~]# firefox 四、配置Putty转发Linux图形界面打开Putty，点击Connection-&gt;SSH-&gt;X11，勾选“启用X11转发”,X display location输入localhost:0.0 （0.0为Windows右下角Xming后面数字）
 使用XShell连p接Centos7，运行带有图形化界面的软件
-[root@client ~]# firefox">
+[root@client ~]# firefox ">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
@@ -40,10 +39,9 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
 三、配置XShell转发Linux图形界面右键点击会话属性
 选择SSH-&gt;隧道，勾选“转发X11连接到（X），选择“X DISPLAY(D)”，输入localhost:0.0 （0.0为Windows右下角Xming后面数字）
 使用XShell连接Centos7，运行带有图形化界面的软件
-[root@client ~]# firefox
-四、配置Putty转发Linux图形界面打开Putty，点击Connection-&gt;SSH-&gt;X11，勾选“启用X11转发”,X display location输入localhost:0.0 （0.0为Windows右下角Xming后面数字）
+[root@client ~]# firefox 四、配置Putty转发Linux图形界面打开Putty，点击Connection-&gt;SSH-&gt;X11，勾选“启用X11转发”,X display location输入localhost:0.0 （0.0为Windows右下角Xming后面数字）
 使用XShell连p接Centos7，运行带有图形化界面的软件
-[root@client ~]# firefox"/>
+[root@client ~]# firefox "/>
 
   <meta property="og:title" content="Windows下使用ssh转发Linux下x11图形界面" />
 <meta property="og:description" content="准备环境Linux系统：Centos7
@@ -55,10 +53,9 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
 三、配置XShell转发Linux图形界面右键点击会话属性
 选择SSH-&gt;隧道，勾选“转发X11连接到（X），选择“X DISPLAY(D)”，输入localhost:0.0 （0.0为Windows右下角Xming后面数字）
 使用XShell连接Centos7，运行带有图形化界面的软件
-[root@client ~]# firefox
-四、配置Putty转发Linux图形界面打开Putty，点击Connection-&gt;SSH-&gt;X11，勾选“启用X11转发”,X display location输入localhost:0.0 （0.0为Windows右下角Xming后面数字）
+[root@client ~]# firefox 四、配置Putty转发Linux图形界面打开Putty，点击Connection-&gt;SSH-&gt;X11，勾选“启用X11转发”,X display location输入localhost:0.0 （0.0为Windows右下角Xming后面数字）
 使用XShell连p接Centos7，运行带有图形化界面的软件
-[root@client ~]# firefox" />
+[root@client ~]# firefox " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-02-14T00:00:00+00:00" />
@@ -247,20 +244,19 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="准备环境">准备环境<a class="anchorjs-link" href="#%e5%87%86%e5%a4%87%e7%8e%af%e5%a2%83"></a></h2><p>Linux系统：Centos7</p>
+        <h3 id="准备环境">准备环境<a class="anchorjs-link" href="#%e5%87%86%e5%a4%87%e7%8e%af%e5%a2%83"></a></h3><p>Linux系统：Centos7</p>
 <p>SSH客户端工具：Putty和XShell</p>
 <p>Xming下载地址： <a href="https://sourceforge.net/projects/xming/" target="_blank">https://sourceforge.net/projects/xming/</a></p>
 <p>X Window System介绍：<a href="http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php" target="_blank">http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php</a></p>
-<p> </p>
-<h2 id="一windows下安装xming软件x-server">一、Windows下安装Xming软件（X Server）<a class="anchorjs-link" href="#%e4%b8%80windows%e4%b8%8b%e5%ae%89%e8%a3%85xming%e8%bd%af%e4%bb%b6x-server"></a></h2><p>安装运行后，在右下角系统托盘下查看并记录下Xming Server冒号后面数字</p>
+<h3 id="一windows下安装xming软件x-server">一、Windows下安装Xming软件（X Server）<a class="anchorjs-link" href="#%e4%b8%80windows%e4%b8%8b%e5%ae%89%e8%a3%85xming%e8%bd%af%e4%bb%b6x-server"></a></h3><p>安装运行后，在右下角系统托盘下查看并记录下Xming Server冒号后面数字</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//a23eff3c4579a6ea4324568ebad1c337.png" data-action="zoom" alt=""  class="lazyload">
   </a>
   
 </figure></p>
-<h2 id="二centos7安装x11x-client">二、CentOS7安装X11（X Client）<a class="anchorjs-link" href="#%e4%ba%8ccentos7%e5%ae%89%e8%a3%85x11x-client"></a></h2><p>[root@client ~]# yum -y install xorg-x11-xauth</p>
-<h2 id="三配置xshell转发linux图形界面">三、配置XShell转发Linux图形界面<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%aexshell%e8%bd%ac%e5%8f%91linux%e5%9b%be%e5%bd%a2%e7%95%8c%e9%9d%a2"></a></h2><p>右键点击会话属性</p>
+<h3 id="二centos7安装x11x-client">二、CentOS7安装X11（X Client）<a class="anchorjs-link" href="#%e4%ba%8ccentos7%e5%ae%89%e8%a3%85x11x-client"></a></h3><p>[root@client ~]# yum -y install xorg-x11-xauth</p>
+<h3 id="三配置xshell转发linux图形界面">三、配置XShell转发Linux图形界面<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%aexshell%e8%bd%ac%e5%8f%91linux%e5%9b%be%e5%bd%a2%e7%95%8c%e9%9d%a2"></a></h3><p>右键点击会话属性</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//f0b9a62404df168b6b8db27c2ad9d100.png" data-action="zoom" alt=""  class="lazyload">
@@ -275,14 +271,14 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
   
 </figure></p>
 <p>使用XShell连接Centos7，运行带有图形化界面的软件</p>
-<p>[root@client ~]# firefox</p>
-<p><figure>
+<pre tabindex="0"><code>[root@client ~]# firefox
+</code></pre><p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//c91b8e0f2540c837a89202b9ed5c5826.png" data-action="zoom" alt=""  class="lazyload">
   </a>
   
 </figure></p>
-<h2 id="四配置putty转发linux图形界面">四、配置Putty转发Linux图形界面<a class="anchorjs-link" href="#%e5%9b%9b%e9%85%8d%e7%bd%aeputty%e8%bd%ac%e5%8f%91linux%e5%9b%be%e5%bd%a2%e7%95%8c%e9%9d%a2"></a></h2><p>打开Putty，点击Connection-&gt;SSH-&gt;X11，勾选“启用X11转发”,X display location输入localhost:0.0 （0.0为Windows右下角Xming后面数字）</p>
+<h3 id="四配置putty转发linux图形界面">四、配置Putty转发Linux图形界面<a class="anchorjs-link" href="#%e5%9b%9b%e9%85%8d%e7%bd%aeputty%e8%bd%ac%e5%8f%91linux%e5%9b%be%e5%bd%a2%e7%95%8c%e9%9d%a2"></a></h3><p>打开Putty，点击Connection-&gt;SSH-&gt;X11，勾选“启用X11转发”,X display location输入localhost:0.0 （0.0为Windows右下角Xming后面数字）</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//fb5a9cf9ce75aad8891184a447cb7cec.png" data-action="zoom" alt=""  class="lazyload">
@@ -290,8 +286,8 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
   
 </figure></p>
 <p>使用XShell连p接Centos7，运行带有图形化界面的软件</p>
-<p>[root@client ~]# firefox</p>
-
+<pre tabindex="0"><code>[root@client ~]# firefox
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

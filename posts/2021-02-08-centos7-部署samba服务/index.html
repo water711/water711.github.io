@@ -14,51 +14,24 @@
   <title>Centos7 部署Samba服务 | 蔡振威的博客</title>
 
   
-  <meta name="description" content="1、安装软件包yum -y install samba
-2、建立访问用户useradd test smbpasswd -a test
-3、配置samba共享[data] path = /mnt/data write list = test
-其它参数
-valid users = name #只允许该用户访问，其它用户可见但无法访问 hosts allow = 192.168.1. #只允许该网段访问 ;前面加分号为注释，等号两边要加空格
-4、启动samba服务systemctl restart smb nmb systemctl enable smb nmb
-5、配置防火墙firewall-cmd &ndash;permanent &ndash;add-service=samba firewall-cmd &ndash;permanent &ndash;add-service=samba-client firewall-cmd &ndash;permanent &ndash;add-service=mouted firewall-cmd &ndash;reload
-6、通过子配置文件，让目录只对有权限的用户可见新建子配置文件
-vim /etc/samba/test1.smb.conf[share11] path = /data/aa valid users = test1
-新建子配置文件
-vim /etc/samba/test2.smb.conf[share12] path = /data/aa valid users = test2
-引用子配置文件
-vim /etc/samba/smb.">
+  <meta name="description" content="1、安装软件包yum -y install samba 2、建立访问用户useradd test smbpasswd -a test 3、配置samba共享[data] path = /mnt/data write list = test 其它参数
+valid users = name #只允许该用户访问，其它用户可见但无法访问 hosts allow = 192.168.1. #只允许该网段访问 ;前面加分号为注释，等号两边要加空格 4、启动samba服务systemctl restart smb nmb systemctl enable smb nmb 5、配置防火墙firewall-cmd --permanent --add-service=samba firewall-cmd --permanent --add-service=samba-client firewall-cmd --permanent --add-service=mouted firewall-cmd --reload 6、通过子配置文件，让目录只对有权限的用户可见新建子配置文件
+vim /etc/samba/test1.smb.conf ----------------------------- [share11] path = /data/aa valid users = test1 新建子配置文件
+vim /etc/samba/test2.smb.conf ----------------------------- [share12] path = /data/aa valid users = test2 引用子配置文件">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Centos7 部署Samba服务"/>
-<meta name="twitter:description" content="1、安装软件包yum -y install samba
-2、建立访问用户useradd test smbpasswd -a test
-3、配置samba共享[data] path = /mnt/data write list = test
-其它参数
-valid users = name #只允许该用户访问，其它用户可见但无法访问 hosts allow = 192.168.1. #只允许该网段访问 ;前面加分号为注释，等号两边要加空格
-4、启动samba服务systemctl restart smb nmb systemctl enable smb nmb
-5、配置防火墙firewall-cmd &ndash;permanent &ndash;add-service=samba firewall-cmd &ndash;permanent &ndash;add-service=samba-client firewall-cmd &ndash;permanent &ndash;add-service=mouted firewall-cmd &ndash;reload
-6、通过子配置文件，让目录只对有权限的用户可见新建子配置文件
-vim /etc/samba/test1.smb.conf[share11] path = /data/aa valid users = test1
-新建子配置文件
-vim /etc/samba/test2.smb.conf[share12] path = /data/aa valid users = test2
-引用子配置文件
-vim /etc/samba/smb."/>
+<meta name="twitter:description" content="1、安装软件包yum -y install samba 2、建立访问用户useradd test smbpasswd -a test 3、配置samba共享[data] path = /mnt/data write list = test 其它参数
+valid users = name #只允许该用户访问，其它用户可见但无法访问 hosts allow = 192.168.1. #只允许该网段访问 ;前面加分号为注释，等号两边要加空格 4、启动samba服务systemctl restart smb nmb systemctl enable smb nmb 5、配置防火墙firewall-cmd --permanent --add-service=samba firewall-cmd --permanent --add-service=samba-client firewall-cmd --permanent --add-service=mouted firewall-cmd --reload 6、通过子配置文件，让目录只对有权限的用户可见新建子配置文件
+vim /etc/samba/test1.smb.conf ----------------------------- [share11] path = /data/aa valid users = test1 新建子配置文件
+vim /etc/samba/test2.smb.conf ----------------------------- [share12] path = /data/aa valid users = test2 引用子配置文件"/>
 
   <meta property="og:title" content="Centos7 部署Samba服务" />
-<meta property="og:description" content="1、安装软件包yum -y install samba
-2、建立访问用户useradd test smbpasswd -a test
-3、配置samba共享[data] path = /mnt/data write list = test
-其它参数
-valid users = name #只允许该用户访问，其它用户可见但无法访问 hosts allow = 192.168.1. #只允许该网段访问 ;前面加分号为注释，等号两边要加空格
-4、启动samba服务systemctl restart smb nmb systemctl enable smb nmb
-5、配置防火墙firewall-cmd &ndash;permanent &ndash;add-service=samba firewall-cmd &ndash;permanent &ndash;add-service=samba-client firewall-cmd &ndash;permanent &ndash;add-service=mouted firewall-cmd &ndash;reload
-6、通过子配置文件，让目录只对有权限的用户可见新建子配置文件
-vim /etc/samba/test1.smb.conf[share11] path = /data/aa valid users = test1
-新建子配置文件
-vim /etc/samba/test2.smb.conf[share12] path = /data/aa valid users = test2
-引用子配置文件
-vim /etc/samba/smb." />
+<meta property="og:description" content="1、安装软件包yum -y install samba 2、建立访问用户useradd test smbpasswd -a test 3、配置samba共享[data] path = /mnt/data write list = test 其它参数
+valid users = name #只允许该用户访问，其它用户可见但无法访问 hosts allow = 192.168.1. #只允许该网段访问 ;前面加分号为注释，等号两边要加空格 4、启动samba服务systemctl restart smb nmb systemctl enable smb nmb 5、配置防火墙firewall-cmd --permanent --add-service=samba firewall-cmd --permanent --add-service=samba-client firewall-cmd --permanent --add-service=mouted firewall-cmd --reload 6、通过子配置文件，让目录只对有权限的用户可见新建子配置文件
+vim /etc/samba/test1.smb.conf ----------------------------- [share11] path = /data/aa valid users = test1 新建子配置文件
+vim /etc/samba/test2.smb.conf ----------------------------- [share12] path = /data/aa valid users = test2 引用子配置文件" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-08T00:00:00+00:00" />
@@ -247,37 +220,41 @@ vim /etc/samba/smb." />
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="1安装软件包">1、安装软件包<a class="anchorjs-link" href="#1%e5%ae%89%e8%a3%85%e8%bd%af%e4%bb%b6%e5%8c%85"></a></h2><p>yum -y install samba</p>
-<h2 id="2建立访问用户">2、建立访问用户<a class="anchorjs-link" href="#2%e5%bb%ba%e7%ab%8b%e8%ae%bf%e9%97%ae%e7%94%a8%e6%88%b7"></a></h2><p>useradd test
-smbpasswd -a test</p>
-<h2 id="3配置samba共享">3、配置samba共享<a class="anchorjs-link" href="#3%e9%85%8d%e7%bd%aesamba%e5%85%b1%e4%ba%ab"></a></h2><p>[data]
-path = /mnt/data
-write list = test</p>
-<p>其它参数</p>
-<p>valid users = name   #只允许该用户访问，其它用户可见但无法访问
+        <h2 id="1安装软件包">1、安装软件包<a class="anchorjs-link" href="#1%e5%ae%89%e8%a3%85%e8%bd%af%e4%bb%b6%e5%8c%85"></a></h2><pre tabindex="0"><code>yum -y install samba
+</code></pre><h2 id="2建立访问用户">2、建立访问用户<a class="anchorjs-link" href="#2%e5%bb%ba%e7%ab%8b%e8%ae%bf%e9%97%ae%e7%94%a8%e6%88%b7"></a></h2><pre tabindex="0"><code>useradd test
+smbpasswd -a test
+</code></pre><h2 id="3配置samba共享">3、配置samba共享<a class="anchorjs-link" href="#3%e9%85%8d%e7%bd%aesamba%e5%85%b1%e4%ba%ab"></a></h2><pre tabindex="0"><code>[data]
+        path = /mnt/data
+        write list = test
+</code></pre><p>其它参数</p>
+<pre tabindex="0"><code>valid users = name   #只允许该用户访问，其它用户可见但无法访问
 hosts allow = 192.168.1. #只允许该网段访问
-;前面加分号为注释，等号两边要加空格</p>
-<h2 id="4启动samba服务">4、启动samba服务<a class="anchorjs-link" href="#4%e5%90%af%e5%8a%a8samba%e6%9c%8d%e5%8a%a1"></a></h2><p>systemctl restart smb nmb
-systemctl enable smb nmb</p>
-<h2 id="5配置防火墙">5、配置防火墙<a class="anchorjs-link" href="#5%e9%85%8d%e7%bd%ae%e9%98%b2%e7%81%ab%e5%a2%99"></a></h2><p>firewall-cmd &ndash;permanent &ndash;add-service=samba
-firewall-cmd &ndash;permanent &ndash;add-service=samba-client
-firewall-cmd &ndash;permanent &ndash;add-service=mouted
-firewall-cmd &ndash;reload</p>
-<h2 id="6通过子配置文件让目录只对有权限的用户可见"> 6、通过子配置文件，让目录只对有权限的用户可见<a class="anchorjs-link" href="#6%e9%80%9a%e8%bf%87%e5%ad%90%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e8%ae%a9%e7%9b%ae%e5%bd%95%e5%8f%aa%e5%af%b9%e6%9c%89%e6%9d%83%e9%99%90%e7%9a%84%e7%94%a8%e6%88%b7%e5%8f%af%e8%a7%81"></a></h2><p>新建子配置文件</p>
-<h2 id="vim-etcsambatest1smbconf">vim /etc/samba/test1.smb.conf<a class="anchorjs-link" href="#vim-etcsambatest1smbconf"></a></h2><p>[share11]
-path = /data/aa
-valid users = test1</p>
-<p>新建子配置文件</p>
-<h2 id="vim-etcsambatest2smbconf">vim /etc/samba/test2.smb.conf<a class="anchorjs-link" href="#vim-etcsambatest2smbconf"></a></h2><p>[share12]
-path = /data/aa
-valid users = test2</p>
-<p>引用子配置文件</p>
+;前面加分号为注释，等号两边要加空格
+</code></pre><h2 id="4启动samba服务">4、启动samba服务<a class="anchorjs-link" href="#4%e5%90%af%e5%8a%a8samba%e6%9c%8d%e5%8a%a1"></a></h2><pre tabindex="0"><code>systemctl restart smb nmb
+systemctl enable smb nmb
+</code></pre><h2 id="5配置防火墙">5、配置防火墙<a class="anchorjs-link" href="#5%e9%85%8d%e7%bd%ae%e9%98%b2%e7%81%ab%e5%a2%99"></a></h2><pre tabindex="0"><code>firewall-cmd --permanent --add-service=samba
+firewall-cmd --permanent --add-service=samba-client
+firewall-cmd --permanent --add-service=mouted
+firewall-cmd --reload
+</code></pre><h2 id="6通过子配置文件让目录只对有权限的用户可见"> 6、通过子配置文件，让目录只对有权限的用户可见<a class="anchorjs-link" href="#6%e9%80%9a%e8%bf%87%e5%ad%90%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e8%ae%a9%e7%9b%ae%e5%bd%95%e5%8f%aa%e5%af%b9%e6%9c%89%e6%9d%83%e9%99%90%e7%9a%84%e7%94%a8%e6%88%b7%e5%8f%af%e8%a7%81"></a></h2><p>新建子配置文件</p>
+<pre tabindex="0"><code>vim /etc/samba/test1.smb.conf
+-----------------------------
+[share11]
+        path = /data/aa
+        valid users = test1
+</code></pre><p>新建子配置文件</p>
+<pre tabindex="0"><code>vim /etc/samba/test2.smb.conf
+-----------------------------
+[share12]
+        path = /data/aa
+        valid users = test2
+</code></pre><p>引用子配置文件</p>
 <p>vim /etc/samba/smb.conf
 [global]
 config file = /etc/samba/%U.smb.conf
 ;include = /etc/samba/%U.smb.conf</p>
-<p>使用<code>config file</code>时，当以<code>test1</code>的身份访问<code>Samba</code>服务器，只能看到<code>share1</code>，其他在<code>smb.conf</code>中定义的共享资源都无法看到。 使用<code>include</code>时，当以<code>test1</code>的身份访问<code>Samba</code>服务器，除了可以看到<code>share1</code>，其他在<code>smb.conf</code>中定义的共享资源也可以看到；</p>
-
+<pre tabindex="0"><code>使用config file时，当以test1的身份访问Samba服务器，只能看到share1，其他在smb.conf中定义的共享资源都无法看到。 使用include时，当以test1的身份访问Samba服务器，除了可以看到share1，其他在smb.conf中定义的共享资源也可以看到；
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

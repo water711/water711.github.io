@@ -16,10 +16,8 @@
   
   <meta name="description" content="很多时候写了定时任务却发现没有执行，或者执行失败，但因为crond是后台运行的，有没有任何提示，很难进行排错。但是可以让crond运行在前端并进行调试的。
 crond是允许接受选项的
-crond [-n] [-P] [-x flags] 选项说明： -n：让crond以前端方式运行，即不依赖于终端。 -P：不重设环境变量PATH，而是从父进程中继承。 -x：设置调试项，flags是调试方式，比较有用的方式是test和sch，即&quot;-x test&quot;和&quot;-x sch&quot;。 ：其中test调试将不会真正的执行，sch调试显示调度信息，可以看到等待时间。具体的见下面的示例。
-执行crond并带上调试选项test。
-[root@nas ~]# crond -x test debug flags enabled: test crond: can&rsquo;t lock /var/run/crond.pid, otherpid may be 19023: Resource temporarily unavailable log_it: (CRON 4743) DEATH (can&rsquo;t lock /var/run/crond.pid, otherpid may be 19023): Resource temporarily unavailable
-提示 can&#39;t lock /var/run/crond.pid ，处理方法：rm -rf /var/run/crond.pid
+crond [-n] [-P] [-x flags] 选项说明： -n：让crond以前端方式运行，即不依赖于终端。 -P：不重设环境变量PATH，而是从父进程中继承。 -x：设置调试项，flags是调试方式，比较有用的方式是test和sch，即&#34;-x test&#34;和&#34;-x sch&#34;。 ：其中test调试将不会真正的执行，sch调试显示调度信息，可以看到等待时间。具体的见下面的示例。 执行crond并带上调试选项test。
+[root@nas ~]# crond -x test debug flags enabled: test crond: can&#39;t lock /var/run/crond.pid, otherpid may be 19023: Resource temporarily unavailable log_it: (CRON 4743) DEATH (can&#39;t lock /var/run/crond.pid, otherpid may be 19023): Resource temporarily unavailable 提示 can&#39;t lock /var/run/crond.pid ，处理方法：rm -rf /var/run/crond.pid
 crond调试正常显示如下：
 [root@server2 ~]# crond -x test debug flags enabled: test [4903] cron started log_it: (CRON 4903) INFO (RANDOM_DELAY will be scaled with factor 8% if used.">
   <meta name="keywords" content="">
@@ -28,20 +26,16 @@ crond调试正常显示如下：
 <meta name="twitter:title" content="crond任务没有正常执行的排查方法"/>
 <meta name="twitter:description" content="很多时候写了定时任务却发现没有执行，或者执行失败，但因为crond是后台运行的，有没有任何提示，很难进行排错。但是可以让crond运行在前端并进行调试的。
 crond是允许接受选项的
-crond [-n] [-P] [-x flags] 选项说明： -n：让crond以前端方式运行，即不依赖于终端。 -P：不重设环境变量PATH，而是从父进程中继承。 -x：设置调试项，flags是调试方式，比较有用的方式是test和sch，即&quot;-x test&quot;和&quot;-x sch&quot;。 ：其中test调试将不会真正的执行，sch调试显示调度信息，可以看到等待时间。具体的见下面的示例。
-执行crond并带上调试选项test。
-[root@nas ~]# crond -x test debug flags enabled: test crond: can&rsquo;t lock /var/run/crond.pid, otherpid may be 19023: Resource temporarily unavailable log_it: (CRON 4743) DEATH (can&rsquo;t lock /var/run/crond.pid, otherpid may be 19023): Resource temporarily unavailable
-提示 can&#39;t lock /var/run/crond.pid ，处理方法：rm -rf /var/run/crond.pid
+crond [-n] [-P] [-x flags] 选项说明： -n：让crond以前端方式运行，即不依赖于终端。 -P：不重设环境变量PATH，而是从父进程中继承。 -x：设置调试项，flags是调试方式，比较有用的方式是test和sch，即&#34;-x test&#34;和&#34;-x sch&#34;。 ：其中test调试将不会真正的执行，sch调试显示调度信息，可以看到等待时间。具体的见下面的示例。 执行crond并带上调试选项test。
+[root@nas ~]# crond -x test debug flags enabled: test crond: can&#39;t lock /var/run/crond.pid, otherpid may be 19023: Resource temporarily unavailable log_it: (CRON 4743) DEATH (can&#39;t lock /var/run/crond.pid, otherpid may be 19023): Resource temporarily unavailable 提示 can&#39;t lock /var/run/crond.pid ，处理方法：rm -rf /var/run/crond.pid
 crond调试正常显示如下：
 [root@server2 ~]# crond -x test debug flags enabled: test [4903] cron started log_it: (CRON 4903) INFO (RANDOM_DELAY will be scaled with factor 8% if used."/>
 
   <meta property="og:title" content="crond任务没有正常执行的排查方法" />
 <meta property="og:description" content="很多时候写了定时任务却发现没有执行，或者执行失败，但因为crond是后台运行的，有没有任何提示，很难进行排错。但是可以让crond运行在前端并进行调试的。
 crond是允许接受选项的
-crond [-n] [-P] [-x flags] 选项说明： -n：让crond以前端方式运行，即不依赖于终端。 -P：不重设环境变量PATH，而是从父进程中继承。 -x：设置调试项，flags是调试方式，比较有用的方式是test和sch，即&quot;-x test&quot;和&quot;-x sch&quot;。 ：其中test调试将不会真正的执行，sch调试显示调度信息，可以看到等待时间。具体的见下面的示例。
-执行crond并带上调试选项test。
-[root@nas ~]# crond -x test debug flags enabled: test crond: can&rsquo;t lock /var/run/crond.pid, otherpid may be 19023: Resource temporarily unavailable log_it: (CRON 4743) DEATH (can&rsquo;t lock /var/run/crond.pid, otherpid may be 19023): Resource temporarily unavailable
-提示 can&#39;t lock /var/run/crond.pid ，处理方法：rm -rf /var/run/crond.pid
+crond [-n] [-P] [-x flags] 选项说明： -n：让crond以前端方式运行，即不依赖于终端。 -P：不重设环境变量PATH，而是从父进程中继承。 -x：设置调试项，flags是调试方式，比较有用的方式是test和sch，即&#34;-x test&#34;和&#34;-x sch&#34;。 ：其中test调试将不会真正的执行，sch调试显示调度信息，可以看到等待时间。具体的见下面的示例。 执行crond并带上调试选项test。
+[root@nas ~]# crond -x test debug flags enabled: test crond: can&#39;t lock /var/run/crond.pid, otherpid may be 19023: Resource temporarily unavailable log_it: (CRON 4743) DEATH (can&#39;t lock /var/run/crond.pid, otherpid may be 19023): Resource temporarily unavailable 提示 can&#39;t lock /var/run/crond.pid ，处理方法：rm -rf /var/run/crond.pid
 crond调试正常显示如下：
 [root@server2 ~]# crond -x test debug flags enabled: test [4903] cron started log_it: (CRON 4903) INFO (RANDOM_DELAY will be scaled with factor 8% if used." />
 <meta property="og:type" content="article" />
@@ -234,28 +228,28 @@ crond调试正常显示如下：
               post-container">
         <p>很多时候写了定时任务却发现没有执行，或者执行失败，但因为crond是后台运行的，有没有任何提示，很难进行排错。但是可以让crond运行在前端并进行调试的。</p>
 <p>crond是允许接受选项的</p>
-<p>crond [-n] [-P] [-x flags]
+<pre tabindex="0"><code>crond [-n] [-P] [-x flags]
 选项说明：
 -n：让crond以前端方式运行，即不依赖于终端。
 -P：不重设环境变量PATH，而是从父进程中继承。
--x：设置调试项，flags是调试方式，比较有用的方式是test和sch，即&quot;-x test&quot;和&quot;-x sch&quot;。
-：其中test调试将不会真正的执行，sch调试显示调度信息，可以看到等待时间。具体的见下面的示例。</p>
-<p>执行crond并带上调试选项test。</p>
-<p>[root@nas ~]# crond -x test
+-x：设置调试项，flags是调试方式，比较有用的方式是test和sch，即&#34;-x test&#34;和&#34;-x sch&#34;。
+  ：其中test调试将不会真正的执行，sch调试显示调度信息，可以看到等待时间。具体的见下面的示例。
+</code></pre><p>执行crond并带上调试选项test。</p>
+<pre tabindex="0"><code>[root@nas ~]# crond -x test
 debug flags enabled: test
-crond: can&rsquo;t lock /var/run/crond.pid, otherpid may be 19023: Resource temporarily unavailable
-log_it: (CRON 4743) DEATH (can&rsquo;t lock /var/run/crond.pid, otherpid may be 19023): Resource temporarily unavailable</p>
-<p>提示 <code>can't lock /var/run/crond.pid</code> ，处理方法：<code>rm -rf /var/run/crond.pid</code></p>
+crond: can&#39;t lock /var/run/crond.pid, otherpid may be 19023: Resource temporarily unavailable
+log_it: (CRON 4743) DEATH (can&#39;t lock /var/run/crond.pid, otherpid may be 19023): Resource temporarily unavailable
+</code></pre><p>提示 <code>can't lock /var/run/crond.pid</code> ，处理方法：<code>rm -rf /var/run/crond.pid</code></p>
 <p>crond调试正常显示如下：</p>
-<p>[root@server2 ~]# crond -x test
+<pre tabindex="0"><code>[root@server2 ~]# crond -x test
 debug flags enabled: test
 [4903] cron started
 log_it: (CRON 4903) INFO (RANDOM_DELAY will be scaled with factor 8% if used.)
 log_it: (CRON 4903) INFO (running with inotify support)
-log_it: (CRON 4903) INFO (@reboot jobs will be run at computer&rsquo;s startup.)
-log_it: (root 4905) CMD (echo &ldquo;hello world&rdquo; &raquo;/tmp/hello.t</p>
-<p> </p>
-<p>参考自**：<a href="https://www.cnblogs.com/f-ck-need-u/p/7059418.html" target="_blank">https://www.cnblogs.com/f-ck-need-u/p/7059418.html</a>**</p>
+log_it: (CRON 4903) INFO (@reboot jobs will be run at computer&#39;s startup.)
+log_it: (root 4905) CMD (echo &#34;hello world&#34; &gt;&gt;/tmp/hello.t
+</code></pre><p> </p>
+<p>参考自：<a href="https://www.cnblogs.com/f-ck-need-u/p/7059418.html" target="_blank">https://www.cnblogs.com/f-ck-need-u/p/7059418.html</a>**</p>
 
 
         <hr style="visibility: hidden;" />

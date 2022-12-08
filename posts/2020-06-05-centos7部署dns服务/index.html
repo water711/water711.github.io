@@ -14,27 +14,15 @@
   <title>Centos7部署DNS服务 | 蔡振威的博客</title>
 
   
-  <meta name="description" content="1、安装bind软件包[root@DNS ~]# yum -y install bind
-2、修改主配置文件，添加正向解析区域[root@DNS ~]# vim /etc/named.conf
-options { listen-on port 53 { any; }; //将127.0.0.1修改为any listen-on-v6 port 53 { any; }; //将::1修改为any directory &ldquo;/var/named&rdquo;; //区域数据文件默认位置，可以不用修改 &hellip; allow-query { any; }; //将127.0.0.1修改为any
-#在最后面添加正向解析区域 zone &ldquo;test.com&rdquo; { type master; //类型为主要区域 file &ldquo;test.com.zone&rdquo;; //区域数据文件名 };
-3、新建区域数据文件[root@DNS ~]# vim /var/named/test.com.zone @ IN SOA dns root ( 2020060500 1H 15M 1W 1D ) @ IN NS dns dns IN A 192.">
+  <meta name="description" content="1、安装bind软件包[root@DNS ~]# yum -y install bind 2、修改主配置文件，添加正向解析区域[root@DNS ~]# vim /etc/named.conf options { listen-on port 53 { any; }; //将127.0.0.1修改为any listen-on-v6 port 53 { any; }; //将::1修改为any directory &#34;/var/named&#34;; //区域数据文件默认位置，可以不用修改 ... allow-query { any; }; //将127.0.0.1修改为any #在最后面添加正向解析区域 zone &#34;test.com&#34; { type master; //类型为主要区域 file &#34;test.com.zone&#34;; //区域数据文件名 }; 3、新建区域数据文件[root@DNS ~]# vim /var/named/test.com.zone @ IN SOA dns root ( 2020060500 1H 15M 1W 1D ) @ IN NS dns dns IN A 192.168.1.156 www IN A 192.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Centos7部署DNS服务"/>
-<meta name="twitter:description" content="1、安装bind软件包[root@DNS ~]# yum -y install bind
-2、修改主配置文件，添加正向解析区域[root@DNS ~]# vim /etc/named.conf
-options { listen-on port 53 { any; }; //将127.0.0.1修改为any listen-on-v6 port 53 { any; }; //将::1修改为any directory &ldquo;/var/named&rdquo;; //区域数据文件默认位置，可以不用修改 &hellip; allow-query { any; }; //将127.0.0.1修改为any
-#在最后面添加正向解析区域 zone &ldquo;test.com&rdquo; { type master; //类型为主要区域 file &ldquo;test.com.zone&rdquo;; //区域数据文件名 };
-3、新建区域数据文件[root@DNS ~]# vim /var/named/test.com.zone @ IN SOA dns root ( 2020060500 1H 15M 1W 1D ) @ IN NS dns dns IN A 192."/>
+<meta name="twitter:description" content="1、安装bind软件包[root@DNS ~]# yum -y install bind 2、修改主配置文件，添加正向解析区域[root@DNS ~]# vim /etc/named.conf options { listen-on port 53 { any; }; //将127.0.0.1修改为any listen-on-v6 port 53 { any; }; //将::1修改为any directory &#34;/var/named&#34;; //区域数据文件默认位置，可以不用修改 ... allow-query { any; }; //将127.0.0.1修改为any #在最后面添加正向解析区域 zone &#34;test.com&#34; { type master; //类型为主要区域 file &#34;test.com.zone&#34;; //区域数据文件名 }; 3、新建区域数据文件[root@DNS ~]# vim /var/named/test.com.zone @ IN SOA dns root ( 2020060500 1H 15M 1W 1D ) @ IN NS dns dns IN A 192.168.1.156 www IN A 192."/>
 
   <meta property="og:title" content="Centos7部署DNS服务" />
-<meta property="og:description" content="1、安装bind软件包[root@DNS ~]# yum -y install bind
-2、修改主配置文件，添加正向解析区域[root@DNS ~]# vim /etc/named.conf
-options { listen-on port 53 { any; }; //将127.0.0.1修改为any listen-on-v6 port 53 { any; }; //将::1修改为any directory &ldquo;/var/named&rdquo;; //区域数据文件默认位置，可以不用修改 &hellip; allow-query { any; }; //将127.0.0.1修改为any
-#在最后面添加正向解析区域 zone &ldquo;test.com&rdquo; { type master; //类型为主要区域 file &ldquo;test.com.zone&rdquo;; //区域数据文件名 };
-3、新建区域数据文件[root@DNS ~]# vim /var/named/test.com.zone @ IN SOA dns root ( 2020060500 1H 15M 1W 1D ) @ IN NS dns dns IN A 192." />
+<meta property="og:description" content="1、安装bind软件包[root@DNS ~]# yum -y install bind 2、修改主配置文件，添加正向解析区域[root@DNS ~]# vim /etc/named.conf options { listen-on port 53 { any; }; //将127.0.0.1修改为any listen-on-v6 port 53 { any; }; //将::1修改为any directory &#34;/var/named&#34;; //区域数据文件默认位置，可以不用修改 ... allow-query { any; }; //将127.0.0.1修改为any #在最后面添加正向解析区域 zone &#34;test.com&#34; { type master; //类型为主要区域 file &#34;test.com.zone&#34;; //区域数据文件名 }; 3、新建区域数据文件[root@DNS ~]# vim /var/named/test.com.zone @ IN SOA dns root ( 2020060500 1H 15M 1W 1D ) @ IN NS dns dns IN A 192.168.1.156 www IN A 192." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-05T00:00:00+00:00" />
@@ -223,31 +211,32 @@ options { listen-on port 53 { any; }; //将127.0.0.1修改为any listen-on-v6 po
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p> </p>
-<h2 id="1安装bind软件包">1、安装bind软件包<a class="anchorjs-link" href="#1%e5%ae%89%e8%a3%85bind%e8%bd%af%e4%bb%b6%e5%8c%85"></a></h2><p>[root@DNS ~]# yum -y install bind</p>
-<h2 id="2修改主配置文件添加正向解析区域">2、修改主配置文件，添加正向解析区域<a class="anchorjs-link" href="#2%e4%bf%ae%e6%94%b9%e4%b8%bb%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e6%b7%bb%e5%8a%a0%e6%ad%a3%e5%90%91%e8%a7%a3%e6%9e%90%e5%8c%ba%e5%9f%9f"></a></h2><p>[root@DNS ~]# vim /etc/named.conf</p>
-<p>options {
-listen-on port 53 { any; };  //将127.0.0.1修改为any
-listen-on-v6 port 53 { any; };  //将::1修改为any
-directory       &ldquo;/var/named&rdquo;;   //区域数据文件默认位置，可以不用修改
-&hellip;
-allow-query     { any; };  //将127.0.0.1修改为any</p>
-<p>#在最后面添加正向解析区域
-zone &ldquo;test.com&rdquo; {
-type master;   //类型为主要区域
-file &ldquo;test.com.zone&rdquo;;  //区域数据文件名
-};</p>
-<h2 id="3新建区域数据文件">3、新建区域数据文件<a class="anchorjs-link" href="#3%e6%96%b0%e5%bb%ba%e5%8c%ba%e5%9f%9f%e6%95%b0%e6%8d%ae%e6%96%87%e4%bb%b6"></a></h2><p>[root@DNS ~]# vim /var/named/test.com.zone
+        <h3 id="1安装bind软件包">1、安装bind软件包<a class="anchorjs-link" href="#1%e5%ae%89%e8%a3%85bind%e8%bd%af%e4%bb%b6%e5%8c%85"></a></h3><pre tabindex="0"><code>[root@DNS ~]# yum -y install bind
+</code></pre><h3 id="2修改主配置文件添加正向解析区域">2、修改主配置文件，添加正向解析区域<a class="anchorjs-link" href="#2%e4%bf%ae%e6%94%b9%e4%b8%bb%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e6%b7%bb%e5%8a%a0%e6%ad%a3%e5%90%91%e8%a7%a3%e6%9e%90%e5%8c%ba%e5%9f%9f"></a></h3><pre tabindex="0"><code>[root@DNS ~]# vim /etc/named.conf
+
+options {
+        listen-on port 53 { any; };  //将127.0.0.1修改为any
+        listen-on-v6 port 53 { any; };  //将::1修改为any
+        directory       &#34;/var/named&#34;;   //区域数据文件默认位置，可以不用修改
+        ...
+        allow-query     { any; };  //将127.0.0.1修改为any
+
+#在最后面添加正向解析区域
+zone &#34;test.com&#34; {
+        type master;   //类型为主要区域
+        file &#34;test.com.zone&#34;;  //区域数据文件名
+};
+</code></pre><h3 id="3新建区域数据文件">3、新建区域数据文件<a class="anchorjs-link" href="#3%e6%96%b0%e5%bb%ba%e5%8c%ba%e5%9f%9f%e6%95%b0%e6%8d%ae%e6%96%87%e4%bb%b6"></a></h3><pre tabindex="0"><code>[root@DNS ~]# vim /var/named/test.com.zone
 @       IN      SOA     dns     root ( 2020060500 1H 15M 1W 1D )
 @       IN      NS      dns
 dns     IN      A       192.168.1.156
-www     IN      A       192.168.1.156</p>
-<h2 id="4启动服务">4、启动服务<a class="anchorjs-link" href="#4%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1"></a></h2><p>[root@DNS ~]# systemctl restart named
+www     IN      A       192.168.1.156
+</code></pre><h3 id="4启动服务">4、启动服务<a class="anchorjs-link" href="#4%e5%90%af%e5%8a%a8%e6%9c%8d%e5%8a%a1"></a></h3><pre tabindex="0"><code>[root@DNS ~]# systemctl restart named
 [root@DNS ~]# systemctl enable named
-[root@DNS ~]# ss -lanp | grep :53</p>
-<h2 id="5防火墙开放dns服务">5、防火墙开放DNS服务<a class="anchorjs-link" href="#5%e9%98%b2%e7%81%ab%e5%a2%99%e5%bc%80%e6%94%bedns%e6%9c%8d%e5%8a%a1"></a></h2><p>[root@DNS ~]# firewall-cmd &ndash;permanent &ndash;add-service=dns
-[root@DNS ~]# firewall-cmd &ndash;reload</p>
-<h2 id="6测试">6、测试<a class="anchorjs-link" href="#6%e6%b5%8b%e8%af%95"></a></h2><p><figure>
+[root@DNS ~]# ss -lanp | grep :53
+</code></pre><h3 id="5防火墙开放dns服务">5、防火墙开放DNS服务<a class="anchorjs-link" href="#5%e9%98%b2%e7%81%ab%e5%a2%99%e5%bc%80%e6%94%bedns%e6%9c%8d%e5%8a%a1"></a></h3><pre tabindex="0"><code>[root@DNS ~]# firewall-cmd --permanent --add-service=dns 
+[root@DNS ~]# firewall-cmd --reload
+</code></pre><h3 id="6测试">6、测试<a class="anchorjs-link" href="#6%e6%b5%8b%e8%af%95"></a></h3><p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//801997abc3763790782386b113f05036.png" data-action="zoom" alt=""  class="lazyload">
   </a>

@@ -14,33 +14,27 @@
   <title>批处理之forfiles命令 | 蔡振威的博客</title>
 
   
-  <meta name="description" content=" 官方文档：https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles
+  <meta name="description" content="官方文档：https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles
 forfiles命令：按照通配符或修改日期进行文件搜索，并将搜索结果传给另一个命令进行文件操作
 案例：
-#搜索source目录下，7天以前的avi视频文件，移动到共享目录backup forfiles /p D:\source /S /M &ldquo;*.avi&rdquo; /d -7 /c &ldquo;cmd /c move @path \\192.168.1.10\backup&rdquo;
-#删除当前目录下，15天前的日志文件 forfiles /p &ldquo;.&rdquo; /s /m *.log /d -15 /c &ldquo;cmd /c del @path&rdquo;
-上面案例用到的参数（不区分大小写）：
-/P pathname 表示开始搜索的路径。默认文件夹是当前工作的目录 (.)。 /M searchmask 根据搜索掩码搜索文件。默认搜索掩码是 &#39;\*&#39;。 /S 指导 forfiles 递归到子目录。像 &quot;DIR /S&quot;。 /D date 选择文件，其上一次修改日期大于或等于 (&#43;)，或者小于或等于 (-) 用 &quot;yyyy-MM-dd&quot; 格式指定的日期; 或选择文件，其上一次修改日期大于或等于 (&#43;) 当前日期加 &quot;dd&quot; 天，或者小于或等于 (-) 当前 日期减 &quot;dd&quot; 天。有效的 &quot;dd&quot; 天数可以是 0 - 32768 范围内的任何数字。如果没有指定，&quot;&#43;&quot; 被当作默认符号。 /C command 表示为每个文件执行的命令。命令字符串应该用双引号括起来。 默认命令是 &quot;cmd /c echo @file&quot;。下列变量 可以用在命令字符串中: @path - 返回文件的完整路径。 ">
+#搜索source目录下，7天以前的avi视频文件，移动到共享目录backup forfiles /p D:\\source /S /M &#34;\*.avi&#34; /d -7 /c &#34;cmd /c move @path \\\\192.168.1.10\\backup&#34; #删除当前目录下，15天前的日志文件 forfiles /p &#34;.&#34; /s /m \*.log /d -15 /c &#34;cmd /c del @path&#34; 上面案例用到的参数（不区分大小写）：
+/P pathname 表示开始搜索的路径。默认文件夹是当前工作的目录 (.)。 /M searchmask 根据搜索掩码搜索文件。默认搜索掩码是 &#39;\*&#39;。 /S 指导 forfiles 递归到子目录。像 &#34;DIR /S&#34;。 /D date 选择文件，其上一次修改日期大于或等于 (&#43;)，或者小于或等于 (-) 用 &#34;yyyy-MM-dd&#34; 格式指定的日期; 或选择文件，其上一次修改日期大于或等于 (&#43;) 当前日期加 &#34;dd&#34; 天，或者小于或等于 (-) 当前 日期减 &#34;dd&#34; 天。有效的 &#34;dd&#34; 天数可以是 0 - 32768 范围内的任何数字。如果没有指定，&#34;&#43;&#34; 被当作默认符号。 /C command 表示为每个文件执行的命令。命令字符串应该用双引号括起来。 默认命令是 &#34;cmd /c echo @file&#34;。下列变量 可以用在命令字符串中: @path - 返回文件的完整路径。 ">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="批处理之forfiles命令"/>
-<meta name="twitter:description" content=" 官方文档：https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles
+<meta name="twitter:description" content="官方文档：https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles
 forfiles命令：按照通配符或修改日期进行文件搜索，并将搜索结果传给另一个命令进行文件操作
 案例：
-#搜索source目录下，7天以前的avi视频文件，移动到共享目录backup forfiles /p D:\source /S /M &ldquo;*.avi&rdquo; /d -7 /c &ldquo;cmd /c move @path \\192.168.1.10\backup&rdquo;
-#删除当前目录下，15天前的日志文件 forfiles /p &ldquo;.&rdquo; /s /m *.log /d -15 /c &ldquo;cmd /c del @path&rdquo;
-上面案例用到的参数（不区分大小写）：
-/P pathname 表示开始搜索的路径。默认文件夹是当前工作的目录 (.)。 /M searchmask 根据搜索掩码搜索文件。默认搜索掩码是 &#39;\*&#39;。 /S 指导 forfiles 递归到子目录。像 &quot;DIR /S&quot;。 /D date 选择文件，其上一次修改日期大于或等于 (&#43;)，或者小于或等于 (-) 用 &quot;yyyy-MM-dd&quot; 格式指定的日期; 或选择文件，其上一次修改日期大于或等于 (&#43;) 当前日期加 &quot;dd&quot; 天，或者小于或等于 (-) 当前 日期减 &quot;dd&quot; 天。有效的 &quot;dd&quot; 天数可以是 0 - 32768 范围内的任何数字。如果没有指定，&quot;&#43;&quot; 被当作默认符号。 /C command 表示为每个文件执行的命令。命令字符串应该用双引号括起来。 默认命令是 &quot;cmd /c echo @file&quot;。下列变量 可以用在命令字符串中: @path - 返回文件的完整路径。 "/>
+#搜索source目录下，7天以前的avi视频文件，移动到共享目录backup forfiles /p D:\\source /S /M &#34;\*.avi&#34; /d -7 /c &#34;cmd /c move @path \\\\192.168.1.10\\backup&#34; #删除当前目录下，15天前的日志文件 forfiles /p &#34;.&#34; /s /m \*.log /d -15 /c &#34;cmd /c del @path&#34; 上面案例用到的参数（不区分大小写）：
+/P pathname 表示开始搜索的路径。默认文件夹是当前工作的目录 (.)。 /M searchmask 根据搜索掩码搜索文件。默认搜索掩码是 &#39;\*&#39;。 /S 指导 forfiles 递归到子目录。像 &#34;DIR /S&#34;。 /D date 选择文件，其上一次修改日期大于或等于 (&#43;)，或者小于或等于 (-) 用 &#34;yyyy-MM-dd&#34; 格式指定的日期; 或选择文件，其上一次修改日期大于或等于 (&#43;) 当前日期加 &#34;dd&#34; 天，或者小于或等于 (-) 当前 日期减 &#34;dd&#34; 天。有效的 &#34;dd&#34; 天数可以是 0 - 32768 范围内的任何数字。如果没有指定，&#34;&#43;&#34; 被当作默认符号。 /C command 表示为每个文件执行的命令。命令字符串应该用双引号括起来。 默认命令是 &#34;cmd /c echo @file&#34;。下列变量 可以用在命令字符串中: @path - 返回文件的完整路径。 "/>
 
   <meta property="og:title" content="批处理之forfiles命令" />
-<meta property="og:description" content=" 官方文档：https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles
+<meta property="og:description" content="官方文档：https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles
 forfiles命令：按照通配符或修改日期进行文件搜索，并将搜索结果传给另一个命令进行文件操作
 案例：
-#搜索source目录下，7天以前的avi视频文件，移动到共享目录backup forfiles /p D:\source /S /M &ldquo;*.avi&rdquo; /d -7 /c &ldquo;cmd /c move @path \\192.168.1.10\backup&rdquo;
-#删除当前目录下，15天前的日志文件 forfiles /p &ldquo;.&rdquo; /s /m *.log /d -15 /c &ldquo;cmd /c del @path&rdquo;
-上面案例用到的参数（不区分大小写）：
-/P pathname 表示开始搜索的路径。默认文件夹是当前工作的目录 (.)。 /M searchmask 根据搜索掩码搜索文件。默认搜索掩码是 &#39;\*&#39;。 /S 指导 forfiles 递归到子目录。像 &quot;DIR /S&quot;。 /D date 选择文件，其上一次修改日期大于或等于 (&#43;)，或者小于或等于 (-) 用 &quot;yyyy-MM-dd&quot; 格式指定的日期; 或选择文件，其上一次修改日期大于或等于 (&#43;) 当前日期加 &quot;dd&quot; 天，或者小于或等于 (-) 当前 日期减 &quot;dd&quot; 天。有效的 &quot;dd&quot; 天数可以是 0 - 32768 范围内的任何数字。如果没有指定，&quot;&#43;&quot; 被当作默认符号。 /C command 表示为每个文件执行的命令。命令字符串应该用双引号括起来。 默认命令是 &quot;cmd /c echo @file&quot;。下列变量 可以用在命令字符串中: @path - 返回文件的完整路径。 " />
+#搜索source目录下，7天以前的avi视频文件，移动到共享目录backup forfiles /p D:\\source /S /M &#34;\*.avi&#34; /d -7 /c &#34;cmd /c move @path \\\\192.168.1.10\\backup&#34; #删除当前目录下，15天前的日志文件 forfiles /p &#34;.&#34; /s /m \*.log /d -15 /c &#34;cmd /c del @path&#34; 上面案例用到的参数（不区分大小写）：
+/P pathname 表示开始搜索的路径。默认文件夹是当前工作的目录 (.)。 /M searchmask 根据搜索掩码搜索文件。默认搜索掩码是 &#39;\*&#39;。 /S 指导 forfiles 递归到子目录。像 &#34;DIR /S&#34;。 /D date 选择文件，其上一次修改日期大于或等于 (&#43;)，或者小于或等于 (-) 用 &#34;yyyy-MM-dd&#34; 格式指定的日期; 或选择文件，其上一次修改日期大于或等于 (&#43;) 当前日期加 &#34;dd&#34; 天，或者小于或等于 (-) 当前 日期减 &#34;dd&#34; 天。有效的 &#34;dd&#34; 天数可以是 0 - 32768 范围内的任何数字。如果没有指定，&#34;&#43;&#34; 被当作默认符号。 /C command 表示为每个文件执行的命令。命令字符串应该用双引号括起来。 默认命令是 &#34;cmd /c echo @file&#34;。下列变量 可以用在命令字符串中: @path - 返回文件的完整路径。 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-12-03-%E6%89%B9%E5%A4%84%E7%90%86%E4%B9%8Bforfiles%E5%91%BD%E4%BB%A4/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-12-03T00:00:00+00:00" />
@@ -229,32 +223,29 @@ forfiles命令：按照通配符或修改日期进行文件搜索，并将搜索
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p> </p>
-<p>官方文档：<a href="https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles" target="_blank">https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles</a></p>
-<p>forfiles命令：按照通配符或修改日期进行文件搜索，并将搜索结果传给另一个命令进行文件操作</p>
-<p> </p>
+        <p><strong>官方文档：<a href="https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles" target="_blank">https://docs.microsoft.com/zh-cn/windows-server/administration/windows-commands/forfiles</a></strong></p>
+<p><strong>forfiles命令：按照通配符或修改日期进行文件搜索，并将搜索结果传给另一个命令进行文件操作</strong></p>
 <p><strong>案例：</strong></p>
-<p>#搜索source目录下，7天以前的avi视频文件，移动到共享目录backup
-forfiles /p D:\source /S /M &ldquo;*.avi&rdquo; /d -7 /c &ldquo;cmd /c move @path \\192.168.1.10\backup&rdquo;</p>
-<p>#删除当前目录下，15天前的日志文件
-forfiles /p &ldquo;.&rdquo; /s /m *.log /d -15 /c &ldquo;cmd /c del @path&rdquo;</p>
-<p> </p>
-<p><strong>上面案例用到的参数（不区分大小写）：</strong></p>
-<pre><code>/P    pathname      表示开始搜索的路径。默认文件夹是当前工作的目录 (.)。
+<pre tabindex="0"><code>#搜索source目录下，7天以前的avi视频文件，移动到共享目录backup
+forfiles /p D:\\source /S /M &#34;\*.avi&#34; /d -7 /c &#34;cmd /c move @path \\\\192.168.1.10\\backup&#34;
 
-/M    searchmask    根据搜索掩码搜索文件。默认搜索掩码是 '\*'。
+#删除当前目录下，15天前的日志文件
+forfiles /p &#34;.&#34; /s /m \*.log /d -15 /c &#34;cmd /c del @path&#34;
+</code></pre><p><strong>上面案例用到的参数（不区分大小写）：</strong></p>
+<pre tabindex="0"><code>/P    pathname      表示开始搜索的路径。默认文件夹是当前工作的目录 (.)。
 
-/S                        指导 forfiles 递归到子目录。像 &quot;DIR /S&quot;。
+/M    searchmask    根据搜索掩码搜索文件。默认搜索掩码是 &#39;\*&#39;。
 
-/D    date          选择文件，其上一次修改日期大于或等于 (+)，或者小于或等于 (-) 用 &quot;yyyy-MM-dd&quot; 格式指定的日期;
-                        或选择文件，其上一次修改日期大于或等于 (+) 当前日期加 &quot;dd&quot; 天，或者小于或等于 (-) 当前
-                        日期减 &quot;dd&quot; 天。有效的 &quot;dd&quot; 天数可以是 0 - 32768 范围内的任何数字。如果没有指定，&quot;+&quot; 被当作默认符号。
+/S                  指导 forfiles 递归到子目录。像 &#34;DIR /S&#34;。
+
+/D    date          选择文件，其上一次修改日期大于或等于 (+)，或者小于或等于 (-) 用 &#34;yyyy-MM-dd&#34; 格式指定的日期;
+                    或选择文件，其上一次修改日期大于或等于 (+) 当前日期加 &#34;dd&#34; 天，或者小于或等于 (-) 当前
+                    日期减 &#34;dd&#34; 天。有效的 &#34;dd&#34; 天数可以是 0 - 32768 范围内的任何数字。如果没有指定，&#34;+&#34; 被当作默认符号。
 
 /C    command       表示为每个文件执行的命令。命令字符串应该用双引号括起来。
-                            默认命令是 &quot;cmd /c echo @file&quot;。下列变量 可以用在命令字符串中:
-                            @path    - 返回文件的完整路径。
+                    默认命令是 &#34;cmd /c echo @file&#34;。下列变量 可以用在命令字符串中:
+                    @path    - 返回文件的完整路径。
 </code></pre>
-
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

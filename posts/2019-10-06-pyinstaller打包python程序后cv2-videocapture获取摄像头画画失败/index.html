@@ -14,27 +14,18 @@
   <title>PyInstaller打包python程序后，cv2.VideoCapture()获取摄像头画画失败 | 蔡振威的博客</title>
 
   
-  <meta name="description" content="源代码import cv2,os
-url = &lsquo;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&rsquo; cap = cv2.VideoCapture(url) ret, frame = cap.read() cv2.imwrite(&ldquo;E:/test.png&rdquo;, frame) cap.release() cv2.destroyAllWindows()
-在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节
-libpng warning:Image width is zero in IHDR libpng warning:Image height is zero in IHDR libpng error:Invalid IHDR data
-解决方法：进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下">
+  <meta name="description" content="源代码import cv2,os url = &#39;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&#39; cap = cv2.VideoCapture(url) ret, frame = cap.read() cv2.imwrite(&#34;E:/test.png&#34;, frame) cap.release() cv2.destroyAllWindows() 在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节
+libpng warning:Image width is zero in IHDR libpng warning:Image height is zero in IHDR libpng error:Invalid IHDR data 解决方法：进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PyInstaller打包python程序后，cv2.VideoCapture()获取摄像头画画失败"/>
-<meta name="twitter:description" content="源代码import cv2,os
-url = &lsquo;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&rsquo; cap = cv2.VideoCapture(url) ret, frame = cap.read() cv2.imwrite(&ldquo;E:/test.png&rdquo;, frame) cap.release() cv2.destroyAllWindows()
-在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节
-libpng warning:Image width is zero in IHDR libpng warning:Image height is zero in IHDR libpng error:Invalid IHDR data
-解决方法：进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下"/>
+<meta name="twitter:description" content="源代码import cv2,os url = &#39;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&#39; cap = cv2.VideoCapture(url) ret, frame = cap.read() cv2.imwrite(&#34;E:/test.png&#34;, frame) cap.release() cv2.destroyAllWindows() 在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节
+libpng warning:Image width is zero in IHDR libpng warning:Image height is zero in IHDR libpng error:Invalid IHDR data 解决方法：进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下"/>
 
   <meta property="og:title" content="PyInstaller打包python程序后，cv2.VideoCapture()获取摄像头画画失败" />
-<meta property="og:description" content="源代码import cv2,os
-url = &lsquo;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&rsquo; cap = cv2.VideoCapture(url) ret, frame = cap.read() cv2.imwrite(&ldquo;E:/test.png&rdquo;, frame) cap.release() cv2.destroyAllWindows()
-在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节
-libpng warning:Image width is zero in IHDR libpng warning:Image height is zero in IHDR libpng error:Invalid IHDR data
-解决方法：进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下" />
+<meta property="og:description" content="源代码import cv2,os url = &#39;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&#39; cap = cv2.VideoCapture(url) ret, frame = cap.read() cv2.imwrite(&#34;E:/test.png&#34;, frame) cap.release() cv2.destroyAllWindows() 在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节
+libpng warning:Image width is zero in IHDR libpng warning:Image height is zero in IHDR libpng error:Invalid IHDR data 解决方法：进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-10-06T00:00:00+00:00" />
@@ -223,19 +214,19 @@ libpng warning:Image width is zero in IHDR libpng warning:Image height is zero i
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="源代码">源代码<a class="anchorjs-link" href="#%e6%ba%90%e4%bb%a3%e7%a0%81"></a></h2><p>import cv2,os</p>
-<p>url = &lsquo;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&rsquo;
+        <h3 id="源代码">源代码<a class="anchorjs-link" href="#%e6%ba%90%e4%bb%a3%e7%a0%81"></a></h3><pre tabindex="0"><code>import cv2,os
+ 
+url = &#39;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&#39;
 cap = cv2.VideoCapture(url)
 ret, frame = cap.read()
-cv2.imwrite(&ldquo;E:/test.png&rdquo;, frame)
+cv2.imwrite(&#34;E:/test.png&#34;, frame) 
 cap.release()
-cv2.destroyAllWindows()</p>
-<p> </p>
-<p>在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节</p>
-<p>libpng warning:Image width is zero in IHDR
+cv2.destroyAllWindows()
+</code></pre><p>在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节</p>
+<pre tabindex="0"><code>libpng warning:Image width is zero in IHDR
 libpng warning:Image height is zero in IHDR
-libpng error:Invalid IHDR data</p>
-<h2 id="解决方法">解决方法：<a class="anchorjs-link" href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"></a></h2><p>进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下</p>
+libpng error:Invalid IHDR data
+</code></pre><h3 id="解决方法">解决方法：<a class="anchorjs-link" href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"></a></h3><p>进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//529fc5c911c4883394d8038a5c28f230.png" data-action="zoom" alt=""  class="lazyload">

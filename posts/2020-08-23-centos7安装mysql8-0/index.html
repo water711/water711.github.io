@@ -19,21 +19,13 @@
 2、点击：MySQL Community (GPL) Downloads »
 3、点击：MySQL Yum Repository，复制下载链接
 4、下载对应操作系统版本的RPM包
-[root@server1 ~]# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
-5、安装mysql yum源
-[root@server1 ~]# rpm -ivh mysql80-community-release-el7-3.noarch.rpm
-6、查看当前启用的默认安装版本
-[root@server1 ~]# yum repolist enabled | grep &ldquo;mysql&rdquo;
-如果不是我们需要的版本，则要修改yum仓库文件
-[root@server1 ~]# vim /etc/yum.repos.d/mysql-community.repo
-#将enable设为1，启用需要安装的版本
-7、安装mysql
-[root@server1 ~]# yum install mysql-server
-8、启动mysql
-#centos7启动mysql [root@server1 ~]# systemctl start mysqld [root@server1 ~]# systemctl enable mysqld
-#centos6启动mysql前需要关闭selinux，否则mysql初始化会失败 [root@server1 ~]# setenforce 0 [root@server1 ~]# service mysqld start
-9、查看mysql初始密码
-[root@server1 ~]# grep &rsquo;temporary password&rsquo; /var/log/mysqld.">
+[root@server1 ~]# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm 5、安装mysql yum源
+[root@server1 ~]# rpm -ivh mysql80-community-release-el7-3.noarch.rpm 6、查看当前启用的默认安装版本
+[root@server1 ~]# yum repolist enabled | grep &#34;mysql&#34; 如果不是我们需要的版本，则要修改yum仓库文件
+[root@server1 ~]# vim /etc/yum.repos.d/mysql-community.repo #将enable设为1，启用需要安装的版本 7、安装mysql
+[root@server1 ~]# yum install mysql-server 8、启动mysql
+#centos7启动mysql [root@server1 ~]# systemctl start mysqld [root@server1 ~]# systemctl enable mysqld #centos6启动mysql前需要关闭selinux，否则mysql初始化会失败 [root@server1 ~]# setenforce 0 [root@server1 ~]# service mysqld start 9、查看mysql初始密码
+[root@server1 ~]# grep &#39;temporary password&#39; /var/log/mysqld.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
@@ -43,21 +35,13 @@
 2、点击：MySQL Community (GPL) Downloads »
 3、点击：MySQL Yum Repository，复制下载链接
 4、下载对应操作系统版本的RPM包
-[root@server1 ~]# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
-5、安装mysql yum源
-[root@server1 ~]# rpm -ivh mysql80-community-release-el7-3.noarch.rpm
-6、查看当前启用的默认安装版本
-[root@server1 ~]# yum repolist enabled | grep &ldquo;mysql&rdquo;
-如果不是我们需要的版本，则要修改yum仓库文件
-[root@server1 ~]# vim /etc/yum.repos.d/mysql-community.repo
-#将enable设为1，启用需要安装的版本
-7、安装mysql
-[root@server1 ~]# yum install mysql-server
-8、启动mysql
-#centos7启动mysql [root@server1 ~]# systemctl start mysqld [root@server1 ~]# systemctl enable mysqld
-#centos6启动mysql前需要关闭selinux，否则mysql初始化会失败 [root@server1 ~]# setenforce 0 [root@server1 ~]# service mysqld start
-9、查看mysql初始密码
-[root@server1 ~]# grep &rsquo;temporary password&rsquo; /var/log/mysqld."/>
+[root@server1 ~]# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm 5、安装mysql yum源
+[root@server1 ~]# rpm -ivh mysql80-community-release-el7-3.noarch.rpm 6、查看当前启用的默认安装版本
+[root@server1 ~]# yum repolist enabled | grep &#34;mysql&#34; 如果不是我们需要的版本，则要修改yum仓库文件
+[root@server1 ~]# vim /etc/yum.repos.d/mysql-community.repo #将enable设为1，启用需要安装的版本 7、安装mysql
+[root@server1 ~]# yum install mysql-server 8、启动mysql
+#centos7启动mysql [root@server1 ~]# systemctl start mysqld [root@server1 ~]# systemctl enable mysqld #centos6启动mysql前需要关闭selinux，否则mysql初始化会失败 [root@server1 ~]# setenforce 0 [root@server1 ~]# service mysqld start 9、查看mysql初始密码
+[root@server1 ~]# grep &#39;temporary password&#39; /var/log/mysqld."/>
 
   <meta property="og:title" content="Centos7安装mysql8.0" />
 <meta property="og:description" content="方式一、MySQL Yum Repository官方安装文档：http://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html
@@ -65,21 +49,13 @@
 2、点击：MySQL Community (GPL) Downloads »
 3、点击：MySQL Yum Repository，复制下载链接
 4、下载对应操作系统版本的RPM包
-[root@server1 ~]# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
-5、安装mysql yum源
-[root@server1 ~]# rpm -ivh mysql80-community-release-el7-3.noarch.rpm
-6、查看当前启用的默认安装版本
-[root@server1 ~]# yum repolist enabled | grep &ldquo;mysql&rdquo;
-如果不是我们需要的版本，则要修改yum仓库文件
-[root@server1 ~]# vim /etc/yum.repos.d/mysql-community.repo
-#将enable设为1，启用需要安装的版本
-7、安装mysql
-[root@server1 ~]# yum install mysql-server
-8、启动mysql
-#centos7启动mysql [root@server1 ~]# systemctl start mysqld [root@server1 ~]# systemctl enable mysqld
-#centos6启动mysql前需要关闭selinux，否则mysql初始化会失败 [root@server1 ~]# setenforce 0 [root@server1 ~]# service mysqld start
-9、查看mysql初始密码
-[root@server1 ~]# grep &rsquo;temporary password&rsquo; /var/log/mysqld." />
+[root@server1 ~]# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm 5、安装mysql yum源
+[root@server1 ~]# rpm -ivh mysql80-community-release-el7-3.noarch.rpm 6、查看当前启用的默认安装版本
+[root@server1 ~]# yum repolist enabled | grep &#34;mysql&#34; 如果不是我们需要的版本，则要修改yum仓库文件
+[root@server1 ~]# vim /etc/yum.repos.d/mysql-community.repo #将enable设为1，启用需要安装的版本 7、安装mysql
+[root@server1 ~]# yum install mysql-server 8、启动mysql
+#centos7启动mysql [root@server1 ~]# systemctl start mysqld [root@server1 ~]# systemctl enable mysqld #centos6启动mysql前需要关闭selinux，否则mysql初始化会失败 [root@server1 ~]# setenforce 0 [root@server1 ~]# service mysqld start 9、查看mysql初始密码
+[root@server1 ~]# grep &#39;temporary password&#39; /var/log/mysqld." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-23T00:00:00+00:00" />
@@ -268,77 +244,82 @@
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="方式一mysql-yum-repository">方式一、MySQL Yum Repository<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%b8%80mysql-yum-repository"></a></h2><p>官方安装文档：<a href="http://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html" target="_blank">http://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html</a></p>
+        <h3 id="方式一mysql-yum-repository">方式一、MySQL Yum Repository<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%b8%80mysql-yum-repository"></a></h3><p>官方安装文档：<a href="http://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html" target="_blank">http://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html</a></p>
 <p>1、访问官网：<a href="https://www.mysql.com/downloads/" target="_blank">https://www.mysql.com/downloads/</a></p>
 <p>2、点击：<a href="https://dev.mysql.com/downloads/" target="_blank">MySQL Community (GPL) Downloads »</a></p>
 <p>3、点击：<a href="https://dev.mysql.com/downloads/repo/yum/" target="_blank">MySQL Yum Repository</a>，复制下载链接</p>
 <p>4、下载对应操作系统版本的RPM包</p>
-<p>[root@server1 ~]# wget <a href="https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm" target="_blank">https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</a></p>
-<p>5、安装mysql yum源</p>
-<p>[root@server1 ~]# rpm -ivh mysql80-community-release-el7-3.noarch.rpm</p>
-<p>6、查看当前启用的默认安装版本</p>
-<p>[root@server1 ~]# yum repolist enabled | grep &ldquo;mysql&rdquo;</p>
-<p>如果不是我们需要的版本，则要修改yum仓库文件</p>
-<p>[root@server1 ~]# vim /etc/yum.repos.d/mysql-community.repo<br>
-#将enable设为1，启用需要安装的版本</p>
-<p>7、安装mysql</p>
-<p>[root@server1 ~]# yum install mysql-server</p>
-<p>8、启动mysql</p>
-<p>#centos7启动mysql
+<pre tabindex="0"><code>[root@server1 ~]# wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+</code></pre><p>5、安装mysql yum源</p>
+<pre tabindex="0"><code>[root@server1 ~]# rpm -ivh mysql80-community-release-el7-3.noarch.rpm
+</code></pre><p>6、查看当前启用的默认安装版本</p>
+<pre tabindex="0"><code>[root@server1 ~]# yum repolist enabled | grep &#34;mysql&#34;
+</code></pre><p>如果不是我们需要的版本，则要修改yum仓库文件</p>
+<pre tabindex="0"><code>[root@server1 ~]# vim /etc/yum.repos.d/mysql-community.repo  
+#将enable设为1，启用需要安装的版本
+</code></pre><p>7、安装mysql</p>
+<pre tabindex="0"><code>[root@server1 ~]# yum install mysql-server
+</code></pre><p>8、启动mysql</p>
+<pre tabindex="0"><code>#centos7启动mysql
 [root@server1 ~]# systemctl start mysqld
-[root@server1 ~]# systemctl enable mysqld</p>
-<p>#centos6启动mysql前需要关闭selinux，否则mysql初始化会失败
+[root@server1 ~]# systemctl enable mysqld
+
+#centos6启动mysql前需要关闭selinux，否则mysql初始化会失败
 [root@server1 ~]# setenforce 0
-[root@server1 ~]# service mysqld start</p>
-<p>9、查看mysql初始密码</p>
-<p>[root@server1 ~]# grep &rsquo;temporary password&rsquo; /var/log/mysqld.log</p>
-<p>10、登录mysql并修改密码</p>
-<p>[root@server1 ~]# mysql -uroot -p</p>
-<p>mysql&gt; alter user &lsquo;root&rsquo;@&rsquo;localhost&rsquo; IDENTIFIED BY &lsquo;password&rsquo;;</p>
-<p> </p>
-<h2 id="方式二二进制预编译安装">方式二、二进制预编译安装<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%ba%8c%e4%ba%8c%e8%bf%9b%e5%88%b6%e9%a2%84%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85"></a></h2><p>官方安装文档：<a href="https://dev.mysql.com/doc/refman/8.0/en/binary-installation.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/binary-installation.html</a></p>
+[root@server1 ~]# service mysqld start
+</code></pre><p>9、查看mysql初始密码</p>
+<pre tabindex="0"><code>[root@server1 ~]# grep &#39;temporary password&#39; /var/log/mysqld.log
+</code></pre><p>10、登录mysql并修改密码</p>
+<pre tabindex="0"><code>[root@server1 ~]# mysql -uroot -p
+
+mysql&gt; alter user &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;;
+</code></pre><h3 id="方式二二进制预编译安装">方式二、二进制预编译安装<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%ba%8c%e4%ba%8c%e8%bf%9b%e5%88%b6%e9%a2%84%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85"></a></h3><p>官方安装文档：<a href="https://dev.mysql.com/doc/refman/8.0/en/binary-installation.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/binary-installation.html</a></p>
 <p>1、访问官网：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank">https://dev.mysql.com/downloads/mysql/</a></p>
 <p>2、选择<a href="https://dev.mysql.com/downloads/mysql/" target="_blank">MySQL Community Server</a> -&gt; &ldquo;Linux - Generic&rdquo;，下载预编译压缩包</p>
-<p>[root@server1 ~]# wget &ndash;no-check-certificate <a href="https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-linux-glibc2.12-x86" target="_blank">https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-linux-glibc2.12-x86</a>_64.tar.xz</p>
-<p>3、安装依赖库</p>
-<p>yum -y install libaio</p>
-<p>4、配置mysql</p>
-<p>[root@server1 ~]# groupadd mysql
+<pre tabindex="0"><code>[root@server1 ~]# wget --no-check-certificate https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21-linux-glibc2.12-x86_64.tar.xz
+</code></pre><p>3、安装依赖库</p>
+<pre tabindex="0"><code>yum -y install libaio
+</code></pre><p>4、配置mysql</p>
+<pre tabindex="0"><code>[root@server1 ~]# groupadd mysql
 [root@server1 ~]# useradd -r -g mysql -s /bin/false mysql
 [root@server1 ~]# mv mysql-8.0.21-linux-glibc2.12-x86_64.tar.xz /usr/local
 [root@server1 ~]# cd /usr/local
 [root@server1 local]# tar xvf mysql-8.0.21-linux-glibc2.12-x86_64.tar.xz
 [root@server1 local]# ln -s mysql-8.0.21-linux-glibc2.12-x86_64 mysql
-[root@server1 local]# cd mysql</p>
-<p>#删除mariadb的配置文件，mysql启动时会默认加载该配置文件，导致启动失败
-[root@server1 mysql]# rm /etc/my.cnf</p>
-<p>初始化mysql，会生成root初始化密码，注意保存
-[root@server1 mysql]# bin/mysqld &ndash;initialize &ndash;user=mysql</p>
-<p>#（可选）创建SSL自签名证书、密钥文件和RSA密钥对文件
-[root@server1 mysql]# bin/mysql_ssl_rsa_setup</p>
-<p>5、启动mysql并修改密码</p>
-<p>#启动mysql
-[root@salt01 mysql]# bin/mysqld_safe &ndash;user=mysql &amp;</p>
-<p>#本地连接mysql
-[root@server1 mysql]# bin/mysql -uroot -p</p>
-<p>#修改mysql密码
-mysql&gt; ALTER USER &lsquo;root&rsquo;@&rsquo;localhost&rsquo; IDENTIFIED BY &lsquo;password&rsquo;;</p>
-<p>6、将mysql添加到系统服务</p>
-<p>[root@server1 ~]# cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
-[root@server1 ~]# chkconfig &ndash;add mysqld
-[root@server1 ~]# systemctl restart mysqld</p>
-<p>7、设置环境变量</p>
-<p>[root@server1 ~]# vim /etc/profile
-export MYSQL_HOME=/usr/local/mysql
-export PATH=$PATH:$MYSQL_HOME/bin</p>
-<p>[root@server1 ~]# source /etc/profile</p>
-<p>8、配置防火墙，开放3306端口</p>
-<p>[root@server1 ~]# firewall-cmd &ndash;permanent &ndash;zone=public &ndash;add-port=3306/tcp
-[root@server1 ~]# firewall-cmd &ndash;reload</p>
-<p> </p>
-<h2 id="方式三源码安装">方式三、源码安装<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%b8%89%e6%ba%90%e7%a0%81%e5%ae%89%e8%a3%85"></a></h2><p>官方安装文档：<a href="https://dev.mysql.com/doc/refman/8.0/en/source-installation.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/source-installation.html</a></p>
+[root@server1 local]# cd mysql
+
+#删除mariadb的配置文件，mysql启动时会默认加载该配置文件，导致启动失败
+[root@server1 mysql]# rm /etc/my.cnf
+
+初始化mysql，会生成root初始化密码，注意保存
+[root@server1 mysql]# bin/mysqld --initialize --user=mysql
+
+#（可选）创建SSL自签名证书、密钥文件和RSA密钥对文件
+[root@server1 mysql]# bin/mysql_ssl_rsa_setup
+</code></pre><p>5、启动mysql并修改密码</p>
+<pre tabindex="0"><code>#启动mysql
+[root@salt01 mysql]# bin/mysqld_safe --user=mysql &amp;
+
+#本地连接mysql
+[root@server1 mysql]# bin/mysql -uroot -p
+
+#修改mysql密码
+mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;;
+</code></pre><p>6、将mysql添加到系统服务</p>
+<pre tabindex="0"><code>[root@server1 ~]# cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
+[root@server1 ~]# chkconfig --add mysqld
+[root@server1 ~]# systemctl restart mysqld
+</code></pre><p>7、设置环境变量</p>
+<pre tabindex="0"><code>[root@server1 ~]# vim /etc/profile
+    export MYSQL_HOME=/usr/local/mysql
+    export PATH=$PATH:$MYSQL_HOME/bin
+
+[root@server1 ~]# source /etc/profile
+</code></pre><p>8、配置防火墙，开放3306端口</p>
+<pre tabindex="0"><code>[root@server1 ~]# firewall-cmd --permanent --zone=public --add-port=3306/tcp
+[root@server1 ~]# firewall-cmd --reload
+</code></pre><h3 id="方式三源码安装">方式三、源码安装<a class="anchorjs-link" href="#%e6%96%b9%e5%bc%8f%e4%b8%89%e6%ba%90%e7%a0%81%e5%ae%89%e8%a3%85"></a></h3><p>官方安装文档：<a href="https://dev.mysql.com/doc/refman/8.0/en/source-installation.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/source-installation.html</a></p>
 <hr>
-<p>知悉：</p>
 <p>a. mysql从5.5版本开始，不再使用./configure编译，而是使用cmake编译器</p>
 <p>b. mysql从8.0.16版本开始，要求cmake的版本是cmake3以上</p>
 <p>c. centos7.6默认安装的是cmake2.8.12.2和gcc4.8.5，编译前需要升级到cmake3和gcc5.3以上版本</p>
@@ -348,44 +329,45 @@ export PATH=$PATH:$MYSQL_HOME/bin</p>
 <p>2、选择 <a href="https://dev.mysql.com/downloads/mysql/" target="_blank">MySQL Community Server</a> -&gt; &ldquo;Source Code&rdquo; -&gt; &ldquo;Generic Linux&rdquo;，下载源码</p>
 <p>[root@server1 ~]# wget <a href="https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21.tar.gz" target="_blank">https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.21.tar.gz</a></p>
 <p>3、安装依赖</p>
-<p>[root@server1 ~]# yum -y install gcc gcc-c++ ncurses ncurses-devel libaio-devel openssl openssl-devel</p>
-<p>4、编译前配置</p>
-<p>[root@server1 ~]# rm /etc/my.cnf  #删除mariadb的配置文件
+<pre tabindex="0"><code>[root@server1 ~]# yum -y install gcc gcc-c++ ncurses ncurses-devel libaio-devel openssl openssl-devel
+</code></pre><p>4、编译前配置</p>
+<pre tabindex="0"><code>[root@server1 ~]# rm /etc/my.cnf  #删除mariadb的配置文件
 [root@server1 ~]# groupadd mysql
 [root@server1 ~]# useradd -r -g mysql -s /bin/false mysql
-[root@server1 ~]# tar zxvf mysql-8.0.21.tar.gz</p>
-<p>yum默认安装cmake版本为2.8.12.2，编译mysql会提示以下错误：</p>
-<p>-- Running cmake version 2.8.12.2
+[root@server1 ~]# tar zxvf mysql-8.0.21.tar.gz
+</code></pre><p>yum默认安装cmake版本为2.8.12.2，编译mysql会提示以下错误：</p>
+<p>&ndash; Running cmake version 2.8.12.2
 CMake Warning at CMakeLists.txt:71 (MESSAGE):
 Please use cmake3 rather than cmake on this platform</p>
 <p>&ndash; Please install cmake3 (yum install cmake3)
 CMake Error at CMakeLists.txt:101 (CMAKE_MINIMUM_REQUIRED):
 CMake 3.5.1 or higher is required.  You are running version 2.8.12.2</p>
 <p>4、安装gcc5.3及上版本</p>
-<p>[root@server1 ~]# gcc -v
+<pre tabindex="0"><code>[root@server1 ~]# gcc -v
 [root@localhost ~]# yum -y install centos-release-scl   #安装scl源
 [root@server1 ~]# yum list|grep gcc  #列出可安装的gcc版本
-[root@server1 ~]# yum -y install devtoolset-8-gcc*   #安装gcc8
+[root@server1 ~]# yum -y install devtoolset-8-gcc\*   #安装gcc8
 [root@server1 ~]# source /opt/rh/devtoolset-8/enable  #临时切换gcc为新版本
 [root@server1 ~]# gcc -v
-[root@server1 ~]# vim ~/.bashrc  #将切换gcc版本命令加入开机启动脚本</p>
-<p>5、安装cmake3</p>
+[root@server1 ~]# vim ~/.bashrc  #将切换gcc版本命令加入开机启动脚本
+</code></pre><p>5、安装cmake3</p>
 <p>cmake官网：<a href="http://www.cmake.org/" target="_blank">http://www.cmake.org/</a></p>
-<p>[root@server1 ~]# yum -remove cmake -y  #如果有旧版本，先移除
-[root@server1 ~]# wget <a href="https://github.com/Kitware/CMake/releases/download/v3.18.2/cmake-3.18.2.tar.gz" target="_blank">https://github.com/Kitware/CMake/releases/download/v3.18.2/cmake-3.18.2.tar.gz</a>
+<pre tabindex="0"><code>[root@server1 ~]# yum -remove cmake -y  #如果有旧版本，先移除
+[root@server1 ~]# wget https://github.com/Kitware/CMake/releases/download/v3.18.2/cmake-3.18.2.tar.gz
 [root@server1 ~]# tar zxvf cmake-3.18.2.tar.gz
 [root@server1 ~]# gcc -v  #编译前确保gcc版本升级到8.0以上
 [root@server1 ~]# cd cmake-3.18.2
 [root@server1 cmake-3.18.2]# ./bootstrap
 [root@server1 cmake-3.18.2]# gmake &amp;&amp; gmake install
-[root@server1 cmake-3.18.2]# cmake &ndash;version</p>
-<p>6、编译</p>
+[root@server1 cmake-3.18.2]# cmake --version
+</code></pre><p>6、编译</p>
 <p>编译参数官方文档：<a href="https://dev.mysql.com/doc/refman/8.0/en/source-configuration-options.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/source-configuration-options.html</a></p>
-<p>[root@server1 ~]# cd mysql-8.0.21
+<pre tabindex="0"><code>[root@server1 ~]# cd mysql-8.0.21
 [root@server1 mysql-8.0.21]# mkdir bld
 [root@server1 mysql-8.0.21]# cd bld
-[root@server1 bld]#</p>
-<p>[root@server1 ~]# cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
+[root@server1 bld]#
+ 
+[root@server1 ~]# cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
 -DSYSCONFDIR=/usr/local/mysql \
 -DMYSQL_UNIX_ADDR=/data/mysql/mysql.sock \
 -DDEFAULT_CHARSET=utf8mb4 \
@@ -396,52 +378,57 @@ CMake 3.5.1 or higher is required.  You are running version 2.8.12.2</p>
 -DMYSQL_TCP_PORT=3306 \
 -DDOWNLOAD_BOOST=1 \
 -DWITH_BOOST=/tmp \
--DMYSQL_DATADIR=/data/mysql</p>
-<p>[root@server1 bld]# make -j 4  &amp;&amp; make install</p>
-<p>7、编译后配置</p>
-<p>[root@server1 ~]# mkdir -p /data/mysql
+-DMYSQL_DATADIR=/data/mysql
+ 
+[root@server1 bld]# make -j 4  &amp;&amp; make install
+</code></pre><p>7、编译后配置</p>
+<pre tabindex="0"><code>[root@server1 ~]# mkdir -p /data/mysql
 [root@server1 ~]# chown mysql:mysql -R /data/mysql
 [root@server1 ~]# cd /usr/local/mysql
-[root@server1 mysql]# bin/mysqld &ndash;initialize &ndash;user=mysql  # 初始化mysql，会生成root初始化密码，注意保存</p>
-<p>8、启动mysql并修改密码</p>
-<p>#启动mysql
-[root@salt01 mysql]# bin/mysqld_safe &ndash;user=mysql &amp;</p>
-<p>#本地连接mysql
-[root@server1 mysql]# bin/mysql -uroot -p</p>
-<p>#修改mysql密码
-mysql&gt; ALTER USER &lsquo;root&rsquo;@&rsquo;localhost&rsquo; IDENTIFIED BY &lsquo;password&rsquo;;</p>
-<p>9、添加mysql到系统服务</p>
-<p>[root@server1 ~]# cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
+[root@server1 mysql]# bin/mysqld --initialize --user=mysql  # 初始化mysql，会生成root初始化密码，注意保存
+</code></pre><p>8、启动mysql并修改密码</p>
+<pre tabindex="0"><code>#启动mysql 
+[root@salt01 mysql]# bin/mysqld_safe --user=mysql &amp;
+
+#本地连接mysql
+[root@server1 mysql]# bin/mysql -uroot -p
+
+#修改mysql密码 
+mysql&gt; ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;;
+</code></pre><p>9、添加mysql到系统服务</p>
+<pre tabindex="0"><code>[root@server1 ~]# cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
 [root@server1 ~]# chmod 755 /etc/init.d/mysqld
 [root@server1 ~]# chkconfig mysqld on
-[root@server1 ~]# systemctl restart mysqld</p>
-<p>10、设置环境变量</p>
-<p>[root@server1 ~]# vim /etc/profile
-export MYSQL_HOME=/usr/local/mysql
-export PATH=$PATH:$MYSQL_HOME/bin</p>
-<p>[root@server1 ~]# source /etc/profile</p>
-<p>11、配置防火墙，开放3306端口</p>
-<p>[root@server1 ~]# firewall-cmd &ndash;permanent &ndash;zone=public &ndash;add-port=3306/tcp
-[root@server1 ~]# firewall-cmd &ndash;reload</p>
-<h2 id="出现的问题">出现的问题<a class="anchorjs-link" href="#%e5%87%ba%e7%8e%b0%e7%9a%84%e9%97%ae%e9%a2%98"></a></h2><p>1、mysql启动失败</p>
-<p>[root@server1 ~]# systemctl start mysqld
-mysqld[23082]: mysqld_safe error: log-error set to &lsquo;/var/log/mariadb/mariadb.log&rsquo;, however file don&rsquo;t exists. Create writable for user &lsquo;mysql&rsquo;.
-mysqld[23082]: ERROR! The server quit without updating PID file (/var/lib/mysql/server1.pid)</p>
-<p>原因：初始化mysql时，系统中还残留mariadb配置</p>
-<p>解决方法：</p>
+[root@server1 ~]# systemctl restart mysqld
+</code></pre><p>10、设置环境变量</p>
+<pre tabindex="0"><code>[root@server1 ~]# vim /etc/profile
+    export MYSQL_HOME=/usr/local/mysql
+    export PATH=$PATH:$MYSQL_HOME/bin
+
+[root@server1 ~]# source /etc/profile
+</code></pre><p>11、配置防火墙，开放3306端口</p>
+<pre tabindex="0"><code>[root@server1 ~]# firewall-cmd --permanent --zone=public --add-port=3306/tcp
+[root@server1 ~]# firewall-cmd --reload
+</code></pre><h3 id="出现的问题">出现的问题<a class="anchorjs-link" href="#%e5%87%ba%e7%8e%b0%e7%9a%84%e9%97%ae%e9%a2%98"></a></h3><p><strong>1、mysql启动失败</strong></p>
+<pre tabindex="0"><code>[root@server1 ~]# systemctl start mysqld
+mysqld\[23082\]: mysqld_safe error: log-error set to &#39;/var/log/mariadb/mariadb.log&#39;, however file don&#39;t exists. Create writable for user &#39;mysql&#39;.
+mysqld\[23082\]: ERROR! The server quit without updating PID file (/var/lib/mysql/server1.pid)
+</code></pre><p><strong>原因：</strong> 初始化mysql时，系统中还残留mariadb配置</p>
+<p><strong>解决方法：</strong></p>
 <p>[root@server1 ~]# rm /etc/my.cnf  #删除mariadb残留的配置文件
 [root@server1 mysql]# bin/mysqld &ndash;initialize &ndash;user=mysql  #重新初始化</p>
-<p>2、编译cmake3，在执行 ./bootstrap 过程中出现下面提示</p>
-<p>CMake Error at CMakeLists.txt:107 (message):
-The C++ compiler does not support C++11 (e.g.  std::unique_ptr).</p>
-<p>解决方法：执行第4步操作，升级gcc版本，重新编译cmake3（最好删除cmake3目录重新解压），如果还不行，重启系统再进行编译</p>
-<p>3、编译mysql，出现下面提示</p>
-<p>CMake Error at cmake/boost.cmake:106 (MESSAGE):
-You can download it with -DDOWNLOAD_BOOST=1 -DWITH_BOOST=<directory></p>
-<p>解决方法：编译时添加参数</p>
-<p>-DDOWNLOAD_BOOST=1，表示系统会自动下载解压boost，若已下载，请将该参数置0</p>
-<p>cmake -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/tmp</p>
+<p><strong>2、编译cmake3，在执行 ./bootstrap 过程中出现下面提示</strong></p>
+<pre tabindex="0"><code>CMake Error at CMakeLists.txt:107 (message):
+  The C++ compiler does not support C++11 (e.g.  std::unique_ptr).
+</code></pre><p><strong>解决方法：</strong> 执行第4步操作，升级gcc版本，重新编译cmake3（最好删除cmake3目录重新解压），如果还不行，重启系统再进行编译</p>
+<p><strong>3、编译mysql，出现下面提示</strong></p>
+<pre tabindex="0"><code>CMake Error at cmake/boost.cmake:106 (MESSAGE):
+  You can download it with -DDOWNLOAD_BOOST=1 -DWITH_BOOST=&lt;directory&gt;
+</code></pre><p><strong>解决方法：</strong> 编译时添加参数</p>
+<pre tabindex="0"><code>\-DDOWNLOAD_BOOST=1，表示系统会自动下载解压boost，若已下载，请将该参数置0
 
+cmake -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/tmp
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

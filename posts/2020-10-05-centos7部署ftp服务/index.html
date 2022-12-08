@@ -15,74 +15,47 @@
 
   
   <meta name="description" content="一、安装FTP服务1、安装vsftpd软件
-[root@FTP ~]# yum -y install vsftpd
-2、防火墙放行FTP服务
-[root@FTP ~]# firewall-cmd &ndash;permanent &ndash;add-service=ftp
-[root@FTP ~]# firewall-cmd &ndash;reload
-3、启动服务
-[root@FTP ~]# systemctl start vsftpd [root@FTP ~]# systemctl enable vsftpd
-4、测试
+[root@FTP ~]# yum -y install vsftpd 2、防火墙放行FTP服务
+[root@FTP ~]# firewall-cmd --permanent --add-service=ftp [root@FTP ~]# firewall-cmd --reload 3、启动服务
+[root@FTP ~]# systemctl start vsftpd [root@FTP ~]# systemctl enable vsftpd 4、测试
 该匿名用户目录位于：/var/ftp/pub/
 二、关闭匿名用户1、修改配置文件
-[root@FTP ~]# vim /etc/vsftpd/vsftpd.conf anonymous_enable=NO
-2、重启服务
-#重启服务 [root@FTP vsftpd]# systemctl restart vsftpd
-3、测试
+[root@FTP ~]# vim /etc/vsftpd/vsftpd.conf anonymous\_enable=NO 2、重启服务
+#重启服务 [root@FTP vsftpd]# systemctl restart vsftpd 3、测试
 三、FTP开启root用户访问（不建议）1、将root从禁止登录列表中移除
-[root@FTP ~]# vim /etc/vsftpd/ftpusers #root
-[root@FTP ~]# vim /etc/vsftpd/user_list #root
-2、关闭selinux
-[root@FTP ~]# setenforce 0
-四、新建用户用于FTP访问1、新建用户
-[root@FTP ~]# useradd test [root@FTP ~]# passwd test">
+[root@FTP ~]# vim /etc/vsftpd/ftpusers #root [root@FTP ~]# vim /etc/vsftpd/user\_list #root 2、关闭selinux
+[root@FTP ~]# setenforce 0 四、新建用户用于FTP访问1、新建用户
+[root@FTP ~]# useradd test [root@FTP ~]# passwd test 2、新建测试文件">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Centos7部署FTP服务"/>
 <meta name="twitter:description" content="一、安装FTP服务1、安装vsftpd软件
-[root@FTP ~]# yum -y install vsftpd
-2、防火墙放行FTP服务
-[root@FTP ~]# firewall-cmd &ndash;permanent &ndash;add-service=ftp
-[root@FTP ~]# firewall-cmd &ndash;reload
-3、启动服务
-[root@FTP ~]# systemctl start vsftpd [root@FTP ~]# systemctl enable vsftpd
-4、测试
+[root@FTP ~]# yum -y install vsftpd 2、防火墙放行FTP服务
+[root@FTP ~]# firewall-cmd --permanent --add-service=ftp [root@FTP ~]# firewall-cmd --reload 3、启动服务
+[root@FTP ~]# systemctl start vsftpd [root@FTP ~]# systemctl enable vsftpd 4、测试
 该匿名用户目录位于：/var/ftp/pub/
 二、关闭匿名用户1、修改配置文件
-[root@FTP ~]# vim /etc/vsftpd/vsftpd.conf anonymous_enable=NO
-2、重启服务
-#重启服务 [root@FTP vsftpd]# systemctl restart vsftpd
-3、测试
+[root@FTP ~]# vim /etc/vsftpd/vsftpd.conf anonymous\_enable=NO 2、重启服务
+#重启服务 [root@FTP vsftpd]# systemctl restart vsftpd 3、测试
 三、FTP开启root用户访问（不建议）1、将root从禁止登录列表中移除
-[root@FTP ~]# vim /etc/vsftpd/ftpusers #root
-[root@FTP ~]# vim /etc/vsftpd/user_list #root
-2、关闭selinux
-[root@FTP ~]# setenforce 0
-四、新建用户用于FTP访问1、新建用户
-[root@FTP ~]# useradd test [root@FTP ~]# passwd test"/>
+[root@FTP ~]# vim /etc/vsftpd/ftpusers #root [root@FTP ~]# vim /etc/vsftpd/user\_list #root 2、关闭selinux
+[root@FTP ~]# setenforce 0 四、新建用户用于FTP访问1、新建用户
+[root@FTP ~]# useradd test [root@FTP ~]# passwd test 2、新建测试文件"/>
 
   <meta property="og:title" content="Centos7部署FTP服务" />
 <meta property="og:description" content="一、安装FTP服务1、安装vsftpd软件
-[root@FTP ~]# yum -y install vsftpd
-2、防火墙放行FTP服务
-[root@FTP ~]# firewall-cmd &ndash;permanent &ndash;add-service=ftp
-[root@FTP ~]# firewall-cmd &ndash;reload
-3、启动服务
-[root@FTP ~]# systemctl start vsftpd [root@FTP ~]# systemctl enable vsftpd
-4、测试
+[root@FTP ~]# yum -y install vsftpd 2、防火墙放行FTP服务
+[root@FTP ~]# firewall-cmd --permanent --add-service=ftp [root@FTP ~]# firewall-cmd --reload 3、启动服务
+[root@FTP ~]# systemctl start vsftpd [root@FTP ~]# systemctl enable vsftpd 4、测试
 该匿名用户目录位于：/var/ftp/pub/
 二、关闭匿名用户1、修改配置文件
-[root@FTP ~]# vim /etc/vsftpd/vsftpd.conf anonymous_enable=NO
-2、重启服务
-#重启服务 [root@FTP vsftpd]# systemctl restart vsftpd
-3、测试
+[root@FTP ~]# vim /etc/vsftpd/vsftpd.conf anonymous\_enable=NO 2、重启服务
+#重启服务 [root@FTP vsftpd]# systemctl restart vsftpd 3、测试
 三、FTP开启root用户访问（不建议）1、将root从禁止登录列表中移除
-[root@FTP ~]# vim /etc/vsftpd/ftpusers #root
-[root@FTP ~]# vim /etc/vsftpd/user_list #root
-2、关闭selinux
-[root@FTP ~]# setenforce 0
-四、新建用户用于FTP访问1、新建用户
-[root@FTP ~]# useradd test [root@FTP ~]# passwd test" />
+[root@FTP ~]# vim /etc/vsftpd/ftpusers #root [root@FTP ~]# vim /etc/vsftpd/user\_list #root 2、关闭selinux
+[root@FTP ~]# setenforce 0 四、新建用户用于FTP访问1、新建用户
+[root@FTP ~]# useradd test [root@FTP ~]# passwd test 2、新建测试文件" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-05T00:00:00+00:00" />
@@ -271,16 +244,16 @@
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p> </p>
-<h2 id="一安装ftp服务">一、安装FTP服务<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85ftp%e6%9c%8d%e5%8a%a1"></a></h2><p>1、安装vsftpd软件</p>
-<p>[root@FTP ~]# yum -y install vsftpd</p>
-<p>2、防火墙放行FTP服务</p>
-<p>[root@FTP ~]# firewall-cmd &ndash;permanent &ndash;add-service=ftp</p>
-<p>[root@FTP ~]# firewall-cmd &ndash;reload</p>
-<p>3、启动服务</p>
-<p>[root@FTP ~]# systemctl start vsftpd
-[root@FTP ~]# systemctl enable vsftpd</p>
-<p>4、测试</p>
+        <h3 id="一安装ftp服务">一、安装FTP服务<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85ftp%e6%9c%8d%e5%8a%a1"></a></h3><p>1、安装vsftpd软件</p>
+<pre tabindex="0"><code>[root@FTP ~]# yum -y install vsftpd
+</code></pre><p>2、防火墙放行FTP服务</p>
+<pre tabindex="0"><code>[root@FTP ~]# firewall-cmd --permanent --add-service=ftp
+
+[root@FTP ~]# firewall-cmd --reload 
+</code></pre><p>3、启动服务</p>
+<pre tabindex="0"><code>[root@FTP ~]# systemctl start vsftpd
+[root@FTP ~]# systemctl enable vsftpd
+</code></pre><p>4、测试</p>
 <p>该匿名用户目录位于：/var/ftp/pub/</p>
 <p><figure>
   <a class="paragraph-image">
@@ -288,38 +261,39 @@
   </a>
   
 </figure></p>
-<h2 id="二关闭匿名用户">二、关闭匿名用户<a class="anchorjs-link" href="#%e4%ba%8c%e5%85%b3%e9%97%ad%e5%8c%bf%e5%90%8d%e7%94%a8%e6%88%b7"></a></h2><p>1、修改配置文件</p>
-<p>[root@FTP ~]# vim /etc/vsftpd/vsftpd.conf
-anonymous_enable=NO</p>
-<p>2、重启服务</p>
-<p>#重启服务
-[root@FTP vsftpd]# systemctl restart vsftpd</p>
-<p>3、测试</p>
+<h3 id="二关闭匿名用户">二、关闭匿名用户<a class="anchorjs-link" href="#%e4%ba%8c%e5%85%b3%e9%97%ad%e5%8c%bf%e5%90%8d%e7%94%a8%e6%88%b7"></a></h3><p>1、修改配置文件</p>
+<pre tabindex="0"><code>[root@FTP ~]# vim /etc/vsftpd/vsftpd.conf
+  anonymous\_enable=NO
+</code></pre><p>2、重启服务</p>
+<pre tabindex="0"><code>#重启服务
+[root@FTP vsftpd]# systemctl restart vsftpd
+</code></pre><p>3、测试</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//854dac79d5982d41a2a1f9422aae43af.png" data-action="zoom" alt=""  class="lazyload">
   </a>
   
 </figure></p>
-<h2 id="三ftp开启root用户访问不建议">三、FTP开启root用户访问（不建议）<a class="anchorjs-link" href="#%e4%b8%89ftp%e5%bc%80%e5%90%afroot%e7%94%a8%e6%88%b7%e8%ae%bf%e9%97%ae%e4%b8%8d%e5%bb%ba%e8%ae%ae"></a></h2><p>1、将root从禁止登录列表中移除</p>
-<p>[root@FTP ~]# vim /etc/vsftpd/ftpusers
-#root</p>
-<p>[root@FTP ~]# vim /etc/vsftpd/user_list
-#root</p>
-<p>2、关闭selinux</p>
-<p>[root@FTP ~]# setenforce 0</p>
-<h2 id="四新建用户用于ftp访问">四、新建用户用于FTP访问<a class="anchorjs-link" href="#%e5%9b%9b%e6%96%b0%e5%bb%ba%e7%94%a8%e6%88%b7%e7%94%a8%e4%ba%8eftp%e8%ae%bf%e9%97%ae"></a></h2><p>1、新建用户</p>
-<p>[root@FTP ~]# useradd test
-[root@FTP ~]# passwd test</p>
-<p>2、新建测试文件</p>
-<p>[root@FTP ~]# su - test
-[test@FTP ~]$ touch file1.txt</p>
-<p>3、修改ftp配置文件</p>
-<p>[test@FTP ~]$ vim /etc/vsftpd/vsftpd.conf
-chroot_local_user=YES  #限制用户只能访问为其配置的目录</p>
-<p>4、去除用户主目录的写权限</p>
-<p>[test@FTP ~]$ chmod a-w /home/test/</p>
-<p>ps：从2.3.5之后，vsftpd增强了安全检查，如果用户被限定在了其主目录下，则该用户的主目录不能再具有写权限了！如果检查发现还有写权限，就会报下面错误。
+<h3 id="三ftp开启root用户访问不建议">三、FTP开启root用户访问（不建议）<a class="anchorjs-link" href="#%e4%b8%89ftp%e5%bc%80%e5%90%afroot%e7%94%a8%e6%88%b7%e8%ae%bf%e9%97%ae%e4%b8%8d%e5%bb%ba%e8%ae%ae"></a></h3><p>1、将root从禁止登录列表中移除</p>
+<pre tabindex="0"><code>[root@FTP ~]# vim /etc/vsftpd/ftpusers
+    #root
+
+[root@FTP ~]# vim /etc/vsftpd/user\_list
+    #root
+</code></pre><p>2、关闭selinux</p>
+<pre tabindex="0"><code>[root@FTP ~]# setenforce 0
+</code></pre><h3 id="四新建用户用于ftp访问">四、新建用户用于FTP访问<a class="anchorjs-link" href="#%e5%9b%9b%e6%96%b0%e5%bb%ba%e7%94%a8%e6%88%b7%e7%94%a8%e4%ba%8eftp%e8%ae%bf%e9%97%ae"></a></h3><p>1、新建用户</p>
+<pre tabindex="0"><code>[root@FTP ~]# useradd test
+[root@FTP ~]# passwd test
+</code></pre><p>2、新建测试文件</p>
+<pre tabindex="0"><code>[root@FTP ~]# su - test
+[test@FTP ~]$ touch file1.txt
+</code></pre><p>3、修改ftp配置文件</p>
+<pre tabindex="0"><code>[test@FTP ~]$ vim /etc/vsftpd/vsftpd.conf
+    chroot_local_user=YES  #限制用户只能访问为其配置的目录
+</code></pre><p>4、去除用户主目录的写权限</p>
+<pre tabindex="0"><code>[test@FTP ~]$ chmod a-w /home/test/
+</code></pre><p>ps：从2.3.5之后，vsftpd增强了安全检查，如果用户被限定在了其主目录下，则该用户的主目录不能再具有写权限了！如果检查发现还有写权限，就会报下面错误。
 500 OOPS: vsftpd: refusing to run with writable root inside chroot ()</p>
 <p>5、测试</p>
 <p>地址格式： ftp://username:password@hostname:port</p>
@@ -329,25 +303,26 @@ chroot_local_user=YES  #限制用户只能访问为其配置的目录</p>
   </a>
   
 </figure></p>
-<h2 id="五其它参数设置">五、其它参数设置<a class="anchorjs-link" href="#%e4%ba%94%e5%85%b6%e5%ae%83%e5%8f%82%e6%95%b0%e8%ae%be%e7%bd%ae"></a></h2><p>[root@FTP ~]# vim /etc/vsftpd/vsftpd.conf
+<h3 id="五其它参数设置">五、其它参数设置<a class="anchorjs-link" href="#%e4%ba%94%e5%85%b6%e5%ae%83%e5%8f%82%e6%95%b0%e8%ae%be%e7%bd%ae"></a></h3><pre tabindex="0"><code>[root@FTP ~]# vim /etc/vsftpd/vsftpd.conf
 local_max_rate=200k   //设置本地用户最大的传输速率为200kbps
-anon_max_rate=10k     //设置匿名用户最大的传输速率为10kbps</p>
-<h2 id="六配置tlsssl实现加密传输">六、配置TLS/SSL，实现加密传输<a class="anchorjs-link" href="#%e5%85%ad%e9%85%8d%e7%bd%aetlsssl%e5%ae%9e%e7%8e%b0%e5%8a%a0%e5%af%86%e4%bc%a0%e8%be%93"></a></h2><p>1、安装openssl</p>
-<p>[root@NAS ~]# yum install -y openssl</p>
-<p>2、生成SSL证书</p>
-<p>[root@NAS ~]# openssl req -x509 -nodes -days 365 -newkey rsa:1024 \
--keyout /etc/vsftpd/vsftpd.pem \
--out /etc/vsftpd/vsftpd.pem</p>
-<hr>
-<p>Country Name (2 letter code) [XX]:bj       #输入国家
+anon_max_rate=10k     //设置匿名用户最大的传输速率为10kbps
+</code></pre><h3 id="六配置tlsssl实现加密传输">六、配置TLS/SSL，实现加密传输<a class="anchorjs-link" href="#%e5%85%ad%e9%85%8d%e7%bd%aetlsssl%e5%ae%9e%e7%8e%b0%e5%8a%a0%e5%af%86%e4%bc%a0%e8%be%93"></a></h3><p>1、安装openssl</p>
+<pre tabindex="0"><code>[root@NAS ~]# yum install -y openssl
+</code></pre><p>2、生成SSL证书</p>
+<pre tabindex="0"><code>[root@NAS ~]# openssl req -x509 -nodes -days 365 -newkey rsa:1024 \ 
+-keyout /etc/vsftpd/vsftpd.pem \ 
+-out /etc/vsftpd/vsftpd.pem
+ 
+---------------------------------------------------------------
+Country Name (2 letter code) [XX]:bj       #输入国家
 State or Province Name (full name) []:bj   #输入省份
 Locality Name (eg, city) [Default City]:     #输入城市
 Organization Name (eg, company) [Default Company Ltd]:   3输入公司/组织
 Organizational Unit Name (eg, section) []:test     #输入公司/组织简称
-Common Name (eg, your name or your server&rsquo;s hostname) []:test   #输入主机名称
-Email Address []:123@qq.com   #输入邮件地址</p>
-<p>3、修改配置文件</p>
-<p>[root@NAS ~]# vim /etc/vsftpd/vsftpd.conf
+Common Name (eg, your name or your server&#39;s hostname) []:test   #输入主机名称
+Email Address []:123@qq.com   #输入邮件地址
+</code></pre><p>3、修改配置文件</p>
+<pre tabindex="0"><code>[root@NAS ~]# vim /etc/vsftpd/vsftpd.conf
 #在最后面添加以下配置参数
 ssl_enable=YES
 allow_anon_ssl=NO
@@ -356,10 +331,10 @@ force_local_logins_ssl=NO
 ssl_tlsv1=YES
 ssl_sslv2=NO
 ssl_sslv3=NO
-rsa_cert_file=/etc/vsftpd/vsftpd.pem</p>
-<p>4、重启服务</p>
-<p>[root@NAS ~]# systemctl restart vsftpd</p>
-
+rsa_cert_file=/etc/vsftpd/vsftpd.pem
+</code></pre><p>4、重启服务</p>
+<pre tabindex="0"><code>[root@NAS ~]# systemctl restart vsftpd
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

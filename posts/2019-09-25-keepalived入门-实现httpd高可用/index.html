@@ -18,11 +18,7 @@
 Server1：192.168.200.10
 Server2：192.168.200.20
 虚拟IP： 192.168.200.30
-一、Keepalived实现简单的双机热备#主机和备机安装httpd和keepalived [root@server1 ~]# yum -y install httpd keepalived
-#主机配置keepalived [root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1 //设置router_id，名称要唯一，两台机器不能相同 }
-vrrp_instance VI_1 { state MASTER //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 100 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30 //虚拟IP，两台机器要一致 } }
-#备机配置keepalived [root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 //设置router_id，名称要唯一，两台机器不能相同 }
-vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 50 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.">
+一、Keepalived实现简单的双机热备#主机和备机安装httpd和keepalived [root@server1 ~]# yum -y install httpd keepalived #主机配置keepalived [root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1 //设置router_id，名称要唯一，两台机器不能相同 } vrrp_instance VI_1 { state MASTER //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 100 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30 //虚拟IP，两台机器要一致 } } #备机配置keepalived [root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 //设置router_id，名称要唯一，两台机器不能相同 } vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 50 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
@@ -31,22 +27,14 @@ vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主�
 Server1：192.168.200.10
 Server2：192.168.200.20
 虚拟IP： 192.168.200.30
-一、Keepalived实现简单的双机热备#主机和备机安装httpd和keepalived [root@server1 ~]# yum -y install httpd keepalived
-#主机配置keepalived [root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1 //设置router_id，名称要唯一，两台机器不能相同 }
-vrrp_instance VI_1 { state MASTER //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 100 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30 //虚拟IP，两台机器要一致 } }
-#备机配置keepalived [root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 //设置router_id，名称要唯一，两台机器不能相同 }
-vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 50 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192."/>
+一、Keepalived实现简单的双机热备#主机和备机安装httpd和keepalived [root@server1 ~]# yum -y install httpd keepalived #主机配置keepalived [root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1 //设置router_id，名称要唯一，两台机器不能相同 } vrrp_instance VI_1 { state MASTER //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 100 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30 //虚拟IP，两台机器要一致 } } #备机配置keepalived [root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 //设置router_id，名称要唯一，两台机器不能相同 } vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 50 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192."/>
 
   <meta property="og:title" content="keepalived入门-实现httpd高可用" />
 <meta property="og:description" content="实验环境：
 Server1：192.168.200.10
 Server2：192.168.200.20
 虚拟IP： 192.168.200.30
-一、Keepalived实现简单的双机热备#主机和备机安装httpd和keepalived [root@server1 ~]# yum -y install httpd keepalived
-#主机配置keepalived [root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1 //设置router_id，名称要唯一，两台机器不能相同 }
-vrrp_instance VI_1 { state MASTER //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 100 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30 //虚拟IP，两台机器要一致 } }
-#备机配置keepalived [root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 //设置router_id，名称要唯一，两台机器不能相同 }
-vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 50 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192." />
+一、Keepalived实现简单的双机热备#主机和备机安装httpd和keepalived [root@server1 ~]# yum -y install httpd keepalived #主机配置keepalived [root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1 //设置router_id，名称要唯一，两台机器不能相同 } vrrp_instance VI_1 { state MASTER //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 100 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30 //虚拟IP，两台机器要一致 } } #备机配置keepalived [root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 //设置router_id，名称要唯一，两台机器不能相同 } vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主机，BACKUP为备机 interface ens33 //指定运行VRRP的网卡名称 virtual_router_id 51 //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址 priority 50 //优先级，值最大的将成为Master节点，取值 1~254 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-25T00:00:00+00:00" />
@@ -235,206 +223,236 @@ vrrp_instance VI_1 { state BACKUP //定义本机的初始状态，MASTER为主�
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p>实验环境：</p>
+        <p><strong>实验环境：</strong></p>
 <p>Server1：192.168.200.10</p>
 <p>Server2：192.168.200.20</p>
 <p>虚拟IP：  192.168.200.30</p>
-<h2 id="一keepalived实现简单的双机热备">一、Keepalived实现简单的双机热备<a class="anchorjs-link" href="#%e4%b8%80keepalived%e5%ae%9e%e7%8e%b0%e7%ae%80%e5%8d%95%e7%9a%84%e5%8f%8c%e6%9c%ba%e7%83%ad%e5%a4%87"></a></h2><p>#主机和备机安装httpd和keepalived
-[root@server1 ~]# yum -y install httpd keepalived</p>
-<p>#主机配置keepalived
+<h3 id="一keepalived实现简单的双机热备">一、Keepalived实现简单的双机热备<a class="anchorjs-link" href="#%e4%b8%80keepalived%e5%ae%9e%e7%8e%b0%e7%ae%80%e5%8d%95%e7%9a%84%e5%8f%8c%e6%9c%ba%e7%83%ad%e5%a4%87"></a></h3><pre tabindex="0"><code>#主机和备机安装httpd和keepalived
+[root@server1 ~]# yum -y install httpd keepalived 
+
+#主机配置keepalived
 [root@server1 ~]# vim /etc/keepalived/keepalived.conf
 global_defs {
-router_id Server1   //设置router_id，名称要唯一，两台机器不能相同
-}</p>
-<p>vrrp_instance VI_1 {
-state MASTER    //定义本机的初始状态，MASTER为主机，BACKUP为备机
-interface ens33  //指定运行VRRP的网卡名称
-virtual_router_id 51  //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址
-priority 100    //优先级，值最大的将成为Master节点，取值 1~254
-advert_int 1
-authentication {
-auth_type PASS
-auth_pass 1111
+   router_id Server1   //设置router_id，名称要唯一，两台机器不能相同
 }
-virtual_ipaddress {
-192.168.200.30  //虚拟IP，两台机器要一致
+
+vrrp_instance VI_1 {
+    state MASTER    //定义本机的初始状态，MASTER为主机，BACKUP为备机
+    interface ens33  //指定运行VRRP的网卡名称
+    virtual_router_id 51  //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址
+    priority 100    //优先级，值最大的将成为Master节点，取值 1~254
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        192.168.200.30  //虚拟IP，两台机器要一致
+    }
 }
-}</p>
-<p>#备机配置keepalived
+
+#备机配置keepalived
 [root@server2 ~]# vim /etc/keepalived/keepalived.conf
 global_defs {
-router_id Server2 //设置router_id，名称要唯一，两台机器不能相同
-}</p>
-<p>vrrp_instance VI_1 {
-state BACKUP     //定义本机的初始状态，MASTER为主机，BACKUP为备机
-interface ens33 //指定运行VRRP的网卡名称
-virtual_router_id 51  //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址
-priority 50    //优先级，值最大的将成为Master节点，取值 1~254
-advert_int 1
-authentication {
-auth_type PASS
-auth_pass 1111
+   router_id Server2 //设置router_id，名称要唯一，两台机器不能相同
 }
-virtual_ipaddress {
-192.168.200.30   //虚拟IP，两台机器要一致
+
+vrrp_instance VI_1 {
+    state BACKUP     //定义本机的初始状态，MASTER为主机，BACKUP为备机
+    interface ens33 //指定运行VRRP的网卡名称
+    virtual_router_id 51  //VRRP路由ID，取值 1~255 ，同一组VRRP路由ID必须一致，该ID用于虚拟路由的MAC地址
+    priority 50    //优先级，值最大的将成为Master节点，取值 1~254
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        192.168.200.30   //虚拟IP，两台机器要一致
+    }
 }
-}</p>
-<p>#两台机器启动httpd和keepalived
-[root@server1 ~]# systemctl start httpd keepalived<br>
-[root@server1 ~]# systemctl enable httpd keepalived</p>
-<h2 id="测试">测试<a class="anchorjs-link" href="#%e6%b5%8b%e8%af%95"></a></h2><p>#正常情况，虚拟IP在主机上
+
+#两台机器启动httpd和keepalived
+[root@server1 ~]# systemctl start httpd keepalived  
+[root@server1 ~]# systemctl enable httpd keepalived
+</code></pre><p><strong>测试</strong></p>
+<pre tabindex="0"><code>#正常情况，虚拟IP在主机上
 [root@server1 ~]# ip a
 2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-inet 192.168.200.10/24 brd 192.168.200.255 scope global noprefixroute ens33
-valid_lft forever preferred_lft forever
-inet 192.168.200.30/32 scope global ens33
-valid_lft forever preferred_lft forever</p>
-<p>#模拟主机宕机
-[root@server1 ~]# poweroff</p>
-<p>#虚拟IP切换到备机上
+    inet 192.168.200.10/24 brd 192.168.200.255 scope global noprefixroute ens33
+       valid_lft forever preferred_lft forever
+    inet 192.168.200.30/32 scope global ens33
+       valid_lft forever preferred_lft forever
+ 
+#模拟主机宕机
+[root@server1 ~]# poweroff  
+ 
+#虚拟IP切换到备机上
 [root@server2 ~]# ip a
 2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
-inet 192.168.200.20/24 brd 192.168.200.255 scope global noprefixroute ens33
-valid_lft forever preferred_lft forever
-inet 192.168.200.30/32 scope global ens33
-valid_lft forever preferred_lft forever</p>
-<h2 id="二keepalived实现web站点高可用">二、Keepalived实现Web站点高可用<a class="anchorjs-link" href="#%e4%ba%8ckeepalived%e5%ae%9e%e7%8e%b0web%e7%ab%99%e7%82%b9%e9%ab%98%e5%8f%af%e7%94%a8"></a></h2><p>检查nginx服务是否启动，如果没启动尝试重启httpd，如果还是失败，则把关闭keepalived服务，让VIP飘到备机上</p>
-<p>[root@server1 ~]# vim /etc/keepalived/httpd_check.sh
+    inet 192.168.200.20/24 brd 192.168.200.255 scope global noprefixroute ens33
+       valid_lft forever preferred_lft forever
+    inet 192.168.200.30/32 scope global ens33
+       valid_lft forever preferred_lft forever
+</code></pre><h3 id="二keepalived实现web站点高可用">二、Keepalived实现Web站点高可用<a class="anchorjs-link" href="#%e4%ba%8ckeepalived%e5%ae%9e%e7%8e%b0web%e7%ab%99%e7%82%b9%e9%ab%98%e5%8f%af%e7%94%a8"></a></h3><p>检查nginx服务是否启动，如果没启动尝试重启httpd，如果还是失败，则把关闭keepalived服务，让VIP飘到备机上</p>
+<p>Server1和2的httpd状态检测脚本</p>
+<pre tabindex="0"><code>[root@server1 ~]# vim /etc/keepalived/httpd_check.sh
 #!/bin/bash
-httpd_status1=`ps -C httpd &ndash;no-header | wc -l`
+httpd_status1=`ps -C httpd --no-header | wc -l`
 if [ $httpd_status1 -eq 0 ];then
-systemctl restart httpd
-sleep 3
-httpd_status2=`ps -C httpd &ndash;no-header | wc -l`
-if [ $httpd_status2 -eq 0 ];then
-systemctl stop keepalived
+        systemctl restart httpd
+        sleep 3
+        httpd_status2=`ps -C httpd --no-header | wc -l`
+        if [ $httpd_status2 -eq 0 ];then
+                systemctl stop keepalived
+        fi
 fi
-fi</p>
-<p>#添加执行权限
-[root@server1 ~]# chmod +x /etc/keepalived/httpd_check.sh</p>
-<p> </p>
-<p>注意：检测脚本写在vrrp_instance的前面，花括号前面要有空格，追踪trace_script写在vip的后面</p>
-<p>[root@server1 ~]# vim /etc/keepalived/keepalived.conf
+ 
+#添加执行权限
+[root@server1 ~]# chmod +x /etc/keepalived/httpd_check.sh 
+</code></pre><p>注意：检测脚本写在vrrp_instance的前面，花括号前面要有空格，追踪trace_script写在vip的后面</p>
+<p>Server1的Keepalive配置</p>
+<pre tabindex="0"><code>[root@server1 ~]# vim /etc/keepalived/keepalived.conf
 global_defs {
-router_id Server1
-}</p>
-<p>vrrp_script httpd_chk {
-script &ldquo;/etc/keepalived/httpd_check.sh&rdquo;   //指定检测脚本文件
-interval 2   //每隔2秒钟执行一次检测脚本
-}</p>
-<p>vrrp_instance VI_1 {
-state MASTER
-interface ens33
-virtual_router_id 51
-priority 100
-advert_int 1
-authentication {
-auth_type PASS
-auth_pass 1111
+   router_id Server1
 }
-virtual_ipaddress {
-192.168.200.30
+
+vrrp_script httpd_chk {
+    script &#34;/etc/keepalived/httpd_check.sh&#34;   //指定检测脚本文件
+    interval 2   //每隔2秒钟执行一次检测脚本
 }
-track_script {
-httpd_chk   //指定vrrp_script名称
+
+vrrp_instance VI_1 {
+    state MASTER
+    interface ens33
+    virtual_router_id 51
+    priority 100
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        192.168.200.30
+    }
+    track_script {
+        httpd_chk   //指定vrrp_script名称
 }
-}</p>
-<p>[root@server1 ~]# systemctl restart keepalived</p>
-<p> </p>
-<p>[root@server2 ~]# vim /etc/keepalived/keepalived.conf
+}
+
+[root@server1 ~]# systemctl restart keepalived
+</code></pre><p>Server2的Keepalive配置</p>
+<pre tabindex="0"><code>[root@server2 ~]# vim /etc/keepalived/keepalived.conf
 global_defs {
-router_id Server2
-}</p>
-<p>vrrp_script httpd_chk {
-script &ldquo;/etc/keepalived/httpd_check.sh&rdquo;
-interval 2
-}</p>
-<p>vrrp_instance VI_1 {
-state BACKUP
-interface ens33
-virtual_router_id 51
-priority 80
-advert_int 1
-authentication {
-auth_type PASS
-auth_pass 1111
+   router_id Server2
 }
-virtual_ipaddress {
-192.168.200.30
+
+vrrp_script httpd_chk {
+    script &#34;/etc/keepalived/httpd_check.sh&#34;
+    interval 2
 }
-track_script {
-httpd_chk
+
+vrrp_instance VI_1 {
+    state BACKUP
+    interface ens33
+    virtual_router_id 51
+    priority 80
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        192.168.200.30
+    }
+    track_script {
+      httpd_chk
 }
-}</p>
-<p>[root@server1 ~]# systemctl restart keepalived</p>
-<p> </p>
-<h2 id="测试-1">测试<a class="anchorjs-link" href="#%e6%b5%8b%e8%af%95-1"></a></h2><p>#模拟主机的httpd服务异常关闭
-[root@server1 ~]# systemctl stop httpd</p>
-<p>#几秒后查看httpd状态，正常应该被keepalive检测脚本重新启动httpd服务
-[root@server1 ~]# systemctl status httpd</p>
-<p>#模拟主机的httpd服务异常关闭并且无法启动
+}
+
+
+[root@server1 ~]# systemctl restart keepalived
+</code></pre><p><strong>测试</strong></p>
+<pre tabindex="0"><code>#模拟主机的httpd服务异常关闭
+[root@server1 ~]# systemctl stop httpd
+ 
+#几秒后查看httpd状态，正常应该被keepalive检测脚本重新启动httpd服务
+[root@server1 ~]# systemctl status httpd
+</code></pre><pre tabindex="0"><code>#模拟主机的httpd服务异常关闭并且无法启动
 [root@server1 ~]# mv /etc/httpd/conf/httpd.conf{,.bak}
-[root@server1 ~]# systemctl stop httpd</p>
-<p>#查看虚拟IP是否飘到备机上
+[root@server1 ~]# systemctl stop httpd
+ 
+#查看虚拟IP是否飘到备机上
 [root@server2 ~]# ip a
-[root@server2 ~]# systemctl status httpd</p>
-<p> </p>
-<h2 id="三web高可用并实现网站文件主备同步rsync-inotify">三、Web高可用并实现网站文件主备同步（rsync +inotify）<a class="anchorjs-link" href="#%e4%b8%89web%e9%ab%98%e5%8f%af%e7%94%a8%e5%b9%b6%e5%ae%9e%e7%8e%b0%e7%bd%91%e7%ab%99%e6%96%87%e4%bb%b6%e4%b8%bb%e5%a4%87%e5%90%8c%e6%ad%a5rsync-inotify"></a></h2><p>#安装文件同步组件
+[root@server2 ~]# systemctl status httpd
+</code></pre><h3 id="三web高可用并实现网站文件主备同步rsync-inotify">三、Web高可用并实现网站文件主备同步（rsync +inotify）<a class="anchorjs-link" href="#%e4%b8%89web%e9%ab%98%e5%8f%af%e7%94%a8%e5%b9%b6%e5%ae%9e%e7%8e%b0%e7%bd%91%e7%ab%99%e6%96%87%e4%bb%b6%e4%b8%bb%e5%a4%87%e5%90%8c%e6%ad%a5rsync-inotify"></a></h3><pre tabindex="0"><code>#安装文件同步组件
 [root@server1 ~]# yum -y install epel-release
-[root@server1 ~]# yum -y install rsync inotify-tools</p>
-<p> </p>
-<p>#配置hosts
+[root@server1 ~]# yum -y install rsync inotify-tools
+</code></pre><p> </p>
+<pre tabindex="0"><code>#配置hosts
 [root@server1 ~]# vim /etc/hosts
 192.168.200.10 server1
-192.168.200.20 server2</p>
-<p>#配置ssh秘钥登录
+192.168.200.20 server2
+ 
+#配置ssh秘钥登录
 [root@server1 ~]# ssh-keygen   //生成秘钥
-[root@server1 ~]# ssh-copy-id server2  //发送公钥到server2，实现免密码远程登录</p>
-<p>[root@server2 ~]# ssh-keygen   //生成秘钥
-[root@server2 ~]# ssh-copy-id server1  //发送公钥到server1，实现免密码远程登录</p>
-<p>#关闭防火墙和Selinux
+[root@server1 ~]# ssh-copy-id server2  //发送公钥到server2，实现免密码远程登录
+ 
+[root@server2 ~]# ssh-keygen   //生成秘钥
+[root@server2 ~]# ssh-copy-id server1  //发送公钥到server1，实现免密码远程登录
+ 
+#关闭防火墙和Selinux
 [root@server1 ~]# systemctl stop firewalld
 [root@server1 ~]# systemctl disable firewalld
-[root@server1 ~]# sed  -ri   /^SELINUX/C\SELINUX=disabled&rsquo;  /etc/selinux/config
-[root@server1 ~]# setenforce 0</p>
-<p> </p>
-<p>#server1上新建一个首页
-[root@server1]# echo &ldquo;this is server1 page&rdquo; &gt; /var/www/html/index.html</p>
-<p>#把首页同步到server2
-[root@server1 ~]# rsync -rvLzP /var/www/html/ server2:/var/www/html/</p>
-<p>#验证首页是否同步到server2
-[root@server2 ~]# cat /var/www/html/index.html
-this is server1 page</p>
-<h2 id="通过inotify监控文件系统变化并自动同步文件"> 通过inotify监控文件系统变化并自动同步文件<a class="anchorjs-link" href="#%e9%80%9a%e8%bf%87inotify%e7%9b%91%e6%8e%a7%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e5%8f%98%e5%8c%96%e5%b9%b6%e8%87%aa%e5%8a%a8%e5%90%8c%e6%ad%a5%e6%96%87%e4%bb%b6"></a></h2><p>[root@server1]# vim rsync.sh
+[root@server1 ~]# sed  -ri   /^SELINUX/C\SELINUX=disabled&#39;  /etc/selinux/config
+[root@server1 ~]# setenforce 0
+</code></pre><p> </p>
+<pre tabindex="0"><code>#server1上新建一个首页
+[root@server1]# echo &#34;this is server1 page&#34; &gt; /var/www/html/index.html
+ 
+#把首页同步到server2
+[root@server1 ~]# rsync -rvLzP /var/www/html/ server2:/var/www/html/
+ 
+#验证首页是否同步到server2
+[root@server2 ~]# cat /var/www/html/index.html 
+this is server1 page
+</code></pre><h3 id="通过inotify监控文件系统变化并自动同步文件"> 通过inotify监控文件系统变化并自动同步文件<a class="anchorjs-link" href="#%e9%80%9a%e8%bf%87inotify%e7%9b%91%e6%8e%a7%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e5%8f%98%e5%8c%96%e5%b9%b6%e8%87%aa%e5%8a%a8%e5%90%8c%e6%ad%a5%e6%96%87%e4%bb%b6"></a></h3><pre tabindex="0"><code>[root@server1]# vim rsync.sh
 source_path=/var/www/html/
-log_file=/var/log/rsync_client.log</p>
-<p>inotify_fun(){
-/usr/bin/inotifywait -mrq &ndash;timefmt &lsquo;%Y/%m/%d-%H:%M:%S&rsquo; &ndash;format &lsquo;%T %w %f&rsquo; \
--e modify,delete,create,move,attrib ${source_path} \
-| while read file
-do
-rsync -rvLzP /var/www/html/ zabbix2:/var/www/html/<br>
-done
-}</p>
-<p>inotify_fun &raquo; ${log_file} 2&gt;&amp;1 &amp;</p>
-<p>[root@server1 ~]# chmod +x rsync.sh
-[root@server1 ~]# ./rsync.sh</p>
-<p>#把脚本设置为开机启动
+log_file=/var/log/rsync_client.log
+ 
+inotify_fun(){
+    /usr/bin/inotifywait -mrq --timefmt &#39;%Y/%m/%d-%H:%M:%S&#39; --format &#39;%T %w %f&#39; \
+            -e modify,delete,create,move,attrib ${source_path} \
+          | while read file
+      do
+         rsync -rvLzP /var/www/html/ zabbix2:/var/www/html/  
+      done
+}
+ 
+inotify_fun &gt;&gt; ${log_file} 2&gt;&amp;1 &amp;
+ 
+[root@server1 ~]# chmod +x rsync.sh
+[root@server1 ~]# ./rsync.sh
+ 
+#把脚本设置为开机启动
 [root@server1 ~]#  cp rsync.sh /etc/init.d/
 [root@server1 ~]#  chmod +x /etc/rc.d/rc.local
-[root@server1 ~]#  echo &ldquo;sh /etc/init.d/rsync.sh&rdquo; &raquo; /etc/rc.d/rc.local</p>
-<p>测试</p>
-<p>#修改server1首页内容
-[root@server1 ~]# echo &ldquo;this is test2&rdquo; &gt; /var/www/html/index.html</p>
-<p>#验证server2首页内容
-[root@server2 ~]# cat /var/www/html/index.html
-this is test2</p>
-<p>#server1网站目录下新建文件
-[root@server1 ~]# touch /var/www/html/index.php</p>
-<p>#验证server2网站目录内容
+[root@server1 ~]#  echo &#34;sh /etc/init.d/rsync.sh&#34; &gt;&gt; /etc/rc.d/rc.local
+</code></pre><p><strong>测试</strong></p>
+<pre tabindex="0"><code>#修改server1首页内容
+[root@server1 ~]# echo &#34;this is test2&#34; &gt; /var/www/html/index.html
+ 
+#验证server2首页内容
+[root@server2 ~]# cat /var/www/html/index.html 
+this is test2
+ 
+#server1网站目录下新建文件
+[root@server1 ~]# touch /var/www/html/index.php
+ 
+#验证server2网站目录内容
 [root@server2 ~]# ls /var/www/html/
-index.html  index.php</p>
-
+index.html  index.php
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

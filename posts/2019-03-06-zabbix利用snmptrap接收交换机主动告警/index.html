@@ -15,8 +15,7 @@
 
   
   <meta name="description" content="zabbix接收trap的工作流程：
-snmptrapd 收到trap snmptrapd将trap传递给SNMPTT或调用Perl接收器 SNMPTT或Perl trap接收器解析，格式化并将trap写入文件 Zabbix SNMP trap读取并解析trap文件 对于每个trap，Zabbix发现主机接口与接收的trap地址匹配的所有“SNMP trap”监控项。请注意，在匹配期间只使用主机接口中选定的“IP”或“DNS”。 对于每个找到的监控项，将trap与“snmptrap[regexp]”中的regexp进行比较。 trap设置为all匹配项的值。如果没有找到匹配的监控项，并且有一个“snmptrap.fallback”监控项，则将trap设置为该值。 如果trap未设置为任何监控项的值，Zabbix默认记录不匹配的trap。（这由管理 - &gt;常规 - &gt;其它中的“记录不匹配的SNMP trap（Log unmatched SNMP traps）”配置。） 一、安装配置snmptrapd
-1、yum install -y net-snmp net-snmp-utils net-snmp-perl #安装net-snmp及相关工具（里面包含SNMPTrapd）
+snmptrapd 收到trap snmptrapd将trap传递给SNMPTT或调用Perl接收器 SNMPTT或Perl trap接收器解析，格式化并将trap写入文件 Zabbix SNMP trap读取并解析trap文件 对于每个trap，Zabbix发现主机接口与接收的trap地址匹配的所有“SNMP trap”监控项。请注意，在匹配期间只使用主机接口中选定的“IP”或“DNS”。 对于每个找到的监控项，将trap与“snmptrap[regexp]”中的regexp进行比较。 trap设置为all匹配项的值。如果没有找到匹配的监控项，并且有一个“snmptrap.fallback”监控项，则将trap设置为该值。 如果trap未设置为任何监控项的值，Zabbix默认记录不匹配的trap。（这由管理 - &gt;常规 - &gt;其它中的“记录不匹配的SNMP trap（Log unmatched SNMP traps）”配置。） 一、安装配置snmptrapd1、yum install -y net-snmp net-snmp-utils net-snmp-perl #安装net-snmp及相关工具（里面包含SNMPTrapd）
 2、vim /etc/snmp/snmptrapd.conf
 authCommunity log,execute,net 团体名 #指定团体名
 traphandle default /usr/sbin/snmptthandler #指定snmptt为trap接收器，此时还没安装snmptt
@@ -25,15 +24,15 @@ traphandle default /usr/sbin/snmptthandler #指定snmptt为trap接收器，此�
 5、交换机开启snmp和snmptrap，并指定团体名和trap目标主机IP
 6、tail -F /var/log/messages #打开并跟踪日志
 7、手动关闭交换机端口，触发告警，验证snmptrapd是否能正常接收trap
-二、安装配置snmptt
-1、yum -y install epel-release #安装EPRL源 2、yum -y install snmptt #安装snmptt 3、systemctl start snmptt （启动报错：Could not load Perl module Sys::Syslog!">
+二、安装配置snmptt1、yum -y install epel-release #安装EPRL源
+2、yum -y install snmptt #安装snmptt
+3、systemctl start snmptt （启动报错：Could not load Perl module Sys::Syslog!">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="zabbix利用SNMPTrap接收交换机主动告警"/>
 <meta name="twitter:description" content="zabbix接收trap的工作流程：
-snmptrapd 收到trap snmptrapd将trap传递给SNMPTT或调用Perl接收器 SNMPTT或Perl trap接收器解析，格式化并将trap写入文件 Zabbix SNMP trap读取并解析trap文件 对于每个trap，Zabbix发现主机接口与接收的trap地址匹配的所有“SNMP trap”监控项。请注意，在匹配期间只使用主机接口中选定的“IP”或“DNS”。 对于每个找到的监控项，将trap与“snmptrap[regexp]”中的regexp进行比较。 trap设置为all匹配项的值。如果没有找到匹配的监控项，并且有一个“snmptrap.fallback”监控项，则将trap设置为该值。 如果trap未设置为任何监控项的值，Zabbix默认记录不匹配的trap。（这由管理 - &gt;常规 - &gt;其它中的“记录不匹配的SNMP trap（Log unmatched SNMP traps）”配置。） 一、安装配置snmptrapd
-1、yum install -y net-snmp net-snmp-utils net-snmp-perl #安装net-snmp及相关工具（里面包含SNMPTrapd）
+snmptrapd 收到trap snmptrapd将trap传递给SNMPTT或调用Perl接收器 SNMPTT或Perl trap接收器解析，格式化并将trap写入文件 Zabbix SNMP trap读取并解析trap文件 对于每个trap，Zabbix发现主机接口与接收的trap地址匹配的所有“SNMP trap”监控项。请注意，在匹配期间只使用主机接口中选定的“IP”或“DNS”。 对于每个找到的监控项，将trap与“snmptrap[regexp]”中的regexp进行比较。 trap设置为all匹配项的值。如果没有找到匹配的监控项，并且有一个“snmptrap.fallback”监控项，则将trap设置为该值。 如果trap未设置为任何监控项的值，Zabbix默认记录不匹配的trap。（这由管理 - &gt;常规 - &gt;其它中的“记录不匹配的SNMP trap（Log unmatched SNMP traps）”配置。） 一、安装配置snmptrapd1、yum install -y net-snmp net-snmp-utils net-snmp-perl #安装net-snmp及相关工具（里面包含SNMPTrapd）
 2、vim /etc/snmp/snmptrapd.conf
 authCommunity log,execute,net 团体名 #指定团体名
 traphandle default /usr/sbin/snmptthandler #指定snmptt为trap接收器，此时还没安装snmptt
@@ -42,13 +41,13 @@ traphandle default /usr/sbin/snmptthandler #指定snmptt为trap接收器，此�
 5、交换机开启snmp和snmptrap，并指定团体名和trap目标主机IP
 6、tail -F /var/log/messages #打开并跟踪日志
 7、手动关闭交换机端口，触发告警，验证snmptrapd是否能正常接收trap
-二、安装配置snmptt
-1、yum -y install epel-release #安装EPRL源 2、yum -y install snmptt #安装snmptt 3、systemctl start snmptt （启动报错：Could not load Perl module Sys::Syslog!"/>
+二、安装配置snmptt1、yum -y install epel-release #安装EPRL源
+2、yum -y install snmptt #安装snmptt
+3、systemctl start snmptt （启动报错：Could not load Perl module Sys::Syslog!"/>
 
   <meta property="og:title" content="zabbix利用SNMPTrap接收交换机主动告警" />
 <meta property="og:description" content="zabbix接收trap的工作流程：
-snmptrapd 收到trap snmptrapd将trap传递给SNMPTT或调用Perl接收器 SNMPTT或Perl trap接收器解析，格式化并将trap写入文件 Zabbix SNMP trap读取并解析trap文件 对于每个trap，Zabbix发现主机接口与接收的trap地址匹配的所有“SNMP trap”监控项。请注意，在匹配期间只使用主机接口中选定的“IP”或“DNS”。 对于每个找到的监控项，将trap与“snmptrap[regexp]”中的regexp进行比较。 trap设置为all匹配项的值。如果没有找到匹配的监控项，并且有一个“snmptrap.fallback”监控项，则将trap设置为该值。 如果trap未设置为任何监控项的值，Zabbix默认记录不匹配的trap。（这由管理 - &gt;常规 - &gt;其它中的“记录不匹配的SNMP trap（Log unmatched SNMP traps）”配置。） 一、安装配置snmptrapd
-1、yum install -y net-snmp net-snmp-utils net-snmp-perl #安装net-snmp及相关工具（里面包含SNMPTrapd）
+snmptrapd 收到trap snmptrapd将trap传递给SNMPTT或调用Perl接收器 SNMPTT或Perl trap接收器解析，格式化并将trap写入文件 Zabbix SNMP trap读取并解析trap文件 对于每个trap，Zabbix发现主机接口与接收的trap地址匹配的所有“SNMP trap”监控项。请注意，在匹配期间只使用主机接口中选定的“IP”或“DNS”。 对于每个找到的监控项，将trap与“snmptrap[regexp]”中的regexp进行比较。 trap设置为all匹配项的值。如果没有找到匹配的监控项，并且有一个“snmptrap.fallback”监控项，则将trap设置为该值。 如果trap未设置为任何监控项的值，Zabbix默认记录不匹配的trap。（这由管理 - &gt;常规 - &gt;其它中的“记录不匹配的SNMP trap（Log unmatched SNMP traps）”配置。） 一、安装配置snmptrapd1、yum install -y net-snmp net-snmp-utils net-snmp-perl #安装net-snmp及相关工具（里面包含SNMPTrapd）
 2、vim /etc/snmp/snmptrapd.conf
 authCommunity log,execute,net 团体名 #指定团体名
 traphandle default /usr/sbin/snmptthandler #指定snmptt为trap接收器，此时还没安装snmptt
@@ -57,8 +56,9 @@ traphandle default /usr/sbin/snmptthandler #指定snmptt为trap接收器，此�
 5、交换机开启snmp和snmptrap，并指定团体名和trap目标主机IP
 6、tail -F /var/log/messages #打开并跟踪日志
 7、手动关闭交换机端口，触发告警，验证snmptrapd是否能正常接收trap
-二、安装配置snmptt
-1、yum -y install epel-release #安装EPRL源 2、yum -y install snmptt #安装snmptt 3、systemctl start snmptt （启动报错：Could not load Perl module Sys::Syslog!" />
+二、安装配置snmptt1、yum -y install epel-release #安装EPRL源
+2、yum -y install snmptt #安装snmptt
+3、systemctl start snmptt （启动报错：Could not load Perl module Sys::Syslog!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2019-03-06-zabbix%E5%88%A9%E7%94%A8snmptrap%E6%8E%A5%E6%94%B6%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%BB%E5%8A%A8%E5%91%8A%E8%AD%A6/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-03-06T00:00:00+00:00" />
@@ -258,9 +258,7 @@ traphandle default /usr/sbin/snmptthandler #指定snmptt为trap接收器，此�
 <li>如果trap未设置为任何监控项的值，Zabbix默认记录不匹配的trap。（这由管理 - &gt;常规 - &gt;其它中的“记录不匹配的SNMP trap（Log unmatched SNMP traps）”配置。）</li>
 </ol>
 <hr>
-<p> </p>
-<p><strong>一、安装配置snmptrapd</strong></p>
-<p>1、yum install -y net-snmp net-snmp-utils net-snmp-perl    #安装net-snmp及相关工具（里面包含SNMPTrapd）</p>
+<h3 id="一安装配置snmptrapd">一、安装配置snmptrapd<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aesnmptrapd"></a></h3><p>1、yum install -y net-snmp net-snmp-utils net-snmp-perl    #安装net-snmp及相关工具（里面包含SNMPTrapd）</p>
 <p>2、vim /etc/snmp/snmptrapd.conf</p>
 <p>authCommunity   log,execute,net 团体名       #指定团体名</p>
 <p>traphandle default /usr/sbin/snmptthandler    #指定snmptt为trap接收器，此时还没安装snmptt</p>
@@ -275,34 +273,42 @@ traphandle default /usr/sbin/snmptthandler #指定snmptt为trap接收器，此�
   </a>
   
 </figure></p>
-<p> </p>
-<p><strong>二、安装配置snmptt</strong></p>
-<p>1、yum -y install epel-release    #安装EPRL源 2、yum -y install snmptt     #安装snmptt 3、systemctl start snmptt    （启动报错：Could not load Perl module Sys::Syslog!） 4、systemctl status snmptt -l    #查看出错信息，缺少perl-syslog 5、yum -y install perl-Sys-Syslog    #安装perl-syslog 6、vim /etc/snmp/snmptt.ini    #修改配置文件</p>
-<p>date_time_format=  %Y/%m/%d %H:%M:%S
+<h3 id="二安装配置snmptt">二、安装配置snmptt<a class="anchorjs-link" href="#%e4%ba%8c%e5%ae%89%e8%a3%85%e9%85%8d%e7%bd%aesnmptt"></a></h3><p>1、yum -y install epel-release    #安装EPRL源</p>
+<p>2、yum -y install snmptt     #安装snmptt</p>
+<p>3、systemctl start snmptt    （启动报错：Could not load Perl module Sys::Syslog!）</p>
+<p>4、systemctl status snmptt -l    #查看出错信息，缺少perl-syslog</p>
+<p>5、yum -y install perl-Sys-Syslog    #安装perl-syslog</p>
+<p>6、vim /etc/snmp/snmptt.ini    #修改配置文件</p>
+<pre tabindex="0"><code>date_time_format=  %Y/%m/%d %H:%M:%S
 net_snmp_perl_enable = 1
 translate_log_trap_oid = 2     # 0：数字形式显示OID，1：显示OID名称，2：显示OID所属模块名及其名称
-log_file = /var/log/snmptt/snmptt.log    #默认</p>
-<p>7、mv /etc/snmp/snmptt.conf /etc/snmp/snmptt.conf.bak    #备份规则文件 8、vim /etc/snmp/snmptt.conf    #自定义trap格式化规则</p>
-<p>#匹配Linkdown的规则
-EVENT LinkDown .1.3.6.1.6.3.1.1.5.3 &ldquo;Status Events&rdquo; Warning
-FORMAT ZBXTRAP $aA LinkDown on interface $4. Admin state: $2. Operational state: $3</p>
-<p>#匹配Linkup的规则
-EVENT LinkUp .1.3.6.1.6.3.1.1.5.4 &ldquo;Status Events&rdquo; Normal
-FORMAT ZBXTRAP $aA Linkup on interface $4. Admin state: $2. Operational state: $3</p>
-<h1 id="默认规则没有其他规则匹配上时所有trap信息都按此规则处理">默认规则，没有其他规则匹配上时，所有trap信息都按此规则处理<a class="anchorjs-link" href="#%e9%bb%98%e8%ae%a4%e8%a7%84%e5%88%99%e6%b2%a1%e6%9c%89%e5%85%b6%e4%bb%96%e8%a7%84%e5%88%99%e5%8c%b9%e9%85%8d%e4%b8%8a%e6%97%b6%e6%89%80%e6%9c%89trap%e4%bf%a1%e6%81%af%e9%83%bd%e6%8c%89%e6%ad%a4%e8%a7%84%e5%88%99%e5%a4%84%e7%90%86"></a></h1><p>EVENT general .* &ldquo;General event&rdquo; Normal
-FORMAT ZBXTRAP $aA $1</p>
-<p>9、systemctl restart snmptt 10、tail -F /var/log/snmptt/snmptt.log   #打开并跟踪snmptt日志</p>
+log_file = /var/log/snmptt/snmptt.log    #默认
+</code></pre><p>7、mv /etc/snmp/snmptt.conf /etc/snmp/snmptt.conf.bak    #备份规则文件</p>
+<p>8、vim /etc/snmp/snmptt.conf    #自定义trap格式化规则</p>
+<pre tabindex="0"><code>#匹配Linkdown的规则
+EVENT LinkDown .1.3.6.1.6.3.1.1.5.3 &#34;Status Events&#34; Warning
+FORMAT ZBXTRAP $aA LinkDown on interface $4.  Admin state: $2.  Operational state: $3
+ 
+#匹配Linkup的规则
+EVENT LinkUp .1.3.6.1.6.3.1.1.5.4 &#34;Status Events&#34; Normal
+FORMAT ZBXTRAP $aA Linkup on interface $4.  Admin state: $2.  Operational state: $3
+ 
+# 默认规则，没有其他规则匹配上时，所有trap信息都按此规则处理
+EVENT general .* &#34;General event&#34; Normal
+FORMAT ZBXTRAP $aA $1
+</code></pre><p>9、systemctl restart snmptt 10、tail -F /var/log/snmptt/snmptt.log   #打开并跟踪snmptt日志</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//1126217-20190306160835312-667243037.png" data-action="zoom" alt=""  class="lazyload">
   </a>
   
 </figure></p>
-<p> </p>
-<p><strong>三、配置zabbix-server</strong> 1、vim /etc/zabbix/zabbix_server.conf</p>
-<p>StartSNMPTrapper=1   #开启SNMPTrapper功能
-SNMPTrapperFile=/var/log/snmptt/snmptt.log   #指定snmptt日志文件</p>
-<p>2、systemctl restart zabbix-server  #重启Zabbix服务 3、zabbix添加监控项 <figure>
+<h3 id="三配置zabbix-server">三、配置zabbix-server<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%aezabbix-server"></a></h3><p>1、vim /etc/zabbix/zabbix_server.conf</p>
+<pre tabindex="0"><code>StartSNMPTrapper=1   #开启SNMPTrapper功能
+SNMPTrapperFile=/var/log/snmptt/snmptt.log   #指定snmptt日志文件
+</code></pre><p>2、systemctl restart zabbix-server  #重启Zabbix服务</p>
+<p>3、zabbix添加监控项
+<figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//1126217-20190306161414220-937920731.png" data-action="zoom" alt=""  class="lazyload">
   </a>

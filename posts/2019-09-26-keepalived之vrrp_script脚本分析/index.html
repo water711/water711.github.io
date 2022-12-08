@@ -18,15 +18,11 @@
 Server1：192.168.200.10
 Server2：192.168.200.20
 虚拟IP： 192.168.200.30
-[root@server1 ~]# yum -y install httpd keepalived
-[root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1
-}
-vrrp_script http_chk { script &ldquo;/etc/keepalived/httpd_check.sh&rdquo; //脚本路径 interval 3 //脚本执行的间隔 }
-vrrp_instance VI_1 { state MASTER
-interface ens33
-virtual_router_id 51 priority 100 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30
-} track_script { http_chk //调用脚本 } }
-[root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 }">
+Server1和Server2安装httpd和keepalived
+[root@server1 ~]# yum -y install httpd keepalived Server1和Server2安装httpd和keepalived
+[root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1 } 主机keepalived配置
+vrrp_script http_chk { script &#34;/etc/keepalived/httpd_check.sh&#34; //脚本路径 interval 3 //脚本执行的间隔 } vrrp_instance VI_1 { state MASTER interface ens33 virtual_router_id 51 priority 100 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30 } track_script { http_chk //调用脚本 } } 备机keepalived配置
+[root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 } vrrp_script http_chk { script &#34;/etc/keepalived/httpd_check.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
@@ -35,30 +31,22 @@ virtual_router_id 51 priority 100 advert_int 1 authentication { auth_type PASS a
 Server1：192.168.200.10
 Server2：192.168.200.20
 虚拟IP： 192.168.200.30
-[root@server1 ~]# yum -y install httpd keepalived
-[root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1
-}
-vrrp_script http_chk { script &ldquo;/etc/keepalived/httpd_check.sh&rdquo; //脚本路径 interval 3 //脚本执行的间隔 }
-vrrp_instance VI_1 { state MASTER
-interface ens33
-virtual_router_id 51 priority 100 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30
-} track_script { http_chk //调用脚本 } }
-[root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 }"/>
+Server1和Server2安装httpd和keepalived
+[root@server1 ~]# yum -y install httpd keepalived Server1和Server2安装httpd和keepalived
+[root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1 } 主机keepalived配置
+vrrp_script http_chk { script &#34;/etc/keepalived/httpd_check.sh&#34; //脚本路径 interval 3 //脚本执行的间隔 } vrrp_instance VI_1 { state MASTER interface ens33 virtual_router_id 51 priority 100 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30 } track_script { http_chk //调用脚本 } } 备机keepalived配置
+[root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 } vrrp_script http_chk { script &#34;/etc/keepalived/httpd_check."/>
 
   <meta property="og:title" content="keepalived之vrrp_script脚本分析" />
 <meta property="og:description" content="实验环境：
 Server1：192.168.200.10
 Server2：192.168.200.20
 虚拟IP： 192.168.200.30
-[root@server1 ~]# yum -y install httpd keepalived
-[root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1
-}
-vrrp_script http_chk { script &ldquo;/etc/keepalived/httpd_check.sh&rdquo; //脚本路径 interval 3 //脚本执行的间隔 }
-vrrp_instance VI_1 { state MASTER
-interface ens33
-virtual_router_id 51 priority 100 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30
-} track_script { http_chk //调用脚本 } }
-[root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 }" />
+Server1和Server2安装httpd和keepalived
+[root@server1 ~]# yum -y install httpd keepalived Server1和Server2安装httpd和keepalived
+[root@server1 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server1 } 主机keepalived配置
+vrrp_script http_chk { script &#34;/etc/keepalived/httpd_check.sh&#34; //脚本路径 interval 3 //脚本执行的间隔 } vrrp_instance VI_1 { state MASTER interface ens33 virtual_router_id 51 priority 100 advert_int 1 authentication { auth_type PASS auth_pass 1111 } virtual_ipaddress { 192.168.200.30 } track_script { http_chk //调用脚本 } } 备机keepalived配置
+[root@server2 ~]# vim /etc/keepalived/keepalived.conf global_defs { router_id Server2 } vrrp_script http_chk { script &#34;/etc/keepalived/httpd_check." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-26T00:00:00+00:00" />
@@ -247,166 +235,182 @@ virtual_router_id 51 priority 100 advert_int 1 authentication { auth_type PASS a
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p>实验环境：</p>
+        <p><strong>实验环境：</strong></p>
 <p>Server1：192.168.200.10</p>
 <p>Server2：192.168.200.20</p>
 <p>虚拟IP：  192.168.200.30</p>
-<p>[root@server1 ~]# yum -y install httpd keepalived</p>
-<p> </p>
-<p>[root@server1 ~]# vim /etc/keepalived/keepalived.conf
+<p>Server1和Server2安装httpd和keepalived</p>
+<pre tabindex="0"><code>[root@server1 ~]# yum -y install httpd keepalived
+</code></pre><p>Server1和Server2安装httpd和keepalived</p>
+<pre tabindex="0"><code>[root@server1 ~]# vim /etc/keepalived/keepalived.conf
 global_defs {
-router_id Server1<br>
-}</p>
-<p>vrrp_script http_chk {
-script &ldquo;/etc/keepalived/httpd_check.sh&rdquo;  //脚本路径
-interval 3    //脚本执行的间隔
-}</p>
-<p>vrrp_instance VI_1 {
-state MASTER<br>
-interface ens33<br>
-virtual_router_id 51
-priority 100 <br>
-advert_int 1
-authentication {
-auth_type PASS
-auth_pass 1111
+   router_id Server1   
 }
-virtual_ipaddress {
-192.168.200.30<br>
+</code></pre><p>主机keepalived配置</p>
+<pre tabindex="0"><code>vrrp_script http_chk {
+    script &#34;/etc/keepalived/httpd_check.sh&#34;  //脚本路径
+    interval 3    //脚本执行的间隔
 }
-track_script {
-http_chk   //调用脚本
+
+vrrp_instance VI_1 {
+    state MASTER   
+    interface ens33  
+    virtual_router_id 51 
+    priority 100    
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        192.168.200.30  
+    }
+    track_script {
+        http_chk   //调用脚本
+    } 
 }
-}</p>
-<p> </p>
-<p>[root@server2 ~]# vim /etc/keepalived/keepalived.conf
+</code></pre><p>备机keepalived配置</p>
+<pre tabindex="0"><code>[root@server2 ~]# vim /etc/keepalived/keepalived.conf
 global_defs {
-router_id Server2
-}</p>
-<p>vrrp_script http_chk {
-script &ldquo;/etc/keepalived/httpd_check.sh&rdquo; //脚本路径
+   router_id Server2 
+}
+
+vrrp_script http_chk {
+script &#34;/etc/keepalived/httpd_check.sh&#34; //脚本路径
 interval 3 //脚本执行的间隔
-}</p>
-<p>vrrp_instance VI_1 {
-state BACKUP  <br>
-interface ens33
-virtual_router_id 51<br>
-priority 50<br>
-advert_int 1
-authentication {
-auth_type PASS
-auth_pass 1111
 }
-virtual_ipaddress {
-192.168.200.30<br>
+
+vrrp_instance VI_1 {
+    state BACKUP     
+    interface ens33 
+    virtual_router_id 51  
+    priority 50   
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        192.168.200.30   
+    }
+    track_script {
+        http_chk   //调用脚本
+    } 
 }
-track_script {
-http_chk   //调用脚本
-}
-}</p>
-<p> </p>
-<p>[root@server1 ~]# systemctl start httpd keepalived<br>
-[root@server1 ~]# systemctl enable httpd keepalived</p>
-<h2 id="一检测脚本1">一、检测脚本1<a class="anchorjs-link" href="#%e4%b8%80%e6%a3%80%e6%b5%8b%e8%84%9a%e6%9c%ac1"></a></h2><p>[root@Server1]# vim /etc/keepalived/httpd_check.sh
+</code></pre><p>启动httpd和keepalived</p>
+<pre tabindex="0"><code>[root@server1 ~]# systemctl start httpd keepalived  
+[root@server1 ~]# systemctl enable httpd keepalived
+</code></pre><h3 id="一检测脚本1">一、检测脚本1<a class="anchorjs-link" href="#%e4%b8%80%e6%a3%80%e6%b5%8b%e8%84%9a%e6%9c%ac1"></a></h3><pre tabindex="0"><code>[root@Server1]# vim /etc/keepalived/httpd_check.sh
 #!/bin/bash
-httpd_status=`ps -C httpd &ndash;no-header | wc -l`
-if [ $httpd_status -eq 0 ];then
-systemctl restart keepalived
-fi</p>
-<p>[root@Server1]# systemctl restart keepalived</p>
-<p>测试</p>
-<p>#目前虚拟IP在Server1上
-[root@Server1]# systemctl stop httpd</p>
-<p>#停止httpd服务后，虚拟IP漂移到Server2上
-[root@Server2]# ip a</p>
-<p>#查看Server1上的keepalived服务状态，显示failed
-[root@Server1]# systemctl status keepalived</p>
-<p>#启动httpd服务后，keepalived服务仍然显示failed
-[root@Server1]# systemctl start httpd</p>
-<p> </p>
-<p>Sep 26 18:33:27 zabbix1 systemd: Stopping The Apache HTTP Server&hellip;
+       httpd_status=`ps -C httpd --no-header | wc -l`
+       if [ $httpd_status -eq 0 ];then
+              systemctl restart keepalived
+       fi
+ 
+[root@Server1]# systemctl restart keepalived
+</code></pre><p>测试</p>
+<pre tabindex="0"><code>#目前虚拟IP在Server1上
+[root@Server1]# systemctl stop httpd
+ 
+#停止httpd服务后，虚拟IP漂移到Server2上
+[root@Server2]# ip a
+ 
+#查看Server1上的keepalived服务状态，显示failed
+[root@Server1]# systemctl status keepalived
+ 
+#启动httpd服务后，keepalived服务仍然显示failed
+[root@Server1]# systemctl start httpd
+</code></pre><p> 
+停止httpd服务后，server1部分日志：</p>
+<pre tabindex="0"><code>Sep 26 18:33:27 zabbix1 systemd: Stopping The Apache HTTP Server...
 Sep 26 18:33:28 zabbix1 systemd: Stopped The Apache HTTP Server.
 Sep 26 18:33:28 zabbix1 Keepalived[43676]: Stopping
-Sep 26 18:33:28 zabbix1 systemd: Stopping LVS and VRRP High Availability Monitor&hellip;
+Sep 26 18:33:28 zabbix1 systemd: Stopping LVS and VRRP High Availability Monitor...
 Sep 26 18:33:28 zabbix1 Keepalived_vrrp[43678]: VRRP_Instance(VI_1) sent 0 priority
 Sep 26 18:33:28 zabbix1 Keepalived_vrrp[43678]: VRRP_Instance(VI_1) removing protocol VIPs.
 Sep 26 18:33:28 zabbix1 Keepalived_healthcheckers[43677]: Stopped
 Sep 26 18:33:29 zabbix1 Keepalived_vrrp[43678]: Stopped
 Sep 26 18:33:29 zabbix1 systemd: Stopped LVS and VRRP High Availability Monitor.
 Sep 26 18:33:29 zabbix1 Keepalived[43676]: Stopped Keepalived v1.3.5 (03/19,2017), git commit v1.3.5-6-g6fa32f2
-Sep 26 18:33:29 zabbix1 systemd: Starting LVS and VRRP High Availability Monitor&hellip;
+Sep 26 18:33:29 zabbix1 systemd: Starting LVS and VRRP High Availability Monitor...
 Sep 26 18:33:29 zabbix1 Keepalived[44036]: Starting Keepalived v1.3.5 (03/19,2017), git commit v1.3.5-6-g6fa32f2
-Sep 26 18:33:29 zabbix1 Keepalived[44036]: Opening file &lsquo;/etc/keepalived/keepalived.conf&rsquo;.
+Sep 26 18:33:29 zabbix1 Keepalived[44036]: Opening file &#39;/etc/keepalived/keepalived.conf&#39;.
 Sep 26 18:33:29 zabbix1 systemd: PID file /var/run/keepalived.pid not readable (yet?) after start.
 Sep 26 18:33:30 zabbix1 Keepalived[44037]: Starting Healthcheck child process, pid=44038
 Sep 26 18:33:30 zabbix1 Keepalived[44037]: Starting VRRP child process, pid=44039
 Sep 26 18:33:30 zabbix1 systemd: Started LVS and VRRP High Availability Monitor.
-Sep 26 18:33:30 zabbix1 Keepalived_healthcheckers[44038]: Opening file &lsquo;/etc/keepalived/keepalived.conf&rsquo;.
+Sep 26 18:33:30 zabbix1 Keepalived_healthcheckers[44038]: Opening file &#39;/etc/keepalived/keepalived.conf&#39;.
 Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: Registering Kernel netlink reflector
 Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: Registering Kernel netlink command channel
 Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: Registering gratuitous ARP shared channel
-Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: Opening file &lsquo;/etc/keepalived/keepalived.conf&rsquo;.
-Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: WARNING - default user &lsquo;keepalived_script&rsquo; for script execution does not exist - please create.
+Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: Opening file &#39;/etc/keepalived/keepalived.conf&#39;.
+Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: WARNING - default user &#39;keepalived_script&#39; for script execution does not exist - please create.
 Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: SECURITY VIOLATION - scripts are being executed but script_security not enabled.
 Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: VRRP_Instance(VI_1) removing protocol VIPs.
-Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: Using LinkWatch kernel netlink reflector&hellip;
+Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: Using LinkWatch kernel netlink reflector...
 Sep 26 18:33:30 zabbix1 Keepalived_vrrp[44039]: VRRP sockpool: [ifindex(2), proto(112), unicast(0), fd(10,11)]
 Sep 26 18:33:30 zabbix1 Keepalived[44037]: Stopping
-Sep 26 18:33:30 zabbix1 systemd: Stopping LVS and VRRP High Availability Monitor&hellip;
+Sep 26 18:33:30 zabbix1 systemd: Stopping LVS and VRRP High Availability Monitor...
 Sep 26 18:33:30 zabbix1 Keepalived_healthcheckers[44038]: Stopped
 Sep 26 18:33:31 zabbix1 Keepalived_vrrp[44039]: Stopped
 Sep 26 18:33:31 zabbix1 Keepalived[44037]: Stopped Keepalived v1.3.5 (03/19,2017), git commit v1.3.5-6-g6fa32f2
-Sep 26 18:33:31 zabbix1 systemd: Stopped LVS and VRRP High Availability Monitor.</p>
-<p>总结：该检测脚本在httpd服务停止后，会使keepalived服务进入failed状态，VIP会漂移，但httpd服务恢复后，keepalived服务仍然为failed状态，要手动重启keepalived恢复active状态</p>
-<p> </p>
-<h2 id="二检测脚本2">二、检测脚本2<a class="anchorjs-link" href="#%e4%ba%8c%e6%a3%80%e6%b5%8b%e8%84%9a%e6%9c%ac2"></a></h2><p>[root@Server1]# vim /etc/keepalived/httpd_check.sh
+Sep 26 18:33:31 zabbix1 systemd: Stopped LVS and VRRP High Availability Monitor.
+</code></pre><p>总结：该检测脚本在httpd服务停止后，会使keepalived服务进入failed状态，VIP会漂移，但httpd服务恢复后，keepalived服务仍然为failed状态，要手动重启keepalived恢复active状态</p>
+<h3 id="二检测脚本2">二、检测脚本2<a class="anchorjs-link" href="#%e4%ba%8c%e6%a3%80%e6%b5%8b%e8%84%9a%e6%9c%ac2"></a></h3><pre tabindex="0"><code>[root@Server1]# vim /etc/keepalived/httpd_check.sh
 #!/bin/bash
-httpd_status=`ps -C httpd &ndash;no-header | wc -l`
-if [ $httpd_status -eq 0 ];then
-systemctl stop keepalived   #此处把restart改为stop
-fi</p>
-<p>[root@Server1]# systemctl restart keepalived</p>
-<p>测试</p>
-<p>#目前虚拟IP在Server1上
-[root@Server1]# systemctl stop httpd</p>
-<p>#停止httpd服务后，虚拟IP漂移到Server2上
-[root@Server2]# ip a</p>
-<p>#查看Server1上的keepalived服务状态，显示inactive(dead)状态
-[root@Server1]# systemctl status keepalived</p>
-<p>#启动httpd服务后，keepalived服务仍然显示inactive(dead)状态
-[root@Server1]# systemctl start httpd</p>
-<p> </p>
-<p>Sep 26 18:43:26 zabbix1 systemd: Stopping The Apache HTTP Server&hellip;
+       httpd_status=`ps -C httpd --no-header | wc -l`
+       if [ $httpd_status -eq 0 ];then
+              systemctl stop keepalived   #此处把restart改为stop
+       fi
+ 
+[root@Server1]# systemctl restart keepalived
+</code></pre><p>测试</p>
+<pre tabindex="0"><code>#目前虚拟IP在Server1上
+[root@Server1]# systemctl stop httpd
+ 
+#停止httpd服务后，虚拟IP漂移到Server2上
+[root@Server2]# ip a
+ 
+#查看Server1上的keepalived服务状态，显示inactive(dead)状态
+[root@Server1]# systemctl status keepalived
+ 
+#启动httpd服务后，keepalived服务仍然显示inactive(dead)状态
+[root@Server1]# systemctl start httpd
+</code></pre><p>停止httpd服务后，server1部分日志：</p>
+<pre tabindex="0"><code>Sep 26 18:43:26 zabbix1 systemd: Stopping The Apache HTTP Server...
 Sep 26 18:43:27 zabbix1 systemd: Stopped The Apache HTTP Server.
 Sep 26 18:43:30 zabbix1 Keepalived[44415]: Stopping
-Sep 26 18:43:30 zabbix1 systemd: Stopping LVS and VRRP High Availability Monitor&hellip;
+Sep 26 18:43:30 zabbix1 systemd: Stopping LVS and VRRP High Availability Monitor...
 Sep 26 18:43:30 zabbix1 Keepalived_vrrp[44417]: VRRP_Instance(VI_1) sent 0 priority
 Sep 26 18:43:30 zabbix1 Keepalived_vrrp[44417]: VRRP_Instance(VI_1) removing protocol VIPs.
 Sep 26 18:43:30 zabbix1 Keepalived_healthcheckers[44416]: Stopped
 Sep 26 18:43:31 zabbix1 Keepalived_vrrp[44417]: Stopped
 Sep 26 18:43:31 zabbix1 systemd: Stopped LVS and VRRP High Availability Monitor.
-Sep 26 18:43:31 zabbix1 Keepalived[44415]: Stopped Keepalived v1.3.5 (03/19,2017), git commit v1.3.5-6-g6fa32f2</p>
-<p>总结：该检测脚本在httpd服务停止后，会使keepalived服务进入inactive不活动状态，VIP会漂移，但httpd服务恢复后，keepalived服务仍然为inactive不活动状态，要手动重启keepalived恢复active状态</p>
-<p> </p>
-<h2 id="三检测脚本3">三、检测脚本3<a class="anchorjs-link" href="#%e4%b8%89%e6%a3%80%e6%b5%8b%e8%84%9a%e6%9c%ac3"></a></h2><p>[root@Server1]# vim /etc/keepalived/httpd_check.sh
+Sep 26 18:43:31 zabbix1 Keepalived[44415]: Stopped Keepalived v1.3.5 (03/19,2017), git commit v1.3.5-6-g6fa32f2
+</code></pre><p>总结：该检测脚本在httpd服务停止后，会使keepalived服务进入inactive不活动状态，VIP会漂移，但httpd服务恢复后，keepalived服务仍然为inactive不活动状态，要手动重启keepalived恢复active状态</p>
+<h3 id="三检测脚本3">三、检测脚本3<a class="anchorjs-link" href="#%e4%b8%89%e6%a3%80%e6%b5%8b%e8%84%9a%e6%9c%ac3"></a></h3><pre tabindex="0"><code>[root@Server1]# vim /etc/keepalived/httpd_check.sh
 #!/bin/bash
-httpd_status=`ps -C httpd &ndash;no-header | wc -l`
-if [ $httpd_status -eq 0 ];then
-sleep 5   #此处把停止keepalived服务，改成sleep，时间要大于脚本interval时间
-fi</p>
-<p>[root@Server1]# systemctl restart keepalived</p>
-<p>测试</p>
-<p>#目前虚拟IP在Server1上
-[root@Server1]# systemctl stop httpd</p>
-<p>#停止httpd服务后，虚拟IP漂移到Server2上
-[root@Server2]# ip a</p>
-<p>#查看Server1上的keepalived服务状态，仍然为active活动状态
-[root@Server1]# systemctl status keepalived</p>
-<p>#启动httpd服务后，虚拟IP重新回到Server1上
+       httpd_status=`ps -C httpd --no-header | wc -l`
+       if [ $httpd_status -eq 0 ];then
+              sleep 5   #此处把停止keepalived服务，改成sleep，时间要大于脚本interval时间
+       fi
+ 
+[root@Server1]# systemctl restart keepalived
+</code></pre><p>测试</p>
+<pre tabindex="0"><code>#目前虚拟IP在Server1上
+[root@Server1]# systemctl stop httpd
+ 
+#停止httpd服务后，虚拟IP漂移到Server2上
+[root@Server2]# ip a
+ 
+#查看Server1上的keepalived服务状态，仍然为active活动状态
+[root@Server1]# systemctl status keepalived
+ 
+#启动httpd服务后，虚拟IP重新回到Server1上
 [root@Server1]# systemctl start httpd
-[root@Server1]# ip a</p>
-<p> </p>
-<p>Sep 26 20:39:38 zabbix1 systemd: Stopping The Apache HTTP Server&hellip;
+[root@Server1]# ip a
+</code></pre><p>停止httpd服务并重新启动，server1部分日志：</p>
+<pre tabindex="0"><code>Sep 26 20:39:38 zabbix1 systemd: Stopping The Apache HTTP Server...
 Sep 26 20:39:39 zabbix1 systemd: Stopped The Apache HTTP Server.
 Sep 26 20:39:43 zabbix1 Keepalived_vrrp[50621]: VRRP_Script(http_chk) timed out
 Sep 26 20:39:43 zabbix1 Keepalived_vrrp[50621]: /etc/keepalived/httpd_check.sh exited due to signal 15
@@ -416,8 +420,8 @@ Sep 26 20:39:43 zabbix1 Keepalived_vrrp[50621]: VRRP_Instance(VI_1) Now in FAULT
 Sep 26 20:39:46 zabbix1 Keepalived_vrrp[50621]: /etc/keepalived/httpd_check.sh exited due to signal 15
 Sep 26 20:39:49 zabbix1 Keepalived_vrrp[50621]: /etc/keepalived/httpd_check.sh exited due to signal 15
 Sep 26 20:39:52 zabbix1 Keepalived_vrrp[50621]: /etc/keepalived/httpd_check.sh exited due to signal 15
-Sep 26 20:41:16 zabbix1 systemd: Starting The Apache HTTP Server&hellip;
-Sep 26 20:41:16 zabbix1 httpd: AH00558: httpd: Could not reliably determine the server&rsquo;s fully qualified domain name, using 192.168.1.241. Set the &lsquo;ServerName&rsquo; directive globally to suppress this message
+Sep 26 20:41:16 zabbix1 systemd: Starting The Apache HTTP Server...
+Sep 26 20:41:16 zabbix1 httpd: AH00558: httpd: Could not reliably determine the server&#39;s fully qualified domain name, using 192.168.1.241. Set the &#39;ServerName&#39; directive globally to suppress this message
 Sep 26 20:41:16 zabbix1 systemd: Started The Apache HTTP Server.
 Sep 26 20:41:19 zabbix1 Keepalived_vrrp[50621]: /etc/keepalived/httpd_check.sh exited due to signal 15
 Sep 26 20:41:19 zabbix1 Keepalived_vrrp[50621]: VRRP_Script(http_chk) succeeded
@@ -426,29 +430,33 @@ Sep 26 20:41:20 zabbix1 Keepalived_vrrp[50621]: VRRP_Instance(VI_1) forcing a ne
 Sep 26 20:41:21 zabbix1 Keepalived_vrrp[50621]: VRRP_Instance(VI_1) Transition to MASTER STATE
 Sep 26 20:41:22 zabbix1 Keepalived_vrrp[50621]: VRRP_Instance(VI_1) Entering MASTER STATE
 Sep 26 20:41:22 zabbix1 Keepalived_vrrp[50621]: VRRP_Instance(VI_1) setting protocol VIPs.
-Sep 26 20:41:22 zabbix1 Keepalived_vrrp[50621]: Sending gratuitous ARP on eth0 for 192.168.1.240</p>
-<p>分析：脚本中加入sleep延时命令后，由于sleep时间大于脚本interval执行间隔时间，会导致脚本不能执行完成（日志显示VRRP_Script  timed out），就被keepalived进程中止脚本（日志显示/etc/keepalived/httpd_check.sh exited due to signal 15），并且VRRP_Instance进入故障状态，从而转移VIP</p>
+Sep 26 20:41:22 zabbix1 Keepalived_vrrp[50621]: Sending gratuitous ARP on eth0 for 192.168.1.240
+</code></pre><p>分析：脚本中加入sleep延时命令后，由于sleep时间大于脚本interval执行间隔时间，会导致脚本不能执行完成（日志显示VRRP_Script  timed out），就被keepalived进程中止脚本（日志显示/etc/keepalived/httpd_check.sh exited due to signal 15），并且VRRP_Instance进入故障状态，从而转移VIP</p>
 <p>总结：该检测脚本在httpd服务停止后，keepalived服务仍然为活动状态，VIP会漂移，httpd服务恢复后，虚拟IP可重新回到Master角色Server1上</p>
-<p> </p>
-<h2 id="四检测脚本4">四、检测脚本4<a class="anchorjs-link" href="#%e5%9b%9b%e6%a3%80%e6%b5%8b%e8%84%9a%e6%9c%ac4"></a></h2><p>[root@Server1]# vim /etc/keepalived/httpd_check.sh
+<h3 id="四检测脚本4">四、检测脚本4<a class="anchorjs-link" href="#%e5%9b%9b%e6%a3%80%e6%b5%8b%e8%84%9a%e6%9c%ac4"></a></h3><pre tabindex="0"><code>[root@Server1]# vim /etc/keepalived/httpd_check.sh
 #!/bin/bash
-httpd_status=`ps -C httpd &ndash;no-header | wc -l`
-if [ $httpd_status -eq 0 ];then
-exit 1
-fi</p>
-<p>[root@Server1]# systemctl restart keepalived</p>
-<p>测试</p>
-<p>#目前虚拟IP在Server1上
-[root@Server1]# systemctl stop httpd</p>
-<p>#停止httpd服务后，虚拟IP漂移到Server2上
-[root@Server2]# ip a</p>
-<p>#查看Server1上的keepalived服务状态，仍然为active活动状态
-[root@Server1]# systemctl status keepalived</p>
-<p>#启动httpd服务后，虚拟IP重新回到Server1上
+       httpd_status=`ps -C httpd --no-header | wc -l`
+       if [ $httpd_status -eq 0 ];then
+              exit 1
+       fi
+
+[root@Server1]# systemctl restart keepalived
+</code></pre><p>测试</p>
+<pre tabindex="0"><code>#目前虚拟IP在Server1上
+[root@Server1]# systemctl stop httpd
+ 
+#停止httpd服务后，虚拟IP漂移到Server2上
+[root@Server2]# ip a
+ 
+#查看Server1上的keepalived服务状态，仍然为active活动状态
+[root@Server1]# systemctl status keepalived
+ 
+#启动httpd服务后，虚拟IP重新回到Server1上
 [root@Server1]# systemctl start httpd
-[root@Server1]# ip a</p>
-<p> </p>
-<p>Sep 26 21:52:56 zabbix1 systemd: Stopping The Apache HTTP Server&hellip;
+[root@Server1]# ip a
+</code></pre><p> 
+停止httpd服务并重新启动，server1部分日志：</p>
+<pre tabindex="0"><code>Sep 26 21:52:56 zabbix1 systemd: Stopping The Apache HTTP Server...
 Sep 26 21:52:57 zabbix1 systemd: Stopped The Apache HTTP Server.
 Sep 26 21:52:59 zabbix1 Keepalived_vrrp[59277]: /etc/keepalived/httpd_check.sh exited with status 1
 Sep 26 21:52:59 zabbix1 Keepalived_vrrp[59277]: VRRP_Script(http_chk) failed
@@ -458,8 +466,8 @@ Sep 26 21:52:59 zabbix1 Keepalived_vrrp[59277]: VRRP_Instance(VI_1) Now in FAULT
 Sep 26 21:53:02 zabbix1 Keepalived_vrrp[59277]: /etc/keepalived/httpd_check.sh exited with status 1
 Sep 26 21:53:14 zabbix1 Keepalived_vrrp[59277]: /etc/keepalived/httpd_check.sh exited with status 1
 Sep 26 21:53:38 zabbix1 Keepalived_vrrp[59277]: /etc/keepalived/httpd_check.sh exited with status 1
-Sep 26 21:53:38 zabbix1 systemd: Starting The Apache HTTP Server&hellip;
-Sep 26 21:53:38 zabbix1 httpd: AH00558: httpd: Could not reliably determine the server&rsquo;s fully qualified domain name, using 192.168.1.241. Set the &lsquo;ServerName&rsquo; directive globally to suppress this message
+Sep 26 21:53:38 zabbix1 systemd: Starting The Apache HTTP Server...
+Sep 26 21:53:38 zabbix1 httpd: AH00558: httpd: Could not reliably determine the server&#39;s fully qualified domain name, using 192.168.1.241. Set the &#39;ServerName&#39; directive globally to suppress this message
 Sep 26 21:53:38 zabbix1 systemd: Started The Apache HTTP Server.
 Sep 26 21:53:41 zabbix1 Keepalived_vrrp[59277]: VRRP_Script(http_chk) succeeded
 Sep 26 21:53:41 zabbix1 Keepalived_vrrp[59277]: VRRP_Instance(VI_1) Entering BACKUP STATE
@@ -470,8 +478,8 @@ Sep 26 21:53:44 zabbix1 Keepalived_vrrp[59277]: VRRP_Instance(VI_1) setting prot
 Sep 26 21:53:44 zabbix1 Keepalived_vrrp[59277]: Sending gratuitous ARP on eth0 for 192.168.1.240
 Sep 26 21:53:44 zabbix1 Keepalived_vrrp[59277]: VRRP_Instance(VI_1) Sending/queueing gratuitous ARPs on eth0 for 192.168.1.240
 Sep 26 21:53:44 zabbix1 Keepalived_vrrp[59277]: Sending gratuitous ARP on eth0 for 192.168.1.240
-Sep 26 21:53:44 zabbix1 Keepalived_vrrp[59277]: Sending gratuitous ARP on eth0 for 192.168.1.240</p>
-<p>总结：该检测脚本在httpd服务停止后，脚本返回值为1，由于返回值为非0，keepalived则判断脚本执行失败，VRRP_Instance进入失败状态，VIP漂移，当httpd服务恢复后，虚拟IP重新回到Master角色Server1上</p>
+Sep 26 21:53:44 zabbix1 Keepalived_vrrp[59277]: Sending gratuitous ARP on eth0 for 192.168.1.240
+</code></pre><p>总结：该检测脚本在httpd服务停止后，脚本返回值为1，由于返回值为非0，keepalived则判断脚本执行失败，VRRP_Instance进入失败状态，VIP漂移，当httpd服务恢复后，虚拟IP重新回到Master角色Server1上</p>
 
 
         <hr style="visibility: hidden;" />

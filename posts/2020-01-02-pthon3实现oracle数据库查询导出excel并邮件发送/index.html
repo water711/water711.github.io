@@ -16,37 +16,25 @@
   
   <meta name="description" content="一、准备环境1、安装Oracle 客户端（python、oracle客户端的位数要一致）
 2、安装Python第三方模块
-pip3 install cx_Oracle xlsxwriter
-**cx_Oracle模块：**一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
-**xlsxwriter模块：**编写Excel 2007&#43;XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。
-二、编写代码# -*- coding: utf-8 -*-
-import time import smtplib import cx_Oracle import xlsxwriter from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.application import MIMEApplication
-def send_mail(): from_addr = &ldquo;12345678@qq.com&rdquo; #发件人 pwd = &ldquo;zjjeiuwpaynojhgsdf&rdquo; #授权码/密码 to_addr = &ldquo;87654321@qq.com&rdquo; #收件人
-msg = MIMEMultipart() #实例化对象 msg\[&quot;Subject&quot;\] = &quot;销售报表&quot; #主题 msg\[&quot;From&quot;\] = from\_addr msg\[&quot;To&quot;\] = to\_addr part1 = MIMEText(&quot;这里是邮件内容&quot;) msg.attach(part1) # 添加附件 part2 = MIMEApplication(open(date &#43; &quot;.">
+pip3 install cx_Oracle xlsxwriter cx_Oracle模块： 一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
+xlsxwriter模块： 编写Excel 2007&#43;XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。
+二、编写代码# -*- coding: utf-8 -*- import time import smtplib import cx_Oracle import xlsxwriter from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.application import MIMEApplication def send_mail(): from_addr = &#34;12345678@qq.com&#34; #发件人 pwd = &#34;zjjeiuwpaynojhgsdf&#34; #授权码/密码 to_addr = &#34;87654321@qq.com&#34; #收件人 msg = MIMEMultipart() #实例化对象 msg[&#34;Subject&#34;] = &#34;销售报表&#34; #主题 msg[&#34;From&#34;] = from_addr msg[&#34;To&#34;] = to_addr part1 = MIMEText(&#34;这里是邮件内容&#34;) msg.attach(part1) # 添加附件 part2 = MIMEApplication(open(date &#43; &#34;.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="pthon3实现oracle数据库查询、导出EXCEL并邮件发送"/>
 <meta name="twitter:description" content="一、准备环境1、安装Oracle 客户端（python、oracle客户端的位数要一致）
 2、安装Python第三方模块
-pip3 install cx_Oracle xlsxwriter
-**cx_Oracle模块：**一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
-**xlsxwriter模块：**编写Excel 2007&#43;XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。
-二、编写代码# -*- coding: utf-8 -*-
-import time import smtplib import cx_Oracle import xlsxwriter from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.application import MIMEApplication
-def send_mail(): from_addr = &ldquo;12345678@qq.com&rdquo; #发件人 pwd = &ldquo;zjjeiuwpaynojhgsdf&rdquo; #授权码/密码 to_addr = &ldquo;87654321@qq.com&rdquo; #收件人
-msg = MIMEMultipart() #实例化对象 msg\[&quot;Subject&quot;\] = &quot;销售报表&quot; #主题 msg\[&quot;From&quot;\] = from\_addr msg\[&quot;To&quot;\] = to\_addr part1 = MIMEText(&quot;这里是邮件内容&quot;) msg.attach(part1) # 添加附件 part2 = MIMEApplication(open(date &#43; &quot;."/>
+pip3 install cx_Oracle xlsxwriter cx_Oracle模块： 一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
+xlsxwriter模块： 编写Excel 2007&#43;XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。
+二、编写代码# -*- coding: utf-8 -*- import time import smtplib import cx_Oracle import xlsxwriter from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.application import MIMEApplication def send_mail(): from_addr = &#34;12345678@qq.com&#34; #发件人 pwd = &#34;zjjeiuwpaynojhgsdf&#34; #授权码/密码 to_addr = &#34;87654321@qq.com&#34; #收件人 msg = MIMEMultipart() #实例化对象 msg[&#34;Subject&#34;] = &#34;销售报表&#34; #主题 msg[&#34;From&#34;] = from_addr msg[&#34;To&#34;] = to_addr part1 = MIMEText(&#34;这里是邮件内容&#34;) msg.attach(part1) # 添加附件 part2 = MIMEApplication(open(date &#43; &#34;."/>
 
   <meta property="og:title" content="pthon3实现oracle数据库查询、导出EXCEL并邮件发送" />
 <meta property="og:description" content="一、准备环境1、安装Oracle 客户端（python、oracle客户端的位数要一致）
 2、安装Python第三方模块
-pip3 install cx_Oracle xlsxwriter
-**cx_Oracle模块：**一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
-**xlsxwriter模块：**编写Excel 2007&#43;XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。
-二、编写代码# -*- coding: utf-8 -*-
-import time import smtplib import cx_Oracle import xlsxwriter from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.application import MIMEApplication
-def send_mail(): from_addr = &ldquo;12345678@qq.com&rdquo; #发件人 pwd = &ldquo;zjjeiuwpaynojhgsdf&rdquo; #授权码/密码 to_addr = &ldquo;87654321@qq.com&rdquo; #收件人
-msg = MIMEMultipart() #实例化对象 msg\[&quot;Subject&quot;\] = &quot;销售报表&quot; #主题 msg\[&quot;From&quot;\] = from\_addr msg\[&quot;To&quot;\] = to\_addr part1 = MIMEText(&quot;这里是邮件内容&quot;) msg.attach(part1) # 添加附件 part2 = MIMEApplication(open(date &#43; &quot;." />
+pip3 install cx_Oracle xlsxwriter cx_Oracle模块： 一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
+xlsxwriter模块： 编写Excel 2007&#43;XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。
+二、编写代码# -*- coding: utf-8 -*- import time import smtplib import cx_Oracle import xlsxwriter from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.application import MIMEApplication def send_mail(): from_addr = &#34;12345678@qq.com&#34; #发件人 pwd = &#34;zjjeiuwpaynojhgsdf&#34; #授权码/密码 to_addr = &#34;87654321@qq.com&#34; #收件人 msg = MIMEMultipart() #实例化对象 msg[&#34;Subject&#34;] = &#34;销售报表&#34; #主题 msg[&#34;From&#34;] = from_addr msg[&#34;To&#34;] = to_addr part1 = MIMEText(&#34;这里是邮件内容&#34;) msg.attach(part1) # 添加附件 part2 = MIMEApplication(open(date &#43; &#34;." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-02T00:00:00+00:00" />
@@ -235,147 +223,161 @@ msg = MIMEMultipart() #实例化对象 msg\[&quot;Subject&quot;\] = &quot;销售
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p> </p>
-<h2 id="一准备环境">一、准备环境<a class="anchorjs-link" href="#%e4%b8%80%e5%87%86%e5%a4%87%e7%8e%af%e5%a2%83"></a></h2><p>1、安装Oracle 客户端（python、oracle客户端的位数要一致）</p>
+        <h3 id="一准备环境">一、准备环境<a class="anchorjs-link" href="#%e4%b8%80%e5%87%86%e5%a4%87%e7%8e%af%e5%a2%83"></a></h3><p>1、安装Oracle 客户端（python、oracle客户端的位数要一致）</p>
 <p>2、安装Python第三方模块</p>
-<p>pip3 install cx_Oracle xlsxwriter</p>
-<p>**cx_Oracle模块：**一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。</p>
-<p>**xlsxwriter模块：**编写Excel 2007+XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。</p>
-<p> </p>
-<h2 id="二编写代码">二、编写代码<a class="anchorjs-link" href="#%e4%ba%8c%e7%bc%96%e5%86%99%e4%bb%a3%e7%a0%81"></a></h2><p># -*- coding: utf-8 -*-</p>
-<p>import time
-import smtplib
-import cx_Oracle
-import xlsxwriter
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from email.mime.application import MIMEApplication</p>
-<p>def send_mail():
-from_addr = &ldquo;<a href="/mailto:12345678@qq.com">12345678@qq.com</a>&rdquo;  #发件人
-pwd = &ldquo;zjjeiuwpaynojhgsdf&rdquo;     #授权码/密码
-to_addr = &ldquo;<a href="/mailto:87654321@qq.com">87654321@qq.com</a>&rdquo;    #收件人</p>
-<pre><code>msg = MIMEMultipart()    #实例化对象
-msg\[&quot;Subject&quot;\] = &quot;销售报表&quot;    #主题
-msg\[&quot;From&quot;\] = from\_addr  
-msg\[&quot;To&quot;\] = to\_addr
-
-part1 = MIMEText(&quot;这里是邮件内容&quot;)
-msg.attach(part1)
-
-# 添加附件
-part2 = MIMEApplication(open(date + &quot;.xlsx&quot;, 'rb').read())
-part2.add\_header('Content-Disposition', 'attachment', filename=date + &quot;.xlsx&quot;)
-msg.attach(part2)
-
-# 连接smtp服务器，登录服务器并发送文本
-smtp\_server = &quot;smtp.qq.com&quot;
-server = smtplib.SMTP(smtp\_server,25)
-server.login(from\_addr,pwd)
-server.sendmail(from\_addr,to\_addr,msg.as\_string()) # as\_string（）把MIMEText变成一个str
-server.close()
-</code></pre>
-<p>def write_xls(ret):
-workbook = xlsxwriter.Workbook(date + &lsquo;.xlsx&rsquo;)
-format_1 = workbook.add_format({&lsquo;bold&rsquo;: True, &lsquo;font_size&rsquo;: 16, &lsquo;align&rsquo;: &lsquo;center&rsquo;})  #添加样式1，格式为加粗、字体16号、居中
-format_2 = workbook.add_format({&lsquo;font_size&rsquo;: 14, &lsquo;align&rsquo;: &lsquo;center&rsquo;})   #添加样式2，字体14号、居中
-format_3 = workbook.add_format({&lsquo;font_size&rsquo;: 14, &lsquo;align&rsquo;: &lsquo;center&rsquo;, &rsquo;num_format&rsquo;: &lsquo;yyyy-mm-dd hh:mm:ss&rsquo;})  #添加样式3，字体14号、居中、格式化为时间日期</p>
-<pre><code>worksheet = workbook.add\_worksheet(&quot;sheet1&quot;)  #添加工作表
-worksheet.set\_column('A:B', 30)  #将A到B列的宽度设为30
-worksheet.set\_column('C:D', 40)  #将C到D列的宽度设为40
-
-#写入标题行 write(单元格，内容，样式)
-worksheet.write('A1', '会员手机号',format\_1) 
-worksheet.write('B1','商品名称',format\_1)
-worksheet.write('C1','商品单价',format\_1)
-worksheet.write('D1','购买时间',format\_1)
-
-row = 1  #从第2行开始写入
-col = 0  #从第1列开始写入
-for record in ret:  
-	for s in record:
-
-		#如果循环到第4列，将内容设置成样式3（日期格式）
-		if col == 3:
-			worksheet.write(row, col, s, format\_3)
-			continue
-
-		#将内容写入到第row行，第col列,格式为样式2
-		worksheet.write(row, col, s, format\_2)
-		col+=1
-
-	row += 1  #行数加1
-	col = 0   #列数归0
-
-workbook.close()
-</code></pre>
-<p>date = time.strftime(&rsquo;%Y-%m-%d&rsquo;,time.localtime())  #获取当前日期，用于文件命名</p>
-<p>username=&ldquo;test&rdquo;
-userpwd=&ldquo;123456&rdquo;
-host=&ldquo;172.16.1.1&rdquo;
-port=1521
-dbname=&ldquo;WEB&rdquo;</p>
-<p>dsn=cx_Oracle.makedsn(host, port, dbname)
-connection=cx_Oracle.connect(username, userpwd, dsn, encoding = &ldquo;UTF-8&rdquo;, nencoding = &ldquo;UTF-8&rdquo;)
-cursor=connection.cursor()</p>
-<p>sql=&lsquo;select * from sale&rsquo;
-cursor.execute(sql)</p>
-<p>result=cursor.fetchall()
-count=cursor.rowcount</p>
-<p>print(&ldquo;共查询到&rdquo;, count, &ldquo;记录&rdquo;)
-print(&quot;=====================&quot;)</p>
-<p>#打印出查询结果
-for row in result:
-print(row)</p>
-<p>cursor.close()
-connection.close()</p>
-<p>write_xls(result)  #将查询结果写入Excel文件
-send_mail()  #发送邮件</p>
-<p> </p>
-<h2 id="三可能遇到的问题">三、可能遇到的问题<a class="anchorjs-link" href="#%e4%b8%89%e5%8f%af%e8%83%bd%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98"></a></h2><p>A、运行报错 cx_Oracle.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library:</p>
-<p>Traceback (most recent call last):
-File &ldquo;C:\Users\Administrator\Desktop\movic_report.py&rdquo;, line 78, in <module>
-connection=cx_Oracle.connect(username, userpwd, dsn&quot;)
-cx_Oracle.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library: &ldquo;The specified module could not be found&rdquo;.</p>
-<p>原因：</p>
+<pre tabindex="0"><code>pip3 install cx_Oracle xlsxwriter
+</code></pre><p><strong>cx_Oracle模块：</strong> 一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。</p>
+<p><strong>xlsxwriter模块：</strong> 编写Excel 2007+XLSX文件格式文件，可用于将文本、数字和公式写入多个工作表，并支持格式、图像、图表、页面设置、自动筛选、条件格式和许多其他功能。</p>
+<h3 id="二编写代码">二、编写代码<a class="anchorjs-link" href="#%e4%ba%8c%e7%bc%96%e5%86%99%e4%bb%a3%e7%a0%81"></a></h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> smtplib
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> cx_Oracle
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> xlsxwriter
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> email.mime.text <span style="color:#f92672">import</span> MIMEText
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> email.mime.multipart <span style="color:#f92672">import</span> MIMEMultipart
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> email.mime.application <span style="color:#f92672">import</span> MIMEApplication
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">send_mail</span>():
+</span></span><span style="display:flex;"><span>    from_addr <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;12345678@qq.com&#34;</span>  <span style="color:#75715e">#发件人</span>
+</span></span><span style="display:flex;"><span>    pwd <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;zjjeiuwpaynojhgsdf&#34;</span>     <span style="color:#75715e">#授权码/密码</span>
+</span></span><span style="display:flex;"><span>    to_addr <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;87654321@qq.com&#34;</span>    <span style="color:#75715e">#收件人</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    msg <span style="color:#f92672">=</span> MIMEMultipart()    <span style="color:#75715e">#实例化对象</span>
+</span></span><span style="display:flex;"><span>    msg[<span style="color:#e6db74">&#34;Subject&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;销售报表&#34;</span>    <span style="color:#75715e">#主题</span>
+</span></span><span style="display:flex;"><span>    msg[<span style="color:#e6db74">&#34;From&#34;</span>] <span style="color:#f92672">=</span> from_addr  
+</span></span><span style="display:flex;"><span>    msg[<span style="color:#e6db74">&#34;To&#34;</span>] <span style="color:#f92672">=</span> to_addr
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    part1 <span style="color:#f92672">=</span> MIMEText(<span style="color:#e6db74">&#34;这里是邮件内容&#34;</span>)
+</span></span><span style="display:flex;"><span>    msg<span style="color:#f92672">.</span>attach(part1)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 添加附件</span>
+</span></span><span style="display:flex;"><span>    part2 <span style="color:#f92672">=</span> MIMEApplication(open(date <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.xlsx&#34;</span>, <span style="color:#e6db74">&#39;rb&#39;</span>)<span style="color:#f92672">.</span>read())
+</span></span><span style="display:flex;"><span>    part2<span style="color:#f92672">.</span>add_header(<span style="color:#e6db74">&#39;Content-Disposition&#39;</span>, <span style="color:#e6db74">&#39;attachment&#39;</span>, filename<span style="color:#f92672">=</span>date <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.xlsx&#34;</span>)
+</span></span><span style="display:flex;"><span>    msg<span style="color:#f92672">.</span>attach(part2)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 连接smtp服务器，登录服务器并发送文本</span>
+</span></span><span style="display:flex;"><span>    smtp_server <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;smtp.qq.com&#34;</span>
+</span></span><span style="display:flex;"><span>    server <span style="color:#f92672">=</span> smtplib<span style="color:#f92672">.</span>SMTP(smtp_server,<span style="color:#ae81ff">25</span>)
+</span></span><span style="display:flex;"><span>    server<span style="color:#f92672">.</span>login(from_addr,pwd)
+</span></span><span style="display:flex;"><span>    server<span style="color:#f92672">.</span>sendmail(from_addr,to_addr,msg<span style="color:#f92672">.</span>as_string()) <span style="color:#75715e"># as_string（）把MIMEText变成一个str</span>
+</span></span><span style="display:flex;"><span>    server<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">write_xls</span>(ret):
+</span></span><span style="display:flex;"><span>	workbook <span style="color:#f92672">=</span> xlsxwriter<span style="color:#f92672">.</span>Workbook(date <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;.xlsx&#39;</span>)
+</span></span><span style="display:flex;"><span>	format_1 <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>add_format({<span style="color:#e6db74">&#39;bold&#39;</span>: <span style="color:#66d9ef">True</span>, <span style="color:#e6db74">&#39;font_size&#39;</span>: <span style="color:#ae81ff">16</span>, <span style="color:#e6db74">&#39;align&#39;</span>: <span style="color:#e6db74">&#39;center&#39;</span>})  <span style="color:#75715e">#添加样式1，格式为加粗、字体16号、居中</span>
+</span></span><span style="display:flex;"><span>	format_2 <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>add_format({<span style="color:#e6db74">&#39;font_size&#39;</span>: <span style="color:#ae81ff">14</span>, <span style="color:#e6db74">&#39;align&#39;</span>: <span style="color:#e6db74">&#39;center&#39;</span>})   <span style="color:#75715e">#添加样式2，字体14号、居中</span>
+</span></span><span style="display:flex;"><span>	format_3 <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>add_format({<span style="color:#e6db74">&#39;font_size&#39;</span>: <span style="color:#ae81ff">14</span>, <span style="color:#e6db74">&#39;align&#39;</span>: <span style="color:#e6db74">&#39;center&#39;</span>, <span style="color:#e6db74">&#39;num_format&#39;</span>: <span style="color:#e6db74">&#39;yyyy-mm-dd hh:mm:ss&#39;</span>})  <span style="color:#75715e">#添加样式3，字体14号、居中、格式化为时间日期</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	worksheet <span style="color:#f92672">=</span> workbook<span style="color:#f92672">.</span>add_worksheet(<span style="color:#e6db74">&#34;sheet1&#34;</span>)  <span style="color:#75715e">#添加工作表</span>
+</span></span><span style="display:flex;"><span>	worksheet<span style="color:#f92672">.</span>set_column(<span style="color:#e6db74">&#39;A:B&#39;</span>, <span style="color:#ae81ff">30</span>)  <span style="color:#75715e">#将A到B列的宽度设为30</span>
+</span></span><span style="display:flex;"><span>	worksheet<span style="color:#f92672">.</span>set_column(<span style="color:#e6db74">&#39;C:D&#39;</span>, <span style="color:#ae81ff">40</span>)  <span style="color:#75715e">#将C到D列的宽度设为40</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">#写入标题行 write(单元格，内容，样式)</span>
+</span></span><span style="display:flex;"><span>	worksheet<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#39;A1&#39;</span>, <span style="color:#e6db74">&#39;会员手机号&#39;</span>,format_1) 
+</span></span><span style="display:flex;"><span>	worksheet<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#39;B1&#39;</span>,<span style="color:#e6db74">&#39;商品名称&#39;</span>,format_1)
+</span></span><span style="display:flex;"><span>	worksheet<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#39;C1&#39;</span>,<span style="color:#e6db74">&#39;商品单价&#39;</span>,format_1)
+</span></span><span style="display:flex;"><span>	worksheet<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#39;D1&#39;</span>,<span style="color:#e6db74">&#39;购买时间&#39;</span>,format_1)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	row <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>  <span style="color:#75715e">#从第2行开始写入</span>
+</span></span><span style="display:flex;"><span>	col <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>  <span style="color:#75715e">#从第1列开始写入</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> record <span style="color:#f92672">in</span> ret:  
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> record:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">#如果循环到第4列，将内容设置成样式3（日期格式）</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> col <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>:
+</span></span><span style="display:flex;"><span>				worksheet<span style="color:#f92672">.</span>write(row, col, s, format_3)
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>			<span style="color:#75715e">#将内容写入到第row行，第col列,格式为样式2</span>
+</span></span><span style="display:flex;"><span>			worksheet<span style="color:#f92672">.</span>write(row, col, s, format_2)
+</span></span><span style="display:flex;"><span>			col<span style="color:#f92672">+=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		row <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>  <span style="color:#75715e">#行数加1</span>
+</span></span><span style="display:flex;"><span>		col <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>   <span style="color:#75715e">#列数归0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	workbook<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>date <span style="color:#f92672">=</span> time<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#39;</span>,time<span style="color:#f92672">.</span>localtime())  <span style="color:#75715e">#获取当前日期，用于文件命名</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>username<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>
+</span></span><span style="display:flex;"><span>userpwd<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;123456&#34;</span>
+</span></span><span style="display:flex;"><span>host<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;172.16.1.1&#34;</span>
+</span></span><span style="display:flex;"><span>port<span style="color:#f92672">=</span><span style="color:#ae81ff">1521</span>
+</span></span><span style="display:flex;"><span>dbname<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;WEB&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dsn<span style="color:#f92672">=</span>cx_Oracle<span style="color:#f92672">.</span>makedsn(host, port, dbname)
+</span></span><span style="display:flex;"><span>connection<span style="color:#f92672">=</span>cx_Oracle<span style="color:#f92672">.</span>connect(username, userpwd, dsn, encoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span>, nencoding <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span>)
+</span></span><span style="display:flex;"><span>cursor<span style="color:#f92672">=</span>connection<span style="color:#f92672">.</span>cursor()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sql<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;select * from sale&#39;</span>
+</span></span><span style="display:flex;"><span>cursor<span style="color:#f92672">.</span>execute(sql)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>result<span style="color:#f92672">=</span>cursor<span style="color:#f92672">.</span>fetchall()
+</span></span><span style="display:flex;"><span>count<span style="color:#f92672">=</span>cursor<span style="color:#f92672">.</span>rowcount
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;共查询到&#34;</span>, count, <span style="color:#e6db74">&#34;记录&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;=====================&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#打印出查询结果</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> result:
+</span></span><span style="display:flex;"><span>    print(row) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cursor<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>connection<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>write_xls(result)  <span style="color:#75715e">#将查询结果写入Excel文件</span>
+</span></span><span style="display:flex;"><span>send_mail()  <span style="color:#75715e">#发送邮件</span>
+</span></span></code></pre></div><h2 id="三可能遇到的问题">三、可能遇到的问题<a class="anchorjs-link" href="#%e4%b8%89%e5%8f%af%e8%83%bd%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98"></a></h2><p><strong>A、运行报错 cx_Oracle.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library:</strong></p>
+<pre tabindex="0"><code>Traceback (most recent call last):
+  File &#34;C:\Users\Administrator\Desktop\movic_report.py&#34;, line 78, in &lt;module&gt;
+    connection=cx_Oracle.connect(username, userpwd, dsn&#34;)
+cx_Oracle.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library: &#34;The specified module could not be found&#34;.
+</code></pre><p><strong>原因：</strong></p>
 <p>1、oracle客户端和python 位数不一致</p>
 <p>2、oracle客户端的bin目录没有加入系统环境变量中，导致找不到oracle相关库文件</p>
-<p>解决方法：</p>
+<p><strong>解决方法：</strong></p>
 <p>1、安装相同位数的oracle客户端和python（同为32位或64位）</p>
 <p>2、将oracle客户端的bin目录加入到环境变量（或者 将 oci.dll，oraocci11.dll和oraociei11.dll库文件拷贝到python目录下lib-&gt;site-packages里面）</p>
-<p> </p>
-<p>B、查询结果包含中文，报下面编码错误</p>
-<p>Traceback (most recent call last):
-File &ldquo;E:\oracle.py&rdquo;, line 33, in <module>
-cursor.execute(sql)
-UnicodeEncodeError: &lsquo;ascii&rsquo; codec can&rsquo;t encode characters in position 35-39: ordinal not in range(128)</p>
-<p>解决方法：</p>
-<p>查看系统编码：
-import sys<br>
-print(sys.getdefaultencoding())  #输出utf8</p>
-<p>查看oracle数据库编码：
-select userenv(&rsquo;language&rsquo;) from dual; #结果为CHINESE_CHINA.AL32UTF8</p>
-<p>方法一：
+<p><strong>B、查询结果包含中文，报下面编码错误</strong></p>
+<pre tabindex="0"><code>Traceback (most recent call last):
+  File &#34;E:\oracle.py&#34;, line 33, in &lt;module&gt;
+    cursor.execute(sql)
+UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 35-39: ordinal not in range(128)
+</code></pre><p><strong>解决方法：</strong></p>
+<pre tabindex="0"><code>查看系统编码：
+import sys  
+print(sys.getdefaultencoding())  #输出utf8
+ 
+查看oracle数据库编码：
+select userenv(&#39;language&#39;) from dual; #结果为CHINESE_CHINA.AL32UTF8
+ 
+方法一：
 手机设置系统环境变量NLS_LANG的值：
 windows下：右键计算机属性-&gt;高级系统设置-&gt;高级-&gt;环境变量-&gt;在系统变量下新建变量名：NLS_LANG，值为CHINESE_CHINA.AL32UTF8
-Linux下：在/etc/profile文件末尾增加一行，export NLS_LANG=CHINESE_CHINA.AL32UTF8</p>
-<p>方法二：
-conn = cx_Oracle.connect(connectString, encoding = &ldquo;UTF-8&rdquo;, nencoding = &ldquo;UTF-8&rdquo;)</p>
-<p> </p>
-<p>C、查询的sql语句中，如果别名使用单引号，会报错，提示未找到要求的 FROM 关键字，但是where语句中，条件的值又只能使用单引号，不然会报错，提示 标识符无效</p>
-<p>sql = “SELECT USERID AS &lsquo;列名&rsquo; FROM EB_LOG WHERE USERID = &lsquo;admin&rsquo; ”  #别名使用单引号，报错</p>
-<p>Traceback (most recent call last):
-File &ldquo;E:\oracle.py&rdquo;, line 34, in <module>
-cursor.execute(sql)
-cx_Oracle.DatabaseError: ORA-00923: 未找到要求的 FROM 关键字</p>
-<p>sql = &lsquo;SELECT USERID AS &ldquo;列名&rdquo; FROM EB_LOG WHERE USERID = &ldquo;admin&rdquo;&rsquo;  #where条件的值使用双引号，报错</p>
-<p>Traceback (most recent call last):
-File &ldquo;E:\oracle.py&rdquo;, line 33, in <module>
-cursor.execute(sql)
-cx_Oracle.DatabaseError: ORA-00904: &ldquo;U&rdquo;: 标识符无效</p>
-<p>解决方法：</p>
-<p>#sql语句整体使用单引号，别名使用双引号，where条件的值使用单引号，并用反斜杠转义
-sql = &lsquo;SELECT EB_USERID AS &ldquo;列名&rdquo; from EB_LOG WHERE EB_USERID = \&lsquo;admin\&rsquo; '</p>
-
+Linux下：在/etc/profile文件末尾增加一行，export NLS_LANG=CHINESE_CHINA.AL32UTF8
+ 
+方法二：
+conn = cx_Oracle.connect(connectString, encoding = &#34;UTF-8&#34;, nencoding = &#34;UTF-8&#34;)
+</code></pre><p><strong>C、查询的sql语句中，如果别名使用单引号，会报错，提示未找到要求的 FROM 关键字，但是where语句中，条件的值又只能使用单引号，不然会报错，提示 标识符无效</strong></p>
+<pre tabindex="0"><code>sql = “SELECT USERID AS &#39;列名&#39; FROM EB_LOG WHERE USERID = &#39;admin&#39; ”  #别名使用单引号，报错
+ 
+Traceback (most recent call last):
+  File &#34;E:\oracle.py&#34;, line 34, in &lt;module&gt;
+    cursor.execute(sql)
+cx_Oracle.DatabaseError: ORA-00923: 未找到要求的 FROM 关键字
+ 
+ 
+sql = &#39;SELECT USERID AS &#34;列名&#34; FROM EB_LOG WHERE USERID = &#34;admin&#34;&#39;  #where条件的值使用双引号，报错
+ 
+Traceback (most recent call last):
+  File &#34;E:\oracle.py&#34;, line 33, in &lt;module&gt;
+    cursor.execute(sql)
+cx_Oracle.DatabaseError: ORA-00904: &#34;U&#34;: 标识符无效
+</code></pre><p><strong>解决方法：</strong></p>
+<pre tabindex="0"><code>#sql语句整体使用单引号，别名使用双引号，where条件的值使用单引号，并用反斜杠转义 
+sql = &#39;SELECT EB_USERID AS &#34;列名&#34; from EB_LOG WHERE EB_USERID = \&#39;admin\&#39; &#39;
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

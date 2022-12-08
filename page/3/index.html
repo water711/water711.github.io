@@ -206,49 +206,13 @@
 
 
    <div class="post-preview">
-  <a href="/posts/2021-01-28-%E8%A7%A3%E5%86%B3raw-github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/">
-      <h2 class="post-title">解决raw.github无法访问的问题</h2>
-      
-      <div class="post-content-preview">
-        
-        域名被DNS污染，手动在hosts文件中添加解析
-199.232.4.133 raw.githubusercontent.com
-         
-      </div>
-  </a>
-  <p class="post-meta">
-      Posted by    on Thu, Jan 28, 2021
-  </p>
-</div>
-<hr>
-
-   <div class="post-preview">
-  <a href="/posts/2021-01-26-windows-server-2012-2016-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E7%9B%91%E6%8E%A7/">
-      <h2 class="post-title">Windows Server 2012/2016 任务管理器增加磁盘监控</h2>
-      
-      <div class="post-content-preview">
-        
-        命令行中输入：diskperf -y
-         
-      </div>
-  </a>
-  <p class="post-meta">
-      Posted by    on Tue, Jan 26, 2021
-  </p>
-</div>
-<hr>
-
-   <div class="post-preview">
   <a href="/posts/2021-01-16-win7%E6%90%AD%E5%BB%BAopenwrt%E6%8F%92%E4%BB%B6%E5%BA%93/">
       <h2 class="post-title">Win7搭建Openwrt插件库</h2>
       
       <div class="post-content-preview">
         
-        Win7环境搭建openwrt插件库一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录）
-/lede/bin/packages/mips_24kc /lede/bin/targets/ar71xx/generic/packages
-我这边拷贝到 F盘openwrt_package文件夹
-二、开启IIS信息服务
-运行中输入 appwiz.cpl，打开 …
+        一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录） /lede/bin/packages/mips_24kc /lede/bin/targets/ar71xx/generic/packages
+我这边拷贝到 F盘openwrt_package文件夹 二、开启IIS信息服务运行中输入 appwiz.cpl，打开程序和功能，点击左上角“打开或关 …
          
       </div>
   </a>
@@ -264,7 +228,7 @@
       
       <div class="post-content-preview">
         
-        查询当前是否开启了查询日志mysql&amp;gt; show global variables like &amp;lsquo;%general_log%&amp;rsquo;; …
+        查询当前是否开启了查询日志mysql&amp;gt; show global variables like &amp;#39;%general_log%&amp;#39;; +------------------+------------------------------------------------+ | Variable_name | Value | …
          
       </div>
   </a>
@@ -333,8 +297,7 @@
       
       <div class="post-content-preview">
         
-        一、如果系统安装过docker，先卸载sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine
-二、安装依赖 …
+        一、如果系统安装过docker，先卸载sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 二、安装依赖 …
          
       </div>
   </a>
@@ -369,16 +332,47 @@ gh-proxy开源项目示例演示 听海 …
       
       <div class="post-content-preview">
         
-        一、安装VNCServersudo apt-get install vnc4server
-二、设置密码并运行vncserver（输入命令后输入密码）vncserver
-三、配置xstartup文件修改xstartup文件内容，针对Xfce4桌面环境.
-vim ~/.vnc/xstartup
-#!/bin/sh unset SESSION_MANAGER …
+        一、安装VNCServersudo apt-get install vnc4server 二、设置密码并运行vncserver（输入命令后输入密码）vncserver 三、配置xstartup文件修改xstartup文件内容，针对Xfce4桌面环境.
+vim ~/.vnc/xstartup #!/bin/sh unset SESSION\_MANAGER …
          
       </div>
   </a>
   <p class="post-meta">
       Posted by    on Wed, Jan 6, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/">
+      <h2 class="post-title">Centos7 修改docker镜像源</h2>
+      
+      <div class="post-content-preview">
+        
+        参考链接：https://www.daocloud.io/mirror
+curl -sSL https://get.daocloud.io/daotools/set\_mirror.sh | sh -s http://f1361db2.m.daocloud.io 该脚本可以将 &amp;ndash;registry-mirror 加入到你的 Docker …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Mon, Jan 4, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8/">
+      <h2 class="post-title">centos7 设置默认启动内核，并删除多余内核</h2>
+      
+      <div class="post-content-preview">
+        
+        设置默认启动内核1、查看系统可用内核
+[root@NAS]# awk -F\&amp;#39; &amp;#39;$1==&amp;#34;menuentry &amp;#34; {print i++ &amp;#34; : &amp;#34; $2}&amp;#39; /etc/grub2.cfg 0 : CentOS Linux (4.4.248-1.el7.elrepo.x86_64) 7 (Core) 1 …
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Dec 29, 2020
   </p>
 </div>
 <hr>

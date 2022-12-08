@@ -28,8 +28,7 @@
 选择User Library
 勾选opencv
 创建一个新的Java文件，使用以下代码运行测试：
-import org.opencv.core.Core; import org.opencv.core.CvType; import org.opencv.core.Mat;
-public class opencvTest { public static void main( String[] args ) { System.loadLibrary( Core.NATIVE_LIBRARY_NAME ); Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 ); System.out.println( &ldquo;mat = &quot; &#43; mat.">
+import org.opencv.core.Core; import org.opencv.core.CvType; import org.opencv.core.Mat; public class opencvTest { public static void main( String[] args ) { System.loadLibrary( Core.NATIVE_LIBRARY_NAME ); Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 ); System.out.println( &#34;mat = &#34; &#43; mat.dump() ); } } 运行结果">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
@@ -48,8 +47,7 @@ public class opencvTest { public static void main( String[] args ) { System.load
 选择User Library
 勾选opencv
 创建一个新的Java文件，使用以下代码运行测试：
-import org.opencv.core.Core; import org.opencv.core.CvType; import org.opencv.core.Mat;
-public class opencvTest { public static void main( String[] args ) { System.loadLibrary( Core.NATIVE_LIBRARY_NAME ); Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 ); System.out.println( &ldquo;mat = &quot; &#43; mat."/>
+import org.opencv.core.Core; import org.opencv.core.CvType; import org.opencv.core.Mat; public class opencvTest { public static void main( String[] args ) { System.loadLibrary( Core.NATIVE_LIBRARY_NAME ); Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 ); System.out.println( &#34;mat = &#34; &#43; mat.dump() ); } } 运行结果"/>
 
   <meta property="og:title" content="JAVA使用opencv通过RTSP流打开摄像头" />
 <meta property="og:description" content="一、安装OpenCV打开OpenCV官网，下载对应系统的opencv，并解压到任意位置
@@ -66,8 +64,7 @@ public class opencvTest { public static void main( String[] args ) { System.load
 选择User Library
 勾选opencv
 创建一个新的Java文件，使用以下代码运行测试：
-import org.opencv.core.Core; import org.opencv.core.CvType; import org.opencv.core.Mat;
-public class opencvTest { public static void main( String[] args ) { System.loadLibrary( Core.NATIVE_LIBRARY_NAME ); Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 ); System.out.println( &ldquo;mat = &quot; &#43; mat." />
+import org.opencv.core.Core; import org.opencv.core.CvType; import org.opencv.core.Mat; public class opencvTest { public static void main( String[] args ) { System.loadLibrary( Core.NATIVE_LIBRARY_NAME ); Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 ); System.out.println( &#34;mat = &#34; &#43; mat.dump() ); } } 运行结果" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2019-10-29-java%E4%BD%BF%E7%94%A8opencv%E9%80%9A%E8%BF%87rtsp%E6%B5%81%E6%89%93%E5%BC%80%E6%91%84%E5%83%8F%E5%A4%B4/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-10-29T00:00:00+00:00" />
@@ -256,8 +253,7 @@ public class opencvTest { public static void main( String[] args ) { System.load
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p> </p>
-<h2 id="一安装opencv">一、安装OpenCV<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85opencv"></a></h2><p>打开OpenCV官网，下载对应系统的opencv，并解压到任意位置</p>
+        <h3 id="一安装opencv">一、安装OpenCV<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85opencv"></a></h3><p>打开OpenCV官网，下载对应系统的opencv，并解压到任意位置</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//58f9831ac6df95c9000c4a10b0502bb0.png" data-action="zoom" alt=""  class="lazyload">
@@ -271,8 +267,7 @@ public class opencvTest { public static void main( String[] args ) { System.load
   </a>
   
 </figure></p>
-<p> </p>
-<h2 id="二eclipse加载opencv库">二、Eclipse加载OpenCV库<a class="anchorjs-link" href="#%e4%ba%8ceclipse%e5%8a%a0%e8%bd%bdopencv%e5%ba%93"></a></h2><p>官方配置文档：<a href="https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html" target="_blank">https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html</a></p>
+<h3 id="二eclipse加载opencv库">二、Eclipse加载OpenCV库<a class="anchorjs-link" href="#%e4%ba%8ceclipse%e5%8a%a0%e8%bd%bdopencv%e5%ba%93"></a></h3><p>官方配置文档：<a href="https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html" target="_blank">https://docs.opencv.org/2.4/doc/tutorials/introduction/java_eclipse/java_eclipse.html</a></p>
 <p>1、启动eclipse并从菜单中选择 Window –&gt; Preferences</p>
 <p>在左边导航窗口选择  Java –&gt; Build Path –&gt; User Libraries，点击New，并为你的library输入一个名称，例如：<code>OpenCV-4.1.1</code></p>
 <p><figure>
@@ -316,9 +311,7 @@ public class opencvTest { public static void main( String[] args ) { System.load
   
 </figure></p>
 <p>现在已经配置好opencv了，下面新建一个java项目，测试一下opencv是否能正常使用</p>
-<p> </p>
-<p> </p>
-<h2 id="三新建项目测试opencv">三、新建项目测试OpenCV<a class="anchorjs-link" href="#%e4%b8%89%e6%96%b0%e5%bb%ba%e9%a1%b9%e7%9b%ae%e6%b5%8b%e8%af%95opencv"></a></h2><p>Eclipse新建项目后，右键项目，点击 Build Path–&gt;Add Libraries&hellip;</p>
+<h3 id="三新建项目测试opencv">三、新建项目测试OpenCV<a class="anchorjs-link" href="#%e4%b8%89%e6%96%b0%e5%bb%ba%e9%a1%b9%e7%9b%ae%e6%b5%8b%e8%af%95opencv"></a></h3><p>Eclipse新建项目后，右键项目，点击 Build Path–&gt;Add Libraries&hellip;</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//8b0b83c2b4444fbbe3b1709de85efa47.png" data-action="zoom" alt=""  class="lazyload">
@@ -340,147 +333,146 @@ public class opencvTest { public static void main( String[] args ) { System.load
   
 </figure></p>
 <p>创建一个新的Java文件，使用以下代码运行测试：</p>
-<p>import org.opencv.core.Core;
+<pre tabindex="0"><code>import org.opencv.core.Core;
 import org.opencv.core.CvType;
-import org.opencv.core.Mat;</p>
-<p>public class opencvTest
+import org.opencv.core.Mat;
+ 
+public class opencvTest
 {
-public static void main( String[] args )
-{
-System.loadLibrary( Core.NATIVE_LIBRARY_NAME );
-Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 );
-System.out.println( &ldquo;mat = &quot; + mat.dump() );
+   public static void main( String[] args )
+   {
+      System.loadLibrary( Core.NATIVE_LIBRARY_NAME );
+      Mat mat = Mat.eye( 3, 3, CvType.CV_8UC1 );
+      System.out.println( &#34;mat = &#34; + mat.dump() );
+   }
 }
-}</p>
-<p>运行结果</p>
-<p>mat = [  1,   0,   0;
-0,   1,   0;
-0,   0,   1]</p>
-<p> </p>
-<h2 id="四打开摄像头按原分辨率显示">四、打开摄像头，按原分辨率显示<a class="anchorjs-link" href="#%e5%9b%9b%e6%89%93%e5%bc%80%e6%91%84%e5%83%8f%e5%a4%b4%e6%8c%89%e5%8e%9f%e5%88%86%e8%be%a8%e7%8e%87%e6%98%be%e7%a4%ba"></a></h2><p>使用RTSP流媒体打开摄像头</p>
-<p>import org.opencv.core.Mat;
+</code></pre><p>运行结果</p>
+<pre tabindex="0"><code>mat = [  1,   0,   0;
+   0,   1,   0;
+   0,   0,   1]
+</code></pre><h3 id="四打开摄像头按原分辨率显示">四、打开摄像头，按原分辨率显示<a class="anchorjs-link" href="#%e5%9b%9b%e6%89%93%e5%bc%80%e6%91%84%e5%83%8f%e5%a4%b4%e6%8c%89%e5%8e%9f%e5%88%86%e8%be%a8%e7%8e%87%e6%98%be%e7%a4%ba"></a></h3><p>使用RTSP流媒体打开摄像头</p>
+<pre tabindex="0"><code>import org.opencv.core.Mat;
 import org.opencv.core.Core;
 import org.opencv.highgui.HighGui;
-import org.opencv.videoio.VideoCapture;</p>
-<p>public class opencvTest {</p>
-<pre><code>static {
-    System.loadLibrary(Core.NATIVE\_LIBRARY\_NAME);
-}
+import org.opencv.videoio.VideoCapture;
 
-public static void main(String\[\] args) {
-System.load(&quot;D:/Program Files/opencv/build/bin/opencv\_videoio\_ffmpeg411\_64.dll&quot;);   //加载opencv\_ffmpeg400\_64.dll，要不然是无法解码
-	VideoCapture cap = new VideoCapture(&quot;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&quot;);
-    while(cap.isOpened()){
-        boolean flag;
-        Mat image = new Mat();
-        flag = cap.read(image);
-        if(!flag){
-            System.out.println(&quot;--- not able to get image ---&quot;);
-            break;
+public class opencvTest {
+
+	static {
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+	}
+	
+    public static void main(String[] args) {
+	System.load(&#34;D:/Program Files/opencv/build/bin/opencv_videoio_ffmpeg411_64.dll&#34;);   //加载opencv_ffmpeg400_64.dll，要不然是无法解码
+    	VideoCapture cap = new VideoCapture(&#34;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&#34;);
+        while(cap.isOpened()){
+            boolean flag;
+            Mat image = new Mat();
+            flag = cap.read(image);
+            if(!flag){
+                System.out.println(&#34;--- not able to get image ---&#34;);
+                break;
+            }
+            HighGui.imshow(&#34;video&#34;, image);
+            HighGui.waitKey(10);
         }
-        HighGui.imshow(&quot;video&quot;, image);
-        HighGui.waitKey(10);
-    }
-    System.out.println(&quot;--- video capture closed ---&quot;);
-</code></pre>
-<p>}
-}</p>
-<p> </p>
-<h2 id="五打开摄像头显示在固定大小的窗口">五、打开摄像头，显示在固定大小的窗口<a class="anchorjs-link" href="#%e4%ba%94%e6%89%93%e5%bc%80%e6%91%84%e5%83%8f%e5%a4%b4%e6%98%be%e7%a4%ba%e5%9c%a8%e5%9b%ba%e5%ae%9a%e5%a4%a7%e5%b0%8f%e7%9a%84%e7%aa%97%e5%8f%a3"></a></h2><p> </p>
-<p>import org.opencv.core.Mat;
+        System.out.println(&#34;--- video capture closed ---&#34;);
+   }
+}
+</code></pre><h3 id="五打开摄像头显示在固定大小的窗口">五、打开摄像头，显示在固定大小的窗口<a class="anchorjs-link" href="#%e4%ba%94%e6%89%93%e5%bc%80%e6%91%84%e5%83%8f%e5%a4%b4%e6%98%be%e7%a4%ba%e5%9c%a8%e5%9b%ba%e5%ae%9a%e5%a4%a7%e5%b0%8f%e7%9a%84%e7%aa%97%e5%8f%a3"></a></h3><pre tabindex="0"><code>import org.opencv.core.Mat;
 import org.opencv.core.Core;
 import org.opencv.videoio.VideoCapture;
 import org.opencv.core.Size;
 import org.opencv.highgui.HighGui;
-import org.opencv.imgproc.Imgproc;</p>
-<p>public class opencvTest {</p>
-<pre><code>static {
-    System.loadLibrary(Core.NATIVE\_LIBRARY\_NAME);
-}
-
-public static void main(String\[\] args) {
-    System.load(&quot;D:/Program Files/opencv/build/bin/opencv\_videoio\_ffmpeg411\_64.dll&quot;); //加载opencv\_ffmpeg400\_64.dll，要不然是无法解码
-
-    VideoCapture vc = new VideoCapture();
-	boolean isOpen = vc.open(&quot;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&quot;);
-	System.out.println(&quot;isOpen=&quot;+isOpen);
-	Mat mat = new Mat();
-	String winName = &quot;showFrame&quot;;  //窗口名称
-	int height = 600,width = 800;  //定义窗口宽和高
-	HighGui.namedWindow(winName);
-	HighGui.resizeWindow(winName, width, height);
-	while(vc.read(mat)){	
-		Mat dst = new Mat();
-		Imgproc.resize(mat, dst, new Size(width,height));  // 重置窗口大小
-		HighGui.imshow(winName, dst);  //显示窗口
-		int key = HighGui.waitKey(1);  // 调用waitkey方法，否则无法显示
+import org.opencv.imgproc.Imgproc;
+ 
+public class opencvTest {
+ 
+	static {
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 	}
-	HighGui.destroyAllWindows();
-	vc.release();
+	
+    public static void main(String[] args) {
+        System.load(&#34;D:/Program Files/opencv/build/bin/opencv_videoio_ffmpeg411_64.dll&#34;); //加载opencv_ffmpeg400_64.dll，要不然是无法解码
+ 
+        VideoCapture vc = new VideoCapture();
+		boolean isOpen = vc.open(&#34;rtsp://192.168.104.130/user=admin&amp;password=admin&amp;channel=1&#34;);
+		System.out.println(&#34;isOpen=&#34;+isOpen);
+		Mat mat = new Mat();
+		String winName = &#34;showFrame&#34;;  //窗口名称
+		int height = 600,width = 800;  //定义窗口宽和高
+		HighGui.namedWindow(winName);
+		HighGui.resizeWindow(winName, width, height);
+		while(vc.read(mat)){	
+			Mat dst = new Mat();
+			Imgproc.resize(mat, dst, new Size(width,height));  // 重置窗口大小
+			HighGui.imshow(winName, dst);  //显示窗口
+			int key = HighGui.waitKey(1);  // 调用waitkey方法，否则无法显示
+		}
+		HighGui.destroyAllWindows();
+		vc.release();
+	}
 }
-</code></pre>
-<p>}</p>
-<p> </p>
-<h2 id="六打开摄像头并截取一帧画面">六、打开摄像头并截取一帧画面<a class="anchorjs-link" href="#%e5%85%ad%e6%89%93%e5%bc%80%e6%91%84%e5%83%8f%e5%a4%b4%e5%b9%b6%e6%88%aa%e5%8f%96%e4%b8%80%e5%b8%a7%e7%94%bb%e9%9d%a2"></a></h2><p> </p>
-<p>import org.opencv.core.Mat;
+</code></pre><h3 id="六打开摄像头并截取一帧画面">六、打开摄像头并截取一帧画面<a class="anchorjs-link" href="#%e5%85%ad%e6%89%93%e5%bc%80%e6%91%84%e5%83%8f%e5%a4%b4%e5%b9%b6%e6%88%aa%e5%8f%96%e4%b8%80%e5%b8%a7%e7%94%bb%e9%9d%a2"></a></h3><pre tabindex="0"><code>import org.opencv.core.Mat;
 import org.opencv.core.Core;
 import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.videoio.VideoCapture;</p>
-<p>public class opencvTest {</p>
-<pre><code>static {
-    System.loadLibrary(Core.NATIVE\_LIBRARY\_NAME);
+import org.opencv.videoio.VideoCapture;
+ 
+public class opencvTest {
+ 
+	static {
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+	}
+	
+    public static void main(String[] args) {
+    	System.load(&#34;D:/Program Files/opencv/build/bin/opencv_videoio_ffmpeg411_64.dll&#34;); //加载opencv_ffmpeg400_64.dll，要不然是无法解码
+	VideoCapture vc = new VideoCapture();
+	String rtsp = &#34;rtsp://192.168.104.160/user=admin&amp;password=admin&amp;channel=15.0&#34;;
+	VideoCapture camera = new VideoCapture(rtsp);
+	Mat mat = new Mat();
+	camera.read(mat);
+	String filename = &#34;test.png&#34;;  
+	Imgcodecs.imwrite(filename, mat);  //保存画面到当前项目目录下
+	camera.release();
+	}
 }
-
-public static void main(String\[\] args) {
-	System.load(&quot;D:/Program Files/opencv/build/bin/opencv\_videoio\_ffmpeg411\_64.dll&quot;); //加载opencv\_ffmpeg400\_64.dll，要不然是无法解码
-VideoCapture vc = new VideoCapture();
-String rtsp = &quot;rtsp://192.168.104.160/user=admin&amp;password=admin&amp;channel=15.0&quot;;
-VideoCapture camera = new VideoCapture(rtsp);
-Mat mat = new Mat();
-camera.read(mat);
-String filename = &quot;test.png&quot;;  
-Imgcodecs.imwrite(filename, mat);  //保存画面到当前项目目录下
-camera.release();
-}
-</code></pre>
-<p>}</p>
-<p> </p>
-<h2 id="七判断摄像头是否黑屏">七、判断摄像头是否黑屏<a class="anchorjs-link" href="#%e4%b8%83%e5%88%a4%e6%96%ad%e6%91%84%e5%83%8f%e5%a4%b4%e6%98%af%e5%90%a6%e9%bb%91%e5%b1%8f"></a></h2><p> </p>
-<p>import org.opencv.core.Mat;
+</code></pre><h3 id="七判断摄像头是否黑屏">七、判断摄像头是否黑屏<a class="anchorjs-link" href="#%e4%b8%83%e5%88%a4%e6%96%ad%e6%91%84%e5%83%8f%e5%a4%b4%e6%98%af%e5%90%a6%e9%bb%91%e5%b1%8f"></a></h3><pre tabindex="0"><code>import org.opencv.core.Mat;
 import java.io.File;
 import org.opencv.core.Core;
 import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.videoio.VideoCapture;</p>
-<p>public class opencvTest {</p>
-<pre><code>static {
-    System.loadLibrary(Core.NATIVE\_LIBRARY\_NAME);
-}
-
-private static void read\_camera() {
-	VideoCapture camera = new VideoCapture(&quot;rtsp://192.168.104.130/user=admin&amp;password=admin123&amp;channel=1&quot;);
-	Mat mat = new Mat();
-	camera.read(mat);
-	String filename = &quot;test.png&quot;;
-    Imgcodecs.imwrite(filename, mat);
-	camera.release();
-}
-
-public static void main(String\[\] args) {
-	System.load(&quot;D:/Users/Administrator/Desktop/opencv/build/bin/opencv\_videoio\_ffmpeg411\_64.dll&quot;);
-	File file = new File(&quot;test.png&quot;);
+import org.opencv.videoio.VideoCapture;
+ 
+ 
+public class opencvTest {
 	
-	opencvTest.read\_camera();  //获取摄像头画面，并保存为test.png
-
-    //如果文件大小不超过60000字节（60Kb），则判断摄像头黑屏
-    if (file.length() &gt; 60000) {
-    	System.out.println(&quot;摄像头正常&quot;);
-    }else {
-    	System.out.println(&quot;摄像头黑屏&quot;);
-    }
-} 
+	static {
+        System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+	}
+	
+	private static void read_camera() {
+		VideoCapture camera = new VideoCapture(&#34;rtsp://192.168.104.130/user=admin&amp;password=admin123&amp;channel=1&#34;);
+		Mat mat = new Mat();
+		camera.read(mat);
+		String filename = &#34;test.png&#34;;
+	    Imgcodecs.imwrite(filename, mat);
+		camera.release();
+	}
+ 
+    public static void main(String[] args) {
+    	System.load(&#34;D:/Users/Administrator/Desktop/opencv/build/bin/opencv_videoio_ffmpeg411_64.dll&#34;);
+    	File file = new File(&#34;test.png&#34;);
+    	
+    	opencvTest.read_camera();  //获取摄像头画面，并保存为test.png
+ 
+        //如果文件大小不超过60000字节（60Kb），则判断摄像头黑屏
+        if (file.length() &gt; 60000) {
+        	System.out.println(&#34;摄像头正常&#34;);
+        }else {
+        	System.out.println(&#34;摄像头黑屏&#34;);
+        }
+    } 
+}
 </code></pre>
-<p>}</p>
-
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

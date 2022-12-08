@@ -220,11 +220,10 @@
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p> </p>
-<h2 id="一导入elrepo仓库的公共密钥">一、导入ELRepo仓库的公共密钥<a class="anchorjs-link" href="#%e4%b8%80%e5%af%bc%e5%85%a5elrepo%e4%bb%93%e5%ba%93%e7%9a%84%e5%85%ac%e5%85%b1%e5%af%86%e9%92%a5"></a></h2><p>rpm &ndash;import <a href="https://www.elrepo.org/RPM-GPG-KEY-elrepo.org" target="_blank">https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</a></p>
-<h2 id="二安装el仓库源">二、安装EL仓库源<a class="anchorjs-link" href="#%e4%ba%8c%e5%ae%89%e8%a3%85el%e4%bb%93%e5%ba%93%e6%ba%90"></a></h2><p>rpm -Uvh <a href="http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm" target="_blank">http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm</a></p>
-<h2 id="三查看可提供升级的内核版本">三、查看可提供升级的内核版本<a class="anchorjs-link" href="#%e4%b8%89%e6%9f%a5%e7%9c%8b%e5%8f%af%e6%8f%90%e4%be%9b%e5%8d%87%e7%ba%a7%e7%9a%84%e5%86%85%e6%a0%b8%e7%89%88%e6%9c%ac"></a></h2><p>yum &ndash;disablerepo=&quot;*&quot; &ndash;enablerepo=&ldquo;elrepo-kernel&rdquo; list available</p>
-<h2 id="四升级内核">四、升级内核<a class="anchorjs-link" href="#%e5%9b%9b%e5%8d%87%e7%ba%a7%e5%86%85%e6%a0%b8"></a></h2><p>yum &ndash;enablerepo=elrepo-kernel install 包名</p>
+        <h3 id="一导入elrepo仓库的公共密钥">一、导入ELRepo仓库的公共密钥<a class="anchorjs-link" href="#%e4%b8%80%e5%af%bc%e5%85%a5elrepo%e4%bb%93%e5%ba%93%e7%9a%84%e5%85%ac%e5%85%b1%e5%af%86%e9%92%a5"></a></h3><p>rpm &ndash;import <a href="https://www.elrepo.org/RPM-GPG-KEY-elrepo.org" target="_blank">https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</a></p>
+<h3 id="二安装el仓库源">二、安装EL仓库源<a class="anchorjs-link" href="#%e4%ba%8c%e5%ae%89%e8%a3%85el%e4%bb%93%e5%ba%93%e6%ba%90"></a></h3><p>rpm -Uvh <a href="http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm" target="_blank">http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm</a></p>
+<h3 id="三查看可提供升级的内核版本">三、查看可提供升级的内核版本<a class="anchorjs-link" href="#%e4%b8%89%e6%9f%a5%e7%9c%8b%e5%8f%af%e6%8f%90%e4%be%9b%e5%8d%87%e7%ba%a7%e7%9a%84%e5%86%85%e6%a0%b8%e7%89%88%e6%9c%ac"></a></h3><p>yum &ndash;disablerepo=&quot;*&quot; &ndash;enablerepo=&ldquo;elrepo-kernel&rdquo; list available</p>
+<h3 id="四升级内核">四、升级内核<a class="anchorjs-link" href="#%e5%9b%9b%e5%8d%87%e7%ba%a7%e5%86%85%e6%a0%b8"></a></h3><p>yum &ndash;enablerepo=elrepo-kernel install 包名</p>
 
 
         <hr style="visibility: hidden;" />

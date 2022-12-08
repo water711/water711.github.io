@@ -17,20 +17,14 @@
   <meta name="description" content="1、下载交换机MIB参考文件 访问 https://support.huawei.com/enterprise/zh/index.html，搜索交换机型号，点击案例库，选择MIB参考
 2、交换机下启用snmp，并设置团体名 图形界面：
 命令行：
-system-view snmp-agent snmp-agent community read public //设置读团体名:public snmp-agent community write private //设置写团体名:private
-3、linux下安装snmpwalk
-yum -y install net-snmp-utils
-4、使用snmpwalk获取交换机OID信息
-snmpwalk -v SNMP版本（1或2c) -c 团体名 IP地址 OID(对象标示符)
-a、通过硬件实体名OID，查询硬件索引值，查询到MPU Board索引值为67108873
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.2.1.47.1.1.1.1.7
-b、查询CPU使用率，查询时要在OID后面加上MPU Board的索引值
+system-view snmp-agent snmp-agent community read public //设置读团体名:public snmp-agent community write private //设置写团体名:private 3、linux下安装snmpwalk
+yum -y install net-snmp-utils 4、使用snmpwalk获取交换机OID信息
+snmpwalk -v SNMP版本（1或2c) -c 团体名 IP地址 OID(对象标示符) a、通过硬件实体名OID，查询硬件索引值，查询到MPU Board索引值为67108873
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.2.1.47.1.1.1.1.7 b、查询CPU使用率，查询时要在OID后面加上MPU Board的索引值
 （如果不指定硬件索引，会列出所有硬件的CPU使用率的值，但是其它硬件没有CPU使用率，所以值为0）
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5.67108873
-c、查询内存使用率
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7.67108873
-d、查询设备温度
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.67108873">
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5.67108873 c、查询内存使用率
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7.67108873 d、查询设备温度
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.67108873 ">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
@@ -38,39 +32,27 @@ snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.6710887
 <meta name="twitter:description" content="1、下载交换机MIB参考文件 访问 https://support.huawei.com/enterprise/zh/index.html，搜索交换机型号，点击案例库，选择MIB参考
 2、交换机下启用snmp，并设置团体名 图形界面：
 命令行：
-system-view snmp-agent snmp-agent community read public //设置读团体名:public snmp-agent community write private //设置写团体名:private
-3、linux下安装snmpwalk
-yum -y install net-snmp-utils
-4、使用snmpwalk获取交换机OID信息
-snmpwalk -v SNMP版本（1或2c) -c 团体名 IP地址 OID(对象标示符)
-a、通过硬件实体名OID，查询硬件索引值，查询到MPU Board索引值为67108873
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.2.1.47.1.1.1.1.7
-b、查询CPU使用率，查询时要在OID后面加上MPU Board的索引值
+system-view snmp-agent snmp-agent community read public //设置读团体名:public snmp-agent community write private //设置写团体名:private 3、linux下安装snmpwalk
+yum -y install net-snmp-utils 4、使用snmpwalk获取交换机OID信息
+snmpwalk -v SNMP版本（1或2c) -c 团体名 IP地址 OID(对象标示符) a、通过硬件实体名OID，查询硬件索引值，查询到MPU Board索引值为67108873
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.2.1.47.1.1.1.1.7 b、查询CPU使用率，查询时要在OID后面加上MPU Board的索引值
 （如果不指定硬件索引，会列出所有硬件的CPU使用率的值，但是其它硬件没有CPU使用率，所以值为0）
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5.67108873
-c、查询内存使用率
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7.67108873
-d、查询设备温度
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.67108873"/>
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5.67108873 c、查询内存使用率
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7.67108873 d、查询设备温度
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.67108873 "/>
 
   <meta property="og:title" content="下载华为交换机MIB参考文件并使用snmpwalk获取OID信息" />
 <meta property="og:description" content="1、下载交换机MIB参考文件 访问 https://support.huawei.com/enterprise/zh/index.html，搜索交换机型号，点击案例库，选择MIB参考
 2、交换机下启用snmp，并设置团体名 图形界面：
 命令行：
-system-view snmp-agent snmp-agent community read public //设置读团体名:public snmp-agent community write private //设置写团体名:private
-3、linux下安装snmpwalk
-yum -y install net-snmp-utils
-4、使用snmpwalk获取交换机OID信息
-snmpwalk -v SNMP版本（1或2c) -c 团体名 IP地址 OID(对象标示符)
-a、通过硬件实体名OID，查询硬件索引值，查询到MPU Board索引值为67108873
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.2.1.47.1.1.1.1.7
-b、查询CPU使用率，查询时要在OID后面加上MPU Board的索引值
+system-view snmp-agent snmp-agent community read public //设置读团体名:public snmp-agent community write private //设置写团体名:private 3、linux下安装snmpwalk
+yum -y install net-snmp-utils 4、使用snmpwalk获取交换机OID信息
+snmpwalk -v SNMP版本（1或2c) -c 团体名 IP地址 OID(对象标示符) a、通过硬件实体名OID，查询硬件索引值，查询到MPU Board索引值为67108873
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.2.1.47.1.1.1.1.7 b、查询CPU使用率，查询时要在OID后面加上MPU Board的索引值
 （如果不指定硬件索引，会列出所有硬件的CPU使用率的值，但是其它硬件没有CPU使用率，所以值为0）
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5.67108873
-c、查询内存使用率
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7.67108873
-d、查询设备温度
-snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.67108873" />
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5.67108873 c、查询内存使用率
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7.67108873 d、查询设备温度
+snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.67108873 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2019-03-04-%E4%B8%8B%E8%BD%BD%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BAmib%E5%8F%82%E8%80%83%E6%96%87%E4%BB%B6%E5%B9%B6%E4%BD%BF%E7%94%A8snmpwalk%E8%8E%B7%E5%8F%96oid%E4%BF%A1%E6%81%AF/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-03-04T00:00:00+00:00" />
@@ -274,19 +256,17 @@ snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.6710887
   
 </figure></p>
 <p>命令行：</p>
-<p>system-view
+<pre tabindex="0"><code>system-view
 snmp-agent
 snmp-agent community read  public           //设置读团体名:public
-snmp-agent community write  private         //设置写团体名:private</p>
-<p> </p>
-<p>3、linux下安装snmpwalk</p>
-<p>yum -y install net-snmp-utils</p>
-<p> </p>
-<p>4、使用snmpwalk获取交换机OID信息</p>
-<p>snmpwalk -v  SNMP版本（1或2c)  -c 团体名  IP地址 OID(对象标示符)</p>
-<p>a、通过硬件实体名OID，查询硬件索引值，查询到MPU Board索引值为67108873</p>
-<p>snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.2.1.47.1.1.1.1.7</p>
-<p><figure>
+snmp-agent community write  private         //设置写团体名:private
+</code></pre><p>3、linux下安装snmpwalk</p>
+<pre tabindex="0"><code>yum -y install net-snmp-utils
+</code></pre><p>4、使用snmpwalk获取交换机OID信息</p>
+<pre tabindex="0"><code>snmpwalk -v  SNMP版本（1或2c)  -c 团体名  IP地址 OID(对象标示符)
+</code></pre><p>a、通过硬件实体名OID，查询硬件索引值，查询到MPU Board索引值为67108873</p>
+<pre tabindex="0"><code>snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.2.1.47.1.1.1.1.7
+</code></pre><p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//1126217-20190304204421319-313181076.png" data-action="zoom" alt=""  class="lazyload">
   </a>
@@ -294,24 +274,24 @@ snmp-agent community write  private         //设置写团体名:private</p>
 </figure></p>
 <p>b、查询CPU使用率，查询时要在OID后面加上MPU Board的索引值</p>
 <p>（如果不指定硬件索引，会列出所有硬件的CPU使用率的值，但是其它硬件没有CPU使用率，所以值为0）</p>
-<p>snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5.67108873</p>
-<p><figure>
+<pre tabindex="0"><code>snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.5.67108873
+</code></pre><p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//1126217-20190304205010898-1421692109.png" data-action="zoom" alt=""  class="lazyload">
   </a>
   
 </figure></p>
 <p>c、查询内存使用率</p>
-<p>snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7.67108873</p>
-<p><figure>
+<pre tabindex="0"><code>snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.7.67108873
+</code></pre><p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//1126217-20190304205143554-1863828999.png" data-action="zoom" alt=""  class="lazyload">
   </a>
   
 </figure></p>
 <p>d、查询设备温度</p>
-<p>snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.67108873</p>
-
+<pre tabindex="0"><code>snmpwalk -v 2c -c 团体名 IP地址 1.3.6.1.4.1.2011.5.25.31.1.1.1.1.11.67108873
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

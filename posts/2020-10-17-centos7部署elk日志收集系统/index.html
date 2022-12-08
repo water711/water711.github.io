@@ -15,38 +15,29 @@
 
   
   <meta name="description" content="一、安装Elasticsearch1、下载安装包并解压
-[root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/
-2、创建用户和用户组
+[root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/ 2、创建用户和用户组
 elasticsearch默认不允许使用root用户运行，如果要强行使用root运行，要加上该参数 ./bin/elasticsearch -Des.insecure.allow.root=true
-[root@ELK ~]# useradd es [root@ELK ~]# passwd es [root@ELK ~]# chown -R es:es /usr/local/elasticsearch-7.9.2/
-3、启动elasticsearch
-[root@ELK ~]# su - es [es@ELK ~]# cd /usr/local/elasticsearch-7.9.2/ [es@ELK elasticsearch-7.9.2]$ ./bin/elasticsearch [root@ELK ~]# curl http://127.0.0.1:9200 #测试启动是否成功
-启动出错
-[root@ELK ~]# tail -f /var/log/messages #需要设置es用户的最大打开文件数和最大进程数 [1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]">
+[root@ELK ~]# useradd es [root@ELK ~]# passwd es [root@ELK ~]# chown -R es:es /usr/local/elasticsearch-7.9.2/ 3、启动elasticsearch
+[root@ELK ~]# su - es [es@ELK ~]# cd /usr/local/elasticsearch-7.9.2/ [es@ELK elasticsearch-7.9.2]$ ./bin/elasticsearch [root@ELK ~]# curl http://127.0.0.1:9200 #测试启动是否成功 启动出错
+[root@ELK ~]# tail -f /var/log/messages #需要设置es用户的最大打开文件数和最大进程数 [1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535] #需要修改单个进程拥有虚拟内存区域的大小 [2]: max virtual memory areas vm.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Centos7部署ELK日志收集系统"/>
 <meta name="twitter:description" content="一、安装Elasticsearch1、下载安装包并解压
-[root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/
-2、创建用户和用户组
+[root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/ 2、创建用户和用户组
 elasticsearch默认不允许使用root用户运行，如果要强行使用root运行，要加上该参数 ./bin/elasticsearch -Des.insecure.allow.root=true
-[root@ELK ~]# useradd es [root@ELK ~]# passwd es [root@ELK ~]# chown -R es:es /usr/local/elasticsearch-7.9.2/
-3、启动elasticsearch
-[root@ELK ~]# su - es [es@ELK ~]# cd /usr/local/elasticsearch-7.9.2/ [es@ELK elasticsearch-7.9.2]$ ./bin/elasticsearch [root@ELK ~]# curl http://127.0.0.1:9200 #测试启动是否成功
-启动出错
-[root@ELK ~]# tail -f /var/log/messages #需要设置es用户的最大打开文件数和最大进程数 [1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]"/>
+[root@ELK ~]# useradd es [root@ELK ~]# passwd es [root@ELK ~]# chown -R es:es /usr/local/elasticsearch-7.9.2/ 3、启动elasticsearch
+[root@ELK ~]# su - es [es@ELK ~]# cd /usr/local/elasticsearch-7.9.2/ [es@ELK elasticsearch-7.9.2]$ ./bin/elasticsearch [root@ELK ~]# curl http://127.0.0.1:9200 #测试启动是否成功 启动出错
+[root@ELK ~]# tail -f /var/log/messages #需要设置es用户的最大打开文件数和最大进程数 [1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535] #需要修改单个进程拥有虚拟内存区域的大小 [2]: max virtual memory areas vm."/>
 
   <meta property="og:title" content="Centos7部署ELK日志收集系统" />
 <meta property="og:description" content="一、安装Elasticsearch1、下载安装包并解压
-[root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/
-2、创建用户和用户组
+[root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/ 2、创建用户和用户组
 elasticsearch默认不允许使用root用户运行，如果要强行使用root运行，要加上该参数 ./bin/elasticsearch -Des.insecure.allow.root=true
-[root@ELK ~]# useradd es [root@ELK ~]# passwd es [root@ELK ~]# chown -R es:es /usr/local/elasticsearch-7.9.2/
-3、启动elasticsearch
-[root@ELK ~]# su - es [es@ELK ~]# cd /usr/local/elasticsearch-7.9.2/ [es@ELK elasticsearch-7.9.2]$ ./bin/elasticsearch [root@ELK ~]# curl http://127.0.0.1:9200 #测试启动是否成功
-启动出错
-[root@ELK ~]# tail -f /var/log/messages #需要设置es用户的最大打开文件数和最大进程数 [1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]" />
+[root@ELK ~]# useradd es [root@ELK ~]# passwd es [root@ELK ~]# chown -R es:es /usr/local/elasticsearch-7.9.2/ 3、启动elasticsearch
+[root@ELK ~]# su - es [es@ELK ~]# cd /usr/local/elasticsearch-7.9.2/ [es@ELK elasticsearch-7.9.2]$ ./bin/elasticsearch [root@ELK ~]# curl http://127.0.0.1:9200 #测试启动是否成功 启动出错
+[root@ELK ~]# tail -f /var/log/messages #需要设置es用户的最大打开文件数和最大进程数 [1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535] #需要修改单个进程拥有虚拟内存区域的大小 [2]: max virtual memory areas vm." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-17T00:00:00+00:00" />
@@ -235,209 +226,225 @@ elasticsearch默认不允许使用root用户运行，如果要强行使用root�
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <p> </p>
-<h2 id="一安装elasticsearch">一、安装Elasticsearch<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85elasticsearch"></a></h2><p>1、下载安装包并解压</p>
-<p>[root@ELK ~]# wget <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86" target="_blank">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86</a>_64.tar.gz
-[root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/</p>
-<p>2、创建用户和用户组</p>
-<p>elasticsearch默认不允许使用root用户运行，如果要强行使用root运行，要加上该参数 ./bin/elasticsearch -Des.insecure.allow.root=true</p>
-<p>[root@ELK ~]# useradd es
-[root@ELK ~]# passwd es
-[root@ELK ~]# chown -R es:es /usr/local/elasticsearch-7.9.2/</p>
-<p>3、启动elasticsearch</p>
-<p>[root@ELK ~]# su - es
+        <h3 id="一安装elasticsearch">一、安装Elasticsearch<a class="anchorjs-link" href="#%e4%b8%80%e5%ae%89%e8%a3%85elasticsearch"></a></h3><p>1、下载安装包并解压</p>
+<pre tabindex="0"><code>[root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz 
+[root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/
+</code></pre><p>2、创建用户和用户组</p>
+<p><strong>elasticsearch默认不允许使用root用户运行，如果要强行使用root运行，要加上该参数 ./bin/elasticsearch -Des.insecure.allow.root=true</strong></p>
+<pre tabindex="0"><code>[root@ELK ~]# useradd es 
+[root@ELK ~]# passwd es 
+[root@ELK ~]# chown -R es:es /usr/local/elasticsearch-7.9.2/
+</code></pre><p>3、启动elasticsearch</p>
+<pre tabindex="0"><code>[root@ELK ~]# su - es
 [es@ELK ~]# cd /usr/local/elasticsearch-7.9.2/
 [es@ELK elasticsearch-7.9.2]$ ./bin/elasticsearch
-[root@ELK ~]# curl http://127.0.0.1:9200 #测试启动是否成功</p>
-<p>启动出错</p>
-<p>[root@ELK ~]# tail -f /var/log/messages
+[root@ELK ~]# curl http://127.0.0.1:9200 #测试启动是否成功
+</code></pre><p>启动出错</p>
+<pre tabindex="0"><code>[root@ELK ~]# tail -f /var/log/messages
 #需要设置es用户的最大打开文件数和最大进程数
-[1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]</p>
-<p>#需要修改单个进程拥有虚拟内存区域的大小
-[2]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</p>
-<p>#需要配置elasticsearch.yml文件，指定discovery主机
-[3]: the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured</p>
-<p>4、配置系统内核参数</p>
+[1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65535]
+ 
+#需要修改单个进程拥有虚拟内存区域的大小
+[2]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+ 
+#需要配置elasticsearch.yml文件，指定discovery主机
+[3]: the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured
+</code></pre><p>4、配置系统内核参数</p>
 <p>修改es用户的最大打开文件数和最大进程数</p>
-<p>[root@ELK ~]# vim /etc/security/limits.conf
-//在文件最后加入
-es soft nofile 65536
-es hard nofile 65536
-es soft nproc 4096
-es hard nproc 4096</p>
-<p>修改单个进程拥有虚拟内存区域的大小</p>
-<p>[root@ELK ~]# vim /etc/sysctl.conf
-vm.max_map_count=655360</p>
-<p>重启系统生效</p>
-<p>[root@ELK ~]# reboot</p>
-<p>5、配置elasticsearch</p>
-<p>[root@ELK ~]# vim /usr/local/elasticsearch-7.9.2/config/elasticsearch.yml
+<pre tabindex="0"><code>[root@ELK ~]# vim /etc/security/limits.conf 
+//在文件最后加入 
+es soft nofile 65536 
+es hard nofile 65536 
+es soft nproc 4096 
+es hard nproc 4096
+</code></pre><p>修改单个进程拥有虚拟内存区域的大小</p>
+<pre tabindex="0"><code>[root@ELK ~]# vim /etc/sysctl.conf 
+vm.max_map_count=655360
+</code></pre><p>重启系统生效</p>
+<pre tabindex="0"><code>[root@ELK ~]# reboot
+</code></pre><p>5、配置elasticsearch</p>
+<pre tabindex="0"><code>[root@ELK ~]# vim /usr/local/elasticsearch-7.9.2/config/elasticsearch.yml
 network.host: 192.168.1.225        #修改为本机IP，允许其它主机远程访问
-discovery.seed_hosts: [&ldquo;192.168.1.225&rdquo;]        #集群主机节点，单节点则只填本机
+discovery.seed_hosts: [&#34;192.168.1.225&#34;]        #集群主机节点，单节点则只填本机
 #path.data: /path/to/data        #数据存放目录，默认在./elasticsearch/data下
-#path.logs: /path/to/logs        #日志存放目录，默认在./elasticsearch/logs下</p>
-<p>6、配置防火墙</p>
-<p>[root@ELK ~]# firewall-cmd &ndash;permanent &ndash;add-port=9200/tcp
-[root@ELK ~]# firewall-cmd &ndash;reload</p>
-<p>7、配置为服务并开机启动</p>
-<p>[root@ELK ~]# vim /etc/systemd/system/elasticsearch.service
+#path.logs: /path/to/logs        #日志存放目录，默认在./elasticsearch/logs下
+</code></pre><p>6、配置防火墙</p>
+<pre tabindex="0"><code>[root@ELK ~]# firewall-cmd --permanent --add-port=9200/tcp
+[root@ELK ~]# firewall-cmd --reload
+</code></pre><p>7、配置为服务并开机启动</p>
+<pre tabindex="0"><code>[root@ELK ~]# vim /etc/systemd/system/elasticsearch.service
 [Unit]
 Description=elasticsearch.service
-After=network.target</p>
-<p>[Service]
+After=network.target
+ 
+[Service]
 Type=forking
-User=es   #使用哪个用户启动</p>
-<p>LimitNOFILE=100000
+User=es   #使用哪个用户启动
+ 
+LimitNOFILE=100000
 LimitNPROC=100000
-ExecStart=/usr/local/elasticsearch-7.9.2/bin/elasticsearch -d  #启动的程序路径</p>
-<p>[Install]
-WantedBy=multi-user.target</p>
-<p>启动</p>
-<p>[root@ELK ~]# systemctl enable elasticsearch
-[root@ELK ~]# systemctl start elasticsearch</p>
-<h2 id="二安装插件elasticsearch-head">二、安装插件elasticsearch-head<a class="anchorjs-link" href="#%e4%ba%8c%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6elasticsearch-head"></a></h2><p>1、安装git和nodejs（nodejs需要9.0或以上版本）</p>
-<p>[root@ELK ~]# yum -y install git
-[root@ELK ~]# wget <a href="https://npm.taobao.org/mirrors/node/v14.13.1/node-v14.13.1-linux-x64.tar.xz" target="_blank">https://npm.taobao.org/mirrors/node/v14.13.1/node-v14.13.1-linux-x64.tar.xz</a>
+ExecStart=/usr/local/elasticsearch-7.9.2/bin/elasticsearch -d  #启动的程序路径
+ 
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>启动</p>
+<pre tabindex="0"><code>[root@ELK ~]# systemctl enable elasticsearch
+[root@ELK ~]# systemctl start elasticsearch
+</code></pre><h3 id="二安装插件elasticsearch-head">二、安装插件elasticsearch-head<a class="anchorjs-link" href="#%e4%ba%8c%e5%ae%89%e8%a3%85%e6%8f%92%e4%bb%b6elasticsearch-head"></a></h3><p>1、安装git和nodejs（nodejs需要9.0或以上版本）</p>
+<pre tabindex="0"><code>[root@ELK ~]# yum -y install git
+[root@ELK ~]# wget https://npm.taobao.org/mirrors/node/v14.13.1/node-v14.13.1-linux-x64.tar.xz
 [root@ELK ~]# tar xf node-v14.13.1-linux-x64.tar.xz -C /usr/local/
 [root@ELK ~]# mv /usr/local/node-v14.13.1-linux-x64/ /usr/local/nodejs
 [root@ELK ~]# ln -sv /usr/local/nodejs/bin/npm /usr/local/bin/
-[root@ELK ~]# ln -sv /usr/local/nodejs/bin/node /usr/local/bin/</p>
-<p>2、安装配置elasticsearch-head</p>
-<p>[root@ELK ~]# cd /usr/local/
+[root@ELK ~]# ln -sv /usr/local/nodejs/bin/node /usr/local/bin/
+</code></pre><p>2、安装配置elasticsearch-head</p>
+<pre tabindex="0"><code>[root@ELK ~]# cd /usr/local/
 [root@ELK local]# git clone git://github.com/mobz/elasticsearch-head.git
 [root@ELK local]# cd elasticsearch-head/
-[root@ELK elasticsearch-head]# npm install</p>
-<p>#npm默认源安装较慢，更换淘宝源加快安装速度
-[root@ELK ~]# npm config set registry <a href="https://registry.npmjs.org/" target="_blank">https://registry.npmjs.org/</a>  #配置官方的源
-[root@ELK ~]# npm config set registry <a href="https://registry.npm.taobao.org" target="_blank">https://registry.npm.taobao.org</a> #配置淘宝的源
-[root@ELK ~]# npm config get registry   #查看当前注册的源</p>
-<p>npm install出错，查看npm日志</p>
-<p>[root@ELK elasticsearch-head]# less /root/.npm/_logs/2020-10-03T17_03_29_020Z-debug.log
-&hellip;&hellip;..
-Failed at the <a href="/mailto:phantomjs-prebuilt@2.1.16">phantomjs-prebuilt@2.1.16</a> install script.</p>
-<p>解决方法，单独安装phantomjs：</p>
-<p>[root@ELK elasticsearch-head]# npm install <a href="/mailto:phantomjs-prebuilt@2.1.14">phantomjs-prebuilt@2.1.14</a> &ndash;ignore-scripts</p>
-<p>3、配置elasticsearch允许跨域访问</p>
-<p>[root@ELK ~]# vim /usr/local/elasticsearch-7.9.2/config/elasticsearch.yml</p>
-<p>//在文件末尾追加下面两行代码
+[root@ELK elasticsearch-head]# npm install
+ 
+#npm默认源安装较慢，更换淘宝源加快安装速度
+[root@ELK ~]# npm config set registry https://registry.npmjs.org/  #配置官方的源
+[root@ELK ~]# npm config set registry https://registry.npm.taobao.org #配置淘宝的源
+[root@ELK ~]# npm config get registry   #查看当前注册的源
+</code></pre><p>npm install出错，查看npm日志</p>
+<pre tabindex="0"><code>[root@ELK elasticsearch-head]# less /root/.npm/_logs/2020-10-03T17_03_29_020Z-debug.log
+........
+Failed at the phantomjs-prebuilt@2.1.16 install script.
+</code></pre><p>解决方法，单独安装phantomjs：</p>
+<pre tabindex="0"><code>[root@ELK elasticsearch-head]# npm install phantomjs-prebuilt@2.1.14 --ignore-scripts
+</code></pre><p>3、配置elasticsearch允许跨域访问</p>
+<pre tabindex="0"><code>[root@ELK ~]# vim /usr/local/elasticsearch-7.9.2/config/elasticsearch.yml
+ 
+//在文件末尾追加下面两行代码
 http.cors.enabled: true
-http.cors.allow-origin: &ldquo;*&rdquo;</p>
-<p>4、修改elasticsearch-head默认连接地址</p>
-<p>[root@ELK ~]# vim /usr/local/elasticsearch-head/_site/app.js
-this.base_uri = this.config.base_uri || this.prefs.get(&ldquo;app-base_uri&rdquo;) || &ldquo;http://192.168.1.225:9200&rdquo;; #将localhost修改为es服务器地址</p>
-<p>5、配置防火墙</p>
-<p>[root@ELK ~]# firewall-cmd &ndash;permanent &ndash;add-port=9100/tcp
-[root@ELK ~]# firewall-cmd &ndash;reload</p>
-<p>6、设置开机启动</p>
+http.cors.allow-origin: &#34;*&#34;
+</code></pre><p>4、修改elasticsearch-head默认连接地址</p>
+<pre tabindex="0"><code>[root@ELK ~]# vim /usr/local/elasticsearch-head/_site/app.js
+this.base_uri = this.config.base_uri || this.prefs.get(&#34;app-base_uri&#34;) || &#34;http://192.168.1.225:9200&#34;; #将localhost修改为es服务器地址
+</code></pre><p>5、配置防火墙</p>
+<pre tabindex="0"><code>[root@ELK ~]# firewall-cmd --permanent --add-port=9100/tcp
+[root@ELK ~]# firewall-cmd --reload
+</code></pre><p>6、设置开机启动</p>
 <p>方法一：配置为服务</p>
-<p>[root@ELK ~]# vim /etc/init.d/elasticsearch-head
+<pre tabindex="0"><code>[root@ELK ~]# vim /etc/init.d/elasticsearch-head
 #!/bin/sh
 #chkconfig: 2345 80 05
-#description: elasticsearch-head</p>
-<h1 id="elasticsearch-head-的路径">elasticsearch-head 的路径<a class="anchorjs-link" href="#elasticsearch-head-%e7%9a%84%e8%b7%af%e5%be%84"></a></h1><h2 id="nohup-npm-run-start-usrlocalelasticsearch-headnohupout-21-">cd /usr/local/elasticsearch-head
-nohup npm run start &gt;/usr/local/elasticsearch-head/nohup.out 2&gt;&amp;1 &amp;<a class="anchorjs-link" href="#nohup-npm-run-start-usrlocalelasticsearch-headnohupout-21-"></a></h2><p>[root@ELK ~]# chmod +x /etc/init.d/elasticsearch-head
-[root@ELK ~]# chkconfig &ndash;add elasticsearch-head</p>
-<p>方法二：配置开机启动脚本</p>
-<p>[root@ELK ~]# vim /etc/rc.local
+#description: elasticsearch-head
+ 
+# elasticsearch-head 的路径
+cd /usr/local/elasticsearch-head
+nohup npm run start &gt;/usr/local/elasticsearch-head/nohup.out 2&gt;&amp;1 &amp;
+------------------------------------------------------------------------
+[root@ELK ~]# chmod +x /etc/init.d/elasticsearch-head
+[root@ELK ~]# chkconfig --add elasticsearch-head
+</code></pre><p>方法二：配置开机启动脚本</p>
+<pre tabindex="0"><code>[root@ELK ~]# vim /etc/rc.local
 [root@ELK ~]# chmod +x /etc/rc.d/rc.local
 cd /usr/local/elasticsearch-head/node_modules/grunt/bin/
-./grunt server&amp;</p>
-<p>7、解决单节点 Elasticsearch 健康状态为 yellow 问题</p>
+./grunt server&amp;
+</code></pre><p>7、解决单节点 Elasticsearch 健康状态为 yellow 问题</p>
 <p>原因：单点部署的 Elasticsearch，默认分片的副本数为 1，而相同的分片不能在同一个节点上，所以就出现上面 unsigned shards 的问题</p>
-<p>[root@ELK ~]# curl -X PUT &ldquo;192.168.1.225:9200/_settings&rdquo; -H &lsquo;Content-Type: application/json&rsquo; -d &lsquo;{&ldquo;number_of_replicas&rdquo;:0}&rsquo;
+<pre tabindex="0"><code>[root@ELK ~]# curl -X PUT &#34;192.168.1.225:9200/_settings&#34; -H &#39;Content-Type: application/json&#39; -d &#39;{&#34;number_of_replicas&#34;:0}&#39;
 返回
-{&ldquo;acknowledged&rdquo;:true}</p>
-<p>方法二、将es部署为集群</p>
-<p> </p>
+{&#34;acknowledged&#34;:true}
+</code></pre><p>方法二、将es部署为集群</p>
 <h2 id="三安装logstash">三、安装Logstash<a class="anchorjs-link" href="#%e4%b8%89%e5%ae%89%e8%a3%85logstash"></a></h2><p>1、安装JAVA</p>
 <p>官网下载Java：https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html</p>
-<p>[root@ELK ~]# tar xvf jdk-8u261-linux-x64.tar.gz -C /usr/local/
-[root@ELK ~]# mv /usr/local/jdk1.8.0_261/ /usr/local/java</p>
-<p>[root@ELK ~]# vim /etc/profile
+<pre tabindex="0"><code>[root@ELK ~]# tar xvf jdk-8u261-linux-x64.tar.gz -C /usr/local/
+[root@ELK ~]# mv /usr/local/jdk1.8.0_261/ /usr/local/java
+ 
+[root@ELK ~]# vim /etc/profile
 export JAVA_HOME=/usr/local/java
 export JRE_HOME=${JAVA_HOME}/jre
-export PATH=${JAVA_HOME}/bin:$PATH</p>
-<p>[root@ELK ~]# source /etc/profile  #立即加载profile文件中的环境变量
-[root@ELK ~]# java -version  #测试</p>
-<p>2、安装logstash</p>
+export PATH=${JAVA_HOME}/bin:$PATH
+ 
+[root@ELK ~]# source /etc/profile  #立即加载profile文件中的环境变量
+[root@ELK ~]# java -version  #测试
+</code></pre><p>2、安装logstash</p>
 <p>官网下载：https://www.elastic.co/cn/downloads/logstash</p>
-<p>[root@ELK ~]# wget <a href="https://artifacts.elastic.co/downloads/logstash/logstash-7.9.2.tar.gz" target="_blank">https://artifacts.elastic.co/downloads/logstash/logstash-7.9.2.tar.gz</a>
+<pre tabindex="0"><code>[root@ELK ~]# wget https://artifacts.elastic.co/downloads/logstash/logstash-7.9.2.tar.gz
 [root@ELK ~]# tar xvf logstash-7.9.2.tar.gz -C /usr/local/
 [root@ELK ~]# chown -R root:root /usr/local/logstash-7.9.2/
 [root@ELK ~]# cd /usr/local/logstash-7.9.2/
-[root@ELK ~]# bin/logstash -e &lsquo;input { stdin { } } output { stdout {} }&rsquo;   #运行测试</p>
-<p>#测试，将logstash收集的内容写入到elasticsearch
-[root@ELK ~]# /usr/local/logstash-7.9.2/bin/logstash -e &lsquo;input { stdin{} } output { elasticsearch { hosts =&gt; &ldquo;192.168.1.225:9200&rdquo; } stdout{ codec =&gt; rubydebug } }&rsquo;</p>
-<p>3、logstash指定配置文件运行</p>
+[root@ELK ~]# bin/logstash -e &#39;input { stdin { } } output { stdout {} }&#39;   #运行测试
+
+#测试，将logstash收集的内容写入到elasticsearch
+[root@ELK ~]# /usr/local/logstash-7.9.2/bin/logstash -e &#39;input { stdin{} } output { elasticsearch { hosts =&gt; &#34;192.168.1.225:9200&#34; } stdout{ codec =&gt; rubydebug } }&#39;
+</code></pre><p>3、logstash指定配置文件运行</p>
 <p>新建配置文件，用于收集syslog日志，监听514端口</p>
-<p>[root@ELK ~]# vim /root/mylogstash/logstash.conf
+<pre tabindex="0"><code>[root@ELK ~]# vim /root/mylogstash/logstash.conf
 input{
-syslog {
-type =&gt; &ldquo;system-syslog&rdquo;
-host =&gt; &ldquo;192.168.1.225&rdquo;  #监听本地哪个地址，默认0.0.0.0
-port =&gt; &ldquo;514&rdquo;
-}
-}
+   syslog {
+      type =&gt; &#34;system-syslog&#34;
+      host =&gt; &#34;192.168.1.225&#34;  #监听本地哪个地址，默认0.0.0.0
+      port =&gt; &#34;514&#34;
+   }
+} 
 output {
-elasticsearch {
-hosts =&gt; [&ldquo;192.168.1.225:9200&rdquo;]
+    elasticsearch {
+      hosts =&gt; [&#34;192.168.1.225:9200&#34;]
+  }
 }
-}</p>
-<p>加载配置文件并运行logstash</p>
-<p>[root@ELK ~]# /usr/local/logstash-7.9.2/bin/logstash -f /root/mylogstash/logstash.conf</p>
-<p>配置防火墙</p>
-<p>[root@ELK ~]# firewall-cmd &ndash;permanent &ndash;add-port=514/tcp
-[root@ELK ~]# firewall-cmd &ndash;permanent &ndash;add-port=514/udp
-[root@ELK ~]# firewall-cmd &ndash;reload</p>
-<p>4、配置为服务并开机启动</p>
-<p>[root@ELK ~]# vim /usr/local/logstash-7.9.2/config/startup.options
+</code></pre><p>加载配置文件并运行logstash</p>
+<pre tabindex="0"><code>[root@ELK ~]# /usr/local/logstash-7.9.2/bin/logstash -f /root/mylogstash/logstash.conf
+</code></pre><p>配置防火墙</p>
+<pre tabindex="0"><code>[root@ELK ~]# firewall-cmd --permanent --add-port=514/tcp 
+[root@ELK ~]# firewall-cmd --permanent --add-port=514/udp 
+[root@ELK ~]# firewall-cmd --reload
+</code></pre><p>4、配置为服务并开机启动</p>
+<pre tabindex="0"><code>[root@ELK ~]# vim /usr/local/logstash-7.9.2/config/startup.options
 JAVACMD=/usr/local/java/bin/java   #指定java二进制文件路径
 LS_HOME=/usr/local/logstash-7.9.2/  #指定logstash目录
 #LS_SETTINGS_DIR=/usr/local/logstash-7.9.2/config/  #注释该行
-LS_OPTS=&quot;-f /root/mylogstash/&quot;
+LS_OPTS=&#34;-f /root/mylogstash/&#34;
 LS_USER=root
-LS_GROUP=root</p>
-<p>[root@ELK ~]# /usr/local/logstash-7.9.2/bin/system-install  #生成logstash.service文件
+LS_GROUP=root
+ 
+[root@ELK ~]# /usr/local/logstash-7.9.2/bin/system-install  #生成logstash.service文件
 [root@ELK ~]# cat /etc/systemd/system/logstash.service
 [root@ELK ~]# systemctl enable logstash
-[root@ELK ~]# systemctl start logstash</p>
-<p>注意：使用logstash收集syslog日志并监听514端口时，必须使用root用户启动Logstash，因为Linux系统中对1024以下端口需要root权限</p>
+[root@ELK ~]# systemctl start logstash
+</code></pre><p>注意：使用logstash收集syslog日志并监听514端口时，必须使用root用户启动Logstash，因为Linux系统中对1024以下端口需要root权限</p>
 <h2 id="四安装kibana">四、安装Kibana<a class="anchorjs-link" href="#%e5%9b%9b%e5%ae%89%e8%a3%85kibana"></a></h2><p>1、安装kibana</p>
 <p>官网：https://www.elastic.co/cn/downloads/kibana</p>
-<p>[root@ELK ~]# wget <a href="https://artifacts.elastic.co/downloads/kibana/kibana-7.9.2-linux-x86" target="_blank">https://artifacts.elastic.co/downloads/kibana/kibana-7.9.2-linux-x86</a>_64.tar.gz
+<pre tabindex="0"><code>[root@ELK ~]# wget https://artifacts.elastic.co/downloads/kibana/kibana-7.9.2-linux-x86_64.tar.gz
 [root@ELK ~]# tar -xvf kibana-7.9.2-linux-x86_64.tar.gz -C /usr/local/
-[root@ELK ~]# mv /usr/local/kibana-7.9.2-linux-x86_64/ /usr/local/kibana-7.9.2</p>
-<p>2、配置Kibana</p>
-<p>[root@ELK ~]# vim /usr/local/kibana-7.9.2/config/kibana.yml
-server.host: &ldquo;192.168.1.225&rdquo; #修改为本机IP地址，允许远程用户连接
-elasticsearch.hosts: [&ldquo;http://192.168.1.225:9200&rdquo;] #修改为elasticsearch所在服务器地址</p>
-<p>3、前台运行Kibana</p>
-<p>[root@ELK ~]# cd /usr/local/kibana-7.9.2/
-[root@ELK kibana-7.9.2]# bin/kibana</p>
-<p>4、配置防火墙</p>
-<p>[root@ELK ~]# firewall-cmd &ndash;permanent &ndash;add-port=5601/tcp
-[root@ELK ~]# firewall-cmd &ndash;reload</p>
-<p>5、浏览器访问：http://192.168.1.225:5601/</p>
+[root@ELK ~]# mv /usr/local/kibana-7.9.2-linux-x86_64/ /usr/local/kibana-7.9.2
+</code></pre><p>2、配置Kibana</p>
+<pre tabindex="0"><code>[root@ELK ~]# vim /usr/local/kibana-7.9.2/config/kibana.yml
+server.host: &#34;192.168.1.225&#34; #修改为本机IP地址，允许远程用户连接 
+elasticsearch.hosts: [&#34;http://192.168.1.225:9200&#34;] #修改为elasticsearch所在服务器地址
+</code></pre><p>3、前台运行Kibana</p>
+<pre tabindex="0"><code>[root@ELK ~]# cd /usr/local/kibana-7.9.2/ 
+[root@ELK kibana-7.9.2]# bin/kibana
+</code></pre><p>4、配置防火墙</p>
+<pre tabindex="0"><code>[root@ELK ~]# firewall-cmd --permanent --add-port=5601/tcp
+[root@ELK ~]# firewall-cmd --reload
+</code></pre><p>5、浏览器访问：http://192.168.1.225:5601/</p>
 <p>6、将Kibana配置成服务开机启动</p>
-<p>[root@ELK ~]# useradd kibana -s /sbin/nologin
-[root@ELK ~]# chown -R kibana:kibana /usr/local/kibana-7.9.2/</p>
-<p>[root@ELK ~]# vim /lib/systemd/system/kibana.service
+<pre tabindex="0"><code>[root@ELK ~]# useradd kibana -s /sbin/nologin
+[root@ELK ~]# chown -R kibana:kibana /usr/local/kibana-7.9.2/
+ 
+[root@ELK ~]# vim /lib/systemd/system/kibana.service
 [Unit]
 Description=Kibana
-After=network.target</p>
-<p>[Service]
+After=network.target
+ 
+[Service]
 Type=simple
 User=kibana
 Group=kibana
 ExecStart=/usr/local/kibana-7.9.2/bin/kibana
 PIDFile=/var/run/kibana.pid
-Restart=always</p>
-<p>[Install]
-WantedBy=default.target</p>
-<p>启动</p>
-<p>[root@ELK ~]# systemctl enable kibana.service
-[root@ELK ~]# systemctl start kibana.service</p>
-
+Restart=always
+ 
+[Install]
+WantedBy=default.target
+</code></pre><p>启动</p>
+<pre tabindex="0"><code>[root@ELK ~]# systemctl enable kibana.service 
+[root@ELK ~]# systemctl start kibana.service
+</code></pre>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

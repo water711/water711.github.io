@@ -15,38 +15,20 @@
 
   
   <meta name="description" content="一、使用docker安装docker hub仓库地址：https://hub.docker.com/r/linuxserver/transmission
-1、下载镜像
-docker pull linuxserver/transmission
-2、运行容器
-docker run -d \ &ndash;name=transmission \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Asia/Shanghai \ -e TRANSMISSION_WEB_HOME=/transmission-web-control/ `#optional` \ -e USER=username `#optional` \ -e PASS=password `#optional` \ -p 9091:9091 \ -p 51413:51413 \ -p 51413:51413/udp \ -v /mnt/transmission/config:/config \ -v /mnt/transmission/downloads:/downloads \ -v /mnt/transmission/watch:/watch \ &ndash;restart unless-stopped \ linuxserver/transmission
-3、配置文件地址
-vim /mnt/transmission/config/settings.json
-二、使用yum安装1、安装
-yum -y install epel-release yum install tranmission transmission-daemon systemctl start transmission-daemon.">
+1、下载镜像docker pull linuxserver/transmission
+2、运行容器docker run -d \ --name=transmission \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Asia/Shanghai \ -e TRANSMISSION\_WEB\_HOME=/transmission-web-control/ `#optional\` \ -e USER=username `#optional` \ -e PASS=password `#optional` \ -p 9091:9091 \ -p 51413:51413 \ -p 51413:51413/udp \ -v /mnt/transmission/config:/config \ -v /mnt/transmission/downloads:/downloads \ -v /mnt/transmission/watch:/watch \ --restart unless-stopped \ linuxserver/transmission 3、配置文件地址ls /mnt/transmission/config/settings.json 二、使用yum安装1、安装yum -y install epel-release yum install tranmission transmission-daemon systemctl start transmission-daemon.service systemctl enable transmission-daemon.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="centos7安装transmission"/>
 <meta name="twitter:description" content="一、使用docker安装docker hub仓库地址：https://hub.docker.com/r/linuxserver/transmission
-1、下载镜像
-docker pull linuxserver/transmission
-2、运行容器
-docker run -d \ &ndash;name=transmission \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Asia/Shanghai \ -e TRANSMISSION_WEB_HOME=/transmission-web-control/ `#optional` \ -e USER=username `#optional` \ -e PASS=password `#optional` \ -p 9091:9091 \ -p 51413:51413 \ -p 51413:51413/udp \ -v /mnt/transmission/config:/config \ -v /mnt/transmission/downloads:/downloads \ -v /mnt/transmission/watch:/watch \ &ndash;restart unless-stopped \ linuxserver/transmission
-3、配置文件地址
-vim /mnt/transmission/config/settings.json
-二、使用yum安装1、安装
-yum -y install epel-release yum install tranmission transmission-daemon systemctl start transmission-daemon."/>
+1、下载镜像docker pull linuxserver/transmission
+2、运行容器docker run -d \ --name=transmission \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Asia/Shanghai \ -e TRANSMISSION\_WEB\_HOME=/transmission-web-control/ `#optional\` \ -e USER=username `#optional` \ -e PASS=password `#optional` \ -p 9091:9091 \ -p 51413:51413 \ -p 51413:51413/udp \ -v /mnt/transmission/config:/config \ -v /mnt/transmission/downloads:/downloads \ -v /mnt/transmission/watch:/watch \ --restart unless-stopped \ linuxserver/transmission 3、配置文件地址ls /mnt/transmission/config/settings.json 二、使用yum安装1、安装yum -y install epel-release yum install tranmission transmission-daemon systemctl start transmission-daemon.service systemctl enable transmission-daemon."/>
 
   <meta property="og:title" content="centos7安装transmission" />
 <meta property="og:description" content="一、使用docker安装docker hub仓库地址：https://hub.docker.com/r/linuxserver/transmission
-1、下载镜像
-docker pull linuxserver/transmission
-2、运行容器
-docker run -d \ &ndash;name=transmission \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Asia/Shanghai \ -e TRANSMISSION_WEB_HOME=/transmission-web-control/ `#optional` \ -e USER=username `#optional` \ -e PASS=password `#optional` \ -p 9091:9091 \ -p 51413:51413 \ -p 51413:51413/udp \ -v /mnt/transmission/config:/config \ -v /mnt/transmission/downloads:/downloads \ -v /mnt/transmission/watch:/watch \ &ndash;restart unless-stopped \ linuxserver/transmission
-3、配置文件地址
-vim /mnt/transmission/config/settings.json
-二、使用yum安装1、安装
-yum -y install epel-release yum install tranmission transmission-daemon systemctl start transmission-daemon." />
+1、下载镜像docker pull linuxserver/transmission
+2、运行容器docker run -d \ --name=transmission \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Asia/Shanghai \ -e TRANSMISSION\_WEB\_HOME=/transmission-web-control/ `#optional\` \ -e USER=username `#optional` \ -e PASS=password `#optional` \ -p 9091:9091 \ -p 51413:51413 \ -p 51413:51413/udp \ -v /mnt/transmission/config:/config \ -v /mnt/transmission/downloads:/downloads \ -v /mnt/transmission/watch:/watch \ --restart unless-stopped \ linuxserver/transmission 3、配置文件地址ls /mnt/transmission/config/settings.json 二、使用yum安装1、安装yum -y install epel-release yum install tranmission transmission-daemon systemctl start transmission-daemon.service systemctl enable transmission-daemon." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2021-04-05-centos7%E5%AE%89%E8%A3%85transmission/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-05T00:00:00+00:00" />
@@ -237,109 +219,105 @@ yum -y install epel-release yum install tranmission transmission-daemon systemct
               post-container">
         <p> </p>
 <h2 id="一使用docker安装">一、使用docker安装<a class="anchorjs-link" href="#%e4%b8%80%e4%bd%bf%e7%94%a8docker%e5%ae%89%e8%a3%85"></a></h2><p>docker hub仓库地址：<a href="https://hub.docker.com/r/linuxserver/transmission" target="_blank">https://hub.docker.com/r/linuxserver/transmission</a></p>
-<p><strong>1、下载镜像</strong></p>
-<p>docker pull linuxserver/transmission</p>
-<p><strong>2、运行容器</strong></p>
-<p>docker run -d \
-&ndash;name=transmission \
--e PUID=1000 \
--e PGID=1000 \
--e TZ=Asia/Shanghai \
--e TRANSMISSION_WEB_HOME=/transmission-web-control/ `#optional` \
--e USER=username `#optional` \
--e PASS=password `#optional` \
--p 9091:9091 \
--p 51413:51413 \
--p 51413:51413/udp \
--v /mnt/transmission/config:/config \
--v /mnt/transmission/downloads:/downloads \
--v /mnt/transmission/watch:/watch \
-&ndash;restart unless-stopped \
-linuxserver/transmission</p>
-<p><strong>3、配置文件地址</strong></p>
-<p>vim /mnt/transmission/config/settings.json</p>
-<h2 id="二使用yum安装">二、使用yum安装<a class="anchorjs-link" href="#%e4%ba%8c%e4%bd%bf%e7%94%a8yum%e5%ae%89%e8%a3%85"></a></h2><p><strong>1、安装</strong></p>
-<p>yum -y install epel-release
-yum install tranmission transmission-daemon
-systemctl start transmission-daemon.service
-systemctl enable transmission-daemon.service</p>
-<p><strong>2、配置文件地址</strong></p>
-<p>systemctl stop transmission-daemon.service</p>
-<p>vi /var/lib/transmission/.config/transmission-daemon/settings.json
-&ldquo;rpc-whitelist&rdquo;: &ldquo;127.0.0.1&rdquo;,   #设置允许访问的IP
-&ldquo;rpc-whitelist-enabled&rdquo;: false,   #或者关闭白名单</p>
-<p>注意：如果安装后没有启动过Transmission，是不会生成配置文件。因而，需要先启动服务，再停止服务，生成json配置文件后再进行配置。</p>
+<h3 id="1下载镜像">1、下载镜像<a class="anchorjs-link" href="#1%e4%b8%8b%e8%bd%bd%e9%95%9c%e5%83%8f"></a></h3><p>docker pull linuxserver/transmission</p>
+<h3 id="2运行容器">2、运行容器<a class="anchorjs-link" href="#2%e8%bf%90%e8%a1%8c%e5%ae%b9%e5%99%a8"></a></h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -d <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --name<span style="color:#f92672">=</span>transmission <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -e PUID<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -e PGID<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -e TZ<span style="color:#f92672">=</span>Asia/Shanghai <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -e TRANSMISSION<span style="color:#ae81ff">\_</span>WEB<span style="color:#ae81ff">\_</span>HOME<span style="color:#f92672">=</span>/transmission-web-control/ <span style="color:#e6db74">`</span><span style="color:#75715e">#optional\` \</span>
+</span></span><span style="display:flex;"><span>  -e USER<span style="color:#f92672">=</span>username <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+</span></span><span style="display:flex;"><span>  -e PASS<span style="color:#f92672">=</span>password <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+</span></span><span style="display:flex;"><span>  -p 9091:9091 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -p 51413:51413 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -p 51413:51413/udp <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v /mnt/transmission/config:/config <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v /mnt/transmission/downloads:/downloads <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  -v /mnt/transmission/watch:/watch <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  --restart unless-stopped <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>  linuxserver/transmission
+</span></span></code></pre></div><h3 id="3配置文件地址">3、配置文件地址<a class="anchorjs-link" href="#3%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e5%9c%b0%e5%9d%80"></a></h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>ls /mnt/transmission/config/settings.json
+</span></span></code></pre></div><h2 id="二使用yum安装">二、使用yum安装<a class="anchorjs-link" href="#%e4%ba%8c%e4%bd%bf%e7%94%a8yum%e5%ae%89%e8%a3%85"></a></h2><h3 id="1安装">1、安装<a class="anchorjs-link" href="#1%e5%ae%89%e8%a3%85"></a></h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum -y install epel-release
+</span></span><span style="display:flex;"><span>yum install tranmission transmission-daemon
+</span></span><span style="display:flex;"><span>systemctl start transmission-daemon.service
+</span></span><span style="display:flex;"><span>systemctl enable transmission-daemon.service
+</span></span></code></pre></div><h3 id="2配置文件地址">2、配置文件地址<a class="anchorjs-link" href="#2%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e5%9c%b0%e5%9d%80"></a></h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>systemctl stop transmission-daemon.service
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vi /var/lib/transmission/.config/transmission-daemon/settings.json
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-whitelist&#34;</span>: <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>,   <span style="color:#75715e">#设置允许访问的IP</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-whitelist-enabled&#34;</span>: false,   <span style="color:#75715e">#或者关闭白名单</span>
+</span></span></code></pre></div><p>注意：如果安装后没有启动过Transmission，是不会生成配置文件。因而，需要先启动服务，再停止服务，生成json配置文件后再进行配置。</p>
 <p>如果用浏览器打开web端，提示“403: Forbidden”，则需要关闭白名单或指定允许访问的IP地址</p>
-<h2 id="三配置文件参数说明">三、配置文件参数说明<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e5%8f%82%e6%95%b0%e8%af%b4%e6%98%8e"></a></h2><p>官方文档：<a href="https://github.com/transmission/transmission/wiki/Editing-Configuration-Files" target="_blank">https://github.com/transmission/transmission/wiki/Editing-Configuration-Files</a></p>
-<p>{
-&ldquo;alt-speed-down&rdquo;: 50,
-&ldquo;alt-speed-enabled&rdquo;: false,
-&ldquo;alt-speed-time-begin&rdquo;: 540,
-&ldquo;alt-speed-time-day&rdquo;: 127,
-&ldquo;alt-speed-time-enabled&rdquo;: false,
-&ldquo;alt-speed-time-end&rdquo;: 1020,
-&ldquo;alt-speed-up&rdquo;: 50,
-&ldquo;bind-address-ipv4&rdquo;: &ldquo;0.0.0.0&rdquo;,
-&ldquo;bind-address-ipv6&rdquo;: &ldquo;::&rdquo;,
-&ldquo;blocklist-enabled&rdquo;: false,
-&ldquo;blocklist-url&rdquo;: &ldquo;<a href="http://www.example.com/blocklist%22" target="_blank">http://www.example.com/blocklist"</a>,
-&ldquo;cache-size-mb&rdquo;: 4,
-&ldquo;dht-enabled&rdquo;: true,
-&ldquo;download-dir&rdquo;: &ldquo;/var/lib/transmission/Downloads&rdquo;,  #下载目录，修改后要将目录所有者/组设置为transmission
-&ldquo;download-queue-enabled&rdquo;: true,
-&ldquo;download-queue-size&rdquo;: 5,
-&ldquo;encryption&rdquo;: 1,
-&ldquo;idle-seeding-limit&rdquo;: 30,
-&ldquo;idle-seeding-limit-enabled&rdquo;: false,
-&ldquo;incomplete-dir&rdquo;: &ldquo;/var/lib/transmission/Downloads&rdquo;,  #未完成任务存放目录
-&ldquo;incomplete-dir-enabled&rdquo;: false,    #是否启用未完成任务目录
-&ldquo;lpd-enabled&rdquo;: false,
-&ldquo;message-level&rdquo;: 1,
-&ldquo;peer-congestion-algorithm&rdquo;: &ldquo;&rdquo;,
-&ldquo;peer-id-ttl-hours&rdquo;: 6,
-&ldquo;peer-limit-global&rdquo;: 200,
-&ldquo;peer-limit-per-torrent&rdquo;: 50,
-&ldquo;peer-port&rdquo;: 51413,
-&ldquo;peer-port-random-high&rdquo;: 65535,
-&ldquo;peer-port-random-low&rdquo;: 49152,
-&ldquo;peer-port-random-on-start&rdquo;: false,
-&ldquo;peer-socket-tos&rdquo;: &ldquo;default&rdquo;,
-&ldquo;pex-enabled&rdquo;: true,
-&ldquo;port-forwarding-enabled&rdquo;: true,
-&ldquo;preallocation&rdquo;: 1,
-&ldquo;prefetch-enabled&rdquo;: true,
-&ldquo;queue-stalled-enabled&rdquo;: true,
-&ldquo;queue-stalled-minutes&rdquo;: 30,
-&ldquo;ratio-limit&rdquo;: 2,
-&ldquo;ratio-limit-enabled&rdquo;: false,
-&ldquo;rename-partial-files&rdquo;: true,
-&ldquo;rpc-authentication-required&rdquo;: false,  #开启账号密码登录认证
-&ldquo;rpc-bind-address&rdquo;: &ldquo;0.0.0.0&rdquo;,
-&ldquo;rpc-enabled&rdquo;: true, <br>
-&ldquo;rpc-host-whitelist&rdquo;: &ldquo;&rdquo;,
-&ldquo;rpc-host-whitelist-enabled&rdquo;: true,
-&ldquo;rpc-password&rdquo;: &ldquo;{f2d424f54eb3112495bbdb850347b95d26537cebA3wmy4o7&rdquo;,   #设置登录密码
-&ldquo;rpc-port&rdquo;: 9091,
-&ldquo;rpc-url&rdquo;: &ldquo;/transmission/&rdquo;,
-&ldquo;rpc-username&rdquo;: &ldquo;&rdquo;,    #设置登录账号
-&ldquo;rpc-whitelist&rdquo;: &ldquo;127.0.0.1&rdquo;,
-&ldquo;rpc-whitelist-enabled&rdquo;: true,
-&ldquo;scrape-paused-torrents-enabled&rdquo;: true,
-&ldquo;script-torrent-done-enabled&rdquo;: false,
-&ldquo;script-torrent-done-filename&rdquo;: &ldquo;&rdquo;,
-&ldquo;seed-queue-enabled&rdquo;: false,
-&ldquo;seed-queue-size&rdquo;: 10,
-&ldquo;speed-limit-down&rdquo;: 100,
-&ldquo;speed-limit-down-enabled&rdquo;: false,
-&ldquo;speed-limit-up&rdquo;: 100,
-&ldquo;speed-limit-up-enabled&rdquo;: false,
-&ldquo;start-added-torrents&rdquo;: true,
-&ldquo;trash-original-torrent-files&rdquo;: false,
-&ldquo;umask&rdquo;: 18,
-&ldquo;upload-slots-per-torrent&rdquo;: 14,
-&ldquo;utp-enabled&rdquo;: true
-}</p>
-
+<h3 id="三配置文件参数说明">三、配置文件参数说明<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e5%8f%82%e6%95%b0%e8%af%b4%e6%98%8e"></a></h3><p>官方文档：<a href="https://github.com/transmission/transmission/wiki/Editing-Configuration-Files" target="_blank">https://github.com/transmission/transmission/wiki/Editing-Configuration-Files</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;alt-speed-down&#34;</span>: 50,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;alt-speed-enabled&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;alt-speed-time-begin&#34;</span>: 540,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;alt-speed-time-day&#34;</span>: 127,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;alt-speed-time-enabled&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;alt-speed-time-end&#34;</span>: 1020,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;alt-speed-up&#34;</span>: 50,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;bind-address-ipv4&#34;</span>: <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;bind-address-ipv6&#34;</span>: <span style="color:#e6db74">&#34;::&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;blocklist-enabled&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;blocklist-url&#34;</span>: <span style="color:#e6db74">&#34;http://www.example.com/blocklist&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;cache-size-mb&#34;</span>: 4,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;dht-enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;download-dir&#34;</span>: <span style="color:#e6db74">&#34;/var/lib/transmission/Downloads&#34;</span>,  <span style="color:#75715e">#下载目录，修改后要将目录所有者/组设置为transmission</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;download-queue-enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;download-queue-size&#34;</span>: 5,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;encryption&#34;</span>: 1,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;idle-seeding-limit&#34;</span>: 30,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;idle-seeding-limit-enabled&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;incomplete-dir&#34;</span>: <span style="color:#e6db74">&#34;/var/lib/transmission/Downloads&#34;</span>,  <span style="color:#75715e">#未完成任务存放目录</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;incomplete-dir-enabled&#34;</span>: false,    <span style="color:#75715e">#是否启用未完成任务目录</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;lpd-enabled&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;message-level&#34;</span>: 1,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;peer-congestion-algorithm&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;peer-id-ttl-hours&#34;</span>: 6,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;peer-limit-global&#34;</span>: 200,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;peer-limit-per-torrent&#34;</span>: 50,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;peer-port&#34;</span>: 51413,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;peer-port-random-high&#34;</span>: 65535,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;peer-port-random-low&#34;</span>: 49152,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;peer-port-random-on-start&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;peer-socket-tos&#34;</span>: <span style="color:#e6db74">&#34;default&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;pex-enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;port-forwarding-enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;preallocation&#34;</span>: 1,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;prefetch-enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;queue-stalled-enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;queue-stalled-minutes&#34;</span>: 30,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;ratio-limit&#34;</span>: 2,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;ratio-limit-enabled&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rename-partial-files&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-authentication-required&#34;</span>: false,  <span style="color:#75715e">#开启账号密码登录认证</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-bind-address&#34;</span>: <span style="color:#e6db74">&#34;0.0.0.0&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-enabled&#34;</span>: true,    
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-host-whitelist&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-host-whitelist-enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-password&#34;</span>: <span style="color:#e6db74">&#34;{f2d424f54eb3112495bbdb850347b95d26537cebA3wmy4o7&#34;</span>,   <span style="color:#75715e">#设置登录密码</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-port&#34;</span>: 9091,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-url&#34;</span>: <span style="color:#e6db74">&#34;/transmission/&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-username&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,    <span style="color:#75715e">#设置登录账号</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-whitelist&#34;</span>: <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;rpc-whitelist-enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;scrape-paused-torrents-enabled&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;script-torrent-done-enabled&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;script-torrent-done-filename&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;seed-queue-enabled&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;seed-queue-size&#34;</span>: 10,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;speed-limit-down&#34;</span>: 100,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;speed-limit-down-enabled&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;speed-limit-up&#34;</span>: 100,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;speed-limit-up-enabled&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;start-added-torrents&#34;</span>: true,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;trash-original-torrent-files&#34;</span>: false,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;umask&#34;</span>: 18,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;upload-slots-per-torrent&#34;</span>: 14,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;utp-enabled&#34;</span>: true
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div>
 
         <hr style="visibility: hidden;" />
         <ul class="pager">

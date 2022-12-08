@@ -30,10 +30,8 @@
 所在地：根据实际情况选择即可
 CSR生成方式：CSR文件是您的公钥证书原始文件，包含了您的服务器信息和您的单位信息，需要提交给CA认证中心审核。建议默认即可，使用系统创建的CSR，避免因内容不正确而导致的审核失败。
 三、Nginx服务器上安装证书1、创建cert目录，将下载的证书文件和密钥文件拷贝到cert目录
-[root@server ~]# mkdir /etc/nginx/cert
-2、修改虚拟主机配置文件
-server { listen 80; server_name www.xxxx.com; root /data/web/; location / { index index.html index.htm; } }
-server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.html index.htm; ssl_certificate /etc/nginx/cert/www.xxxx.com.pem; ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key; ssl_session_timeout 5m; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_prefer_server_ciphers on; location / { index index.">
+[root@server ~]# mkdir /etc/nginx/cert 2、修改虚拟主机配置文件
+server { listen 80; server_name www.xxxx.com; root /data/web/; location / { index index.html index.htm; } } server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.html index.htm; ssl_certificate /etc/nginx/cert/www.xxxx.com.pem; ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key; ssl_session_timeout 5m; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_prefer_server_ciphers on; location / { index index.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
@@ -54,10 +52,8 @@ server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.
 所在地：根据实际情况选择即可
 CSR生成方式：CSR文件是您的公钥证书原始文件，包含了您的服务器信息和您的单位信息，需要提交给CA认证中心审核。建议默认即可，使用系统创建的CSR，避免因内容不正确而导致的审核失败。
 三、Nginx服务器上安装证书1、创建cert目录，将下载的证书文件和密钥文件拷贝到cert目录
-[root@server ~]# mkdir /etc/nginx/cert
-2、修改虚拟主机配置文件
-server { listen 80; server_name www.xxxx.com; root /data/web/; location / { index index.html index.htm; } }
-server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.html index.htm; ssl_certificate /etc/nginx/cert/www.xxxx.com.pem; ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key; ssl_session_timeout 5m; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_prefer_server_ciphers on; location / { index index."/>
+[root@server ~]# mkdir /etc/nginx/cert 2、修改虚拟主机配置文件
+server { listen 80; server_name www.xxxx.com; root /data/web/; location / { index index.html index.htm; } } server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.html index.htm; ssl_certificate /etc/nginx/cert/www.xxxx.com.pem; ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key; ssl_session_timeout 5m; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_prefer_server_ciphers on; location / { index index."/>
 
   <meta property="og:title" content="申请阿里云免费SSL证书并部署至Nginx服务器" />
 <meta property="og:description" content="一、申请阿里云免费SSL证书2021阿里云SSL免费证书购买地址又变了，为了解决免费证书近期存在的吊销、统计等问题，自2021年起，免费证书申请将切换到证书资源包下。
@@ -76,10 +72,8 @@ server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.
 所在地：根据实际情况选择即可
 CSR生成方式：CSR文件是您的公钥证书原始文件，包含了您的服务器信息和您的单位信息，需要提交给CA认证中心审核。建议默认即可，使用系统创建的CSR，避免因内容不正确而导致的审核失败。
 三、Nginx服务器上安装证书1、创建cert目录，将下载的证书文件和密钥文件拷贝到cert目录
-[root@server ~]# mkdir /etc/nginx/cert
-2、修改虚拟主机配置文件
-server { listen 80; server_name www.xxxx.com; root /data/web/; location / { index index.html index.htm; } }
-server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.html index.htm; ssl_certificate /etc/nginx/cert/www.xxxx.com.pem; ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key; ssl_session_timeout 5m; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_prefer_server_ciphers on; location / { index index." />
+[root@server ~]# mkdir /etc/nginx/cert 2、修改虚拟主机配置文件
+server { listen 80; server_name www.xxxx.com; root /data/web/; location / { index index.html index.htm; } } server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.html index.htm; ssl_certificate /etc/nginx/cert/www.xxxx.com.pem; ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key; ssl_session_timeout 5m; ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_prefer_server_ciphers on; location / { index index." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-02-24T00:00:00+00:00" />
@@ -268,7 +262,7 @@ server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="一申请阿里云免费ssl证书">一、申请阿里云免费SSL证书<a class="anchorjs-link" href="#%e4%b8%80%e7%94%b3%e8%af%b7%e9%98%bf%e9%87%8c%e4%ba%91%e5%85%8d%e8%b4%b9ssl%e8%af%81%e4%b9%a6"></a></h2><p>2021阿里云SSL免费证书购买地址又变了，为了解决免费证书近期存在的吊销、统计等问题，自2021年起，免费证书申请将切换到证书资源包下。</p>
+        <h3 id="一申请阿里云免费ssl证书">一、申请阿里云免费SSL证书<a class="anchorjs-link" href="#%e4%b8%80%e7%94%b3%e8%af%b7%e9%98%bf%e9%87%8c%e4%ba%91%e5%85%8d%e8%b4%b9ssl%e8%af%81%e4%b9%a6"></a></h3><p>2021阿里云SSL免费证书购买地址又变了，为了解决免费证书近期存在的吊销、统计等问题，自2021年起，免费证书申请将切换到证书资源包下。</p>
 <p>1、 打开<a href="https://www.xinshouzhanzhang.com/url/cas/" target="_blank">阿里云SSL证书选购页面</a>，点击“选购证书”</p>
 <p>2、 商品类型选择“云盾证书资源包”</p>
 <p>3、 资源包规格选择“免费证书扩容包”</p>
@@ -280,7 +274,7 @@ server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.
   
 </figure></p>
 <p>选择完毕后总配置费用为0元，然后点“立即购买”支付0元即可。</p>
-<h2 id="二控制台证书申请">二、控制台证书申请<a class="anchorjs-link" href="#%e4%ba%8c%e6%8e%a7%e5%88%b6%e5%8f%b0%e8%af%81%e4%b9%a6%e7%94%b3%e8%af%b7"></a></h2><p>1、<a href="https://www.xinshouzhanzhang.com/url/console_ssl/" target="_blank">登录到SSL证书管理控制台</a></p>
+<h3 id="二控制台证书申请">二、控制台证书申请<a class="anchorjs-link" href="#%e4%ba%8c%e6%8e%a7%e5%88%b6%e5%8f%b0%e8%af%81%e4%b9%a6%e7%94%b3%e8%af%b7"></a></h3><p>1、<a href="https://www.xinshouzhanzhang.com/url/console_ssl/" target="_blank">登录到SSL证书管理控制台</a></p>
 <p>2、 选择左侧栏”证书资源包“</p>
 <p>3、点击“证书申请”</p>
 <p>4、下载证书</p>
@@ -319,36 +313,38 @@ server { listen 443 ssl; server_name www.xxxx.com; root /data/web/; index index.
   </a>
   
 </figure></p>
-<h2 id="三nginx服务器上安装证书">三、Nginx服务器上安装证书<a class="anchorjs-link" href="#%e4%b8%89nginx%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e5%ae%89%e8%a3%85%e8%af%81%e4%b9%a6"></a></h2><p>1、创建cert目录，将下载的证书文件和密钥文件拷贝到cert目录</p>
-<p>[root@server ~]# mkdir /etc/nginx/cert</p>
-<p>2、修改虚拟主机配置文件</p>
-<p>server {
-listen 80;
-server_name <a href="https://www.xxxx.com" target="_blank">www.xxxx.com</a>;
-root /data/web/;
-location / {
-index index.html index.htm;
+<h3 id="三nginx服务器上安装证书">三、Nginx服务器上安装证书<a class="anchorjs-link" href="#%e4%b8%89nginx%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e5%ae%89%e8%a3%85%e8%af%81%e4%b9%a6"></a></h3><p>1、创建cert目录，将下载的证书文件和密钥文件拷贝到cert目录</p>
+<pre tabindex="0"><code>[root@server ~]# mkdir /etc/nginx/cert
+</code></pre><p>2、修改虚拟主机配置文件</p>
+<pre tabindex="0"><code>server {
+ listen 80;
+ server_name www.xxxx.com;
+ root /data/web/;
+ location / {
+   index index.html index.htm;
 }
-}</p>
-<p>server {
-listen 443 ssl;
-server_name <a href="https://www.xxxx.com" target="_blank">www.xxxx.com</a>;
-root  /data/web/;
-index index.html index.htm;
-ssl_certificate /etc/nginx/cert/www.xxxx.com.pem;
-ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key;
-ssl_session_timeout 5m;
-ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
-ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-ssl_prefer_server_ciphers on;
-location / {
-index index.html index.htm;
 }
-}</p>
-<p>3、重新加载nginx配置文件</p>
-<p>[root@server ~]# systemctl reload nginx</p>
-<p>[root@server ~]# ss -lanp | grep 443  #查看443端口是否在监听</p>
-<p>4、防火墙放行443端口</p>
+ 
+server {
+  listen 443 ssl;
+  server_name www.xxxx.com;
+  root  /data/web/;
+  index index.html index.htm;
+  ssl_certificate /etc/nginx/cert/www.xxxx.com.pem;
+  ssl_certificate_key /etc/nginx/cert/www.xxxx.com.key;
+  ssl_session_timeout 5m;
+  ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+  ssl_prefer_server_ciphers on;
+  location / {
+    index index.html index.htm;
+}
+}
+</code></pre><p>3、重新加载nginx配置文件</p>
+<pre tabindex="0"><code>[root@server ~]# systemctl reload nginx
+ 
+[root@server ~]# ss -lanp | grep 443  #查看443端口是否在监听
+</code></pre><p>4、防火墙放行443端口</p>
 <p>如果使用的是阿里云ECS服务器，进入ECS控制台安全组页面配置放行443端口</p>
 <p>5、浏览器访问https://域名</p>
 <p>如果网页地址栏出现小锁标志，表示证书安装成功</p>

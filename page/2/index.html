@@ -230,7 +230,9 @@ function doGet(e){ return …
       
       <div class="post-content-preview">
         
-        NAS操作系统：Centos7 实现原理：通过访问网页，执行含有shell命令的php代码 1、安装apache和phpyum install -y httpd php 2、启动apache、关闭selinuxsystemctl start httpd systemctl enable httpd #临时关闭selinux setenforce 0 #永久关 …
+        NAS操作系统：Centos7
+实现原理：通过访问网页，执行含有shell命令的php代码
+1、安装apache和phpyum install -y httpd php 2、启动apache、关闭selinuxsystemctl start httpd systemctl enable httpd #临时关闭selinux setenforce 0 #永久关 …
          
       </div>
   </a>
@@ -265,10 +267,7 @@ Portainer是Docker的可视化管理工具，提供状态显示面板、应用�
       
       <div class="post-content-preview">
         
-        1、安装软件包yum -y install samba
-2、建立访问用户useradd test smbpasswd -a test
-3、配置samba共享[data] path = /mnt/data write list = test
-其它参数
+        1、安装软件包yum -y install samba 2、建立访问用户useradd test smbpasswd -a test 3、配置samba共享[data] path = /mnt/data write list = test 其它参数
 valid users = name #只允许该用户访问，其它用户可见但无法访问 hosts allow = …
          
       </div>
@@ -298,33 +297,12 @@ curl -o …
 <hr>
 
    <div class="post-preview">
-  <a href="/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobinull/">
-      <h2 class="post-title">Docker部署开源摄像头录制软件shinobi</h2>
-      
-      <div class="post-content-preview">
-        
-        官方文档：https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/dev/Docker
-一、安装shinobi方法1、使用脚本自动安装（存储路径默认在$HOME目录下）
-curl -o …
-         
-      </div>
-  </a>
-  <p class="post-meta">
-      Posted by    on Mon, Feb 8, 2021
-  </p>
-</div>
-<hr>
-
-   <div class="post-preview">
   <a href="/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/">
       <h2 class="post-title">Centos7 修改Docker默认存储位置</h2>
       
       <div class="post-content-preview">
         
-        1、查看docker默认目录docker info | grep &amp;ldquo;Docker Root Dir&amp;rdquo;
-2、新建或者编辑 daemon.json 文件vim /etc/docker/daemon.json
-{ &amp;ldquo;graph&amp;rdquo;: &amp;ldquo;/mnt/docker&amp;rdquo; }
-3、重启docker服 …
+        1、查看docker默认目录docker info | grep &amp;#34;Docker Root Dir&amp;#34; 2、新建或者编辑 daemon.json 文件vim /etc/docker/daemon.json { &amp;#34;graph&amp;#34;: &amp;#34;/mnt/docker&amp;#34; } 3、重启docker服务systemctl …
          
       </div>
   </a>
@@ -353,24 +331,6 @@ curl -o …
 <hr>
 
    <div class="post-preview">
-  <a href="/posts/2021-02-02-windows-server-2012-r2%E5%AE%89%E8%A3%85dockernull/">
-      <h2 class="post-title">Windows Server 2012 R2安装docker</h2>
-      
-      <div class="post-content-preview">
-        
-        一、下载安装Docker Toolboxhttps://github.com/docker/toolbox/releases
-二、安装Docker Quickstart Terminal注意：安装完成之后，先不要打开Docker Quickstart Terminal
-三、添加环境变量，替换默认docker machine的存储位置如果不修改，则docker …
-         
-      </div>
-  </a>
-  <p class="post-meta">
-      Posted by    on Tue, Feb 2, 2021
-  </p>
-</div>
-<hr>
-
-   <div class="post-preview">
   <a href="/posts/2021-02-01-%E4%BD%BF%E7%94%A8working-copy%E8%BF%9C%E7%A8%8B%E6%8C%82%E8%BD%BDgithub%E4%BB%93%E5%BA%93/">
       <h2 class="post-title">使用Working Copy远程挂载github仓库</h2>
       
@@ -382,6 +342,39 @@ curl -o …
   </a>
   <p class="post-meta">
       Posted by    on Mon, Feb 1, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-01-28-%E8%A7%A3%E5%86%B3raw-github%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98/">
+      <h2 class="post-title">解决raw.github无法访问的问题</h2>
+      
+      <div class="post-content-preview">
+        
+        域名被DNS污染，手动在hosts文件中添加解析
+199.232.4.133 raw.githubusercontent.com
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Thu, Jan 28, 2021
+  </p>
+</div>
+<hr>
+
+   <div class="post-preview">
+  <a href="/posts/2021-01-26-windows-server-2012-2016-%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8%E5%A2%9E%E5%8A%A0%E7%A3%81%E7%9B%98%E7%9B%91%E6%8E%A7/">
+      <h2 class="post-title">Windows Server 2012/2016 任务管理器增加磁盘监控</h2>
+      
+      <div class="post-content-preview">
+        
+        命令行中输入：diskperf -y
+         
+      </div>
+  </a>
+  <p class="post-meta">
+      Posted by    on Tue, Jan 26, 2021
   </p>
 </div>
 <hr>

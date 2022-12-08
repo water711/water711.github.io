@@ -18,9 +18,7 @@
 https://www.portainer.io/installation/
 https://portainer.readthedocs.io/en/stable/deployment.html
 Portainer是Docker的可视化管理工具，提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像，创建容器等操作）、事件日志显示、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。
-一、拉取portainer镜像docker pull portainer/portainer
-二、启动portainerdocker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer
-三、浏览器访问http://服务器IP地址:9000
+一、拉取portainer镜像docker pull portainer/portainer 二、启动portainerdocker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data --name portainer --restart=always portainer/portainer 三、浏览器访问http://服务器IP地址:9000
 1、设置密码
 2、选择Local，连接本地主机docker
 3、查看本地所有容器
@@ -33,9 +31,7 @@ Portainer是Docker的可视化管理工具，提供状态显示面板、应用�
 https://www.portainer.io/installation/
 https://portainer.readthedocs.io/en/stable/deployment.html
 Portainer是Docker的可视化管理工具，提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像，创建容器等操作）、事件日志显示、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。
-一、拉取portainer镜像docker pull portainer/portainer
-二、启动portainerdocker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer
-三、浏览器访问http://服务器IP地址:9000
+一、拉取portainer镜像docker pull portainer/portainer 二、启动portainerdocker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data --name portainer --restart=always portainer/portainer 三、浏览器访问http://服务器IP地址:9000
 1、设置密码
 2、选择Local，连接本地主机docker
 3、查看本地所有容器
@@ -46,9 +42,7 @@ Portainer是Docker的可视化管理工具，提供状态显示面板、应用�
 https://www.portainer.io/installation/
 https://portainer.readthedocs.io/en/stable/deployment.html
 Portainer是Docker的可视化管理工具，提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像，创建容器等操作）、事件日志显示、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。
-一、拉取portainer镜像docker pull portainer/portainer
-二、启动portainerdocker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer
-三、浏览器访问http://服务器IP地址:9000
+一、拉取portainer镜像docker pull portainer/portainer 二、启动portainerdocker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data --name portainer --restart=always portainer/portainer 三、浏览器访问http://服务器IP地址:9000
 1、设置密码
 2、选择Local，连接本地主机docker
 3、查看本地所有容器
@@ -244,12 +238,10 @@ Portainer是Docker的可视化管理工具，提供状态显示面板、应用�
         <h2 id="官网安装文档">官网/安装文档：<a class="anchorjs-link" href="#%e5%ae%98%e7%bd%91%e5%ae%89%e8%a3%85%e6%96%87%e6%a1%a3"></a></h2><p><a href="https://www.portainer.io/" target="_blank">https://www.portainer.io/</a></p>
 <p><a href="https://www.portainer.io/installation/" target="_blank">https://www.portainer.io/installation/</a></p>
 <p><a href="https://portainer.readthedocs.io/en/stable/deployment.html" target="_blank">https://portainer.readthedocs.io/en/stable/deployment.html</a></p>
-<p> </p>
 <p><strong>Portainer是Docker的可视化管理工具</strong>，提供状态显示面板、应用模板快速部署、容器镜像网络数据卷的基本操作（包括上传下载镜像，创建容器等操作）、事件日志显示、容器控制台操作、Swarm集群和服务等集中管理和操作、登录用户管理和控制等功能。</p>
-<p> </p>
-<h2 id="一拉取portainer镜像">一、<strong>拉取portainer镜像</strong><a class="anchorjs-link" href="#%e4%b8%80%e6%8b%89%e5%8f%96portainer%e9%95%9c%e5%83%8f"></a></h2><p>docker pull portainer/portainer</p>
-<h2 id="二启动portainer">二、<strong>启动portainer</strong><a class="anchorjs-link" href="#%e4%ba%8c%e5%90%af%e5%8a%a8portainer"></a></h2><p>docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data &ndash;name portainer &ndash;restart=always portainer/portainer</p>
-<h2 id="三浏览器访问">三、浏览器访问<a class="anchorjs-link" href="#%e4%b8%89%e6%b5%8f%e8%a7%88%e5%99%a8%e8%ae%bf%e9%97%ae"></a></h2><p>http://服务器IP地址:9000</p>
+<h3 id="一拉取portainer镜像">一、<strong>拉取portainer镜像</strong><a class="anchorjs-link" href="#%e4%b8%80%e6%8b%89%e5%8f%96portainer%e9%95%9c%e5%83%8f"></a></h3><pre tabindex="0"><code>docker pull portainer/portainer
+</code></pre><h3 id="二启动portainer">二、<strong>启动portainer</strong><a class="anchorjs-link" href="#%e4%ba%8c%e5%90%af%e5%8a%a8portainer"></a></h3><pre tabindex="0"><code>docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v /mnt/portainer:/data --name portainer --restart=always portainer/portainer
+</code></pre><h3 id="三浏览器访问">三、浏览器访问<a class="anchorjs-link" href="#%e4%b8%89%e6%b5%8f%e8%a7%88%e5%99%a8%e8%ae%bf%e9%97%ae"></a></h3><p>http://服务器IP地址:9000</p>
 <p>1、设置密码</p>
 <p><figure>
   <a class="paragraph-image">

@@ -14,13 +14,9 @@
   <title>Win7搭建Openwrt插件库 | 蔡振威的博客</title>
 
   
-  <meta name="description" content="Win7环境搭建openwrt插件库一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录）
-/lede/bin/packages/mips_24kc /lede/bin/targets/ar71xx/generic/packages
-我这边拷贝到 F盘openwrt_package文件夹
-二、开启IIS信息服务
-运行中输入 appwiz.cpl，打开程序和功能，点击左上角“打开或关闭Windows功能”
-三、配置网站
-1、运行中输入 inetmgr，打开IIS，点击展开默认网站-》管理网站-》高级设置
+  <meta name="description" content="一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录） /lede/bin/packages/mips_24kc /lede/bin/targets/ar71xx/generic/packages
+我这边拷贝到 F盘openwrt_package文件夹 二、开启IIS信息服务运行中输入 appwiz.cpl，打开程序和功能，点击左上角“打开或关闭Windows功能”
+三、配置网站1、运行中输入 inetmgr，打开IIS，点击展开默认网站-》管理网站-》高级设置
 2、修改物理路径为插件库所有目录
 3、启用目录浏览
 4、添加MIME类型
@@ -29,24 +25,18 @@ PS：如果不添加MIME类型，则无法通过网站访问和下载sig和ipk�
 https://本机IP地址
 6、右键复制mips_24kc和packages目录链接地址，粘贴到文本文档中备用
 http://192.168.1.92/packages/ http://192.168.1.92/mips_24kc/
-四、配置openwrt
-1、登录openwrt，进入 系统-》软件包-》配置
+四、配置openwrt1、登录openwrt，进入 系统-》软件包-》配置
 将发行版软件源中的代码注释掉，在每行中添加#号，点击提交
-# src/gz openwrt_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/ar71xx/generic/packages
-src/gz openwrt_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/basesrc/gz openwrt_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/freifunksrc/gz openwrt_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/mips_24kc/lucisrc/gz openwrt_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/packagessrc/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/routingsrc/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/telephony将“发行版软件源”的代码拷贝文本文档，将后面链接替换为自己搭建网站的链接
+# src/gz openwrt\_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/ar71xx/generic/packages # src/gz openwrt\_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/base # src/gz openwrt\_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/freifunk # src/gz openwrt\_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/mips\_24kc/luci # src/gz openwrt\_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/packages # src/gz openwrt\_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/routing # src/gz openwrt\_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/telephony 将“发行版软件源”的代码拷贝文本文档，将后面链接替换为自己搭建网站的链接
 将替换后代码，拷贝到“自定义软件源”，点击提交
-src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192.168.1.92/mips_24kc/ base src/gz openwrt_freifunk http://192.168.1.92/mips_24kc/ freifunk src/gz openwrt_luci http://192.168.1.92/mips_24kc/ luci src/gz openwrt_packages http://192.168.1.92/mips_24kc/ packages src/gz openwrt_routing http://192.168.1.92/mips_24kc/ routing src/gz openwrt_telephony http://192.168.1.92/mips_24kc/ telephony">
+src/gz openwrt\_core http://192.168.1.92/packages/ src/gz openwrt\_base http://192.168.1.92/mips\_24kc/ base src/gz openwrt\_freifunk http://192.168.1.92/mips\_24kc/ freifunk src/gz openwrt\_luci http://192.168.1.92/mips\_24kc/ luci src/gz openwrt\_packages http://192.">
   <meta name="keywords" content="">
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Win7搭建Openwrt插件库"/>
-<meta name="twitter:description" content="Win7环境搭建openwrt插件库一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录）
-/lede/bin/packages/mips_24kc /lede/bin/targets/ar71xx/generic/packages
-我这边拷贝到 F盘openwrt_package文件夹
-二、开启IIS信息服务
-运行中输入 appwiz.cpl，打开程序和功能，点击左上角“打开或关闭Windows功能”
-三、配置网站
-1、运行中输入 inetmgr，打开IIS，点击展开默认网站-》管理网站-》高级设置
+<meta name="twitter:description" content="一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录） /lede/bin/packages/mips_24kc /lede/bin/targets/ar71xx/generic/packages
+我这边拷贝到 F盘openwrt_package文件夹 二、开启IIS信息服务运行中输入 appwiz.cpl，打开程序和功能，点击左上角“打开或关闭Windows功能”
+三、配置网站1、运行中输入 inetmgr，打开IIS，点击展开默认网站-》管理网站-》高级设置
 2、修改物理路径为插件库所有目录
 3、启用目录浏览
 4、添加MIME类型
@@ -55,22 +45,16 @@ PS：如果不添加MIME类型，则无法通过网站访问和下载sig和ipk�
 https://本机IP地址
 6、右键复制mips_24kc和packages目录链接地址，粘贴到文本文档中备用
 http://192.168.1.92/packages/ http://192.168.1.92/mips_24kc/
-四、配置openwrt
-1、登录openwrt，进入 系统-》软件包-》配置
+四、配置openwrt1、登录openwrt，进入 系统-》软件包-》配置
 将发行版软件源中的代码注释掉，在每行中添加#号，点击提交
-# src/gz openwrt_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/ar71xx/generic/packages
-src/gz openwrt_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/basesrc/gz openwrt_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/freifunksrc/gz openwrt_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/mips_24kc/lucisrc/gz openwrt_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/packagessrc/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/routingsrc/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/telephony将“发行版软件源”的代码拷贝文本文档，将后面链接替换为自己搭建网站的链接
+# src/gz openwrt\_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/ar71xx/generic/packages # src/gz openwrt\_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/base # src/gz openwrt\_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/freifunk # src/gz openwrt\_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/mips\_24kc/luci # src/gz openwrt\_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/packages # src/gz openwrt\_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/routing # src/gz openwrt\_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/telephony 将“发行版软件源”的代码拷贝文本文档，将后面链接替换为自己搭建网站的链接
 将替换后代码，拷贝到“自定义软件源”，点击提交
-src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192.168.1.92/mips_24kc/ base src/gz openwrt_freifunk http://192.168.1.92/mips_24kc/ freifunk src/gz openwrt_luci http://192.168.1.92/mips_24kc/ luci src/gz openwrt_packages http://192.168.1.92/mips_24kc/ packages src/gz openwrt_routing http://192.168.1.92/mips_24kc/ routing src/gz openwrt_telephony http://192.168.1.92/mips_24kc/ telephony"/>
+src/gz openwrt\_core http://192.168.1.92/packages/ src/gz openwrt\_base http://192.168.1.92/mips\_24kc/ base src/gz openwrt\_freifunk http://192.168.1.92/mips\_24kc/ freifunk src/gz openwrt\_luci http://192.168.1.92/mips\_24kc/ luci src/gz openwrt\_packages http://192."/>
 
   <meta property="og:title" content="Win7搭建Openwrt插件库" />
-<meta property="og:description" content="Win7环境搭建openwrt插件库一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录）
-/lede/bin/packages/mips_24kc /lede/bin/targets/ar71xx/generic/packages
-我这边拷贝到 F盘openwrt_package文件夹
-二、开启IIS信息服务
-运行中输入 appwiz.cpl，打开程序和功能，点击左上角“打开或关闭Windows功能”
-三、配置网站
-1、运行中输入 inetmgr，打开IIS，点击展开默认网站-》管理网站-》高级设置
+<meta property="og:description" content="一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录） /lede/bin/packages/mips_24kc /lede/bin/targets/ar71xx/generic/packages
+我这边拷贝到 F盘openwrt_package文件夹 二、开启IIS信息服务运行中输入 appwiz.cpl，打开程序和功能，点击左上角“打开或关闭Windows功能”
+三、配置网站1、运行中输入 inetmgr，打开IIS，点击展开默认网站-》管理网站-》高级设置
 2、修改物理路径为插件库所有目录
 3、启用目录浏览
 4、添加MIME类型
@@ -79,13 +63,11 @@ PS：如果不添加MIME类型，则无法通过网站访问和下载sig和ipk�
 https://本机IP地址
 6、右键复制mips_24kc和packages目录链接地址，粘贴到文本文档中备用
 http://192.168.1.92/packages/ http://192.168.1.92/mips_24kc/
-四、配置openwrt
-1、登录openwrt，进入 系统-》软件包-》配置
+四、配置openwrt1、登录openwrt，进入 系统-》软件包-》配置
 将发行版软件源中的代码注释掉，在每行中添加#号，点击提交
-# src/gz openwrt_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/ar71xx/generic/packages
-src/gz openwrt_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/basesrc/gz openwrt_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/freifunksrc/gz openwrt_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/mips_24kc/lucisrc/gz openwrt_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/packagessrc/gz openwrt_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/routingsrc/gz openwrt_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips_24kc/telephony将“发行版软件源”的代码拷贝文本文档，将后面链接替换为自己搭建网站的链接
+# src/gz openwrt\_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/ar71xx/generic/packages # src/gz openwrt\_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/base # src/gz openwrt\_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/freifunk # src/gz openwrt\_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/mips\_24kc/luci # src/gz openwrt\_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/packages # src/gz openwrt\_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/routing # src/gz openwrt\_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/telephony 将“发行版软件源”的代码拷贝文本文档，将后面链接替换为自己搭建网站的链接
 将替换后代码，拷贝到“自定义软件源”，点击提交
-src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192.168.1.92/mips_24kc/ base src/gz openwrt_freifunk http://192.168.1.92/mips_24kc/ freifunk src/gz openwrt_luci http://192.168.1.92/mips_24kc/ luci src/gz openwrt_packages http://192.168.1.92/mips_24kc/ packages src/gz openwrt_routing http://192.168.1.92/mips_24kc/ routing src/gz openwrt_telephony http://192.168.1.92/mips_24kc/ telephony" />
+src/gz openwrt\_core http://192.168.1.92/packages/ src/gz openwrt\_base http://192.168.1.92/mips\_24kc/ base src/gz openwrt\_freifunk http://192.168.1.92/mips\_24kc/ freifunk src/gz openwrt\_luci http://192.168.1.92/mips\_24kc/ luci src/gz openwrt\_packages http://192." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//example.org/posts/2021-01-16-win7%E6%90%AD%E5%BB%BAopenwrt%E6%8F%92%E4%BB%B6%E5%BA%93/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-01-16T00:00:00+00:00" />
@@ -274,20 +256,19 @@ src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192
               col-lg-8 col-lg-offset-2
               col-md-10 col-md-offset-1
               post-container">
-        <h2 id="win7环境搭建openwrt插件库">Win7环境搭建openwrt插件库<a class="anchorjs-link" href="#win7%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%baopenwrt%e6%8f%92%e4%bb%b6%e5%ba%93"></a></h2><p><strong>一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录）</strong></p>
-<p>/lede/bin/packages/mips_24kc
-/lede/bin/targets/ar71xx/generic/packages</p>
-<p>我这边拷贝到 F盘openwrt_package文件夹</p>
-<p><strong>二、开启IIS信息服务</strong></p>
-<p>运行中输入 appwiz.cpl，打开程序和功能，点击左上角“打开或关闭Windows功能”</p>
+        <h3 id="一将编译好的插件库拷贝到win7电脑只需拷贝以下两个目录">一、将编译好的插件库拷贝到Win7电脑（只需拷贝以下两个目录）<a class="anchorjs-link" href="#%e4%b8%80%e5%b0%86%e7%bc%96%e8%af%91%e5%a5%bd%e7%9a%84%e6%8f%92%e4%bb%b6%e5%ba%93%e6%8b%b7%e8%b4%9d%e5%88%b0win7%e7%94%b5%e8%84%91%e5%8f%aa%e9%9c%80%e6%8b%b7%e8%b4%9d%e4%bb%a5%e4%b8%8b%e4%b8%a4%e4%b8%aa%e7%9b%ae%e5%bd%95"></a></h3><ul>
+<li>/lede/bin/packages/mips_24kc</li>
+<li>/lede/bin/targets/ar71xx/generic/packages<br>
+我这边拷贝到 F盘openwrt_package文件夹</li>
+</ul>
+<h3 id="二开启iis信息服务">二、开启IIS信息服务<a class="anchorjs-link" href="#%e4%ba%8c%e5%bc%80%e5%90%afiis%e4%bf%a1%e6%81%af%e6%9c%8d%e5%8a%a1"></a></h3><p>运行中输入 appwiz.cpl，打开程序和功能，点击左上角“打开或关闭Windows功能”</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//226cbfccac18d69914c808524b54e0a5.png" data-action="zoom" alt=""  class="lazyload">
   </a>
   
 </figure></p>
-<p><strong>三、配置网站</strong></p>
-<p>1、运行中输入 inetmgr，打开IIS，点击展开默认网站-》管理网站-》高级设置</p>
+<h3 id="三配置网站">三、配置网站<a class="anchorjs-link" href="#%e4%b8%89%e9%85%8d%e7%bd%ae%e7%bd%91%e7%ab%99"></a></h3><p>1、运行中输入 inetmgr，打开IIS，点击展开默认网站-》管理网站-》高级设置</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//558594f6530cdc80727c838afef436b1.png" data-action="zoom" alt=""  class="lazyload">
@@ -340,11 +321,16 @@ src/gz openwrt_core http://192.168.1.92/packages/ src/gz openwrt_base http://192
 <p>http://192.168.1.92/packages/
 http://192.168.1.92/mips_24kc/</p>
 <p> </p>
-<p><strong>四、配置openwrt</strong></p>
-<p>1、登录openwrt，进入 系统-》软件包-》配置</p>
+<h3 id="四配置openwrt">四、配置openwrt<a class="anchorjs-link" href="#%e5%9b%9b%e9%85%8d%e7%bd%aeopenwrt"></a></h3><p>1、登录openwrt，进入 系统-》软件包-》配置</p>
 <p>将发行版软件源中的代码注释掉，在每行中添加#号，点击提交</p>
-<p># src/gz openwrt_core <a href="https://mirrors.cloud.tencent.com/lede/snapshots/targets/ar71xx/generic/packages" target="_blank">https://mirrors.cloud.tencent.com/lede/snapshots/targets/ar71xx/generic/packages</a></p>
-<h1 id="srcgz-openwrt_base-httpsmirrorscloudtencentcomledesnapshotspackagesmips_24kcbase">src/gz openwrt_base <a href="https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips" target="_blank">https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips</a>_24kc/base<a class="anchorjs-link" href="#srcgz-openwrt_base-httpsmirrorscloudtencentcomledesnapshotspackagesmips_24kcbase"></a></h1><h1 id="srcgz-openwrt_freifunk-httpsmirrorscloudtencentcomledesnapshotspackagesmips_24kcfreifunk">src/gz openwrt_freifunk <a href="https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips" target="_blank">https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips</a>_24kc/freifunk<a class="anchorjs-link" href="#srcgz-openwrt_freifunk-httpsmirrorscloudtencentcomledesnapshotspackagesmips_24kcfreifunk"></a></h1><h1 id="srcgz-openwrt_luci-httpsmirrorscloudtencentcomledereleases18068packagesmips_24kcluci">src/gz openwrt_luci <a href="https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/mips" target="_blank">https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/mips</a>_24kc/luci<a class="anchorjs-link" href="#srcgz-openwrt_luci-httpsmirrorscloudtencentcomledereleases18068packagesmips_24kcluci"></a></h1><h1 id="srcgz-openwrt_packages-httpsmirrorscloudtencentcomledesnapshotspackagesmips_24kcpackages">src/gz openwrt_packages <a href="https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips" target="_blank">https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips</a>_24kc/packages<a class="anchorjs-link" href="#srcgz-openwrt_packages-httpsmirrorscloudtencentcomledesnapshotspackagesmips_24kcpackages"></a></h1><h1 id="srcgz-openwrt_routing-httpsmirrorscloudtencentcomledesnapshotspackagesmips_24kcrouting">src/gz openwrt_routing <a href="https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips" target="_blank">https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips</a>_24kc/routing<a class="anchorjs-link" href="#srcgz-openwrt_routing-httpsmirrorscloudtencentcomledesnapshotspackagesmips_24kcrouting"></a></h1><h1 id="srcgz-openwrt_telephony-httpsmirrorscloudtencentcomledesnapshotspackagesmips_24kctelephony">src/gz openwrt_telephony <a href="https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips" target="_blank">https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips</a>_24kc/telephony<a class="anchorjs-link" href="#srcgz-openwrt_telephony-httpsmirrorscloudtencentcomledesnapshotspackagesmips_24kctelephony"></a></h1><p>将“发行版软件源”的代码拷贝文本文档，将后面链接替换为自己搭建网站的链接</p>
+<pre tabindex="0"><code># src/gz openwrt\_core https://mirrors.cloud.tencent.com/lede/snapshots/targets/ar71xx/generic/packages
+# src/gz openwrt\_base https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/base
+# src/gz openwrt\_freifunk https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/freifunk
+# src/gz openwrt\_luci https://mirrors.cloud.tencent.com/lede/releases/18.06.8/packages/mips\_24kc/luci
+# src/gz openwrt\_packages https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/packages
+# src/gz openwrt\_routing https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/routing
+# src/gz openwrt\_telephony https://mirrors.cloud.tencent.com/lede/snapshots/packages/mips\_24kc/telephony
+</code></pre><p>将“发行版软件源”的代码拷贝文本文档，将后面链接替换为自己搭建网站的链接</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//ee4139c6e23748461f63c1b279d2459f.png" data-action="zoom" alt=""  class="lazyload">
@@ -352,14 +338,14 @@ http://192.168.1.92/mips_24kc/</p>
   
 </figure></p>
 <p>将替换后代码，拷贝到“自定义软件源”，点击提交</p>
-<p>src/gz openwrt_core http://192.168.1.92/packages/
-src/gz openwrt_base http://192.168.1.92/mips_24kc/ base
-src/gz openwrt_freifunk http://192.168.1.92/mips_24kc/ freifunk
-src/gz openwrt_luci http://192.168.1.92/mips_24kc/ luci
-src/gz openwrt_packages http://192.168.1.92/mips_24kc/ packages
-src/gz openwrt_routing http://192.168.1.92/mips_24kc/ routing
-src/gz openwrt_telephony http://192.168.1.92/mips_24kc/ telephony</p>
-<p>2、点击软件包-》动作，刷新列表，刷新后在“可用软件包”中会出现我们搭建好的软件库</p>
+<pre tabindex="0"><code>src/gz openwrt\_core http://192.168.1.92/packages/
+src/gz openwrt\_base http://192.168.1.92/mips\_24kc/ base
+src/gz openwrt\_freifunk http://192.168.1.92/mips\_24kc/ freifunk
+src/gz openwrt\_luci http://192.168.1.92/mips\_24kc/ luci
+src/gz openwrt\_packages http://192.168.1.92/mips\_24kc/ packages
+src/gz openwrt\_routing http://192.168.1.92/mips\_24kc/ routing
+src/gz openwrt\_telephony http://192.168.1.92/mips\_24kc/ telephony
+</code></pre><p>2、点击软件包-》动作，刷新列表，刷新后在“可用软件包”中会出现我们搭建好的软件库</p>
 <p><figure>
   <a class="paragraph-image">
     <img data-src="http://hugo.caizhenwei.top//3423285820b348d78e17edc9bb7c4ff9.png" data-action="zoom" alt=""  class="lazyload">
@@ -367,11 +353,11 @@ src/gz openwrt_telephony http://192.168.1.92/mips_24kc/ telephony</p>
   
 </figure></p>
 <h2 id="docker环境搭建openwrt插件库">docker环境搭建openwrt插件库<a class="anchorjs-link" href="#docker%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%baopenwrt%e6%8f%92%e4%bb%b6%e5%ba%93"></a></h2><p><strong>部署http文件服务</strong></p>
-<p>docker run -dit -p 80:80 &ndash;name httpd-op-packages \
--v /mnt/http_op_packages/htdocs:/usr/local/apache2/htdocs \
--v /mnt/http_op_packages/logs:/usr/local/apache2/logs \
-&ndash;restart=always httpd</p>
-<p>openwrt其余步骤与windows环境相同</p>
+<pre tabindex="0"><code>docker run -dit -p 80:80 --name httpd-op-packages \\
+-v /mnt/http\_op\_packages/htdocs:/usr/local/apache2/htdocs \\
+-v /mnt/http\_op\_packages/logs:/usr/local/apache2/logs \\
+--restart=always httpd
+</code></pre><p>openwrt其余步骤与windows环境相同</p>
 
 
         <hr style="visibility: hidden;" />
