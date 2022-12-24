@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on 蔡振威的博客</title>
-    <link>//example.org/categories/linux/</link>
+    <link>http://caizhenwei.top/categories/linux/</link>
     <description>Recent content in linux on 蔡振威的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="//example.org/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://caizhenwei.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kali2021安装VNC</title>
-      <link>//example.org/posts/2021-04-26-kali2021%E5%AE%89%E8%A3%85vnc/</link>
+      <link>http://caizhenwei.top/posts/2021-04-26-kali2021%E5%AE%89%E8%A3%85vnc/</link>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-04-26-kali2021%E5%AE%89%E8%A3%85vnc/</guid>
+      <guid>http://caizhenwei.top/posts/2021-04-26-kali2021%E5%AE%89%E8%A3%85vnc/</guid>
       <description>1、安装 x11vncapt install x11vnc -y 2、生成密码文件x11vnc -storepasswd 123456 /etc/x11vnc.pass 参数说明：
 -storepasswd：指定一个密码
 /etc/x11vnc.pass：保存的路径（任意）
@@ -22,10 +22,10 @@
     
     <item>
       <title>使用docker快速搭建L2TP服务器</title>
-      <link>//example.org/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>http://caizhenwei.top/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>http://caizhenwei.top/posts/2021-04-04-%E4%BD%BF%E7%94%A8docker%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAl2tp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>使用 Docker 镜像快速搭建 IPsec VPN 服务器。支持 IPsec/L2TP，Cisco IPsec 和 IKEv2 协议。
 作者github地址：https://github.com/hwdsl2/docker-ipsec-vpn-server/blob/master/README-zh.md
 一、下载镜像并运行docker run \\ --name ipsec-vpn-server \\ --restart=always \\ -v ikev2-vpn-data:/etc/ipsec.d \\ -v /lib/modules:/lib/modules:ro \\ -p 500:500/udp \\ -p 4500:4500/udp \\ -d --privileged \\ hwdsl2/ipsec-vpn-server 二、获取 VPN 登录信息docker logs ipsec-vpn-server 在命令输出中查找下面这些行： Server IP: 你的VPN服务器IP IPsec PSK: 你的IPsec预共享密钥 Username: 你的VPN用户名 Password: 你的VPN密码 三、配置 IPsec/L2TP VPN 客户端https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/clients-zh.md
@@ -36,10 +36,10 @@
     
     <item>
       <title>crond任务没有正常执行的排查方法</title>
-      <link>//example.org/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/</link>
+      <link>http://caizhenwei.top/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/</link>
       <pubDate>Wed, 24 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/</guid>
+      <guid>http://caizhenwei.top/posts/2021-03-24-crond%E4%BB%BB%E5%8A%A1%E6%B2%A1%E6%9C%89%E6%AD%A3%E5%B8%B8%E6%89%A7%E8%A1%8C%E7%9A%84%E6%8E%92%E6%9F%A5%E6%96%B9%E6%B3%95/</guid>
       <description>很多时候写了定时任务却发现没有执行，或者执行失败，但因为crond是后台运行的，有没有任何提示，很难进行排错。但是可以让crond运行在前端并进行调试的。
 crond是允许接受选项的
 crond [-n] [-P] [-x flags] 选项说明： -n：让crond以前端方式运行，即不依赖于终端。 -P：不重设环境变量PATH，而是从父进程中继承。 -x：设置调试项，flags是调试方式，比较有用的方式是test和sch，即&amp;#34;-x test&amp;#34;和&amp;#34;-x sch&amp;#34;。 ：其中test调试将不会真正的执行，sch调试显示调度信息，可以看到等待时间。具体的见下面的示例。 执行crond并带上调试选项test。
@@ -50,10 +50,10 @@ crond调试正常显示如下：
     
     <item>
       <title>Linux安装使用clash网络代理工具</title>
-      <link>//example.org/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+      <link>http://caizhenwei.top/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</link>
       <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
+      <guid>http://caizhenwei.top/posts/2021-02-15-linux%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8clash%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86%E5%B7%A5%E5%85%B7/</guid>
       <description>一、下载解压运行各平台clash安装包链接：https://github.com/Dreamacro/clash/releases
 mkdir clash #创建目录 cd clash #进入目录 wget http://xxxxxxclash-linux-amd64-v1.3.5.gz #下载clash gunzip clash-linux-amd64-v1.3.5.gz #解压 mv clash-linux-amd64-v1.3.5 clash #重命名 chmod +x clash #添加可执行权限 ./clash #前台运行clash ------------------------------------------------------------ INFO[0000] Can&amp;#39;t find config, create a initial config file INFO[0000] Can&amp;#39;t find MMDB, start download INFO[0205] HTTP proxy listening at: 127.0.0.1:7890 第一次启动会在用户目录下 ~/.config/clash 自动生成Config.yaml 和Country.mmdb两个文件
 生成的Config.yaml文件只一行 port: 7890，需要后续配置自己的代理信息
@@ -64,10 +64,10 @@ cd ~/.config/clash wget -O config.yaml http://xxxx.com/link/f?clash=1&amp;amp;lo
     
     <item>
       <title>手机端实现一键发送命令到NAS主机</title>
-      <link>//example.org/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</link>
+      <link>http://caizhenwei.top/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</link>
       <pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</guid>
+      <guid>http://caizhenwei.top/posts/2021-02-10-%E6%89%8B%E6%9C%BA%E7%AB%AF%E5%AE%9E%E7%8E%B0%E4%B8%80%E9%94%AE%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4%E5%88%B0nas%E4%B8%BB%E6%9C%BA/</guid>
       <description>NAS操作系统：Centos7
 实现原理：通过访问网页，执行含有shell命令的php代码
 1、安装apache和phpyum install -y httpd php 2、启动apache、关闭selinuxsystemctl start httpd systemctl enable httpd #临时关闭selinux setenforce 0 #永久关闭selinux vim /etc/selinux/config SELINUX=disabled 3、修改Web端口和目录（可选）vim /etc/httpd/conf/httpd.conf ------------------------------------ Listen 1234 ... DocumentRoot &amp;#34;/mnt/html&amp;#34; .... &amp;lt;Directory &amp;#34;/mnt/html&amp;#34;&amp;gt; ------------------------------------ systemctl restart httpd 4、测试vim /mnt/html/test.php -------------------------- &amp;lt;?php $cmd = &amp;#39;dir&amp;#39;; exec($cmd,$output); print\_r($output); ?&amp;gt; -------------------------- 浏览器运行：http:IP:端口/test.php
@@ -77,10 +77,10 @@ vim /etc/sudoers --------------------------------- root ALL=(ALL) ALL apache ALL
     
     <item>
       <title>Docker可视化工具--Portainer安装</title>
-      <link>//example.org/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</link>
+      <link>http://caizhenwei.top/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</link>
       <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</guid>
+      <guid>http://caizhenwei.top/posts/2021-02-09-docker%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7-portainer%E5%AE%89%E8%A3%85/</guid>
       <description>官网/安装文档：https://www.portainer.io/
 https://www.portainer.io/installation/
 https://portainer.readthedocs.io/en/stable/deployment.html
@@ -94,10 +94,10 @@ Portainer是Docker的可视化管理工具，提供状态显示面板、应用�
     
     <item>
       <title>Centos7 部署Samba服务</title>
-      <link>//example.org/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</link>
+      <link>http://caizhenwei.top/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>http://caizhenwei.top/posts/2021-02-08-centos7-%E9%83%A8%E7%BD%B2samba%E6%9C%8D%E5%8A%A1/</guid>
       <description>1、安装软件包yum -y install samba 2、建立访问用户useradd test smbpasswd -a test 3、配置samba共享[data] path = /mnt/data write list = test 其它参数
 valid users = name #只允许该用户访问，其它用户可见但无法访问 hosts allow = 192.168.1. #只允许该网段访问 ;前面加分号为注释，等号两边要加空格 4、启动samba服务systemctl restart smb nmb systemctl enable smb nmb 5、配置防火墙firewall-cmd --permanent --add-service=samba firewall-cmd --permanent --add-service=samba-client firewall-cmd --permanent --add-service=mouted firewall-cmd --reload 6、通过子配置文件，让目录只对有权限的用户可见新建子配置文件
 vim /etc/samba/test1.smb.conf ----------------------------- [share11] path = /data/aa valid users = test1 新建子配置文件
@@ -106,10 +106,10 @@ vim /etc/samba/test2.smb.conf ----------------------------- [share12] path = /da
     
     <item>
       <title>Docker部署开源摄像头录制软件shinobi</title>
-      <link>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</link>
+      <link>http://caizhenwei.top/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</link>
       <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</guid>
+      <guid>http://caizhenwei.top/posts/2021-02-08-docker%E9%83%A8%E7%BD%B2%E5%BC%80%E6%BA%90%E6%91%84%E5%83%8F%E5%A4%B4%E5%BD%95%E5%88%B6%E8%BD%AF%E4%BB%B6shinobi/</guid>
       <description>官方文档：https://gitlab.com/Shinobi-Systems/Shinobi/-/tree/dev/Docker
 一、安装shinobi方法1、使用脚本自动安装（存储路径默认在$HOME目录下）
 curl -o https://gitlab.com/Shinobi-Systems/Shinobi-Installer/raw/master/shinobi-docker.sh 方法2、手动安装运行
@@ -130,29 +130,29 @@ http://HOST\_IP:SHINOBI\_PORT/super 3、登录普通用户，添加摄像头
     
     <item>
       <title>Centos7 修改Docker默认存储位置</title>
-      <link>//example.org/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</link>
+      <link>http://caizhenwei.top/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</link>
       <pubDate>Sun, 07 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</guid>
+      <guid>http://caizhenwei.top/posts/2021-02-07-centos7-%E4%BF%AE%E6%94%B9docker%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E4%BD%8D%E7%BD%AE/</guid>
       <description>1、查看docker默认目录docker info | grep &amp;#34;Docker Root Dir&amp;#34; 2、新建或者编辑 daemon.json 文件vim /etc/docker/daemon.json { &amp;#34;graph&amp;#34;: &amp;#34;/mnt/docker&amp;#34; } 3、重启docker服务systemctl restart docker 4、查看docker目录文件ls /mnt/docker </description>
     </item>
     
     <item>
       <title>CentOS7使用SpeedTest工具测速</title>
-      <link>//example.org/posts/2021-01-13-centos7%E4%BD%BF%E7%94%A8speedtest%E5%B7%A5%E5%85%B7%E6%B5%8B%E9%80%9F/</link>
+      <link>http://caizhenwei.top/posts/2021-01-13-centos7%E4%BD%BF%E7%94%A8speedtest%E5%B7%A5%E5%85%B7%E6%B5%8B%E9%80%9F/</link>
       <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-01-13-centos7%E4%BD%BF%E7%94%A8speedtest%E5%B7%A5%E5%85%B7%E6%B5%8B%E9%80%9F/</guid>
+      <guid>http://caizhenwei.top/posts/2021-01-13-centos7%E4%BD%BF%E7%94%A8speedtest%E5%B7%A5%E5%85%B7%E6%B5%8B%E9%80%9F/</guid>
       <description>SpeedTest官方文档：https://www.speedtest.net/apps/cli
 方法一：wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py chmod +x speedtest-cli ./speedtest-cli --share 方法二：sudo yum install wget wget https://bintray.com/ookla/rhel/rpm -O bintray-ookla-rhel.repo sudo mv bintray-ookla-rhel.repo /etc/yum.repos.d/ sudo yum install speedtest </description>
     </item>
     
     <item>
       <title>Centos7 升级内核</title>
-      <link>//example.org/posts/2021-01-07-centos7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</link>
+      <link>http://caizhenwei.top/posts/2021-01-07-centos7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-01-07-centos7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</guid>
+      <guid>http://caizhenwei.top/posts/2021-01-07-centos7-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8/</guid>
       <description>一、导入ELRepo仓库的公共密钥rpm &amp;ndash;import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 二、安装EL仓库源rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 三、查看可提供升级的内核版本yum &amp;ndash;disablerepo=&amp;quot;*&amp;quot; &amp;ndash;enablerepo=&amp;ldquo;elrepo-kernel&amp;rdquo; list available
@@ -161,19 +161,19 @@ http://HOST\_IP:SHINOBI\_PORT/super 3、登录普通用户，添加摄像头
     
     <item>
       <title>Centos7 安装docker</title>
-      <link>//example.org/posts/2021-01-07-centos7-%E5%AE%89%E8%A3%85docker/</link>
+      <link>http://caizhenwei.top/posts/2021-01-07-centos7-%E5%AE%89%E8%A3%85docker/</link>
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-01-07-centos7-%E5%AE%89%E8%A3%85docker/</guid>
+      <guid>http://caizhenwei.top/posts/2021-01-07-centos7-%E5%AE%89%E8%A3%85docker/</guid>
       <description>一、如果系统安装过docker，先卸载sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-engine 二、安装依赖包sudo yum install -y yum-utils \ device-mapper-persistent-data \ lvm2 三、添加Docker软件包源sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo 四、安装Docker CE（社区版）sudo yum install docker-ce docker-ce-cli containerd.io 五、启动systemctl start docker systemctl enable docker docker info </description>
     </item>
     
     <item>
       <title>ubuntu18.04.1 安装配置vnc server</title>
-      <link>//example.org/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server/</link>
+      <link>http://caizhenwei.top/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server/</link>
       <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server/</guid>
+      <guid>http://caizhenwei.top/posts/2021-01-06-ubuntu18-04-1-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEvnc-server/</guid>
       <description>一、安装VNCServersudo apt-get install vnc4server 二、设置密码并运行vncserver（输入命令后输入密码）vncserver 三、配置xstartup文件修改xstartup文件内容，针对Xfce4桌面环境.
 vim ~/.vnc/xstartup #!/bin/sh unset SESSION\_MANAGER unset DBUS\_SESSION\_BUS\_ADDRESS startxfce4 &amp;amp; \[ -x /etc/vnc/xstartup \] &amp;amp;&amp;amp; exec /etc/vnc/xstartup \[ -r $HOME/.Xresources \] &amp;amp;&amp;amp; xrdb $HOME/.Xresources xsetroot -solid grey 四、重启vncserver修改配置文件后，运行如下命令结束掉之前产生的窗口:1
 vncserver -kill :1 五、重新启动（reboot系统后，然后启动服务）vncserver vnc客户端连接vnc viewer链接新建链接，然后地址输入ip:5901
@@ -184,10 +184,10 @@ vncserver -kill :1 五、重新启动（reboot系统后，然后启动服务）v
     
     <item>
       <title>Centos7 修改docker镜像源</title>
-      <link>//example.org/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/</link>
+      <link>http://caizhenwei.top/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/</link>
       <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/</guid>
+      <guid>http://caizhenwei.top/posts/2021-01-04-centos7-%E4%BF%AE%E6%94%B9docker%E9%95%9C%E5%83%8F%E6%BA%90/</guid>
       <description>参考链接：https://www.daocloud.io/mirror
 curl -sSL https://get.daocloud.io/daotools/set\_mirror.sh | sh -s http://f1361db2.m.daocloud.io 该脚本可以将 &amp;ndash;registry-mirror 加入到你的 Docker 配置文件 /etc/docker/daemon.json 中。适用于 Ubuntu14.04、Debian、CentOS6 、CentOS7、Fedora、Arch Linux、openSUSE Leap 42.1，其他版本可能有细微不同。更多详情请访问文档。
 使用前请先确保您的 Docker 版本在 1.8 或更高版本，否则无法使用加速，配置完成后，请根据终端中的提示重启 docker
@@ -200,10 +200,10 @@ curl -sSL https://get.daocloud.io/daotools/set\_mirror.sh | sh -s http://f1361db
     
     <item>
       <title>centos7 设置默认启动内核，并删除多余内核</title>
-      <link>//example.org/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8/</link>
+      <link>http://caizhenwei.top/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8/</link>
       <pubDate>Tue, 29 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8/</guid>
+      <guid>http://caizhenwei.top/posts/2020-12-29-centos7-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E5%86%85%E6%A0%B8%E5%B9%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%BD%99%E5%86%85%E6%A0%B8/</guid>
       <description>设置默认启动内核1、查看系统可用内核
 [root@NAS]# awk -F\&amp;#39; &amp;#39;$1==&amp;#34;menuentry &amp;#34; {print i++ &amp;#34; : &amp;#34; $2}&amp;#39; /etc/grub2.cfg 0 : CentOS Linux (4.4.248-1.el7.elrepo.x86_64) 7 (Core) 1 : CentOS Linux (3.10.0-1160.11.1.el7.x86_64) 7 (Core) 2 : CentOS Linux (3.10.0-957.el7.x86_64) 7 (Core) 3 : CentOS Linux (0-rescue-70b8558dd1bf4abb887cf26344a88da3) 7 (Core) Linux (3.10.0-1127.8.2.el7.x86_64) 7 (Core)&amp;#39; --class centos --class gnu-linux --class gnu --class os --unrestricted $menuentry_id_option &amp;#39;gnulinux-3.10.0-957.el7.x86_64-advanced-31cdfa8e-4bda-4e29-a11e-8e46000798d6&amp;#39; { 2、查看系统开机默认启动内核
 [root@NAS ~]# grub2-editenv list saved_entry=CentOS Linux (3.10.0-1160.11.1.el7.x86_64) 7 (Core) 3、查看系统当前内核
@@ -212,10 +212,10 @@ curl -sSL https://get.daocloud.io/daotools/set\_mirror.sh | sh -s http://f1361db
     
     <item>
       <title>Centos7 安装FFmpeg对视频转码压缩</title>
-      <link>//example.org/posts/2020-12-04-centos7-%E5%AE%89%E8%A3%85ffmpeg%E5%AF%B9%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%8E%8B%E7%BC%A9/</link>
+      <link>http://caizhenwei.top/posts/2020-12-04-centos7-%E5%AE%89%E8%A3%85ffmpeg%E5%AF%B9%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%8E%8B%E7%BC%A9/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-12-04-centos7-%E5%AE%89%E8%A3%85ffmpeg%E5%AF%B9%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%8E%8B%E7%BC%A9/</guid>
+      <guid>http://caizhenwei.top/posts/2020-12-04-centos7-%E5%AE%89%E8%A3%85ffmpeg%E5%AF%B9%E8%A7%86%E9%A2%91%E8%BD%AC%E7%A0%81%E5%8E%8B%E7%BC%A9/</guid>
       <description>一、安装ffmpeg1、安装epel源
 [root@BK ~]# yum install -y epel-release 2、安装Nux-Dextop源
 [root@BK ~]# rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86\_64/nux-dextop-release-0-1.el7.nux.noarch.rpm 3、安装ffmpeg
@@ -228,19 +228,19 @@ curl -sSL https://get.daocloud.io/daotools/set\_mirror.sh | sh -s http://f1361db
     
     <item>
       <title>Centos7 将home目录和根目录的磁盘空间合并</title>
-      <link>//example.org/posts/2020-12-04-centos7-%E5%B0%86home%E7%9B%AE%E5%BD%95%E5%92%8C%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%90%88%E5%B9%B6/</link>
+      <link>http://caizhenwei.top/posts/2020-12-04-centos7-%E5%B0%86home%E7%9B%AE%E5%BD%95%E5%92%8C%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%90%88%E5%B9%B6/</link>
       <pubDate>Fri, 04 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-12-04-centos7-%E5%B0%86home%E7%9B%AE%E5%BD%95%E5%92%8C%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%90%88%E5%B9%B6/</guid>
+      <guid>http://caizhenwei.top/posts/2020-12-04-centos7-%E5%B0%86home%E7%9B%AE%E5%BD%95%E5%92%8C%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4%E5%90%88%E5%B9%B6/</guid>
       <description>1、查看当前磁盘空间使用情况[root@BK ~]# df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 1.8G 0 1.8G 0% /dev tmpfs 1.9G 0 1.9G 0% /dev/shm tmpfs 1.9G 8.9M 1.8G 1% /run tmpfs 1.9G 0 1.9G 0% /sys/fs/cgroup /dev/mapper/centos-root 411G 1.8G 409G 1% / /dev/sda1 1014M 192M 823M 19% /boot /dev/mapper/centos-home 50G 33M 50G 1% /home tmpfs 371M 0 371M 0% /run/user/0 2、备份/home目录[root@BK ~]# cp -rp /home/ /tmp/ -r 递归复制该目录下的子目录 -p 将文件和目录具有的权限一同复制 3、卸载/home分区[root@BK ~]# umount /home umount: /home: target is busy.</description>
     </item>
     
     <item>
       <title>Centos7部署ELK日志收集系统</title>
-      <link>//example.org/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/</link>
+      <link>http://caizhenwei.top/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Sat, 17 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>http://caizhenwei.top/posts/2020-10-17-centos7%E9%83%A8%E7%BD%B2elk%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F/</guid>
       <description>一、安装Elasticsearch1、下载安装包并解压
 [root@ELK ~]# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz [root@ELK ~]# tar xzvf elasticsearch-7.9.2-linux-x86_64.tar.gz -C /usr/local/ 2、创建用户和用户组
 elasticsearch默认不允许使用root用户运行，如果要强行使用root运行，要加上该参数 ./bin/elasticsearch -Des.insecure.allow.root=true
@@ -251,10 +251,10 @@ elasticsearch默认不允许使用root用户运行，如果要强行使用root�
     
     <item>
       <title>Centos7部署FTP服务</title>
-      <link>//example.org/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/</link>
+      <link>http://caizhenwei.top/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>http://caizhenwei.top/posts/2020-10-05-centos7%E9%83%A8%E7%BD%B2ftp%E6%9C%8D%E5%8A%A1/</guid>
       <description>一、安装FTP服务1、安装vsftpd软件
 [root@FTP ~]# yum -y install vsftpd 2、防火墙放行FTP服务
 [root@FTP ~]# firewall-cmd --permanent --add-service=ftp [root@FTP ~]# firewall-cmd --reload 3、启动服务
@@ -271,10 +271,10 @@ elasticsearch默认不允许使用root用户运行，如果要强行使用root�
     
     <item>
       <title>Centos7安装mysql8.0</title>
-      <link>//example.org/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/</link>
+      <link>http://caizhenwei.top/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/</link>
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/</guid>
+      <guid>http://caizhenwei.top/posts/2020-08-23-centos7%E5%AE%89%E8%A3%85mysql8-0/</guid>
       <description>方式一、MySQL Yum Repository官方安装文档：http://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html
 1、访问官网：https://www.mysql.com/downloads/
 2、点击：MySQL Community (GPL) Downloads »
@@ -291,10 +291,10 @@ elasticsearch默认不允许使用root用户运行，如果要强行使用root�
     
     <item>
       <title>Zabbix之使用微信公众号告警</title>
-      <link>//example.org/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</link>
+      <link>http://caizhenwei.top/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</guid>
+      <guid>http://caizhenwei.top/posts/2020-08-08-zabbix%E4%B9%8B%E4%BD%BF%E7%94%A8%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%91%8A%E8%AD%A6/</guid>
       <description>效果展示实现方式 服务号 订阅号 -》 测试号（本文使用测试号演示） 一、注册微信公众号服务号需要是企业身份，并进行微信认证
 个人可以申请订阅号后，开启测试号获取模板消息接口来进行测试
 二、开通模板消息并设置告警模板服务号： 公众号后台-》添加功能-》模板消息
@@ -304,10 +304,10 @@ elasticsearch默认不允许使用root用户运行，如果要强行使用root�
     
     <item>
       <title>Centos7 磁盘配额</title>
-      <link>//example.org/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/</link>
+      <link>http://caizhenwei.top/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/</link>
       <pubDate>Sun, 07 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/</guid>
+      <guid>http://caizhenwei.top/posts/2020-06-07-centos7-%E7%A3%81%E7%9B%98%E9%85%8D%E9%A2%9D/</guid>
       <description>参考文档：http://c.biancheng.net/view/908.html
 磁盘配额概述1、磁盘配额限制只能作用于普通用户和用户组，超级用户 root 不能做磁盘配额；
 2、磁盘配额限制只能针对分区，不能针对目录，即仅能针对文件系统进行限制，例如 /dev/sda1 挂载到 /home，那么在 /home下的所有目录都会受到磁盘配额的限制；
@@ -321,28 +321,28 @@ elasticsearch默认不允许使用root用户运行，如果要强行使用root�
     
     <item>
       <title>Centos7 部署Apache服务</title>
-      <link>//example.org/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/</link>
+      <link>http://caizhenwei.top/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>http://caizhenwei.top/posts/2020-06-05-centos7-%E9%83%A8%E7%BD%B2apache%E6%9C%8D%E5%8A%A1/</guid>
       <description>1、安装Apache#安装 [root@web ~]# yum -y install httpd #防火墙开放http服务 [root@web ~]# firewall-cmd --permanent --add-service=http [root@web ~]# firewall-cmd --reload #新建测试页面 [root@web ~]# echo &amp;#34;web page&amp;#34; &amp;gt; /var/www/html/index.html #启动服务 [root@web ~]# systemctl start httpd [root@web ~]# systemctl enable httpd #测试 使用浏览器访问web主机IP 2、修改网站目录#新建网站目录及页面 [root@web ~]# mkdir /web [root@web ~]# echo &amp;#34;new web page&amp;#34; &amp;gt; /web/index.html #修改主配置文件 [root@web ~]# vim /etc/httpd/conf/httpd.conf //修改以下两处位置 DocumentRoot &amp;#34;/web&amp;#34; &amp;lt;Directory &amp;#34;/web&amp;#34;&amp;gt; #重启httpd服务 [root@web ~]# systemctl restart httpd #关闭selinux [root@web ~]# setenforce 0 #测试 使用浏览器访问web主机IP 3、新建虚拟主机#新建虚拟主机配置文件，注意文件一定要是.</description>
     </item>
     
     <item>
       <title>Centos7部署DNS服务</title>
-      <link>//example.org/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1/</link>
+      <link>http://caizhenwei.top/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>http://caizhenwei.top/posts/2020-06-05-centos7%E9%83%A8%E7%BD%B2dns%E6%9C%8D%E5%8A%A1/</guid>
       <description>1、安装bind软件包[root@DNS ~]# yum -y install bind 2、修改主配置文件，添加正向解析区域[root@DNS ~]# vim /etc/named.conf options { listen-on port 53 { any; }; //将127.0.0.1修改为any listen-on-v6 port 53 { any; }; //将::1修改为any directory &amp;#34;/var/named&amp;#34;; //区域数据文件默认位置，可以不用修改 ... allow-query { any; }; //将127.0.0.1修改为any #在最后面添加正向解析区域 zone &amp;#34;test.com&amp;#34; { type master; //类型为主要区域 file &amp;#34;test.com.zone&amp;#34;; //区域数据文件名 }; 3、新建区域数据文件[root@DNS ~]# vim /var/named/test.com.zone @ IN SOA dns root ( 2020060500 1H 15M 1W 1D ) @ IN NS dns dns IN A 192.168.1.156 www IN A 192.</description>
     </item>
     
     <item>
       <title>Linux下设置硬盘自动休眠省电</title>
-      <link>//example.org/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/</link>
+      <link>http://caizhenwei.top/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/</link>
       <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/</guid>
+      <guid>http://caizhenwei.top/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/</guid>
       <description>场景：电脑挂载多个硬盘做NAS，硬盘大部分时间为待机状态（不使用），为节约电费，有必要设置硬盘休眠
 1、安装硬盘性能测试/设置工具[root@NAS ~]# yum -y install hdparm [root@NAS ~]# hdparm --help 参数说明： -S&amp;lt;时间&amp;gt; 设定硬盘进入省电模式前的等待时间（关闭旋转电机） -y 使IDE硬盘进入省电模式 -Y 使IDE硬盘进入睡眠模式 -C 检测IDE硬盘的电源管理模式 -f 将内存缓冲区的数据写入硬盘，并清楚缓冲区 -i 显示硬盘的硬件规格信息，这些信息是在开机时由硬盘本身所提供 -I 直接读取硬盘所提供的硬件规格信息 -t 评估硬盘的读取效率 -T 评估硬盘快取的读取效率 2、使硬盘立即进入省电状态[root@NAS ~]# hdparm -Y /dev/sda PS：可以配合crontab来设置定时休眠
 3、设置硬盘省电策略无访问一定时间后自动停转，关闭旋转电机
@@ -352,10 +352,10 @@ elasticsearch默认不允许使用root用户运行，如果要强行使用root�
     
     <item>
       <title>老毛桃PE以ISO镜像模式安装CentOS7</title>
-      <link>//example.org/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</link>
+      <link>http://caizhenwei.top/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</link>
       <pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</guid>
+      <guid>http://caizhenwei.top/posts/2020-06-02-%E8%80%81%E6%AF%9B%E6%A1%83pe%E4%BB%A5iso%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F%E5%AE%89%E8%A3%85centos7/</guid>
       <description>参考文章链接：https://www.cnblogs.com/sun51586/p/10497538.html
 准备：
 一个u盘，并制作老毛桃winpe启动盘
@@ -378,10 +378,10 @@ PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
     
     <item>
       <title>Centos 挂载NTFS硬盘分区</title>
-      <link>//example.org/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/</link>
+      <link>http://caizhenwei.top/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/</link>
       <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/</guid>
+      <guid>http://caizhenwei.top/posts/2020-06-01-centos-%E6%8C%82%E8%BD%BDntfs%E7%A1%AC%E7%9B%98%E5%88%86%E5%8C%BA/</guid>
       <description>1、插入带有NTFS文件格式的硬盘，并查看硬盘设备路径
 [root@NAS ~]# lsblk //列出所有块设备，会显示所有分区大小 如果上面命令查看不出哪个是新插增硬盘，可使用下面命令
 [root@NAS ~]# fdisk -l //列出所有分区表，包含分区大小及文件系统 2、安装NTFS分区的的驱动
@@ -391,19 +391,19 @@ PS：/dev/sdb1为U盘设备路径，LMT为存放镜像的目录
     
     <item>
       <title>使用uWSGI和Nginx来部署基于Django的Web服务器</title>
-      <link>//example.org/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>http://caizhenwei.top/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>http://caizhenwei.top/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>1、安装python、nginx、django和uwsgi[root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0 [root@liyu ~]# python3 -V Python 3.6.8 [root@liyu ~]# yum install python36-devel //安装对应Python版本的devel，编译uwsgi需要的依赖 [root@server ~]# pip3 install uwsgi 2、创建django项目[root@server ~]# mkdir /web/ [root@server ~]# cd /web/ [root@server ~]# django-admin startproject test_project #允许所有主机访问 [root@server ~]# cd test_project/ [root@server test_project]# vim test_project/settings.py ALLOWED_HOSTS = [&amp;#39;\*&amp;#39;] #开发环境下，可以直接使用下面命令来运行项目 [root@server ~]# python3 manage.py runserver 0.0.0.0:8000 3、使用uwsgi启动django项目#uwsgi命令行方式直接启动（测试） [root@web test_project]# uwsgi --http :8000 --module test_project.wsgi //test_project.</description>
     </item>
     
     <item>
       <title>申请阿里云免费SSL证书并部署至Nginx服务器</title>
-      <link>//example.org/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>http://caizhenwei.top/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>http://caizhenwei.top/posts/2020-02-24-%E7%94%B3%E8%AF%B7%E9%98%BF%E9%87%8C%E4%BA%91%E5%85%8D%E8%B4%B9ssl%E8%AF%81%E4%B9%A6%E5%B9%B6%E9%83%A8%E7%BD%B2%E8%87%B3nginx%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>一、申请阿里云免费SSL证书2021阿里云SSL免费证书购买地址又变了，为了解决免费证书近期存在的吊销、统计等问题，自2021年起，免费证书申请将切换到证书资源包下。
 1、 打开阿里云SSL证书选购页面，点击“选购证书”
 2、 商品类型选择“云盾证书资源包”
@@ -426,10 +426,10 @@ server { listen 80; server_name www.xxxx.com; root /data/web/; location / { inde
     
     <item>
       <title>阿里云ECS搭建NPS内网穿透服务</title>
-      <link>//example.org/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</link>
+      <link>http://caizhenwei.top/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Wed, 19 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>http://caizhenwei.top/posts/2020-02-19-%E9%98%BF%E9%87%8C%E4%BA%91ecs%E6%90%AD%E5%BB%BAnps%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%9C%8D%E5%8A%A1/</guid>
       <description>环境：服务端操作系统：Centos7
 客户端操作系统：Centos7、Win7
 一、NPS介绍nps是一款轻量级、高性能、功能强大的内网穿透代理服务器。目前支持tcp、udp流量转发，可支持任何tcp、udp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面，内网dns解析等等……），此外还支持内网http代理、内网socks5代理、p2p等，并带有功能强大的web管理端。
@@ -455,10 +455,10 @@ npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp 5、客户�
     
     <item>
       <title>Zabbix使用腾讯云短信进行告警</title>
-      <link>//example.org/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</link>
+      <link>http://caizhenwei.top/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</link>
       <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</guid>
+      <guid>http://caizhenwei.top/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/</guid>
       <description>一、开通腾讯云短信服务（需要实名认证）官方文档：https://cloud.tencent.com/document/product/382/18071
 二、创建短信模板短信模板内容中：{1}{2}{3}为发送信息时，需要传递的参数内容
 三、编写发送短信的Shell脚本官方API接口文档：https://cloud.tencent.com/document/product/382/5976
@@ -468,10 +468,10 @@ npc install -server=www.xxx.com:8074 -vkey=trr2r53jtqj8q2q -type=tcp 5、客户�
     
     <item>
       <title>CentOS7安装Oracle 11g数据库</title>
-      <link>//example.org/posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>http://caizhenwei.top/posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>http://caizhenwei.top/posts/2020-02-16-centos7%E5%AE%89%E8%A3%85oracle-11g%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description>Oracle官方11g安装文档：https://docs.oracle.com/cd/E11882_01/install.112/e24326/toc.htm
 一、下载对应Oracle安装包1、查看操作系统硬件架构类型
 [root@server ~]# uname -m x86_64 2、官网下载对应安装包
@@ -481,10 +481,10 @@ https://www.oracle.com/database/technologies/oracle-database-software-downloads.
     
     <item>
       <title>Windows下使用ssh转发Linux下x11图形界面</title>
-      <link>//example.org/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</link>
+      <link>http://caizhenwei.top/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</guid>
+      <guid>http://caizhenwei.top/posts/2020-02-14-windows%E4%B8%8B%E4%BD%BF%E7%94%A8ssh%E8%BD%AC%E5%8F%91linux%E4%B8%8Bx11%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/</guid>
       <description>准备环境Linux系统：Centos7
 SSH客户端工具：Putty和XShell
 Xming下载地址： https://sourceforge.net/projects/xming/
@@ -501,19 +501,19 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
     
     <item>
       <title>Linux定时备份数据库并上传FTP服务器</title>
-      <link>//example.org/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>http://caizhenwei.top/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>http://caizhenwei.top/posts/2020-01-04-linux%E5%AE%9A%E6%97%B6%E5%A4%87%E4%BB%BD%E6%95%B0%E6%8D%AE%E5%BA%93%E5%B9%B6%E4%B8%8A%E4%BC%A0ftp%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>一、编写备份脚本#!/usr/bin/bash date=`date +%Y-%m-%d` #该变量用于备份文件命名 ftp_user=test ftp_pwd=&amp;#39;123456&amp;#39; ftp_ip=172.16.10.10 file_name=wp_$date.sql #数据库备份文件名 tar_file_name=wp_$date.tar.gzip #打包压缩后文件名 mysqldump -utest -p123456 --single-transaction --triggers --routines wordpress &amp;gt; $file_name #备份数据库 tar -czvf $tar_file_name $file_name --remove-files #打包压缩备份文件，并删除源文件 #由于FTP服务器不支持ssl，所以要关闭ssl，否则连接后会卡在“making data connection” lftp -e &amp;#34;set ftp:ssl-allow off;&amp;#34; $ftp_user:$ftp_pwd@$ftp_ip &amp;lt;&amp;lt;EOF cd Backup put ./$tar_file_name bye EOF 二、配置定时任务[root@server]# systemctl status crond #查看计划任务服务是否正常运行 [root@server]# crontab -e #编辑定时任务 0 1 * * * /bin/bash /task/backup.sh # 每天1点整执行备份脚本 </description>
     </item>
     
     <item>
       <title>使用PXE网络引导安装Linux和windows系统</title>
-      <link>//example.org/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/</link>
+      <link>http://caizhenwei.top/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>http://caizhenwei.top/posts/2019-12-26-%E4%BD%BF%E7%94%A8pxe%E7%BD%91%E7%BB%9C%E5%BC%95%E5%AF%BC%E5%AE%89%E8%A3%85linux%E5%92%8Cwindows%E7%B3%BB%E7%BB%9F/</guid>
       <description>需要搭建的服务：DHCP 服务器：配置为需要对 PXE 客户端请求进行响应的 DHCP 服务器或 DHCP 代理。 PXE 服务器：运行 TFTP 服务的服务器，可托管客户端将下载的 Windows PE 启动文件。 文件服务器：托管网络文件共享的服务器。
 （实际环境中，可以把上述服务部署在一台服务器上）
 一、配置DHCP服务[root@PXE ~]# yum -y install dhcp [root@PXE ~]# vim /etc/dhcp/dhcpd.conf subnet 192.168.142.0 netmask 255.255.255.0 { range 192.168.142.100 192.168.142.200; next-server 192.168.142.241; #tftp-server 本机IP filename &amp;#34;pxelinux.0&amp;#34;; #指向的是ttp-server的根目录/var/lib/ftpboot [root@PXE ~]# dhcpd #检测语法 [root@PXE ~]# systemctl restart dhcpd [root@PXE ~]# systemctl enable dhcpd 客户端机器从网卡启动测试：
@@ -522,20 +522,20 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
     
     <item>
       <title>Wordpress网站迁移</title>
-      <link>//example.org/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/</link>
+      <link>http://caizhenwei.top/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/</link>
       <pubDate>Sat, 21 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/</guid>
+      <guid>http://caizhenwei.top/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/</guid>
       <description>博客原本部署在阿里云虚拟主机上，今年双11，购买了一台阿里云ECS服务器，现在开始做迁移
 一、备份网站空间及数据库二、阿里云ECS部署LNMP环境#安装nginx和mariadb [root@ecs]# yum -y install nginx mariadb mariadb-server [root@ecs]# systemctl start nginx mariadb [root@ecs]# systemctl enable nginx mariadb #EPEL源的php版本较低，安装第三方源 [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm [root@ecs]# yum -y install php56w php56w-fpm php56w-mysql php56w-gd [root@ecs]# systemctl start php-fpm [root@ecs]# systemctl enable php-fpm #把nginx主配置文件的server段注释掉 [root@ecs]# vim /etc/nginx/nginx.conf # server { # listen 80 default_server; # listen [::]:80 default_server; # server_name _; # root /usr/share/nginx/html; # # # Load configuration files for the default server block.</description>
     </item>
     
     <item>
       <title>Centos7设置系统时间/时区</title>
-      <link>//example.org/posts/2019-10-13-centos7%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4-%E6%97%B6%E5%8C%BA/</link>
+      <link>http://caizhenwei.top/posts/2019-10-13-centos7%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4-%E6%97%B6%E5%8C%BA/</link>
       <pubDate>Sun, 13 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-10-13-centos7%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4-%E6%97%B6%E5%8C%BA/</guid>
+      <guid>http://caizhenwei.top/posts/2019-10-13-centos7%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4-%E6%97%B6%E5%8C%BA/</guid>
       <description>一、查看系统时区/时间#方法一： [root@server1 ~]# timedatectl Local time: Tue 2019-09-17 05:14:47 CST Universal time: Mon 2019-09-16 21:14:47 UTC //世界协调时间 RTC time: Sun 2019-10-13 06:17:36 //BIOS硬件时钟(Real Time Clock） Time zone: Asia/Shanghai (CST, +0800) //时区 NTP enabled: n/a //是否启用NTP服务 NTP synchronized: no //NTP时间是否已同步 RTC in local TZ: no //BIOS硬件时间是否与系统时间同步 DST active: n/a
 #方法二： [root@server1 ~]# date Sun Oct 13 14:40:33 CST 2019
 二、设置系统时区[root@server1 ~]# timedatectl set-timezone Asia/Shanghai //设置时区为上海东8区
@@ -545,10 +545,10 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
     
     <item>
       <title>Zabbix_配置snmptrap监控交换机</title>
-      <link>//example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</link>
+      <link>http://caizhenwei.top/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</link>
       <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</guid>
+      <guid>http://caizhenwei.top/posts/2019-10-05-zabbix_%E9%85%8D%E7%BD%AEsnmptrap/</guid>
       <description>一、安装配置snmptrapd[root@zabbix1 ~]# yum install -y net-snmp net-snmp-utils net-snmp-perl [root@zabbix1 ~]# vim /etc/snmp/snmptrapd.conf authCommunity log,execute,net public #设置团体名 traphandle default /usr/sbin/snmptthandler #设置snmptt为trap接收器，此时还没安装snmptt [root@zabbix1 ~]# systemctl start snmptrapd [root@zabbix1 ~]# systemctl enable snmptrapd #防火墙开放snmp trap端口 [root@zabbix1 ~]# firewall-cmd --permanent --add-port=162/udp [root@zabbix1 ~]# firewall-cmd --reload #测试 设备打开snmptrap，设置接收主机IP和团体名,手动触发告警,查看是否接收到告警信息 [root@zabbix1 ~]# tail -F /var/log/messages 二、更改snmptrapd日志路径snmptrapd接收到的log默认会到/var/log/messages里面，但如果snmptrapd设备较多，会产生大量日志，会干扰我们平时查看系统日志信息，所以我们要把snmptrapd的日志信息单独存放
 -L：日志选项。支持的输出方式有标准错误（e），标准输出（o），文件（f），syslog（s）。
 -Ls：输出到系统日志文件
@@ -558,19 +558,19 @@ X Window System介绍：http://cn.linux.vbird.org/linux_basic/0590xwindow_1.php
     
     <item>
       <title>tcpdump常用参数及使用案例</title>
-      <link>//example.org/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/</link>
+      <link>http://caizhenwei.top/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/</link>
       <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/</guid>
+      <guid>http://caizhenwei.top/posts/2019-10-01-tcpdump%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/</guid>
       <description>Usage: tcpdump [-aAbdDefhHIJKlLnNOpqStuUvxX#] [ -B size ] [ -c count ] [ -C file_size ] [ -E algo:secret ] [ -F file ] [ -G seconds ] [ -i interface ] [ -j tstamptype ] [ -M secret ] [ --number ] [ -Q|-P in|out|inout ] [ -r file ] [ -s snaplen ] [ --time-stamp-precision precision ] [ --immediate-mode ] [ -T type ] [ --version ] [ -V file ] [ -w file ] [ -W filecount ] [ -y datalinktype ] [ -z postrotate-command ] [ -Z user ] [ expression ] tcpdump常用参数-i 指定监听的网络接口； -c 指定抓包数量，抓到数量后停止 -w 抓包时直接写入文件，不显示出来 -n 将主机名转换成IP显示 -nn 将主机名转换成IP、服务名转换成端口号显示 -v 输出比较详细的信息 使用案例#过滤主机 tcpdump -i eth1 host 192.</description>
     </item>
     
     <item>
       <title>搭建Zabbix高可用架构</title>
-      <link>//example.org/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</link>
+      <link>http://caizhenwei.top/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</link>
       <pubDate>Mon, 30 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</guid>
+      <guid>http://caizhenwei.top/posts/2019-09-30-%E6%90%AD%E5%BB%BAzabbix%E9%AB%98%E5%8F%AF%E7%94%A8%E6%9E%B6%E6%9E%84/</guid>
       <description>环境：zabbix1：192.168.1.241（Master）
 zabbix2：192.168.1.242（Slave）
 zabbix：192.168.1.240（虚拟IP）
@@ -579,10 +579,10 @@ zabbix：192.168.1.240（虚拟IP）
     
     <item>
       <title>mysql主从数据不一致，同步失败后重做主从</title>
-      <link>//example.org/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/</link>
+      <link>http://caizhenwei.top/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/</link>
       <pubDate>Sat, 28 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/</guid>
+      <guid>http://caizhenwei.top/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/</guid>
       <description>环境：
 Master主机：zabbix1
 Slave主机：zabbix2
@@ -592,10 +592,10 @@ Slave主机：zabbix2
     
     <item>
       <title>keepalived之vrrp_script脚本分析</title>
-      <link>//example.org/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90/</link>
+      <link>http://caizhenwei.top/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90/</link>
       <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
+      <guid>http://caizhenwei.top/posts/2019-09-26-keepalived%E4%B9%8Bvrrp_script%E8%84%9A%E6%9C%AC%E5%88%86%E6%9E%90/</guid>
       <description>实验环境：
 Server1：192.168.200.10
 Server2：192.168.200.20
@@ -609,10 +609,10 @@ vrrp_script http_chk { script &amp;#34;/etc/keepalived/httpd_check.sh&amp;#34; /
     
     <item>
       <title>keepalived入门-实现httpd高可用</title>
-      <link>//example.org/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/</link>
+      <link>http://caizhenwei.top/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/</link>
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/</guid>
+      <guid>http://caizhenwei.top/posts/2019-09-25-keepalived%E5%85%A5%E9%97%A8-%E5%AE%9E%E7%8E%B0httpd%E9%AB%98%E5%8F%AF%E7%94%A8/</guid>
       <description>实验环境：
 Server1：192.168.200.10
 Server2：192.168.200.20
@@ -622,10 +622,10 @@ Server2：192.168.200.20
     
     <item>
       <title>Nginx反向代理与负载均衡</title>
-      <link>//example.org/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+      <link>http://caizhenwei.top/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
       <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+      <guid>http://caizhenwei.top/posts/2019-09-06-nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
       <description>正向代理和反向代理的区别：正向代理：代理服务器为客户端去收发请求，隐藏真实客户端
 反向代理：代理服务器为服务端收发请求，隐藏真实服务端
 需求一：隐藏真实网站服务器，由代理服务器去访问内部网站服务器，提高了内部服务器安全性1、安装nginx
@@ -636,10 +636,10 @@ Server2：192.168.200.20
     
     <item>
       <title>内网环境搭建YUM仓库</title>
-      <link>//example.org/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/</link>
+      <link>http://caizhenwei.top/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/</link>
       <pubDate>Tue, 03 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/</guid>
+      <guid>http://caizhenwei.top/posts/2019-09-03-%E5%86%85%E7%BD%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BAyum%E4%BB%93%E5%BA%93/</guid>
       <description>需求：内网环境下，无法访问外网，如何更新系统以及安装项目所需软件？ 一、找一台可以联网的机器，安装操作系统（一般最小化安装，和内网机器一致）缓存所需软件包1、开启yum缓存
 [root@host1 ~]# vim /etc/yum.conf [main] cachedir=/var/cache/yum/$basearch/$releasever //此处为缓存路径 keepcache=1 //设为1，则开启yum缓存 [root@host1 ~]# yum clean all 2、更新系统（缓存更新包）
 [root@host1 ~]# yum -y update 3、缓存制作yum仓库所需软件
@@ -650,20 +650,20 @@ Server2：192.168.200.20
     
     <item>
       <title>vsftpd本地用户shell为nologin无法访问ftp</title>
-      <link>//example.org/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp/</link>
+      <link>http://caizhenwei.top/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp/</link>
       <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp/</guid>
+      <guid>http://caizhenwei.top/posts/2019-05-10-vsftpd%E6%9C%AC%E5%9C%B0%E7%94%A8%E6%88%B7shell%E4%B8%BAnologin%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AEftp/</guid>
       <description>vsftp会根据/etc/shells文件来判断用户是否是有效，并阻止shell不在/etc/shells文件里的用户登陆
 解决方法： echo ‘/sbin/nologin’ &amp;raquo; /etc/shells</description>
     </item>
     
     <item>
       <title>Linux系统下邮件服务器的搭建（Postfix&#43;Dovecot）</title>
-      <link>//example.org/posts/2018-02-25-linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BApostfixdovecot/</link>
+      <link>http://caizhenwei.top/posts/2018-02-25-linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BApostfixdovecot/</link>
       <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2018-02-25-linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BApostfixdovecot/</guid>
+      <guid>http://caizhenwei.top/posts/2018-02-25-linux%E7%B3%BB%E7%BB%9F%E4%B8%8B%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%90%AD%E5%BB%BApostfixdovecot/</guid>
       <description>对于网站来说，发送各种例如注册通知的邮件是很基本的一个需求，之前我一直用的是腾讯的企业邮箱，感觉挺方便的，直接可以绑定QQ邮箱接收邮件，网站配置一下SMTP也就可以发出邮件。
 但是在前几天由于有重要信息需要立即通知用户，所以选择了群发邮件的方式。在当我以为一切都是辣么完美的时候，陆续有用户过来问我什么情况，我都会跟他们说请查收邮件，但是有好几个人说并没有任何邮件，于是我试着再发一次，结果返回了错误提示。在网上找了下原因，后来看到这个：各大免费邮箱邮件群发账户SMTP服务器配置及SMTP发送量限制情况，才知道是因为发信数量限制了。
 所以只好另寻出路了，然后我在知乎上面找到了很多个提供邮件发送的服务商，大概有这些：SendGrid、MailChimp、Amazon SES、SendCloud、Mailgun等等，在看了不少人的建议之后，我选择了Mailgun。

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on 蔡振威的博客</title>
-    <link>//example.org/categories/python/</link>
+    <link>http://caizhenwei.top/categories/python/</link>
     <description>Recent content in python on 蔡振威的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="//example.org/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://caizhenwei.top/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>安装Jupyter Notebook并配置远程登录</title>
-      <link>//example.org/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
+      <link>http://caizhenwei.top/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
       <pubDate>Thu, 13 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
+      <guid>http://caizhenwei.top/posts/2021-05-13-%E5%AE%89%E8%A3%85jupyter-notebook%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
       <description>一、安装#安装 pip3 install jupyter notebook #运行 jupyter notebook #浏览器访问 http://localhost:8888/undefined/tree 二、配置远程访问1、生成配置文件
 jupyter notebook --generate-config #运行后输出：Writing default config to: C:\\Users\\administrator\\.jupyter\\jupyter\_notebook\_config.py 2、设置密码
 jupyter notebook password 3、修改配置文件
@@ -23,10 +23,10 @@ http://IP:8888/undefined/tree</description>
     
     <item>
       <title>Python实现录音功能</title>
-      <link>//example.org/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</link>
+      <link>http://caizhenwei.top/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</link>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</guid>
+      <guid>http://caizhenwei.top/posts/2021-04-26-python%E5%AE%9E%E7%8E%B0%E5%BD%95%E9%9F%B3%E5%8A%9F%E8%83%BD/</guid>
       <description>一、安装pyaudio软件包1、下载whl文件
 https://github.com/intxcc/pyaudio_portaudio/releases
 2、安装pyaudio
@@ -35,10 +35,10 @@ pip install PyAudio-0.2.11-cp37-cp37m-win\_amd64.whl 二、代码文件import wa
     
     <item>
       <title>python&#43;selenium 批量配置华为S1720交换机</title>
-      <link>//example.org/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</link>
+      <link>http://caizhenwei.top/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</guid>
+      <guid>http://caizhenwei.top/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/</guid>
       <description>公司有100多台S1720接入层交换机，没有购买License，只能使用Web界面进行配置，每次进行相同的操作需要花费大量时间，例如：修改密码、保存配置、导出配置、添加日志主机、添加NTP服务器等，为节省重复且枯燥的操作，编写了下面脚本，操纵浏览器进行自动化配置。
 准备工作1、安装Python
 2、安装谷歌浏览器
@@ -49,10 +49,10 @@ pip install PyAudio-0.2.11-cp37-cp37m-win\_amd64.whl 二、代码文件import wa
     
     <item>
       <title>Django&#43;Echarts&#43;Bootstrap实现数据可视化</title>
-      <link>//example.org/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
+      <link>http://caizhenwei.top/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
+      <guid>http://caizhenwei.top/posts/2020-07-30-djangoechartsbootstrap%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/</guid>
       <description>github地址前后端：https://github.com/water711/Django_echarts_bootstrap
 微信小程序：https://github.com/water711/echarts-keliu-wechat
 PC端效果展示：微信小程序端展示</description>
@@ -60,10 +60,10 @@ PC端效果展示：微信小程序端展示</description>
     
     <item>
       <title>python datetime模块</title>
-      <link>//example.org/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</link>
+      <link>http://caizhenwei.top/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</link>
       <pubDate>Mon, 27 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</guid>
+      <guid>http://caizhenwei.top/posts/2020-07-27-python-datetime%E6%A8%A1%E5%9D%97/</guid>
       <description>datetime是Python处理日期和时间的标准库。
 官方文档：https://docs.python.org/3/library/datetime.html
 from datetime import datetime,timedelta #获取当前日期时间 now = datetime.now() #str转换为datetime mday = datetime.strptime(&amp;#39;2020-01-01 12:10:55&amp;#39;, &amp;#39;%Y-%m-%d %H:%M:%S&amp;#39;) print(mday) # 2020-01-01 12:10:55 print(type(mday)) # &amp;lt;class &amp;#39;datetime.datetime&amp;#39;&amp;gt; #datetime转换为str(将字符串格式化为datetime) s = mday.strftime(&amp;#39;%Y-%m-%d %H:%M:%S&amp;#39;) print(s) # 2020-01-01 12:10:55 print(type(s)) # &amp;lt;class &amp;#39;str&amp;#39;&amp;gt; #datetime加减(需要导入timedelta类) day1 = mday + timedelta(days=2) #2020-01-03 12:10:55 day2 = mday + timedelta(hours=5) #2020-01-01 17:10:55 day3 = mday - timedelta(days=5, hours=6) #2019-12-27 06:10:55 #打印一年的日期 start\_date = datetime.strptime(&amp;#39;2019-01-01&amp;#39;,&amp;#39;%Y-%m-%d&amp;#39;) for i in range(0,365): ndate = start\_date + timedelta(days=i) ndate = str(ndate).</description>
@@ -71,10 +71,10 @@ from datetime import datetime,timedelta #获取当前日期时间 now = datetime
     
     <item>
       <title>使用Python&#43;OpenCV实现手势识别</title>
-      <link>//example.org/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</link>
+      <link>http://caizhenwei.top/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</guid>
+      <guid>http://caizhenwei.top/posts/2020-06-17-%E4%BD%BF%E7%94%A8pythonopencv%E5%AE%9E%E7%8E%B0%E6%89%8B%E5%8A%BF%E8%AF%86%E5%88%AB/</guid>
       <description>来源某国外视频：https://www.bilibili.com/video/BV1E4411f7Q1
 环境Python：3.7.0
 OpenCV：3.4.3.18
@@ -83,10 +83,10 @@ OpenCV：3.4.3.18
     
     <item>
       <title>Python使用讯飞API进行语音转文字</title>
-      <link>//example.org/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</link>
+      <link>http://caizhenwei.top/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</link>
       <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</guid>
+      <guid>http://caizhenwei.top/posts/2020-06-08-python%E4%BD%BF%E7%94%A8%E8%AE%AF%E9%A3%9Eapi%E8%BF%9B%E8%A1%8C%E8%AF%AD%E9%9F%B3%E8%BD%AC%E6%96%87%E5%AD%97/</guid>
       <description>一、注册讯飞开放平台账号1、官网注册：https://www.xfyun.cn/
 2、进入讯飞控制台，创建应用
 3、点击应用，查看APPID、APISecret和APIKey
@@ -101,10 +101,10 @@ sid:iat0007f62c@dx17292ff09777a1d802 call success!,data is:[{&amp;#34;bg&amp;#34
     
     <item>
       <title>Python人脸识别库Face Recognition</title>
-      <link>//example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</link>
+      <link>http://caizhenwei.top/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</link>
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</guid>
+      <guid>http://caizhenwei.top/posts/2020-05-31-python%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BA%93face-recognition/</guid>
       <description>环境 Python 3.7 Windows 7 X64 （windows并不是官方支持的，但也许也能用） 官方文档 https://github.com/ageitgey/face_recognition/blob/master/README_Simplified_Chinese.md 一、安装第三方库及相关依赖1、安装Visual Studio Build Tools（因为cmake依赖C++），安装时选择“C++生成工具”
 2、安装Cmake（因为dlib库需要cmake编译）
 pip3 install cmake 3、安装face_recognition和dlib
@@ -117,28 +117,28 @@ pip3 install opencv-python import face_recognition import cv2 # This is a demo o
     
     <item>
       <title>使用uWSGI和Nginx来部署基于Django的Web服务器</title>
-      <link>//example.org/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>http://caizhenwei.top/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>http://caizhenwei.top/posts/2020-05-09-%E4%BD%BF%E7%94%A8uwsgi%E5%92%8Cnginx%E6%9D%A5%E9%83%A8%E7%BD%B2%E5%9F%BA%E4%BA%8Edjango%E7%9A%84web%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>1、安装python、nginx、django和uwsgi[root@server ~]# yum -y install python3 nginx gcc [root@server ~]# pip3 install django==2.0 [root@liyu ~]# python3 -V Python 3.6.8 [root@liyu ~]# yum install python36-devel //安装对应Python版本的devel，编译uwsgi需要的依赖 [root@server ~]# pip3 install uwsgi 2、创建django项目[root@server ~]# mkdir /web/ [root@server ~]# cd /web/ [root@server ~]# django-admin startproject test_project #允许所有主机访问 [root@server ~]# cd test_project/ [root@server test_project]# vim test_project/settings.py ALLOWED_HOSTS = [&amp;#39;\*&amp;#39;] #开发环境下，可以直接使用下面命令来运行项目 [root@server ~]# python3 manage.py runserver 0.0.0.0:8000 3、使用uwsgi启动django项目#uwsgi命令行方式直接启动（测试） [root@web test_project]# uwsgi --http :8000 --module test_project.wsgi //test_project.</description>
     </item>
     
     <item>
       <title>Centos7源码安装python3</title>
-      <link>//example.org/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</link>
+      <link>http://caizhenwei.top/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</guid>
+      <guid>http://caizhenwei.top/posts/2020-05-08-centos7%E5%AE%89%E8%A3%85python3/</guid>
       <description>1、下载源码wget https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tgz tar xf Python-3.8.2.tgz cd Python-3.8.2/ 2、安装编译所需依赖yum install -y gcc openssl-devel zlib-devel libffi-devel sqlite-devel 3、编译./configure prefix=/usr/local/python3 make -j8 &amp;amp;&amp;amp; make install #如果gcc版本&amp;gt;=8.1.0，在编译时可以添加优化选项--enable-optimizations ./configure prefix=/usr/local/python3 --enable-optimizations make -j8 &amp;amp;&amp;amp; make install 4、将python的bin目录添加到环境变量export PATH=$PATH:/usr/local/python3/bin/ echo export PATH=$PATH:/usr/local/python3/bin/ &amp;gt;&amp;gt; /etc/profile </description>
     </item>
     
     <item>
       <title>添加pip全局配置，使用国内下载源</title>
-      <link>//example.org/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</link>
+      <link>http://caizhenwei.top/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</guid>
+      <guid>http://caizhenwei.top/posts/2020-04-22-%E6%B7%BB%E5%8A%A0pip%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8%E5%9B%BD%E5%86%85%E4%B8%8B%E8%BD%BD%E6%BA%90/</guid>
       <description>方法一、使用命令添加配置&amp;gt; pip config set global.index-url http://pypi.douban.com/simple/ Writing to C:\Users\admin\AppData\Roaming\pip\pip.ini &amp;gt; pip config set install.trusted-host pypi.douban.com Writing to C:\Users\admin\AppData\Roaming\pip\pip.ini 方法二：修改全局配置文件Windows： C:\Users\用户名\AppData\Roaming\pip\pip.ini
 Linux： ~/.pip/pip.conf
 [global] index-url = http://pypi.douban.com/simple [install] trusted-host = pypi.douban.com </description>
@@ -146,10 +146,10 @@ Linux： ~/.pip/pip.conf
     
     <item>
       <title>window使用pipenv install出现UnicodeDecodeError</title>
-      <link>//example.org/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</link>
+      <link>http://caizhenwei.top/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</guid>
+      <guid>http://caizhenwei.top/posts/2020-04-11-window%E4%BD%BF%E7%94%A8pipenv-install%E5%87%BA%E7%8E%B0unicodedecodeerror/</guid>
       <description>$ pipenv install Traceback (most recent call last): File &amp;#34;d:\python37\lib\runpy.py&amp;#34;, line 193, in _run_module_as_main &amp;#34;__main__&amp;#34;, mod_spec) ...... File &amp;#34;d:\python37\lib\site-packages\pipenv\vendor\shellingham\nt.py&amp;#34;, line 78, in _iter_process info = {&amp;#39;executable&amp;#39;: str(pe.szExeFile.decode(&amp;#39;utf-8&amp;#39;))} UnicodeDecodeError: &amp;#39;utf-8&amp;#39; codec can&amp;#39;t decode byte 0xcc in position 0: invalid continuation byte 解决方法：
 在报错信息里，找到报错的文件及代码位置
 我这边的文件是d:\python37\lib\site-packages\pipenv\vendor\shellingham\nt.py，代码位置在第78行
@@ -159,10 +159,10 @@ info = {&amp;#39;executable&amp;#39;: str(pe.szExeFile.decode(&amp;#39;gbk&amp;#
     
     <item>
       <title>Python&#43;Selenium 使用cookie实现自动登录网站</title>
-      <link>//example.org/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</link>
+      <link>http://caizhenwei.top/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</guid>
+      <guid>http://caizhenwei.top/posts/2020-03-29-pythonselenium-%E4%BD%BF%E7%94%A8cookie%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E7%99%BB%E5%BD%95%E7%BD%91%E7%AB%99/</guid>
       <description>Python版本：3.7
 浏览器：Chrome 79.0.3
 一、下载Selenium浏览器驱动（WebDriver）下载地址：http://npm.taobao.org/mirrors/chromedriver/
@@ -175,19 +175,19 @@ info = {&amp;#39;executable&amp;#39;: str(pe.szExeFile.decode(&amp;#39;gbk&amp;#
     
     <item>
       <title>data:image/base64与图片互相转换</title>
-      <link>//example.org/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</link>
+      <link>http://caizhenwei.top/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</guid>
+      <guid>http://caizhenwei.top/posts/2020-03-02-dataimage-base64%E4%B8%8E%E5%9B%BE%E7%89%87%E4%BA%92%E7%9B%B8%E8%BD%AC%E6%8D%A2/</guid>
       <description>将data:image/base64转换成图片import base64 value=&amp;#34;qeBQAAAABJ......RU5ErkJggg==&amp;#34; #填写base64编码 img = base64.b64decode(value) fh = open(&amp;#34;pic.jpg&amp;#34;,&amp;#34;wb&amp;#34;) fh.write(img) 将图片转换成data:image/base64import base64 with open(&amp;#34;pic.jpg&amp;#34;,&amp;#34;rb&amp;#34;) as f: base64_data = base64.b64encode(f.read()) print(base64_data) base64编码iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAC91BMVEUAAACgekagekagekagekagekagekagekagekagekagekagekagekagekagekb//v7//v6he0f+/v7+/f3t5dvp39Ojfkyqh1j7+fb28u308Or+/fz59/T59vL07+i/pYH+/f39/Pv8+/n49vHx6+Lv6eHo39LZybTSv6bOup/Ap4TQvqS/poPOup6vjmL9/Pv8+/n7+ff7+fbz7ujw6uLv6eDr49jj18jl2szh1MPTwane0L3YybPGr5C5nXb//v77+ff59/Py7eXs5Nrl2szp4NTh1cTh1cS5nXetjWClgU/49fH39PD18ezVxK7Rv6WujmGtjF/9/Pv8+/r6+Pbg08LHsZL8+/n9/Pv49vL7+fb28u3///+duvaat/OcufWWs++kwf2rxv+YtfGiv/uUse2RruqgvfmZtvKwyf+PrOifvPiMqeWNquaOq+eoxP+mw/+tx/+Vsu6TsOy1zf+JpuKLqOSuyP+QremKp+Oyy/+IpeGHpOD9/f/k7P3u9P77/P/8+vejvvX9/PmlwPfj6/y8z/f5+/+gu/P68u7p7/u0yvf89PD75Of09/7w9f24z/3L2/v79vL56+m4zv/3+f7P3fvB0/qnwvnX4vikvve5zfXp8P3m7v3b5vzf6PvX4/vF1vq5zvepwfX9+PT76ej34eL319/7/P7J2Pm80Pmvx/jI1/Wxx/XgyfL58Oz46Ob43eL2y93xxtu80f/Dzf/y9v7S4Pupw/itxPS3vPGkuvH10PDEvO3uyOXnweDYt9n9/v/r8f2lwPnS3vesvfa/0fTQxPKtuvL50/Cdt+6js+v73ujXwOj1zOfNt+GdqN+1rd3ivNzOtNu6zP/Iyv2zy/yow/vZzPq4zPbszvL77On70ufPvOfnxOWmruTcvuHvxd+hqN7hvNq7rNrlvNnIzf6xwvvgzvnIxfflzfW3yvKzx++lve6qtu7wzOuZr+n72eicrOT24+OOpuHFs9+Upt+KpN+rqt320NyzuO26sN/XuNpRZOGQAAAAXHRSTlMAAgYKFQ4RHyMbFyctKjH++jP284SBNijVs6Lvyb+qNfHu4smTjYtkWVZJRkRDLOfm2NKypJiPe2xjXFlPOzH73NOZlX51dF8/PDLDvb1gUTkx7OrNak/r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 </description>
     </item>
     
     <item>
       <title>pthon3实现oracle数据库查询、导出EXCEL并邮件发送</title>
-      <link>//example.org/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</link>
+      <link>http://caizhenwei.top/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</link>
       <pubDate>Thu, 02 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</guid>
+      <guid>http://caizhenwei.top/posts/2020-01-02-pthon3%E5%AE%9E%E7%8E%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9F%A5%E8%AF%A2%E5%AF%BC%E5%87%BAexcel%E5%B9%B6%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/</guid>
       <description>一、准备环境1、安装Oracle 客户端（python、oracle客户端的位数要一致）
 2、安装Python第三方模块
 pip3 install cx_Oracle xlsxwriter cx_Oracle模块： 一个允许访问Oracle数据库并符合Python数据库API规范的模块。该模块目前针对Oracle客户端19c、18c、12c和11.2以及Python2.7、3.5、3.6、3.7和3.8进行了测试。
@@ -197,19 +197,19 @@ xlsxwriter模块： 编写Excel 2007+XLSX文件格式文件，可用于将文本
     
     <item>
       <title>python 从文件读取IP地址 并实现多线程扫描</title>
-      <link>//example.org/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</link>
+      <link>http://caizhenwei.top/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</link>
       <pubDate>Mon, 25 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</guid>
+      <guid>http://caizhenwei.top/posts/2019-11-25-python-%E4%BB%8E%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96ip%E5%9C%B0%E5%9D%80-%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%AB%E6%8F%8F/</guid>
       <description>Python代码：# -*- coding:utf-8 -*- import threading import subprocess import time from queue import Queue import xlrd import msvcrt # 定义工作线程 WORD_THREAD = 50 # 将从excel表中读取ip并加入队列 IP_QUEUE = Queue() workbook = xlrd.open_workbook(&amp;#34;IP.xls&amp;#34;) table = workbook.sheets()[0] for row in range(1, table.nrows): ip = table.cell(row, 0).value name = table.cell(row, 1).value IP_QUEUE.put([ip,name]) # 定义一个执行 ping 的函数 def ping_ip(): while not IP_QUEUE.empty(): ip = IP_QUEUE.get() res = subprocess.call(&amp;#39;ping -n 2 -w 5 %s&amp;#39; % ip[0],stdout=subprocess.PIPE) # linux 系统将 &amp;#39;-n&amp;#39; 替换成 &amp;#39;-c&amp;#39; # 打印运行结果 # print(ip[0],True if res == 0 else False) if res == 0: print(ip[0],ip[1],&amp;#34;有响应&amp;#34;) else: print(ip[0],ip[1],&amp;#34;无响应&amp;#34;) ip.</description>
     </item>
     
     <item>
       <title>windows下使用pip安装包失败，提示Could not install packages due to an EnvironmentError: [Errno 0] Error</title>
-      <link>//example.org/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</link>
+      <link>http://caizhenwei.top/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</link>
       <pubDate>Mon, 04 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</guid>
+      <guid>http://caizhenwei.top/posts/2019-11-04-windows%E4%B8%8B%E4%BD%BF%E7%94%A8pip%E5%AE%89%E8%A3%85%E5%8C%85%E5%A4%B1%E8%B4%A5%E6%8F%90%E7%A4%BAcould-not-install-packages-due-to-an-environmenterror-errno-0-error/</guid>
       <description>python27版本，使用pip安装包，报错 Could not install packages due to an EnvironmentError: [Errno 0]
 重装python后，并将pip更新到最新版本，还是报错
 弄了一晚上，结果发现是之前修改了cmd命令行窗口的默认编码，导致安装包失败
@@ -218,20 +218,20 @@ C:\Users\admin&amp;gt;pip install opencv-python DEPRECATION: Python 2.7 will rea
     
     <item>
       <title>PyInstaller打包python程序后，cv2.VideoCapture()获取摄像头画画失败</title>
-      <link>//example.org/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</link>
+      <link>http://caizhenwei.top/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</link>
       <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</guid>
+      <guid>http://caizhenwei.top/posts/2019-10-06-pyinstaller%E6%89%93%E5%8C%85python%E7%A8%8B%E5%BA%8F%E5%90%8Ecv2-videocapture%E8%8E%B7%E5%8F%96%E6%91%84%E5%83%8F%E5%A4%B4%E7%94%BB%E7%94%BB%E5%A4%B1%E8%B4%A5/</guid>
       <description>源代码import cv2,os url = &amp;#39;rtsp://192.168.104.130/user=admin&amp;amp;password=admin&amp;amp;channel=1&amp;#39; cap = cv2.VideoCapture(url) ret, frame = cap.read() cv2.imwrite(&amp;#34;E:/test.png&amp;#34;, frame) cap.release() cv2.destroyAllWindows() 在使用PyInstaller打包上面python程序后，执行exe程序出现以下错误，获取的frame为0字节
 libpng warning:Image width is zero in IHDR libpng warning:Image height is zero in IHDR libpng error:Invalid IHDR data 解决方法：进入Python37\Lib\site-packages\cv2 目录下，把后缀名为dll的文件拷贝到exe程序目录下</description>
     </item>
     
     <item>
       <title>Python3实现按任意键继续或退出</title>
-      <link>//example.org/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</link>
+      <link>http://caizhenwei.top/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</link>
       <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</guid>
+      <guid>http://caizhenwei.top/posts/2019-10-06-python%E5%AE%9E%E7%8E%B0%E6%8C%89%E4%BB%BB%E6%84%8F%E9%94%AE%E7%BB%A7%E7%BB%AD%E6%88%96%E9%80%80%E5%87%BA/</guid>
       <description>在Windows下，我们可以使用内建的msvcrt库，实现按任意键继续或退出
 一、获取按键对应的ASCII 值import msvcrt print(ord(msvcrt.getch())) `svcrt` 中的 `getch()` 方法，作用是获取一个按键响应并返回对应的字符。 `ord` 将获得的字符转换为 `ASCII` 数值，例如捕获按键“q”将得到数值113，按键“Q”将得到数值81 二、利用while死循环，当msvcrt捕获到指定的按键，中断循环import msvcrt print(&amp;#34;Press &amp;#39;q&amp;#39; to exit...&amp;#34;) while True: if ord(msvcrt.getch()) in [81, 113]: break Linux下实现方式请查看以下文章：
 https://www.jb51.net/article/90845.htm</description>
@@ -239,10 +239,10 @@ https://www.jb51.net/article/90845.htm</description>
     
     <item>
       <title>使用Python调用Zabbix API</title>
-      <link>//example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</link>
+      <link>http://caizhenwei.top/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</link>
       <pubDate>Thu, 20 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</guid>
+      <guid>http://caizhenwei.top/posts/2019-06-20-%E4%BD%BF%E7%94%A8python%E8%B0%83%E7%94%A8zabbixapi/</guid>
       <description>Zabbix API官方文档： https://www.zabbix.com/documentation/4.0/zh/manual/api
 1、向 api_jsonrpc.php 发送HTTP_POST 登录请求，获取身份验证令牌
 # -*- coding:utf-8 -*- import json import requests url = &amp;#39;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;#39; post_headers = {&amp;#39;Content-Type&amp;#39;: &amp;#39;application/json&amp;#39;} post_data = { &amp;#34;jsonrpc&amp;#34; : &amp;#34;2.0&amp;#34;, &amp;#34;method&amp;#34; : &amp;#34;user.login&amp;#34;, &amp;#34;params&amp;#34; : { &amp;#34;user&amp;#34; : &amp;#34;Admin&amp;#34;, &amp;#34;password&amp;#34; : &amp;#34;zabbix&amp;#34; }, &amp;#34;id&amp;#34; : 1 } ret = requests.post(url, data = json.dumps(post_data), headers = post_headers) print(ret.text) 输出结果：
@@ -252,10 +252,10 @@ url = &amp;#39;http://172.10.10.2/zabbix/api_jsonrpc.php&amp;#39; post_headers =
     
     <item>
       <title>Python之excel文件追加内容</title>
-      <link>//example.org/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</link>
+      <link>http://caizhenwei.top/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</link>
       <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</guid>
+      <guid>http://caizhenwei.top/posts/2018-02-02-python%E4%B9%8Bexcel%E6%96%87%E4%BB%B6%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9/</guid>
       <description>首先要安装三个模块：xlrd，xlwt，xlutils
 命令：pip install xlrd xlwt xlutils
 示例代码：

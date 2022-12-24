@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 蔡振威的博客</title>
-    <link>//example.org/tags/</link>
+    <link>http://caizhenwei.top/tags/</link>
     <description>Recent content in Tags on 蔡振威的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="//example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://caizhenwei.top/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>wordpress</title>
-      <link>//example.org/tags/wordpress/</link>
+      <link>http://caizhenwei.top/tags/wordpress/</link>
       <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>//example.org/tags/wordpress/</guid>
+      <guid>http://caizhenwei.top/tags/wordpress/</guid>
       <description></description>
     </item>
     

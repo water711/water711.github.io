@@ -36,7 +36,7 @@ Slave主机：zabbix2
 主从同步的数据库：zabbix
 一、备份Master数据库[root@Zabbix1 ~]# mysqldump -uroot -p zabbix --single-transaction --master-data=1 --flush-logs &gt; zabbix.sql #拷贝到slave机器 [root@Zabbix1 ~]# scp zabbix.sql zabbix2:/root/zabbix.sql 二、导入主库并重新同步[root@Zabbix2 ~]# mysql -uroot -p mysql&gt; stop slave; mysql&gt; reset slave; mysql&gt; use zabbix mysql&gt; set sql_log_bin=0; #临时关闭bin_log，加快恢复速度 mysql&gt; source /root/zabbix.sql #恢复数据库 # 因为备份数据库时，指定了--master-data=1，备份文件会记录备份时的master_log_file和log_pos，并在mysql 控制台下使用source &#43; 备份文件名 恢复，所以不用再使用CHANGE MASTER TO指定文件和位置 mysql&gt; start slave; mysql&gt; show slave status \G; " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//example.org/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://caizhenwei.top/posts/2019-09-28-mysql%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E4%B8%8D%E4%B8%80%E8%87%B4%E5%90%8C%E6%AD%A5%E5%A4%B1%E8%B4%A5%E5%90%8E%E9%87%8D%E5%81%9A%E4%B8%BB%E4%BB%8E/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-09-28T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-09-28T00:00:00+00:00" />
 
@@ -95,7 +95,7 @@ Slave主机：zabbix2
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="http://caizhenwei.top/">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">

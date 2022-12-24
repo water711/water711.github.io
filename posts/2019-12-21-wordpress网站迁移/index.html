@@ -27,7 +27,7 @@
 <meta property="og:description" content="博客原本部署在阿里云虚拟主机上，今年双11，购买了一台阿里云ECS服务器，现在开始做迁移
 一、备份网站空间及数据库二、阿里云ECS部署LNMP环境#安装nginx和mariadb [root@ecs]# yum -y install nginx mariadb mariadb-server [root@ecs]# systemctl start nginx mariadb [root@ecs]# systemctl enable nginx mariadb #EPEL源的php版本较低，安装第三方源 [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm [root@ecs]# rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm [root@ecs]# yum -y install php56w php56w-fpm php56w-mysql php56w-gd [root@ecs]# systemctl start php-fpm [root@ecs]# systemctl enable php-fpm #把nginx主配置文件的server段注释掉 [root@ecs]# vim /etc/nginx/nginx.conf # server { # listen 80 default_server; # listen [::]:80 default_server; # server_name _; # root /usr/share/nginx/html; # # # Load configuration files for the default server block." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//example.org/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://caizhenwei.top/posts/2019-12-21-wordpress%E7%BD%91%E7%AB%99%E8%BF%81%E7%A7%BB/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-12-21T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-12-21T00:00:00+00:00" />
 
@@ -86,7 +86,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="http://caizhenwei.top/">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">

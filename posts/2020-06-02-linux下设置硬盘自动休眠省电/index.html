@@ -36,7 +36,7 @@
 [root@NAS ~]# hdparm -S 10 /dev/sda //这里-S取值为10，则为50秒 换算关系为：1 = 5秒 PS：在centos7下测试，发现有时候硬盘不会自动休眠
 4、查看当前硬盘省电状态[root@NAS ~]# hdparm -C /dev/sda //active：活动状态 //standby 省电状态 5、使用crontab定期执行硬盘休眠[root@NAS ~]# crontab -e */1 * * * * /usr/sbin/hdparm -Y /dev/sda &gt; /dev/null //每分钟执行一次休眠 6、配合autofs自动挂载硬盘，实现硬盘未使用时自动休眠原理：autofs设置不使用时自动卸载挂载点，并配合脚本检测硬盘是否挂载，当硬盘未被挂载，立即执行硬盘休眠" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//example.org/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://caizhenwei.top/posts/2020-06-02-linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E7%A1%AC%E7%9B%98%E8%87%AA%E5%8A%A8%E4%BC%91%E7%9C%A0%E7%9C%81%E7%94%B5/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-06-02T00:00:00+00:00" />
 
@@ -95,7 +95,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="http://caizhenwei.top/">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">

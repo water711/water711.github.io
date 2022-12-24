@@ -24,7 +24,7 @@
   <meta property="og:title" content="WordPress编辑器栏增加字体和大小" />
 <meta property="og:description" content="在主题的functions.php文件最后面添加以下代码//编辑器增加字体格式和字体大小按钮 function add_editor_buttons($buttons) { $buttons[] = &#39;fontselect&#39;; $buttons[] = &#39;fontsizeselect&#39;; return $buttons; } add_filter(&#34;mce_buttons_2&#34;, &#34;add_editor_buttons&#34;); //自定义字体格式 function custum_fontfamily($initArray){ $initArray[&#39;font_formats&#39;] = &#34;微软雅黑=&#39;微软雅黑&#39;;宋体=&#39;宋体&#39;;黑体=&#39;黑体&#39;;仿宋=&#39;仿宋&#39;;楷体=&#39;楷体&#39;;隶书=&#39;隶书&#39;;幼圆=&#39;幼圆&#39;;Arial=&#39;Arial&#39;;&#34;; return $initArray; } add_filter(&#39;tiny_mce_before_init&#39;, &#39;custum_fontfamily&#39;); 编辑器其它功能按钮剪切（cut） 复制（copy） 粘贴（paste） 撤销（undo） 重做（redo） 居中（justifycenter） 加粗（bold） 斜体（italic） 左对齐（justifyleft） 右对齐（justfyright） 两端对齐（justfyfull） 插入超链接（link） 取消超链接（unlink） 插入图片（image） 清除格式（removeformat） 下划线（underline） 删除线（strikethrough） 锚文本（anchor） 新建文本（newdocument） 字体颜色（forecolor） 字体背景色（backcolor） 格式选择（formmatselect） 字体选择（fontselect） 字号选择（fontsizeselect） 样式选择（styleselect） 无序列表（bullist） 编号列表（numlist） 减少缩进（outdent） 缩进（indent） 帮助（wp_help） 打开HTML代码编辑器（code） 水平线（hr） 清除冗余代码（cleanup） 上标（sub） 下标（sup） 特殊符号（charmap） 插入more标签（wp_more） 插入分页标签（wp_page） 隐藏按钮显示开关（wp_adv） 隐藏按钮区起始部分（wp_adv_start） 隐藏按钮区结束部分（wp_adv_end） 拼写检查（spellchecker） //编辑器增加按钮方法：在主题的functions.php文件最后面添加以下代码（如果已有add_editor_buttons函数，直接在函数体内增加按钮） function add_editor_buttons($buttons) { $buttons[] = &#39;fontselect&#39;; //增加字体按钮 $buttons[] = &#39;bold&#39;; //增加加粗按钮 return $buttons; } add_filter(&#34;mce_buttons_2&#34;, &#34;add_editor_buttons&#34;); //mce_buttons_2表示在编辑器第二行增加按钮 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//example.org/posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://caizhenwei.top/posts/2019-10-01-wordpress%E7%BC%96%E8%BE%91%E5%99%A8%E6%A0%8F%E5%A2%9E%E5%8A%A0%E5%AD%97%E4%BD%93%E5%92%8C%E5%A4%A7%E5%B0%8F/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-10-01T00:00:00+00:00" />
 <meta property="article:modified_time" content="2019-10-01T00:00:00+00:00" />
 
@@ -83,7 +83,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="http://caizhenwei.top/">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">

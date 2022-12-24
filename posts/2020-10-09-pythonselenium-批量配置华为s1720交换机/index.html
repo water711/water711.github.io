@@ -39,7 +39,7 @@
 4、新建IP.txt，保存所有交换机IP，放到脚本所在目录
 一、批量修改密码# -*- coding : utf-8 -*- from selenium import webdriver from selenium.webdriver.support.ui import WebDriverWait import time UserName = &#39;admin&#39; OldPassword = &#39;admin@huawei.com&#39; NewPassword = &#39;newpassword123&#39; def open_broswer(): #新建options options = webdriver.ChromeOptions() #添加选项，禁止在控制台打印日志 options.add_experimental_option(&#39;excludeSwitches&#39;, [&#39;enable-logging&#39;]) #添加选项，忽略网站SSL证书错误 options.add_argument(&#39;--ignore-certificate-errors&#39;) #载入options并启动浏览器 driver=webdriver.Chrome(options=options) return driver def alert_confirm(): &#39;&#39;&#39; 解决以下页面弹框提示 Web网管支持的Chrome浏览器版本范围为:Chrome 54 ~ Chrome 66,为了更好的浏览体验,建议您使用Chrome 66版本浏览器 &#39;&#39;&#39; try: alert = driver.switch_to.alert #切换到弹框窗口 alert.text driver.switch_to.alert.accept() #确认弹框 except: pass def change_password(ip): print(ip) driver.get(&#34;http://&#34; &#43; ip) alert_confirm() #确认弹框 #窗口最大化 driver." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//example.org/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://caizhenwei.top/posts/2020-10-09-pythonselenium-%E6%89%B9%E9%87%8F%E9%85%8D%E7%BD%AE%E5%8D%8E%E4%B8%BAs1720%E4%BA%A4%E6%8D%A2%E6%9C%BA/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-09T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-10-09T00:00:00+00:00" />
 
@@ -98,7 +98,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="http://caizhenwei.top/">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">

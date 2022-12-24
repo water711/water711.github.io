@@ -36,7 +36,7 @@
 #!/bin/sh time=`date &#43;%s` appkey=bada123234534590d23403 appid=123456789 random=$(($RANDOM*$RANDOM)) tem_id=123456 #模板ID mobile=$1 #手机号，从zabbix传入的第一个参数 message=$2 #告警信息，从zabbix传入的第二个参数 IFS=&#39;;&#39; #定义内部分隔符 arr=($message) #将message转化为数组，按;号分隔 event_time=${arr[0]} host_name=${arr[1]} event_name=${arr[2]} str=&#34;appkey=$appkey&amp;random=$random&amp;time=$time&amp;mobile=$mobile&#34; #腾讯定义的sig字段格式 sig=`echo -n $str | sha256sum | awk &#39;{print $1}&#39;` #加密后的sig字段 curl -i -X POST -H &#34;&#39;Content-type&#39;:&#39;application/json&#39;&#34; \ -d &#39;{ &#34;ext&#34;: &#34;&#34;, &#34;extend&#34;: &#34;&#34;, &#34;params&#34;: [&#34;&#39;$event_time&#39;&#34;, &#34;&#39;$host_name&#39;&#34;, &#34;&#39;$event_name&#39;&#34;], &#34;sig&#34;: &#34;&#39;$sig&#39;&#34;, &#34;sign&#34;: &#34;xx公司&#34;, &#34;tel&#34;: {&#34;mobile&#34;: &#34;&#39;$mobile&#39;&#34;, &#34;nationcode&#34;: &#34;86&#34;}, &#34;time&#34;: &#39;$time&#39;, &#34;tpl_id&#34;: &#39;$tem_id&#39; }&#39; \ https://yun.tim.qq.com/v5/tlssmssvr/sendsms?sdkappid=$appid&#39;&amp;&#39;random=$random 测试运行
 [root@zabbix ~]# sh send." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="//example.org/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://caizhenwei.top/posts/2020-02-18-zabbix%E9%80%9A%E8%BF%87%E7%9F%AD%E4%BF%A1%E5%91%8A%E8%AD%A6/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-02-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-02-18T00:00:00+00:00" />
 
@@ -95,7 +95,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="//example.org/">蔡振威的博客</a>
+      <a class="navbar-brand" href="http://caizhenwei.top/">蔡振威的博客</a>
     </div>
     
     <div id="huxblog_navbar">
